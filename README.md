@@ -113,14 +113,14 @@ Success depends on progressively improving query quality while maintaining an ef
 
 ## Optimisation Timeline
 
-### Week 1 – Initial Exploration
+### Week 1 – Baseline Exploration
 
 The first optimisation round focused on broad exploration to establish baseline behaviour across all functions.
 
-### Week 2 – Guided Exploration and Exploitation
+### Week 2 – Exploration-Exploitation Balancing 
 
 Results revealed substantial variation between functions. Strong-performing regions became candidates for exploitation, while weaker-performing functions required additional exploration.
 
-### Week 3 – Data-Informed Decision Making
+### Week 3 – Evidence based Query Selection
 
 Query selection became increasingly evidence based. Previous observations informed future sampling decisions, reflecting a transition from heuristic exploration towards model-guided optimisation.
