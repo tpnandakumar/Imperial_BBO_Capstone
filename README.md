@@ -46,3 +46,81 @@ Key challenges include:
 - Uncertainty regarding feature interactions
 
 Success depends on progressively improving query selection using evidence gathered from previous optimisation rounds.
+
+## Inputs and Outputs
+
+### Input Format
+
+Each function accepts a vector of values constrained between 0 and 1. Inputs are submitted to six decimal places.
+
+Example:
+
+```text
+0.600000-0.600000
+```
+
+### Function Dimensionality
+
+The challenge contains eight functions ranging from two to eight dimensions.
+
+| Function | Dimensions |
+|-----------|-----------|
+| Function 1 | 2 |
+| Function 2 | 2 |
+| Function 3 | 3 |
+| Function 4 | 4 |
+| Function 5 | 4 |
+| Function 6 | 5 |
+| Function 7 | 6 |
+| Function 8 | 8 |
+
+Increasing dimensionality expands the search space and increases optimisation complexity.
+
+### Output Format
+
+Each submitted query returns a numerical objective value.
+
+Example:
+
+```text
+2308.148
+```
+
+These outputs provide the only information available about function behaviour and guide future optimisation decisions.
+
+
+## Challenge Objectives
+
+### Primary Goal
+
+The primary objective is to maximise the output returned by each black-box function.
+
+### Constraints
+
+Key constraints include:
+
+- Unknown response surfaces
+- Limited observations
+- One query per function per round
+- No gradient information
+- Potential local optima
+- High-dimensional search spaces
+
+### Success Criteria
+
+Success depends on progressively improving query quality while maintaining an effective balance between exploration and exploitation.
+
+
+## Optimisation Timeline
+
+### Week 1 – Initial Exploration
+
+The first optimisation round focused on broad exploration to establish baseline behaviour across all functions.
+
+### Week 2 – Guided Exploration and Exploitation
+
+Results revealed substantial variation between functions. Strong-performing regions became candidates for exploitation, while weaker-performing functions required additional exploration.
+
+### Week 3 – Data-Informed Decision Making
+
+Query selection became increasingly evidence based. Previous observations informed future sampling decisions, reflecting a transition from heuristic exploration towards model-guided optimisation.
