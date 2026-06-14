@@ -3,7 +3,6 @@
 Initial Bayesian Black-Box Optimisation submission.
 
 ## Objectives
-
 - Analyse starter datasets
 - Identify promising regions of the search space
 - Select one query point for each function
@@ -11,7 +10,6 @@ Initial Bayesian Black-Box Optimisation submission.
 - Balance exploration and exploitation
 
 ## Functions
-
 - Function 1 (2D)
 - Function 2 (2D)
 - Function 3 (3D)
@@ -47,14 +45,12 @@ initial_outputs = np.load("initial_outputs.npy")
 `initial_inputs` contained the previously sampled input points.
 `initial_outputs` contained the corresponding output values.
 ---
-
 ## Step 2: Find the best observed output
 The best observed output was identified using:
-
 ```python
 best_index = np.argmax(initial_outputs)
 ```
-Mathematically:
+Mahematically:
 ```text
 best_index = argmax(y)
 ```
@@ -63,9 +59,7 @@ where `y` is the vector of initial outputs.
 This finds the position of the highest output value.
 ---
 ## Step 3: Retrieve the matching input point
-
 Once the best index was found, the corresponding input was selected:
-
 ```python
 best_input = initial_inputs[best_index]
 best_output = initial_outputs[best_index]
@@ -117,7 +111,6 @@ The submitted point stayed very close to the strongest observed region, with a s
 ---
 
 ### Function 2
-
 Best observed input:
 
 ```text
@@ -133,15 +126,12 @@ Adjustment:
 ```text
 δ = [0.01736344, 0.01343580]
 ```
-
 Reason:
 
 The query remained near the best supplied observation while slightly increasing both coordinates to explore the surrounding high-performing region.
-
 ---
 
 ### Function 3
-
 Best observed input:
 
 ```text
@@ -159,41 +149,30 @@ Adjustment:
 ```text
 δ = [0.03741859, 0.02840681, -0.09017639]
 ```
-
 Reason:
-
 The first two dimensions were increased slightly while the third was reduced. This explored the local neighbourhood around the least negative initial output.
-
 ---
-
 ### Function 4
-
 Best observed input:
-
 ```text
 A = [0.57776561, 0.42877174, 0.42582587, 0.24900741]
 ```
 Submitted query:
-
 ```text
 B = [0.600000, 0.430000, 0.420000, 0.250000]
 ```
 Adjustment:
-
 ```text
 δ = [0.02223439, 0.00122826, -0.00582587, 0.00099259]
 ```
 Reason:
-
 The submitted point was effectively a rounded local refinement of the best observed point, staying extremely close to the strongest available region.
 ---
 ### Function 5
-
 Best observed input:
 ```text
 A = [0.22418902, 0.84648049, 0.87948418, 0.87851568]
 ```
-
 Submitted query:
 
 ```text
@@ -204,28 +183,22 @@ Adjustment:
 δ = [-0.01418902, 0.02351951, 0.02051582, 0.02148432]
 ```
 Reason:
-
 Function 5 had a very strong initial output. The submitted point remained in the same high-performing region while making small exploratory adjustments.
 ---
-
 ### Function 6
 Best observed input:
 ```text
 A = [0.72818610, 0.15469257, 0.73255167, 0.69399651, 0.05640131]
 ```
 Submitted query:
-
 ```text
 B = [0.750000, 0.180000, 0.700000, 0.720000, 0.040000]
 ```
 Adjustment:
-
 ```text
 δ = [0.02181390, 0.02530743, -0.03255167, 0.02600349, -0.01640131]
 ```
-
 Reason:
-
 The query stayed close to the strongest observed point while testing a nearby combination in the five-dimensional space.
 ---
 ### Function 7
