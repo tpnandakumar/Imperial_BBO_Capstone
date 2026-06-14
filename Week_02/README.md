@@ -401,7 +401,7 @@ Week 2 focused on balancing exploration and exploitation. Query selection was in
 
 ## Reflection
 
-# Week 2 Reflection and Discussion
+# Week 2 Reflection and Discussion with Figures & Analysis
 
 Week 2 marked a transition from broad exploratory sampling towards a more evidence-driven optimisation strategy. During Week 1, the objective was to gather information about the behaviour of the eight black-box functions because no prior knowledge of the response surfaces was available. Once the Week 1 outputs became available, it became possible to identify which functions appeared promising and which regions were producing poor results.
 
