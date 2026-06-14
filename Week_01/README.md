@@ -277,7 +277,7 @@ The query was a cautious local refinement of the strongest observed point in the
 import numpy as np
 import pandas as pd
 
-##############################################################################
+####
 # WEEK 1 QUERY SELECTION METHODOLOGY
 #
 # Purpose:
@@ -290,11 +290,11 @@ import pandas as pd
 # 3. Retrieve corresponding input vector.
 # 4. Compare strongest observed point with submitted query.
 # 5. Calculate local refinement adjustment.
-##############################################################################
+####
 
-# ---------------------------------------------------------------------------
+#
 # FUNCTION 1
-# ---------------------------------------------------------------------------
+# 
 
 f1_best_input = np.array([0.73102363, 0.73299988])
 f1_submitted = np.array([0.74000000, 0.74000000])
@@ -306,9 +306,9 @@ print("Best Input:", f1_best_input)
 print("Submitted Query:", f1_submitted)
 print("Delta:", f1_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 2
-# ---------------------------------------------------------------------------
+# 
 
 f2_best_input = np.array([0.70263656, 0.92656420])
 f2_submitted = np.array([0.72000000, 0.94000000])
@@ -320,9 +320,9 @@ print("Best Input:", f2_best_input)
 print("Submitted Query:", f2_submitted)
 print("Delta:", f2_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 3
-# ---------------------------------------------------------------------------
+# 
 
 f3_best_input = np.array([
     0.49258141,
@@ -343,9 +343,9 @@ print("Best Input:", f3_best_input)
 print("Submitted Query:", f3_submitted)
 print("Delta:", f3_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 4
-# ---------------------------------------------------------------------------
+# 
 
 f4_best_input = np.array([
     0.57776561,
@@ -368,9 +368,9 @@ print("Best Input:", f4_best_input)
 print("Submitted Query:", f4_submitted)
 print("Delta:", f4_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 5
-# ---------------------------------------------------------------------------
+# 
 
 f5_best_input = np.array([
     0.22418902,
@@ -393,9 +393,9 @@ print("Best Input:", f5_best_input)
 print("Submitted Query:", f5_submitted)
 print("Delta:", f5_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 6
-# ---------------------------------------------------------------------------
+# 
 
 f6_best_input = np.array([
     0.72818610,
@@ -420,9 +420,9 @@ print("Best Input:", f6_best_input)
 print("Submitted Query:", f6_submitted)
 print("Delta:", f6_delta)
 
-# ---------------------------------------------------------------------------
+# 
 # FUNCTION 7
-# ---------------------------------------------------------------------------
+# 
 
 f7_best_input = np.array([
     0.05789554,
@@ -449,9 +449,9 @@ print("Best Input:", f7_best_input)
 print("Submitted Query:", f7_submitted)
 print("Delta:", f7_delta)
 
-# ---------------------------------------------------------------------------
+#
 # FUNCTION 8
-# ---------------------------------------------------------------------------
+# 
 
 f8_best_input = np.array([
     0.05644741,
@@ -480,9 +480,9 @@ print("\nFUNCTION 8")
 print("Best Input:", f8_best_input)
 print("Submitted Query:", f8_submitted)
 print("Delta:", f8_delta)
-##############################################################################
+##
 # SUMMARY TABLE
-##############################################################################
+#
 summary = pd.DataFrame({
     "Function": ["F1","F2","F3","F4","F5","F6","F7","F8"],
     "Dimensions": [2,2,3,4,4,5,6,8]
@@ -490,9 +490,9 @@ summary = pd.DataFrame({
 
 print("\nSUMMARY")
 print(summary)
-##############################################################################
+##
 # INTERPRETATION
-##############################################################################
+##
 print("""
 Week 1 methodology:
 1. Analyse supplied observations.
