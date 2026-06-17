@@ -168,10 +168,50 @@ The final Week 4 strategy combined evidence from output trajectories, classifica
 
 <img width="1024" height="1536" alt="fig17" src="https://github.com/user-attachments/assets/79481f11-9cc0-4684-bea7-7996965b89b3" />
 
+
+## Computational Analysis and Coding Implementation
+
+The optimisation workflow was supported by computational analysis performed in Python. Weekly function outputs were organised into structured data tables, enabling systematic comparison of performance across optimisation rounds. Quantitative measures including output differences, percentage change, function rankings and trend direction were calculated to support evidence-based query selection. These calculations provided an objective framework for identifying candidate regions for exploitation, monitoring stable functions and prioritising exploratory evaluations in uncertain regions of the search space.
+
+
+### Output Change Calculation
+
+Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
+
+\[
+\Delta y = y_{Week3} - y_{Week2}
+\]
+
+\[
+\Delta y = 2840.99 - 2308.15
+\]
+
+\[
+\Delta y = 532.84
+\]
+
+The percentage improvement was:
+
+\[
+\%\Delta = \frac{2840.99-2308.15}{2308.15}\times100
+\]
+
+\[
+\%\Delta = 23.09\%
+\]
+
+This substantial improvement supported the decision to continue exploiting the Function 5 search region during Week 4 query selection.
+
+### Function Ranking Calculation
+
+Functions were ranked according to observed output values after each optimisation round. At Week 3, Function 5 produced the highest output (2840.99), followed by Function 8 (9.44), while Functions 4 and 6 remained negative. These rankings were used to guide resource allocation between exploitation, monitoring and exploration activities.
+
+
 # Conclusion
 
 Overall, the most important insight from this iteration is that optimisation, classification, surrogate modelling and information acquisition represent complementary perspectives on the same underlying problem. Effective query selection requires balancing exploitation of known high-performing regions against exploration of uncertain areas that may contain better solutions. As additional evaluations accumulate, increasingly sophisticated models may become justified. However, model complexity should be introduced only when supported by sufficient evidence and data. The Week 4 strategy therefore reflects not only a search for better outputs but also a systematic effort to improve understanding of the search landscape itself.
 
-## Conclusion
+
+
 
 ## Contents
