@@ -56,12 +56,34 @@ Functions 1, 3, 4 and 6 were positioned within the exploration region. Their out
 
 The decision matrix illustrates an important principle of Bayesian optimisation: query selection should be influenced not only by current performance but also by the confidence associated with that performance. High outputs alone do not necessarily justify exploitation if uncertainty remains substantial, while low outputs may still provide valuable information if they reveal regions of rapid change. By considering both output quality and trend stability, the matrix provides a structured framework for allocating future evaluations efficiently.
 
-Overall, Figure 3 demonstrates how empirical observations can be translated into practical optimisation decisions. The framework supports continued exploitation of strong-performing functions while directing exploratory effort towards uncertain or poorly understood regions. This balanced allocation of resources helps maximise information gain and performance improvement simultaneously, which is a central objective of Bayesian optimisation.
+Overall, Figure 3 demonstrates how empirical observations can be translated into practical optimisation decisions. The matrix indicates that Functions 5 and 8 are the strongest candidates for continued refinement, Functions 2 and 7 require strategic monitoring, and Functions 1, 3, 4 and 6 warrant additional exploration. By allocating future evaluations according to both performance and confidence, optimisation resources can be directed towards regions most likely to improve objective values while continuing to reduce uncertainty within the search space. This balanced allocation of resources reflects the central objective of Bayesian optimisation: maximising information gain while efficiently identifying high-performing solutions.
 
 
 ## Figure 4 – Learning from Exploration and Exploitation
 
+<img width="1536" height="1024" alt="figure 4" src="https://github.com/user-attachments/assets/f4a026ab-0501-455e-9ae4-9984dd3461e0" />
+
+## Figure 4 – Learning from Exploration and Exploitation
+
+<img width="1536" height="1024" alt="fig 4" src="PASTE_IMAGE_LINK_HERE" />
+
+Figure 4 summarises the complete query selection workflow used throughout the Black-Box Optimisation challenge. The process evolved from broad exploratory sampling in Week 1 towards increasingly informed and targeted optimisation decisions in subsequent weeks. Each round of observations reduced uncertainty about the search space and provided additional evidence to guide future query selection.
+
+The Week 1 queries focused primarily on exploration because no information was available regarding the behaviour of the eight objective functions. A combination of designed and broadly distributed query points was used to obtain initial coverage of the search space. The resulting outputs provided the first empirical evidence regarding function behaviour and identified potentially promising regions for further investigation.
+
+Week 2 represented a transition towards a mixed exploration–exploitation strategy. Functions demonstrating strong performance, particularly Functions 5, 7 and 8, became candidates for local refinement, while weaker-performing functions were assigned broader exploratory movements. This balanced approach enabled performance improvement while continuing to reduce uncertainty regarding poorly understood regions of the search space.
+
+By Week 3, sufficient evidence had accumulated to support more targeted refinement. Function 5 demonstrated consistent improvement across all three optimisation rounds, providing strong evidence that a high-performing region had been identified. At the same time, Functions 3, 4 and 6 continued to provide valuable information regarding less favourable regions and highlighted areas where further exploration remained necessary. These observations demonstrated that both successful and unsuccessful evaluations contribute useful information within a Bayesian optimisation framework.
+
+An important lesson from the challenge was that optimisation is fundamentally a sequential learning process. Early exploratory evaluations may produce weak objective values, but they reduce uncertainty and improve understanding of the search landscape. As additional observations become available, confidence in promising regions increases and query selection can become progressively more targeted. Consequently, exploration and exploitation should not be viewed as competing objectives but as complementary mechanisms that jointly improve optimisation performance.
+
+The workflow also highlights the importance of balancing risk and reward. Excessive exploitation risks premature convergence to a local optimum before the wider search space has been sufficiently explored. Conversely, excessive exploration may delay identification of high-performing solutions. The iterative process illustrated in Figure 4 seeks to balance these competing objectives by continuously adapting query selection according to the evidence available at each stage.
+
+Overall, Figure 4 demonstrates how Bayesian optimisation combines exploration, exploitation and iterative learning to improve decision quality over time. The challenge showed that effective optimisation depends not only on identifying strong-performing regions but also on systematically reducing uncertainty across the search space. This evidence-driven process provides a practical framework for solving complex optimisation problems when objective functions are expensive to evaluate and their underlying structure is unknown.
+
 ## Reflection
+
+
 
 ## Conclusion
 
