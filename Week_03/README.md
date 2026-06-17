@@ -7,8 +7,6 @@ The primary objective of Week 3 was to evaluate whether previously identified hi
 
 The Week 3 results provided further insight into the behaviour of the underlying objective functions. Several functions showed meaningful changes in performance relative to previous rounds, highlighting both the benefits of local refinement and the value of exploratory sampling. These observations contributed to a more detailed understanding of the search landscape and supported increasingly informed query selection decisions for future optimisation rounds.
 
-
-
 ## Figure 1 – Week 3 Results
 
 <img width="1536" height="1024" alt="figure 1" src="https://github.com/user-attachments/assets/68f4b369-92d2-4aab-b853-7601d29a3d11" />
@@ -81,19 +79,98 @@ The workflow also highlights the importance of balancing risk and reward. Excess
 
 Overall, Figure 4 demonstrates how Bayesian optimisation combines exploration, exploitation and iterative learning to improve decision quality over time. The challenge showed that effective optimisation depends not only on identifying strong-performing regions but also on systematically reducing uncertainty across the search space. This evidence-driven process provides a practical framework for solving complex optimisation problems when objective functions are expensive to evaluate and their underlying structure is unknown.
 
-## Reflection
-
-The first three rounds of the Black-Box Optimisation challenge demonstrated how optimisation evolves from broad exploration towards increasingly evidence-driven decision making. During Week 1, little information was available regarding the behaviour of the eight unknown functions, making exploratory sampling necessary. By Week 3, repeated evaluations had revealed clear differences between functions, allowing query selection to become progressively more targeted and strategic.
-Figure 1 illustrates how function performance evolved across the first three optimisation rounds. Function 5 emerged as the strongest performer, improving from approximately 1416 in Week 1 to 2308 in Week 2 and 2841 in Week 3. This consistent improvement provided strong evidence that the sampled region contained a highly rewarding area of the search space. In contrast, Functions 2, 7 and 8 remained positive but displayed declining trajectories, suggesting that further refinement in the same direction may yield diminishing returns. Functions 1, 3, 4 and 6 produced limited or negative outputs, indicating that additional exploration remained necessary.
-One of the most interesting observations was the behaviour of Function 4. Although the function remained negative overall, relatively modest changes in the query location produced substantial changes in output magnitude. This suggests the presence of a transition region within the search space where performance changes rapidly. Such regions are particularly valuable because they provide information about potential boundaries between poor-performing and improved-performing areas. Figure 3 highlights this behaviour through the decision matrix, where Function 4 occupies a region requiring further exploration despite its relatively poor output.
-The optimisation process can also be viewed from a classification perspective. Rather than predicting exact objective values, the challenge becomes identifying regions that are more likely to contain favourable or unfavourable solutions. Functions producing consistently positive outputs may be classified as promising regions for exploitation, while negative-performing functions indicate areas requiring further investigation. Although insufficient observations currently exist to train a reliable classifier, this perspective provides a useful framework for understanding how future query selection may be guided.
-The challenge also introduced concepts related to surrogate modelling. A neural network surrogate was not trained because the number of observations remained small relative to the dimensionality of several functions. Under such conditions, highly flexible models would be vulnerable to overfitting and could produce unreliable predictions. Nevertheless, surrogate models remain conceptually useful because they provide a mechanism for estimating how outputs may change in response to input variations. If sufficient data become available, gradient-based information obtained through surrogate models could potentially guide future query selection more efficiently than direct search alone.
-The results additionally illustrate the importance of balancing model complexity and interpretability. Simple models such as linear or logistic regression offer transparency but may fail to capture the highly non-linear behaviour observed across several functions. More sophisticated models such as support vector machines or neural networks may eventually provide better predictive performance, but only once sufficient observations exist to support reliable training. At the current stage of the optimisation process, interpretability remains particularly valuable because understanding why a region appears promising is often as important as predicting its output accurately.
-Figure 4 demonstrates how optimisation decisions evolved throughout the challenge. Early iterations focused primarily on exploration, while later iterations increasingly incorporated exploitation of promising regions identified through empirical evidence. Function 5 provides the clearest example of successful exploitation, whereas Functions 3, 4 and 6 illustrate the continuing need for exploration when uncertainty remains high.
-Overall, the most important lesson from the first three optimisation rounds is that optimisation, classification and surrogate modelling represent different perspectives on the same underlying problem. The objective is not simply to identify the highest-performing query points but to progressively improve understanding of the search landscape. As additional evaluations become available, increasingly sophisticated modelling approaches may become justified. However, model complexity should be introduced only when supported by sufficient evidence, ensuring that improvements in predictive capability do not come at the expense of robustness, interpretability or generalisation.
+## Reflection on Week 4 Query Selection Strategy
 
 
+The first three rounds of the Black-Box Optimisation (BBO) challenge transformed the problem from a largely exploratory exercise into a progressively evidence-driven optimisation process. During Week 1, very little was known about the behaviour of the eight unknown functions, requiring broad exploration across the search space. As additional observations accumulated during Weeks 2 and 3, emerging performance patterns enabled more informed query selection. Rather than viewing the task purely as optimisation, it became increasingly useful to interpret the search process as a combination of optimisation, classification, and information acquisition. The objective was no longer simply to locate high-performing query points, but to understand the underlying structure of the search landscape sufficiently well to guide future evaluations efficiently.
 
+# Figure 4 – Query Selection Workflow
+
+<img width="1536" height="1024" alt="figure 4" src="https://github.com/user-attachments/assets/7289ac8b-5d9e-4f84-aeed-6cc1a31ac11b" />
+
+# Functional Ranking Evolution
+
+As evidence accumulated across successive iterations, the relative ranking of the functions became increasingly stable. Function 5 consistently remained the strongest-performing function, while Function 8 maintained a stable second position throughout the optimisation process. In contrast, Function 4 consistently produced the weakest outputs despite displaying substantial variability between iterations. The stability of the rankings suggests that the optimisation process was gradually revealing meaningful structure within the search space rather than producing random fluctuations. This increasing consistency improved confidence that future query allocation could be guided by observed performance trends.
+
+# Figure 14 – Function Ranking Evolution Across Weeks 1–3
+
+<img width="1536" height="1024" alt="Fig 15" src="https://github.com/user-attachments/assets/3201612e-d1bf-49b6-af33-da5d9fbb1942" />
+
+# Functional Output Progression
+
+Analysis of output trajectories provided additional evidence regarding the behaviour of individual functions. Function 5 demonstrated the strongest and most consistent improvement, increasing from approximately 1416 in Week 1 to 2841 in Week 3. Functions 2, 7 and 8 remained positive but showed declining performance across successive iterations. Functions 1, 3, 4 and 6 remained weak or negative, suggesting that the currently sampled regions were unlikely to contain high-performing optima. These trends helped identify which functions should be prioritised for exploitation and which required further exploration.
+
+# Figure 1 – Function Output Progression (Weeks 1–3)
+
+<img width="1536" height="1024" alt="figure 1" src="https://github.com/user-attachments/assets/ad00b0a9-da86-4a5f-9eb7-e497a16f4c93" />
+
+# Identifying Exploitation and Boundary Regions
+
+Several functions exhibited behaviour that revealed important characteristics of the search landscape. Function 5 demonstrated a clear and consistent upward trajectory, suggesting that successive query modifications were moving closer to a high-performing region. By contrast, Function 4 exhibited substantial output fluctuations despite relatively modest changes in the query location. Such behaviour resembles a boundary or transition region, where small movements in the input space generate large output changes. Boundary regions are particularly valuable because they often provide the greatest information gain regarding the shape of the underlying response surface. Function 8 demonstrated a third optimisation pattern, remaining highly stable across all iterations and suggesting the possibility of a local plateau or convergence region.
+
+# Figure 13 – Three Distinct Optimisation Behaviours Observed
+
+<img width="1536" height="1024" alt="fig 14" src="https://github.com/user-attachments/assets/f38c13e6-3e9c-4ea0-9993-c7ef03b2b2e6" />
+
+# Function 5 and Influential Variables
+
+Function 5 provided the strongest evidence regarding influential variables. Across three iterations, performance improved from approximately 1416 to 2308 and then to 2841. Examination of the corresponding query points suggested that decreasing the first variable while increasing the remaining variables consistently improved performance. Although the underlying function remains unknown, the consistency of this trend suggests that these dimensions exert substantial influence on the objective value. Consequently, Function 5 represented the strongest candidate for continued exploitation during Week 4.
+
+# Figure 2 – Function 5 Improvement Trajectory
+
+# Decision Matrix and Resource Allocation
+
+To formalise query selection, functions were grouped according to both output quality and confidence derived from observed trend stability. High-output functions with stable trends were considered suitable candidates for exploitation, while low-output functions with unstable behaviour were prioritised for exploration. Functions displaying moderate performance but relatively stable behaviour were assigned to a monitoring category. This framework ensured that query allocation was influenced not only by observed outputs but also by the confidence associated with those outputs. Such balancing of performance and uncertainty is a central principle of Bayesian optimisation.
+
+# Figure 3 – Week 3 Decision Matrix
+
+<img width="1536" height="1024" alt="fig 3" src="https://github.com/user-attachments/assets/3de62987-0e17-4222-a601-10ce02ab26b3" />
+
+# Surrogate Modelling and Neural Network Considerations
+
+Throughout the optimisation process, I considered the potential use of surrogate models to approximate the unknown functions. A neural network surrogate was not trained because the available dataset remained relatively small compared with the dimensionality of several functions. Under these circumstances, highly flexible models are vulnerable to overfitting and may produce unreliable gradient estimates. Nevertheless, surrogate modelling remains conceptually important because it provides a mechanism for estimating local response behaviour and identifying promising search directions. If additional observations were available, neural network surrogates could potentially be used to estimate gradients through backpropagation and guide future query refinement.
+
+# Neural Network Hyperparameter Figure 3
+
+<img width="1274" height="1536" alt="3" src="https://github.com/user-attachments/assets/62c4081c-d312-4307-afe3-b20f5ab3f80f" />
+
+
+# Optimisation as a Classification Problem
+
+The optimisation problem can also be interpreted as a classification task. Rather than predicting exact output values, the objective becomes distinguishing between favourable and unfavourable regions of the search space. Logistic regression could provide simple linear decision boundaries, while Support Vector Machines (SVMs) can capture more complex non-linear separations. In this context, support vectors become particularly important because they identify regions near decision boundaries where uncertainty is highest. Sampling near these boundaries can provide substantial information gain and improve understanding of the search landscape.
+
+# Figure 13 – SVM Classification Boundaries for Functions 3 and 7
+
+<img width="1536" height="1024" alt="Fig 13 SVM" src="https://github.com/user-attachments/assets/08a2a906-50b3-4e25-96be-f378a0acb37b" />
+
+# Model Complexity versus Interpretability
+
+Among the candidate modelling approaches, SVMs or simple surrogate models currently represent the most appropriate compromise between predictive flexibility and interpretability. Logistic regression may be overly restrictive because the observed function behaviours appear highly non-linear, whereas neural networks would likely require substantially more observations before reliable training becomes possible. At this stage of the optimisation process, interpretability remains important because understanding why a region appears promising is often as valuable as accurately predicting future outputs. This creates a practical trade-off between model complexity and transparency.
+
+# Figure 5 – Model Complexity versus Interpretability Trade-Off
+
+<img width="1536" height="1024" alt="fig 5" src="https://github.com/user-attachments/assets/82b0fdd4-86dd-4d83-b3ef-8d5696d44fb9" />
+
+
+# Information Gain and Exploration Strategy
+
+An important lesson from Week 3 was that high outputs alone should not determine future query allocation. Regions exhibiting high uncertainty or rapid output variation may provide greater information gain than regions with already stable performance. Function 4 illustrates this principle particularly well. Although its outputs remained negative, the large fluctuations observed across iterations suggest that neighbouring regions may contain valuable information regarding the underlying response surface. Consequently, exploration decisions should be driven not only by expected performance improvement but also by the expected information gained from additional evaluations.
+
+# Figure 15 – Information Gain Map
+
+<img width="1536" height="1024" alt="fig 16" src="https://github.com/user-attachments/assets/00a0e6a1-1710-4756-9d13-07f6a24e786c" />
+
+# Final Week 4 Query Selection
+
+The final Week 4 strategy combined evidence from output trajectories, classification boundaries, uncertainty estimates, information gain considerations and optimisation behaviour. Function 5 was selected for continued exploitation because it demonstrated strong and consistent improvement. Function 4 was prioritised for exploration because of its high uncertainty and potential information gain. Function 8 was monitored with minimal query allocation because its behaviour suggested a stable plateau region. Functions 2 and 7 were assigned a balanced monitoring strategy, while Functions 1, 3 and 6 continued to receive exploratory attention. This allocation sought to maximise both performance improvement and learning efficiency.
+
+# Figure 16 – Week 4 Query Selection Decision Tree
+
+<img width="1024" height="1536" alt="fig17" src="https://github.com/user-attachments/assets/79481f11-9cc0-4684-bea7-7996965b89b3" />
+
+# Conclusion
+
+Overall, the most important insight from this iteration is that optimisation, classification, surrogate modelling and information acquisition represent complementary perspectives on the same underlying problem. Effective query selection requires balancing exploitation of known high-performing regions against exploration of uncertain areas that may contain better solutions. As additional evaluations accumulate, increasingly sophisticated models may become justified. However, model complexity should be introduced only when supported by sufficient evidence and data. The Week 4 strategy therefore reflects not only a search for better outputs but also a systematic effort to improve understanding of the search landscape itself.
 
 ## Conclusion
 
