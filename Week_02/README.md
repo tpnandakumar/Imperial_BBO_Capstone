@@ -423,6 +423,13 @@ At the same time, exploration continued to play an important role. Functions 3, 
 # Figure 3 – Exploration versus Exploitation Strategy
 <img width="1632" height="963" alt="image" src="https://github.com/user-attachments/assets/e055353c-f059-4b06-93ad-23a12f200ec0" />
 
+## Evidence-Based Query Selection
+
+The Week 2 query points were selected according to the amount of evidence available from Week 1.
+Functions producing strong positive outputs (F5 and F8) were treated as promising regions of the search space. These functions were assigned an exploitation strategy, where only small movements were made to investigate the local neighbourhood around successful points.
+Functions producing moderate positive outputs (F2 and F7) were assigned a mixed strategy. Query points remained relatively close to previous locations while introducing moderate movement to gather additional information.
+Functions producing weak, zero or negative outputs (F1, F3, F4 and F6) were assigned an exploration strategy. Larger movements were used because there was insufficient evidence that the previously sampled regions contained high-performing solutions.
+This approach balanced performance improvement with information gathering and provided a structured framework for selecting Week 2 query points.
 
 The central trade-off during Week 2 was between maximising short-term gains and reducing uncertainty. Excessive exploitation can cause an optimiser to become trapped in a local optimum, particularly when only limited information is available. Conversely, excessive exploration may waste evaluations in regions that have little potential for improvement. The challenge was therefore to balance both objectives. Strongly performing functions were refined cautiously, while weakly performing functions were explored more aggressively. This approach aimed to maximise learning while preserving opportunities for performance improvement.
 
