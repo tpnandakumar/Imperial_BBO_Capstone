@@ -139,9 +139,9 @@ Throughout the optimisation process, I considered the potential use of surrogate
 
 The optimisation problem can also be interpreted as a classification task. Rather than predicting exact output values, the objective becomes distinguishing between favourable and unfavourable regions of the search space. Logistic regression could provide simple linear decision boundaries, while Support Vector Machines (SVMs) can capture more complex non-linear separations. In this context, support vectors become particularly important because they identify regions near decision boundaries where uncertainty is highest. Sampling near these boundaries can provide substantial information gain and improve understanding of the search landscape.
 
-# Figure 13 – SVM Classification Boundaries for Functions 3 and 7
+# Figure 18 – SVM Classification Boundaries for Functions 3 and 7
 
-<img width="1536" height="1024" alt="Fig 13 SVM" src="https://github.com/user-attachments/assets/08a2a906-50b3-4e25-96be-f378a0acb37b" />
+<img width="1535" height="1025" alt="Figure 18" src="https://github.com/user-attachments/assets/7cb09c49-bfa3-463a-8270-bba134d4a6bf" />
 
 # Model Complexity versus Interpretability
 
