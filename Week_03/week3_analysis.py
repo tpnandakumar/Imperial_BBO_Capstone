@@ -11,7 +11,14 @@ Functions:
 - Week 4 strategy allocation
 
 Author: Nandakumar Pisharam
+
 """
+
+Requirements:
+- pandas
+
+Run:
+python week3_analysis.py
 
 import pandas as pd
 data = {
