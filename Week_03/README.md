@@ -175,6 +175,16 @@ The optimisation workflow was supported by computational analysis performed in P
 
 The calculations presented in this report are fully reproducible using the accompanying Python script `week3_analysis.py`. The script calculates output changes, percentage improvements, function rankings and Week 4 strategy allocations directly from the observed optimisation results.
 
+### Script Output
+
+Running `week3_analysis.py` produces:
+
+- Function rankings based on Week 3 outputs
+- Week-to-week output changes
+- Percentage improvements
+- Week 4 strategy recommendations
+- Exportable CSV summary table
+
 ### Output Change Calculation
 Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
 
