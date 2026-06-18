@@ -14,8 +14,6 @@ Author: Nandakumar Pisharam
 """
 
 import pandas as pd
-import numpy as np
-
 data = {
     "Function": ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"],
     "Week1": [0.000000, 0.454942, -0.101836, -4.359875, 1415.876000, -0.700155, 1.319994, 9.580240],
