@@ -1,4 +1,20 @@
+"""
+Week 3 Computational Analysis
+
+This script reproduces the quantitative analysis
+reported in Week 3 of the Imperial BBO challenge.
+
+Functions:
+- Output change calculations
+- Percentage improvements
+- Function ranking
+- Week 4 strategy allocation
+
+Author: Nandakumar Pisharam
+"""
+
 import pandas as pd
+import numpy as np
 
 data = {
     "Function": ["F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8"],
