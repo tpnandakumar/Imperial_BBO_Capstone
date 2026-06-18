@@ -233,6 +233,22 @@ Neural networks were not trained during this stage of the optimisation process. 
 Overall, the most important insight from this iteration is that optimisation, classification, surrogate modelling and information acquisition represent complementary perspectives on the same underlying problem. Effective query selection requires balancing exploitation of known high-performing regions against exploration of uncertain areas that may contain better solutions. As additional evaluations accumulate, increasingly sophisticated models may become justified. However, model complexity should be introduced only when supported by sufficient evidence and data. The Week 4 strategy therefore reflects not only a search for better outputs but also a systematic effort to improve understanding of the search landscape itself.
 
 
-
-
 ## Contents
+
+1. Introduction
+2. Week 3 Results
+3. Comparison of Week 2 and Week 3 Performance
+4. Query Selection Strategy
+5. Learning from Exploration and Exploitation
+6. Reflection on Week 4 Query Selection Strategy
+7. Functional Ranking Evolution
+8. Identifying Exploitation and Boundary Regions
+9. Function 5 and Influential Variables
+10. Decision Matrix and Resource Allocation
+11. Surrogate Modelling and Neural Network Considerations
+12. Optimisation as a Classification Problem
+13. Model Complexity versus Interpretability
+14. Information Gain and Exploration Strategy
+15. Final Week 4 Query Selection
+16. Computational Analysis and Coding Implementation
+17. Conclusion
