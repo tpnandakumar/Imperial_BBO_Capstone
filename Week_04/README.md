@@ -1,5 +1,7 @@
 # Week_04
+
 ## Contents
+
 
 1. Introduction
 2. Week 4 Results
@@ -13,6 +15,7 @@
 10. Information Gain Analysis
 11. Computational Analysis and Coding Implementation
 12. Conclusion
+
 
 ## Introduction
 
