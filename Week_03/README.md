@@ -178,9 +178,6 @@ The calculations presented in this report are fully reproducible using the accom
 ### Output Change Calculation
 Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
 
-### Output Change Calculation
-Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
-
 **Output Change**
 Δy = 2840.99 − 2308.15
 
@@ -197,6 +194,29 @@ This substantial improvement supported the decision to continue exploiting the F
 
 Functions were ranked according to observed output values after each optimisation round. At Week 3, Function 5 produced the highest output (2840.99), followed by Function 8 (9.44), while Functions 4 and 6 remained negative. These rankings were used to guide resource allocation between exploitation, monitoring and exploration activities.
 
+### Python Implementation
+
+All calculations were implemented in Python using the pandas library. The accompanying script `week3_analysis.py` stores optimisation outputs, calculates week-to-week changes, computes percentage improvements, ranks functions according to observed performance and assigns Week 4 query strategies based on the evidence collected during Weeks 1–3. The script also exports the processed results to a CSV file, allowing the analysis to be reproduced and independently verified.
+
+```python
+df["Change_W2_to_W3"] = df["Week3"] - df["Week2"]
+
+df["Percent_Change_W2_to_W3"] = (
+    df["Change_W2_to_W3"] / df["Week2"].abs()
+) * 100
+
+df["Week3_Rank"] = df["Week3"].rank(
+    ascending=False,
+    method="min"
+)
+```
+### Computational Contribution to Query Selection
+
+The computational analysis transformed raw optimisation outputs into interpretable performance metrics. By combining output changes, percentage improvements, ranking information and observed trend stability, the analysis provided objective support for the Week 4 exploitation, exploration and monitoring decisions. This reduced reliance on subjective judgement and ensured that query allocation remained evidence driven.
+
+All calculations were implemented in Python using the pandas and numpy libraries. Visualisations were produced using matplotlib. The accompanying script `week3_analysis.py` calculates week-to-week output changes, percentage improvements, function rankings and strategy allocations directly from the observed optimisation results.
+
+Neural networks were not trained during this stage of the optimisation process. They are discussed as potential future surrogate models once additional observations become available. At the current stage, simpler interpretable approaches such as SVM classification and ranking analysis were considered more appropriate given the limited number of observations.
 
 # Conclusion
 
