@@ -173,32 +173,23 @@ The final Week 4 strategy combined evidence from output trajectories, classifica
 
 The optimisation workflow was supported by computational analysis performed in Python. Weekly function outputs were organised into structured data tables, enabling systematic comparison of performance across optimisation rounds. Quantitative measures including output differences, percentage change, function rankings and trend direction were calculated to support evidence-based query selection. These calculations provided an objective framework for identifying candidate regions for exploitation, monitoring stable functions and prioritising exploratory evaluations in uncertain regions of the search space.
 
+The calculations presented in this report are fully reproducible using the accompanying Python script `week3_analysis.py`. The script calculates output changes, percentage improvements, function rankings and Week 4 strategy allocations directly from the observed optimisation results.
 
 ### Output Change Calculation
-
 Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
 
-\[
-\Delta y = y_{Week3} - y_{Week2}
-\]
+### Output Change Calculation
+Observed output changes were calculated directly from the optimisation results. For Function 5, the output increased from 2308.15 in Week 2 to 2840.99 in Week 3.
 
-\[
-\Delta y = 2840.99 - 2308.15
-\]
+**Output Change**
+Δy = 2840.99 − 2308.15
 
-\[
-\Delta y = 532.84
-\]
+Δy = 532.84
 
-The percentage improvement was:
+**Percentage Improvement**
+%Δ = ((2840.99 − 2308.15) / 2308.15) × 100
 
-\[
-\%\Delta = \frac{2840.99-2308.15}{2308.15}\times100
-\]
-
-\[
-\%\Delta = 23.09\%
-\]
+%Δ = 23.09%
 
 This substantial improvement supported the decision to continue exploiting the Function 5 search region during Week 4 query selection.
 
