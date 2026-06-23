@@ -14,7 +14,8 @@
 9. Decision Matrix and Resource Allocation
 10. Information Gain Analysis
 11. Computational Analysis and Coding Implementation
-12. Conclusion
+12. Repository Files and Reproducibility
+13. Conclusion
 
 
 ## Introduction
@@ -197,7 +198,20 @@ The analysis highlighted the importance of balancing exploration and exploitatio
 
 Overall, the optimisation challenge demonstrated how systematic data collection, quantitative analysis and evidence-based decision making can progressively transform an initially unknown search problem into a structured and interpretable optimisation landscape. The resulting repository provides a transparent record of this process and establishes a reproducible framework for future Bayesian optimisation investigations.
 
-## 12. Conclusion
+## 12 Repository Files and Reproducibility
+
+The Week 4 repository contains supporting files used to preserve optimisation inputs, outputs and analytical results. These files enable the optimisation workflow to be reproduced and independently reviewed.
+
+| File | Purpose |
+|--------|---------|
+| week_04_inputs.csv | Records the Week 4 query coordinates submitted to the optimisation challenge. |
+| week_04_results.csv | Stores the Week 4 outputs returned by the challenge environment. |
+| week_04_analysis.py | Python script used to rank functions, classify optimisation candidates and generate summary outputs. |
+| week_04_analysis_summary.csv | Summary table containing function rankings, outputs and optimisation classifications. |
+
+Together, these files create a transparent computational workflow linking optimisation inputs, observed outputs, quantitative analysis and final interpretations. The repository therefore serves not only as a record of optimisation performance but also as a reproducible framework that can be extended for future Bayesian optimisation investigations.
+
+## 13. Conclusion
 
 The Week 4 optimisation results demonstrated a clear progression from exploratory search toward evidence-driven optimisation. Repeated observations enabled increasingly accurate assessment of function behaviour, leading to the identification of distinct performance tiers and high-performing regions within the search landscape.
 
