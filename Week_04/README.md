@@ -29,12 +29,6 @@ The Week 4 optimisation round produced mixed outcomes across the eight functions
 
 Functions 3, 4 and 6 remained negative, indicating that these search regions continue to present challenges and require further investigation. Function 1 returned a value extremely close to zero, suggesting either a flat landscape or a region with very limited optimisation potential. Overall, the Week 4 results reinforced the distinction between strong exploitation candidates and functions requiring continued exploration.
 
-Table 1. Week 4 Function Outputs
-
-The Week 4 optimisation round produced mixed outcomes across the eight functions. Function 5 remained the strongest performer and achieved its highest value to date (3238.33), confirming that the exploitation strategy continued to identify highly productive regions of the search space. Functions 2 and 7 also demonstrated positive performance, while Function 8 remained a stable high-value performer despite a slight fluctuation from previous weeks.
-
-Functions 3, 4 and 6 remained negative, indicating that these search regions continue to present challenges and require further investigation. Function 1 returned a value extremely close to zero, suggesting either a flat landscape or a region with very limited optimisation potential. Overall, the Week 4 results reinforced the distinction between strong exploitation candidates and functions requiring continued exploration.
-
 # Table 1. Week 4 Function Outputs
 
 | Function | Output       |
