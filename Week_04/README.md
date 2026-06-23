@@ -175,11 +175,13 @@ The progressive reduction of uncertainty represents one of the most important ou
 
 ## 11. Computational Analysis and Coding Implementation
 
+<img width="1024" height="1536" alt="Figure G — Computational Library Ecosystem (advanced version)1" src="https://github.com/user-attachments/assets/eb3b329b-2c40-4d81-9010-370370c0e752" />
+
 The optimisation workflow was supported by a structured computational framework implemented using Python. Numerical calculations were performed using NumPy, while data organisation and analysis were supported through Pandas. Visualisations were generated using Matplotlib to communicate performance trends, optimisation progress and comparative function behaviour.
 
 The computational workflow consisted of several stages. Weekly query inputs and optimisation outputs were recorded and organised into structured datasets. These datasets were then analysed to calculate performance changes, ranking positions and comparative trends across optimisation rounds.
 
-Visualisation scripts were used to generate figures illustrating function growth, ranking evolution and optimisation trajectories. These graphical outputs provided an effective means of identifying patterns that were less obvious from numerical tables alone.
+Visualisation scripts were used to generate figures illustrating function growth, ranking evolution and optimisation trajectories. These graphical outputs provided an effective means of identifying patterns that were Visualisation scripts were used to generate figures illustrating function growth, ranking evolution, information gain and optimisation trajectories, enabling rapid interpretation of optimisation behaviour across successive rounds.
 
 The use of computational tools improved consistency, reproducibility and transparency throughout the optimisation process. By automating calculations and visualisation generation, the likelihood of manual error was reduced while enabling efficient analysis of increasingly complex optimisation behaviour.
 
@@ -195,7 +197,15 @@ The analysis highlighted the importance of balancing exploration and exploitatio
 
 Overall, the optimisation challenge demonstrated how systematic data collection, quantitative analysis and evidence-based decision making can progressively transform an initially unknown search problem into a structured and interpretable optimisation landscape. The resulting repository provides a transparent record of this process and establishes a reproducible framework for future Bayesian optimisation investigations.
 
-These four sections fit naturally after Section 8 and complete the GitHub narrative from optimisation results → resource allocation → information gain → computational implementation → final conclusions.
+## 12. Conclusion
+
+The Week 4 optimisation results demonstrated a clear progression from exploratory search toward evidence-driven optimisation. Repeated observations enabled increasingly accurate assessment of function behaviour, leading to the identification of distinct performance tiers and high-performing regions within the search landscape.
+
+Function 5 emerged as the dominant optimisation target, displaying sustained growth across all four optimisation rounds. Functions 2, 7 and 8 provided additional positive performance signals, while Functions 1, 3, 4 and 6 remained primarily exploratory candidates.
+
+The analysis highlighted the importance of balancing exploration and exploitation throughout the optimisation process. Early exploratory queries generated critical information regarding function behaviour, while later rounds increasingly leveraged this information to focus resources on the most promising regions.
+
+Overall, the optimisation challenge demonstrated how systematic data collection, quantitative analysis and evidence-based decision making can progressively transform an initially unknown search problem into a structured and interpretable optimisation landscape. The resulting repository provides a transparent record of this process and establishes a reproducible framework for future Bayesian optimisation investigations.
 
 
 
