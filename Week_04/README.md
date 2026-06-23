@@ -160,6 +160,9 @@ This decision matrix enabled optimisation effort to be distributed according to 
 
 ## 10. Information Gain Analysis
 
+<img width="1536" height="1024" alt="Figure 3  Information Gain Across Functions" src="https://github.com/user-attachments/assets/d20c8076-970b-4848-9a7f-7a457588cbaa" />
+
+
 A central objective of Bayesian optimisation is the efficient acquisition of information. Each optimisation round not only seeks improved objective values but also increases understanding of the underlying search landscape.
 
 During the early rounds, uncertainty was high across all eight functions. Query selections therefore prioritised exploration to gather information about function behaviour and identify potentially promising regions. The outputs obtained from these exploratory queries revealed substantial differences between functions, allowing increasingly informed decisions in subsequent rounds.
