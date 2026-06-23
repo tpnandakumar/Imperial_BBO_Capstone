@@ -137,3 +137,62 @@ In contrast, Functions 1, 3, 4 and 6 did not provide strong evidence of high-per
 
 Overall, the strongest high-performing region was associated with Function 5, while Function 8 represented a stable high-output region. Functions 2 and 7 remained secondary refinement candidates. This evidence directly informed later query selection by distinguishing functions suitable for exploitation from those requiring further exploration.
 
+
+## 9. Decision Matrix and Resource Allocation
+
+<img width="1402" height="1122" alt="Figure 2 Decission matrix for week 5 resource allocation" src="https://github.com/user-attachments/assets/c9a55aa6-0f78-45d6-b12e-f1dc77482477" />
+
+<img width="1536" height="1024" alt="Figure 2 1  Confidence–Performance Decision Matrix" src="https://github.com/user-attachments/assets/989590fe-07ea-4791-be36-20fe39e1044a" />
+
+
+By Week 4, sufficient information had been collected to support a structured allocation of optimisation effort across the eight functions. Rather than treating all functions equally, observed performance trends enabled the classification of functions according to their expected value for future optimisation.
+
+Function 5 was assigned the highest priority for exploitation. Its sustained growth from 1415.8763939603884 in Week 1 to 3238.333368768757 in Week 4 provided strong evidence that highly productive regions of the search landscape had been identified. Additional optimisation resources directed toward Function 5 were therefore expected to produce the greatest potential gains.
+
+Function 8 was classified as a stable exploitation candidate. Although it did not demonstrate rapid growth, it consistently generated positive outputs throughout all optimisation rounds. This stability suggested that the optimisation process had identified a reliable high-performing region with relatively low uncertainty.
+
+Functions 2 and 7 were assigned to a refinement category. Both functions maintained positive outputs and demonstrated evidence of recoverable performance after periods of weaker results. These functions warranted continued investigation through targeted local exploration and moderate exploitation.
+
+Functions 1, 3, 4 and 6 remained exploratory candidates. Function 1 consistently produced outputs near zero, while Functions 3, 4 and 6 generated negative outputs throughout most optimisation rounds. Although these functions were unlikely to outperform the leading candidates, selective exploration remained valuable for reducing uncertainty and avoiding premature convergence.
+
+This decision matrix enabled optimisation effort to be distributed according to observed evidence rather than intuition, reflecting a progressively more systematic and data-driven optimisation strategy.
+
+
+## 10. Information Gain Analysis
+
+A central objective of Bayesian optimisation is the efficient acquisition of information. Each optimisation round not only seeks improved objective values but also increases understanding of the underlying search landscape.
+
+During the early rounds, uncertainty was high across all eight functions. Query selections therefore prioritised exploration to gather information about function behaviour and identify potentially promising regions. The outputs obtained from these exploratory queries revealed substantial differences between functions, allowing increasingly informed decisions in subsequent rounds.
+
+By Week 4, information gain was evident in several forms. First, a clear ranking hierarchy had emerged, distinguishing strong performers from weaker functions. Second, repeated observations reduced uncertainty surrounding the most promising regions, particularly for Function 5. Third, stable behaviour observed in Functions 2, 7 and 8 improved confidence regarding their likely future performance.
+
+The optimisation process therefore demonstrated the transition from uncertainty-driven exploration toward evidence-driven exploitation. As information accumulated, optimisation decisions became increasingly focused, reducing wasted evaluations and improving overall search efficiency.
+
+The progressive reduction of uncertainty represents one of the most important outcomes of the optimisation process, as improved understanding of the search landscape ultimately drives more effective query selection.
+
+## 11. Computational Analysis and Coding Implementation
+
+The optimisation workflow was supported by a structured computational framework implemented using Python. Numerical calculations were performed using NumPy, while data organisation and analysis were supported through Pandas. Visualisations were generated using Matplotlib to communicate performance trends, optimisation progress and comparative function behaviour.
+
+The computational workflow consisted of several stages. Weekly query inputs and optimisation outputs were recorded and organised into structured datasets. These datasets were then analysed to calculate performance changes, ranking positions and comparative trends across optimisation rounds.
+
+Visualisation scripts were used to generate figures illustrating function growth, ranking evolution and optimisation trajectories. These graphical outputs provided an effective means of identifying patterns that were less obvious from numerical tables alone.
+
+The use of computational tools improved consistency, reproducibility and transparency throughout the optimisation process. By automating calculations and visualisation generation, the likelihood of manual error was reduced while enabling efficient analysis of increasingly complex optimisation behaviour.
+
+This computational framework also forms the foundation for future extensions involving Bayesian optimisation libraries, machine learning workflows and automated decision-support systems.
+
+##  12. Conclusion
+
+The Week 4 optimisation results demonstrated a clear progression from exploratory search toward evidence-driven optimisation. Repeated observations enabled increasingly accurate assessment of function behaviour, leading to the identification of distinct performance tiers and high-performing regions within the search landscape.
+
+Function 5 emerged as the dominant optimisation target, displaying sustained growth across all four optimisation rounds. Functions 2, 7 and 8 provided additional positive performance signals, while Functions 1, 3, 4 and 6 remained primarily exploratory candidates.
+
+The analysis highlighted the importance of balancing exploration and exploitation throughout the optimisation process. Early exploratory queries generated critical information regarding function behaviour, while later rounds increasingly leveraged this information to focus resources on the most promising regions.
+
+Overall, the optimisation challenge demonstrated how systematic data collection, quantitative analysis and evidence-based decision making can progressively transform an initially unknown search problem into a structured and interpretable optimisation landscape. The resulting repository provides a transparent record of this process and establishes a reproducible framework for future Bayesian optimisation investigations.
+
+These four sections fit naturally after Section 8 and complete the GitHub narrative from optimisation results → resource allocation → information gain → computational implementation → final conclusions.
+
+
+
