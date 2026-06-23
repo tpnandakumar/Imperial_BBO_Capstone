@@ -1,1 +1,9 @@
-
+week,function,output,rank,classification
+4,F5,3238.333368768757,1,Dominant exploitation target
+4,F8,9.539439999999999,2,Stable high-performing region
+4,F7,1.1968303712356705,3,Refinement candidate
+4,F2,0.5228458934672892,4,Refinement candidate
+4,F1,0.00000014754580129542488,5,Near-zero exploratory candidate
+4,F3,-0.06037987403160633,6,Low-performing exploratory candidate
+4,F6,-0.8733671274789931,7,Low-performing exploratory candidate
+4,F4,-22.55187651826871,8,Weakest exploratory candidate
