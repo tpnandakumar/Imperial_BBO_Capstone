@@ -121,4 +121,19 @@ Figure 1 illustrates the evolution of the highest-performing functions across th
 
 
 
+## 8. High-Performing Region Identification
+
+The Week 4 results allowed the strongest regions of the search landscape to be identified with greater confidence. Across the first four optimisation rounds, Function 5 emerged as the clearest high-performing region. Its output increased consistently from 1415.8763939603884 in Week 1 to 2308.1487028593933 in Week 2, 2840.9903787629305 in Week 3 and 3238.333368768757 in Week 4. This pattern suggested that successive query points were moving within, or close to, a highly productive area of the objective landscape.
+
+<img width="1536" height="1024" alt="Figure1C_F5_Growth_Curve" src="https://github.com/user-attachments/assets/8b4a22da-742b-4f05-b650-31f3dcd8ca48" />
+
+Function 8 also represented a high-performing region, although with a different pattern. Rather than showing strong growth, it remained consistently positive and stable across the optimisation rounds. Its Week 4 output of 9.539439999999999 confirmed that this function continued to provide reliable performance, suggesting a stable plateau rather than a rapidly improving region.
+
+Functions 2 and 7 showed moderate high-performing potential. Function 2 recovered to 0.5228458934672892 in Week 4, while Function 7 improved to 1.1968303712356705. These results suggested that both functions may contain useful local regions requiring further refinement, although neither demonstrated the same strong growth pattern as Function 5.
+
+<img width="1536" height="1024" alt="Figure1B_Zoomed_F2_F7_F8" src="https://github.com/user-attachments/assets/d65a5e0f-0430-4ff8-9fdc-b391fa62449f" />
+
+In contrast, Functions 1, 3, 4 and 6 did not provide strong evidence of high-performing regions by Week 4. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to produce negative outputs. These functions were therefore better interpreted as exploratory targets rather than exploitation candidates.
+
+Overall, the strongest high-performing region was associated with Function 5, while Function 8 represented a stable high-output region. Functions 2 and 7 remained secondary refinement candidates. This evidence directly informed later query selection by distinguishing functions suitable for exploitation from those requiring further exploration.
 
