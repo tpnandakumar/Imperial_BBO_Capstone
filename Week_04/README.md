@@ -58,6 +58,10 @@ Functions exhibiting poor or unstable behaviour, including F3, F4 and F6, were a
 
 # 5. Exploration vs Exploitation Analysis
 
+# Figure 2. Exploration vs Exploitation Matrix
+
+<img width="1402" height="1122" alt="Figure2_Exploration_Exploitation_Matrix" src="https://github.com/user-attachments/assets/a32bb202-4912-4cf9-899b-44fd4692de61" />
+
 The Week 4 optimisation strategy reflected a deliberate balance between exploration and exploitation. Exploitation was prioritised for functions that had demonstrated consistent positive performance in previous rounds, while exploration was reserved for functions whose behaviour remained uncertain or unstable.
 
 Function 5 represented the strongest exploitation candidate. Its output increased from 1415.88 in Week 1 to 2308.15 in Week 2, 2840.99 in Week 3 and 3238.33 in Week 4. This sustained upward trend provided strong evidence that the search process had identified a highly productive region of the landscape. Consequently, query selection focused on local refinement rather than broad exploration.
@@ -92,6 +96,12 @@ Functions 7 and 2 formed a secondary performance tier. Both functions maintained
 Functions 1, 3, 6 and 4 occupied the lower portion of the ranking hierarchy. Function 1 remained close to zero throughout the challenge, suggesting either a flat landscape or limited optimisation potential. Functions 3 and 6 consistently produced negative outputs despite exploratory movements, while Function 4 remained the weakest-performing function overall, generating the most negative values observed during the optimisation process.
 
 The evolution of these rankings demonstrates how repeated observations gradually transformed an initially uncertain search problem into a structured optimisation landscape with clearly differentiated performance tiers. By Week 4, the hierarchy of functions was sufficiently stable to support increasingly targeted and evidence-driven query selection.
+
+# Figure 1. Function Output Evolution (Weeks 1–4)
+
+<img width="1536" height="1024" alt="Figure1_Function_Output_Evolution_With_Caption" src="https://github.com/user-attachments/assets/28a9b6b7-93cf-463f-a8f1-ac80b26d6c71" />
+
+Figure 1 illustrates the evolution of the highest-performing functions across the four optimisation rounds and demonstrates the emergence of distinct performance tiers.
 
 **Figure 1C. Functional Ranking Evolution Across Weeks 1–4**
 <img width="1536" height="1024" alt="Figure1C_F5_Growth_Curve" src="https://github.com/user-attachments/assets/f2e01e78-f032-4957-a6da-0fb85d43d965" />
