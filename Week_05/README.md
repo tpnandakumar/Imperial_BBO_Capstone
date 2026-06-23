@@ -1,4 +1,3 @@
-# Week_05
 Introduction
 Week 5 Results
 Comparison of Week 4 and Week 5 Performance
