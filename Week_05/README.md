@@ -49,7 +49,26 @@ The Week 05 results confirmed that Function 5 remained the strongest candidate f
 
 ...
 
+
 ## 3. Comparison of Week 4 and Week 5 Performance
+
+A comparison between the Week 4 and Week 5 results demonstrated that the optimisation strategy continued to improve overall performance while providing additional information about the unknown search landscape. The most significant improvement occurred in Function 5, which increased from 3238.000000 in Week 4 to 3682.211062 in Week 5. This confirmed that the selected query region continued to produce higher objective values and justified further exploitation during the following optimisation round.
+
+Function 7 also demonstrated continued improvement, increasing from 1.333900 to 1.380300, while Function 8 remained highly stable with only a small reduction from 9.602900 to 9.511300. The stability of these functions suggested that the optimisation process had identified productive regions of the search space where only minor refinements were required.
+
+In contrast, Functions 3, 4 and 6 remained negative and showed little evidence of approaching favourable regions. Function 4 continued to produce the lowest output, indicating that the selected query location was unlikely to be close to an optimum. These functions therefore remained candidates for continued exploration rather than exploitation.
+
+Overall, the comparison demonstrated a gradual transition from broad exploratory sampling towards evidence based optimisation. The Week 5 results increased confidence in exploiting high performing functions while continuing to investigate uncertain regions of the search space using carefully selected exploratory queries.
+
+**Figure 1B. Comparison of Week 4 and Week 5 Performance**
+
+
+<img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison" src="https://github.com/user-attachments/assets/2ab1f749-1443-40df-aed6-39e31d6e59c6" />
+
+
+<img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison 2" src="https://github.com/user-attachments/assets/d0fe9402-8032-45ce-a47b-fea4cac2154c" />
+
+
 
 ...
 
