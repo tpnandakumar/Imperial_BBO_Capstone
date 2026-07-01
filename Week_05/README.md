@@ -43,7 +43,7 @@ Week 05 produced further evidence regarding the behaviour of the eight unknown o
 
 **Figure 1A. Function Output Evolution (Weeks 1 to 5)**
 
-*Insert infographic here.*
+<img width="1536" height="1024" alt="Function output evolution across weeks" src="https://github.com/user-attachments/assets/d9eb3c68-b715-45c8-8969-832a5844e458" />
 
 The Week 05 results confirmed that Function 5 remained the strongest candidate for continued exploitation, while Functions 7 and 8 maintained stable performance. In contrast, Functions 3, 4 and 6 continued to exhibit greater uncertainty and required further exploration to improve understanding of their underlying response surfaces. These observations provided the evidence used to guide the Week 06 query selection.
 
