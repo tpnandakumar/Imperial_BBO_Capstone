@@ -69,6 +69,22 @@ Overall, the comparison demonstrated a gradual transition from broad exploratory
 
 ## 4. Query Selection Strategy
 
+The Week 05 query selection strategy was guided by evidence accumulated from the previous optimisation rounds rather than random exploration. Results from Weeks 1 to 4 revealed which functions were responding positively to incremental refinement and which continued to exhibit high uncertainty. This information was used to allocate the limited query budget more effectively across the eight unknown objective functions.
+
+Function 5 remained the highest priority for continued exploitation because it had demonstrated consistent improvement throughout successive optimisation rounds. Small adjustments were made around the previously successful query region to maximise the likelihood of further performance gains while avoiding unnecessary movement away from a promising optimum.
+
+Functions 7 and 8 demonstrated stable positive behaviour and therefore required only modest refinement. Maintaining exploration close to these established regions balanced the potential for incremental improvement with the need to confirm the consistency of previous observations.
+
+In contrast, Functions 1, 3, 4 and 6 continued to produce weaker or negative outputs. These functions remained candidates for exploratory sampling because their search landscapes were still poorly understood. Broader exploration increased the likelihood of identifying previously undiscovered high performing regions while reducing uncertainty surrounding their underlying objective functions.
+
+Overall, the Week 05 query selection strategy reflected a balanced optimisation approach that combined exploitation of high performing functions with continued exploration of uncertain regions. This evidence based allocation of queries maximised information gain while supporting steady improvement across successive optimisation rounds.
+
+**Figure 2. Week 05 Query Selection Strategy**
+
+
+<img width="1536" height="1024" alt="Figure 2 Week 05 query selection strategy diagram" src="https://github.com/user-attachments/assets/f7cd7b17-db1d-43fd-a05c-de6abb38eb48" />
+
+
 ...
 
 ## 5. Exploration vs Exploitation Analysis
