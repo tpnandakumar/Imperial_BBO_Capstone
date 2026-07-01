@@ -121,10 +121,23 @@ Overall, the Week 06 query selection reflected a progressive learning process in
 
 <img width="1024" height="1536" alt="Figure 4 Week 06 query selection process flow" src="https://github.com/user-attachments/assets/a67f0606-01c6-43bd-a05a-1934d5d5b6e5" />
 
-
 ...
 
 ## 7. Functional Ranking Evolution
+
+Ranking the objective functions after each optimisation round provided a simple method for monitoring performance trends throughout the Black Box Optimisation process. Rather than considering each function independently, the ranking system enabled direct comparison of relative performance across all eight functions and highlighted changes in optimisation priorities over successive weeks.
+
+By Week 05, Function 5 had clearly established itself as the highest performing objective function. Its continued improvement across successive optimisation rounds demonstrated that the selected query region consistently produced superior objective values, supporting the decision to prioritise exploitation. Function 8 remained the second highest performing function, while Function 7 continued to show gradual but consistent improvement, strengthening confidence in local refinement.
+
+Function 2 demonstrated moderate performance but exhibited greater variability than Functions 7 and 8. Although it remained a positive contributor, additional observations were required before allocating further exploitation resources. In contrast, Functions 1, 3, 4 and 6 continued to occupy the lower positions in the ranking because their outputs remained close to zero or negative, indicating that favourable search regions had not yet been identified.
+
+Monitoring the evolution of functional rankings also provided valuable insight into the effectiveness of the optimisation strategy. Functions that consistently improved gradually moved towards higher rankings, whereas functions producing weaker responses remained candidates for continued exploration. This ranking system therefore served as an additional decision support tool for allocating future query resources.
+
+Overall, the Week 05 functional rankings confirmed that optimisation decisions should be driven by observed performance rather than fixed assumptions. Combining functional rankings with evidence from previous optimisation rounds improved confidence in balancing exploitation of high performing functions with exploration of uncertain regions.
+
+**Figure 5. Functional Ranking Evolution**
+
+<img width="1536" height="1024" alt="Figure 5 Functional ranking evolution analysis" src="https://github.com/user-attachments/assets/35f09ac4-3850-46c6-9860-47021eb0cc06" />
 
 ...
 
