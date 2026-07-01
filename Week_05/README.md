@@ -140,8 +140,22 @@ Overall, the Week 05 functional rankings confirmed that optimisation decisions s
 <img width="1536" height="1024" alt="Figure 5 Functional ranking evolution analysis" src="https://github.com/user-attachments/assets/35f09ac4-3850-46c6-9860-47021eb0cc06" />
 
 ...
+## 8. High Performing Region Identification
 
-## 8. High-Performing Region Identification
+One of the primary objectives of Bayesian Black Box Optimisation is to identify regions of the search space that consistently produce favourable objective values. Rather than focusing solely on individual outputs, the optimisation process seeks to recognise patterns that indicate where high quality solutions are most likely to be located. By Week 05, sufficient observations had been collected to begin identifying these high performing regions with greater confidence.
+
+Function 5 provided the strongest evidence of a productive search region. Successive optimisation rounds demonstrated consistent improvements in objective value, indicating that the surrounding query space contained a promising optimum. This justified continued local exploitation through carefully controlled adjustments while maintaining proximity to the most successful query locations.
+
+Functions 7 and 8 also demonstrated stable positive performance, suggesting that useful regions of the search landscape had been identified. Although their objective values were substantially lower than those of Function 5, their consistency indicated that further local refinement could provide incremental improvements while reducing unnecessary exploration.
+
+Conversely, Functions 1, 3, 4 and 6 continued to exhibit greater uncertainty because their outputs remained close to zero or negative. These observations suggested that the corresponding search regions had not yet revealed favourable objective values. Continued exploration therefore remained necessary to improve understanding of these functions and identify alternative regions with greater optimisation potential.
+
+Overall, identifying high performing regions enabled optimisation resources to be allocated more efficiently. Concentrating exploitation around proven search regions while continuing exploration in uncertain areas improved both optimisation performance and the overall understanding of the hidden search landscape.
+
+**Figure 6. High Performing Region Identification**
+
+<img width="1536" height="1024" alt="figure 6 High-performing region identification after Week 05" src="https://github.com/user-attachments/assets/5ac4353c-e21c-4b61-863a-5d1f50320854" />
+
 
 ...
 
