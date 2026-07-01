@@ -64,8 +64,7 @@ Overall, the comparison demonstrated a gradual transition from broad exploratory
 
 <img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison" src="https://github.com/user-attachments/assets/2ab1f749-1443-40df-aed6-39e31d6e59c6" />
 
-
-<img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison 2" src="https://github.com/user-attachments/assets/d0fe9402-8032-45ce-a47b-fea4cac2154c" />
+<img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison 2" src="https://github.com/user-attachments/assets/dd64911d-df72-43bc-9640-031ba42c791f" />
 
 ...
 
