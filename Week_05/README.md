@@ -60,9 +60,8 @@ In contrast, Functions 3, 4 and 6 remained negative and showed little evidence o
 
 Overall, the comparison demonstrated a gradual transition from broad exploratory sampling towards evidence based optimisation. The Week 5 results increased confidence in exploiting high performing functions while continuing to investigate uncertain regions of the search space using carefully selected exploratory queries.
 
-**Figure 1B. Comparison of Week 4 and Week 5 Performance**
+**Figure 1B.1 Comparison of Week 4 and Week 5 Performance**
 
-<img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison" src="https://github.com/user-attachments/assets/2ab1f749-1443-40df-aed6-39e31d6e59c6" />
 
 <img width="1536" height="1024" alt="Week 4 vs Week 5 performance comparison 2" src="https://github.com/user-attachments/assets/dd64911d-df72-43bc-9640-031ba42c791f" />
 
