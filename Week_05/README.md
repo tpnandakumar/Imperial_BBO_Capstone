@@ -107,6 +107,21 @@ Overall, Week 05 demonstrated that effective optimisation depends not only on ma
 
 ## 6. Reflection on Week 6 Query Selection
 
+The Week 06 query selection was developed directly from the evidence obtained during the Week 05 optimisation cycle. Rather than relying on intuition, each query was selected according to the observed performance of the corresponding objective function. This ensured that the limited query budget was allocated to maximise both optimisation performance and information gain.
+
+Function 5 remained the primary candidate for exploitation because it consistently produced the highest objective values throughout successive optimisation rounds. The Week 05 results strengthened confidence that the selected search region contained a high quality solution. Consequently, only small adjustments were introduced to maintain progress while reducing the risk of moving away from the most promising region.
+
+Functions 7 and 8 continued to demonstrate stable positive performance and therefore remained suitable for local refinement. Minor modifications around previously successful query locations provided an opportunity to confirm the stability of these regions while identifying any incremental improvements that might further increase performance.
+
+In contrast, Functions 1, 3, 4 and 6 continued to exhibit greater uncertainty. Their outputs suggested that the search process had not yet identified favourable regions of the search landscape. Additional exploratory sampling was therefore retained to improve understanding of these functions and increase the likelihood of locating more productive areas for future optimisation.
+
+Overall, the Week 06 query selection reflected a progressive learning process in which each optimisation round built upon knowledge obtained from previous observations. This evidence based approach improved confidence in decision making, strengthened the balance between exploration and exploitation, and provided a more systematic framework for continuing optimisation in subsequent weeks.
+
+**Figure 4. Reflection on Week 06 Query Selection**
+
+<img width="1024" height="1536" alt="Figure 4 Week 06 query selection process flow" src="https://github.com/user-attachments/assets/a67f0606-01c6-43bd-a05a-1934d5d5b6e5" />
+
+
 ...
 
 ## 7. Functional Ranking Evolution
