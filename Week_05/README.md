@@ -161,8 +161,6 @@ Overall, identifying high performing regions enabled optimisation resources to b
 
 ## 9. Decision Matrix and Resource Allocation
 
-## 9. Decision Matrix and Resource Allocation
-
 The allocation of query resources during Week 05 was guided by a structured decision matrix that combined observed performance with confidence in the underlying search regions. Rather than distributing queries equally across all objective functions, resources were prioritised according to the evidence collected during previous optimisation rounds. This approach ensured that the limited query budget was used efficiently while maintaining an appropriate balance between exploration and exploitation.
 
 Function 5 received the highest priority because it consistently produced the strongest objective values across successive weeks. The evidence indicated that the surrounding search region contained a productive optimum, making continued exploitation the most effective use of available resources. Small local refinements were therefore prioritised to maximise further improvements while maintaining stability.
@@ -178,8 +176,6 @@ Overall, the decision matrix provided a systematic framework for allocating reso
 <img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation analysis" src="https://github.com/user-attachments/assets/e3af9e59-673d-4b91-b936-0ae90a3e3d15" />
 
 ...
-
-## 10. Information Gain Analysis
 
 ## 10. Information Gain Analysis
 
@@ -201,8 +197,6 @@ Overall, the Week 05 information gain analysis demonstrated that optimisation pr
 
 ## 11. Computational Analysis and Coding Implementation
 
-## 11. Computational Analysis and Coding Implementation
-
 The computational analysis for Week 05 combined structured data processing with automated performance evaluation to support evidence based optimisation decisions. Python scripts were developed to organise the weekly inputs and outputs, calculate performance metrics and generate summary tables that assisted interpretation of the optimisation results. Automating these tasks improved consistency, reduced manual errors and ensured that each optimisation round could be reproduced accurately.
 
 NumPy provided efficient numerical operations for handling the optimisation data, while Pandas was used to manage tabular datasets, perform comparisons between optimisation rounds and export structured CSV files. These libraries simplified the processing of multiple objective functions and enabled rapid analysis of performance trends across successive weeks.
@@ -221,8 +215,6 @@ Overall, the computational implementation transformed raw optimisation results i
 
 ## 12. Repository Files and Reproducibility
 
-## 12. Repository Files and Reproducibility
-
 Maintaining a well organised repository is essential for ensuring transparency, reproducibility and long term project development. The Week 05 repository has been structured so that all optimisation inputs, outputs, analysis scripts and documentation are stored in clearly defined files. This organisation enables every stage of the optimisation process to be reviewed, verified and reproduced from the available records.
 
 The repository contains the submitted query values, returned objective function outputs, automated analysis scripts and summary tables generated during the computational workflow. Each file has a specific purpose within the optimisation pipeline and contributes to a complete record of the decision making process. Organising these resources into a consistent directory structure improves accessibility and simplifies future development.
@@ -238,8 +230,6 @@ Overall, the repository structure provides a reliable foundation for documenting
 <img width="1536" height="1024" alt="Figure 10  Repository Files and Reproducibility" src="https://github.com/user-attachments/assets/275dfa90-b896-4d84-94e6-8ff28452bea4" />
 
 ...
-
-## 13. Conclusion
 
 ## 13. Conclusion
 
