@@ -1,1 +1,9 @@
-
+Function,Week_05_Output,Rank,Strategy,Positive_Output
+F5,3682.2110623386798,1,Exploit,True
+F8,9.511300000000000,2,Monitor,True
+F7,1.380929993361286,3,Refine,True
+F2,0.280168223077225,4,Refine,True
+F1,0.012779642669915,5,Explore,True
+F3,-0.113922063777104,6,Explore,False
+F6,-1.073875453695542,7,Explore,False
+F4,-27.440514960869220,8,Explore,False
