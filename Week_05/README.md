@@ -15,6 +15,7 @@
 11. Computational Analysis and Coding Implementation
 12. Repository Files and Reproducibility
 13. Conclusion
+14. References
 
 ## 1. Introduction
 
@@ -156,24 +157,114 @@ Overall, identifying high performing regions enabled optimisation resources to b
 
 <img width="1536" height="1024" alt="figure 6 High-performing region identification after Week 05" src="https://github.com/user-attachments/assets/5ac4353c-e21c-4b61-863a-5d1f50320854" />
 
-
 ...
 
 ## 9. Decision Matrix and Resource Allocation
+
+## 9. Decision Matrix and Resource Allocation
+
+The allocation of query resources during Week 05 was guided by a structured decision matrix that combined observed performance with confidence in the underlying search regions. Rather than distributing queries equally across all objective functions, resources were prioritised according to the evidence collected during previous optimisation rounds. This approach ensured that the limited query budget was used efficiently while maintaining an appropriate balance between exploration and exploitation.
+
+Function 5 received the highest priority because it consistently produced the strongest objective values across successive weeks. The evidence indicated that the surrounding search region contained a productive optimum, making continued exploitation the most effective use of available resources. Small local refinements were therefore prioritised to maximise further improvements while maintaining stability.
+
+Functions 7 and 8 demonstrated stable positive performance and moderate confidence. These functions were allocated sufficient resources for local refinement to confirm the consistency of previous observations while identifying opportunities for incremental improvement. This strategy reduced unnecessary exploration while continuing to strengthen confidence in these regions.
+
+In contrast, Functions 1, 3, 4 and 6 remained associated with greater uncertainty. Their weaker objective values suggested that favourable regions had not yet been identified. Consequently, a larger proportion of exploratory queries was directed towards these functions to improve understanding of their search landscapes and identify alternative regions with greater optimisation potential.
+
+Overall, the decision matrix provided a systematic framework for allocating resources according to observed evidence rather than fixed assumptions. This structured approach improved optimisation efficiency, increased information gain and supported progressive refinement of the Bayesian Black Box Optimisation strategy.
+
+**Figure 7. Decision Matrix and Resource Allocation**
+
+<img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation analysis" src="https://github.com/user-attachments/assets/e3af9e59-673d-4b91-b936-0ae90a3e3d15" />
 
 ...
 
 ## 10. Information Gain Analysis
 
+## 10. Information Gain Analysis
+
+Information gain is a fundamental objective of Bayesian Black Box Optimisation because each query contributes not only to improving objective values but also to increasing knowledge of the hidden search landscape. During Week 05, every submitted query was evaluated according to the amount of new information it provided about the corresponding objective function. This approach ensured that the limited query budget was used to maximise both learning and optimisation performance.
+
+Function 5 generated the greatest practical information gain by confirming that the previously identified search region continued to produce progressively higher objective values. This reinforced confidence in the current optimisation strategy and justified continued exploitation through carefully controlled local refinement. The consistent improvement also reduced uncertainty regarding the location of a productive search region.
+
+Functions 7 and 8 contributed moderate information gain by confirming the stability of their respective search regions. Although their improvements were smaller, repeated positive results increased confidence that these regions could continue to benefit from incremental refinement while maintaining reliable performance.
+
+Conversely, Functions 1, 3, 4 and 6 produced valuable information despite weaker objective values. Their continued negative or uncertain responses helped eliminate less productive areas of the search space and guided future exploration towards alternative regions. In Bayesian optimisation, identifying where favourable solutions are unlikely to exist is as valuable as identifying successful regions because it reduces uncertainty and improves future decision making.
+
+Overall, the Week 05 information gain analysis demonstrated that optimisation progress should be evaluated using both objective performance and the knowledge obtained from each query. Combining these two perspectives strengthened the evidence based optimisation strategy and improved the efficiency of future query selection.
+
+**Figure 8. Information Gain Analysis**
+
+<img width="1536" height="1024" alt="Figure 8  Information Gain Analysis" src="https://github.com/user-attachments/assets/251596e8-a313-48f0-9716-6f0ded3241a3" />
+
 ...
 
 ## 11. Computational Analysis and Coding Implementation
+
+## 11. Computational Analysis and Coding Implementation
+
+The computational analysis for Week 05 combined structured data processing with automated performance evaluation to support evidence based optimisation decisions. Python scripts were developed to organise the weekly inputs and outputs, calculate performance metrics and generate summary tables that assisted interpretation of the optimisation results. Automating these tasks improved consistency, reduced manual errors and ensured that each optimisation round could be reproduced accurately.
+
+NumPy provided efficient numerical operations for handling the optimisation data, while Pandas was used to manage tabular datasets, perform comparisons between optimisation rounds and export structured CSV files. These libraries simplified the processing of multiple objective functions and enabled rapid analysis of performance trends across successive weeks.
+
+The Week 05 analysis script also generated summary statistics that supported ranking, comparison and decision making. These computational outputs complemented the graphical visualisations presented throughout the repository and provided an objective foundation for selecting future query locations. The use of automated analysis reduced subjective interpretation and strengthened the reproducibility of the optimisation workflow.
+
+CSV files were used to store both the submitted query values and the corresponding objective function outputs. This structured data format ensured compatibility with future analysis scripts and allowed results from different optimisation rounds to be compared efficiently. Maintaining organised datasets also simplified verification and future expansion of the repository.
+
+Overall, the computational implementation transformed raw optimisation results into structured evidence that supported systematic decision making. Combining automated coding, numerical analysis and reproducible data management strengthened the technical foundation of the Bayesian Black Box Optimisation project and prepared the repository for continued development in subsequent weeks.
+
+**Figure 9. Computational Analysis and Coding Implementation**
+
+<img width="1536" height="1024" alt="Figure 9  Computational Analysis and Coding Implementation" src="https://github.com/user-attachments/assets/e76b90ae-9643-4e3a-887b-887e70a349ff" />
 
 ...
 
 ## 12. Repository Files and Reproducibility
 
+## 12. Repository Files and Reproducibility
+
+Maintaining a well organised repository is essential for ensuring transparency, reproducibility and long term project development. The Week 05 repository has been structured so that all optimisation inputs, outputs, analysis scripts and documentation are stored in clearly defined files. This organisation enables every stage of the optimisation process to be reviewed, verified and reproduced from the available records.
+
+The repository contains the submitted query values, returned objective function outputs, automated analysis scripts and summary tables generated during the computational workflow. Each file has a specific purpose within the optimisation pipeline and contributes to a complete record of the decision making process. Organising these resources into a consistent directory structure improves accessibility and simplifies future development.
+
+The README document provides a comprehensive narrative describing the objectives, methodology, computational analysis and interpretation of the Week 05 optimisation results. Supporting figures, tables and visualisations are integrated throughout the documentation to provide a clear explanation of the optimisation strategy and the evidence supporting each decision.
+
+Maintaining reproducible computational workflows also allows future optimisation rounds to build directly upon previous work. New results can be incorporated into the existing repository without changing the underlying analytical framework. This approach supports continuous development while preserving the complete history of the optimisation process.
+
+Overall, the repository structure provides a reliable foundation for documenting the Bayesian Black Box Optimisation project. Combining organised data management, reproducible computational analysis and comprehensive documentation strengthens both the scientific quality and the professional presentation of the repository.
+
+**Figure 10. Repository Files and Reproducibility**
+
+<img width="1536" height="1024" alt="Figure 10  Repository Files and Reproducibility" src="https://github.com/user-attachments/assets/275dfa90-b896-4d84-94e6-8ff28452bea4" />
 
 ...
 
 ## 13. Conclusion
+
+## 13. Conclusion
+
+Week 05 represented another important stage in the progressive development of the Bayesian Black Box Optimisation strategy. The results demonstrated that evidence accumulated across successive optimisation rounds can be used to guide increasingly informed query selection and improve overall optimisation performance. Rather than relying on intuition, optimisation decisions were supported by objective analysis, computational evidence and systematic interpretation of the returned function values.
+
+The analyses presented throughout this repository demonstrated how performance comparisons, functional rankings, high performing region identification, decision matrices and information gain assessments collectively contributed to a structured optimisation framework. These complementary analyses strengthened confidence in the continued exploitation of Function 5 while supporting selective refinement of Functions 7 and 8 and continued exploration of the remaining objective functions.
+
+The computational workflow further reinforced the reproducibility of the project through automated analysis, structured data management and comprehensive documentation. Python scripts, CSV datasets, visualisations and repository organisation combined to create a transparent and repeatable optimisation process that can be extended throughout the remaining weeks of the competition.
+
+Overall, Week 05 demonstrated measurable progress towards understanding the hidden objective functions while maintaining an appropriate balance between exploration and exploitation. The knowledge gained during this optimisation round provides a stronger foundation for Week 06 and subsequent iterations, supporting continual refinement of both the optimisation strategy and the technical framework documented throughout this repository.
+
+## 14 References
+
+1. Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimisation of Expensive Black Box Functions. *Journal of Global Optimization*, 13(4), 455–492.
+
+2. Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & De Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. *Proceedings of the IEEE*, 104(1), 148–175.
+
+3. Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. *Advances in Neural Information Processing Systems (NeurIPS)*, 25.
+
+4. Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. *Journal of Machine Learning Research*, 12, 2825–2830.
+
+5. Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array Programming with NumPy. *Nature*, 585, 357–362.
+
+6. McKinney, W. (2010). Data Structures for Statistical Computing in Python. *Proceedings of the 9th Python in Science Conference*, 56–61.
+
+7. Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. *Nature Methods*, 17, 261–272.
+
+8. Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. *Computing in Science & Engineering*, 9(3), 90–95.
