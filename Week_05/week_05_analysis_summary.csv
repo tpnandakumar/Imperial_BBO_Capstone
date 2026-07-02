@@ -1,9 +1,9 @@
-Function,Week_05_Output,Rank,Strategy,Positive_Output
-F5,3682.2110623386798,1,Exploit,True
-F8,9.511300000000000,2,Monitor,True
-F7,1.380929993361286,3,Refine,True
-F2,0.280168223077225,4,Refine,True
-F1,0.012779642669915,5,Explore,True
-F3,-0.113922063777104,6,Explore,False
-F6,-1.073875453695542,7,Explore,False
-F4,-27.440514960869220,8,Explore,False
+Function,Week_05_Output,Rank,Strategy,Confidence,Information_Gain,Performance_Status,Interpretation
+F5,3682.2110623386798,1,Exploit,High,High,Best Performer,Consistent improvement across successive optimisation rounds. Continue local exploitation.
+F8,9.511300000000000,2,Monitor,High,Moderate,Stable High Performance,Stable objective values suggest a reliable search region requiring only minor refinement.
+F7,1.3809299933612855,3,Refine,Moderate,Moderate,Improving,Steady improvement supports continued local refinement.
+F2,0.28016822307722516,4,Refine,Moderate,Moderate,Positive,Moderate positive performance with potential for further optimisation.
+F1,0.012779642669914939,5,Explore,Low,Low,Near Zero,Little improvement observed. Continue exploratory sampling.
+F3,-0.11392206377710448,6,Explore,Low,Moderate,Negative,Negative output indicates that improved search regions have not yet been identified.
+F6,-1.073875453695542,7,Explore,Low,Moderate,Negative,Continued exploration required to reduce uncertainty.
+F4,-27.44051496086922,8,Explore,Very Low,High,Worst Performer,Lowest objective value. Broader exploration recommended.
