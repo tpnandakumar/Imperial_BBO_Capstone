@@ -1,11 +1,15 @@
 """
 Week 05 Analysis Tool
 Imperial BBO Capstone
+
+This script reads Week 05 results, ranks all functions, assigns
+strategy classifications and exports a reproducible analysis summary.
 """
 
 import pandas as pd
 
-results = {
+
+WEEK_05_RESULTS = {
     "F1": 0.012779642669914939,
     "F2": 0.28016822307722516,
     "F3": -0.11392206377710448,
@@ -16,7 +20,8 @@ results = {
     "F8": 9.5113,
 }
 
-strategy = {
+
+STRATEGY = {
     "F1": "Explore",
     "F2": "Refine",
     "F3": "Explore",
@@ -27,91 +32,137 @@ strategy = {
     "F8": "Monitor",
 }
 
-df = pd.DataFrame(
-    [
-        {
-            "Function": function,
-            "Week_05_Output": output,
-            "Positive_Output": output > 0,
-            "Strategy": strategy[function],
-        }
-        for function, output in results.items()
+
+CONFIDENCE = {
+    "F1": "Low",
+    "F2": "Moderate",
+    "F3": "Low",
+    "F4": "Very Low",
+    "F5": "High",
+    "F6": "Low",
+    "F7": "Moderate",
+    "F8": "High",
+}
+
+
+INFORMATION_GAIN = {
+    "F1": "Low",
+    "F2": "Moderate",
+    "F3": "Moderate",
+    "F4": "High",
+    "F5": "High",
+    "F6": "Moderate",
+    "F7": "Moderate",
+    "F8": "Moderate",
+}
+
+
+CURRENT_ASSESSMENT = {
+    "F1": "Near Zero",
+    "F2": "Positive",
+    "F3": "Negative",
+    "F4": "Worst Performer",
+    "F5": "Best Performer",
+    "F6": "Negative",
+    "F7": "Improving",
+    "F8": "Stable High Performance",
+}
+
+
+INTERPRETATION = {
+    "F1": "Little improvement observed. Continue exploratory sampling.",
+    "F2": "Moderate positive performance with potential for further optimisation.",
+    "F3": "Negative output indicates that improved search regions have not yet been identified.",
+    "F4": "Lowest objective value. Broader exploration recommended.",
+    "F5": "Consistent improvement across successive optimisation rounds. Continue local exploitation.",
+    "F6": "Continued exploration required to reduce uncertainty.",
+    "F7": "Steady improvement supports continued local refinement.",
+    "F8": "Stable objective values suggest a reliable search region requiring only minor refinement.",
+}
+
+
+def build_summary() -> pd.DataFrame:
+    rows = []
+
+    for function, output in WEEK_05_RESULTS.items():
+        rows.append(
+            {
+                "Function": function,
+                "Week_05_Output": output,
+                "Strategy": STRATEGY[function],
+                "Confidence": CONFIDENCE[function],
+                "Information_Gain": INFORMATION_GAIN[function],
+                "Current_Assessment": CURRENT_ASSESSMENT[function],
+                "Interpretation": INTERPRETATION[function],
+            }
+        )
+
+    df = pd.DataFrame(rows)
+
+    df["Rank"] = df["Week_05_Output"].rank(
+        ascending=False,
+        method="min"
+    ).astype(int)
+
+    df = df[
+        [
+            "Function",
+            "Week_05_Output",
+            "Rank",
+            "Strategy",
+            "Confidence",
+            "Information_Gain",
+            "Current_Assessment",
+            "Interpretation",
+        ]
     ]
-)
 
-df["Rank"] = df["Week_05_Output"].rank(ascending=False, method="min").astype(int)
-df["Absolute_Output"] = df["Week_05_Output"].abs()
-df = df.sort_values("Rank")
+    df = df.sort_values("Rank")
 
-summary = df[
-    ["Function", "Week_05_Output", "Rank", "Strategy", "Positive_Output", "Absolute_Output"]
-]
+    return df
 
-ranking = df[["Rank", "Function", "Week_05_Output", "Strategy"]]
 
-statistics = pd.DataFrame(
-    {
-        "Metric": [
-            "Best Function",
-            "Best Output",
-            "Worst Function",
-            "Worst Output",
-            "Positive Outputs",
-            "Negative Outputs",
-            "Mean Output",
-            "Median Output",
-        ],
-        "Value": [
-            df.iloc[0]["Function"],
-            df.iloc[0]["Week_05_Output"],
-            df.iloc[-1]["Function"],
-            df.iloc[-1]["Week_05_Output"],
-            int(df["Positive_Output"].sum()),
-            int((~df["Positive_Output"]).sum()),
-            df["Week_05_Output"].mean(),
-            df["Week_05_Output"].median(),
-        ],
-    }
-)
+def print_report(df: pd.DataFrame) -> None:
+    best = df.iloc[0]
+    worst = df.iloc[-1]
 
-decision_matrix = pd.DataFrame(
-    [
-        ["F5", "Very high", "High", "Exploit", "Best performer with sustained improvement"],
-        ["F8", "High", "High", "Monitor", "Stable high output"],
-        ["F7", "Moderate high", "Moderate", "Refine", "Stable positive output"],
-        ["F2", "Moderate", "Moderate", "Refine", "Positive but variable"],
-        ["F1", "Low", "Low", "Explore", "Near zero output"],
-        ["F3", "Low", "Low", "Explore", "Negative output"],
-        ["F6", "Low", "Low", "Explore", "Negative output"],
-        ["F4", "Very low", "Very low", "Explore", "Lowest output"],
-    ],
-    columns=["Function", "Performance_Level", "Confidence", "Strategy", "Rationale"],
-)
+    print("\nWeek 05 BBO Analysis Report")
+    print("=" * 40)
+    print(f"Best Function: {best['Function']}")
+    print(f"Best Output: {best['Week_05_Output']}")
+    print(f"Worst Function: {worst['Function']}")
+    print(f"Worst Output: {worst['Week_05_Output']}")
 
-summary.to_csv("week_05_analysis_summary.csv", index=False)
-ranking.to_csv("week_05_ranking.csv", index=False)
-statistics.to_csv("week_05_statistics.csv", index=False)
-decision_matrix.to_csv("week_05_decision_matrix.csv", index=False)
+    print("\nStrategy Allocation")
+    print("Exploit: F5")
+    print("Refine: F2, F7")
+    print("Monitor: F8")
+    print("Explore: F1, F3, F4, F6")
 
-with open("week_05_console_report.txt", "w", encoding="utf-8") as f:
-    f.write("Week 05 BBO Analysis Report\n")
-    f.write("===========================\n\n")
-    f.write(f"Best function: {df.iloc[0]['Function']}\n")
-    f.write(f"Best output: {df.iloc[0]['Week_05_Output']}\n")
-    f.write(f"Worst function: {df.iloc[-1]['Function']}\n")
-    f.write(f"Worst output: {df.iloc[-1]['Week_05_Output']}\n\n")
-    f.write("Ranking:\n")
-    f.write(ranking.to_string(index=False))
-    f.write("\n\nStrategy Summary:\n")
-    f.write("Exploit: F5\n")
-    f.write("Refine: F2, F7\n")
-    f.write("Monitor: F8\n")
-    f.write("Explore: F1, F3, F4, F6\n")
+    print("\nRanking Summary")
+    print(
+        df[
+            [
+                "Rank",
+                "Function",
+                "Week_05_Output",
+                "Strategy",
+                "Confidence",
+                "Information_Gain",
+            ]
+        ].to_string(index=False)
+    )
 
-print("Week 05 analysis complete.")
-print("Files created:")
-print("week_05_analysis_summary.csv")
-print("week_05_ranking.csv")
-print("week_05_statistics.csv")
-print("week_05_decision_matrix.csv")
-print("week_05_console_report.txt")
+
+def main() -> None:
+    summary = build_summary()
+
+    output_file = "week_05_analysis_summary.csv"
+    summary.to_csv(output_file, index=False)
+
+    print_report(summary)
+    print(f"\nAnalysis summary exported to: {output_file}")
+
+
+if __name__ == "__main__":
+    main()
