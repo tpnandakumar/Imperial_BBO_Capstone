@@ -1,4 +1,4 @@
-Function,Week_05_Output,Rank,Strategy,Confidence,Information_Gain,Performance_Status,Interpretation
+Function,Week_05_Output,Rank,Strategy,Confidence,Information_Gain,Current_Assessment,Interpretation
 F5,3682.2110623386798,1,Exploit,High,High,Best Performer,Consistent improvement across successive optimisation rounds. Continue local exploitation.
 F8,9.511300000000000,2,Monitor,High,Moderate,Stable High Performance,Stable objective values suggest a reliable search region requiring only minor refinement.
 F7,1.3809299933612855,3,Refine,Moderate,Moderate,Improving,Steady improvement supports continued local refinement.
