@@ -258,3 +258,6 @@ Overall, Week 05 demonstrated measurable progress towards understanding the hidd
 7. Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. *Nature Methods*, 17, 261–272.
 
 8. Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. *Computing in Science & Engineering*, 9(3), 90–95.
+
+---
+**Next Repository:** Week_06
