@@ -59,7 +59,21 @@ Overall, the Week 06 results demonstrated continued progress in understanding th
 <img width="1536" height="1024" alt="Figure 1A  Function Output Evolution (Weeks 1 to 6)" src="https://github.com/user-attachments/assets/e67c8132-0b96-46f0-86e2-4562203228ca" />
 
 
+## 3. Comparison of Week 5 and Week 6 Performance
 
+A comparison between the Week 05 and Week 06 results demonstrated that the optimisation strategy continued to improve understanding of the hidden search landscape while identifying functions suitable for continued exploitation. The most significant improvement was observed in Function 5, which increased from 3682.211062 in Week 05 to 3922.765223 in Week 06. This sustained upward trend provided further evidence that the selected query region contained a highly productive optimum.
+
+Function 2 also demonstrated substantial improvement, increasing from 0.280168 to 0.571248. This represented the largest relative improvement among the lower performing positive functions and suggested that additional refinement of the surrounding search region may continue to generate higher objective values.
+
+Function 8 remained remarkably stable, increasing slightly from 9.511300 to 9.514800. Function 7 maintained a positive output despite a small reduction from 1.380930 to 1.352949. The stability of these functions indicated that the optimisation process had successfully identified productive regions requiring only minor local adjustments.
+
+Conversely, Functions 3, 4 and 6 remained negative throughout Week 06. Function 4 continued to produce the lowest objective value at -31.203478, while Function 3 decreased further into negative territory. These observations suggested that the corresponding search regions remained poorly understood and continued to require exploratory sampling.
+
+Overall, the Week 06 comparison demonstrated increasing confidence in the optimisation strategy. The results supported continued exploitation of Function 5, selective refinement of Functions 2, 7 and 8, and continued exploration of Functions 1, 3, 4 and 6 to maximise information gain and improve future optimisation performance.
+
+**Figure 1B.1. Comparison of Week 5 and Week 6 Performance**
+
+<img width="1536" height="1024" alt="Figure 1B 1  Comparison of Week 5 and Week 6 Performance" src="https://github.com/user-attachments/assets/e19ca9fe-0802-402d-841d-c16d2b0378cc" />
 
 
 
