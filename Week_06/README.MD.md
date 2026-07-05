@@ -76,6 +76,56 @@ Overall, the Week 06 comparison demonstrated increasing confidence in the optimi
 <img width="1536" height="1024" alt="Figure 1B 1  Comparison of Week 5 and Week 6 Performance" src="https://github.com/user-attachments/assets/e19ca9fe-0802-402d-841d-c16d2b0378cc" />
 
 
+## 4. Query Selection Strategy
+
+The Week 06 query selection strategy was guided by evidence accumulated from the previous optimisation rounds. With six optimisation cycles completed, sufficient information had been collected to distinguish between functions that required continued exploitation, local refinement or broader exploration. This evidence based approach improved allocation of the limited query budget while increasing confidence in subsequent optimisation decisions.
+
+Function 5 remained the highest priority for exploitation because it continued to produce the strongest objective values throughout the optimisation process. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 06 confirmed that the selected search region remained highly productive. Consequently, only small local adjustments were considered to maximise further performance while remaining close to the established optimum.
+
+Function 2 demonstrated substantial improvement during Week 06, suggesting that the surrounding search region contained additional optimisation potential. Functions 7 and 8 continued to produce stable positive outputs and therefore remained suitable candidates for local refinement. Maintaining queries close to these regions increased the likelihood of obtaining incremental improvements while confirming the consistency of previous observations.
+
+In contrast, Functions 1, 3, 4 and 6 continued to demonstrate greater uncertainty. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to produce negative objective values. These observations indicated that the corresponding search regions had not yet converged towards favourable solutions. Continued exploratory sampling therefore remained the most appropriate strategy for these functions.
+
+Overall, the Week 06 query selection strategy reflected a balanced optimisation framework that allocated computational resources according to observed performance, confidence and expected information gain. This evidence based allocation supported continued improvement while maintaining an appropriate balance between exploitation of productive regions and exploration of uncertain areas.
+
+**Figure 2. Week 06 Query Selection Strategy**
+
+<img width="1536" height="1024" alt="Figure 2  Week 06 Query Selection Strategy" src="https://github.com/user-attachments/assets/8c99dc13-7568-46fe-9063-2ef583ee607f" />
+
+
+## 5. Exploration vs Exploitation Analysis
+
+A successful Bayesian Black Box Optimisation strategy requires an appropriate balance between exploration and exploitation. Exploration focuses on sampling uncertain regions of the search space to identify previously undiscovered high performing solutions, whereas exploitation concentrates on refining known productive regions to maximise objective values. Maintaining this balance remained a key objective throughout the Week 06 optimisation process.
+
+The Week 06 results demonstrated that Function 5 continued to outperform all other functions, increasing from 3682.211062 to 3922.765223. This sustained improvement provided strong evidence that the surrounding search region remained highly productive. Consequently, Function 5 continued to receive the highest exploitation priority through small local adjustments designed to maximise further performance while remaining close to the identified optimum.
+
+Function 2 demonstrated the greatest improvement among the remaining positive functions, increasing from 0.280168 to 0.571248. Functions 7 and 8 continued to demonstrate stable positive behaviour and therefore remained suitable candidates for local refinement. Maintaining search activity within these regions increased confidence while providing opportunities for incremental optimisation gains.
+
+Conversely, Functions 1, 3, 4 and 6 continued to exhibit greater uncertainty. Function 1 remained close to zero, while Functions 3, 4 and 6 produced negative objective values throughout Week 06. These observations indicated that the current query locations had not yet identified favourable regions of the search landscape. Continued exploratory sampling therefore remained the most appropriate strategy for these functions.
+
+Overall, Week 06 demonstrated that optimisation performance improves when computational resources are allocated according to observed evidence rather than uniformly across all functions. Exploiting productive regions while continuing to explore uncertain areas increased both optimisation performance and understanding of the hidden objective functions.
+
+**Figure 3. Exploration vs Exploitation Analysis**
+
+<img width="1536" height="1024" alt="Figure 3  Exploration vs Exploitation Analysis" src="https://github.com/user-attachments/assets/da215e8b-c1da-4232-a270-250410c66fda" />
+
+Week 06 Strategy
+
+Explore:
+F1, F3, F4, F6
+
+Refine:
+F2, F7, F8
+
+Exploit:
+F5
+
+Goal:
+Maximise optimisation performance while increasing information gain.
+
+
+
+
 
 
 
