@@ -240,8 +240,6 @@ Overall, the Week 06 decision matrix demonstrated that effective optimisation de
 
 <img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation" src="https://github.com/user-attachments/assets/85e6b87c-ece3-49f1-9317-98c1ace5ea66" />
 
-
-
 Week 06 Resource Allocation
 
 High Priority:
