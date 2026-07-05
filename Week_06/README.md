@@ -354,3 +354,18 @@ Comprehensive Documentation
 Objective
 
 Create a transparent and reproducible optimisation repository suitable for future development.
+
+
+
+## 13. Conclusion
+
+Week 06 represented another significant stage in the Bayesian Black Box Optimisation challenge by strengthening understanding of the hidden objective functions through evidence based optimisation. Six optimisation rounds provided sufficient information to distinguish productive search regions from uncertain regions, allowing query resources to be allocated more effectively according to observed performance and confidence.
+
+Function 5 continued to demonstrate exceptional optimisation performance and remained the strongest candidate for continued exploitation. Functions 2, 7 and 8 demonstrated stable or improving behaviour, supporting continued local refinement. In contrast, Functions 1, 3, 4 and 6 continued to require broader exploration to improve understanding of their underlying response surfaces and identify alternative high performing regions.
+
+The computational workflow developed during Week 06 further improved the reproducibility and transparency of the optimisation process. Structured CSV datasets, reusable Python analysis scripts and comprehensive documentation provided a consistent framework for analysing optimisation performance while reducing manual processing and supporting future development.
+
+Overall, the Week 06 repository demonstrated that successful Bayesian Black Box Optimisation depends upon balancing exploitation, refinement and exploration according to accumulated evidence rather than intuition alone. The knowledge gained during Week 06 provides a stronger foundation for Week 07 query selection while continuing to improve understanding of the hidden optimisation landscape.
+
+
+## 14. References
