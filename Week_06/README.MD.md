@@ -324,5 +324,33 @@ Create a reproducible and automated optimisation analysis workflow.
 
 
 
+## 12. Repository Files and Reproducibility
+
+Maintaining a well organised repository remained an important objective throughout Week 06 because it supported transparency, reproducibility and efficient project development. The repository structure was designed to separate raw optimisation data, computational analysis, documentation and visualisations into clearly defined components, allowing each stage of the optimisation workflow to be independently verified and reproduced.
+
+The Week 06 repository contained structured input and output datasets together with reusable Python analysis scripts and comprehensive documentation. The optimisation inputs and objective values were stored as CSV files, while the automated Python implementation processed these datasets to generate rankings, strategy classifications and summary outputs. This structured workflow reduced manual processing and ensured that identical analysis procedures could be applied to future optimisation rounds.
+
+Repository documentation was expanded through a detailed README file describing each stage of the optimisation process. Written analysis was supported by figures, tables and infographics that presented optimisation trends, decision making strategies and computational workflows in a clear and reproducible format. This documentation improved the accessibility of the repository for both future development and independent review.
+
+Using a consistent repository structure also simplified long term maintenance. Future optimisation rounds could be incorporated by updating the input and result datasets while retaining the same computational framework and documentation structure. This approach improved scalability and supported continued development throughout the Bayesian Black Box Optimisation project.
+
+Overall, the Week 06 repository demonstrated the importance of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research framework. This organisation strengthened the transparency of the optimisation process while providing a reliable foundation for future optimisation analysis.
+
+**Figure 10. Repository Files and Reproducibility**
+
+<img width="1536" height="1024" alt="Figure 10  Repository Files and Reproducibility" src="https://github.com/user-attachments/assets/dea65141-9194-4039-a73a-3228ff409534" />
 
 
+Week 06 Repository
+
+Structured Data
+
+Reusable Python
+
+Automated Analysis
+
+Comprehensive Documentation
+
+Objective
+
+Create a transparent and reproducible optimisation repository suitable for future development.
