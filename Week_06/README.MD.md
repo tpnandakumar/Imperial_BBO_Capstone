@@ -125,10 +125,103 @@ Maximise optimisation performance while increasing information gain.
 
 
 
+## 6. Reflection on Week 7 Query Selection
+
+The Week 06 query selection process was guided by evidence accumulated throughout six optimisation rounds. Rather than selecting query locations randomly, each decision was supported by observed objective values, functional rankings and confidence assessments derived from previous optimisation results. This evidence based approach increased confidence in allocating computational resources towards functions most likely to improve optimisation performance.
+
+Function 5 remained the strongest candidate for continued exploitation. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 06 demonstrated that the selected search region continued to generate higher objective values. This consistent upward trend justified maintaining local refinement around the current optimum while avoiding unnecessary movement into less productive regions.
+
+Function 2 demonstrated the largest positive improvement among the remaining positive functions. This substantial increase suggested that the surrounding search region retained further optimisation potential. Functions 7 and 8 continued to produce stable objective values, supporting continued local refinement to improve performance while confirming the reliability of previously identified productive regions.
+
+Functions 1, 3, 4 and 6 remained associated with greater uncertainty. Function 1 continued to produce values close to zero, while Functions 3, 4 and 6 remained negative throughout Week 06. These observations suggested that additional exploratory sampling remained necessary to improve understanding of these regions and reduce uncertainty within the hidden search landscape.
+
+Overall, the Week 06 analysis strengthened confidence in the strategy selected for Week 07. Evidence accumulated throughout successive optimisation rounds supported continued exploitation of the highest performing function, selective refinement of stable regions and targeted exploration of uncertain areas. This balanced strategy aimed to maximise information gain while maintaining steady optimisation progress.
+
+**Figure 4. Reflection on Week 7 Query Selection**
+
+<img width="1536" height="1024" alt="Figure 4  Reflection on Week 7 Query Selection" src="https://github.com/user-attachments/assets/9e961372-f275-4ab5-9649-e90165b9c4f2" />
 
 
 
 
+Week 07 Strategy
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+Objective:
+Improve optimisation performance while maximising information gain.
+
+
+
+## 7. Functional Ranking Evolution
+
+Ranking the objective functions after six optimisation rounds provided a comprehensive measure of optimisation progress and revealed how the relative performance of the eight unknown objective functions changed as additional evidence became available. Monitoring ranking stability assisted in identifying functions suitable for continued exploitation, local refinement or broader exploration.
+
+Function 5 retained the highest ranking throughout Week 06. The objective value increased from 3682.211062 in Week 05 to 3922.765223 in Week 06, reinforcing confidence that the optimisation process had identified a productive search region. This sustained improvement justified continued exploitation through carefully controlled local refinement.
+
+Function 8 remained the second highest ranked function with a stable objective value of 9.514800. Although only a small improvement was observed, the consistency of its performance indicated that the surrounding search region remained reliable and suitable for continued refinement. Function 7 maintained third position despite a slight reduction in objective value, demonstrating continued positive performance across successive optimisation rounds.
+
+Function 2 moved closer to the leading functions following a substantial increase from 0.280168 to 0.571248. This improvement suggested that additional optimisation opportunities remained within the current search region and justified continued refinement during subsequent optimisation rounds.
+
+Functions 1, 3, 4 and 6 continued to occupy the lower rankings. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to produce negative objective values. These functions remained priorities for exploratory sampling because additional evidence was required to improve understanding of their hidden response surfaces.
+
+Overall, the Week 06 functional rankings demonstrated increasing separation between consistently productive regions and uncertain regions of the search space. The ranking evolution provided an objective framework for allocating optimisation resources while balancing exploitation, refinement and exploration.
+
+**Figure 5. Functional Ranking Evolution**
+
+<img width="1536" height="1024" alt="Figure 5  Functional Ranking Evolution" src="https://github.com/user-attachments/assets/24d24661-8fd7-43d6-b1df-efac72ecde0d" />
+
+
+Week 06 Functional Ranking
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+Ranking stability increased confidence in optimisation decisions while identifying functions requiring continued exploration.
+
+
+## 8. High Performing Region Identification
+
+Identifying high performing regions remained one of the primary objectives of the Bayesian Black Box Optimisation process. After six optimisation rounds, sufficient evidence had been accumulated to distinguish between productive search regions that consistently generated strong objective values and uncertain regions requiring further investigation. This information provided the foundation for efficient allocation of future query resources.
+
+Function 5 continued to represent the strongest high performing region within the search landscape. The objective value increased from 3682.211062 in Week 05 to 3922.765223 in Week 06, confirming that the selected query region remained highly productive. The sustained improvement observed across multiple optimisation rounds indicated that local refinement continued to be the most appropriate strategy for maximising objective values.
+
+Functions 2, 7 and 8 also demonstrated favourable optimisation behaviour. Function 2 showed substantial improvement during Week 06, while Functions 7 and 8 continued to produce stable positive objective values. These observations suggested that the surrounding search regions remained reliable and suitable for continued local refinement to achieve incremental performance improvements.
+
+Conversely, Functions 1, 3, 4 and 6 continued to exhibit limited optimisation success. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to generate negative objective values. These functions remained associated with uncertain search regions where broader exploration was required to improve understanding of the hidden objective functions.
+
+Overall, the identification of high performing regions provided an evidence based framework for guiding future optimisation decisions. Concentrating computational effort around productive regions while continuing to investigate uncertain areas improved optimisation efficiency and maximised information gained from the available query budget.
+
+**Figure 6. High Performing Region Identification**
+
+<img width="1536" height="1024" alt="Figure 6  High Performing Region Identification" src="https://github.com/user-attachments/assets/307d4b75-4d1f-4fd6-a36b-9444b173cfaf" />
+
+
+Week 06 High Performing Regions
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+High performing regions became increasingly well defined after six optimisation rounds, supporting evidence based query selection.
 
 
 
