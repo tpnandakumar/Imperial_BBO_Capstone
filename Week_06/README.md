@@ -18,7 +18,8 @@
 11. Computational Analysis and Coding Implementation
 12. Repository Files and Reproducibility
 13. Conclusion
-14. References
+14. Automation Decision
+15. References
 
 ## 1. Introduction
 
@@ -368,7 +369,14 @@ The computational workflow developed during Week 06 further improved the reprodu
 Overall, the Week 06 repository demonstrated that successful Bayesian Black Box Optimisation depends upon balancing exploitation, refinement and exploration according to accumulated evidence rather than intuition alone. The knowledge gained during Week 06 provides a stronger foundation for Week 07 query selection while continuing to improve understanding of the hidden optimisation landscape.
 
 
-## 14. References
+## 14 Automation Decision
+
+For Week 06, the analysis summary was generated manually using `week_06_analysis.py` rather than through GitHub Actions. This decision was made to keep the repository simple, transparent, and easy to verify while the weekly BBO analysis structure is still being finalised.
+
+GitHub Actions automation remains a future option once the analysis script and CSV structure are stable across multiple weeks.
+
+
+## 15. References
 
 
 Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimisation of Expensive Black Box Functions. Journal of Global Optimization, 13(4), 455–492.
