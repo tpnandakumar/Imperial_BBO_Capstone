@@ -1,1 +1,9 @@
-
+Function,Week_06_Output,Rank,Strategy,Confidence,Information_Gain,Current_Assessment,Interpretation
+F5,3922.7652233497042,1,Exploit,High,High,Best Performer,Consistent improvement across successive optimisation rounds. Continue local exploitation.
+F8,9.514800000000000,2,Refine,High,Moderate,Stable High Performance,Stable objective values suggest a reliable search region requiring only minor refinement.
+F7,1.3529491169887171,3,Refine,Moderate,Moderate,Stable Positive,Positive output supports continued local refinement.
+F2,0.5712475315739602,4,Refine,Moderate,High,Improving,Strong positive improvement suggests further optimisation potential.
+F1,0.0000000026752879910742468,5,Explore,Low,Moderate,Near Zero,Minimal improvement observed. Continue exploratory sampling.
+F3,-0.3071823694141529,6,Explore,Low,Moderate,Negative,Negative output indicates that improved search regions have not yet been identified.
+F6,-1.3792272680368016,7,Explore,Low,Moderate,Negative,Continued exploration required to reduce uncertainty.
+F4,-31.20347777578016,8,Explore,Very Low,High,Worst Performer,Lowest objective value. Broader exploration recommended.
