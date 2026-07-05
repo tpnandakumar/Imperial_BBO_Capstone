@@ -1,4 +1,6 @@
-Contents
+# Week_06
+
+## Contents
 
 1. Introduction
 2. Week 6 Results
