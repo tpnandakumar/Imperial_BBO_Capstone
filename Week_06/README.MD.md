@@ -224,4 +224,75 @@ F1, F3, F4, F6
 High performing regions became increasingly well defined after six optimisation rounds, supporting evidence based query selection.
 
 
+## 9. Decision Matrix and Resource Allocation
+
+The allocation of query resources during Week 06 was determined by objective performance, confidence assessment and expected information gain. After six optimisation rounds, sufficient evidence had been collected to distinguish between functions requiring continued exploitation, local refinement or broader exploration. This evidence based allocation improved the efficiency of the limited query budget while supporting continued optimisation progress.
+
+Function 5 remained the highest priority for exploitation because it consistently produced the strongest objective values. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 06 confirmed that the current search region continued to provide the greatest optimisation potential. Query allocation therefore focused on small local adjustments designed to maximise further performance while preserving convergence within this productive region.
+
+Functions 2, 7 and 8 were assigned medium priority for local refinement. Function 2 demonstrated substantial improvement during Week 06, while Functions 7 and 8 maintained stable positive objective values. These functions represented reliable search regions where incremental optimisation could be achieved through carefully controlled refinement rather than broad exploration.
+
+Functions 1, 3, 4 and 6 remained associated with greater uncertainty. Function 1 continued to produce objective values close to zero, while Functions 3, 4 and 6 remained negative throughout Week 06. These observations indicated that the current search locations had not yet identified favourable regions, making continued exploratory sampling the most appropriate allocation strategy.
+
+Overall, the Week 06 decision matrix demonstrated that effective optimisation depends upon allocating computational resources according to observed evidence rather than distributing queries equally across all functions. This structured allocation maximised expected information gain while maintaining an effective balance between exploitation, refinement and exploration.
+
+**Figure 7. Decision Matrix and Resource Allocation**
+
+<img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation" src="https://github.com/user-attachments/assets/85e6b87c-ece3-49f1-9317-98c1ace5ea66" />
+
+
+
+Week 06 Resource Allocation
+
+High Priority:
+F5
+
+Medium Priority:
+F2, F7, F8
+
+Exploration Priority:
+F1, F3, F4, F6
+
+Objective:
+Allocate computational effort according to observed performance, confidence and expected information gain.
+
+
+## 10. Information Gain Analysis
+
+Information gain remained a key objective throughout the Week 06 optimisation process because every query contributed additional knowledge about the hidden objective functions. Rather than evaluating optimisation progress solely through objective values, Week 06 also considered how each query reduced uncertainty and improved understanding of the underlying search landscape. This evidence supported more effective query selection and increased confidence in subsequent optimisation decisions.
+
+Function 5 continued to provide the greatest information gain by consistently producing higher objective values within the same productive search region. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 06 confirmed that the surrounding landscape remained favourable for continued local refinement. This strengthened confidence in exploiting the current optimum while reducing uncertainty regarding the behaviour of this region.
+
+Function 2 produced one of the largest improvements during Week 06 and therefore generated valuable additional information regarding a previously developing search region. Functions 7 and 8 continued to demonstrate stable positive behaviour, confirming that these regions remained reliable and suitable for incremental optimisation through local refinement.
+
+Conversely, Functions 1, 3, 4 and 6 continued to provide valuable information despite producing limited objective improvements. Continued exploration of these functions reduced uncertainty surrounding poorly understood regions of the search landscape and increased the probability of identifying alternative productive areas during future optimisation rounds.
+
+Overall, the Week 06 information gain analysis demonstrated that optimisation success depends upon both improving objective values and reducing uncertainty across the hidden search landscape. Combining exploitation, refinement and exploration produced a balanced optimisation strategy that maximised knowledge while supporting continued performance improvement.
+
+**Figure 8. Information Gain Analysis**
+
+<img width="1536" height="1024" alt="Figure 8  Information Gain Analysis" src="https://github.com/user-attachments/assets/06f51a8a-9ca3-4c77-a65f-181adf02f723" />
+
+
+Week 06 Information Gain
+
+Highest Learning:
+F5
+
+Increasing Confidence:
+F2, F7, F8
+
+Reducing Uncertainty:
+F1, F3, F4, F6
+
+Objective:
+Maximise knowledge while improving optimisation performance.
+
+
+
+
+
+
+
+
 
