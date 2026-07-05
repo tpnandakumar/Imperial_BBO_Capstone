@@ -288,7 +288,39 @@ Maximise knowledge while improving optimisation performance.
 
 
 
+## 11. Computational Analysis and Coding Implementation
 
+The computational analysis performed during Week 06 transformed optimisation data into structured evidence that supported objective decision making. Python scripts were used to process input queries and optimisation results, calculate performance rankings, classify optimisation strategies and generate summary outputs suitable for documentation and future analysis. This automated workflow improved reproducibility while reducing manual processing errors.
+
+The Week 06 analysis script imported the optimisation inputs and objective values from structured CSV files before performing automated calculations. Each function was ranked according to its objective value, classified as Exploit, Refine or Explore, and evaluated according to whether the objective value was positive or negative. The resulting summary provided a consistent framework for interpreting optimisation performance.
+
+Using CSV files as the primary data source ensured that future optimisation rounds could be analysed without modifying the underlying Python implementation. Updating the input and result files automatically generated revised performance summaries while preserving the same computational workflow. This approach simplified repository maintenance and improved long term reproducibility.
+
+The Python implementation also demonstrated the practical application of data analysis libraries for optimisation research. Pandas provided efficient handling of structured datasets, while standard Python functions performed ranking, classification and summary generation. The resulting workflow produced consistent outputs that supported the accompanying visualisations and written analysis.
+
+Overall, the Week 06 computational framework demonstrated how automated analysis can improve the transparency, reproducibility and efficiency of Bayesian Black Box Optimisation studies. Combining structured datasets with reusable Python scripts created a reliable foundation for analysing subsequent optimisation rounds.
+
+**Figure 9. Computational Analysis and Coding Implementation**
+
+<img width="1536" height="1024" alt="Figure 9  Computational Analysis and Coding Implementation" src="https://github.com/user-attachments/assets/02d5275a-22a9-47ad-a930-788e95e20e44" />
+
+
+Week 06 Computational Workflow
+
+Inputs:
+week_06_inputs.csv
+
+Results:
+week_06_results.csv
+
+Processing:
+week_06_analysis.py
+
+Output:
+week_06_analysis_summary.csv
+
+Objective:
+Create a reproducible and automated optimisation analysis workflow.
 
 
 
