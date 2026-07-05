@@ -1,5 +1,8 @@
 # Week_06
 
+## Bayesian Black Box Optimisation Portfolio
+### Week 06 Analysis
+
 ## Contents
 
 1. Introduction
