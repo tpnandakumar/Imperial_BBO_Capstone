@@ -372,7 +372,7 @@ Overall, the Week 07 repository demonstrated that successful Bayesian Black Box 
 
 ## 14 Automation Decision
 
-For Week 07, the analysis summary was generated manually using `week_06_analysis.py` rather than through GitHub Actions. This decision was made to keep the repository simple, transparent, and easy to verify while the weekly BBO analysis structure is still being finalised.
+For Week 07, the analysis summary was generated manually using `week_07_analysis.py` rather than through GitHub Actions. This decision was made to keep the repository simple, transparent, and easy to verify while the weekly BBO analysis structure is still being finalised.
 
 GitHub Actions automation remains a future option once the analysis script and CSV structure are stable across multiple weeks.
 
