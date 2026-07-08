@@ -46,13 +46,13 @@ Overall, the Week 07 results demonstrated continued progress in understanding th
 
 | Function   |          Week 07 Output | Interpretation                                                 |
 | ---------- | ----------------------: | -------------------------------------------------------------- |
-| Function 1 | -1.4546199699251391e-58 | Near zero, indicating convergence around the optimum           |
-| Function 2 |                0.239929 | Positive response after exploratory refinement                 |
-| Function 3 |               -0.091169 | Improved negative response, moving closer to zero              |
-| Function 4 |              -10.745961 | Significant improvement compared with previous weeks           |
+| Function 1 | -1.4546199699251391e-58 | Remained close to zero, indicating continued uncertainty       |
+| Function 2 |                0.239929 | Declined from Week 06, requiring reassessment                  |
+| Function 3 |               -0.091169 | Significant improvement, moving closer to zero                 |
+| Function 4 |              -10.745961 | Largest improvement among the negative functions               |
 | Function 5 |             4278.816638 | Highest performing function, supporting continued exploitation |
-| Function 6 |               -1.119713 | Stable negative response with modest improvement               |
-| Function 7 |                1.154336 | Positive performance, although slightly reduced from Week 6    |
+| Function 6 |               -1.119713 | Continued improvement within a negative region                 |
+| Function 7 |                1.154336 | Stable positive performance despite a small reduction          |
 | Function 8 |                9.494760 | Stable high performance with only a minor decrease             |
 
 
@@ -390,26 +390,24 @@ Overall, the Week 07 repository demonstrated that successful Bayesian Black Box 
 
 ## 14 Automation Decision
 
-For Week 07, the analysis summary was generated manually using `week_07_analysis.py` rather than through GitHub Actions. This decision was made to keep the repository simple, transparent, and easy to verify while the weekly BBO analysis structure is still being finalised.
+For Week 07, the analysis summary was generated manually using week_07_analysis.py rather than through GitHub Actions. This decision was made to maintain a simple, transparent and easily verifiable workflow while the weekly Bayesian Black Box Optimisation analysis framework continued to mature.
 
-GitHub Actions automation remains a future option once the analysis script and CSV structure are stable across multiple weeks.
-
+GitHub Actions remains a planned enhancement for future development. Once the analysis script, CSV structure and repository workflow have been fully standardised across multiple optimisation rounds, automated generation of the analysis summary and associated outputs can be implemented to improve efficiency while maintaining reproducibility.
 
 ## 15. References
 
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array Programming with NumPy. Nature, 585, 357–362.
+
+Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science & Engineering, 9(3), 90–95.
 
 Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimisation of Expensive Black Box Functions. Journal of Global Optimization, 13(4), 455–492.
 
-Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & De Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148–175.
-
-Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems (NeurIPS), 25.
+McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56–61.
 
 Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
 
-Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array Programming with NumPy. Nature, 585, 357–362.
+Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & De Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148–175.
 
-McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56–61.
+Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25.
 
 Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261–272.
-
-Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science & Engineering, 9(3), 90–95.
