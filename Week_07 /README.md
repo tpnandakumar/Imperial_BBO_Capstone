@@ -1,1 +1,397 @@
+# Week_07
 
+## Bayesian Black Box Optimisation Portfolio
+### Week 07 Analysis
+
+## Contents
+
+1. Introduction
+2. Week 7 Results
+3. Comparison of Week 5 and Week 7 Performance
+4. Query Selection Strategy
+5. Exploration vs Exploitation Analysis
+6. Reflection on Week 8 Query Selection
+7. Functional Ranking Evolution
+8. High Performing Region Identification
+9. Decision Matrix and Resource Allocation
+10. Information Gain Analysis
+11. Computational Analysis and Coding Implementation
+12. Repository Files and Reproducibility
+13. Conclusion
+14. Automation Decision
+15. References
+
+## 1. Introduction
+
+Week 07 represented another important stage in the Bayesian Black Box Optimisation (BBO) challenge. By this point, six optimisation rounds had been completed, providing a richer collection of observations from which to evaluate the behaviour of the eight unknown objective functions. The additional data enabled more informed decision making, improved confidence in query selection and a clearer understanding of the underlying search landscape.
+
+The optimisation strategy continued to balance exploration of uncertain regions with exploitation of previously identified high performing areas. Rather than relying on intuition, query selection was guided by evidence accumulated across successive optimisation rounds. This progressive approach allowed confidence to increase as additional observations reduced uncertainty surrounding the hidden objective functions.
+
+The Week 07 results also provided an opportunity to compare performance with Week 05 and evaluate whether previous optimisation decisions had continued to improve objective values. Particular attention was given to identifying functions demonstrating sustained improvement, stable behaviour or persistent uncertainty. These observations informed the allocation of future query resources and supported preparation for the Week 07 optimisation round.
+
+This repository documents the complete Week 07 optimisation workflow, including performance analysis, comparison with previous weeks, query selection strategy, exploration versus exploitation analysis, functional ranking, computational implementation and repository organisation. Together, these analyses provide a transparent and reproducible record of the optimisation process while supporting continued refinement of the Bayesian optimisation strategy.
+
+
+## 2. Week 7 Results
+
+Week 07 provided further evidence regarding the behaviour of the eight unknown objective functions. The additional optimisation round expanded the available dataset and strengthened understanding of the hidden search landscape. While some functions demonstrated continued improvement, others remained stable or exhibited greater uncertainty, providing valuable guidance for future query selection.
+
+Function 5 continued to produce the highest objective value, increasing from 3682.211062 in Week 05 to 3922.765223 in Week 07. This consistent improvement reinforced confidence that the optimisation strategy had identified a productive search region suitable for continued exploitation. Function 2 also demonstrated a notable increase, improving from 0.280168 to 0.571248, indicating that further refinement of this region may be beneficial.
+
+Function 8 remained highly stable with a slight increase from 9.511300 to 9.514800, while Function 7 maintained positive performance despite a small reduction from 1.380930 to 1.352949. These results suggested that both functions occupied relatively stable regions of the search space where local refinement continued to be appropriate.
+
+Conversely, Functions 3, 4 and 6 remained negative. Function 4 produced the lowest objective value at -31.203478, confirming that the current search region continued to provide limited optimisation benefit. These functions therefore remained priorities for continued exploration during the next optimisation round.
+
+Overall, the Week 07 results demonstrated continued progress in understanding the hidden objective functions. The evidence obtained from this optimisation round strengthened confidence in exploiting high performing regions while supporting continued exploration of uncertain areas to maximise future optimisation performance.
+
+| Function   |          Week 07 Output | Interpretation                                                 |
+| ---------- | ----------------------: | -------------------------------------------------------------- |
+| Function 1 | -1.4546199699251391e-58 | Near zero, indicating convergence around the optimum           |
+| Function 2 |                0.239929 | Positive response after exploratory refinement                 |
+| Function 3 |               -0.091169 | Improved negative response, moving closer to zero              |
+| Function 4 |              -10.745961 | Significant improvement compared with previous weeks           |
+| Function 5 |             4278.816638 | Highest performing function, supporting continued exploitation |
+| Function 6 |               -1.119713 | Stable negative response with modest improvement               |
+| Function 7 |                1.154336 | Positive performance, although slightly reduced from Week 6    |
+| Function 8 |                9.494760 | Stable high performance with only a minor decrease             |
+
+
+**Figure 1A. Function Output Evolution (Weeks 1 to 7)**
+
+<img width="1536" height="1024" alt="Figure 1A  Function Output Evolution (Weeks 1 to 6)" src="https://github.com/user-attachments/assets/e67c8132-0b96-46f0-86e2-4562203228ca" />
+
+
+## 3. Comparison of Week 6 and Week 7 Performance
+
+A comparison between the Week 05 and Week 07 results demonstrated that the optimisation strategy continued to improve understanding of the hidden search landscape while identifying functions suitable for continued exploitation. The most significant improvement was observed in Function 5, which increased from 3682.211062 in Week 05 to 3922.765223 in Week 07. This sustained upward trend provided further evidence that the selected query region contained a highly productive optimum.
+
+Function 2 also demonstrated substantial improvement, increasing from 0.280168 to 0.571248. This represented the largest relative improvement among the lower performing positive functions and suggested that additional refinement of the surrounding search region may continue to generate higher objective values.
+
+Function 8 remained remarkably stable, increasing slightly from 9.511300 to 9.514800. Function 7 maintained a positive output despite a small reduction from 1.380930 to 1.352949. The stability of these functions indicated that the optimisation process had successfully identified productive regions requiring only minor local adjustments.
+
+Conversely, Functions 3, 4 and 6 remained negative throughout Week 07. Function 4 continued to produce the lowest objective value at -31.203478, while Function 3 decreased further into negative territory. These observations suggested that the corresponding search regions remained poorly understood and continued to require exploratory sampling.
+
+Overall, the Week 07 comparison demonstrated increasing confidence in the optimisation strategy. The results supported continued exploitation of Function 5, selective refinement of Functions 2, 7 and 8, and continued exploration of Functions 1, 3, 4 and 6 to maximise information gain and improve future optimisation performance.
+
+**Figure 1B.1. Comparison of Week 5 and Week 7 Performance**
+
+<img width="1536" height="1024" alt="Figure 1B 1  Comparison of Week 5 and Week 7 Performance" src="https://github.com/user-attachments/assets/e19ca9fe-0802-402d-841d-c16d2b0378cc" />
+
+
+## 4. Query Selection Strategy
+
+The Week 07 query selection strategy was guided by evidence accumulated from the previous optimisation rounds. With six optimisation cycles completed, sufficient information had been collected to distinguish between functions that required continued exploitation, local refinement or broader exploration. This evidence based approach improved allocation of the limited query budget while increasing confidence in subsequent optimisation decisions.
+
+Function 5 remained the highest priority for exploitation because it continued to produce the strongest objective values throughout the optimisation process. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 07 confirmed that the selected search region remained highly productive. Consequently, only small local adjustments were considered to maximise further performance while remaining close to the established optimum.
+
+Function 2 demonstrated substantial improvement during Week 07, suggesting that the surrounding search region contained additional optimisation potential. Functions 7 and 8 continued to produce stable positive outputs and therefore remained suitable candidates for local refinement. Maintaining queries close to these regions increased the likelihood of obtaining incremental improvements while confirming the consistency of previous observations.
+
+In contrast, Functions 1, 3, 4 and 6 continued to demonstrate greater uncertainty. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to produce negative objective values. These observations indicated that the corresponding search regions had not yet converged towards favourable solutions. Continued exploratory sampling therefore remained the most appropriate strategy for these functions.
+
+Overall, the Week 07 query selection strategy reflected a balanced optimisation framework that allocated computational resources according to observed performance, confidence and expected information gain. This evidence based allocation supported continued improvement while maintaining an appropriate balance between exploitation of productive regions and exploration of uncertain areas.
+
+**Figure 2. Week 07 Query Selection Strategy**
+
+<img width="1536" height="1024" alt="Figure 2  Week 07 Query Selection Strategy" src="https://github.com/user-attachments/assets/8c99dc13-7568-46fe-9063-2ef583ee607f" />
+
+
+## 5. Exploration vs Exploitation Analysis
+
+A successful Bayesian Black Box Optimisation strategy requires an appropriate balance between exploration and exploitation. Exploration focuses on sampling uncertain regions of the search space to identify previously undiscovered high performing solutions, whereas exploitation concentrates on refining known productive regions to maximise objective values. Maintaining this balance remained a key objective throughout the Week 07 optimisation process.
+
+The Week 07 results demonstrated that Function 5 continued to outperform all other functions, increasing from 3682.211062 to 3922.765223. This sustained improvement provided strong evidence that the surrounding search region remained highly productive. Consequently, Function 5 continued to receive the highest exploitation priority through small local adjustments designed to maximise further performance while remaining close to the identified optimum.
+
+Function 2 demonstrated the greatest improvement among the remaining positive functions, increasing from 0.280168 to 0.571248. Functions 7 and 8 continued to demonstrate stable positive behaviour and therefore remained suitable candidates for local refinement. Maintaining search activity within these regions increased confidence while providing opportunities for incremental optimisation gains.
+
+Conversely, Functions 1, 3, 4 and 6 continued to exhibit greater uncertainty. Function 1 remained close to zero, while Functions 3, 4 and 6 produced negative objective values throughout Week 07. These observations indicated that the current query locations had not yet identified favourable regions of the search landscape. Continued exploratory sampling therefore remained the most appropriate strategy for these functions.
+
+Overall, Week 07 demonstrated that optimisation performance improves when computational resources are allocated according to observed evidence rather than uniformly across all functions. Exploiting productive regions while continuing to explore uncertain areas increased both optimisation performance and understanding of the hidden objective functions.
+
+**Figure 3. Exploration vs Exploitation Analysis**
+
+<img width="1536" height="1024" alt="Figure 3  Exploration vs Exploitation Analysis" src="https://github.com/user-attachments/assets/da215e8b-c1da-4232-a270-250410c66fda" />
+
+Week 07 Strategy
+
+Explore:
+F1, F3, F4, F6
+
+Refine:
+F2, F7, F8
+
+Exploit:
+F5
+
+Goal:
+Maximise optimisation performance while increasing information gain.
+
+
+
+## 6. Reflection on Week 7 Query Selection
+
+The Week 07 query selection process was guided by evidence accumulated throughout six optimisation rounds. Rather than selecting query locations randomly, each decision was supported by observed objective values, functional rankings and confidence assessments derived from previous optimisation results. This evidence based approach increased confidence in allocating computational resources towards functions most likely to improve optimisation performance.
+
+Function 5 remained the strongest candidate for continued exploitation. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 07 demonstrated that the selected search region continued to generate higher objective values. This consistent upward trend justified maintaining local refinement around the current optimum while avoiding unnecessary movement into less productive regions.
+
+Function 2 demonstrated the largest positive improvement among the remaining positive functions. This substantial increase suggested that the surrounding search region retained further optimisation potential. Functions 7 and 8 continued to produce stable objective values, supporting continued local refinement to improve performance while confirming the reliability of previously identified productive regions.
+
+Functions 1, 3, 4 and 6 remained associated with greater uncertainty. Function 1 continued to produce values close to zero, while Functions 3, 4 and 6 remained negative throughout Week 07. These observations suggested that additional exploratory sampling remained necessary to improve understanding of these regions and reduce uncertainty within the hidden search landscape.
+
+Overall, the Week 07 analysis strengthened confidence in the strategy selected for Week 07. Evidence accumulated throughout successive optimisation rounds supported continued exploitation of the highest performing function, selective refinement of stable regions and targeted exploration of uncertain areas. This balanced strategy aimed to maximise information gain while maintaining steady optimisation progress.
+
+**Figure 4. Reflection on Week 7 Query Selection**
+
+<img width="1536" height="1024" alt="Figure 4  Reflection on Week 7 Query Selection" src="https://github.com/user-attachments/assets/9e961372-f275-4ab5-9649-e90165b9c4f2" />
+
+
+
+
+Week 07 Strategy
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+Objective:
+Improve optimisation performance while maximising information gain.
+
+
+
+## 7. Functional Ranking Evolution
+
+Ranking the objective functions after six optimisation rounds provided a comprehensive measure of optimisation progress and revealed how the relative performance of the eight unknown objective functions changed as additional evidence became available. Monitoring ranking stability assisted in identifying functions suitable for continued exploitation, local refinement or broader exploration.
+
+Function 5 retained the highest ranking throughout Week 07. The objective value increased from 3682.211062 in Week 05 to 3922.765223 in Week 07, reinforcing confidence that the optimisation process had identified a productive search region. This sustained improvement justified continued exploitation through carefully controlled local refinement.
+
+Function 8 remained the second highest ranked function with a stable objective value of 9.514800. Although only a small improvement was observed, the consistency of its performance indicated that the surrounding search region remained reliable and suitable for continued refinement. Function 7 maintained third position despite a slight reduction in objective value, demonstrating continued positive performance across successive optimisation rounds.
+
+Function 2 moved closer to the leading functions following a substantial increase from 0.280168 to 0.571248. This improvement suggested that additional optimisation opportunities remained within the current search region and justified continued refinement during subsequent optimisation rounds.
+
+Functions 1, 3, 4 and 6 continued to occupy the lower rankings. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to produce negative objective values. These functions remained priorities for exploratory sampling because additional evidence was required to improve understanding of their hidden response surfaces.
+
+Overall, the Week 07 functional rankings demonstrated increasing separation between consistently productive regions and uncertain regions of the search space. The ranking evolution provided an objective framework for allocating optimisation resources while balancing exploitation, refinement and exploration.
+
+**Figure 5. Functional Ranking Evolution**
+
+<img width="1536" height="1024" alt="Figure 5  Functional Ranking Evolution" src="https://github.com/user-attachments/assets/24d24661-8fd7-43d6-b1df-efac72ecde0d" />
+
+
+Week 07 Functional Ranking
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+Ranking stability increased confidence in optimisation decisions while identifying functions requiring continued exploration.
+
+
+## 8. High Performing Region Identification
+
+Identifying high performing regions remained one of the primary objectives of the Bayesian Black Box Optimisation process. After six optimisation rounds, sufficient evidence had been accumulated to distinguish between productive search regions that consistently generated strong objective values and uncertain regions requiring further investigation. This information provided the foundation for efficient allocation of future query resources.
+
+Function 5 continued to represent the strongest high performing region within the search landscape. The objective value increased from 3682.211062 in Week 05 to 3922.765223 in Week 07, confirming that the selected query region remained highly productive. The sustained improvement observed across multiple optimisation rounds indicated that local refinement continued to be the most appropriate strategy for maximising objective values.
+
+Functions 2, 7 and 8 also demonstrated favourable optimisation behaviour. Function 2 showed substantial improvement during Week 07, while Functions 7 and 8 continued to produce stable positive objective values. These observations suggested that the surrounding search regions remained reliable and suitable for continued local refinement to achieve incremental performance improvements.
+
+Conversely, Functions 1, 3, 4 and 6 continued to exhibit limited optimisation success. Function 1 remained close to zero, while Functions 3, 4 and 6 continued to generate negative objective values. These functions remained associated with uncertain search regions where broader exploration was required to improve understanding of the hidden objective functions.
+
+Overall, the identification of high performing regions provided an evidence based framework for guiding future optimisation decisions. Concentrating computational effort around productive regions while continuing to investigate uncertain areas improved optimisation efficiency and maximised information gained from the available query budget.
+
+**Figure 6. High Performing Region Identification**
+
+<img width="1536" height="1024" alt="Figure 6  High Performing Region Identification" src="https://github.com/user-attachments/assets/307d4b75-4d1f-4fd6-a36b-9444b173cfaf" />
+
+
+Week 07 High Performing Regions
+
+Exploit:
+F5
+
+Refine:
+F2, F7, F8
+
+Explore:
+F1, F3, F4, F6
+
+High performing regions became increasingly well defined after six optimisation rounds, supporting evidence based query selection.
+
+
+## 9. Decision Matrix and Resource Allocation
+
+The allocation of query resources during Week 07 was determined by objective performance, confidence assessment and expected information gain. After six optimisation rounds, sufficient evidence had been collected to distinguish between functions requiring continued exploitation, local refinement or broader exploration. This evidence based allocation improved the efficiency of the limited query budget while supporting continued optimisation progress.
+
+Function 5 remained the highest priority for exploitation because it consistently produced the strongest objective values. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 07 confirmed that the current search region continued to provide the greatest optimisation potential. Query allocation therefore focused on small local adjustments designed to maximise further performance while preserving convergence within this productive region.
+
+Functions 2, 7 and 8 were assigned medium priority for local refinement. Function 2 demonstrated substantial improvement during Week 07, while Functions 7 and 8 maintained stable positive objective values. These functions represented reliable search regions where incremental optimisation could be achieved through carefully controlled refinement rather than broad exploration.
+
+Functions 1, 3, 4 and 6 remained associated with greater uncertainty. Function 1 continued to produce objective values close to zero, while Functions 3, 4 and 6 remained negative throughout Week 07. These observations indicated that the current search locations had not yet identified favourable regions, making continued exploratory sampling the most appropriate allocation strategy.
+
+Overall, the Week 07 decision matrix demonstrated that effective optimisation depends upon allocating computational resources according to observed evidence rather than distributing queries equally across all functions. This structured allocation maximised expected information gain while maintaining an effective balance between exploitation, refinement and exploration.
+
+**Figure 7. Decision Matrix and Resource Allocation**
+
+<img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation" src="https://github.com/user-attachments/assets/85e6b87c-ece3-49f1-9317-98c1ace5ea66" />
+
+Week 07 Resource Allocation
+
+High Priority:
+F5
+
+Medium Priority:
+F2, F7, F8
+
+Exploration Priority:
+F1, F3, F4, F6
+
+Objective:
+Allocate computational effort according to observed performance, confidence and expected information gain.
+
+
+## 10. Information Gain Analysis
+
+Information gain remained a key objective throughout the Week 07 optimisation process because every query contributed additional knowledge about the hidden objective functions. Rather than evaluating optimisation progress solely through objective values, Week 07 also considered how each query reduced uncertainty and improved understanding of the underlying search landscape. This evidence supported more effective query selection and increased confidence in subsequent optimisation decisions.
+
+Function 5 continued to provide the greatest information gain by consistently producing higher objective values within the same productive search region. The increase from 3682.211062 in Week 05 to 3922.765223 in Week 07 confirmed that the surrounding landscape remained favourable for continued local refinement. This strengthened confidence in exploiting the current optimum while reducing uncertainty regarding the behaviour of this region.
+
+Function 2 produced one of the largest improvements during Week 07 and therefore generated valuable additional information regarding a previously developing search region. Functions 7 and 8 continued to demonstrate stable positive behaviour, confirming that these regions remained reliable and suitable for incremental optimisation through local refinement.
+
+Conversely, Functions 1, 3, 4 and 6 continued to provide valuable information despite producing limited objective improvements. Continued exploration of these functions reduced uncertainty surrounding poorly understood regions of the search landscape and increased the probability of identifying alternative productive areas during future optimisation rounds.
+
+Overall, the Week 07 information gain analysis demonstrated that optimisation success depends upon both improving objective values and reducing uncertainty across the hidden search landscape. Combining exploitation, refinement and exploration produced a balanced optimisation strategy that maximised knowledge while supporting continued performance improvement.
+
+**Figure 8. Information Gain Analysis**
+
+<img width="1536" height="1024" alt="Figure 8  Information Gain Analysis" src="https://github.com/user-attachments/assets/06f51a8a-9ca3-4c77-a65f-181adf02f723" />
+
+
+Week 07 Information Gain
+
+Highest Learning:
+F5
+
+Increasing Confidence:
+F2, F7, F8
+
+Reducing Uncertainty:
+F1, F3, F4, F6
+
+Objective:
+Maximise knowledge while improving optimisation performance.
+
+
+
+## 11. Computational Analysis and Coding Implementation
+
+The computational analysis performed during Week 07 transformed optimisation data into structured evidence that supported objective decision making. Python scripts were used to process input queries and optimisation results, calculate performance rankings, classify optimisation strategies and generate summary outputs suitable for documentation and future analysis. This automated workflow improved reproducibility while reducing manual processing errors.
+
+The Week 07 analysis script imported the optimisation inputs and objective values from structured CSV files before performing automated calculations. Each function was ranked according to its objective value, classified as Exploit, Refine or Explore, and evaluated according to whether the objective value was positive or negative. The resulting summary provided a consistent framework for interpreting optimisation performance.
+
+Using CSV files as the primary data source ensured that future optimisation rounds could be analysed without modifying the underlying Python implementation. Updating the input and result files automatically generated revised performance summaries while preserving the same computational workflow. This approach simplified repository maintenance and improved long term reproducibility.
+
+The Python implementation also demonstrated the practical application of data analysis libraries for optimisation research. Pandas provided efficient handling of structured datasets, while standard Python functions performed ranking, classification and summary generation. The resulting workflow produced consistent outputs that supported the accompanying visualisations and written analysis.
+
+Overall, the Week 07 computational framework demonstrated how automated analysis can improve the transparency, reproducibility and efficiency of Bayesian Black Box Optimisation studies. Combining structured datasets with reusable Python scripts created a reliable foundation for analysing subsequent optimisation rounds.
+
+**Figure 9. Computational Analysis and Coding Implementation**
+
+<img width="1536" height="1024" alt="Figure 9  Computational Analysis and Coding Implementation" src="https://github.com/user-attachments/assets/02d5275a-22a9-47ad-a930-788e95e20e44" />
+
+
+Week 07 Computational Workflow
+
+Inputs:
+week_07_inputs.csv
+
+Results:
+week_07_results.csv
+
+Processing:
+week_07_analysis.py
+
+Output:
+week_07_analysis_summary.csv
+
+Objective:
+Create a reproducible and automated optimisation analysis workflow.
+
+
+
+## 12. Repository Files and Reproducibility
+
+Maintaining a well organised repository remained an important objective throughout Week 07 because it supported transparency, reproducibility and efficient project development. The repository structure was designed to separate raw optimisation data, computational analysis, documentation and visualisations into clearly defined components, allowing each stage of the optimisation workflow to be independently verified and reproduced.
+
+The Week 07 repository contained structured input and output datasets together with reusable Python analysis scripts and comprehensive documentation. The optimisation inputs and objective values were stored as CSV files, while the automated Python implementation processed these datasets to generate rankings, strategy classifications and summary outputs. This structured workflow reduced manual processing and ensured that identical analysis procedures could be applied to future optimisation rounds.
+
+Repository documentation was expanded through a detailed README file describing each stage of the optimisation process. Written analysis was supported by figures, tables and infographics that presented optimisation trends, decision making strategies and computational workflows in a clear and reproducible format. This documentation improved the accessibility of the repository for both future development and independent review.
+
+Using a consistent repository structure also simplified long term maintenance. Future optimisation rounds could be incorporated by updating the input and result datasets while retaining the same computational framework and documentation structure. This approach improved scalability and supported continued development throughout the Bayesian Black Box Optimisation project.
+
+Overall, the Week 07 repository demonstrated the importance of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research framework. This organisation strengthened the transparency of the optimisation process while providing a reliable foundation for future optimisation analysis.
+
+**Figure 10. Repository Files and Reproducibility**
+
+<img width="1536" height="1024" alt="Figure 10  Repository Files and Reproducibility" src="https://github.com/user-attachments/assets/dea65141-9194-4039-a73a-3228ff409534" />
+
+
+Week 07 Repository
+
+Structured Data
+
+Reusable Python
+
+Automated Analysis
+
+Comprehensive Documentation
+
+Objective
+
+Create a transparent and reproducible optimisation repository suitable for future development.
+
+
+
+## 13. Conclusion
+
+Week 07 represented another significant stage in the Bayesian Black Box Optimisation challenge by strengthening understanding of the hidden objective functions through evidence based optimisation. Six optimisation rounds provided sufficient information to distinguish productive search regions from uncertain regions, allowing query resources to be allocated more effectively according to observed performance and confidence.
+
+Function 5 continued to demonstrate exceptional optimisation performance and remained the strongest candidate for continued exploitation. Functions 2, 7 and 8 demonstrated stable or improving behaviour, supporting continued local refinement. In contrast, Functions 1, 3, 4 and 6 continued to require broader exploration to improve understanding of their underlying response surfaces and identify alternative high performing regions.
+
+The computational workflow developed during Week 07 further improved the reproducibility and transparency of the optimisation process. Structured CSV datasets, reusable Python analysis scripts and comprehensive documentation provided a consistent framework for analysing optimisation performance while reducing manual processing and supporting future development.
+
+Overall, the Week 07 repository demonstrated that successful Bayesian Black Box Optimisation depends upon balancing exploitation, refinement and exploration according to accumulated evidence rather than intuition alone. The knowledge gained during Week 07 provides a stronger foundation for Week 07 query selection while continuing to improve understanding of the hidden optimisation landscape.
+
+
+## 14 Automation Decision
+
+For Week 07, the analysis summary was generated manually using `week_06_analysis.py` rather than through GitHub Actions. This decision was made to keep the repository simple, transparent, and easy to verify while the weekly BBO analysis structure is still being finalised.
+
+GitHub Actions automation remains a future option once the analysis script and CSV structure are stable across multiple weeks.
+
+
+## 15. References
+
+
+Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimisation of Expensive Black Box Functions. Journal of Global Optimization, 13(4), 455–492.
+
+Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & De Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148–175.
+
+Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems (NeurIPS), 25.
+
+Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825–2830.
+
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array Programming with NumPy. Nature, 585, 357–362.
+
+McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56–61.
+
+Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261–272.
+
+Hunter, J. D. (2007). Matplotlib: A 2D Graphics Environment. Computing in Science & Engineering, 9(3), 90–95.
