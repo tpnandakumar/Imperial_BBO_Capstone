@@ -1,107 +1,68 @@
-
-
 """
 Week 07 Analysis Tool
 Imperial BBO Capstone
 
-This script reads Week 07 results, ranks all functions, assigns
-strategy classifications and exports a reproducible analysis summary.
+This script analyses Week 07 BBO results, ranks all functions,
+assigns strategy classifications and exports a reproducible
+analysis summary.
 """
 
 import pandas as pd
 
 
-week_07_RESULTS = {
-    "F1": 0.012779642669914939,
-    "F2": 0.28016822307722516,
-    "F3": -0.11392206377710448,
-    "F4": -27.44051496086922,
-    "F5": 3682.2110623386798,
-    "F6": -1.073875453695542,
-    "F7": 1.3809299933612855,
-    "F8": 9.5113,
+WEEK_07_RESULTS = {
+    "F1": -1.4546199699251391e-58,
+    "F2": 0.2399291698606551,
+    "F3": -0.09116928906376276,
+    "F4": -10.745961383135121,
+    "F5": 4278.816638076986,
+    "F6": -1.119713499832813,
+    "F7": 1.1543358123792982,
+    "F8": 9.49476,
 }
 
 
 STRATEGY = {
     "F1": "Explore",
-    "F2": "Refine",
-    "F3": "Explore",
-    "F4": "Explore",
+    "F2": "Reassess",
+    "F3": "Refine",
+    "F4": "Refine",
     "F5": "Exploit",
-    "F6": "Explore",
-    "F7": "Refine",
+    "F6": "Refine",
+    "F7": "Monitor",
     "F8": "Monitor",
 }
 
 
-CONFIDENCE = {
-    "F1": "Low",
-    "F2": "Moderate",
-    "F3": "Low",
-    "F4": "Very Low",
-    "F5": "High",
-    "F6": "Low",
-    "F7": "Moderate",
-    "F8": "High",
-}
-
-
-INFORMATION_GAIN = {
-    "F1": "Low",
-    "F2": "Moderate",
-    "F3": "Moderate",
-    "F4": "High",
-    "F5": "High",
-    "F6": "Moderate",
-    "F7": "Moderate",
-    "F8": "Moderate",
-}
-
-
-CURRENT_ASSESSMENT = {
-    "F1": "Near Zero",
-    "F2": "Positive",
-    "F3": "Negative",
-    "F4": "Worst Performer",
-    "F5": "Best Performer",
-    "F6": "Negative",
-    "F7": "Improving",
-    "F8": "Stable High Performance",
-}
-
-
 INTERPRETATION = {
-    "F1": "Little improvement observed. Continue exploratory sampling.",
-    "F2": "Moderate positive performance with potential for further optimisation.",
-    "F3": "Negative output indicates that improved search regions have not yet been identified.",
-    "F4": "Lowest objective value. Broader exploration recommended.",
-    "F5": "Consistent improvement across successive optimisation rounds. Continue local exploitation.",
-    "F6": "Continued exploration required to reduce uncertainty.",
-    "F7": "Steady improvement supports continued local refinement.",
-    "F8": "Stable objective values suggest a reliable search region requiring only minor refinement.",
+    "F1": "Near zero and requires continued exploration",
+    "F2": "Positive but declined from Week 06",
+    "F3": "Improved and moving closer to zero",
+    "F4": "Improved despite remaining negative",
+    "F5": "Highest performing function",
+    "F6": "Improved while remaining negative",
+    "F7": "Stable positive performance",
+    "F8": "Stable high performance",
 }
 
 
 def build_summary() -> pd.DataFrame:
     rows = []
 
-    for function, output in week_07_RESULTS.items():
+    for function, output in WEEK_07_RESULTS.items():
         rows.append(
             {
                 "Function": function,
-                "week_07_Output": output,
+                "Week_07_Output": output,
+                "Rank": None,
                 "Strategy": STRATEGY[function],
-                "Confidence": CONFIDENCE[function],
-                "Information_Gain": INFORMATION_GAIN[function],
-                "Current_Assessment": CURRENT_ASSESSMENT[function],
                 "Interpretation": INTERPRETATION[function],
             }
         )
 
     df = pd.DataFrame(rows)
 
-    df["Rank"] = df["week_07_Output"].rank(
+    df["Rank"] = df["Week_07_Output"].rank(
         ascending=False,
         method="min"
     ).astype(int)
@@ -109,12 +70,9 @@ def build_summary() -> pd.DataFrame:
     df = df[
         [
             "Function",
-            "week_07_Output",
+            "Week_07_Output",
             "Rank",
             "Strategy",
-            "Confidence",
-            "Information_Gain",
-            "Current_Assessment",
             "Interpretation",
         ]
     ]
@@ -131,15 +89,16 @@ def print_report(df: pd.DataFrame) -> None:
     print("\nWeek 07 BBO Analysis Report")
     print("=" * 40)
     print(f"Best Function: {best['Function']}")
-    print(f"Best Output: {best['week_07_Output']}")
+    print(f"Best Output: {best['Week_07_Output']}")
     print(f"Worst Function: {worst['Function']}")
-    print(f"Worst Output: {worst['week_07_Output']}")
+    print(f"Worst Output: {worst['Week_07_Output']}")
 
     print("\nStrategy Allocation")
     print("Exploit: F5")
-    print("Refine: F2, F7")
-    print("Monitor: F8")
-    print("Explore: F1, F3, F4, F6")
+    print("Refine: F3, F4, F6")
+    print("Monitor: F7, F8")
+    print("Reassess: F2")
+    print("Explore: F1")
 
     print("\nRanking Summary")
     print(
@@ -147,10 +106,9 @@ def print_report(df: pd.DataFrame) -> None:
             [
                 "Rank",
                 "Function",
-                "week_07_Output",
+                "Week_07_Output",
                 "Strategy",
-                "Confidence",
-                "Information_Gain",
+                "Interpretation",
             ]
         ].to_string(index=False)
     )
