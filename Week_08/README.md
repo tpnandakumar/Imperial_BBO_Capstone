@@ -298,6 +298,48 @@ The computational workflow also continued to support a transparent and reproduci
 Overall, the Week 08 results strengthened confidence in the current optimisation strategy while also identifying where further work was needed. The evidence gathered during this round provided a stronger basis for selecting Week 09 queries and continued to improve understanding of the hidden optimisation landscape.
 
 
+ ## Figure 5C week_08 conclusions
+
+ <img width="1024" height="1536" alt="Figure 5C week_08 Conclusions" src="https://github.com/user-attachments/assets/9e13c5e7-89db-4bde-8169-1701edbfb63f" />
 
 
+The next section is:
 
+---
+
+# 14. Automation Decision
+
+The analyses presented throughout the first eight optimisation rounds were generated using a structured Python workflow rather than a fully automated optimisation pipeline. This approach ensured that every computational step could be reviewed, validated and interpreted before being incorporated into the project documentation. Maintaining direct oversight of the analytical process reduced the likelihood of transcription errors while preserving complete transparency.
+
+The current repository structure was designed with future automation in mind. Each optimisation round follows the same workflow, beginning with the submission of query inputs, followed by the collection of objective function outputs, computational analysis, summary generation and preparation of the accompanying documentation. Because this workflow is repeated consistently each week, it provides a strong foundation for introducing automation during the later stages of the project.
+
+Future development will focus on reducing manual intervention while preserving reproducibility. The existing Python analysis script can be extended to generate summary statistics, update rankings, calculate performance changes and produce analytical figures automatically whenever new optimisation results become available. This would allow a complete weekly report to be produced with minimal manual effort while maintaining the same analytical methodology.
+
+The modular repository structure also supports future integration with GitHub Actions or similar continuous integration systems. Once new input and output datasets are committed to the repository, automated workflows could execute the analysis script, regenerate figures, update the README and archive previous optimisation rounds. Such an approach would improve efficiency without compromising transparency or reproducibility.
+
+Although automation has not yet been implemented, the repository has been deliberately organised to support this transition. The combination of structured datasets, reusable analysis scripts and standardised documentation provides a scalable framework that can accommodate increasing levels of automation as the Bayesian Black Box Optimisation project progresses.
+
+This staged approach ensures that analytical quality remains the priority while preparing the project for a fully automated and reproducible optimisation workflow in future weeks.
+
+---
+
+
+# 15. References
+
+15. References
+
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357-362.
+
+Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95.
+
+Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimization of Expensive Black-Box Functions. Journal of Global Optimization, 13(4), 455-492.
+
+McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56-61.
+
+Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825-2830.
+
+Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & de Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148-175.
+
+Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25, 2951-2959.
+
+Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261-272.
