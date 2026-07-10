@@ -243,7 +243,6 @@ Overall, the identification of high-performing regions provided an evidence-base
 
 <img width="1536" height="1024" alt="Continue Refinement F3, F4, F6" src="https://github.com/user-attachments/assets/13098fb8-7273-4655-972e-083c9989ef4d" />
 
-Week 07 High Performing Regions
 
 Week 07 High Performing Regions
 
