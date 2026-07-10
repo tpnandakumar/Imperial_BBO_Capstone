@@ -390,10 +390,10 @@ Using a consistent repository structure also simplified long term maintenance. F
 
 Overall, the Week 07 repository demonstrated the importance of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research framework. This organisation strengthened the transparency, reproducibility and long term maintainability of t
 
-**Figure 5B – Repository Architecture**
+**Figure 5B. Week 07 Repository Structure and Workflow**
 
 
-<img width="1024" height="1536" alt="Figure 5B  Repository Architecture" src="https://github.com/user-attachments/assets/d59685f0-b7c0-4439-ab9d-edf1a2daded5" />
+<img width="1024" height="1536" alt="Figure 5B  Week 07 Repository Structure and Workflow" src="https://github.com/user-attachments/assets/a5b647a9-32da-4806-b827-4b8f4592b430" />
 
 
 Week 07 Repository
