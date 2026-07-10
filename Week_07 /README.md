@@ -58,7 +58,12 @@ Overall, the Week 07 results demonstrated continued progress in understanding th
 
 **Figure 1A. Function Output Evolution (Weeks 1 to 7)**
 
-<img width="1536" height="1024" alt="Figure 1A  Function Output Evolution (Weeks 1 to 6)" src="https://github.com/user-attachments/assets/e67c8132-0b96-46f0-86e2-4562203228ca" />
+
+<img width="1536" height="1024" alt="Figure 1A  Function Output Evolution (Weeks 1–7)" src="https://github.com/user-attachments/assets/af939cec-956b-44a0-bceb-df2e94b94bce" />
+
+**Figure 1B  Function Performance Ranking**
+
+<img width="1536" height="1024" alt="Figure 1B  Function Performance Ranking" src="https://github.com/user-attachments/assets/bc06ae31-5d24-4096-832d-cd43018805e0" />
 
 
 ## 3. Comparison of Week 6 and Week 7 Performance
@@ -71,9 +76,11 @@ In contrast, Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07
 
 Overall, the comparison between Week 06 and Week 07 demonstrated increasing confidence in the optimisation strategy. The results supported continued exploitation of Function 5, targeted refinement of Functions 3, 4 and 6, reassessment of Function 2 following its decline, and continued monitoring of the stable high-performing regions represented by Functions 7 and 8. These observations provided a stronger evidence base for planning the Week 08 optimisation strategy.
 
-**Figure 1B.1. Comparison of Week 6 and Week 7 Performance**
+**Figure 1C. Comparison of Week 6 and Week 7 Performance**
 
-<img width="1536" height="1024" alt="Figure 1B 1  Comparison of Week 5 and Week 7 Performance" src="https://github.com/user-attachments/assets/e19ca9fe-0802-402d-841d-c16d2b0378cc" />
+
+<img width="1536" height="1024" alt="Figure 1C  Week 06 vs Week 07 Comparison Dashboard" src="https://github.com/user-attachments/assets/9c45c6bc-cfe9-4e49-a8d0-bc6950666436" />
+
 
 
 ## 4. Query Selection Strategy
@@ -88,9 +95,9 @@ Functions 1, 3, 4 and 6 continued to exhibit greater uncertainty before Week 07.
 
 Overall, the Week 07 query selection strategy reflected a balanced optimisation framework that allocated computational resources according to observed performance, confidence and expected information gain. The strategy prioritised exploitation of the strongest performing region, refinement of stable positive regions and continued exploration of uncertain regions, providing a structured foundation for the Week 07 optimisation round.
 
-**Figure 2. Week 07 Query Selection Strategy**
+**Figure 2 – Exploration, Refinement and Exploitation Strategy**
 
-<img width="1536" height="1024" alt="Figure 2  Week 07 Query Selection Strategy" src="https://github.com/user-attachments/assets/8c99dc13-7568-46fe-9063-2ef583ee607f" />
+<img width="1536" height="1024" alt="Figure 2  Exploration, Refinement and Exploitation Strategy" src="https://github.com/user-attachments/assets/3080ebab-4a52-4799-8b58-75bec6ca13cd" />
 
 
 ## 5. Exploration vs Exploitation Analysis
