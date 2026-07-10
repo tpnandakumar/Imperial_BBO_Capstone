@@ -75,7 +75,7 @@ Overall, the Week 08 results strengthened confidence in the current optimisation
 
 <img width="1024" height="1536" alt="Figure 1B  Week 08 Function Performance Ranking" src="https://github.com/user-attachments/assets/b19f9170-957c-4b04-a62f-54de0c690d43" />
 
-## 3. Comparison of Week 07 and Week 08 Performance
+
 
 ## 3. Comparison of Week 07 and Week 08 Performance
 
@@ -199,8 +199,103 @@ Overall, the Week 08 results strengthened confidence in the high-performing regi
 <img width="1024" height="1536" alt="Highest Output 4359 384134322703" src="https://github.com/user-attachments/assets/934e5eaf-51aa-49d8-a2f3-9c3e81aa972e" />
 
 
+The next section is:
+
+# 9. Decision Matrix and Resource Allocation
+
+---
+
+Week 08 decision making continued to follow an evidence-based optimisation strategy in which computational resources were allocated according to observed performance, optimisation progress and expected information gain. After eight optimisation rounds, the accumulated evidence provided a clearer distinction between functions that justified continued exploitation, those requiring further refinement and those where continued exploration remained the most appropriate strategy. This systematic allocation of the available query budget aimed to maximise optimisation performance while continuing to improve understanding of the hidden objective functions.
+
+Function 5 remained the highest priority for resource allocation. Its objective value increased from **4278.816638076986** in Week 07 to **4359.384134322703** in Week 08, confirming that the current search region continued to produce the strongest optimisation results. Further computational effort directed towards carefully controlled local refinement offered the highest expected return while maintaining relatively low uncertainty.
+
+Function 2 demonstrated the greatest improvement among the remaining positive functions, increasing from **0.2399291698606551** to **0.5672775862793291**. This improvement suggested that the revised query had entered a more productive region of the search landscape. Functions 7 and 8 also continued to justify targeted refinement because both remained stable within productive regions despite only small changes in objective value.
+
+Functions 3, 4 and 6 continued to occupy negative regions of the objective space. Although these functions did not produce high objective values, successive optimisation rounds suggested that additional local refinement could continue to improve understanding of their surrounding search regions. Function 4 remained the weakest performer and therefore required careful reassessment before allocating substantial additional computational effort.
+
+Function 1 again produced an output effectively equal to zero and remained the principal exploration target. The absence of measurable improvement suggested that the current search region was unlikely to contain a productive optimum. Future computational resources assigned to Function 1 should therefore focus on investigating alternative regions rather than refining the existing location.
+
+Overall, the Week 08 resource allocation strategy reflected a balanced optimisation framework. Computational effort remained concentrated on the strongest performing region represented by Function 5 while maintaining sufficient refinement and exploration across the remaining functions to continue reducing uncertainty. This evidence-based allocation of resources strengthened optimisation performance while supporting continued learning throughout the search process.
+
+**Figure 4A. Resource Allocation Decision Matrix (Week 08)**
+
+<img width="1536" height="1024" alt="Figure 4A  Resource Allocation Decision Matrix (Week 08)" src="https://github.com/user-attachments/assets/ae8bca96-0aca-48ea-9c76-09332e78476c" />
+Caption 4A: This figure summarises the Week 08 allocation of computational resources across the eight objective functions. Function 5 receives the highest exploitation priority, while Function 1 remains the main exploration target. Functions 2, 7 and 8 are prioritised for refinement, and Functions 3, 4 and 6 require cautious reassessment.
 
 
+# 10. Information Gain Analysis
+
+---
+
+Information gain remained a central objective throughout Week 08 because every optimisation round contributed additional evidence about the behaviour of the hidden objective functions. The value of each query was determined not only by its objective value but also by how much it reduced uncertainty and improved understanding of the underlying search landscape. By the eighth optimisation round, the accumulated evidence allowed optimisation decisions to be made with greater confidence than in the earlier stages of the project.
+
+Function 5 continued to provide the greatest overall benefit. Its objective value increased from **4278.816638076986** in Week 07 to **4359.384134322703** in Week 08, confirming that the identified search region remained highly productive. Although confidence in this region was already high, the continued improvement strengthened the evidence supporting further local exploitation while reducing uncertainty surrounding the optimum.
+
+Function 2 produced one of the most informative results during Week 08. Its increase from **0.2399291698606551** to **0.5672775862793291** demonstrated that the revised query had successfully identified a more favourable region of the search landscape. This improvement provided both a higher objective value and increased confidence in future refinement decisions.
+
+Functions 3, 4 and 6 continued to contribute valuable information despite remaining within negative objective regions. Each additional query helped define the shape of the surrounding search landscape and clarified which neighbouring regions were less likely to contain productive optima. This knowledge reduced uncertainty and improved future query selection even when objective values did not increase substantially.
+
+Functions 7 and 8 continued to reinforce confidence in previously identified productive regions. Their relatively stable outputs demonstrated that these regions remained reliable and suitable for continued local refinement. The consistency observed across successive optimisation rounds reduced uncertainty and strengthened confidence in the current optimisation strategy.
+
+Function 1 again produced an output effectively equal to zero. Although the objective value itself contributed little to optimisation performance, the repeated observation confirmed that the current search region remained unproductive. This evidence supported continued exploration elsewhere rather than further refinement of the existing location.
+
+Overall, the Week 08 information gain demonstrated that optimisation success depended on balancing improvements in objective values with reductions in uncertainty. The knowledge accumulated over eight optimisation rounds provided a stronger foundation for future optimisation decisions and supported a more efficient allocation of computational resources during the remaining stages of the Bayesian Black Box Optimisation challenge.
+
+**Figure 5. Information Gain Summary (Week 08)**
+
+<img width="1536" height="1024" alt="Figure 5  Information Gain Summary (Week 08)" src="https://github.com/user-attachments/assets/1373e235-1b9e-42be-b844-ef2df800a05a" />
+
+
+
+## 11. Computational Analysis and Coding Implementation
+
+The computational analysis performed during Week 08 transformed the optimisation results into a structured and reproducible workflow that supported objective decision making. Python was used to automate data processing, function ranking, comparative analysis and the generation of summary statistics, ensuring that each optimisation round was analysed using the same methodology. This consistent approach reduced manual processing while improving the reliability and reproducibility of the optimisation framework.
+
+The Week 08 analysis script imported the query inputs and objective function outputs from structured CSV files before performing ranking, comparison and performance analysis. The script calculated changes relative to Week 07, identified improvements and declines in function performance, classified optimisation strategies and generated the summary data used throughout the report. By applying the same computational workflow each week, the repository maintained a consistent analytical framework that allowed optimisation progress to be monitored objectively over time.
+
+Although the computational workflow remained straightforward, it provided an efficient foundation for analysing future optimisation rounds. Updating the input and output CSV files automatically generated a new analytical summary while preserving the same computational methodology. This approach simplified repository maintenance, reduced the possibility of manual transcription errors and ensured that each optimisation round could be reproduced using the same analysis pipeline.
+
+Python libraries continued to provide the core analytical capability throughout Week 08. Pandas was used for reading, organising and manipulating structured datasets, while NumPy supported numerical calculations where required. Matplotlib generated the analytical figures used within the report, allowing optimisation trends and performance comparisons to be presented in a clear and consistent format. Together, these libraries formed a lightweight and reliable computational framework that could be extended easily as the project progressed.
+
+Overall, the Week 08 computational framework demonstrated how structured data analysis could support transparent, repeatable and objective optimisation research. The combination of reusable Python scripts, standardised CSV datasets and comprehensive documentation provided a reproducible workflow that strengthened both the analytical quality of the project and its long-term maintainability.
+
+**Figure 5A. Python Computational Workflow (Week 08)**
+
+<img width="1536" height="1024" alt="Figure 5A  Python Computational Workflow (Week 08)" src="https://github.com/user-attachments/assets/b0f85fbf-818f-4bba-84aa-817317e6eb62" />
+
+
+## 12. Repository Files and Reproducibility
+
+Maintaining a well organised repository remained an important objective throughout Week 08 because it ensured that every stage of the optimisation process could be reproduced, reviewed and extended. The repository structure separated raw optimisation data, computational analysis, summary outputs and documentation into clearly defined files, allowing each optimisation round to be repeated using the same analytical workflow.
+
+The Week 08 repository contained structured input and output datasets together with reusable Python analysis scripts and comprehensive documentation. The `week_08_inputs.csv` file stored the optimisation queries submitted during Week 08, while `week_08_results.csv` contained the corresponding objective values returned by the evaluation system. These datasets formed the foundation of the computational analysis and ensured that every result could be traced directly to its original optimisation query.
+
+The `week_08_analysis.py` script processed the input and output datasets, calculated performance changes relative to Week 07, ranked the objective functions, classified optimisation strategies and generated the analytical summary. The resulting `week_08_analysis_summary.csv` provided a concise overview of optimisation performance and supported the figures and interpretations presented throughout this report. This automated workflow reduced manual processing while maintaining analytical consistency across optimisation rounds.
+
+Documentation remained central to the repository structure. The Week 08 `README.md` recorded the complete analytical workflow, including methodology, figures, discussion and conclusions. Combining structured datasets, reusable Python scripts and detailed documentation created a transparent and reproducible research framework that could easily be extended during future optimisation rounds.
+
+The repository structure also simplified long-term project maintenance. Future optimisation rounds require only updated input and output CSV files while the existing analysis script and documentation framework remain unchanged. This modular organisation improves scalability, reduces duplication of effort and supports continuous development throughout the Bayesian Black Box Optimisation project.
+
+Overall, the Week 08 repository demonstrated the importance of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research environment. This organisation strengthened transparency, improved reproducibility and provided a robust foundation for the remaining optimisation rounds.
+
+**Figure 5B. Week 08 Repository Structure and Workflow**
+
+<img width="1024" height="1536" alt="Figure 5B  Week 08 Repository Structure and Workflow" src="https://github.com/user-attachments/assets/3e5c1ea1-e1aa-4c78-841e-301dc9e097eb" />
+
+
+## 13. Conclusion
+
+Week 08 marked another important stage in the Bayesian Black Box Optimisation challenge by adding further evidence to the understanding of the eight hidden objective functions. After eight optimisation rounds, the search process had become more focused, with clearer separation between productive regions, stable regions and areas that still required further investigation.
+
+Function 5 remained the strongest performer and achieved a new project high of **4359.384134322703**. Its continued improvement confirmed that the current search region remained highly productive and justified further local exploitation. Function 2 also showed a substantial improvement, increasing from **0.2399291698606551** in Week 07 to **0.5672775862793291** in Week 08. Function 7 improved while Function 8 remained stable, supporting continued refinement of these positive regions.
+
+Functions 3, 4 and 6 remained within negative regions and did not show meaningful improvement during Week 08. Function 4 produced the lowest output at **-12.305008897187289**, indicating that its search strategy required careful reassessment. Function 1 again returned a value effectively equal to zero, confirming that the current region remained unproductive and that broader exploration was still required.
+
+The Week 08 analysis demonstrated the value of allocating computational effort according to observed performance rather than treating all functions equally. Exploitation remained appropriate for Function 5, refinement was justified for Functions 2, 7 and 8, and more cautious refinement or reassessment was required for Functions 3, 4 and 6. Function 1 remained the main exploration target.
+
+The computational workflow also continued to support a transparent and reproducible approach. Structured CSV files, reusable Python scripts and a detailed README provided a consistent record of the optimisation process and created a reliable foundation for the next round of analysis.
+
+Overall, the Week 08 results strengthened confidence in the current optimisation strategy while also identifying where further work was needed. The evidence gathered during this round provided a stronger basis for selecting Week 09 queries and continued to improve understanding of the hidden optimisation landscape.
 
 
 
