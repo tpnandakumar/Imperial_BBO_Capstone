@@ -393,7 +393,7 @@ Overall, the Week 07 repository demonstrated the importance of combining structu
 **Figure 5B – Repository Architecture**
 
 
-<img width="1024" height="1536" alt="Figure 5B  Repository Architecture" src="https://github.com/user-attachments/assets/72318b14-32f6-415b-84ef-af5e30fff960" />
+<img width="1024" height="1536" alt="Figure 5B  Repository Architecture" src="https://github.com/user-attachments/assets/d59685f0-b7c0-4439-ab9d-edf1a2daded5" />
 
 
 Week 07 Repository
