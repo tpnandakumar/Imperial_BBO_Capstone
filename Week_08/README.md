@@ -97,6 +97,8 @@ Overall, the Week 08 comparison strengthened confidence in continued exploitatio
 
 <img width="1536" height="1024" alt="Figure 1C  Week 07 vs Week 08 Comparison Dashboard" src="https://github.com/user-attachments/assets/5e6492b2-8326-4a61-8630-b2c3c6d5ec5e" />
 
+**Caption:** This figure compares optimisation performance between Week 07 and Week 08 across all eight objective functions. It highlights changes in objective values, improvements in ranking and overall optimisation progress. Function 5 maintained its dominant position by achieving a new project high of **4359.384134322703**, while Function 2 recorded the largest improvement among the remaining functions. The comparison demonstrates continued refinement of productive search regions, identifies functions requiring reassessment and provides the evidence supporting the Week 09 optimisation strategy.
+
 ## 4. Query Selection Strategy
 
 The Week 08 query selection strategy was guided by the evidence gathered during the previous seven optimisation rounds. By this stage of the challenge, enough information had been collected to distinguish between functions that consistently produced strong objective values, functions that continued to improve gradually, and functions that remained uncertain. Rather than distributing the available queries evenly across all functions, greater emphasis was placed on those most likely to provide useful optimisation gains.
@@ -115,6 +117,8 @@ Overall, the Week 08 query selection strategy reflected a balanced and evidence-
 
 <img width="1536" height="1024" alt="Figure 2  Exploration, Refinement and Exploitation Strategy" src="https://github.com/user-attachments/assets/b5ec6ce2-6e4a-4aca-842d-dbb6b00eee82" />
 
+Caption figure 2 : This figure illustrates the evidence-based optimisation strategy adopted during Week 08. The available query budget was allocated across exploitation, refinement and exploration according to observed performance, optimisation progress and remaining uncertainty. Function 5 was prioritised for continued exploitation because it consistently produced the strongest objective values. Functions 2, 7 and 8 were selected for targeted refinement, while Functions 3, 4 and 6 required further investigation. Function 1 remained the principal exploration target because its near-zero output indicated that more productive regions of the search space had yet to be identified.
+
 ## 5. Exploration vs Exploitation Analysis
 
 Maintaining an appropriate balance between exploration and exploitation remained a central objective throughout Week 08. As more information became available from successive optimisation rounds, confidence in several search regions continued to increase, allowing greater emphasis to be placed on functions that consistently produced strong objective values while still reserving part of the available query budget for reducing uncertainty.
@@ -130,6 +134,9 @@ The Week 08 optimisation strategy therefore reflected a measured balance between
 **Figure 2A. Exploration vs Exploitation Balance (Week 08)**
 
 <img width="1536" height="1024" alt="Figure 2A  Exploration vs Exploitation Balance (Week 08)" src="https://github.com/user-attachments/assets/9387d32f-37a5-460b-b73c-78067b3a852e" />
+
+**Caption Figure 2A:** This figure illustrates how the available query budget was balanced between exploration and exploitation during Week 08. The strategy was guided by accumulated evidence from the previous optimisation rounds rather than equal allocation across all functions. Function 5 remained the primary exploitation target because of its consistently superior performance, while Functions 2, 7 and 8 were prioritised for continued refinement. Functions 3, 4 and 6 remained under investigation through targeted refinement, and Function 1 continued to receive exploratory queries because its near-zero output indicated that a productive search region had not yet been identified. This balanced approach maximised optimisation performance while continuing to reduce uncertainty across the hidden search landscape.
+
 
 ## 6. Reflection on Week 09 Query Selection
 
@@ -148,6 +155,9 @@ Overall, the Week 08 results reinforced the value of an evidence-based optimisat
 **Figure 3. Function Classification Matrix (Week 08)**
 
 <img width="1536" height="1024" alt="Figure 3  Function Classification Matrix (Week 08)" src="https://github.com/user-attachments/assets/76e380fd-24e1-4cf3-86f6-0475d2bbc3b1" />
+
+**Caption figure 3:** This figure classifies the eight objective functions according to their Week 08 optimisation status and recommended search strategy. The matrix separates functions into exploitation, refinement, reassessment and exploration categories based on objective value, optimisation trend and remaining uncertainty. Function 5 remained the leading exploitation target, Functions 2, 7 and 8 demonstrated stable positive performance suitable for continued refinement, Functions 3, 4 and 6 required further reassessment and local refinement, while Function 1 remained the principal exploration target because its output continued to remain effectively equal to zero.
+
 
 ## 7. Functional Ranking Evolution
 
@@ -168,6 +178,9 @@ Overall, the Week 08 ranking remained stable at the top, with Functions 5, 8 and
 **Figure 3A. Functional Ranking Evolution (Weeks 1–8)**
 
 <img width="1536" height="1024" alt="Figure 3A  Functional Ranking Evolution (Weeks 1–8)" src="https://github.com/user-attachments/assets/6beb06b3-dc34-4379-9ab9-f507adcdd0e2" />
+
+**Caption figure 3A:** This figure illustrates the evolution of functional performance rankings across the first eight optimisation rounds of the Bayesian Black Box Optimisation challenge. The rankings demonstrate how successive optimisation rounds refined the understanding of the hidden objective functions and revealed long-term performance trends. Function 5 consistently strengthened its position as the highest-performing objective function, while Functions 7 and 8 remained stable within productive regions. Function 2 showed a notable improvement during Week 08, whereas Functions 3, 4 and 6 continued to require refinement. Function 1 remained close to zero throughout the optimisation process, supporting continued exploration of alternative search regions.
+
 
 
 ## 8. High Performing Region Identification
