@@ -201,18 +201,19 @@ Overall, the Week 08 results strengthened confidence in the high-performing regi
 
 <img width="1536" height="1024" alt="Figure 4  Function 5 Optimisation Progress (Weeks 1–8)" src="https://github.com/user-attachments/assets/efa7f2ae-2ee4-4185-92ba-f6ac7f0d1608" />
 
+**Caption Figure 4:** This figure illustrates the optimisation progress of Function 5 across the first eight rounds of the Bayesian Black Box Optimisation challenge. A consistent upward trend is evident, culminating in the highest objective value achieved so far, **4359.384134322703** in Week 08. The sustained improvement demonstrates that the optimisation process has successfully identified and refined a highly productive region of the search space, providing strong evidence that continued local exploitation offers the greatest potential for further performance gains.
 
 **Best Function: F5**
 
 <img width="1086" height="1448" alt="Best Function F5" src="https://github.com/user-attachments/assets/44f75f79-c76c-4eba-b89a-ab803a1d1ca9" />
 
+**Caption Best funnction: F5** This infographic highlights Function 5 as the best-performing objective function during Week 08 of the Bayesian Black Box Optimisation challenge. Function 5 consistently outperformed all other functions throughout the optimisation process and achieved the highest objective value of **4359.384134322703**. Its sustained improvement across successive optimisation rounds confirmed that the identified search region remained highly productive and justified continued local exploitation as the primary optimisation strategy.
 
 **Highest Output: 4359.384134322703**
 
 <img width="1024" height="1536" alt="Highest Output 4359 384134322703" src="https://github.com/user-attachments/assets/934e5eaf-51aa-49d8-a2f3-9c3e81aa972e" />
 
-
-The next section is:
+**Caption Highest Output: 4359.384134322703:** This infographic highlights the highest objective value achieved during Week 08 of the Bayesian Black Box Optimisation challenge. Function 5 produced an output of **4359.384134322703**, representing the best optimisation result obtained after eight optimisation rounds. This exceptional performance confirms that the current search region remains the most productive identified so far and provides strong evidence for continuing a carefully controlled exploitation strategy during subsequent optimisation rounds.
 
 # 9. Decision Matrix and Resource Allocation
 
