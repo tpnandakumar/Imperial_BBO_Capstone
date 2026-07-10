@@ -111,9 +111,11 @@ Functions 3, 4 and 6 also demonstrated encouraging improvement during Week 07. F
 Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07, indicating that the previous optimisation gains were not maintained and that the corresponding search region required reassessment. Functions 7 and 8 remained stable despite small reductions in objective value. Function 7 decreased from 1.352949 to 1.154336, while Function 8 changed only slightly from 9.514800 to 9.494760. These observations suggested that both functions remained within productive regions where only limited local refinement was likely to be beneficial.
 
 Overall, the Week 07 results demonstrated that optimisation performance improved when computational resources were allocated according to observed evidence rather than uniformly across all functions. Continued exploitation of the highly productive region identified for Function 5, targeted refinement of improving functions, reassessment of declining performance and exploration of uncertain regions increased both optimisation performance and understanding of the hidden objective functions.
-**Figure 3. Exploration vs Exploitation Analysis**
 
-<img width="1536" height="1024" alt="Figure 3  Exploration vs Exploitation Analysis" src="https://github.com/user-attachments/assets/da215e8b-c1da-4232-a270-250410c66fda" />
+**Figure 2A – Exploration vs Exploitation Balance**
+
+<img width="1536" height="1024" alt="Figure 2A  Exploration vs Exploitation Balance" src="https://github.com/user-attachments/assets/5206164f-2d57-46de-b77f-78e8251fa850" />
+
 
 Week 07 Strategy
 
@@ -150,11 +152,9 @@ Not all optimisation decisions produced improved outcomes. Function 2 declined f
 
 Overall, the Week 07 results reinforced the value of an evidence-based optimisation strategy. The observations supported continued exploitation of the highly productive region identified for Function 5, targeted refinement of improving functions, reassessment of Function 2 following its decline, and continued exploration of uncertain regions. This balanced allocation of computational resources strengthened understanding of the hidden objective functions while improving optimisation performance.
 
-**Figure 4. Reflection on Week 7 Query Selection**
+**Figure 3 – Function Classification Matrix**
 
-<img width="1536" height="1024" alt="Figure 4  Reflection on Week 7 Query Selection" src="https://github.com/user-attachments/assets/9e961372-f275-4ab5-9649-e90165b9c4f2" />
-
-
+<img width="1536" height="1024" alt="Figure 3  Function Classification Matrix" src="https://github.com/user-attachments/assets/bca78aaa-0ebc-4f16-8379-f9e9c1f9771a" />
 
 
 Week 07 Strategy
@@ -184,10 +184,9 @@ Function 1 remained close to zero throughout Week 07 and continued to provide li
 
 Overall, the Week 07 functional rankings demonstrated increasing separation between consistently productive regions and more uncertain regions of the search landscape. The ranking evolution provided an objective framework for allocating optimisation resources while maintaining an effective balance between exploitation, targeted refinement and exploration.
 
-**Figure 5. Functional Ranking Evolution**
+**Figure 3A – Functional Ranking Evolution**
 
-<img width="1536" height="1024" alt="Figure 5  Functional Ranking Evolution" src="https://github.com/user-attachments/assets/24d24661-8fd7-43d6-b1df-efac72ecde0d" />
-
+<img width="1536" height="1024" alt="Figure 3A  Functional Ranking Evolution" src="https://github.com/user-attachments/assets/13b77be7-8ed3-424f-b0d7-84f4970487a4" />
 
 Week 07 Functional Ranking
 
@@ -215,10 +214,35 @@ In contrast, Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07
 
 Overall, the identification of high-performing regions provided an evidence-based framework for guiding future optimisation decisions. Concentrating computational effort on the most productive regions, refining improving search areas, reassessing declining performance and continuing to investigate uncertain regions increased optimisation efficiency while maximising the information gained from the available query budget.
 
-**Figure 6. High Performing Region Identification**
+**Figure 4 – Function 5 Optimisation Progress**
 
-<img width="1536" height="1024" alt="Figure 6  High Performing Region Identification" src="https://github.com/user-attachments/assets/307d4b75-4d1f-4fd6-a36b-9444b173cfaf" />
+<img width="1536" height="1024" alt="Figure 4  Function 5 Optimisation Progress" src="https://github.com/user-attachments/assets/ec289f3d-20e4-4aca-b4fd-a0c238d19169" />
 
+
+**Best Function: F5**
+<img width="1024" height="1536" alt="Best Function F5" src="https://github.com/user-attachments/assets/04b78bd6-abf4-4845-807e-2a994eb876b1" />
+
+**Highest Output: 4278.816638**
+
+<img width="1086" height="1448" alt="Highest Output 4278 816638" src="https://github.com/user-attachments/assets/bf8026ab-c2bb-488f-83dc-5b7a11e4ebf1" />
+
+**Most Improved: F4**
+<img width="1149" height="1369" alt="Most Improved F4" src="https://github.com/user-attachments/assets/0b776a4b-2044-49ad-adf7-c517e5d02adf" />
+
+**Stable High Performance: F7, F8
+<img width="1198" height="1313" alt="Stable High Performance F7, F8" src="https://github.com/user-attachments/assets/94d55bdc-4424-41ad-8768-ffbadb684395" />
+
+**Needs Reassessment: F2**
+
+<img width="1149" height="1369" alt="Needs Reassessment F2" src="https://github.com/user-attachments/assets/7b2049d5-8b93-4301-a961-37d27b9e9273" />
+
+**Continue Exploration: F1**
+
+<img width="1024" height="1536" alt="Continue Exploration F1" src="https://github.com/user-attachments/assets/81314370-188f-4a03-9171-4253547741cd" />
+
+**Continue Refinement: F3, F4, F6**
+
+<img width="1536" height="1024" alt="Continue Refinement F3, F4, F6" src="https://github.com/user-attachments/assets/13098fb8-7273-4655-972e-083c9989ef4d" />
 
 Week 07 High Performing Regions
 
@@ -254,9 +278,11 @@ Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07, indicating 
 
 Overall, the Week 07 decision matrix demonstrated that effective optimisation depended upon allocating computational resources according to observed evidence rather than distributing queries equally across all functions. Continued exploitation of Function 5, targeted refinement of improving functions, reassessment of declining performance and exploration of uncertain regions maintained an effective balance between optimisation performance and information gain.
 
-**Figure 7. Decision Matrix and Resource Allocation**
+**Figure 4A – Resource Allocation Decision Matrix**
 
-<img width="1536" height="1024" alt="Figure 7  Decision Matrix and Resource Allocation" src="https://github.com/user-attachments/assets/85e6b87c-ece3-49f1-9317-98c1ace5ea66" />
+
+<img width="1536" height="1024" alt="Figure 4A  Resource Allocation Decision Matrix" src="https://github.com/user-attachments/assets/6e35bec0-0b85-425f-9d1e-a66a40a6cf31" />
+
 
 Week 07 Resource Allocation
 
@@ -290,9 +316,10 @@ Functions 3, 4 and 6 also generated valuable information through measurable impr
 Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07, indicating that the previous optimisation gains were not maintained. This outcome provided valuable information by identifying a less reliable region of the search landscape and highlighting the need for reassessment. Functions 7 and 8 remained stable despite small reductions in objective value. Their consistent performance confirmed that these regions remained reliable and required only limited local refinement.
 
 Overall, the Week 07 information gain analysis demonstrated that optimisation success depended upon both improving objective values and reducing uncertainty across the hidden search landscape. Continued exploitation of productive regions, targeted refinement of improving search areas, reassessment of declining performance and exploration of uncertain regions increased both optimisation performance and understanding of the underlying objective functions.
-**Figure 8. Information Gain Analysis**
+**Figure 5 – Information Gain Summary**
 
-<img width="1536" height="1024" alt="Figure 8  Information Gain Analysis" src="https://github.com/user-attachments/assets/06f51a8a-9ca3-4c77-a65f-181adf02f723" />
+
+<img width="1536" height="1024" alt="Figure 5  Information Gain Summary" src="https://github.com/user-attachments/assets/199eb012-ce90-49c1-a9a9-b313e06e91c7" />
 
 
 Week 07 Information Gain
@@ -328,9 +355,10 @@ The Python implementation also demonstrated the practical application of data an
 
 Overall, the Week 07 computational framework demonstrated how structured computational analysis can improve the transparency, reproducibility and efficiency of Bayesian Black Box Optimisation studies. Combining structured datasets, reusable Python scripts and comprehensive documentation created a reliable foundation for analysing future optimisation rounds while maintaining a consistent analytical methodology.
 
-**Figure 9. Computational Analysis and Coding Implementation**
+**Figure 5A – Python Computational Workflow**
 
-<img width="1536" height="1024" alt="Figure 9  Computational Analysis and Coding Implementation" src="https://github.com/user-attachments/assets/02d5275a-22a9-47ad-a930-788e95e20e44" />
+
+<img width="1024" height="1536" alt="Figure 5A  Python Computational Workflow" src="https://github.com/user-attachments/assets/cff082b9-42c6-49e7-8120-b7ab44c33c5d" />
 
 
 Week 07 Computational Workflow
@@ -364,9 +392,10 @@ Using a consistent repository structure also simplified long term maintenance. F
 
 Overall, the Week 07 repository demonstrated the importance of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research framework. This organisation strengthened the transparency, reproducibility and long term maintainability of t
 
-**Figure 10. Repository Files and Reproducibility**
+**Figure 5B – Repository Architecture**
 
-<img width="1536" height="1024" alt="Figure 10  Repository Files and Reproducibility" src="https://github.com/user-attachments/assets/dea65141-9194-4039-a73a-3228ff409534" />
+
+<img width="1024" height="1536" alt="Figure 5B  Repository Architecture" src="https://github.com/user-attachments/assets/72318b14-32f6-415b-84ef-af5e30fff960" />
 
 
 Week 07 Repository
@@ -384,7 +413,6 @@ Objective
 Create a transparent and reproducible optimisation repository suitable for future development.
 
 
-
 ## 13. Conclusion
 
 Week 07 represented another significant stage in the Bayesian Black Box Optimisation challenge by strengthening understanding of the hidden objective functions through evidence based optimisation. Following the completion of six optimisation rounds, the Week 07 queries provided additional evidence that further refined understanding of the hidden search landscape and increased confidence in subsequent optimisation decisions.
@@ -395,11 +423,24 @@ The computational workflow developed during Week 07 further improved the transpa
 
 Overall, the Week 07 repository demonstrated that successful Bayesian Black Box Optimisation depends upon balancing exploitation, targeted refinement and exploration according to accumulated evidence rather than intuition alone. The knowledge gained during Week 07 provided a stronger foundation for planning the Week 08 optimisation strategy while continuing to improve understanding of the hidden optimisation landscape and guiding subsequent optimisation decisions.
 
+
+**Overall Strategy Wheel**
+
+
+<img width="1254" height="1254" alt="Overall Strategy Wheel" src="https://github.com/user-attachments/assets/1075bf5a-e9b3-4b93-b5d8-797c349091d7" />
+
+**Key Week 07 Takeaways**
+
+
+<img width="1024" height="1536" alt="Key Week 07 Takeaways" src="https://github.com/user-attachments/assets/75cd54f0-560c-4a6e-98db-addb7faa13b8" />
+
+
 ## 14 Automation Decision
 
 For Week 07, the analysis summary was generated manually using week_07_analysis.py rather than through GitHub Actions. This decision was made to maintain a simple, transparent and easily verifiable workflow while the weekly Bayesian Black Box Optimisation analysis framework continued to mature.
 
 GitHub Actions remains a planned enhancement for future development. Once the analysis script, CSV structure and repository workflow have been fully standardised across multiple optimisation rounds, automated generation of the analysis summary and associated outputs can be implemented to improve efficiency while maintaining reproducibility.
+
 
 ## 15. References
 
