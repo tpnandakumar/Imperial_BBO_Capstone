@@ -218,7 +218,6 @@ Overall, the identification of high-performing regions provided an evidence-base
 
 <img width="1536" height="1024" alt="Figure 4  Function 5 Optimisation Progress" src="https://github.com/user-attachments/assets/ec289f3d-20e4-4aca-b4fd-a0c238d19169" />
 
-
 **Best Function: F5**
 <img width="1024" height="1536" alt="Best Function F5" src="https://github.com/user-attachments/assets/04b78bd6-abf4-4845-807e-2a994eb876b1" />
 
