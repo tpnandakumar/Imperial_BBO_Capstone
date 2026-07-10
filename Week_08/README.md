@@ -336,8 +336,6 @@ Although automation has not yet been implemented, the repository has been delibe
 This staged approach ensures that analytical quality remains the priority while preparing the project for a fully automated and reproducible optimisation workflow in future weeks.
 
 ---
-
-
 # 15. References
 
 15. References
