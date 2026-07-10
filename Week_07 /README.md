@@ -7,12 +7,12 @@
 
 1. Introduction
 2. Week 7 Results
-3. Comparison of Week 5 and Week 7 Performance
+3. Comparison of Week 6 and Week 7 Performance
 4. Query Selection Strategy
 5. Exploration vs Exploitation Analysis
-6. Reflection on Week 8 Query Selection
+6. Reflection on Week 7 Query Selection
 7. Functional Ranking Evolution
-8. High Performing Region Identification
+8. High Performing Regions
 9. Decision Matrix and Resource Allocation
 10. Information Gain Analysis
 11. Computational Analysis and Coding Implementation
@@ -71,7 +71,7 @@ In contrast, Function 2 declined from 0.571248 in Week 06 to 0.239929 in Week 07
 
 Overall, the comparison between Week 06 and Week 07 demonstrated increasing confidence in the optimisation strategy. The results supported continued exploitation of Function 5, targeted refinement of Functions 3, 4 and 6, reassessment of Function 2 following its decline, and continued monitoring of the stable high-performing regions represented by Functions 7 and 8. These observations provided a stronger evidence base for planning the Week 08 optimisation strategy.
 
-**Figure 1B.1. Comparison of Week 5 and Week 7 Performance**
+**Figure 1B.1. Comparison of Week 6 and Week 7 Performance**
 
 <img width="1536" height="1024" alt="Figure 1B 1  Comparison of Week 5 and Week 7 Performance" src="https://github.com/user-attachments/assets/e19ca9fe-0802-402d-841d-c16d2b0378cc" />
 
@@ -196,7 +196,7 @@ F1, F3, F4, F6
 Ranking stability increased confidence in optimisation decisions while identifying functions requiring continued exploration.
 
 
-## 8. High Performing Region Identification
+## 8. High Performing Regions
 
 Identifying high-performing regions remained one of the primary objectives of the Bayesian Black Box Optimisation process. After six completed optimisation rounds, sufficient evidence had been accumulated to distinguish between productive search regions that consistently generated strong objective values and uncertain regions requiring further investigation. This information provided the foundation for selecting the Week 07 queries and allocating the limited query budget more efficiently.
 
