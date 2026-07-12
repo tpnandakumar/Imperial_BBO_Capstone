@@ -93,3 +93,113 @@ Overall, Week 09 produced a mixed but informative result. Function 5 continued t
 <img width="1536" height="1024" alt="Figure 1C  Week 08 vs Week 09 Comparison Dashboard" src="https://github.com/user-attachments/assets/1803e28e-8dd3-402c-b53a-65405fe16330" />
 
 ## 4. Query Selection Strategy
+
+The Week 09 query selection strategy was based on the performance patterns observed across the first eight optimisation rounds. By this stage, several functions had shown consistent behaviour, while others still required further investigation. The available query budget was therefore allocated according to the strength of the current evidence, the direction of recent change and the likelihood of gaining useful information from each new query.
+
+Function 5 remained the main exploitation target. Its output increased again, from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09. This confirmed that the current search region continued to produce the strongest results in the portfolio. The most appropriate strategy was therefore to continue with small, controlled adjustments around the existing best-known input rather than move to a different part of the search space.
+
+Functions 7 and 8 remained suitable for local refinement. Both continued to produce strong positive outputs, although each declined slightly in Week 09. Their overall stability suggested that the surrounding regions remained productive, but the next queries needed to be more cautious and focused on preserving performance while testing nearby alternatives.
+
+Function 2 also remained a refinement target. Its Week 09 output of **0.47297842839949866** was lower than the Week 08 result, but the function remained positive and continued to perform better than in several earlier rounds. The decline indicated that the search should remain close to the stronger Week 08 region rather than continue moving in the same direction without adjustment.
+
+Function 4 showed the most encouraging movement among the negative functions. Its output improved from **-12.305008897187289** to **-11.788939969158545**, suggesting that the revised query had moved towards a more favourable region. Further local refinement remained justified, although progress was still gradual and the function continued to require careful monitoring.
+
+Functions 3 and 6 declined during Week 09 and remained within negative regions. Their next queries needed to be selected cautiously, with the aim of testing nearby alternatives rather than making large changes. The purpose of these queries was not only to improve the objective value but also to better understand the local search landscape and avoid repeating unproductive directions.
+
+Function 1 again produced an output effectively equal to zero. Repeated sampling around the current region had provided little evidence of optimisation potential. Broader exploration remained necessary, with the next query directed towards a clearly different part of the search space.
+
+Overall, the Week 09 query selection strategy maintained a clear distinction between exploitation, refinement and exploration. Function 5 remained the strongest exploitation target, Functions 2, 4, 7 and 8 required local refinement, Functions 3 and 6 required cautious reassessment, and Function 1 remained the principal exploration target. This approach provided the basis for the Week 10 input selection.
+
+**Figure 2. Exploration, Refinement and Exploitation Strategy**
+
+<img width="1536" height="1024" alt="Figure 2  Exploration, Refinement and Exploitation Strategy" src="https://github.com/user-attachments/assets/96af14a8-091e-4f77-a5c9-ce8221e51d6c" />
+
+
+## 5. Exploration vs Exploitation Analysis
+
+Maintaining an effective balance between exploration and exploitation remained central to the Week 09 optimisation strategy. As the optimisation process progressed, confidence in several search regions continued to increase, allowing greater emphasis to be placed on functions with established optimisation potential while preserving sufficient exploration to identify previously undiscovered productive regions. This balance ensured that computational resources were directed efficiently without limiting opportunities for future improvement.
+
+Function 5 remained the primary exploitation target throughout Week 09. Its objective value increased from **4359.384134322703** in Week 08 to **4394.868042481448**, confirming that the surrounding search region continued to generate the strongest optimisation results. The relatively small but consistent improvement suggested that the optimum had not yet been reached and that further gains were likely to come from careful local refinement rather than large changes in the query values.
+
+Refinement remained appropriate for Functions 2, 4, 7 and 8. Function 4 continued to improve, moving from **-12.305008897187289** to **-11.788939969158545**, while Functions 7 and 8 remained stable despite small reductions in objective value. Function 2 declined compared with Week 08 but continued to produce a positive output, indicating that the underlying search region remained promising even though the most recent query produced a less favourable result. Collectively, these functions continued to justify local refinement because they provided useful optimisation information without requiring broad exploration.
+
+Functions 3 and 6 remained within negative regions of the search landscape and therefore required a more cautious approach. The small reductions observed during Week 09 suggested that neighbouring regions had not yet been fully explored. Rather than abandoning these functions, carefully selected local adjustments remained appropriate to improve understanding of the surrounding search space while avoiding unnecessary computational effort.
+
+Function 1 again produced an output effectively equal to zero and remained the least informative objective function. Repeated sampling within the current region continued to provide little evidence of optimisation potential. Broader exploration therefore remained the preferred strategy, with future queries directed towards substantially different regions of the search space in an effort to identify previously undiscovered areas of higher performance.
+
+Overall, the Week 09 optimisation strategy continued to balance exploitation, refinement and exploration according to the evidence accumulated throughout the project. Concentrating computational effort on proven high-performing regions while maintaining targeted investigation of uncertain regions provided the strongest opportunity to improve optimisation performance and further reduce uncertainty before the next optimisation round.
+
+**Figure 2A. Exploration vs Exploitation Balance (Week 09)**
+
+<img width="1536" height="1024" alt="Figure 2A  Exploration vs Exploitation Balance (Week 09)" src="https://github.com/user-attachments/assets/4e098082-9d43-44b8-9695-40c6bd26b639" />
+
+## 6. Reflection on Week 10 Query Selection
+
+The Week 09 results provided additional evidence to guide the selection of queries for Week 10. After nine optimisation rounds, the behaviour of the eight hidden objective functions had become increasingly well understood, allowing future decisions to be based on observed performance rather than broad exploration. The emphasis therefore shifted towards confirming productive search regions while continuing to investigate functions that still exhibited uncertainty.
+
+Function 5 remained the strongest optimisation target throughout the project. Its objective value increased again, from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09, confirming that the current search region continued to produce the highest objective values. Rather than making large adjustments, the evidence supported repeating or making only very small refinements around the best-performing input in order to determine whether the optimum had been reached or whether further improvement remained possible.
+
+Function 4 continued to show gradual improvement despite remaining within the negative objective region. The movement from **-12.305008897187289** to **-11.788939969158545** suggested that the revised query had moved towards a more favourable region of the search space. Continued refinement therefore remained appropriate, although progress was expected to be gradual.
+
+Function 2 remained positive despite a reduction compared with Week 08. This decline indicated that the strong improvement observed during the previous optimisation round required further confirmation before the surrounding region could be considered stable. Functions 7 and 8 remained reliable positive performers, with only small reductions in objective value. These functions continued to justify careful local refinement because their behaviour remained consistent across successive optimisation rounds.
+
+Functions 3 and 6 remained within negative regions and continued to provide limited improvement. The evidence suggested that further investigation should concentrate on nearby regions rather than making substantial changes to the search direction. Maintaining continuity in the refinement process offered the greatest opportunity to improve understanding of these parts of the optimisation landscape.
+
+Function 1 again returned an output effectively equal to zero and remained the least informative objective function. Repeated observations confirmed that the current region was unlikely to contain a productive optimum. Future queries therefore continued to prioritise broader exploration in an effort to identify previously untested regions with greater optimisation potential.
+
+Overall, the Week 09 results reinforced the value of an evidence-based optimisation strategy. Continued exploitation of Function 5, targeted refinement of Functions 2, 4, 7 and 8, cautious reassessment of Functions 3 and 6, and broad exploration of Function 1 provided the most balanced approach for preparing the Week 10 optimisation round.
+
+**Figure 3. Function Classification Matrix (Week 09)**
+
+<img width="1536" height="1024" alt="Figure 3  Function Classification Matrix (Week 09)" src="https://github.com/user-attachments/assets/a7139d16-e325-4a99-bce6-bad74188752d" />
+
+
+
+## 7. Functional Ranking Evolution
+
+The Week 09 results provided a clearer picture of how the relative performance of the eight objective functions had evolved after nine optimisation rounds. Although the overall ranking remained unchanged from Week 08, the latest results provided additional evidence regarding the stability of the leading functions and the behaviour of those requiring further investigation. This continuing record of performance helped guide future optimisation decisions by distinguishing consistently productive regions from those that remained uncertain.
+
+Function 5 retained first position with an output of **4394.868042481448**. The continued increase confirmed that the identified search region remained highly productive and that the optimisation process continued to move in a favourable direction. After nine optimisation rounds, Function 5 had established itself as the dominant objective function, supporting continued local exploitation rather than broad exploratory sampling.
+
+Function 8 remained in second position with an output of **9.4709436**. Although the objective value decreased slightly from Week 08, the reduction was minimal and did not affect its ranking. Function 7 also maintained third position, producing **1.314307996450604**. The small decline compared with the previous week suggested that the surrounding search region remained stable while indicating that future refinement should proceed cautiously.
+
+Function 2 remained in fourth position with an output of **0.47297842839949866**. Despite the reduction from Week 08, the function continued to produce a positive objective value and remained substantially stronger than the negative functions. Continued refinement therefore remained appropriate while gathering further evidence regarding the surrounding search region.
+
+Function 1 remained in fifth position because its output continued to lie close to zero. Although this ranking placed it above the negative functions, the result reflected the absence of a productive response rather than genuine optimisation progress. Continued exploration therefore remained the preferred strategy.
+
+Functions 3, 6 and 4 occupied the lower positions in the ranking. Function 3 produced **-0.1156707106126581**, Function 6 produced **-1.1733030029888645**, and Function 4 produced **-11.788939969158545**. Although Function 4 improved compared with Week 08, it remained the lowest-ranked objective function and continued to require careful investigation.
+
+Overall, the Week 09 ranking demonstrated that the leading functions remained remarkably stable throughout the optimisation process. Function 5 continued to strengthen its position, Functions 7 and 8 remained reliable positive performers, Function 2 retained a productive search region despite a modest decline, and the remaining functions continued to provide useful information for refining the understanding of the hidden optimisation landscape.
+
+**Figure 3A. Functional Ranking Evolution (Weeks 1–9)**
+
+<img width="1536" height="1024" alt="Figure 3A  Functional Ranking Evolution (Weeks 1–9)" src="https://github.com/user-attachments/assets/6dc97ab2-62e6-42f9-a42f-24b294d6cde5" />
+
+## 8. High Performing Region Identification
+
+Identifying productive regions within the hidden search landscape remained one of the main objectives of the Bayesian Black Box Optimisation process. After nine optimisation rounds, the accumulated evidence provided a clearer picture of which regions consistently produced strong objective values and which continued to require further investigation. This growing understanding allowed future queries to focus increasingly on regions with the greatest optimisation potential while continuing to reduce uncertainty elsewhere in the search space.
+
+Function 5 remained the strongest high-performing region identified during the project. Its objective value increased from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09, continuing the steady upward trend observed throughout the optimisation process. This consistent improvement suggested that the current search region remained highly productive and supported continued local exploitation rather than broad exploratory sampling.
+
+Function 8 remained the second strongest performing function despite a very small reduction from **9.47621** to **9.4709436**. The change was minimal and did not alter the overall interpretation of the surrounding search region, which continued to demonstrate stable performance and low uncertainty. Function 7 also remained within a productive region, changing only slightly from **1.3346391663186332** to **1.314307996450604**. Although the objective value declined marginally, the function continued to demonstrate reliable behaviour and remained suitable for careful local refinement.
+
+Function 2 remained within a productive positive region despite declining from **0.5672775862793291** to **0.47297842839949866**. While this reduction indicated that the previous improvement had not been fully maintained, the function continued to produce positive objective values and remained considerably stronger than the remaining negative functions. Continued refinement therefore remained appropriate while gathering additional evidence from the surrounding search region.
+
+The remaining functions continued to provide valuable information despite producing lower objective values. Function 4 moved closer to zero, improving from **-12.305008897187289** to **-11.788939969158545**, while Functions 3 and 6 declined slightly but continued to improve understanding of their respective search regions. Function 1 again returned an output effectively equal to zero, indicating that the current search region remained unproductive and that broader exploration continued to offer the greatest opportunity for discovering new areas of optimisation potential.
+
+Overall, the Week 09 results strengthened confidence in the productive regions identified during previous optimisation rounds while continuing to refine the understanding of less productive areas. Sustained exploitation of Function 5, careful refinement of Functions 2, 7 and 8, continued investigation of Functions 3, 4 and 6, and broad exploration of Function 1 provided the most balanced strategy for future optimisation rounds.
+
+**Figure 4. Function 5 Optimisation Progress (Weeks 1–9)**
+
+<img width="1536" height="1024" alt="Figure 4  Function 5 Optimisation Progress (Weeks 1–9)" src="https://github.com/user-attachments/assets/dc513168-d3d2-4cd0-89fa-ee263e88dbd9" />
+
+
+**Best Function: F5**
+
+<img width="1536" height="1024" alt="week_09 Best function F5" src="https://github.com/user-attachments/assets/98a092f2-e59b-41ec-bfc1-3848ed90d0dc" />
+
+
+**Highest Output: 4394.868042481448**
+
+<img width="1536" height="1024" alt="Week_09 Highest Output" src="https://github.com/user-attachments/assets/28ae2f98-5379-4ace-a066-782e1dfeadee" />
+
