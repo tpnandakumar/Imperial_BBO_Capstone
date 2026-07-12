@@ -23,10 +23,6 @@
 15. References
 
 
-Agreed. This is closer to the tone you've been aiming for throughout the project.
-
----
-
 # 1. Introduction
 
 Week 08 marked another step forward in understanding the hidden objective functions within the Bayesian Black Box Optimisation (BBO) challenge. With seven previous optimisation rounds completed, the search process had moved beyond broad exploration and towards making decisions based on an increasingly reliable body of evidence. Each new set of results helped clarify which regions of the search space were consistently productive and which still required further investigation.
@@ -217,8 +213,6 @@ Overall, the Week 08 results strengthened confidence in the high-performing regi
 
 # 9. Decision Matrix and Resource Allocation
 
----
-
 Week 08 decision making continued to follow an evidence-based optimisation strategy in which computational resources were allocated according to observed performance, optimisation progress and expected information gain. After eight optimisation rounds, the accumulated evidence provided a clearer distinction between functions that justified continued exploitation, those requiring further refinement and those where continued exploration remained the most appropriate strategy. This systematic allocation of the available query budget aimed to maximise optimisation performance while continuing to improve understanding of the hidden objective functions.
 
 Function 5 remained the highest priority for resource allocation. Its objective value increased from **4278.816638076986** in Week 07 to **4359.384134322703** in Week 08, confirming that the current search region continued to produce the strongest optimisation results. Further computational effort directed towards carefully controlled local refinement offered the highest expected return while maintaining relatively low uncertainty.
@@ -239,8 +233,6 @@ Caption 4A: This figure summarises the Week 08 allocation of computational resou
 
 # 10. Information Gain Analysis
 
----
-
 Information gain remained a central objective throughout Week 08 because every optimisation round contributed additional evidence about the behaviour of the hidden objective functions. The value of each query was determined not only by its objective value but also by how much it reduced uncertainty and improved understanding of the underlying search landscape. By the eighth optimisation round, the accumulated evidence allowed optimisation decisions to be made with greater confidence than in the earlier stages of the project.
 
 Function 5 continued to provide the greatest overall benefit. Its objective value increased from **4278.816638076986** in Week 07 to **4359.384134322703** in Week 08, confirming that the identified search region remained highly productive. Although confidence in this region was already high, the continued improvement strengthened the evidence supporting further local exploitation while reducing uncertainty surrounding the optimum.
@@ -260,7 +252,6 @@ Overall, the Week 08 information gain demonstrated that optimisation success dep
 <img width="1536" height="1024" alt="Figure 5  Information Gain Summary (Week 08)" src="https://github.com/user-attachments/assets/1373e235-1b9e-42be-b844-ef2df800a05a" />
 
 
-
 ## 11. Computational Analysis and Coding Implementation
 
 The computational analysis performed during Week 08 transformed the optimisation results into a structured and reproducible workflow that supported objective decision making. Python was used to automate data processing, function ranking, comparative analysis and the generation of summary statistics, ensuring that each optimisation round was analysed using the same methodology. This consistent approach reduced manual processing while improving the reliability and reproducibility of the optimisation framework.
@@ -276,7 +267,6 @@ Overall, the Week 08 computational framework demonstrated how structured data an
 **Figure 5A. Python Computational Workflow (Week 08)**
 
 <img width="1536" height="1024" alt="Figure 5A  Python Computational Workflow (Week 08)" src="https://github.com/user-attachments/assets/b0f85fbf-818f-4bba-84aa-817317e6eb62" />
-
 
 ## 12. Repository Files and Reproducibility
 
@@ -319,8 +309,6 @@ Overall, the Week 08 results strengthened confidence in the current optimisation
 
 The next section is:
 
----
-
 # 14. Automation Decision
 
 The analyses presented throughout the first eight optimisation rounds were generated using a structured Python workflow rather than a fully automated optimisation pipeline. This approach ensured that every computational step could be reviewed, validated and interpreted before being incorporated into the project documentation. Maintaining direct oversight of the analytical process reduced the likelihood of transcription errors while preserving complete transparency.
@@ -335,7 +323,6 @@ Although automation has not yet been implemented, the repository has been delibe
 
 This staged approach ensures that analytical quality remains the priority while preparing the project for a fully automated and reproducible optimisation workflow in future weeks.
 
----
 # 15. References
 
 15. References
