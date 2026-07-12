@@ -70,5 +70,25 @@ Overall, the Week 09 results strengthened confidence in the current optimisation
 <img width="1536" height="1024" alt="Figure 1B  Week 09 Function Performance Ranking" src="https://github.com/user-attachments/assets/1c9e05e5-c3d6-479c-a18f-f943643fc42e" />
 
 
+## 3. Comparison of Week 08 and Week 09 Performance
 
+Comparison of the Week 08 and Week 09 results showed that the overall performance ranking remained stable, although several functions moved within their established search regions. Function 5 continued to improve, Function 4 moved towards a less negative value, and the remaining functions either declined slightly or remained unchanged. These changes provided useful evidence for refining the Week 10 query strategy.
+
+Function 5 remained the strongest performer. Its output increased from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09, giving an exact increase of **35.483908158745**. The improvement was smaller than those achieved during earlier rounds, but it confirmed that the current region continued to produce higher objective values. This supported continued exploitation through cautious local adjustment.
+
+Function 4 recorded the main improvement among the negative functions. Its output changed from **-12.305008897187289** to **-11.788939969158545**, an exact improvement of **0.516068928028744**. Although the value remained negative, the movement towards zero suggested that the revised query had identified a more favourable neighbouring region.
+
+Function 2 declined from **0.5672775862793291** to **0.47297842839949866**, an exact change of **-0.09429915787983044**. The output remained positive, but the reduction showed that the strong Week 08 result had not been maintained. Further refinement was still justified, although the next query needed to remain close to the better performing region rather than continuing in the same direction without adjustment.
+
+Functions 7 and 8 remained stable positive performers. Function 7 changed from **1.3346391663186332** to **1.314307996450604**, a reduction of **0.0203311698680292**. Function 8 decreased from **9.47621** to **9.4709436**, a reduction of **0.0052664**. These small declines did not alter their relative positions and continued to support careful local refinement.
+
+Function 3 decreased from **-0.0991107637427902** to **-0.1156707106126581**, giving an exact change of **-0.0165599468698679**. Function 6 also declined from **-1.1197178425911847** to **-1.1733030029888645**, an exact change of **-0.0535851603976798**. Both functions remained within negative regions and required further investigation before a reliable improvement path could be identified.
+
+Function 1 returned exactly the same output as in Week 08, remaining at **-1.4546199699251391e-58**. The absence of change confirmed that the current region continued to provide little useful evidence of optimisation potential. Broader exploration remained the most appropriate strategy.
+
+Overall, Week 09 produced a mixed but informative result. Function 5 continued to improve and Function 4 moved in a favourable direction, while Functions 2, 3, 6, 7 and 8 declined by varying amounts. Function 1 remained unchanged. These observations supported continued exploitation of Function 5, cautious refinement of the stable positive functions, reassessment of the declining negative functions and broader exploration of Function 1.
+
+**Figure 1C. Week 08 vs Week 09 Comparison Dashboard**
+
+<img width="1536" height="1024" alt="Figure 1C  Week 08 vs Week 09 Comparison Dashboard" src="https://github.com/user-attachments/assets/1803e28e-8dd3-402c-b53a-65405fe16330" />
 
