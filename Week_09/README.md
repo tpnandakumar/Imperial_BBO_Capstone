@@ -278,3 +278,38 @@ Overall, the Week 09 results strengthened confidence in the current optimisation
 
 <img width="1024" height="1536" alt="Figure 5C  Week 09 Conclusions and Strategic Outlook" src="https://github.com/user-attachments/assets/029506e1-966a-4075-ba7a-4c87326f7582" />
 
+14. Automation Decision
+
+The Week 09 analyses were generated using the structured Python workflow developed throughout the project rather than a fully automated optimisation pipeline. This approach ensured that every computational step could be reviewed, validated and interpreted before being incorporated into the repository. Maintaining direct oversight of the analytical process reduced the possibility of transcription errors while preserving transparency and reproducibility.
+
+The repository structure continued to support a consistent weekly workflow beginning with the submission of optimisation queries, followed by collection of objective function outputs, computational analysis, summary generation and preparation of the accompanying documentation. Repeating the same analytical process for each optimisation round ensured that results remained directly comparable throughout the project.
+
+Future development will continue to focus on increasing automation while preserving analytical quality. The existing Python analysis script can be extended to update rankings, calculate performance changes, regenerate analytical figures and produce summary reports automatically whenever new optimisation results become available. This approach would further reduce manual effort while maintaining consistency across optimisation rounds.
+
+The modular repository structure also remains suitable for integration with GitHub Actions or similar continuous integration systems. Once new input and output datasets are committed to the repository, automated workflows could execute the analysis scripts, regenerate figures, update the README documentation and archive completed optimisation rounds. Such an approach would improve efficiency while preserving transparency and full reproducibility.
+
+Although the optimisation workflow is not yet fully automated, the repository has been deliberately organised to support this transition. The combination of structured datasets, reusable Python scripts and standardised documentation provides a scalable framework capable of supporting future automation without changing the underlying analytical methodology.
+
+This staged development ensures that analytical quality remains the highest priority while preparing the Bayesian Black Box Optimisation project for a fully automated and reproducible workflow in future optimisation rounds.
+
+15. References
+
+Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357-362.
+
+Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95.
+
+Jones, D. R., Schonlau, M., & Welch, W. J. (1998). Efficient Global Optimization of Expensive Black-Box Functions. Journal of Global Optimization, 13(4), 455-492.
+
+McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56-61.
+
+Pedregosa, F., Varoquaux, G., Gramfort, A., et al. (2011). Scikit-learn: Machine Learning in Python. Journal of Machine Learning Research, 12, 2825-2830.
+
+Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & de Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148-175.
+
+Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25, 2951-2959.
+
+Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261-272.
+
+
+
+
