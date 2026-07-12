@@ -242,6 +242,29 @@ Overall, the Week 09 information gain demonstrated that optimisation success dep
 
 <img width="1536" height="1024" alt="Figure 5A  Python Computational Workflow (Week 09)" src="https://github.com/user-attachments/assets/7bc2ac93-f4c3-4ea6-928d-d918ad72cfc5" />
 
+
+## 11. Computational Analysis and Coding Implementation
+
+## 11. Computational Analysis and Coding Implementation
+
+The computational analysis performed during Week 09 converted the optimisation results into a structured and reproducible analytical workflow that supported objective decision making. Python continued to provide the foundation for processing optimisation data, ranking the objective functions, comparing performance across optimisation rounds and generating the summary statistics used throughout this report. Applying the same analytical procedure each week ensured consistency while reducing manual processing and the possibility of transcription errors.
+
+The Week 09 analysis script imported the optimisation inputs and objective function outputs from the structured CSV datasets before performing the computational analysis. The script calculated exact changes relative to Week 08, ranked the objective functions according to their objective values, assigned optimisation strategies and generated the summary data used to support the tables, figures and discussion. Using the same analytical framework throughout the project allowed optimisation performance to be monitored consistently as additional evidence became available.
+
+The computational workflow also improved the reproducibility of the repository. Once the Week 09 input and output files had been updated, the analysis script automatically regenerated the analytical summary while preserving the same computational methodology used during previous optimisation rounds. This reduced manual effort, improved consistency and ensured that every optimisation round could be reproduced directly from the stored datasets.
+
+Python libraries continued to provide the core analytical capability. Pandas was used to read, organise and manipulate structured datasets, while NumPy supported numerical calculations where required. Matplotlib generated the analytical figures used throughout the report, providing a consistent visual representation of optimisation performance, ranking changes and information gain. Together, these libraries formed a lightweight computational framework that remained easy to maintain while supporting future development.
+
+Overall, the Week 09 computational framework demonstrated how structured programming could improve the transparency, consistency and reproducibility of optimisation research. The combination of reusable Python scripts, standardised CSV datasets and comprehensive documentation provided a reliable analytical workflow that continued to support the Bayesian Black Box Optimisation project as additional optimisation rounds were completed.
+
+The generate_week_09_figures.py script produces the analytical figures used throughout the Week 09 report and exports week_09_figure_data_summary.csv, which records the underlying comparison data used by the visualisations.
+
+**Figure 5A. Python Computational Workflow (Week 09)**
+
+<img width="1536" height="1024" alt="Figure 5A  Python Computational Workflow (Week 09)" src="https://github.com/user-attachments/assets/1f2241a3-7be4-40e9-9ba9-b919c255e70a" />
+
+
+
 ## 12. Repository Files and Reproducibility
 
 Maintaining a structured and well organised repository remained an important objective throughout Week 09 because it ensured that every stage of the optimisation process could be reproduced, reviewed and extended. The repository continued to separate optimisation inputs, objective function outputs, computational analysis, summary datasets and documentation into clearly defined files. This organisation provided a transparent workflow in which every result could be traced directly to its source.
@@ -255,6 +278,8 @@ Documentation continued to play a central role within the repository. The Week 0
 The repository structure also supported long-term maintenance and scalability. Future optimisation rounds required only updated input and output CSV files while the existing analysis script and documentation framework remained unchanged. This modular organisation reduced duplication of effort, improved consistency across optimisation rounds and simplified continued development of the Bayesian Black Box Optimisation project.
 
 Overall, the Week 09 repository demonstrated the value of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research environment. This organisation strengthened transparency, improved reproducibility and provided a robust framework for analysing future optimisation rounds.
+
+The generated figure files and week_09_figure_data_summary.csv provide reproducible visual and numerical outputs derived from the stored optimisation results.
 
 **Figure 5B. Week 09 Repository Structure and Workflow**
 
