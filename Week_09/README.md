@@ -92,3 +92,4 @@ Overall, Week 09 produced a mixed but informative result. Function 5 continued t
 
 <img width="1536" height="1024" alt="Figure 1C  Week 08 vs Week 09 Comparison Dashboard" src="https://github.com/user-attachments/assets/1803e28e-8dd3-402c-b53a-65405fe16330" />
 
+## 4. Query Selection Strategy
