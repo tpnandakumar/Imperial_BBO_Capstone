@@ -239,3 +239,42 @@ Function 1 again produced an output effectively equal to zero. While the objecti
 Overall, the Week 09 information gain demonstrated that optimisation success depended upon combining improvements in objective value with continued reduction in uncertainty. The evidence accumulated over nine optimisation rounds provided a stronger foundation for future decision making and supported increasingly targeted optimisation strategies as the project progressed.
 
 **Figure 5. Information Gain Summary (Week 09)**
+
+<img width="1536" height="1024" alt="Figure 5A  Python Computational Workflow (Week 09)" src="https://github.com/user-attachments/assets/7bc2ac93-f4c3-4ea6-928d-d918ad72cfc5" />
+
+## 12. Repository Files and Reproducibility
+
+Maintaining a structured and well organised repository remained an important objective throughout Week 09 because it ensured that every stage of the optimisation process could be reproduced, reviewed and extended. The repository continued to separate optimisation inputs, objective function outputs, computational analysis, summary datasets and documentation into clearly defined files. This organisation provided a transparent workflow in which every result could be traced directly to its source.
+
+The Week 09 repository contained the complete optimisation inputs and outputs together with reusable Python analysis scripts and supporting documentation. The `week_09_inputs.csv` file stored the exact query values submitted during Week 09, while `week_09_results.csv` contained the objective values returned by the optimisation system. These datasets formed the foundation of the computational analysis and ensured that every optimisation result remained fully reproducible.
+
+The `week_09_analysis.py` script processed the structured datasets, calculated changes relative to Week 08, ranked the objective functions, classified optimisation strategies and generated the analytical summary. The resulting `week_09_analysis_summary.csv` provided a concise overview of optimisation performance and supplied the data used throughout the figures and discussion. Using the same analytical workflow each week maintained consistency while reducing manual processing.
+
+Documentation continued to play a central role within the repository. The Week 09 `README.md` recorded the complete optimisation workflow, including methodology, results, discussion, figures and conclusions. Combining structured datasets, reusable Python scripts and detailed documentation created a reproducible research framework that could be extended easily during future optimisation rounds.
+
+The repository structure also supported long-term maintenance and scalability. Future optimisation rounds required only updated input and output CSV files while the existing analysis script and documentation framework remained unchanged. This modular organisation reduced duplication of effort, improved consistency across optimisation rounds and simplified continued development of the Bayesian Black Box Optimisation project.
+
+Overall, the Week 09 repository demonstrated the value of combining structured datasets, reusable computational tools and comprehensive documentation within a reproducible research environment. This organisation strengthened transparency, improved reproducibility and provided a robust framework for analysing future optimisation rounds.
+
+**Figure 5B. Week 09 Repository Structure and Workflow**
+
+<img width="1536" height="1024" alt="Figure 5B  Week 09 Repository Structure and Workflow" src="https://github.com/user-attachments/assets/472575ae-02da-4ef3-84e0-369003c3f9e8" />
+
+## 13. Conclusion
+
+Week 09 marked another significant stage in the Bayesian Black Box Optimisation challenge by providing further evidence about the behaviour of the hidden objective functions. After nine optimisation rounds, the optimisation process had become increasingly focused, with a clearer distinction between productive regions, stable regions and areas that continued to require further investigation. The growing body of evidence allowed optimisation decisions to be guided by observed performance rather than broad exploratory sampling.
+
+Function 5 again demonstrated the strongest performance, achieving a new highest objective value of **4394.868042481448**. This continued improvement confirmed that the current search region remained highly productive and justified continued local exploitation. Functions 7 and 8 remained stable within positive regions despite small reductions in objective value, while Function 2 continued to produce positive outputs even though it declined compared with Week 08. Function 4 provided encouraging evidence by moving closer to zero, indicating gradual improvement within the negative objective region.
+
+Functions 3 and 6 continued to occupy negative regions of the search landscape and required further refinement before stronger conclusions could be drawn. Function 1 again produced an output effectively equal to zero, reinforcing the need for continued exploration of alternative regions rather than additional refinement of the current search location.
+
+The Week 09 analysis demonstrated the value of allocating computational effort according to accumulated evidence rather than treating all objective functions equally. Continued exploitation of Function 5 remained the most appropriate strategy, while targeted refinement of Functions 2, 4, 7 and 8 strengthened understanding of productive regions. Functions 3 and 6 continued to provide useful information despite lower objective values, and Function 1 remained the principal exploration target.
+
+The computational workflow also continued to demonstrate the value of structured and reproducible analysis. Standardised CSV datasets, reusable Python scripts and comprehensive documentation provided a consistent analytical framework that could be repeated for every optimisation round. This approach improved transparency, reduced manual processing and strengthened the long-term maintainability of the repository.
+
+Overall, the Week 09 results strengthened confidence in the current optimisation strategy while continuing to improve understanding of the hidden search landscape. The evidence gathered during this optimisation round provided a stronger basis for selecting the Week 10 queries and further reinforced the value of a systematic, evidence-based approach to Bayesian Black Box Optimisation.
+
+**Figure 5C. Week 09 Conclusions and Strategic Outlook**
+
+<img width="1024" height="1536" alt="Figure 5C  Week 09 Conclusions and Strategic Outlook" src="https://github.com/user-attachments/assets/029506e1-966a-4075-ba7a-4c87326f7582" />
+
