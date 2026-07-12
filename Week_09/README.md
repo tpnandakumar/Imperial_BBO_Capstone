@@ -278,7 +278,7 @@ Overall, the Week 09 results strengthened confidence in the current optimisation
 
 <img width="1024" height="1536" alt="Figure 5C  Week 09 Conclusions and Strategic Outlook" src="https://github.com/user-attachments/assets/029506e1-966a-4075-ba7a-4c87326f7582" />
 
-14. Automation Decision
+## 14. Automation Decision
 
 The Week 09 analyses were generated using the structured Python workflow developed throughout the project rather than a fully automated optimisation pipeline. This approach ensured that every computational step could be reviewed, validated and interpreted before being incorporated into the repository. Maintaining direct oversight of the analytical process reduced the possibility of transcription errors while preserving transparency and reproducibility.
 
@@ -292,7 +292,7 @@ Although the optimisation workflow is not yet fully automated, the repository ha
 
 This staged development ensures that analytical quality remains the highest priority while preparing the Bayesian Black Box Optimisation project for a fully automated and reproducible workflow in future optimisation rounds.
 
-15. References
+## 15. References
 
 Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357-362.
 
@@ -309,7 +309,5 @@ Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., & de Freitas, N. (2016). Tak
 Snoek, J., Larochelle, H., & Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25, 2951-2959.
 
 Virtanen, P., Gommers, R., Oliphant, T. E., et al. (2020). SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python. Nature Methods, 17, 261-272.
-
-
 
 
