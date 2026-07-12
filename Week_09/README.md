@@ -203,3 +203,39 @@ Overall, the Week 09 results strengthened confidence in the productive regions i
 
 <img width="1536" height="1024" alt="Week_09 Highest Output" src="https://github.com/user-attachments/assets/28ae2f98-5379-4ace-a066-782e1dfeadee" />
 
+## 9. Decision Matrix and Resource Allocation
+
+The Week 09 optimisation strategy continued to allocate computational resources according to observed performance, recent optimisation trends and expected information gain. After nine optimisation rounds, the hidden search landscape had become more clearly defined, allowing greater confidence when deciding which functions should receive further exploitation, targeted refinement or broader exploration. This evidence-based approach ensured that the available query budget was used efficiently while continuing to improve understanding of the underlying optimisation problem.
+
+Function 5 remained the highest priority for resource allocation. Its objective value increased from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09, extending its position as the strongest performing function. The consistent improvement suggested that the current search region continued to offer the greatest opportunity for additional optimisation. Consequently, the majority of exploitation effort remained focused on carefully controlled local refinement around the existing best-performing solution.
+
+Functions 2, 7 and 8 continued to receive a high refinement priority. Although each function showed a small reduction in objective value during Week 09, all three remained within productive regions of the search landscape. Their stability suggested that neighbouring regions still offered potential for incremental improvement while carrying relatively low optimisation risk. Function 4 also remained a refinement candidate because its movement towards zero indicated that the surrounding search region continued to improve.
+
+Functions 3 and 6 remained within negative regions and therefore received a lower allocation of computational resources. Rather than abandoning these functions, targeted local refinement continued because successive optimisation rounds had gradually improved understanding of their behaviour. Carefully selected queries within nearby regions offered the best opportunity to identify more favourable directions without unnecessarily increasing exploration.
+
+Function 1 remained the primary exploration target. After repeated optimisation rounds, its objective value continued to remain effectively equal to zero, providing little evidence that the current region contained a productive optimum. Future computational effort therefore remained directed towards exploring substantially different regions of the search space in an attempt to identify previously undiscovered optimisation opportunities.
+
+Overall, the Week 09 decision matrix reflected a balanced optimisation strategy. Computational resources remained concentrated on proven high-performing regions while maintaining sufficient refinement and exploration to improve understanding of the remaining objective functions. This approach continued to strengthen optimisation performance while reducing uncertainty and supporting evidence-based decision making for future optimisation rounds.
+
+**Figure 4A. Resource Allocation Decision Matrix (Week 09)**
+
+<img width="1536" height="1024" alt="Week_09 Highest Output" src="https://github.com/user-attachments/assets/a08d7b39-da77-4cad-8921-53e33aa86be3" />
+
+
+## 10. Information Gain Analysis
+
+Information gain remained one of the principal objectives throughout Week 09 because each optimisation round contributed new evidence about the behaviour of the hidden objective functions. While improvements in objective values remained important, the optimisation process also depended upon reducing uncertainty and strengthening confidence in the search regions identified during previous weeks. After nine optimisation rounds, the accumulated evidence provided a clearer understanding of where future computational effort was most likely to produce meaningful improvement.
+
+Function 5 continued to provide the greatest overall information gain. Its objective value increased from **4359.384134322703** in Week 08 to **4394.868042481448** in Week 09, confirming that the current search region remained highly productive. Although the increase was smaller than those observed during earlier optimisation rounds, it strengthened confidence that the optimisation process was approaching a stable optimum while continuing to benefit from carefully controlled local refinement.
+
+Function 4 also contributed useful information despite remaining within the negative objective region. Its improvement from **-12.305008897187289** to **-11.788939969158545** suggested that neighbouring regions continued to contain opportunities for incremental improvement. This movement increased confidence in the current refinement strategy and supported further investigation of nearby regions.
+
+Functions 2, 7 and 8 produced smaller amounts of information gain. Although each function declined slightly compared with Week 08, all three remained within productive regions of the search landscape. These observations confirmed that the identified regions continued to perform reliably while indicating that future refinement should proceed cautiously to avoid moving away from favourable locations.
+
+Functions 3 and 6 continued to provide useful information despite remaining negative. The small reductions observed during Week 09 improved understanding of their local search landscapes by identifying regions that were less productive than expected. This knowledge remained valuable because it reduced uncertainty and helped avoid unproductive search directions in future optimisation rounds.
+
+Function 1 again produced an output effectively equal to zero. While the objective value itself remained unchanged, repeated observations continued to strengthen confidence that the current search region contained little optimisation potential. This reinforced the decision to prioritise broader exploration rather than further refinement within the existing region.
+
+Overall, the Week 09 information gain demonstrated that optimisation success depended upon combining improvements in objective value with continued reduction in uncertainty. The evidence accumulated over nine optimisation rounds provided a stronger foundation for future decision making and supported increasingly targeted optimisation strategies as the project progressed.
+
+**Figure 5. Information Gain Summary (Week 09)**
