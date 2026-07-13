@@ -1,1 +1,9 @@
-
+Function,Output,Rank,Strategy,Status
+Function 5,4394.868042481448,1,Exploit,Positive
+Function 8,9.4709436,2,Refine,Positive
+Function 7,1.314307996450604,3,Refine,Positive
+Function 2,0.47297842839949866,4,Refine,Positive
+Function 1,-1.4546199699251391e-58,5,Explore,Near Zero
+Function 3,-0.1156707106126581,6,Reassess,Negative
+Function 6,-1.1733030029888645,7,Reassess,Negative
+Function 4,-11.788939969158545,8,Refine,Negative
