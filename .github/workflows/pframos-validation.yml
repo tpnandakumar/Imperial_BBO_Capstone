@@ -48,8 +48,11 @@ jobs:
         run: python -m PFRAMOS.analysis.walk_forward_analysis
 
       - name: Run retrospective pathway and candidate experiments
-        continue-on-error: true
         run: python -m PFRAMOS.experiments.run_retrospective_candidate_experiments
+
+      - name: Run constrained candidate experiments
+        continue-on-error: true
+        run: python -m PFRAMOS.experiments.run_constrained_candidate_experiments
 
       - name: Upload public audit outputs
         if: always()
