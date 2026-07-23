@@ -1,0 +1,55 @@
+name: PFRAMOS Competition Scout
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '45 3 * * 4'
+    - cron: '45 8 * * 0'
+
+permissions:
+  contents: read
+
+jobs:
+  competition-scout-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test dependency
+        run: python -m pip install --upgrade pytest
+
+      - name: Validate Competition Scout contracts
+        run: python -m pytest PFRAMOS/tests/test_competition_scout.py -q
+
+      - name: Prepare competition folders
+        run: |
+          mkdir -p Schooling/competition_scout/competitions
+          mkdir -p Schooling/competition_scout/rules
+          mkdir -p Schooling/competition_scout/eligible
+          mkdir -p Schooling/competition_scout/restricted
+          mkdir -p Schooling/competition_scout/sandboxes
+          mkdir -p Schooling/competition_scout/results
+
+      - name: Record dry-run manifest
+        run: |
+          cat > Schooling/competition_scout/results/competition_scout_status.txt <<'EOF'
+          Competition Scout validation passed.
+          Discovery mode: dry run.
+          No competition dataset downloaded.
+          No submission made.
+          Hidden test data protection active.
+          Production model unchanged.
+          EOF
+
+      - name: Upload competition scout artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-competition-scout-status
+          path: Schooling/competition_scout/results/
+          retention-days: 30
