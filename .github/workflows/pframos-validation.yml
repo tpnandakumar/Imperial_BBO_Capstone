@@ -28,23 +28,30 @@ jobs:
       - name: Run unit tests
         run: python -m pytest PFRAMOS/tests -q
 
+      - name: Run architecture experiment suite
+        run: python -m PFRAMOS.experiments.run_experiment_suite
+
       - name: Run harmony test
         continue-on-error: true
         run: python -m PFRAMOS.analysis.harmony_test
 
       - name: Repair and canonicalise historical data
+        continue-on-error: true
         run: python -m PFRAMOS.analysis.harmony_repair
 
-      - name: Re-run harmony test after repair
-        run: python -m PFRAMOS.analysis.harmony_test || true
+      - name: Re-run experiment suite after harmony repair
+        run: python -m PFRAMOS.experiments.run_experiment_suite
 
       - name: Run historical data audit
+        if: hashFiles('PFRAMOS/data/canonical_bbo_observations.csv') != ''
         run: python -m PFRAMOS.analysis.historical_data_audit
 
       - name: Run walk-forward fit comparison
+        if: hashFiles('PFRAMOS/data/canonical_bbo_observations.csv') != ''
         run: python -m PFRAMOS.analysis.walk_forward_analysis
 
       - name: Upload public audit outputs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: pframos-public-audit
