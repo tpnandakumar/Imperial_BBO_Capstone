@@ -57,3 +57,11 @@ jobs:
         with:
           name: pframos-public-audit
           path: PFRAMOS/outputs/public/
+
+      - name: Upload private candidate research
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-private-candidate-research
+          path: PFRAMOS/outputs/private/
+          retention-days: 14
