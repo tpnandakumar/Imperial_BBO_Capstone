@@ -1,0 +1,41 @@
+name: PFRAMOS validation
+
+on:
+  pull_request:
+    paths:
+      - "PFRAMOS/**"
+      - ".github/workflows/pframos-validation.yml"
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install numpy pytest
+
+      - name: Run unit tests
+        run: python -m pytest PFRAMOS/tests -q
+
+      - name: Run historical data audit
+        run: python -m PFRAMOS.analysis.historical_data_audit
+
+      - name: Run walk-forward fit comparison
+        run: python -m PFRAMOS.analysis.walk_forward_analysis
+
+      - name: Upload public audit outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-public-audit
+          path: PFRAMOS/outputs/public/
