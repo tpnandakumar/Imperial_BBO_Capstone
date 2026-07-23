@@ -15,7 +15,7 @@ import csv
 import io
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Dict, List, Sequence, Tuple
+from typing import Dict, List, Sequence
 
 
 EXPECTED_DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
@@ -58,7 +58,7 @@ def _normalise_coordinates(values: Sequence[str], expected: int) -> List[str]:
         number = Decimal(value)
         if number < 0 or number > 1:
             raise ValueError(f"Coordinate outside [0,1]: {value}")
-        result.append(format(number, "f"))
+        result.append(f"{number:.6f}")
     return result
 
 
