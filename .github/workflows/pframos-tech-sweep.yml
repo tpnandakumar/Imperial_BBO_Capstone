@@ -1,0 +1,43 @@
+name: PFRAMOS technology sweep
+
+on:
+  schedule:
+    - cron: "30 7 * * 3"
+  workflow_dispatch:
+
+jobs:
+  sweep:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run recruitment tests
+        run: python -m pytest PFRAMOS/tests/test_tech_sweep.py -q
+
+      - name: Run AI and ML technology sweep
+        run: python -m PFRAMOS.tech_sweep.run_sweep
+
+      - name: Upload screened discovery audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-tech-sweep-public-audit
+          path: PFRAMOS/outputs/public/tech_sweep/
+          retention-days: 30
+
+      - name: Upload private recruitment quarantine
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-tech-sweep-private-quarantine
+          path: PFRAMOS/outputs/private/tech_sweep/
+          retention-days: 30
