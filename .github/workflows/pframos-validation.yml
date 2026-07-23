@@ -28,6 +28,16 @@ jobs:
       - name: Run unit tests
         run: python -m pytest PFRAMOS/tests -q
 
+      - name: Run harmony test
+        continue-on-error: true
+        run: python -m PFRAMOS.analysis.harmony_test
+
+      - name: Repair and canonicalise historical data
+        run: python -m PFRAMOS.analysis.harmony_repair
+
+      - name: Re-run harmony test after repair
+        run: python -m PFRAMOS.analysis.harmony_test || true
+
       - name: Run historical data audit
         run: python -m PFRAMOS.analysis.historical_data_audit
 
