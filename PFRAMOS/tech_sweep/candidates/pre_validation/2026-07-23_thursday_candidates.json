@@ -1,0 +1,98 @@
+{
+  "sweep_date": "2026-07-23",
+  "status": "private_pre_validation",
+  "automatic_integration": false,
+  "validation_day": "Sunday evening",
+  "candidates": [
+    {
+      "candidate_id": "evaluation-validity-node-2026-07-23",
+      "title": "General scales unlock AI evaluation with explanatory and predictive power",
+      "source": "Nature",
+      "published": "2026-04-01",
+      "url": "https://www.nature.com/articles/s41586-026-10303-2",
+      "proposed_node": "Evaluation Validity Node",
+      "recruitment_state": "pre_validation",
+      "relevance": [
+        "benchmark construct validity",
+        "instance-level performance prediction",
+        "out-of-distribution evaluation",
+        "demand and ability profiling"
+      ],
+      "proposed_tests": [
+        "map BBO function observations onto demand-style profiles",
+        "compare profile-based prediction with current black-box baselines",
+        "test whether profile features improve walk-forward prediction",
+        "measure calibration and out-of-distribution stability"
+      ]
+    },
+    {
+      "candidate_id": "incentive-aware-reliability-node-2026-07-23",
+      "title": "Evaluating large language models for accuracy incentivizes hallucinations",
+      "source": "Nature",
+      "published": "2026-04-22",
+      "url": "https://www.nature.com/articles/s41586-026-10549-w",
+      "proposed_node": "Incentive-Aware Reliability Node",
+      "recruitment_state": "pre_validation",
+      "relevance": [
+        "penalties for unsupported certainty",
+        "abstention-aware evaluation",
+        "objective-function design",
+        "uncertainty-sensitive selection"
+      ],
+      "proposed_tests": [
+        "add abstention or unresolved-state rewards to terminal-node evaluation",
+        "compare accuracy-only and uncertainty-aware selection",
+        "measure reduction in fragile high-confidence recommendations",
+        "verify that quality is not reduced by excessive abstention"
+      ]
+    },
+    {
+      "candidate_id": "cost-aware-conduit-routing-node-2026-07-23",
+      "title": "Less Experts, Faster Decoding: Cost-Aware Speculative Decoding for Mixture-of-Experts",
+      "source": "arXiv",
+      "published": "2026-07-14",
+      "url": "https://arxiv.org/abs/2607.12696",
+      "proposed_node": "Cost-Aware Conduit Routing Node",
+      "recruitment_state": "pre_validation",
+      "relevance": [
+        "expert activation cost",
+        "reuse of already active experts",
+        "dynamic shared cache",
+        "quality-preserving conduit efficiency"
+      ],
+      "proposed_tests": [
+        "add marginal node activation cost to conduit selection",
+        "reward reuse of already active validated nodes",
+        "compare quality-first routing with and without activation cost",
+        "measure duplicate computation, runtime and memory traffic proxies"
+      ]
+    },
+    {
+      "candidate_id": "heterogeneous-hardware-allocation-node-2026-07-23",
+      "title": "Efficient Mixture-of-Experts LLM Inference with Apple Silicon NPUs",
+      "source": "arXiv",
+      "published": "2026-04-20",
+      "url": "https://arxiv.org/abs/2604.18788",
+      "proposed_node": "Heterogeneous Hardware Allocation Node",
+      "recruitment_state": "pre_validation",
+      "relevance": [
+        "static execution tiers",
+        "grouped expert execution",
+        "load-aware residency",
+        "CPU GPU NPU task allocation"
+      ],
+      "proposed_tests": [
+        "classify conduit tasks as static or dynamic",
+        "group small compatible node executions",
+        "measure scheduler overhead against sequential execution",
+        "retain CPU fallback for irregular tasks"
+      ]
+    }
+  ],
+  "nodal_density_policy": {
+    "new_nodes_proposed": 4,
+    "production_nodes_added": 0,
+    "density_state": "controlled_expansion",
+    "rule": "No candidate increases active nodal density until Sunday validation and isolated retrospective testing pass."
+  }
+}
