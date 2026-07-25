@@ -1,0 +1,97 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008C_FREE_FORM_DYNAMICS",
+  "state": "completed_trial",
+  "evidence_status": "trial_not_publication",
+  "principle": "accuracy_decides_geometry",
+  "datasets": ["breast_cancer", "wine", "digits"],
+  "seeds": [11, 23, 37, 53, 71, 89, 101, 127, 149, 173],
+  "split": "60_train_20_validation_20_protected_test",
+  "protected_test_label_feedback": false,
+  "models": ["logistic", "random_forest", "svc", "extra_trees", "hist_gradient"],
+  "aggregate": [
+    {
+      "arm": "free_form_dynamic_geometry",
+      "accuracy_mean": 0.9773976608187135,
+      "macro_f1_mean": 0.9763807382820479,
+      "balanced_accuracy_mean": 0.9752320564095048,
+      "log_loss_mean": 0.12949754689862145,
+      "intervention_rate_mean": 0.056817738791423,
+      "rescues_total": 4,
+      "harms_total": 1,
+      "net_rescue_total": 3,
+      "effective_routes_mean": 4.632308894270329,
+      "laminarity_mean": 0.7962511229603364,
+      "worst_case_accuracy": 0.9298245614035088
+    },
+    {
+      "arm": "fusion_anchor",
+      "accuracy_mean": 0.9762865497076023,
+      "macro_f1_mean": 0.9753422243582256,
+      "balanced_accuracy_mean": 0.9742809982084466,
+      "log_loss_mean": 0.131531207670928,
+      "intervention_rate_mean": 0.0,
+      "rescues_total": 0,
+      "harms_total": 0,
+      "net_rescue_total": 0,
+      "effective_routes_mean": 5.0,
+      "laminarity_mean": 1.0,
+      "worst_case_accuracy": 0.9298245614035088
+    }
+  ],
+  "per_dataset": [
+    {
+      "dataset": "breast_cancer",
+      "arm": "free_form_dynamic_geometry",
+      "accuracy_mean": 0.9605263157894737,
+      "macro_f1_mean": 0.9569969647080001,
+      "log_loss_mean": 0.115530260562724,
+      "intervention_rate_mean": 0.02017543859649123,
+      "net_rescue_total": 0
+    },
+    {
+      "dataset": "breast_cancer",
+      "arm": "fusion_anchor",
+      "accuracy_mean": 0.9605263157894737,
+      "macro_f1_mean": 0.9570660915271268,
+      "log_loss_mean": 0.11659188166849985,
+      "intervention_rate_mean": 0.0,
+      "net_rescue_total": 0
+    },
+    {
+      "dataset": "digits",
+      "arm": "free_form_dynamic_geometry",
+      "accuracy_mean": 0.9827777777777778,
+      "macro_f1_mean": 0.9827657900920169,
+      "log_loss_mean": 0.16671271838072219,
+      "intervention_rate_mean": 0.12527777777777777,
+      "net_rescue_total": 2
+    },
+    {
+      "dataset": "digits",
+      "arm": "fusion_anchor",
+      "accuracy_mean": 0.9822222222222223,
+      "macro_f1_mean": 0.9821798221510983,
+      "log_loss_mean": 0.170347301030691,
+      "intervention_rate_mean": 0.0,
+      "net_rescue_total": 0
+    },
+    {
+      "dataset": "wine",
+      "arm": "free_form_dynamic_geometry",
+      "accuracy_mean": 0.9888888888888889,
+      "macro_f1_mean": 0.9893794600461266,
+      "log_loss_mean": 0.10624966175241819,
+      "intervention_rate_mean": 0.025,
+      "net_rescue_total": 1
+    },
+    {
+      "dataset": "wine",
+      "arm": "fusion_anchor",
+      "accuracy_mean": 0.986111111111111,
+      "macro_f1_mean": 0.9867807593964516,
+      "log_loss_mean": 0.1076544403135931,
+      "intervention_rate_mean": 0.0,
+      "net_rescue_total": 0
+    }
+  ]
+}
