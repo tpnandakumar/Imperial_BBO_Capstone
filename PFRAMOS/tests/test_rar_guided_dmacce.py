@@ -1,5 +1,3 @@
-from frozendict import frozendict
-
 from PFRAMOS.architecture.pcece_dmacce import MemoryAllocation
 from PFRAMOS.architecture.rar_guided_dmacce import (
     ReferenceAwareRetentionState,
