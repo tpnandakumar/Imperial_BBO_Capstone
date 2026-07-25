@@ -1,18 +1,12 @@
-"""Titans-inspired test-time adaptive memory track for PACC and PFRAMOS.
+"""Titans and MIRAS test-time adaptive memory track for PACC and PFRAMOS.
 
-This module registers Titans as a candidate adaptive memory architecture that
-can sit above or beside efficient sequence backbones such as Mamba. It does not
-replace Mamba, TorchTitan or AWS Neuron. Instead, it defines a research track
-for test-time long-term neural memory, surprise-driven updates, adaptive
-forgetting and persistent task memory.
+Titans is treated as a candidate adaptive memory architecture that can sit
+above or beside efficient sequence backbones such as Mamba. MIRAS supplies the
+broader design framework used to compare memory structures, learning biases,
+retention mechanisms and test-time update algorithms.
 
-The design follows the paper's separation of:
-
-1. short-term memory for current-context processing,
-2. long-term neural memory updated during inference,
-3. persistent memory for task-level knowledge.
-
-No model weights are updated by this module.
+This module does not replace Mamba, TorchTitan or AWS Neuron, and it does not
+perform parameter updates by itself.
 """
 
 from __future__ import annotations
@@ -26,6 +20,14 @@ class TitansVariant:
     variant_id: str
     memory_integration: str
     description: str
+
+
+@dataclass(frozen=True)
+class MIRASVariant:
+    variant_id: str
+    objective_family: str
+    retention_family: str
+    intended_property: str
 
 
 VARIANTS = (
@@ -43,6 +45,36 @@ VARIANTS = (
         variant_id="gated_memory_branch",
         memory_integration="parallel_memory_branch_with_learned_gate",
         description="Current processing and long-term memory run in parallel and are combined by a learned gate.",
+    ),
+)
+
+
+MIRAS_DESIGN_AXES = (
+    "memory_architecture",
+    "attentional_bias",
+    "retention_gate",
+    "memory_update_algorithm",
+)
+
+
+MIRAS_VARIANTS = (
+    MIRASVariant(
+        variant_id="yaad",
+        objective_family="robust_huber_like_bias",
+        retention_family="robust_regularisation",
+        intended_property="reduced_sensitivity_to_outliers_and_single_event_noise",
+    ),
+    MIRASVariant(
+        variant_id="moneta",
+        objective_family="generalised_norm_bias",
+        retention_family="generalised_norm_regularisation",
+        intended_property="stronger_control_of_memory_update_geometry",
+    ),
+    MIRASVariant(
+        variant_id="memora",
+        objective_family="probability_constrained_associative_memory",
+        retention_family="stability_constrained_regularisation",
+        intended_property="balanced_and_stable_memory_updates",
     ),
 )
 
@@ -68,6 +100,8 @@ PFRAMOS_ALIGNMENT = (
     "Use the common memory pool for temporary working state.",
     "Return inactive memory to the shared pool when no longer justified.",
     "Keep persistent task memory separate from trial-specific adaptive memory.",
+    "Treat the MIRAS retention gate as the formal memory-regularisation interface.",
+    "Route robust MIRAS objectives through PFRAMOS validation before activation.",
 )
 
 
@@ -79,6 +113,9 @@ MODEL_COMPARISON_ARMS = (
     "titans_memory_as_context",
     "titans_memory_as_layer",
     "titans_gated_memory_branch",
+    "miras_yaad",
+    "miras_moneta",
+    "miras_memora",
     "mamba3_with_titans_gated_memory",
 )
 
@@ -94,6 +131,8 @@ VALIDATION_TASKS = (
     "dna_sequence_modelling",
     "dialogue_memory_consistency",
     "retrieval_after_long_distractor_intervals",
+    "outlier_robust_memory_update",
+    "memory_stability_under_conflicting_streams",
 )
 
 
@@ -107,6 +146,9 @@ REQUIRED_ABLATIONS = (
     "fixed_write_rate_versus_surprise_weighted_write",
     "coherence_gated_write_versus_ungated_write",
     "pimf_persistence_filter_on_versus_off",
+    "mse_bias_versus_robust_bias",
+    "standard_weight_decay_versus_miras_retention_gate",
+    "yaad_versus_moneta_versus_memora",
 )
 
 
@@ -131,6 +173,8 @@ EFFICIENCY_METRICS = (
     "forgetting_precision",
     "retention_recall",
     "coherence_after_memory_update",
+    "outlier_recovery_time",
+    "memory_drift_under_conflicting_updates",
 )
 
 
@@ -140,7 +184,10 @@ RESEARCH_SEQUENCE = (
     "add surprise momentum",
     "add adaptive forgetting",
     "compare shallow and deep memory",
-    "test the three memory-integration variants",
+    "test the three Titans memory-integration variants",
+    "implement the four MIRAS design axes explicitly",
+    "compare MSE, robust and generalised-norm memory objectives",
+    "compare YAAD, MONETA and MEMORA under matched controls",
     "add PFRAMOS coherence gating and PIMF persistence filtering",
     "combine the strongest memory branch with Mamba-3",
     "scale through TorchTitan after single-device numerical validation",
