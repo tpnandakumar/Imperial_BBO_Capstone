@@ -1,8 +1,8 @@
-"""Acquire the first approved open-resource bundle into a trial cache.
+"""Acquire the minimal first open-resource bundle into a trial cache.
 
-This script is deliberately conservative. It clones approved public code and
-retrieves metadata from open registries. It does not download arbitrary Google
-Research datasets or apply parameter updates.
+Phase 1 acquires only COCO/BBOB and OpenML metadata. This gives immediate,
+reproducible optimisation evidence with low storage and licensing risk.
+GPU-specific resources and large external datasets remain deferred.
 """
 
 from __future__ import annotations
@@ -19,8 +19,8 @@ ROOT = Path(__file__).resolve().parents[2]
 MANIFEST = ROOT / "PFRAMOS" / "training_scout" / "FIRST_RESOURCE_ACQUISITION_MANIFEST.json"
 
 
-def run(command: list[str], cwd: Path | None = None) -> None:
-    completed = subprocess.run(command, cwd=cwd, check=False, text=True)
+def run(command: list[str]) -> None:
+    completed = subprocess.run(command, check=False, text=True)
     if completed.returncode != 0:
         raise RuntimeError(f"command failed: {' '.join(command)}")
 
@@ -42,41 +42,41 @@ def acquire(output_dir: Path) -> dict:
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    records = []
-
     coco_dir = output_dir / "coco"
     clone_shallow("https://github.com/numbbo/coco.git", coco_dir)
-    records.append({"resource_id": "coco_bbob", "local_path": str(coco_dir), "state": "acquired"})
-
-    nvbench_dir = output_dir / "nvbench"
-    clone_shallow("https://github.com/NVIDIA/nvbench.git", nvbench_dir)
-    records.append({"resource_id": "nvidia_nvbench", "local_path": str(nvbench_dir), "state": "acquired"})
+    coco_revision = subprocess.check_output(
+        ["git", "-C", str(coco_dir), "rev-parse", "HEAD"],
+        text=True,
+    ).strip()
 
     openml_meta = fetch_json("https://www.openml.org/api/v1/json/data/list/limit/20")
     openml_path = output_dir / "openml_first_20_metadata.json"
     openml_path.write_text(json.dumps(openml_meta, indent=2), encoding="utf-8")
-    records.append({"resource_id": "openml_registry", "local_path": str(openml_path), "state": "metadata_acquired"})
 
-    google_record = {
-        "resource_id": "google_research_dataset_catalogue",
-        "state": "discovery_only",
-        "official_source": "https://research.google/resources/datasets/",
-        "parameter_updates_allowed": False,
-        "next_gate": "dataset_specific_licence_and_privacy_clearance"
-    }
-    google_path = output_dir / "google_research_catalogue_record.json"
-    google_path.write_text(json.dumps(google_record, indent=2), encoding="utf-8")
-    records.append({"resource_id": "google_research_dataset_catalogue", "local_path": str(google_path), "state": "recorded"})
-
-    acquisition_record = {
+    record = {
         "manifest_id": manifest["manifest_id"],
-        "state": "trial_resources_acquired",
+        "state": "minimal_trial_resources_acquired",
         "parameter_updates_applied": False,
-        "resources": records,
+        "deferred": ["nvidia_nvbench", "google_research_datasets", "large_external_datasets"],
+        "resources": [
+            {
+                "resource_id": "coco_bbob",
+                "local_path": str(coco_dir),
+                "revision": coco_revision,
+                "state": "acquired_for_benchmark_trial",
+            },
+            {
+                "resource_id": "openml_registry",
+                "local_path": str(openml_path),
+                "state": "metadata_acquired_for_screening",
+            },
+        ],
     }
-    record_path = output_dir / "acquisition_record.json"
-    record_path.write_text(json.dumps(acquisition_record, indent=2), encoding="utf-8")
-    return acquisition_record
+    (output_dir / "acquisition_record.json").write_text(
+        json.dumps(record, indent=2),
+        encoding="utf-8",
+    )
+    return record
 
 
 def main() -> int:
