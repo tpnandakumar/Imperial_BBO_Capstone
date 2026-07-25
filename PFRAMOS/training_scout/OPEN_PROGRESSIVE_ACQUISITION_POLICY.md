@@ -4,21 +4,37 @@
 
 The programme remains open by default.
 
-A resource, method or route is restricted only when there is a specific legal, ethical, technical or scientific reason.
+Data is considered usable unless its intended use is unethical, unsafe, unlawful, scientifically invalid, or explicitly restricted by the source, licence, access terms, privacy obligations or data-use conditions.
+
+Lawfully accessible, traceable and ethically acceptable data should proceed without unnecessary delay.
 
 Uncertainty is not treated as a permanent stop. It triggers verification, substitution, shadow use or a smaller controlled trial.
 
+## Default presumption
+
+The default state is `usable_pending_normal_checks`, not `blocked_pending_proof`.
+
+A candidate may progress when:
+
+- its source can be identified
+- its intended use is not prohibited
+- no material privacy or safety concern is present
+- its use can be recorded and reproduced
+
+A missing detail triggers targeted verification while other safe work continues.
+
 ## Operating states
 
-Every candidate resource is assigned one of five states:
+Every candidate resource is assigned one of six states:
 
-1. `active_acquisition`
-2. `shadow_use`
-3. `discovery_and_verification`
-4. `substitute_required`
-5. `hard_stop`
+1. `usable_pending_normal_checks`
+2. `active_acquisition`
+3. `shadow_use`
+4. `discovery_and_verification`
+5. `substitute_required`
+6. `hard_stop`
 
-A hard stop is used only when the intended use is clearly prohibited, unsafe, unethical or scientifically invalid.
+A hard stop is used only when the intended use is clearly prohibited, unsafe, unethical, unlawful or scientifically invalid.
 
 ## Smart routing
 
@@ -54,4 +70,4 @@ Discovery, shadow use, trial evidence and publication evidence remain clearly se
 
 ## Governing statement
 
-Do not stop because the first route is blocked. Verify, adapt, substitute or reroute while preserving legality, ethics and scientific validity.
+Every usable resource should advance the programme. Stop only for a genuine legal, ethical, safety or scientific reason. Otherwise verify, adapt, substitute or reroute.
