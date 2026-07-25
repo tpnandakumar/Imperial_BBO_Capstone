@@ -58,6 +58,27 @@ HISTORICAL_TECHNOLOGY_SOURCES = {
         ),
         may_train_directly=False,
     ),
+    "github": HistoricalTechnologySource(
+        source_id="github",
+        display_name="GitHub Technical Evidence",
+        evidence_class="software_engineering_repositories_and_workflows",
+        validation_state="previously_tested",
+        permitted_lanes=("reasoning", "efficiency", "optimisation", "emergence"),
+        retained_material=(
+            "official GitHub documentation",
+            "version-pinned public repositories",
+            "workflow and CI evidence",
+            "project repository history and reproducible commits",
+        ),
+        required_checks=(
+            "repository-owner and source verification",
+            "licence verification",
+            "commit SHA pinning",
+            "malicious code and supply-chain review",
+            "dataset and benchmark contamination review",
+        ),
+        may_train_directly=False,
+    ),
     "netflix": HistoricalTechnologySource(
         source_id="netflix",
         display_name="Netflix Technical Evidence",
