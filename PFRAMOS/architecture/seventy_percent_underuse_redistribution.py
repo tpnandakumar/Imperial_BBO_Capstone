@@ -1,10 +1,10 @@
-"""Redistribute heavily underused memory while preserving pull-back rights.
+"""Redistribute underused memory through the common dynamic pool.
 
-When a pool or allocation is at least seventy percent unused, half of the
-unused capacity returns to the central dynamic pool. The remaining half is
-split equally between the high-priority reserve and the medium-low reserve.
-Both reserve groups may later pull additional capacity from the central pool
-when justified by active priority, purpose and minimum viable need.
+When more than half of a pool is unused, the common pool is filled first.
+Any remaining unused capacity is divided equally between the high-priority
+reserve and the medium-low-priority reserve. Both reserve groups may pull
+additional capacity from the common pool when active need, priority and
+purpose justify it.
 """
 
 from __future__ import annotations
@@ -44,14 +44,17 @@ class UnderuseRedistribution:
     retained_in_origin: float
 
 
-def redistribute_if_seventy_percent_unused(
+def redistribute_if_more_than_half_unused(
     state: UnderuseState,
-    trigger_fraction: float = 0.70,
+    central_pool_deficit: float = 0.0,
+    trigger_fraction: float = 0.50,
 ) -> UnderuseRedistribution:
+    if central_pool_deficit < 0:
+        raise ValueError("central_pool_deficit cannot be negative")
     if not 0.0 <= trigger_fraction <= 1.0:
         raise ValueError("trigger_fraction must be between 0 and 1")
 
-    if state.unused_fraction < trigger_fraction:
+    if state.unused_fraction <= trigger_fraction:
         return UnderuseRedistribution(
             trigger_met=False,
             unused_units=state.unused_units,
@@ -61,18 +64,30 @@ def redistribute_if_seventy_percent_unused(
             retained_in_origin=state.unused_units,
         )
 
-    central = state.unused_units * 0.50
-    remaining = state.unused_units - central
-    high = remaining * 0.50
-    medium_low = remaining - high
+    to_central = min(state.unused_units, central_pool_deficit)
+    remaining = state.unused_units - to_central
+    to_high = remaining / 2.0
+    to_medium_low = remaining - to_high
 
     return UnderuseRedistribution(
         trigger_met=True,
         unused_units=state.unused_units,
-        to_central_pool=central,
-        to_high_reserve=high,
-        to_medium_low_reserve=medium_low,
+        to_central_pool=to_central,
+        to_high_reserve=to_high,
+        to_medium_low_reserve=to_medium_low,
         retained_in_origin=0.0,
+    )
+
+
+def redistribute_if_seventy_percent_unused(
+    state: UnderuseState,
+    trigger_fraction: float = 0.50,
+) -> UnderuseRedistribution:
+    """Backward-compatible alias using the current common-pool-first rule."""
+    return redistribute_if_more_than_half_unused(
+        state=state,
+        central_pool_deficit=state.unused_units * 0.50,
+        trigger_fraction=trigger_fraction,
     )
 
 
