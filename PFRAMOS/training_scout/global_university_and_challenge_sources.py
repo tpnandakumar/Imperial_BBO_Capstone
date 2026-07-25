@@ -155,6 +155,16 @@ SOURCES = (
         required_gates=("dataset_specific_licence", "provenance", "privacy", "contamination", "protected_test"),
         notes="OpenML hosts datasets and benchmark tasks with dataset-specific conditions.",
     ),
+    GlobalScoutSource(
+        source_id="awesome_public_datasets",
+        organisation="Awesome Data",
+        category="dataset_discovery_index",
+        official_url="https://github.com/awesomedata/awesome-public-datasets",
+        active_for_discovery=True,
+        permitted_uses=("dataset_discovery", "source_comparison", "domain_coverage_review", "alternative_source_search"),
+        required_gates=("linked_dataset_licence", "linked_dataset_provenance", "privacy", "access_terms", "contamination", "protected_test"),
+        notes="Use as a discovery catalogue only. Every linked dataset must be verified at its original source before acquisition or training.",
+    ),
 )
 
 
