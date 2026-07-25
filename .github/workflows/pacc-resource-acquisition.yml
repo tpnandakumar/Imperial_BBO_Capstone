@@ -1,4 +1,4 @@
-name: PACC Resource Acquisition
+name: PACC Minimal Resource Acquisition
 
 on:
   workflow_dispatch:
@@ -10,9 +10,9 @@ env:
   PYTHONPATH: .
 
 jobs:
-  acquire-trial-resources:
+  acquire-minimal-trial-resources:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     steps:
       - name: Check out repository
@@ -23,36 +23,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Acquire approved trial resources
+      - name: Acquire COCO BBOB and OpenML metadata
         run: |
           python PFRAMOS/training_scout/acquire_first_open_resources.py \
             --output-dir PFRAMOS/trial_runs/resource_cache
 
-      - name: Record repository revisions
-        run: |
-          python - <<'PY'
-          import json
-          import subprocess
-          from pathlib import Path
-
-          root = Path("PFRAMOS/trial_runs/resource_cache")
-          revisions = {}
-          for name in ("coco", "nvbench"):
-              path = root / name
-              sha = subprocess.check_output(
-                  ["git", "-C", str(path), "rev-parse", "HEAD"],
-                  text=True,
-              ).strip()
-              revisions[name] = sha
-          (root / "source_revisions.json").write_text(
-              json.dumps(revisions, indent=2),
-              encoding="utf-8",
-          )
-          PY
-
-      - name: Upload acquisition bundle
+      - name: Upload minimal acquisition bundle
         uses: actions/upload-artifact@v4
         with:
-          name: pacc-open-resource-acquisition
+          name: pacc-minimal-resource-acquisition
           path: PFRAMOS/trial_runs/resource_cache/
           retention-days: 30
