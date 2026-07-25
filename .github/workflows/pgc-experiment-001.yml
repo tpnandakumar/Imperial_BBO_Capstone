@@ -1,0 +1,70 @@
+name: PGC Experiment 001
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - agent/pframos-v0.1
+    paths:
+      - "PGC/**"
+      - ".github/workflows/pgc-experiment-001.yml"
+
+permissions:
+  contents: read
+
+env:
+  PYTHONPATH: .
+
+jobs:
+  test-and-experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependency
+        run: python -m pip install --upgrade pytest
+
+      - name: Run PGC unit tests
+        run: python -m pytest PGC/tests -q
+
+      - name: Execute PGC Experiment 001
+        run: |
+          python PGC/experiments/PGC_EXPERIMENT_001/run_experiment.py \
+            --per-family 100 \
+            --seeds 11,23,37,53,71 \
+            --output PGC/experiments/PGC_EXPERIMENT_001/results.json
+
+      - name: Validate result record
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("PGC/experiments/PGC_EXPERIMENT_001/results.json")
+          result = json.loads(path.read_text(encoding="utf-8"))
+          assert result["state"] == "completed_trial"
+          assert result["publication_evidence"] is False
+          assert len(result["seeds"]) == 5
+          assert result["total_cases_per_seed"] == 500
+          assert "pgc_evidence_router" in result["aggregate"]
+          print(json.dumps({
+              "promotion_candidate": result["promotion_candidate"],
+              "strongest_non_oracle_baseline": result["strongest_non_oracle_baseline"],
+              "pgc": result["aggregate"]["pgc_evidence_router"],
+          }, indent=2))
+          PY
+
+      - name: Upload PGC Experiment 001 result
+        uses: actions/upload-artifact@v4
+        with:
+          name: pgc-experiment-001-results
+          path: PGC/experiments/PGC_EXPERIMENT_001/results.json
+          retention-days: 30
