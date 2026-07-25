@@ -23,9 +23,10 @@ Validation data estimated coherence reliability. Protected-test labels were used
 5. static PGC coherence
 6. dynamic live homeostatic coherence regulation, DLHCR
 7. DLHCR with laminar conduit maintenance
-8. oracle
+8. multi-parameter coordinated DLHCR
+9. oracle
 
-## Homeostatic controller
+## Homeostatic and coordinated controller
 
 - target corridor: 0.40 to 0.60
 - hard limits: 0.20 to 0.80
@@ -35,8 +36,11 @@ Validation data estimated coherence reliability. Protected-test labels were used
 - inertia: 0.90
 - hysteresis: 0.04
 - maximum laminar update step: 0.035
+- contextual target centre adjusted by validation reliability and modality disagreement
+- corridor width adjusted by ambiguity
+- coordinated switching cost adjusted by validation reliability
 
-High coherence is compressed towards the upper target boundary. Low coherence is raised towards the lower target boundary. The laminar variant adds inertia, bounded update steps and oscillation monitoring.
+High coherence is compressed towards the upper target boundary. Low coherence is raised towards the lower target boundary. The laminar variants add inertia, bounded update steps and oscillation monitoring.
 
 ## Conduit maintenance metrics
 
@@ -46,17 +50,27 @@ High coherence is compressed towards the upper target boundary. Low coherence is
 - route-switch rate
 - coherence-adjustment rate
 
-## Result summary
+## Completed trial results
 
-The unweighted fusion baseline achieved the highest non-oracle protected-test action accuracy at 0.9792. Reliability-weighted fusion achieved 0.9708. Static PGC, DLHCR and laminar DLHCR each achieved 0.7000.
+The unweighted fusion baseline achieved the highest non-oracle protected-test action accuracy at 0.9933. Reliability-weighted fusion achieved 0.9900. Static PGC, unrestricted DLHCR, laminar DLHCR and coordinated DLHCR each achieved 0.6867.
 
-DLHCR was active on all protected-test observations. The laminar conduit variant achieved a mean laminarity index of 0.9863, compared with 0.9861 for unrestricted DLHCR. Neither dynamic variant changed route-switch rate or task accuracy relative to static PGC.
+DLHCR adjusted coherence on every protected-test observation. Unrestricted DLHCR produced mean step variation of 0.002825, oscillation reversal rate of 0.4336 and laminarity index of 0.5099.
+
+Laminar conduit maintenance reduced mean step variation to 0.000969 and oscillation reversal rate to 0.0924, raising the laminarity index to 0.8882. This improvement was consistent across all five seeds.
+
+Urgent-threat recall remained 1.0000 for all PGC dynamic variants, with zero missed threats and zero false escalations in this synthetic trial.
 
 ## Interpretation
 
-This is a valid null result. The controller successfully maintained a stable, low-variation coherence conduit, but the current downstream decision logic is insufficiently sensitive to the regulated coherence value. Coherence presently acts mainly as a gate and empathy modifier, so values remaining above the gate often produce the same action.
+This is a valid stabilisation result and a null task-performance result. Dynamic live homeostatic regulation materially improved conduit smoothness and reduced oscillatory reversal, but it did not alter the selected actions or improve protected-test accuracy.
 
-The next refinement should connect regulated coherence to graded routing margins, switching costs or abstention thresholds, then repeat the protected-test comparison.
+The current downstream action logic remains too threshold-dominated. Regulated coherence is active, but most adjusted values stay on the same side of the action gates. The next experiment should connect effective coherence to graded action margins, adaptive switching cost, abstention thresholds and error-predictive timing.
+
+## Future cerebellar-style integration
+
+A future cerebellar-like modulation layer should be tested separately. Its proposed role is to predict the next coherence state, detect phase and amplitude error, damp overshoot, anticipate oscillatory reversals and apply rapid corrective micro-adjustments to the laminar conduit. It must remain subordinate to factual accuracy, safety and protected-test governance.
+
+This component was not included in Experiment 004, so no cerebellar performance claim is made here.
 
 ## Evidence status
 
