@@ -1,0 +1,54 @@
+{
+  "manifest_id": "PACC-ACQ-001",
+  "state": "approved_for_trial_acquisition",
+  "purpose": "Acquire reproducible open resources for optimisation, benchmark, compute-efficiency and cognition discovery trials",
+  "storage_policy": "External resources are cached as trial artefacts and are not committed as large repository data files",
+  "resources": [
+    {
+      "resource_id": "coco_bbob",
+      "organisation": "COCO NumBBO",
+      "resource_type": "black_box_optimisation_benchmark",
+      "official_source": "https://github.com/numbbo/coco",
+      "documentation": "https://numbbo.github.io/coco/testsuites/bbob",
+      "acquisition_mode": "git_clone_shallow",
+      "training_use": "benchmark_only",
+      "publication_role": ["PFRAMOS-P1", "PFRAMOS-P2", "PACC-P8"],
+      "required_checks": ["repository_licence", "version_pin", "protected_test_separation", "no_test_leakage"],
+      "status": "ready_for_trial_acquisition"
+    },
+    {
+      "resource_id": "openml_registry",
+      "organisation": "OpenML",
+      "resource_type": "versioned_dataset_and_task_registry",
+      "official_source": "https://www.openml.org/",
+      "documentation": "https://docs.openml.org/",
+      "acquisition_mode": "metadata_first_api",
+      "training_use": "candidate_discovery_then_dataset_specific_approval",
+      "publication_role": ["PACC-P7", "PACC-P8", "PFRAMOS-P1"],
+      "required_checks": ["dataset_specific_licence", "version_pin", "provenance", "privacy", "contamination", "protected_test"],
+      "status": "ready_for_metadata_acquisition"
+    },
+    {
+      "resource_id": "nvidia_nvbench",
+      "organisation": "NVIDIA",
+      "resource_type": "cuda_kernel_benchmark_framework",
+      "official_source": "https://github.com/NVIDIA/nvbench",
+      "acquisition_mode": "git_clone_shallow",
+      "training_use": "compute_efficiency_benchmark_only",
+      "publication_role": ["PFRAMOS-P2", "PACC-P7", "PACC-P8"],
+      "required_checks": ["repository_licence", "version_pin", "hardware_compatibility"],
+      "status": "ready_for_trial_acquisition"
+    },
+    {
+      "resource_id": "google_research_dataset_catalogue",
+      "organisation": "Google Research",
+      "resource_type": "dataset_catalogue",
+      "official_source": "https://research.google/resources/datasets/",
+      "acquisition_mode": "metadata_discovery_only",
+      "training_use": "no_parameter_updates_until_dataset_specific_clearance",
+      "publication_role": ["PACC-P3", "PACC-P4", "PACC-P7", "PACC-P8"],
+      "required_checks": ["dataset_specific_licence", "access_terms", "provenance", "privacy", "ethics_if_applicable", "contamination", "protected_test"],
+      "status": "discovery_only"
+    }
+  ]
+}
