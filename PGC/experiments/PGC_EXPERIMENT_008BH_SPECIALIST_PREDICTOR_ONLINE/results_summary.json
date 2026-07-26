@@ -1,0 +1,70 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BH_SPECIALIST_PREDICTOR_ONLINE",
+  "state": "completed",
+  "evidence_status": "cross_domain_specialist_predictor_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [1103, 1129, 1151],
+    "dataset_seed_units": 36,
+    "cross_folds": 3,
+    "development_only_specialist_targeting": true,
+    "specialist_routes": [
+      "posterior_local",
+      "mid_nonlinear",
+      "anterior_linear"
+    ]
+  },
+  "best_system": {
+    "system": "fixed_uniform_burst",
+    "mean_accuracy": 0.8728646110225058,
+    "worst_unit_accuracy": 0.3972222222222222,
+    "mean_macro_f1": 0.7965061904694973,
+    "mean_balanced_accuracy": 0.7969349851637991,
+    "mean_log_loss": 0.34628783739813224,
+    "total_corrected_errors": 39,
+    "total_new_errors": 20,
+    "total_net_specialist_gain": 19,
+    "mean_activation_rate": 0.3753545137042944,
+    "mean_models_activated": 6.876772568521472,
+    "mean_intensity": 0.060056722192687095,
+    "mean_training_time_seconds": 0.7389982473614509,
+    "mean_inference_time_seconds": 0.06436164630166667
+  },
+  "friedman_test": {
+    "statistic": 4.300300300300404,
+    "p_value": 0.3668874947518982
+  },
+  "comparisons": [
+    {
+      "comparison": "learned_specialist_predictor_minus_stable_5_stack",
+      "mean_difference": 0.0005908869395711528,
+      "wins": 6,
+      "ties": 28,
+      "losses": 2,
+      "p_holm": 0.24648888410393277
+    },
+    {
+      "comparison": "learned_specialist_predictor_minus_fixed_uniform_burst",
+      "mean_difference": -0.0011188271604938294,
+      "wins": 7,
+      "ties": 19,
+      "losses": 10,
+      "p_holm": 0.24648888410393277
+    },
+    {
+      "comparison": "full_ripple_delta_specialist_controller_minus_learned_specialist_predictor",
+      "mean_difference": 0.0005787037037037016,
+      "wins": 4,
+      "ties": 32,
+      "losses": 0,
+      "p_holm": 0.20366746458548696
+    }
+  ],
+  "runtime_seconds": 36.35531044006348,
+  "main_finding": "The specialist predictor is online and produced a small positive mean gain over the stable 5-stack. Ripple plus Delta feedback improved further, but the fixed uniform burst remained strongest overall. The specialist routes need genuinely distinct feature transformations or objectives to raise the predictive ceiling.",
+  "measurement_boundary": {
+    "ripple_delta_specialist_terms": "computational control-state definitions",
+    "training_and_inference_time": "measured wall-clock time",
+    "electrical_energy": "not measured"
+  }
+}
