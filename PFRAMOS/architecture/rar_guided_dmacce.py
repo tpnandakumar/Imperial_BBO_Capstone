@@ -11,7 +11,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from typing import FrozenSet, Tuple
 
-from PFRAMOS.architecture.pcece_dmacce import DMACCEDecision, MemoryAllocation
+from PFRAMOS.architecture.pcece_dmacce import MemoryAllocation
 
 
 def _clip(value: float) -> float:
@@ -125,13 +125,15 @@ def rar_guided_dmacce_decide(
             rationale=("live_reference_present",),
         )
 
-    if state.has_anticipated_reference and retention >= 0.60:
+    # Any explicit anticipated reference must preserve a recoverable copy.
+    # Anticipated work is reference state, not merely a weak relevance hint.
+    if state.has_anticipated_reference:
         retained = allocation.size_units * max(0.10, allocation.compression_ratio)
         return RaRDecision(
             allocation_id=allocation.allocation_id,
             action="retain_compressed",
             target_location="compressed",
-            retention_score=retention,
+            retention_score=max(retention, 0.60),
             released_units=allocation.size_units - retained,
             retained_units=retained,
             rationale=("anticipated_reference_present", "retain_for_expected_use"),
@@ -182,17 +184,8 @@ def rar_guided_dmacce_decide(
             rationale=("moderate_reference_aware_retention",),
         )
 
-    if idle_ticks >= 2 and allocation.recomputation_cost < 0.50:
-        return RaRDecision(
-            allocation_id=allocation.allocation_id,
-            action="demote_to_cold",
-            target_location="cold",
-            retention_score=retention,
-            released_units=0.0,
-            retained_units=allocation.size_units,
-            rationale=("low_retention", "low_recomputation_cost", "idle"),
-        )
-
+    # Under substantial pressure, unreferenced low-value memory is released
+    # directly. Cold demotion is reserved for low-pressure housekeeping.
     if memory_pressure >= 0.60 or energy_pressure >= 0.70 or idle_ticks >= 5:
         return RaRDecision(
             allocation_id=allocation.allocation_id,
@@ -202,6 +195,17 @@ def rar_guided_dmacce_decide(
             released_units=allocation.size_units,
             retained_units=0.0,
             rationale=("no_reference", "low_retention", "release_condition_met"),
+        )
+
+    if idle_ticks >= 2 and allocation.recomputation_cost < 0.50:
+        return RaRDecision(
+            allocation_id=allocation.allocation_id,
+            action="demote_to_cold",
+            target_location="cold",
+            retention_score=retention,
+            released_units=0.0,
+            retained_units=allocation.size_units,
+            rationale=("low_retention", "low_recomputation_cost", "idle"),
         )
 
     return RaRDecision(
