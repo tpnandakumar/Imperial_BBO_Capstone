@@ -1,0 +1,81 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BJ_RANDOM_STACK_AND_STOCHASTIC_DROPOUT_TEN_BY_TEN",
+  "state": "completed",
+  "evidence_status": "comparative_random_dropout_10_seed_10_repeat_not_final_confirmation",
+  "design": {
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "seeds": [1409, 1423, 1451, 1471, 1489, 1511, 1531, 1549, 1571, 1601],
+    "repeats_per_seed": 10,
+    "candidate_configurations_per_repeat": 10,
+    "systems": [
+      "random_3_stack_dropout",
+      "random_5_stack_dropout",
+      "full_11_stochastic_dropout",
+      "stable_5_plus_specialist_dropout"
+    ],
+    "aggregate_evaluations_per_system": 100,
+    "dataset_level_evaluations_per_system": 300,
+    "model_family_size": 11,
+    "selection": "development-only out-of-fold score"
+  },
+  "best_system": {
+    "system": "stable_5_plus_specialist_dropout",
+    "mean_accuracy": 0.9849751461988305,
+    "sd_accuracy": 0.005077975142466229,
+    "maximum_accuracy": 0.9942982456140351,
+    "minimum_accuracy": 0.9710038986354776,
+    "mean_macro_f1": 0.9844755455952976,
+    "mean_balanced_accuracy": 0.9842120263120263,
+    "mean_log_loss": 0.1345636038265401,
+    "mean_worst_dataset_accuracy": 0.9737660818713451,
+    "mean_active_models": 6.3133333333333335,
+    "mean_dropout_fraction": 0.4260606060606061,
+    "mean_training_time_seconds": 0.4087494394136229,
+    "mean_inference_time_seconds": 0.20249779153181105
+  },
+  "friedman_test": {
+    "statistic": 13.367049009384735,
+    "p_value": 0.003906480311204963
+  },
+  "comparisons": [
+    {
+      "comparison": "random_5_stack_dropout_minus_random_3_stack_dropout",
+      "mean_difference": 0.0007207602339181373,
+      "wins": 55,
+      "ties": 5,
+      "losses": 40,
+      "p_holm": 0.4044812243535585
+    },
+    {
+      "comparison": "full_11_stochastic_dropout_minus_random_5_stack_dropout",
+      "mean_difference": 0.0002538986354775752,
+      "wins": 50,
+      "ties": 5,
+      "losses": 45,
+      "p_holm": 0.5051856313968686
+    },
+    {
+      "comparison": "stable_5_plus_specialist_dropout_minus_random_5_stack_dropout",
+      "mean_difference": 0.002068713450292395,
+      "wins": 60,
+      "ties": 3,
+      "losses": 37,
+      "p_holm": 0.0077316747737980075
+    },
+    {
+      "comparison": "stable_5_plus_specialist_dropout_minus_full_11_stochastic_dropout",
+      "mean_difference": 0.0018148148148148203,
+      "wins": 53,
+      "ties": 10,
+      "losses": 37,
+      "p_holm": 0.0077316747737980075
+    }
+  ],
+  "runtime_seconds": 59.02094578742981,
+  "main_finding": "A stable 5-model interior with stochastic specialist recruitment and dropout significantly outperformed both fully random 5-stack composition and full-family stochastic dropout. Randomness is most useful around a stable core rather than across the whole architecture.",
+  "measurement_boundary": {
+    "candidate_count": "compute proxy",
+    "runtime": "measured wall-clock time",
+    "electrical_energy": "not measured"
+  }
+}
