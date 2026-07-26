@@ -1,0 +1,40 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AJ_DYNAMIC_SPIN_MODULATED_RIPPLE_PEAR",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "design": {
+    "locked_network": ["xgb", "lgbm", "svc", "logistic", "catboost", "extra_trees", "random_forest"],
+    "arms": ["008AD_reference", "confidence_modulated_spin", "goal_alignment_modulated_spin", "recoil_phase_modulated_spin", "distance_modulated_spin", "full_dynamic_spin_modulation"],
+    "configurations_per_arm": 100,
+    "total_configurations": 600,
+    "bootstrap_resamples_per_candidate": 200,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "geometry": "008AD asymmetric pear",
+    "spin_modulators": ["bootstrap confidence", "goal alignment", "recoil phase", "goal distance"],
+    "spin_cap_radians": 0.35,
+    "rifling": "low-amplitude dynamically damped"
+  },
+  "best_arm": {
+    "arm": "goal_alignment_modulated_spin",
+    "winner_configuration": 46,
+    "winner_batch": 5,
+    "winner_trial": 6,
+    "oof_accuracy_mean": 0.9852884366013244,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "oof_accuracy_sd": 0.007200658743408543,
+    "bootstrap_sd": 0.0021935282936762775,
+    "winner_spin_rate": 0.1197589505262365,
+    "winner_spin_direction": 1.0,
+    "winner_accumulated_spin": 0.35,
+    "winner_recoil": 0.04747335255680823,
+    "winner_twist": 0.7818842900689642,
+    "protected_accuracy_mean": 0.9885964912280701,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9883326550220841,
+    "balanced_accuracy_mean": 0.9875162066828733,
+    "log_loss_mean": 0.8095759240654088
+  },
+  "main_finding": "Goal-alignment-modulated spin reproduced the 008AD peak of 0.988596. Dynamic spin is beneficial when its magnitude is tied to alignment with the validated goal axis, while recoil and rifling remain moderate."
+}
