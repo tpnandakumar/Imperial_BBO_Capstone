@@ -1,0 +1,71 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BR_AX_R_DTRRR_BJ_BK_HYBRIDS",
+  "state": "completed",
+  "evidence_status": "comparative_development_evidence_not_final_confirmation",
+  "design": {
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "seeds": [181, 197, 211, 227, 241, 257, 271, 283, 307, 331],
+    "repeats_per_seed": 10,
+    "systems": ["AX_R_DTRRR", "AX_R_DTRRR_plus_BJ", "AX_R_DTRRR_plus_BK", "AX_R_BK_reference"],
+    "common_source": "exact preserved AY fresh-seed out-of-fold and protected-test probabilities",
+    "hybrid_rule": "development-only parent preservation or bounded blend"
+  },
+  "best_system": {
+    "system": "AX_R_DTRRR_plus_BJ",
+    "evaluations": 100,
+    "mean_accuracy": 0.9843567251461988,
+    "sd_accuracy": 0.007537221884832096,
+    "maximum_accuracy": 0.9962962962962963,
+    "minimum_accuracy": 0.9671539961013645,
+    "mean_macro_f1": 0.9840452812546099,
+    "mean_balanced_accuracy": 0.9833918203918204,
+    "mean_log_loss": 0.08501949342389006,
+    "mean_worst_dataset_accuracy": 0.9752309941520468,
+    "mean_active_models": 3.269905458089669,
+    "mean_dropout_fraction": 0.6730094541910332,
+    "mean_cache_reuse_rate": 0.9960184604230339,
+    "mean_avoided_model_fraction": 0.6730094541910332,
+    "mean_state_reuse_rate": 0.8513666666666667,
+    "mean_net_regenerative_efficiency": 0.8295712967556788
+  },
+  "friedman_test": {
+    "statistic": 4.605633802816875,
+    "p_value": 0.20305931794099577
+  },
+  "comparisons": [
+    {
+      "comparison": "AX_R_DTRRR_plus_BJ_minus_AX_R_DTRRR",
+      "mean_difference": 0.0002884990253411279,
+      "wins": 30,
+      "ties": 49,
+      "losses": 21,
+      "wilcoxon_statistic": 586.0,
+      "p_raw": 0.469728393359252,
+      "p_holm": 0.5792276375005199
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_BJ_minus_AX_R_DTRRR_plus_BK",
+      "mean_difference": 0.000047270955165699125,
+      "wins": 19,
+      "ties": 68,
+      "losses": 13,
+      "wilcoxon_statistic": 207.5,
+      "p_raw": 0.28961381875025993,
+      "p_holm": 0.5792276375005199
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_BJ_minus_AX_R_BK_reference",
+      "mean_difference": 0.0005287524366471796,
+      "wins": 41,
+      "ties": 32,
+      "losses": 27,
+      "wilcoxon_statistic": 933.5,
+      "p_raw": 0.14288175471907702,
+      "p_holm": 0.42864526415723103
+    }
+  ],
+  "measurement_boundary": {
+    "regenerative_efficiency": "computational reuse proxy",
+    "electrical_energy": "not measured"
+  }
+}
