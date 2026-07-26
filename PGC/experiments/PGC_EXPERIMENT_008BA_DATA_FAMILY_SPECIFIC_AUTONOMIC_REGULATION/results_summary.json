@@ -1,0 +1,100 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BA_DATA_FAMILY_SPECIFIC_AUTONOMIC_REGULATION",
+  "state": "completed",
+  "evidence_status": "cross_domain_family_adaptive_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [503, 521, 547],
+    "dataset_seed_units": 36,
+    "systems": [
+      "static_5_stack",
+      "static_10_stack",
+      "universal_microcirculation",
+      "family_adaptive_autonomic"
+    ],
+    "cross_folds": 3,
+    "development_only_policy_selection": true,
+    "family_specific_policy_variables": [
+      "confidence threshold",
+      "disagreement quantile",
+      "entropy threshold",
+      "specialist blend",
+      "activation penalty"
+    ]
+  },
+  "system_results": {
+    "universal_microcirculation": {
+      "mean_accuracy": 0.8731996500088606,
+      "worst_unit_accuracy": 0.3888888888888889,
+      "mean_macro_f1": 0.7991046365393626,
+      "mean_balanced_accuracy": 0.7984042758621344,
+      "mean_log_loss": 0.34934961164238143,
+      "mean_models_activated": 7.645024809498494,
+      "inference_time_ratio_vs_static10": 0.583668178949455
+    },
+    "static_5_stack": {
+      "mean_accuracy": 0.873106,
+      "worst_unit_accuracy": 0.394444,
+      "mean_macro_f1": 0.797886,
+      "mean_balanced_accuracy": 0.797477,
+      "mean_log_loss": 0.345642,
+      "mean_models_activated": 5.0,
+      "inference_time_ratio_vs_static10": 0.196327
+    },
+    "family_adaptive_autonomic": {
+      "mean_accuracy": 0.8730259613408944,
+      "worst_unit_accuracy": 0.3888888888888889,
+      "mean_macro_f1": 0.798925,
+      "mean_balanced_accuracy": 0.798231,
+      "mean_log_loss": 0.348387,
+      "mean_models_activated": 7.573709,
+      "inference_time_ratio_vs_static10": 0.560908
+    },
+    "static_10_stack": {
+      "mean_accuracy": 0.870538,
+      "worst_unit_accuracy": 0.391667,
+      "mean_macro_f1": 0.796451,
+      "mean_balanced_accuracy": 0.795839,
+      "mean_log_loss": 0.376287,
+      "mean_models_activated": 10.0,
+      "inference_time_ratio_vs_static10": 1.0
+    }
+  },
+  "friedman_test": {
+    "statistic": 2.2867132867132103,
+    "p_value": 0.5150710662810583
+  },
+  "main_comparisons": [
+    {
+      "comparison": "family_adaptive_autonomic_minus_universal_microcirculation",
+      "mean_difference": -0.0001736111111111105,
+      "wins": 0,
+      "ties": 34,
+      "losses": 2,
+      "p_holm": 0.3594249897579995
+    },
+    {
+      "comparison": "family_adaptive_autonomic_minus_static_5_stack",
+      "mean_difference": -0.00007969866796621162,
+      "wins": 8,
+      "ties": 21,
+      "losses": 7,
+      "p_holm": 0.7975126401045061
+    },
+    {
+      "comparison": "family_adaptive_autonomic_minus_static_10_stack",
+      "mean_difference": 0.0024884259259259265,
+      "wins": 9,
+      "ties": 22,
+      "losses": 5,
+      "p_holm": 0.2521635792528157
+    }
+  ],
+  "measurement_boundary": {
+    "training_time": "measured wall-clock fit time",
+    "inference_time": "measured wall-clock prediction time",
+    "models_activated": "actual model-count proxy",
+    "electrical_energy": "not measured"
+  },
+  "main_finding": "The first data-family-specific policy did not outperform the universal microcirculation controller. It did remain more accurate than the static 10-stack while reducing model activation and inference time. Broad family labels were insufficient; the next regulator should use continuous dataset-state measurements."
+}
