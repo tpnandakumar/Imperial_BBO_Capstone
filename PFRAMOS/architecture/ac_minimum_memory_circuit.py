@@ -102,13 +102,24 @@ def retrieve_memory(
     ):
         if not 0.0 <= value <= 1.0:
             raise ValueError("retrieval inputs must be between 0 and 1")
-
     retrieval_accessibility = (
         retention_strength
         * (0.40 * cue_similarity + 0.35 * semantic_route_quality + 0.25 * contextual_match)
         * (1.0 - retrieval_competition)
     )
     return _clip(retrieval_accessibility)
+
+
+def _relative_stage_quality(output: float, upstream: float) -> float:
+    """Measure a stage without blaming it for an upstream bottleneck.
+
+    Raw downstream values naturally shrink when an earlier stage is weak. Using
+    the raw minimum therefore mislabels poor attention as an encoding failure.
+    Relative stage quality isolates the loss introduced at each stage.
+    """
+    if upstream <= 1e-12:
+        return 1.0
+    return _clip(output / upstream)
 
 
 def assess_recall(
@@ -143,14 +154,15 @@ def assess_recall(
         * (0.55 + 0.25 * item.attention + 0.20 * semantic_strength)
     )
 
-    components = {
+    encoding_upstream = item.attention * semantic_strength
+    diagnostic_components = {
         "attention": item.attention,
         "semantic": semantic_strength,
-        "encoding": encoding_strength,
-        "retention": retention_strength,
-        "retrieval": retrieval_accessibility,
+        "encoding": _relative_stage_quality(encoding_strength, encoding_upstream),
+        "retention": _relative_stage_quality(retention_strength, encoding_strength),
+        "retrieval": _relative_stage_quality(retrieval_accessibility, retention_strength),
     }
-    dominant_failure_mode = min(components, key=components.get)
+    dominant_failure_mode = min(diagnostic_components, key=diagnostic_components.get)
 
     return MemoryTrace(
         item_id=item.item_id,
@@ -160,5 +172,5 @@ def assess_recall(
         retrieval_accessibility=retrieval_accessibility,
         recall_probability=recall_probability,
         dominant_failure_mode=dominant_failure_mode,
-        component_scores=tuple(components.items()),
+        component_scores=tuple(diagnostic_components.items()),
     )
