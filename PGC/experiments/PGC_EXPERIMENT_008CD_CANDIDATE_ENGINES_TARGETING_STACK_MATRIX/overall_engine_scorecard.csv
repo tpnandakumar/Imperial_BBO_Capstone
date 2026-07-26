@@ -1,0 +1,7 @@
+configuration,accuracy_assessment,efficiency_assessment,versatility_assessment,cost_effectiveness_assessment,recommended_role,key_evidence
+ECSP + A-DMIC baseline,Excellent,Excellent,Best,Excellent,Best overall single engine,"008CB median 0.984747; mean 0.984641; active models 3.060; NRE 0.862313"
+ECSP 11 + ILS-H,Best,Low,Excellent,Moderate to low,Accuracy and stability ceiling,"008CD mean 0.984698; minimum 0.977973; SD 0.005080; active models 11.0; NRE 0.571616"
+AX-R-BK 11 + ILS-H,Excellent,Low,Good,Moderate to low,Highest median accuracy,"008CD median 0.984747; mean 0.984056; SD 0.006241; activation 0.074375"
+DTRRR protected stochastic + A-DMIC,Very good,Best,Good,Best,Low-cost default engine,"008CB median 0.983821; mean 0.983043; active models 2.714; NRE 0.874492"
+AX-R-BK 3 + FBW-PVF,Very good,Good,Good,Good,Sparse guided balance,"008CD median 0.982895; mean 0.982894; minimum 0.973977; active models 6.442; NRE 0.734801"
+ECSP 3 + Dual MG-DMHLP-LOS-SSV,Very good,Moderate,Excellent,Moderate,Sparse adaptive route,"008CD median 0.982895; mean 0.982494; near-peak 0.27; active models 7.110; NRE 0.711520"
