@@ -1,0 +1,93 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BC_STRATEGIC_DIASTOLE",
+  "state": "completed",
+  "evidence_status": "cross_domain_strategic_diastole_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [701, 719, 743],
+    "dataset_seed_units": 36,
+    "systems": [
+      "static_5_stack",
+      "continuous_microcirculation",
+      "fixed_diastolic_recovery",
+      "utility_triggered_diastole",
+      "full_strategic_diastole"
+    ],
+    "cross_folds": 3,
+    "development_only_utility_modelling": true,
+    "strategic_diastole_controls": [
+      "helpfulness probability",
+      "harm probability",
+      "specialist-flow threshold",
+      "recovery gain",
+      "congestion gain",
+      "venous return",
+      "diastolic duration"
+    ]
+  },
+  "best_system": {
+    "system": "static_5_stack",
+    "units": 36,
+    "mean_accuracy": 0.872995073173253,
+    "sd_accuracy": 0.17551098397355056,
+    "worst_unit_accuracy": 0.38055555555555554,
+    "mean_macro_f1": 0.7964930079788404,
+    "mean_balanced_accuracy": 0.7969236197948967,
+    "mean_log_loss": 0.3495815036438421,
+    "mean_models_activated": 5.0,
+    "mean_activation_rate": 0.0,
+    "mean_recovery": 0.0,
+    "mean_venous_return": 0.0,
+    "mean_diastolic_duration": 1.0,
+    "mean_training_time_seconds": 0.5052113560825293,
+    "mean_inference_time_seconds": 0.028072524639153724,
+    "mean_candidate_count": 0.0,
+    "inference_ratio_vs_continuous": 0.20262704147834482
+  },
+  "friedman_test": {
+    "statistic": 3.8391959798995705,
+    "p_value": 0.4282055002661247
+  },
+  "comparisons": [
+    {
+      "comparison": "full_strategic_diastole_minus_continuous_microcirculation",
+      "mean_difference": 4.625929269271485e-18,
+      "wins": 5,
+      "ties": 24,
+      "losses": 7,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "full_strategic_diastole_minus_fixed_diastolic_recovery",
+      "mean_difference": 0.00033757716049382443,
+      "wins": 6,
+      "ties": 29,
+      "losses": 1,
+      "p_holm": 0.9300307755873591
+    },
+    {
+      "comparison": "full_strategic_diastole_minus_utility_triggered_diastole",
+      "mean_difference": 0.0002507716049382676,
+      "wins": 5,
+      "ties": 30,
+      "losses": 1,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "full_strategic_diastole_minus_static_5_stack",
+      "mean_difference": -0.0002314814814814776,
+      "wins": 5,
+      "ties": 27,
+      "losses": 4,
+      "p_holm": 1.0
+    }
+  ],
+  "runtime_seconds": 36.85195255279541,
+  "measurement_boundary": {
+    "heart and vascular terms": "computational control-state definitions",
+    "training_time": "measured wall-clock fit time",
+    "inference_time": "measured wall-clock prediction time",
+    "electrical_energy": "not measured"
+  },
+  "main_finding": "Strategic diastole improved on fixed and utility-only recovery, but did not outperform the static 5-stack or continuous microcirculation. Its strongest role is selective recovery, congestion control and withdrawal of unhelpful specialist flow rather than continuous prediction enhancement."
+}
