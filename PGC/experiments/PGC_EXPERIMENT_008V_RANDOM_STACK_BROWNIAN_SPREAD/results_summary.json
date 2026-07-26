@@ -1,0 +1,43 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008V_RANDOM_STACK_BROWNIAN_SPREAD",
+  "state": "completed_trial",
+  "evidence_status": "trial_not_publication",
+  "protected_test_label_feedback": false,
+  "design": {
+    "random_configurations": 300,
+    "repetitions": 10,
+    "trials_per_repetition": 30,
+    "cross_folds": 5,
+    "development_seeds": [11, 37, 71],
+    "cached_base_predictions": true,
+    "meta_classifier": "closed_form_ridge",
+    "continuous_probability_vectors": true
+  },
+  "winner_validation_configuration": {
+    "order": 74,
+    "repetition": 3,
+    "trial": 14,
+    "xgb_config": 0,
+    "lgbm_config": 0,
+    "ridge_alpha": 1.0,
+    "stack_mode": "full_heterogeneous",
+    "oof_accuracy_mean": 0.9849546792738302,
+    "oof_accuracy_sd": 0.0080658486616375
+  },
+  "winner_protected_test_summary": {
+    "accuracy_mean": 0.9876218323586746,
+    "macro_f1_mean": 0.9872912461639598,
+    "balanced_accuracy_mean": 0.9867446017446017,
+    "log_loss_mean": 0.8081757168134673,
+    "worst_case_accuracy": 0.9649122807017544
+  },
+  "brownian_motion_analogy": {
+    "score_mean": 0.9761405904752667,
+    "score_sd": 0.008536541346048275,
+    "increment_drift": -0.000006394207112864073,
+    "diffusion_coefficient": 0.0000749791703092698,
+    "best_validation_score": 0.9849546792738302,
+    "median_validation_score": 0.9800296889258635
+  },
+  "main_finding": "The validation-selected full heterogeneous ridge stack reached 0.987622 mean protected-test accuracy over three seeds, exceeding the historical 0.986126 result numerically. Promotion is withheld pending ten-seed confirmation and calibration repair because log loss was 0.808176."
+}
