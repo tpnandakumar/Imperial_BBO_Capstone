@@ -1,0 +1,37 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008Y_PANDORA_BOX_ATA_SHAKE",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "design": {
+    "locked_core": ["xgb", "lgbm", "svc", "logistic"],
+    "random_addon_inventory": ["catboost", "extra_trees", "hist_gb", "random_forest"],
+    "ata_modes": ["none", "mean", "difference", "product", "full"],
+    "random_configurations_per_batch": 10,
+    "batches": 10,
+    "total_random_configurations": 100,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5
+  },
+  "winner_validation_configuration": {
+    "order": 13,
+    "batch": 2,
+    "trial": 3,
+    "addons": "catboost+extra_trees+random_forest",
+    "addon_count": 3,
+    "ata_mode": "none",
+    "ata_strength": 0.15,
+    "ridge_alpha": 1.0,
+    "oof_accuracy_mean": 0.984966914776671,
+    "oof_accuracy_sd": 0.007643828563724577,
+    "oof_accuracy_worst": 0.9736263736263736
+  },
+  "winner_protected_test_summary": {
+    "accuracy_mean": 0.9876218323586746,
+    "macro_f1_mean": 0.9872912461639598,
+    "balanced_accuracy_mean": 0.9867446017446017,
+    "log_loss_mean": 0.8083376370189337,
+    "worst_case_accuracy": 0.9649122807017544
+  },
+  "main_finding": "Pandora Box reproduced the 0.987622 three-seed peak using the locked core plus CatBoost, Extra Trees and Random Forest. The validation-selected winner used no ATA feature expansion, indicating that simple static ATA pairwise transforms did not improve the best stack in this trial."
+}
