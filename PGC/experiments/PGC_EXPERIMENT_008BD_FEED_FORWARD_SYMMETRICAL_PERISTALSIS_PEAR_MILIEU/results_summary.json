@@ -1,0 +1,93 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BD_FEED_FORWARD_SYMMETRICAL_PERISTALSIS_PEAR_MILIEU",
+  "state": "completed",
+  "evidence_status": "cross_domain_dynamic_geometry_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [809, 827, 853],
+    "dataset_seed_units": 36,
+    "systems": [
+      "static_5_interior",
+      "strategic_diastole_reference",
+      "feed_forward_pulse_pressure",
+      "symmetrical_dynamic_peristalsis",
+      "full_posterior_pear_optimised_milieu"
+    ],
+    "cross_folds": 3,
+    "development_only_optimisation": true,
+    "candidate_configurations_per_unit": 108,
+    "dynamic_components": [
+      "strategic feed-forward pulse pressure",
+      "symmetrical dynamic peristalsis",
+      "posterior pear stretch",
+      "strategic diastolic recoil",
+      "outer venous return",
+      "optimised internal milieu"
+    ]
+  },
+  "best_system": {
+    "system": "strategic_diastole_reference",
+    "units": 36,
+    "mean_accuracy": 0.8720757465000886,
+    "sd_accuracy": 0.1774939982481728,
+    "worst_unit_accuracy": 0.4,
+    "mean_macro_f1": 0.796788907457637,
+    "mean_balanced_accuracy": 0.796252883784117,
+    "mean_log_loss": 0.34899887682974,
+    "mean_activation_rate": 0.29487131918601217,
+    "mean_models_activated": 6.474356595930061,
+    "mean_feed_forward_pressure": 0.05087144180362848,
+    "mean_symmetric_peristalsis": 0.13097597063175406,
+    "mean_posterior_pear_stretch": 0.08457154152780944,
+    "mean_venous_return": 0.0017887516027238694,
+    "mean_posterior_recoil": 0.018198283384682892,
+    "mean_milieu_stability": 0.9581304847528082,
+    "mean_training_time_seconds": 0.720951264497166,
+    "mean_inference_time_seconds": 0.05778886465943564
+  },
+  "friedman_test": {
+    "statistic": 8.00000000000227,
+    "p_value": 0.09157819444358774
+  },
+  "comparisons": [
+    {
+      "comparison": "full_posterior_pear_optimised_milieu_minus_static_5_interior",
+      "mean_difference": 0.0,
+      "wins": 0,
+      "ties": 36,
+      "losses": 0,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "full_posterior_pear_optimised_milieu_minus_strategic_diastole_reference",
+      "mean_difference": -0.00020254629629629713,
+      "wins": 0,
+      "ties": 34,
+      "losses": 2,
+      "p_holm": 0.718849979515999
+    },
+    {
+      "comparison": "full_posterior_pear_optimised_milieu_minus_feed_forward_pulse_pressure",
+      "mean_difference": 0.0,
+      "wins": 0,
+      "ties": 36,
+      "losses": 0,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "full_posterior_pear_optimised_milieu_minus_symmetrical_dynamic_peristalsis",
+      "mean_difference": 0.0,
+      "wins": 0,
+      "ties": 36,
+      "losses": 0,
+      "p_holm": 1.0
+    }
+  ],
+  "runtime_seconds": 41.65997838973999,
+  "measurement_boundary": {
+    "pressure_peristalsis_stretch_and_milieu": "computational control-state proxies",
+    "training_and_inference_time": "measured wall-clock time",
+    "electrical_energy": "not measured"
+  },
+  "main_finding": "The dynamic geometry remained highly stable but did not improve prediction beyond the stable 5-stack interior. Strategic diastole was marginally strongest. Feed-forward pressure, symmetrical peristalsis and posterior pear stretch require distinct specialist pathways or feature-space transformations to add predictive information."
+}
