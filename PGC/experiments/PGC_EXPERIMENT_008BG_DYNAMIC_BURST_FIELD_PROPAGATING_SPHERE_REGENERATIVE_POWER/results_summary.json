@@ -1,0 +1,52 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BG_DYNAMIC_BURST_FIELD_PROPAGATING_SPHERE_REGENERATIVE_POWER",
+  "state": "completed",
+  "evidence_status": "closed_system_dynamic_field_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [1009, 1031, 1063],
+    "dataset_seed_units": 36,
+    "systems": [
+      "stable_5_stack",
+      "fixed_uniform_burst",
+      "adaptive_radius_sphere",
+      "anisotropic_vectorised_sphere",
+      "full_delta_bridge_regenerative_field"
+    ],
+    "cross_folds": 3,
+    "development_only_optimisation": true,
+    "candidate_configurations_per_unit": 108,
+    "closed_system_constraint": "No new models, features or external information were added during field control."
+  },
+  "best_system": {
+    "system": "fixed_uniform_burst",
+    "mean_accuracy": 0.8690157237580484,
+    "worst_unit_accuracy": 0.41388888888888886,
+    "mean_macro_f1": 0.7924113891948023,
+    "mean_balanced_accuracy": 0.7923290254362155,
+    "mean_log_loss": 0.3557075232513176,
+    "total_corrected_errors": 14,
+    "total_new_errors": 7,
+    "total_net_sphere_gain": 7,
+    "mean_activation_rate": 1.0,
+    "mean_models_activated": 10.0,
+    "mean_radius": 0.35,
+    "mean_capture": 0.7,
+    "mean_amplification": 0.08,
+    "mean_vector_strength": 1.0,
+    "mean_damping": 0.2,
+    "mean_phase_error": 0.0945097704905596,
+    "mean_reusable_state": 0.09507647409849122,
+    "mean_regenerative_power_proxy": 0.06507647409849122
+  },
+  "friedman_test": {
+    "statistic": 7.746606334841867,
+    "p_value": 0.10131394753334931
+  },
+  "main_finding": "The closed-system dynamic field produced measurable regenerative computational reuse, but did not outperform the fixed uniform burst on predictive accuracy. The present capture, amplification, vectoring and dampening rules add control complexity without sufficient accuracy gain.",
+  "measurement_boundary": {
+    "sphere_wave_pressure_regenerative_power": "computational control-state proxies",
+    "training_and_inference_time": "measured wall-clock time",
+    "electrical_energy": "not measured"
+  }
+}
