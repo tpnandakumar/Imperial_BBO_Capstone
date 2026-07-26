@@ -26,7 +26,19 @@ jobs:
           python -m pip install numpy pytest
 
       - name: Run unit tests
-        run: python -m pytest PFRAMOS/tests -q
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p PFRAMOS/outputs/diagnostics
+          python -m pytest PFRAMOS/tests -q --tb=short 2>&1 | tee PFRAMOS/outputs/diagnostics/pytest.log
+
+      - name: Upload unit-test diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-unit-test-diagnostics
+          path: PFRAMOS/outputs/diagnostics/pytest.log
+          retention-days: 14
 
       - name: Run architecture experiment suite
         run: python -m PFRAMOS.experiments.run_experiment_suite
