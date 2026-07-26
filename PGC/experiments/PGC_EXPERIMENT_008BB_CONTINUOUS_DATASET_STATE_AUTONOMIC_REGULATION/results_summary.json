@@ -1,0 +1,83 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BB_CONTINUOUS_DATASET_STATE_AUTONOMIC_REGULATION",
+  "state": "completed",
+  "evidence_status": "cross_domain_continuous_state_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [601, 619, 641],
+    "dataset_seed_units": 36,
+    "systems": [
+      "static_5_stack",
+      "static_10_stack",
+      "universal_microcirculation",
+      "continuous_state_autonomic"
+    ],
+    "cross_folds": 3,
+    "development_only_state_estimation": true,
+    "continuous_state_variables": [
+      "imbalance",
+      "dimensionality-to-sample ratio",
+      "sparsity",
+      "noise proxy",
+      "nonlinearity proxy",
+      "model disagreement",
+      "confidence",
+      "entropy",
+      "calibration gap"
+    ]
+  },
+  "best_system": {
+    "system": "continuous_state_autonomic",
+    "units": 36,
+    "mean_accuracy": 0.8725915034851438,
+    "sd_accuracy": 0.17345196907778396,
+    "worst_unit_accuracy": 0.41944444444444445,
+    "mean_macro_f1": 0.7994057963584732,
+    "mean_balanced_accuracy": 0.7980616051723124,
+    "mean_log_loss": 0.3517608787942209,
+    "mean_training_time_seconds": 0.7463614000561292,
+    "mean_inference_time_seconds": 0.08899383391976884,
+    "mean_models_activated": 7.496009067280998,
+    "mean_activation_rate": 0.4992018134561994,
+    "inference_time_ratio_vs_static10": 0.5203807594526084,
+    "model_activation_ratio_vs_static10": 0.7496009067280998
+  },
+  "friedman_test": {
+    "statistic": 0.5454545454545808,
+    "p_value": 0.9087975921571977
+  },
+  "comparisons": [
+    {
+      "comparison": "continuous_state_autonomic_minus_universal_microcirculation",
+      "mean_difference": 0.0000964506172839472,
+      "wins": 4,
+      "ties": 30,
+      "losses": 2,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "continuous_state_autonomic_minus_static_5_stack",
+      "mean_difference": 0.000200008122157238,
+      "wins": 8,
+      "ties": 20,
+      "losses": 8,
+      "p_holm": 1.0
+    },
+    {
+      "comparison": "continuous_state_autonomic_minus_static_10_stack",
+      "mean_difference": 0.001610725308641968,
+      "wins": 8,
+      "ties": 22,
+      "losses": 6,
+      "p_holm": 0.660647397724142
+    }
+  ],
+  "runtime_seconds": 33.775161266326904,
+  "measurement_boundary": {
+    "training_time": "measured wall-clock fit time",
+    "inference_time": "measured wall-clock prediction time",
+    "models_activated": "actual model-count proxy",
+    "electrical_energy": "not measured"
+  },
+  "main_finding": "The continuous-state controller achieved the highest mean accuracy, macro-F1 and balanced accuracy while reducing model activation and inference time relative to the static 10-stack. Differences were very small and not statistically significant, so the result supports the architecture as promising but not yet proven superior."
+}
