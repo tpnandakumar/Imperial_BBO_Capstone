@@ -1,0 +1,35 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AU_LIMBIC_AUTONOMIC_CARDIOVASCULAR_CORTEX",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "design": {
+    "locked_network": ["xgb", "lgbm", "svc", "logistic", "catboost", "extra_trees", "random_forest"],
+    "parent_configuration": "008AR medium-density medium-viscosity winner",
+    "arms": ["008AR_fixed_reference", "heart_rate_salience_only", "blood_pressure_blend_only", "limbic_autonomic_reliability", "vascular_resource_redistribution", "full_autoregulated_cardiovascular_cortex"],
+    "configurations_per_arm": 60,
+    "total_configurations": 360,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "controller": "cross-fitted sample-wise limbic salience and autonomic vascular gating"
+  },
+  "best_arm": {
+    "arm": "limbic_autonomic_reliability",
+    "winner_configuration": 4,
+    "oof_accuracy_mean": 0.9852111150208712,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "oof_accuracy_sd": 0.007220001136775536,
+    "winner_alpha": 1.4429184887946822,
+    "winner_demand_gain": 0.7618150973232143,
+    "winner_pressure_gain": 0.49074539346532375,
+    "winner_recovery": 0.6446076856441074,
+    "winner_min_flow": 0.7497847957013192,
+    "winner_max_flow": 1.2998427732858229,
+    "protected_accuracy_mean": 0.9885964912280701,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9883326550220841,
+    "balanced_accuracy_mean": 0.9875162066828733,
+    "log_loss_mean": 0.8090510583555799
+  },
+  "main_finding": "Limbic-autonomic reliability gating reproduced the 0.988596 peak by configuration 4 but did not cross 0.99. Regulation improved search efficiency rather than the predictive ceiling."
+}
