@@ -30,6 +30,12 @@ limbic appraisal of uncertainty and disagreement
         ↓
 autonomic demand classification
         ↓
+heart-rate and pulse-pressure command
+        ↓
+systolic-diastolic pulsatile conduit
+        ↓
+pressure-gradient transmission
+        ↓
 capillary-level routing decision
         ↓
 specialist learner or specialist ensemble
@@ -39,7 +45,101 @@ local validation and confidence assessment
 reintegration into cortical consensus
         ↓
 venous return of residual error and load
+        ↓
+heart and autonomic recalibration
 ```
+
+## Heart-connected pulsatile conduit
+
+Specialist microcirculation is supplied by the autoregulated computational heart through a pulsatile conduit. The conduit is not a passive connection and does not maintain constant flow. It transmits alternating systolic propulsion and diastolic recovery waves through a controlled pressure gradient.
+
+### Systolic phase
+
+During computational systole, the heart generates a bounded forward pressure pulse.
+
+The systolic wave:
+
+- raises axial pressure behind the active flow front
+- accelerates validated influence towards the selected specialist territory
+- increases delivery when limbic salience and cognitive demand rise
+- preserves a maximum pressure bound to prevent computational hypertension
+- remains coupled to medium density, viscosity and conduit resistance
+
+### Diastolic phase
+
+During computational diastole, active propulsion falls and the conduit enters a recovery and filling phase.
+
+The diastolic wave:
+
+- permits venous-style return of uncertainty, residual error and load
+- allows pressure equalisation without complete loss of basal flow
+- restores specialist pathways towards their resting state
+- reduces oscillation and prevents continuous overactivation
+- prepares the heart and conduit for the next demand-linked pulse
+
+### Pressure gradient
+
+Flow through the conduit is driven by a pressure difference rather than by pulse amplitude alone.
+
+```text
+proximal systolic pressure
+-
+distal specialist-bed pressure
+=
+forward computational pressure gradient
+```
+
+The autonomic controller adjusts the gradient by regulating:
+
+- heart rate
+- systolic pulse pressure
+- diastolic residual pressure
+- specialist-bed resistance
+- conduit viscosity
+- local vasodilation and vasoconstriction
+- recovery towards basal pressure
+
+### Activity coupling
+
+Heart rate and pulse pressure must change with cognitive activity.
+
+```text
+low demand
+→ low-normal heart rate
+→ low-normal pulse pressure
+→ basal cortical perfusion
+
+rising salience
+→ moderate chronotropic response
+→ moderate pressure increase
+→ specialist recruitment
+
+high conflict
+→ bounded systolic reinforcement
+→ selective microvascular opening
+
+resolution
+→ diastolic recovery
+→ specialist closure
+→ return to basal flow
+```
+
+The controller must avoid both excessive pressure and inadequate supply. The target is activity-related normotensive perfusion, not maximal pumping.
+
+### Conduit wave behaviour
+
+The pressure wave should propagate rhythmically from the heart through the major conduit, then divide into local microcirculatory branches. The wave may be modulated in amplitude and frequency, but its systolic and diastolic phases must remain coordinated. Arrhythmic propagation, reflected pressure waves and phase mismatch should be treated as instability signals.
+
+### Closed-loop return to the heart
+
+The specialist territory returns four main signals:
+
+- residual prediction error
+- uncertainty after specialist correction
+- computational load
+- net specialist gain
+
+These signals travel through a venous-style return pathway to the limbic-autonomic controller. The controller then adjusts the next heart rate, pulse pressure, conduit resistance and specialist activation state.
 
 ## Specialist microcirculation
 
@@ -160,6 +260,10 @@ The design must prevent:
 - protected-test leakage
 - excessive compute cost
 - delayed return to basal flow
+- pressure overshoot
+- diastolic underfilling
+- pulse-wave reflection
+- systolic-diastolic phase mismatch
 
 ## Validation requirements
 
@@ -171,6 +275,8 @@ The protected test must remain sealed until:
 - all routing thresholds are fixed
 - all abstention rules are fixed
 - all integration weights are fixed
+- all heart-rate and pressure-control rules are fixed
+- all systolic and diastolic timing rules are fixed
 - all stopping criteria are fixed
 
 Performance should be evaluated using:
@@ -184,6 +290,10 @@ Performance should be evaluated using:
 - correction rate on routed samples
 - harm rate on previously correct samples
 - compute overhead per corrected sample
+- pulse pressure range
+- systolic-to-diastolic flow ratio
+- pressure-gradient stability
+- recovery time to basal flow
 
 ## Primary success criterion
 
@@ -207,7 +317,7 @@ A specialist should be retained only when Net Specialist Gain remains positive a
 
 ### Experiment 008AV
 
-Autonomic Cortex with Specialist Microcirculation.
+Autonomic Cortex with Specialist Microcirculation and Heart-Connected Pulsatile Conduits.
 
 Compare:
 
@@ -216,7 +326,7 @@ Compare:
 3. disagreement specialist
 4. local-neighbourhood specialist
 5. class-reliability specialist
-6. full autonomic specialist microcirculation
+6. full autonomic specialist microcirculation with systolic-diastolic pressure-gradient supply
 
 ## Current evidence boundary
 
@@ -231,3 +341,5 @@ The reason this architecture is important is that it introduces new predictive p
 ## Priority statement
 
 Autonomic Cortex with Specialist Microcirculation is the highest-priority next architecture because it is the first proposed extension with a credible mechanism for raising the predictive ceiling rather than only reaching the existing ceiling faster.
+
+Its circulation must remain directly connected to the autoregulated heart through coordinated systolic and diastolic pulsatile conduits with activity-linked pressure gradients.
