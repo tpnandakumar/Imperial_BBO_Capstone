@@ -1,0 +1,139 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008L_LAUNCH_FREEFLIGHT",
+  "state": "completed_trial",
+  "evidence_status": "trial_not_publication",
+  "protected_test_label_feedback": false,
+  "best_arm": "adaptive_entry_profile",
+  "aggregate": [
+    {
+      "arm": "adaptive_entry_profile",
+      "accuracy_mean": 0.978645,
+      "macro_f1_mean": 0.977713,
+      "balanced_accuracy_mean": 0.976630,
+      "log_loss_mean": 0.135946,
+      "rescues_total": 8,
+      "harms_total": 2,
+      "net_rescue_total": 6,
+      "intervention_rate_mean": 0.001881,
+      "worst_case_accuracy": 0.938596,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "progressive_release_adaptive_profile",
+      "accuracy_mean": 0.978645,
+      "macro_f1_mean": 0.977713,
+      "balanced_accuracy_mean": 0.976630,
+      "log_loss_mean": 0.135946,
+      "rescues_total": 8,
+      "harms_total": 2,
+      "net_rescue_total": 6,
+      "intervention_rate_mean": 0.001881,
+      "worst_case_accuracy": 0.938596,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "reversible_release",
+      "accuracy_mean": 0.978645,
+      "macro_f1_mean": 0.977713,
+      "balanced_accuracy_mean": 0.976630,
+      "log_loss_mean": 0.135946,
+      "rescues_total": 8,
+      "harms_total": 2,
+      "net_rescue_total": 6,
+      "intervention_rate_mean": 0.001881,
+      "worst_case_accuracy": 0.938596,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "fixed_launch_scaffold",
+      "accuracy_mean": 0.978445,
+      "macro_f1_mean": 0.977499,
+      "balanced_accuracy_mean": 0.976497,
+      "log_loss_mean": 0.137232,
+      "rescues_total": 11,
+      "harms_total": 5,
+      "net_rescue_total": 6,
+      "intervention_rate_mean": 0.002822,
+      "worst_case_accuracy": 0.938596,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "progressive_release_fixed_profile",
+      "accuracy_mean": 0.978445,
+      "macro_f1_mean": 0.977499,
+      "balanced_accuracy_mean": 0.976497,
+      "log_loss_mean": 0.137232,
+      "rescues_total": 11,
+      "harms_total": 5,
+      "net_rescue_total": 6,
+      "intervention_rate_mean": 0.002822,
+      "worst_case_accuracy": 0.938596,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "rollback_protected_launch_freeflight",
+      "accuracy_mean": 0.977690,
+      "macro_f1_mean": 0.976706,
+      "balanced_accuracy_mean": 0.975629,
+      "log_loss_mean": 0.131205,
+      "rescues_total": 1,
+      "harms_total": 1,
+      "net_rescue_total": 0,
+      "intervention_rate_mean": 0.000370,
+      "worst_case_accuracy": 0.929825,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "braided_zmi",
+      "accuracy_mean": 0.977690,
+      "macro_f1_mean": 0.976703,
+      "balanced_accuracy_mean": 0.975629,
+      "log_loss_mean": 0.133256,
+      "rescues_total": 0,
+      "harms_total": 0,
+      "net_rescue_total": 0,
+      "intervention_rate_mean": 0.0,
+      "worst_case_accuracy": 0.929825,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    },
+    {
+      "arm": "free_flight_no_scaffold",
+      "accuracy_mean": 0.976287,
+      "macro_f1_mean": 0.975342,
+      "balanced_accuracy_mean": 0.974281,
+      "log_loss_mean": 0.131531,
+      "rescues_total": 1,
+      "harms_total": 5,
+      "net_rescue_total": -4,
+      "intervention_rate_mean": 0.001988,
+      "worst_case_accuracy": 0.929825,
+      "release_fixed_mean": 0.0,
+      "release_adaptive_mean": 0.0
+    }
+  ],
+  "per_dataset_best": {
+    "breast_cancer": {
+      "arm": "adaptive_entry_profile",
+      "accuracy_mean": 0.963158,
+      "net_rescue_total": 2
+    },
+    "digits": {
+      "arm": "fixed_launch_scaffold",
+      "accuracy_mean": 0.984167,
+      "net_rescue_total": 5
+    },
+    "wine": {
+      "arm": "adaptive_entry_profile",
+      "accuracy_mean": 0.988889,
+      "net_rescue_total": 0
+    }
+  },
+  "main_finding": "The adaptive entry-flow profile improved accuracy while validation selected zero scaffold release. Free flight without the scaffold reduced accuracy and produced negative net rescue."
+}
