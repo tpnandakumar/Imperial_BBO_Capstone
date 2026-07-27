@@ -1,0 +1,22 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CH_B_VERSATILE_DATASET_GENERALISATION",
+  "status": "completed",
+  "design": "60% training, 20% validation, 20% protected test",
+  "datasets": [
+    "five_class_multiclass",
+    "high_dimensional_sparse",
+    "imbalanced_binary",
+    "iris_small_multiclass",
+    "noisy_missing_binary",
+    "nonlinear_moons",
+    "temporal_drift_binary"
+  ],
+  "seeds": [911, 929, 947],
+  "total_runs": 21,
+  "zero_split_overlap": true,
+  "holdout_used_for_selection": false,
+  "electrical_energy_measured": false,
+  "direct_cost_measured": false,
+  "A_DMIC_milieu_interior_preserved": true,
+  "decision": "Proceed to targeted remediation for high-dimensional sparse, noisy-missing and temporal-drift conditions before integrated PCEEC scoring."
+}
