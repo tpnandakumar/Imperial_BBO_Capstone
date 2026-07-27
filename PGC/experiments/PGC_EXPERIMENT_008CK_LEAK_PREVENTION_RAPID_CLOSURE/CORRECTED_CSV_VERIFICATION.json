@@ -1,0 +1,33 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CK_LEAK_PREVENTION_RAPID_CLOSURE",
+  "verification_date": "2026-07-27",
+  "verified_branch": "agent/pframos-v0.1",
+  "verified_path": "PGC/experiments/PGC_EXPERIMENT_008CK_LEAK_PREVENTION_RAPID_CLOSURE/per_run_results.csv",
+  "verified_blob_sha": "f4992c93c7b149f331eb9b2ea8692eded12d7ac8",
+  "main_blob_sha": "f4992c93c7b149f331eb9b2ea8692eded12d7ac8",
+  "branch_main_content_parity": true,
+  "header_column_count": 27,
+  "data_row_count": 56,
+  "seed_count": 8,
+  "leak_type_count": 7,
+  "expected_cartesian_coverage": "8 seeds x 7 leak types",
+  "coverage_complete": true,
+  "verified_invariants": {
+    "all_detected": true,
+    "all_contained": true,
+    "all_purged": true,
+    "all_rollback_success": true,
+    "all_closure_verified": true,
+    "no_invalid_state_released": true,
+    "no_rss_residual": true,
+    "no_worker_thread_leak": true,
+    "all_protected_mode_entered": true,
+    "all_homeostasis_restored": true,
+    "all_A_DMIC_milieu_interior_preserved": true,
+    "electrical_energy_directly_measured": false,
+    "direct_cost_measured": false
+  },
+  "PCEEC_interpretation": "The CSV records timing, memory and closure behaviour, but it explicitly does not claim direct electrical-energy or direct-cost measurement.",
+  "status": "verified_corrected_recovery_file",
+  "evidence_boundary": "This verification establishes repository identity, structural completeness and the stated per-run Boolean invariants. It does not independently reproduce the experiment or elevate unmeasured energy and cost fields into measured claims."
+}
