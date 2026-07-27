@@ -1,0 +1,45 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CM_INTEGRATED_PCEEC_FIVE_DOMAIN_VALIDATION",
+  "status": "locked_before_execution",
+  "target_profile": "A5 R5 S5 E5-R C5",
+  "non_compensatory_scoring": true,
+  "domain_scale": {
+    "minimum": 0,
+    "maximum": 5
+  },
+  "level_5_gates": {
+    "accuracy": {
+      "protected_test_leakage": false,
+      "all_workloads_meet_predeclared_minimum": true,
+      "no_material_regression_against_locked_balanced_baseline": true
+    },
+    "reliability": {
+      "invalid_state_release_rate": 0.0,
+      "required_rollback_success_rate": 1.0,
+      "unknown_treated_as_proven": false,
+      "deterministic_violation_release_rate": 0.0
+    },
+    "stability": {
+      "worker_thread_leak_rate": 0.0,
+      "persistent_memory_residual_rate": 0.0,
+      "A_DMIC_homeostasis_restoration_rate": 1.0,
+      "all_workloads_within_predeclared_degradation_bound": true
+    },
+    "efficiency_regeneration": {
+      "software_memory_recovery_rate": 1.0,
+      "compute_profile_within_locked_threshold": true,
+      "electrical_regeneration_claim_requires_direct_measurement": true
+    },
+    "cost_efficiency": {
+      "normalised_cost_index_within_locked_threshold": true,
+      "accuracy_reliability_stability_minima_preserved": true,
+      "direct_monetary_claim_requires_direct_measurement": true
+    }
+  },
+  "release_rule": "All five domains must independently score 5. No averaging or compensation is permitted.",
+  "framework_continuity": {
+    "A_DMIC_Computational_Milieu_Interieur_required": true,
+    "PCEEC_required": true,
+    "PFRAMOS_PGC_integration_required": true
+  }
+}
