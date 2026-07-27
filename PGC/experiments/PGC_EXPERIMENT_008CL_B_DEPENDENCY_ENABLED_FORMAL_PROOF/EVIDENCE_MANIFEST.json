@@ -1,0 +1,45 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CL_B_DEPENDENCY_ENABLED_FORMAL_PROOF",
+  "workflow_name": "PGC 008CL-B Formal Proof",
+  "workflow_path": ".github/workflows/pgc_008cl_b_formal_proof.yml",
+  "workflow_blob_sha": "188d0b53ee4daad6468b924d2eaabb366f4bc7da",
+  "trigger_commit_under_observation": "efbdaac9ff97913bd3019e776c6e766d78a412d8",
+  "archive_branch": "main",
+  "recovered_to_branch": "agent/pframos-v0.1",
+  "recovery_date": "2026-07-27",
+  "environment": {
+    "runner": "ubuntu-latest",
+    "python_version": "3.12",
+    "z3_version_reported": "5.0.0",
+    "workflow_timeout_minutes": 15
+  },
+  "evidence_files": [
+    {
+      "path": "PGC/experiments/PGC_EXPERIMENT_008CL_B_DEPENDENCY_ENABLED_FORMAL_PROOF/formal_results.csv",
+      "source_git_blob_sha": "8bbf554f3865f210ffefb5fc1e5e857ed9bfc25f",
+      "role": "Per-task solver status, counterexamples, proof outcomes and execution-specific timings"
+    },
+    {
+      "path": "PGC/experiments/PGC_EXPERIMENT_008CL_B_DEPENDENCY_ENABLED_FORMAL_PROOF/results_summary.json",
+      "source_git_blob_sha": "15c1e0020754fb044dc9a46fb56dea82918b7f8f",
+      "role": "Aggregate success rates, unknown-result policy, environment version and elapsed runtime"
+    }
+  ],
+  "verified_outcomes": {
+    "formal_tasks": 5,
+    "formal_proof_success_rate": 1.0,
+    "flawed_counterexample_rate": 1.0,
+    "hypothesis_success_rate": 1.0,
+    "false_proof_claim_rate": 0.0,
+    "deterministic_violation_release_rate": 0.0,
+    "probability_simplex_invariant_proven": true,
+    "unknown_treated_as_proven": false,
+    "A_DMIC_milieu_interior_preserved": true
+  },
+  "framework_continuity": {
+    "PFRAMOS_PGC_integration_preserved": true,
+    "A_DMIC_Computational_Milieu_Interieur_preserved": true,
+    "PCEEC_claim_boundary_preserved": true
+  },
+  "evidence_boundary": "The archived results establish only the properties encoded in the five symbolic models and the generated property-based tests. They do not independently establish operating-system security, hardware safety, memory safety, termination, external-specification correctness, or requirements that were not formalised. Runtime measurements are execution-specific observations rather than formal performance guarantees."
+}
