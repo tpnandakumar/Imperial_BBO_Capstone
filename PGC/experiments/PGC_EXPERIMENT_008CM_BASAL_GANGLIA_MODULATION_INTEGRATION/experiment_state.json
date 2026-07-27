@@ -1,0 +1,30 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CM_BASAL_GANGLIA_MODULATION_INTEGRATION",
+  "status": "initialised_not_executed",
+  "created_on": "2026-07-27",
+  "sequence_position": "next_after_008CL_B_and_008CJ_integrity_completion",
+  "objective": "Test whether direct, indirect and hyperdirect modulation, together with dopamine-like adaptive confidence control, reduces overfitting, underfitting, slowing, oscillation and underperformance while improving accuracy targeting.",
+  "required_ablations": [
+    "no_basal_ganglia_modulation",
+    "direct_pathway_only",
+    "direct_plus_indirect",
+    "full_direct_indirect_hyperdirect",
+    "dopamine_like_modulation_absent",
+    "dopamine_like_modulation_reduced",
+    "dopamine_like_modulation_balanced",
+    "dopamine_like_modulation_excessive"
+  ],
+  "dopamine_like_interpretation": {
+    "absence": "insufficient facilitation, slow adaptation, underfitting and persistent underperformance",
+    "reduction": "delayed candidate recruitment, conservative gating and reduced accuracy targeting",
+    "balance": "stable confidence updating, appropriate facilitation and inhibition",
+    "excess": "over-facilitation, excessive candidate persistence, overfitting and unstable switching"
+  },
+  "framework_continuity": {
+    "A_DMIC_Computational_Milieu_Interieur_preserved": true,
+    "PCEEC_framework_preserved": true,
+    "PFRAMOS_PGC_integration_preserved": true,
+    "British_English_documentation_required": true
+  },
+  "evidence_boundary": "The dopamine-like variable is a computational modulation parameter inspired by biological function. It is not a clinical or biological simulation claim. No performance claim is valid until the experiment is executed and exact artefacts are preserved."
+}
