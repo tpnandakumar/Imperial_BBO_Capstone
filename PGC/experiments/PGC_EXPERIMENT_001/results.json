@@ -1,0 +1,63 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_001",
+  "state": "completed_trial",
+  "seeds": [11, 23, 37, 53, 71],
+  "cases_per_family": 100,
+  "total_cases_per_seed": 500,
+  "aggregate": {
+    "static_single_expert": {
+      "routing_accuracy_mean": 0.4,
+      "task_success_mean": 0.6464000000000001,
+      "routing_regret_mean": 0.18396956405062254,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.00008274440005493489
+    },
+    "random_router": {
+      "routing_accuracy_mean": 0.2624,
+      "task_success_mean": 0.5908,
+      "routing_regret_mean": 0.2481297407396883,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.00029677440001592005
+    },
+    "confidence_only_router": {
+      "routing_accuracy_mean": 1.0,
+      "task_success_mean": 0.8363999999999999,
+      "routing_regret_mean": 0.0,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.0057384948001299564
+    },
+    "oracle_router": {
+      "routing_accuracy_mean": 1.0,
+      "task_success_mean": 0.8224,
+      "routing_regret_mean": 0.0,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.0001076763998696606
+    },
+    "pgc_evidence_router": {
+      "routing_accuracy_mean": 1.0,
+      "task_success_mean": 0.8276,
+      "routing_regret_mean": 0.0,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.01026772039987236
+    },
+    "pgc_without_coherence": {
+      "routing_accuracy_mean": 1.0,
+      "task_success_mean": 0.834,
+      "routing_regret_mean": 0.0,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.01003054079990875
+    },
+    "pgc_without_efficiency": {
+      "routing_accuracy_mean": 1.0,
+      "task_success_mean": 0.8308,
+      "routing_regret_mean": 0.0,
+      "abstention_rate_mean": 0.0,
+      "mean_latency_ms": 0.010271747200135906
+    }
+  },
+  "strongest_non_oracle_baseline": "confidence_only_router",
+  "promotion_candidate": false,
+  "publication_evidence": false,
+  "evidence_class": "trial_evidence",
+  "execution_note": "PGC router unit tests passed 5 of 5 before this result was generated."
+}

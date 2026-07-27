@@ -1,0 +1,9 @@
+seed,task,repair,runtime_failures,fuzz_failures,invariant_failures,runtime_verified,formal_proof_status,runtime_ms,fuzz_ms,invariant_ms,total_ms,released_deterministic_violation,homeostasis_restored
+2101,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,1.217949999954726,73.00496399966505,15.759312999762187,89.9942509995526,False,True
+2111,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.7752090004942147,76.41014699947846,19.146253999679175,96.34159699999145,False,True
+2129,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,1.3408830000116723,79.31311999982427,16.081992000181344,96.74513800018758,False,True
+2141,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.8882399997673929,76.0204629996224,19.72217599995929,96.64450699983718,False,True
+2153,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.7848209997973754,86.28658699944936,15.992727999218914,103.07601099975727,False,True
+2179,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.8826959992802585,72.52135900034773,18.191828999988502,91.60673200040037,False,True
+2203,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.9987240000555175,91.34301299945946,18.437079000250378,110.7895949999147,False,True
+2213,probability_normalisation,nonnegative_simplex_projection,0,0,0,True,PENDING_Z3_DEPENDENCY,0.7921400001578149,72.46631499947398,15.918952999527392,89.18660299968906,False,True

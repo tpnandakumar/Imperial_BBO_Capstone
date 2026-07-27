@@ -1,0 +1,42 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CC_MG_DMHLP_LOS_SSV_RANDOM_STACKS",
+  "state": "completed",
+  "evidence_status": "fresh_matched_comparative_development_evidence_not_final_confirmation",
+  "design": {
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "cycle_seeds": [401, 419, 433, 449, 463, 479, 491, 503, 521, 541],
+    "random_repeats_per_cycle": 10,
+    "evaluations_per_stack_size": 100,
+    "stack_sizes": [3, 5, 7, 10, 11],
+    "protocol": "A-DMIC MG-DMHLP-LOS-SSV",
+    "holdout_labels_used_for_guidance": false
+  },
+  "best_protocol_stack": {
+    "stack_size": 3,
+    "median_accuracy": 0.9824317738791424,
+    "median_ci95_low": 0.9785575048732943,
+    "median_ci95_high": 0.9838206627680313,
+    "modal_band_4dp": "0.9829",
+    "modal_frequency": 9,
+    "sample_sd": 0.006519234054459785,
+    "mean_accuracy": 0.9822597465886937,
+    "mean_ci95_low": 0.9809661891164719,
+    "mean_ci95_high": 0.9835533040609156,
+    "minimum_accuracy": 0.9721247563352827,
+    "maximum_accuracy": 0.9942982456140351,
+    "near_peak_frequency_ge_99_0pct": 0.22,
+    "mean_active_models": 7.5438518518518505,
+    "mean_net_regenerative_efficiency": 0.6961003398063548
+  },
+  "protocol_accuracy_changes_vs_baseline": {
+    "3_stack": {"mean_difference": 0.013205653021442507, "p_holm": 1.6195095332522324e-10},
+    "5_stack": {"mean_difference": 0.0037495126705652947, "p_holm": 3.819339410472895e-06},
+    "7_stack": {"mean_difference": 0.0012699805068226134, "p_holm": 0.012274402386188873},
+    "10_stack": {"mean_difference": -4.678362573099615e-05, "p_holm": 0.7240643219364147},
+    "11_stack": {"mean_difference": 0.0, "p_holm": 1.0}
+  },
+  "friedman_protocol_stack_comparison": {
+    "p_value": 0.2672442980464977
+  },
+  "main_finding": "MG-DMHLP-LOS-SSV substantially improved 3, 5 and 7-model random stacks, sharply improving the 3-model floor and reducing variability. It did not improve 10 or 11-model accuracy because those stacks were already close to the full-route target. The gains required increased active-model use and reduced regenerative efficiency relative to sparse baselines."
+}

@@ -1,0 +1,51 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AW_PULSATING_CONDUIT_OUTER_LAMINAR_VENOUS_RETURN",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "measurement_boundary": {
+    "pressure": "computational control-state proxy",
+    "heart_rate": "computational pulse-frequency proxy",
+    "venous_return": "computational recovery-flow proxy",
+    "circulation_efficiency": "derived proxy, not physical energy measurement"
+  },
+  "design": {
+    "parent_regime": "008AR medium-density medium-viscosity gearbox",
+    "arms": [
+      "008AR_static_reference",
+      "fixed_pulse_conduit",
+      "systolic_only_conduit",
+      "systolic_diastolic_conduit",
+      "pulsatile_conduit_with_pressure_gradient",
+      "full_closed_loop_with_outer_laminar_venous_return"
+    ],
+    "configurations_per_arm": 60,
+    "total_configurations": 360,
+    "bootstrap_resamples_per_candidate": 200,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "circulation": "inner systolic-diastolic arterial conduit with outer laminar venous return"
+  },
+  "best_arm": {
+    "arm": "pulsatile_conduit_with_pressure_gradient",
+    "winner_configuration": 3,
+    "winner_phase": "systole",
+    "oof_accuracy_mean": 0.9852884366013244,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "bootstrap_sd": 0.002251461604704311,
+    "winner_heart_rate": 2.629438376528899,
+    "winner_pulse_pressure": 0.07685100939205883,
+    "winner_forward_pressure_gradient": 0.009454413356222796,
+    "winner_venous_pressure_gradient": 0.015249631476171881,
+    "winner_arterial_drive": 0.00437247708898592,
+    "winner_diastolic_recovery": 0.0,
+    "winner_venous_return_magnitude": 0.0,
+    "winner_circulation_efficiency_proxy": 0.9467388920806018,
+    "protected_accuracy_mean": 0.9885964912280701,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9883326550220841,
+    "balanced_accuracy_mean": 0.9875162066828733,
+    "log_loss_mean": 0.8088430920404266
+  },
+  "main_finding": "A pulsatile pressure-gradient conduit reproduced the 0.988596 peak by configuration 3 and improved log loss relative to 008AR. The full outer venous-return arm did not improve peak accuracy under this implementation."
+}

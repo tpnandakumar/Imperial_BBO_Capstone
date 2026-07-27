@@ -1,0 +1,63 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BM_AY_R_STOCHASTIC_DROPOUT_REGENERATIVE_MILIEU",
+  "state": "completed",
+  "source_records": "exact preserved 008AY fresh-seed out-of-fold and protected-test probabilities",
+  "design": {
+    "seeds": [181, 197, 211, 227, 241, 257, 271, 283, 307, 331],
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "repeats_per_seed": 10,
+    "candidate_configurations_per_repeat": 10,
+    "stack_sizes": [5, 10],
+    "milieu_arms": ["isolated_stable_interior", "pulsatile_milieu", "dynamic_optimised_milieu"],
+    "modes": ["AY_baseline", "AY_R"],
+    "stochastic_dropout": true,
+    "regenerative_efficiency": true
+  },
+  "best_AY_R": {
+    "mode": "AY_R",
+    "stack_size": 5,
+    "evaluations": 100,
+    "mean_accuracy": 0.9838391812865497,
+    "sd_accuracy": 0.008015786362252881,
+    "maximum_accuracy": 0.9962962962962963,
+    "minimum_accuracy": 0.9659356725146199,
+    "mean_macro_f1": 0.9835228618727118,
+    "mean_balanced_accuracy": 0.9827722615472615,
+    "mean_log_loss": 0.09096799990542678,
+    "mean_worst_dataset_accuracy": 0.9731023391812866,
+    "mean_active_models": 3.76,
+    "mean_dropout_fraction": 0.624,
+    "mean_milieu_reuse_rate": 0.7687671012694962,
+    "mean_cache_reuse_rate": 0.9956961166315754,
+    "mean_avoided_model_fraction": 0.624,
+    "mean_net_regenerative_efficiency": 0.7951550814398043
+  },
+  "comparisons": [
+    {
+      "stack_size": 5,
+      "mean_difference": 0.0006174463937621799,
+      "wins": 51,
+      "ties": 19,
+      "losses": 30,
+      "wilcoxon_statistic": 1374.0,
+      "p_raw": 0.1772831941135531,
+      "p_holm": 0.3545663882271062
+    },
+    {
+      "stack_size": 10,
+      "mean_difference": 0.0011223196881091336,
+      "wins": 48,
+      "ties": 13,
+      "losses": 39,
+      "wilcoxon_statistic": 1675.0,
+      "p_raw": 0.31145178924721095,
+      "p_holm": 0.3545663882271062
+    }
+  ],
+  "runtime_seconds": 9.321664810180664,
+  "measurement_boundary": {
+    "regenerative_efficiency": "computational reuse proxy",
+    "milieu_parameters": "computational control-state parameters",
+    "electrical_energy": "not measured"
+  }
+}

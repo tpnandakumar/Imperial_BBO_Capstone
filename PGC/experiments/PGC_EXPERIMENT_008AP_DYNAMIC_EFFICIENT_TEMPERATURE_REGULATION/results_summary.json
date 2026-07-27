@@ -1,0 +1,44 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AP_DYNAMIC_EFFICIENT_TEMPERATURE_REGULATION",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "measurement_boundary": {
+    "temperature": "computational control-state proxy",
+    "regulation_effort": "derived proxy, not measured electrical energy"
+  },
+  "design": {
+    "locked_network": ["xgb", "lgbm", "svc", "logistic", "catboost", "extra_trees", "random_forest"],
+    "arms": ["008AM_no_thermal_control", "fixed_optimal_band", "confidence_thermostat", "turbulence_thermostat", "efficiency_thermostat", "full_dynamic_temperature_regulation"],
+    "configurations_per_arm": 100,
+    "total_configurations": 600,
+    "bootstrap_resamples_per_candidate": 200,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "parent_regime": "008AM high viscosity and high lubrication",
+    "controller": "bidirectional heating and cooling around a dynamic efficiency band"
+  },
+  "best_arm": {
+    "arm": "confidence_thermostat",
+    "winner_configuration": 50,
+    "winner_batch": 5,
+    "winner_trial": 10,
+    "oof_accuracy_mean": 0.9850442363571241,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "bootstrap_sd": 0.0023166195699196685,
+    "winner_temperature": 0.820549744911536,
+    "winner_target_low": 0.68,
+    "winner_target_high": 0.84,
+    "winner_regulation_effort": 0.0,
+    "winner_thermal_efficiency_proxy": 0.9177762843875457,
+    "winner_recoil": 0.022675334076695506,
+    "winner_spin": 0.35,
+    "winner_twist": 1.0362067589481676,
+    "protected_accuracy_mean": 0.9876218323586744,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9872912461639596,
+    "balanced_accuracy_mean": 0.9867446017446017,
+    "log_loss_mean": 0.808651502348205
+  },
+  "main_finding": "A confidence-controlled thermostat identified an efficient operating temperature near 0.821 and improved on full immersion, but did not recover the 0.988596 peak. Narrow uncertainty-linked regulation is preferable to continuous or fully multivariable thermal control."
+}

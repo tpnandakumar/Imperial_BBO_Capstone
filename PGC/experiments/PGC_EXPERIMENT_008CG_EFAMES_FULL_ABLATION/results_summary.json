@@ -1,0 +1,45 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CG_EFAMES_FULL_ABLATION",
+  "state": "completed",
+  "evidence_status": "fresh_matched_development_evidence_not_final_confirmation",
+  "design": {
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "seeds": [601, 619, 631, 647, 661, 677, 691, 709, 727, 743],
+    "repeats_per_seed": 10,
+    "aggregate_evaluations_per_arm": 100,
+    "arms": [
+      "ECSP3_008CE_reference",
+      "certainty_lock",
+      "single_micro_expert",
+      "class_pair_expert",
+      "residual_learner",
+      "residual_error_memory",
+      "full_EFAMES"
+    ],
+    "holdout_labels_used_for_routing": false,
+    "A_DMIC_milieu_interior_preserved": true,
+    "NRE_is_proxy_not_electrical_energy": true
+  },
+  "winner_by_composite_rank": {
+    "arm": "residual_learner",
+    "median_accuracy": 0.9788011695906432,
+    "mean_accuracy": 0.9777144249512669,
+    "minimum_accuracy": 0.9582358674463937,
+    "sample_sd": 0.008850032047473625,
+    "mean_active_models": 3.0,
+    "mean_NRE_proxy": 0.905,
+    "full_rescue_rate": 0.0,
+    "mean_difference_vs_reference": 0.0010716374269005768,
+    "paired_p_holm": 0.021166205318905833
+  },
+  "best_floor_arm": {
+    "arm": "full_EFAMES",
+    "minimum_accuracy": 0.9613060428849902,
+    "mean_accuracy": 0.9770711500974659,
+    "mean_active_models": 3.26553313840156,
+    "mean_NRE_proxy": 0.898361671539961,
+    "full_rescue_rate": 0.021933235867446395,
+    "paired_p_holm": 0.023228013700269078
+  },
+  "decision": "Promote residual correction as the preferred EFAMES accuracy-efficiency component. Retain full EFAMES for floor protection, tighten compact and full rescue thresholds, and redesign the class-pair expert."
+}

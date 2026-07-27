@@ -1,0 +1,43 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AM_LUBRICATED_LAMINAR_OPTIMAL_VISCOSITY",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "design": {
+    "locked_network": ["xgb", "lgbm", "svc", "logistic", "catboost", "extra_trees", "random_forest"],
+    "arms": ["008AL_reference", "low_viscosity_high_lubrication", "medium_viscosity_high_lubrication", "high_viscosity_high_lubrication", "dynamic_viscosity", "adaptive_optimal_viscosity"],
+    "configurations_per_arm": 100,
+    "total_configurations": 600,
+    "bootstrap_resamples_per_candidate": 200,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "geometry": "008AD asymmetric pear",
+    "wavefront": "symmetric rhythmic dynamic frequency and amplitude",
+    "spin": "goal-alignment modulated",
+    "rifling": "low-amplitude dynamically damped",
+    "lubrication": "directional smoothing",
+    "viscosity": "deformation and propagation resistance"
+  },
+  "best_arm": {
+    "arm": "high_viscosity_high_lubrication",
+    "winner_configuration": 48,
+    "winner_batch": 5,
+    "winner_trial": 8,
+    "oof_accuracy_mean": 0.9851215579375773,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "oof_accuracy_sd": 0.007603992676628991,
+    "bootstrap_sd": 0.0022703980211958236,
+    "winner_viscosity": 1.6,
+    "winner_lubrication": 0.75,
+    "winner_flow_gain": 0.3846153846153846,
+    "winner_recoil": 0.03095540491319458,
+    "winner_spin": 0.35,
+    "winner_twist": 0.6698031075593508,
+    "protected_accuracy_mean": 0.9885964912280701,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9883326550220841,
+    "balanced_accuracy_mean": 0.9875162066828733,
+    "log_loss_mean": 0.8086690903904654
+  },
+  "main_finding": "High bounded viscosity with strong directional lubrication reproduced the 0.988596 accuracy peak and improved log loss to 0.808669, indicating smoother and better-calibrated laminar flow."
+}

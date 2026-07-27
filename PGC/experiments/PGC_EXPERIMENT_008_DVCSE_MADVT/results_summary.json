@@ -1,0 +1,34 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008_DVCSE_MADVT",
+  "state": "historical_completed_trial_record_restored",
+  "evidence_status": "screenshot_supported_historical_trial_not_independently_reproduced",
+  "protected_test_label_feedback": false,
+  "protocol_commit": "09f115216f4d2436145e7fcde9b7a0e836cd4e65",
+  "best_full_coverage_arm": {
+    "model": "fusion_anchor",
+    "dynamic_vectoring": false,
+    "accuracy_mean": 0.986126
+  },
+  "reported_vectoring_findings": {
+    "fusion_anchor": "neutral",
+    "navier_processing": "neutral",
+    "dynamic_scramjet": "neutral",
+    "rankine_cruise": "small_positive_net_gain",
+    "fixed_hybrid": "slightly_harmful"
+  },
+  "reported_selective_results": [
+    {
+      "model": "dynamic_scramjet",
+      "selective_accuracy_approx": 0.999588,
+      "coverage_approx": 0.6091
+    },
+    {
+      "model": "fusion_anchor",
+      "selective_accuracy_approx": 0.999543,
+      "coverage_approx": 0.2336
+    }
+  ],
+  "target_0_9999_full_coverage_achieved": false,
+  "per_run_results_status": "original_exact_csv_not_recovered",
+  "integrity_note": "Aggregate values are restored from user-supplied screenshots. No per-run rows have been inferred or fabricated."
+}

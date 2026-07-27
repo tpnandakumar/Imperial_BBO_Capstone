@@ -1,0 +1,51 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BF_PRECISION_BURST_POSITIONING_INTENSITY_CONTROL",
+  "state": "completed",
+  "evidence_status": "cross_domain_precision_burst_validation_not_final_confirmation",
+  "design": {
+    "dataset_count": 12,
+    "seeds": [907, 929, 953],
+    "dataset_seed_units": 36,
+    "cross_folds": 3,
+    "development_only_response_surface_selection": true,
+    "candidate_configurations_per_unit": 108,
+    "burst_coordinates": [
+      "tunnel segment",
+      "specialist route",
+      "phase offset",
+      "intensity",
+      "frequency",
+      "pulse count",
+      "viscosity",
+      "recovery"
+    ]
+  },
+  "best_system": {
+    "system": "fixed_uniform_burst",
+    "mean_accuracy": 0.8712076909445331,
+    "worst_unit_accuracy": 0.4222222222222222,
+    "mean_macro_f1": 0.7958696569993592,
+    "mean_balanced_accuracy": 0.7953820752895108,
+    "mean_log_loss": 0.3505931736369989,
+    "total_corrected_errors": 52,
+    "total_new_errors": 24,
+    "total_net_burst_gain": 28,
+    "mean_activation_rate": 0.3889684952596137,
+    "mean_models_activated": 6.944842476298068,
+    "mean_pulse_count": 0.7779369905192274,
+    "mean_intensity": 0.062234959241538185,
+    "mean_phase_error": 0.026462116166307725,
+    "mean_viscosity": 0.6472222222222223,
+    "mean_recovery": 0.2250727325097713
+  },
+  "friedman_test": {
+    "statistic": 24.502688172043026,
+    "p_value": 0.00017376739211432906
+  },
+  "main_finding": "A moderate fixed uniform burst outperformed the first precision-positioned controller. The result supports burst intervention but shows that the hand-designed accuracy-response surface was not sufficiently calibrated for reliable local positioning and intensity selection.",
+  "measurement_boundary": {
+    "burst_position_pressure_phase_viscosity": "computational control-state proxies",
+    "training_and_inference_time": "measured wall-clock time",
+    "electrical_energy": "not measured"
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "sweep_id": "SEQUENCE-MEMORY-2026-01",
+  "status": "pre_validation",
+  "source_basis": "User-supplied technical summary reviewed against primary papers and official research pages",
+  "candidates": [
+    {
+      "candidate_id": "SSM-FOUNDATION",
+      "name": "Structured State Space Models",
+      "class": "sequence_model_foundation",
+      "primary_learning": [
+        "continuous-to-discrete state modelling",
+        "recurrent constant-state inference",
+        "parallel convolutional training where time-invariant assumptions hold"
+      ],
+      "pframos_lanes": ["efficiency", "optimisation", "reasoning"],
+      "validation_state": "primary_sources_required",
+      "risks": [
+        "lossy long-range compression",
+        "task-dependent discretisation assumptions",
+        "hardware performance may differ from asymptotic complexity"
+      ]
+    },
+    {
+      "candidate_id": "MAMBA-1",
+      "name": "Mamba Selective State Space Model",
+      "class": "selective_hardware_aware_ssm",
+      "primary_reference": "arXiv:2312.00752",
+      "primary_learning": [
+        "input-dependent selective propagation and forgetting",
+        "hardware-aware parallel recurrent scan",
+        "linear sequence-length scaling"
+      ],
+      "pframos_lanes": ["efficiency", "optimisation", "emergence"],
+      "validation_state": "pre_validation",
+      "risks": [
+        "compressed-state information loss",
+        "implementation dependence on specialised kernels",
+        "benchmark and scale sensitivity"
+      ]
+    },
+    {
+      "candidate_id": "MAMBA-2",
+      "name": "Mamba-2 and State Space Duality",
+      "class": "ssm_attention_duality",
+      "primary_reference": "arXiv:2405.21060",
+      "primary_learning": [
+        "structured state space duality",
+        "connections between selective SSMs and linear attention",
+        "higher-throughput sequence modelling"
+      ],
+      "pframos_lanes": ["efficiency", "reasoning", "mouldability"],
+      "validation_state": "pre_validation",
+      "risks": [
+        "claimed throughput depends on implementation and hardware",
+        "not interchangeable with Mamba-3",
+        "requires version-pinned code"
+      ]
+    },
+    {
+      "candidate_id": "MAMBA-3",
+      "name": "Mamba-3",
+      "class": "inference_first_state_space_model",
+      "primary_reference": "arXiv:2603.15569",
+      "primary_learning": [
+        "more expressive recurrence from improved discretisation",
+        "complex-valued state updates",
+        "multi-input multi-output recurrence for decoding efficiency"
+      ],
+      "pframos_lanes": ["efficiency", "emergence", "mouldability"],
+      "validation_state": "new_candidate_requires_independent_reproduction",
+      "risks": [
+        "recent result",
+        "limited independent reproduction",
+        "hardware-specific efficiency claims"
+      ]
+    },
+    {
+      "candidate_id": "TITANS",
+      "name": "Titans Neural Long-Term Memory",
+      "class": "test_time_neural_memory",
+      "primary_reference": "Google Research: Titans, Learning to Memorize at Test Time",
+      "primary_learning": [
+        "short-term attention with long-term neural memory",
+        "surprise-guided test-time memorisation",
+        "adaptive forgetting through context-dependent retention",
+        "persistent task memory"
+      ],
+      "pframos_lanes": ["concurrent_schooling", "emergence", "reasoning", "bias"],
+      "validation_state": "pre_validation",
+      "risks": [
+        "test-time memory poisoning",
+        "uncontrolled retention of sensitive or incorrect information",
+        "higher architectural and optimisation complexity",
+        "forgetting policy may distort evidence"
+      ]
+    }
+  ],
+  "integration_policy": {
+    "auto_integrate": false,
+    "sandbox_required": true,
+    "licence_check_required": true,
+    "independent_reproduction_required": true,
+    "protected_test_required": true,
+    "lineage_preservation_required": true
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008W_TEN_BY_TEN_RANDOM_STACKS",
+  "state": "completed_trial",
+  "evidence_status": "trial_not_publication",
+  "protected_test_label_feedback": false,
+  "design": {
+    "random_stacks_per_batch": 10,
+    "batches": 10,
+    "total_random_stacks": 100,
+    "fixed_seeds": [11, 23, 37, 53, 71, 89, 101, 127, 149, 173],
+    "configuration_seed_evaluations": 1000,
+    "cross_folds": 5,
+    "cached_base_predictions": true,
+    "meta_classifier": "closed_form_ridge"
+  },
+  "winner_validation_configuration": {
+    "order": 53,
+    "batch": 6,
+    "trial": 3,
+    "xgb_config": 0,
+    "lgbm_config": 1,
+    "ridge_alpha": 1.0,
+    "stack_mode": "full_heterogeneous",
+    "oof_accuracy_mean": 0.9823368596928538,
+    "oof_accuracy_sd": 0.007393964610461931,
+    "oof_accuracy_worst": 0.9577464788732394
+  },
+  "winner_protected_test_summary": {
+    "accuracy_mean": 0.9860721247563351,
+    "macro_f1_mean": 0.9853965047433043,
+    "balanced_accuracy_mean": 0.984536036036036,
+    "log_loss_mean": 0.8054468320673774,
+    "worst_case_accuracy": 0.956140350877193
+  },
+  "brownian_spread": {
+    "score_mean": 0.9749658174768147,
+    "score_sd": 0.008090859057452033,
+    "increment_drift": -0.00002865252808895074,
+    "diffusion_coefficient": 0.00006740821467554408,
+    "best_validation_score": 0.9823368596928538,
+    "median_validation_score": 0.9793408255682947
+  },
+  "main_finding": "The ten-seed ten-by-ten random-stack search selected a full heterogeneous stack and achieved 0.986072 mean protected-test accuracy. This is effectively tied with, but 0.000054 below, the historical 0.986126 DVCSE result."
+}

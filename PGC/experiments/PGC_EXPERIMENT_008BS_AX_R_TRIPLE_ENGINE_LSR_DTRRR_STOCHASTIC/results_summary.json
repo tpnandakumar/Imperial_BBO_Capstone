@@ -1,0 +1,89 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BS_AX_R_TRIPLE_ENGINE_LSR_DTRRR_STOCHASTIC",
+  "state": "completed",
+  "evidence_status": "comparative_development_evidence_not_final_confirmation",
+  "design": {
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "seeds": [181, 197, 211, 227, 241, 257, 271, 283, 307, 331],
+    "repeats_per_seed": 10,
+    "systems": [
+      "AX_R_BK_stochastic",
+      "AX_R_DTRRR",
+      "AX_R_LSR",
+      "AX_R_DTRRR_plus_LSR",
+      "AX_R_DTRRR_plus_protected_stochastic",
+      "AX_R_triple_engine"
+    ],
+    "common_source": "exact preserved AY fresh-seed out-of-fold and protected-test probabilities",
+    "triple_engine": "DTRRR trigger plus LSR specialist selection plus protected stochastic suppression",
+    "specialist_protection": true
+  },
+  "best_system": {
+    "system": "AX_R_DTRRR_plus_protected_stochastic",
+    "evaluations": 100,
+    "mean_accuracy": 0.9838255360623782,
+    "sd_accuracy": 0.007539683318870379,
+    "maximum_accuracy": 0.9972222222222222,
+    "minimum_accuracy": 0.9670077972709552,
+    "mean_macro_f1": 0.9834728099531108,
+    "mean_balanced_accuracy": 0.982856435006435,
+    "mean_log_loss": 0.09040768340642226,
+    "mean_worst_dataset_accuracy": 0.9735087719298245,
+    "mean_active_models": 2.747,
+    "mean_dropout_fraction": 0.7253000000000001,
+    "mean_cache_reuse_rate": 0.9961364658407443,
+    "mean_avoided_model_fraction": 0.7253000000000001,
+    "mean_state_reuse_rate": 0.91,
+    "mean_net_regenerative_efficiency": 0.8600946910548375
+  },
+  "friedman_test": {
+    "statistic": 21.041345263807518,
+    "p_value": 0.000795618227909568
+  },
+  "comparisons": [
+    {
+      "comparison": "AX_R_DTRRR_plus_protected_stochastic_minus_AX_R_BK_stochastic",
+      "mean_difference": 0.0002694931773879117,
+      "wins": 50,
+      "ties": 10,
+      "losses": 40,
+      "p_holm": 0.9669788659577045
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_protected_stochastic_minus_AX_R_DTRRR",
+      "mean_difference": 0.00011695906432748648,
+      "wins": 39,
+      "ties": 24,
+      "losses": 37,
+      "p_holm": 0.9669788659577045
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_protected_stochastic_minus_AX_R_LSR",
+      "mean_difference": 0.0012002923976608272,
+      "wins": 59,
+      "ties": 7,
+      "losses": 34,
+      "p_holm": 0.04073727001809493
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_protected_stochastic_minus_AX_R_DTRRR_plus_LSR",
+      "mean_difference": 0.0012802144249512714,
+      "wins": 62,
+      "ties": 4,
+      "losses": 34,
+      "p_holm": 0.050976140571635985
+    },
+    {
+      "comparison": "AX_R_DTRRR_plus_protected_stochastic_minus_AX_R_triple_engine",
+      "mean_difference": 0.00013401559454191193,
+      "wins": 50,
+      "ties": 17,
+      "losses": 33,
+      "p_holm": 0.9669788659577045
+    }
+  ],
+  "measurement_boundary": {
+    "regenerative_efficiency": "computational reuse proxy",
+    "electrical_energy": "not measured"
+  }
+}

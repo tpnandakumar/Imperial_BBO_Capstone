@@ -1,0 +1,83 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AY_FRESH_SEED_MICRO_TUNED_OPTIMISED_MILIEU",
+  "state": "completed",
+  "evidence_status": "fresh_seed_comparative_replication_not_single_untouched_confirmation",
+  "design": {
+    "new_seeds": [181, 197, 211, 227, 241, 257, 271, 283, 307, 331],
+    "stack_sizes": [5, 10],
+    "repeats_per_seed": 10,
+    "repeat_level_evaluations": 200,
+    "development_candidates": 9000,
+    "arms": [
+      "isolated_stable_interior",
+      "pulsatile_pressure_gradient_micro_tuning",
+      "dynamic_optimised_milieu"
+    ],
+    "selection": "development-only screening followed by cross-fitted ridge refinement",
+    "micro_tuning": [
+      "model flow scales",
+      "ridge alpha",
+      "heart rate",
+      "pulse pressure",
+      "systolic phase",
+      "viscosity",
+      "compressibility",
+      "lubrication",
+      "venous recovery"
+    ]
+  },
+  "stack_results": {
+    "5": {
+      "protected_accuracy_mean": 0.981564,
+      "protected_accuracy_ci95_low": 0.980290,
+      "protected_accuracy_ci95_high": 0.982838,
+      "protected_accuracy_min": 0.969786,
+      "protected_accuracy_max": 0.991667,
+      "runs_at_or_above_0_99": 10,
+      "log_loss_mean": 0.805830
+    },
+    "10": {
+      "protected_accuracy_mean": 0.9846783625730996,
+      "protected_accuracy_sd": 0.006569001830969181,
+      "protected_accuracy_ci95_low": 0.9833908382142297,
+      "protected_accuracy_ci95_high": 0.9859658869319695,
+      "protected_accuracy_min": 0.9753411306042885,
+      "protected_accuracy_max": 0.9953703703703703,
+      "runs_at_or_above_0_99": 20,
+      "macro_f1_mean": 0.9844022568802724,
+      "balanced_accuracy_mean": 0.9836669884169882,
+      "log_loss_mean": 0.7990136803869722,
+      "development_accuracy_mean": 0.979955900131442
+    }
+  },
+  "fresh_seed_runs_at_or_above_0_99": 30,
+  "best_fresh_seed_run": {
+    "seed": 211,
+    "stack_size": 10,
+    "repeat": 5,
+    "arm": "isolated_stable_interior",
+    "phase": "diastole",
+    "heart_rate": 2.673588874892939,
+    "pulse_pressure": 0.07146214810902313,
+    "viscosity": 0.6109112037615014,
+    "compressibility": 0.1435288998562248,
+    "lubrication": 0.5636184681536741,
+    "recovery": 0.5549863174478871,
+    "forward_pressure_gradient": 0.0,
+    "venous_pressure_gradient": 0.01161008530197904,
+    "arterial_drive": 0.0,
+    "venous_return": 0.000719092610549769,
+    "alpha": 1.1361044198095827,
+    "protected_accuracy_mean": 0.9953703703703703,
+    "protected_accuracy_worst": 0.9861111111111112,
+    "macro_f1_mean": 0.9953682398806843,
+    "balanced_accuracy_mean": 0.9953703703703703,
+    "log_loss_mean": 0.7932260138499326
+  },
+  "main_finding": "Above-0.99 outcomes reproduced on entirely new split seeds, but the dominant selected regime was a stable low-deformation interior. Pulsatile and dynamic micro-tuning were useful only when triggered selectively by development evidence. The 10-stack was strongest overall, with mean protected accuracy 0.984678 and 20 of 100 repeats at or above 0.99.",
+  "limitations": [
+    "Ten repeats reuse each seed-specific protected split.",
+    "The previous above-99 outcomes defined broad candidate regions but did not select new-seed winners.",
+    "This is a comparative fresh-seed replication, not a single untouched final confirmation."
+  ]
+}

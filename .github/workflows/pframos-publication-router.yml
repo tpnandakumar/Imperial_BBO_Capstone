@@ -1,0 +1,92 @@
+name: PFRAMOS Publication Router
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'PFRAMOS/training_results/**'
+      - 'PFRAMOS/publication_automation/**'
+      - 'PFRAMOS/publishable_papers/**'
+  schedule:
+    - cron: '15 3 * * 2'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pframos-publication-router
+  cancel-in-progress: false
+
+jobs:
+  validate-and-route:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install test dependency
+        run: python -m pip install --upgrade pytest
+
+      - name: Validate publication routing contracts
+        run: python -m pytest PFRAMOS/tests/test_paper_router.py -q
+
+      - name: Prepare routing report folder
+        run: mkdir -p PFRAMOS/publication_automation/reports
+
+      - name: Scan result records and create routing report
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          from PFRAMOS.publication_automation.paper_router import EvidenceRecord, route_evidence
+
+          root = Path('PFRAMOS/training_results')
+          reports = []
+          for path in sorted(root.rglob('*.json')):
+              if path.name == 'RESULT_RECORD_TEMPLATE.json':
+                  continue
+              try:
+                  data = json.loads(path.read_text(encoding='utf-8'))
+              except Exception as exc:
+                  reports.append({'path': str(path), 'state': 'invalid_json', 'error': str(exc)})
+                  continue
+
+              record = EvidenceRecord(
+                  result_id=data.get('session_id') or path.stem,
+                  training_lane=data.get('training_lane', 'data_form'),
+                  data_form=data.get('data_form', 'unknown'),
+                  source_ids=tuple(data.get('source_ids', ())),
+                  metrics=data.get('protected_test_metrics', {}),
+                  has_dataset_manifest=bool(data.get('dataset_manifest_paths')),
+                  has_training_log_hash=bool(data.get('training_log_hash')),
+                  has_protected_test=bool(data.get('protected_test_metrics')),
+                  reproducible=bool(data.get('reproducible')),
+                  regressions_present=bool(data.get('regressions')),
+                  publication_eligible=bool(data.get('publication_eligible')),
+                  tags=tuple(data.get('publication_tags', ())),
+              )
+              assignment = route_evidence(record)
+              reports.append({
+                  'path': str(path),
+                  'result_id': assignment.result_id,
+                  'primary_paper': assignment.primary_paper,
+                  'secondary_papers': list(assignment.secondary_papers),
+                  'state': assignment.state,
+                  'blocking_reasons': list(assignment.blocking_reasons),
+              })
+
+          output = Path('PFRAMOS/publication_automation/reports/latest_routing_report.json')
+          output.write_text(json.dumps(reports, indent=2, sort_keys=True), encoding='utf-8')
+          PY
+
+      - name: Upload publication routing report
+        uses: actions/upload-artifact@v4
+        with:
+          name: pframos-publication-routing-report
+          path: PFRAMOS/publication_automation/reports/latest_routing_report.json
+          retention-days: 90

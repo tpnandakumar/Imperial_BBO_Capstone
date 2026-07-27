@@ -1,0 +1,22 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008T_DVCSE_PROTOCOL_RERUN",
+  "state": "completed_protocol_rerun",
+  "evidence_status": "reproducible_rerun_not_claimed_as_exact_original_implementation",
+  "protected_test_label_feedback": false,
+  "protocol_commit": "09f115216f4d2436145e7fcde9b7a0e836cd4e65",
+  "runtime_seconds": 20.52725625038147,
+  "aggregate": [
+    {"model":"fixed_hybrid","vectoring":"without_vectoring","accuracy_mean":0.9812475633528266,"macro_f1_mean":0.9806025022640944,"balanced_accuracy_mean":0.9795629924295172,"log_loss_mean":0.14210112130145608,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"activation_rate_mean":0.0,"worst_case_accuracy":0.9473684210526315},
+    {"model":"navier_processing","vectoring":"without_vectoring","accuracy_mean":0.9805994152046783,"macro_f1_mean":0.9799705518928176,"balanced_accuracy_mean":0.9787505441663648,"log_loss_mean":0.20039951131950764,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"activation_rate_mean":0.0,"worst_case_accuracy":0.9473684210526315},
+    {"model":"navier_processing","vectoring":"with_vectoring","accuracy_mean":0.980014619883041,"macro_f1_mean":0.9793321136990067,"balanced_accuracy_mean":0.9779661218703145,"log_loss_mean":0.20203681731295434,"rescues_total":3,"harms_total":5,"net_rescue_total":-2,"activation_rate_mean":0.17783625730994151,"worst_case_accuracy":0.9473684210526315},
+    {"model":"rankine_cruise","vectoring":"without_vectoring","accuracy_mean":0.9799220272904484,"macro_f1_mean":0.9792166411678892,"balanced_accuracy_mean":0.9778498864664111,"log_loss_mean":0.09159271792343154,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"activation_rate_mean":0.0,"worst_case_accuracy":0.9385964912280702},
+    {"model":"dynamic_scramjet","vectoring":"without_vectoring","accuracy_mean":0.9798440545808966,"macro_f1_mean":0.9791853179705442,"balanced_accuracy_mean":0.9778879673037878,"log_loss_mean":0.09567673852258064,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"activation_rate_mean":0.0,"worst_case_accuracy":0.9473684210526315},
+    {"model":"dynamic_scramjet","vectoring":"with_vectoring","accuracy_mean":0.9796442495126706,"macro_f1_mean":0.9789590636279054,"balanced_accuracy_mean":0.9775956084998011,"log_loss_mean":0.09723747826269677,"rescues_total":4,"harms_total":4,"net_rescue_total":0,"activation_rate_mean":0.12074074074074075,"worst_case_accuracy":0.9473684210526315},
+    {"model":"fixed_hybrid","vectoring":"with_vectoring","accuracy_mean":0.9794298245614035,"macro_f1_mean":0.9787212149708983,"balanced_accuracy_mean":0.9775030159072085,"log_loss_mean":0.14398972337040508,"rescues_total":6,"harms_total":8,"net_rescue_total":-2,"activation_rate_mean":0.12006335282651072,"worst_case_accuracy":0.9473684210526315},
+    {"model":"rankine_cruise","vectoring":"with_vectoring","accuracy_mean":0.9792153996101365,"macro_f1_mean":0.9783538461998111,"balanced_accuracy_mean":0.9768964687629934,"log_loss_mean":0.09345974326257249,"rescues_total":9,"harms_total":8,"net_rescue_total":1,"activation_rate_mean":0.11529239766081871,"worst_case_accuracy":0.9385964912280702},
+    {"model":"laser_accelerated_fusion_anchor","vectoring":"laser_targeted","accuracy_mean":0.9776705653021442,"macro_f1_mean":0.9768520875618393,"balanced_accuracy_mean":0.9754152545578193,"log_loss_mean":0.2597531175903,"rescues_total":3,"harms_total":0,"net_rescue_total":3,"activation_rate_mean":0.9862183235867447,"worst_case_accuracy":0.9444444444444444},
+    {"model":"fusion_anchor","vectoring":"with_vectoring","accuracy_mean":0.9768859649122807,"macro_f1_mean":0.976042764735895,"balanced_accuracy_mean":0.9748041742083668,"log_loss_mean":0.2759989015827609,"rescues_total":4,"harms_total":3,"net_rescue_total":1,"activation_rate_mean":0.2695711500974659,"worst_case_accuracy":0.9444444444444444},
+    {"model":"fusion_anchor","vectoring":"without_vectoring","accuracy_mean":0.9767933723196881,"macro_f1_mean":0.9759456613423249,"balanced_accuracy_mean":0.9747208101133749,"log_loss_mean":0.27782890541812244,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"activation_rate_mean":0.0,"worst_case_accuracy":0.9444444444444444}
+  ],
+  "main_finding": "The best reproducible rerun arm was fixed_hybrid without vectoring at 0.981248 mean protected-test accuracy. The laser-accelerated Fusion Anchor produced three rescues and zero harms but did not improve the full-coverage mean result."
+}

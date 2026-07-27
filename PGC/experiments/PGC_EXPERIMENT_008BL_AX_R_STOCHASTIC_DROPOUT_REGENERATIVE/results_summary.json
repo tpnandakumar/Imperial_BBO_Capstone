@@ -1,0 +1,41 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008BL_AX_R_STOCHASTIC_DROPOUT_REGENERATIVE",
+  "state": "completed",
+  "source_records": "exact preserved 008AX out-of-fold and protected-test probabilities",
+  "design": {
+    "seeds": [11, 23, 37, 53, 71, 89, 101, 127, 149, 173],
+    "datasets": ["breast_cancer", "wine", "digits"],
+    "repeats_per_seed": 10,
+    "candidate_configurations_per_repeat": 10,
+    "nominal_stack_sizes": [3, 5, 8, 10],
+    "modes": ["AX_baseline", "AX_R"],
+    "stochastic_dropout": true,
+    "regenerative_efficiency": true
+  },
+  "best_AX_R": {
+    "stack_size": 3,
+    "mean_accuracy": 0.9827037037037037,
+    "sd_accuracy": 0.008171859505194768,
+    "maximum_accuracy": 0.9990740740740741,
+    "minimum_accuracy": 0.954970760233918,
+    "mean_macro_f1": 0.9819130208061292,
+    "mean_balanced_accuracy": 0.9803315208065209,
+    "mean_log_loss": 0.10108245012094352,
+    "mean_worst_dataset_accuracy": 0.9673055555555555,
+    "mean_active_models": 3.0,
+    "mean_dropout_fraction": 0.7,
+    "mean_cache_reuse_rate": 0.9957093553159106,
+    "mean_avoided_model_fraction": 0.7,
+    "mean_net_regenerative_efficiency": 0.8293337132964294
+  },
+  "comparisons": [
+    {"stack_size": 3, "mean_difference": 0.000615, "wins": 31, "ties": 50, "losses": 19, "p_holm": 0.263662},
+    {"stack_size": 5, "mean_difference": -0.000670, "wins": 38, "ties": 11, "losses": 51, "p_holm": 0.508927},
+    {"stack_size": 8, "mean_difference": -0.000628, "wins": 45, "ties": 14, "losses": 41, "p_holm": 0.508927},
+    {"stack_size": 10, "mean_difference": 0.000989, "wins": 52, "ties": 15, "losses": 33, "p_holm": 0.181528}
+  ],
+  "measurement_boundary": {
+    "regenerative_efficiency": "computational reuse proxy",
+    "electrical_energy": "not measured"
+  }
+}

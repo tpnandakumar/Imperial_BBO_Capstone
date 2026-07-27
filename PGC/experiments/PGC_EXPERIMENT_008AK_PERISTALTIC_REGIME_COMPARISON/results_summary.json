@@ -1,0 +1,41 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008AK_PERISTALTIC_REGIME_COMPARISON",
+  "state": "completed_3_seed_development_trial",
+  "evidence_status": "development_trial_not_confirmatory",
+  "protected_test_label_feedback": false,
+  "design": {
+    "locked_network": ["xgb", "lgbm", "svc", "logistic", "catboost", "extra_trees", "random_forest"],
+    "arms": ["008AJ_goal_alignment_reference", "low_amp_high_speed_high_frequency", "high_amp_low_speed_low_frequency", "dynamic_amplitude_fixed_speed_frequency", "fixed_amplitude_dynamic_speed_frequency", "fully_dynamic_peristalsis"],
+    "configurations_per_arm": 100,
+    "total_configurations": 600,
+    "bootstrap_resamples_per_candidate": 200,
+    "seeds": [11, 37, 71],
+    "cross_folds": 5,
+    "geometry": "008AD asymmetric pear",
+    "spin": "goal-alignment modulated",
+    "rifling": "low-amplitude dynamically damped",
+    "peristaltic_variables": ["amplitude", "speed", "frequency"]
+  },
+  "best_arm": {
+    "arm": "dynamic_amplitude_fixed_speed_frequency",
+    "winner_configuration": 14,
+    "winner_batch": 2,
+    "winner_trial": 4,
+    "oof_accuracy_mean": 0.9852884366013244,
+    "oof_accuracy_worst": 0.9736263736263736,
+    "oof_accuracy_sd": 0.007183825718478517,
+    "bootstrap_sd": 0.0024383188750947194,
+    "winner_amplitude": 0.056215273552018816,
+    "winner_speed": 1.0,
+    "winner_frequency": 3.0,
+    "winner_recoil": 0.031397377245801966,
+    "winner_spin": 0.35,
+    "winner_twist": 0.6743371788361071,
+    "protected_accuracy_mean": 0.9855100714749838,
+    "protected_accuracy_worst": 0.9649122807017544,
+    "macro_f1_mean": 0.9854452098557783,
+    "balanced_accuracy_mean": 0.984429786929787,
+    "log_loss_mean": 0.8089716786060452
+  },
+  "main_finding": "Dynamic amplitude with fixed moderate speed and frequency was stronger than both extreme regimes and the fully dynamic regime, but it did not exceed the 0.988596 peak from 008AD and 008AJ."
+}

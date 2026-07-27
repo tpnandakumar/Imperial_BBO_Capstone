@@ -1,0 +1,8 @@
+leak_type,runs,detection_rate,containment_rate,purge_success_rate,rollback_success_rate,closure_verification_rate,invalid_release_rate,median_detection_ms,median_total_closure_ms,mean_rss_residual_bytes,worker_thread_leak_rate,mean_accuracy_delta_after_closure,homeostasis_restoration_rate
+cross_context_identifier,8,1.0,1.0,1.0,1.0,1.0,0.0,0.0034634999792615417,152.18499750017145,0.0,0.0,-0.003424521871883357,1.0
+orphan_worker,8,1.0,1.0,1.0,1.0,1.0,0.0,0.003736000053322641,153.1444094989638,0.0,0.0,-0.0039533235584264526,1.0
+protected_test_access_attempt,8,1.0,1.0,1.0,1.0,1.0,0.0,0.0034325003070989624,147.5020219995713,0.0,0.0,-0.007251510298643765,1.0
+recursive_correction_loop,8,1.0,1.0,1.0,1.0,1.0,0.0,0.0033414999052183703,153.12031250050495,0.0,0.0,-0.00539517724203456,1.0
+schema_escape,8,1.0,1.0,1.0,1.0,1.0,0.0,0.003660000402305741,148.66211449998445,0.0,0.0,-0.0039533235584264526,1.0
+stale_cache_persistence,8,1.0,1.0,1.0,1.0,1.0,0.0,0.003772000127355568,168.63575649995255,0.0,0.0,-0.00543471884779588,1.0
+unauthorised_memory_write,8,1.0,1.0,1.0,1.0,1.0,0.0,0.004737500148621621,162.76975849905284,0.0,0.0,-0.00539517724203456,1.0

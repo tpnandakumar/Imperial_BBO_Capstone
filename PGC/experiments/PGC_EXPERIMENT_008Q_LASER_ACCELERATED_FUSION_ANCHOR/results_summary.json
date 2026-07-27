@@ -1,0 +1,20 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008Q_LASER_ACCELERATED_FUSION_ANCHOR",
+  "state": "completed_trial",
+  "evidence_status": "trial_not_publication",
+  "protected_test_label_feedback": false,
+  "verified_fusion_anchor_accuracy": 0.976287,
+  "unverified_previous_claim": 0.986126,
+  "best_arm": "laser_target_only",
+  "best_accuracy": 0.978246,
+  "current_project_best_accuracy": 0.978738,
+  "aggregate": [
+    {"arm":"laser_target_only","accuracy_mean":0.978246,"macro_f1_mean":0.977270,"balanced_accuracy_mean":0.976190,"log_loss_mean":0.131982,"rescues_total":13,"harms_total":3,"net_rescue_total":10,"intervention_rate_mean":0.003470,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825},
+    {"arm":"fusion_anchor","accuracy_mean":0.976287,"macro_f1_mean":0.975342,"balanced_accuracy_mean":0.974281,"log_loss_mean":0.131531,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"intervention_rate_mean":0.0,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825},
+    {"arm":"laser_focused_acceleration","accuracy_mean":0.976287,"macro_f1_mean":0.975342,"balanced_accuracy_mean":0.974281,"log_loss_mean":0.131613,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"intervention_rate_mean":0.0,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825},
+    {"arm":"laser_accelerated_fusion_anchor","accuracy_mean":0.976287,"macro_f1_mean":0.975342,"balanced_accuracy_mean":0.974281,"log_loss_mean":0.131640,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"intervention_rate_mean":0.0,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825},
+    {"arm":"laser_acceleration_a0_thrust","accuracy_mean":0.976287,"macro_f1_mean":0.975342,"balanced_accuracy_mean":0.974281,"log_loss_mean":0.131640,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"intervention_rate_mean":0.0,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825},
+    {"arm":"laser_dynamic_deceleration","accuracy_mean":0.976287,"macro_f1_mean":0.975342,"balanced_accuracy_mean":0.974281,"log_loss_mean":0.131640,"rescues_total":0,"harms_total":0,"net_rescue_total":0,"intervention_rate_mean":0.0,"lock_rate_mean":0.852510,"worst_case_accuracy":0.929825}
+  ],
+  "main_finding": "The raw laser target improved the verified Fusion Anchor from 0.976287 to 0.978246 through thirteen rescues and three harms. The current acceleration and rollback controls were too conservative to change decisions and therefore did not preserve the gain."
+}

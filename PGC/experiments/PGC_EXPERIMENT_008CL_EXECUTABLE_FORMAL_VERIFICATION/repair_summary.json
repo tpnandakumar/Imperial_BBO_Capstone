@@ -1,0 +1,7 @@
+{
+  "repair": "nonnegative_simplex_projection",
+  "runs": 8,
+  "runtime_verification_success_rate": 1.0,
+  "released_deterministic_violation_rate": 0.0,
+  "formal_proof_status": "PENDING_Z3_DEPENDENCY"
+}

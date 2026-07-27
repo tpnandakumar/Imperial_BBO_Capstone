@@ -1,0 +1,16 @@
+condition,seed,split_type,n_train,n_validation,n_test,train_validation_overlap,train_test_overlap,validation_test_overlap
+high_dimensional_sparse,1201,random,900,300,300,0,0,0
+high_dimensional_sparse,1213,random,900,300,300,0,0,0
+high_dimensional_sparse,1229,random,900,300,300,0,0,0
+high_dimensional_sparse,1249,random,900,300,300,0,0,0
+high_dimensional_sparse,1277,random,900,300,300,0,0,0
+noisy_missing_binary,1201,random,900,300,300,0,0,0
+noisy_missing_binary,1213,random,900,300,300,0,0,0
+noisy_missing_binary,1229,random,900,300,300,0,0,0
+noisy_missing_binary,1249,random,900,300,300,0,0,0
+noisy_missing_binary,1277,random,900,300,300,0,0,0
+temporal_drift_binary,1201,temporal,900,300,300,0,0,0
+temporal_drift_binary,1213,temporal,900,300,300,0,0,0
+temporal_drift_binary,1229,temporal,900,300,300,0,0,0
+temporal_drift_binary,1249,temporal,900,300,300,0,0,0
+temporal_drift_binary,1277,temporal,900,300,300,0,0,0

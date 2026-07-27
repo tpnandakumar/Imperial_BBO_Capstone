@@ -1,0 +1,13 @@
+mode,stack_size,arm,selection_count,mean_accuracy,maximum_accuracy,mean_active_models,mean_net_regenerative_efficiency
+AY_R,5,dynamic_optimised_milieu,87,0.9847230624453855,1.0,3.8505747126436782,0.7907624844328496
+AY_R,5,isolated_stable_interior,127,0.9842865036607266,1.0,3.748031496062992,0.8056107045988152
+AY_R,5,pulsatile_milieu,86,0.9822844417244663,1.0,3.686046511627907,0.7841584744445798
+AY_R,10,dynamic_optimised_milieu,92,0.9836877065853038,1.0,6.304347826086956,0.7068145122785646
+AY_R,10,isolated_stable_interior,130,0.9809480431848853,1.0,6.707692307692308,0.6978356252673101
+AY_R,10,pulsatile_milieu,78,0.9809248013195381,1.0,6.448717948717949,0.6837721580376717
+AY_baseline,5,dynamic_optimised_milieu,87,0.9827603011359817,1.0,5.0,0.0
+AY_baseline,5,isolated_stable_interior,107,0.9826474285401979,1.0,5.0,0.0
+AY_baseline,5,pulsatile_milieu,106,0.9841801831623083,1.0,5.0,0.0
+AY_baseline,10,dynamic_optimised_milieu,121,0.980203953409695,1.0,10.0,0.0
+AY_baseline,10,isolated_stable_interior,69,0.9802144249512671,1.0,10.0,0.0
+AY_baseline,10,pulsatile_milieu,110,0.9814407230196703,1.0,10.0,0.0
