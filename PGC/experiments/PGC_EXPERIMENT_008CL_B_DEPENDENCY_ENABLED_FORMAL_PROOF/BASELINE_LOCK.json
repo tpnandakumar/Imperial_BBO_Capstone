@@ -1,0 +1,28 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CL_B_DEPENDENCY_ENABLED_FORMAL_PROOF",
+  "baseline_status": "frozen",
+  "baseline_type": "formal_proof_reference",
+  "frozen_on": "2026-07-27",
+  "archive_branch": "main",
+  "trigger_commit_under_observation": "efbdaac9ff97913bd3019e776c6e766d78a412d8",
+  "evidence_manifest": "EVIDENCE_MANIFEST.json",
+  "authoritative_evidence": [
+    "formal_results.csv",
+    "results_summary.json",
+    "EVIDENCE_MANIFEST.json"
+  ],
+  "locked_success_criteria": {
+    "formal_proof_success_rate": 1.0,
+    "flawed_counterexample_rate": 1.0,
+    "hypothesis_success_rate": 1.0,
+    "false_proof_claim_rate": 0.0,
+    "deterministic_violation_release_rate": 0.0
+  },
+  "change_control": {
+    "silent_replacement_prohibited": true,
+    "evidence_file_replacement_requires_new_experiment_version": true,
+    "runtime_values_are_not_certification_thresholds": true,
+    "evidence_boundary_must_be_preserved": true
+  },
+  "evidence_boundary": "This frozen baseline establishes only the properties encoded in the five symbolic models and the associated generated property tests. It does not establish correctness outside those formalised properties."
+}
