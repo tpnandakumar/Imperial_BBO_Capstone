@@ -1,0 +1,26 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CL_B_DEPENDENCY_ENABLED_FORMAL_PROOF",
+  "status": "completed",
+  "z3_version": "5.0.0",
+  "formal_tasks": 5,
+  "formal_proof_success_rate": 1.0,
+  "flawed_counterexample_rate": 1.0,
+  "false_proof_claim_rate": 0.0,
+  "hypothesis_tasks_passed": [
+    "absolute_value",
+    "safe_divide",
+    "bounded_clamp",
+    "monotonic_increment",
+    "probability_normalisation"
+  ],
+  "hypothesis_success_rate": 1.0,
+  "unknown_policy": {
+    "solver_status": "unknown",
+    "treated_as_proven": false,
+    "policy_pass": true,
+    "reason_unknown": "timeout"
+  },
+  "deterministic_violation_release_rate": 0.0,
+  "A_DMIC_milieu_interior_preserved": true,
+  "elapsed_ms": 3302.387114999995
+}
