@@ -1,0 +1,19 @@
+{
+  "experiment_id": "PGC_EXPERIMENT_008CH_D_EXPANDED_TEMPORAL_AND_SPARSE_NATIVE",
+  "status": "completed",
+  "design": "60% train, 20% validation, 20% protected test",
+  "conditions": ["high_dimensional_sparse", "temporal_drift_binary"],
+  "seeds": [1301, 1319, 1327, 1361, 1373, 1381, 1399, 1423, 1433, 1451],
+  "total_arm_runs": 60,
+  "zero_split_overlap": true,
+  "holdout_used_for_selection": false,
+  "electrical_energy_measured": false,
+  "direct_cost_measured": false,
+  "A_DMIC_milieu_interior_preserved": true,
+  "promoted_component": "A_DMIC_gated_temporal_specialist",
+  "temporal_mean_accuracy_gain": 0.0825,
+  "temporal_wins": 10,
+  "temporal_wilcoxon_p_raw": 0.001953125,
+  "sparse_specialist_promoted": false,
+  "decision": "Promote temporal-drift gating to integrated validation. Do not promote the sparse-native specialist."
+}
