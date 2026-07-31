@@ -245,8 +245,6 @@ Overall, the Week 09 information gain demonstrated that optimisation success dep
 
 ## 11. Computational Analysis and Coding Implementation
 
-## 11. Computational Analysis and Coding Implementation
-
 The computational analysis performed during Week 09 converted the optimisation results into a structured and reproducible analytical workflow that supported objective decision making. Python continued to provide the foundation for processing optimisation data, ranking the objective functions, comparing performance across optimisation rounds and generating the summary statistics used throughout this report. Applying the same analytical procedure each week ensured consistency while reducing manual processing and the possibility of transcription errors.
 
 The Week 09 analysis script imported the optimisation inputs and objective function outputs from the structured CSV datasets before performing the computational analysis. The script calculated exact changes relative to Week 08, ranked the objective functions according to their objective values, assigned optimisation strategies and generated the summary data used to support the tables, figures and discussion. Using the same analytical framework throughout the project allowed optimisation performance to be monitored consistently as additional evidence became available.
