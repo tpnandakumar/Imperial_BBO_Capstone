@@ -9,6 +9,14 @@ Imperial College Business School
 
 Black-Box Optimisation Capstone Portfolio for the Imperial College Business School Artificial Intelligence and Machine Learning Programme.
 
+---
+## Module 21 and Week 09 Documentation
+
+Module 21 corresponds to Week 09 of the BBO capstone. The required assignment documents are linked below:
+
+- [Datasheet for the Bayesian Black Box Optimisation Capstone Dataset](Week_09/DATASHEET.md)
+- [Model Card for the Bayesian Black Box Optimisation Workflow](Week_09/MODEL_CARD.md)
+- [Week 09 analysis and supporting evidence](Week_09/README.md)
 
 ---
 ## Project Overview
@@ -125,15 +133,15 @@ Success depends on progressively improving query quality while maintaining an ef
 ---
 ## Optimisation Timeline
 
-### Week 1 – Baseline Exploration
+### Week 1 - Baseline Exploration
 
 The first optimisation round focused on broad exploration to establish baseline behaviour across all functions.
 
-### Week 2 – Exploration-Exploitation Balancing 
+### Week 2 - Exploration-Exploitation Balancing
 
 Results revealed substantial variation between functions. Strong-performing regions became candidates for exploitation, while weaker-performing functions required additional exploration.
 
-### Week 3 – Evidence based Query Selection
+### Week 3 - Evidence based Query Selection
 
 Query selection became increasingly evidence based. Previous observations informed future sampling decisions, reflecting a transition from heuristic exploration towards model-guided optimisation.
 ---
@@ -175,23 +183,23 @@ The optimisation process has revealed substantial variation between functions. S
 
 ## Visualisation Gallery
 
-Figure 1 – Function Performance Dashboard
+Figure 1 - Function Performance Dashboard
 
 [Insert Performance Snapshot Infographic]
 
-Figure 2 – Function Dimensionality Dashboard
+Figure 2 - Function Dimensionality Dashboard
 
 [Insert Function Dimensions Infographic]
 
-Figure 3 – Exploration vs Exploitation Framework
+Figure 3 - Exploration vs Exploitation Framework
 
-[Insert Exploration–Exploitation Infographic]
+[Insert Exploration-Exploitation Infographic]
 
-Figure 4 – Bayesian Optimisation Workflow
+Figure 4 - Bayesian Optimisation Workflow
 
 [Insert Bayesian Optimisation Workflow]
 
-Figure 5 – Repository Architecture
+Figure 5 - Repository Architecture
 
 [Insert Repository Structure Infographic]
 
@@ -234,23 +242,23 @@ As additional observations become available, optimisation decisions can become i
 
 ```bash
 Imperial_BBO_Capstone/
-│
-├── README.md
-├── data/
-├── figures/
-├── results/
-├── reports/
-├── references/
-│
-├── Week_01/
-├── Week_02/
-├── Week_03/
-│
-├── notebooks/
-├── optimisation_logs/
-├── visualisations/
-│
-└── docs/
+|
+|-- README.md
+|-- data/
+|-- figures/
+|-- results/
+|-- reports/
+|-- references/
+|
+|-- Week_01/
+|-- Week_02/
+|-- Week_03/
+|
+|-- notebooks/
+|-- optimisation_logs/
+|-- visualisations/
+|
+`-- docs/
 ```
 ## References
 
