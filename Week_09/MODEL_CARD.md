@@ -10,229 +10,258 @@
 **Document version:** 1.0  
 **Status:** Final Module 21 submission
 
-## 1. Model Overview
+## 1. Executive Summary
 
-This Model Card describes the Bayesian Black Box Optimisation workflow developed for the Imperial College London Machine Learning and Artificial Intelligence capstone project. The workflow supports sequential optimisation of eight hidden objective functions using only submitted query vectors and returned objective values. Because the analytical form, gradients, noise properties and true optima of the functions remain unknown, recommendations are based on the evidence accumulated during earlier rounds.
+This model card describes the Bayesian Black Box Optimisation (BBO) workflow developed during the Imperial College London Machine Learning and Artificial Intelligence capstone project. The workflow was designed to support sequential optimisation of eight unknown objective functions by selecting one query vector for each function during every optimisation round. Since the analytical form of the functions remained unknown throughout the challenge, every recommendation was based entirely on previously observed evidence rather than mathematical models of the search landscape.
 
-The workflow combines historical optimisation data, computational analysis and human judgement. It recommends one query vector for each function during every round and assigns a strategy such as Explore, Refine, Reassess or Exploit. It is not an autonomous submission system. Every recommendation is reviewed before use.
+The workflow combines historical optimisation data, computational analysis and human judgement to guide query selection. As additional observations became available, the optimisation strategy evolved from broad exploration towards increasingly focused refinement and exploitation where the evidence supported those decisions. Throughout the project, transparency and reproducibility remained central principles, ensuring that every recommendation could be traced back to the observations that influenced it.
 
-## 2. Purpose
+Rather than functioning as an autonomous optimisation system, the workflow provides structured decision support. Human review remained an essential part of every optimisation round, allowing analytical evidence to be interpreted within the wider context of the optimisation process before the final submissions were made.
 
-The primary purpose is to improve objective values while using a limited query budget efficiently. The workflow seeks to balance exploration of uncertain regions with refinement of areas that have already shown useful performance.
+## 2. Model Overview
 
-A second purpose is to make the decision process transparent. The workflow records the evidence, assumptions and reasoning behind each recommendation so that later reviewers can understand why a particular point was selected and how the strategy changed over time.
+The Bayesian Black Box Optimisation workflow was developed to support optimisation problems where the underlying objective functions are unknown and only the returned outputs from submitted query points are available for analysis. Unlike conventional optimisation methods that rely on gradients or explicit mathematical models, this workflow learns progressively from accumulated observations and adapts its search strategy as additional evidence becomes available.
 
-The workflow also serves an educational role by demonstrating adaptive optimisation under uncertainty and showing how historical evidence can be converted into structured decisions without access to the underlying mathematical functions.
+Each optimisation round contributes new information that improves understanding of the behaviour of the hidden objective functions. Rather than treating every function in the same way, the workflow evaluates the optimisation history of each function independently, allowing different search strategies to emerge according to the available evidence. This adaptive approach enables exploration to continue where uncertainty remains high while concentrating refinement within regions that have demonstrated consistent improvement.
 
-## 3. Model Description and Architecture
+The workflow therefore acts as a structured decision support system that transforms historical optimisation evidence into informed query recommendations while preserving complete transparency throughout the optimisation process.
 
-The workflow follows a sequential cycle:
+## 3. Model Purpose
 
-1. retrieve the cumulative input and output history;
-2. compare recent and longer-term performance;
-3. assess uncertainty and local stability for each function;
-4. classify the function as Explore, Refine, Reassess or Exploit;
-5. generate one or more candidate query vectors;
-6. check dimensionality, range and six-decimal precision;
-7. apply human review before submission;
-8. record the returned outputs and update the evidence base.
+The primary purpose of the workflow is to improve optimisation performance by selecting progressively more informative query points throughout successive optimisation rounds. Every recommendation aims to balance exploration of uncertain regions with refinement of areas that have already demonstrated promising performance, allowing the available query budget to be used as effectively as possible.
 
-This architecture allows each function to follow an individual optimisation pathway. A strong region may justify controlled exploitation, while a weak or uninformative region may require broader exploration. The same strategy is not imposed across all eight functions.
+A second objective is to provide a transparent and reproducible record of the optimisation process. Rather than presenting only the submitted query vectors, the workflow documents the evidence, reasoning and assumptions that contributed to every optimisation decision. This makes it possible to understand how the optimisation strategy evolved and why particular query points were selected at different stages of the project.
+
+The workflow also serves an educational purpose by demonstrating how adaptive optimisation develops under conditions of uncertainty. It provides a practical example of evidence based decision making within a sequential optimisation framework while illustrating the importance of careful documentation and reproducible analysis.
+
+## 4. Model Description
+
+The optimisation workflow combines historical observations, computational analysis and human interpretation to generate recommendations for each optimisation round. The workflow does not attempt to estimate the hidden mathematical functions directly. Instead, it analyses previously submitted query vectors together with their returned objective values to identify patterns that may support improved optimisation decisions.
+
+Every optimisation round begins with a review of the cumulative optimisation history. Recent changes in objective values, longer term performance trends and the behaviour of neighbouring query points are considered before selecting new candidate queries. The available evidence is then interpreted to determine whether each function is more likely to benefit from continued exploration, cautious refinement, reassessment or controlled exploitation.
+
+Throughout the project, the optimisation strategy remained adaptive rather than fixed. Decisions changed as new observations became available, allowing the workflow to respond to emerging patterns while recognising that the hidden objective functions could not be observed directly. Human judgement remained an important component of this process, ensuring that every recommendation was evaluated before submission rather than being accepted automatically.
+
+## 5. Model Architecture
+
+The workflow follows a sequential architecture in which every optimisation round builds directly upon the evidence collected during previous rounds. Historical query vectors and returned objective values form the foundation of the decision making process, providing the information required to evaluate performance trends and identify promising search directions.
+
+The optimisation process begins by reviewing the cumulative dataset and assessing the behaviour of each hidden objective function individually. Candidate query vectors are then generated using the available evidence and evaluated within the context of the existing optimisation history. Following human review, the selected queries are submitted to the optimisation platform and the returned objective values are incorporated into the cumulative dataset. The updated observations then become the starting point for the following optimisation round.
+
+This cyclical architecture allows the optimisation strategy to evolve naturally as new evidence becomes available. Rather than relying on predetermined search rules, the workflow continuously adapts its recommendations according to the observed behaviour of the hidden objective functions while maintaining a complete record of the reasoning that supports every optimisation decision.
 
 <img width="1536" height="1024" alt="model_workflow" src="https://github.com/user-attachments/assets/f9007ac9-ee63-4e3d-91fb-0411e6f4c68e" />
 
+**Figure 1. Bayesian Black Box Optimisation model workflow used throughout the project.**
 
-## 4. Model Inputs
+## 6. Model Inputs
 
-The principal inputs are:
+The optimisation workflow relies on information accumulated throughout the project rather than a single optimisation round. The primary inputs consist of the submitted query vectors and the corresponding objective values returned by the hidden optimisation functions. Together, these observations provide the evidence used to guide future optimisation decisions.
 
-- historical query vectors;
-- historical objective values;
-- the dimensionality of each function;
-- the permitted input range from 0 to 1;
-- changes between consecutive rounds;
-- best-so-far values;
-- local stability or inconsistency among neighbouring queries;
-- qualitative confidence and uncertainty judgements;
-- previous strategy decisions and their outcomes.
+In addition to the numerical data, the workflow considers the dimensionality of each function, the permitted search boundaries and the historical behaviour of every optimisation pathway. Changes in objective values across successive rounds, the stability of neighbouring query points and the overall direction of previous optimisation decisions all contribute to the assessment of each function.
 
-The complete optimisation history is reviewed rather than relying only on the latest result. This reduces the risk that a short-term fluctuation determines the next query without reference to the broader pattern.
+Rather than treating recent observations in isolation, the workflow evaluates the complete optimisation history before generating new recommendations. This cumulative approach allows every optimisation round to benefit from all previously collected evidence while reducing the likelihood that decisions are influenced by short term fluctuations alone.
 
-## 5. Model Outputs
+## 7. Model Outputs
 
-The main output is one six-decimal query vector for each hidden objective function. Supporting outputs include:
+The primary output of the workflow is one recommended query vector for each hidden objective function during every optimisation round. Each recommendation represents the most appropriate query point based on the evidence available at that stage of the optimisation process.
 
-- a strategy label for each function;
-- a written rationale;
-- the expected benefit of the query;
-- the principal risk or uncertainty;
-- weekly performance comparisons;
-- function rankings, interpreted cautiously because scales differ;
-- figures and analytical summaries.
+Alongside the submitted query vectors, the workflow produces analytical outputs that help explain and evaluate the optimisation strategy. These include function rankings, comparisons between optimisation rounds, performance summaries, graphical visualisations and descriptive classifications that indicate whether a function is best approached through exploration, refinement, reassessment or exploitation.
 
-These outputs are decision-support artefacts. They do not represent direct knowledge of the hidden functions.
+These outputs are intended to support interpretation rather than replace independent judgement. They provide a structured explanation of the optimisation process while ensuring that the underlying observations remain the principal source of evidence.
 
-## 6. Model Development and Strategy Evolution
+## 8. Model Development
 
-The workflow developed progressively across the first nine rounds. Early submissions relied mainly on broad exploration because little was known about the search landscape. As observations accumulated, several functions began to show stable or improving regions, allowing the strategy to move towards local refinement and exploitation.
+The workflow developed progressively as additional optimisation rounds increased the amount of available evidence. During the earliest stages of the project, limited knowledge of the hidden objective functions required broad exploration across the search space. The primary objective at this stage was to gather sufficient information to identify regions that appeared more promising than others.
 
-By Week 09, the functions had differentiated clearly. Function 5 had shown repeated improvement and became the main exploitation target. Functions 2, 4, 7 and 8 supported local refinement. Functions 3 and 6 required reassessment because recent changes weakened confidence in their current directions. Function 1 remained the main exploration target because repeated queries produced an output effectively equal to zero.
+As further observations became available, recurring patterns began to emerge. Productive regions could be recognised with greater confidence, allowing the optimisation strategy to move gradually towards more focused refinement while maintaining exploration where uncertainty remained high. Individual functions also began to display distinct behaviour, making it increasingly appropriate to optimise each one independently rather than applying a common strategy across the entire problem.
 
-This evolution demonstrates that the workflow adapts according to evidence rather than following a fixed rule. Strategies can change when new outputs challenge earlier interpretations.
+By Round 9, the workflow had developed into an evidence driven optimisation system in which every recommendation reflected the accumulated history of previous observations. This gradual development illustrates how adaptive optimisation improves as additional information becomes available and demonstrates the value of preserving the complete optimisation history throughout the project.
 
-## 7. Week 09 Performance
+## 9. Optimisation Strategy
 
-| Function | Week 08 output | Week 09 output | Change | Week 09 strategy |
-|---|---:|---:|---:|---|
-| F1 | -1.4546199699251391e-58 | -1.4546199699251391e-58 | 0.000000 | Explore |
-| F2 | 0.5672775862793291 | 0.47297842839949866 | -0.094299 | Refine |
-| F3 | -0.0991107637427902 | -0.1156707106126581 | -0.016560 | Reassess |
-| F4 | -12.305008897187289 | -11.788939969158545 | 0.516069 | Refine |
-| F5 | 4359.384134322703 | 4394.868042481448 | 35.483908 | Exploit |
-| F6 | -1.1197178425911847 | -1.1733030029888645 | -0.053585 | Reassess |
-| F7 | 1.3346391663186332 | 1.314307996450604 | -0.020331 | Refine |
-| F8 | 9.47621 | 9.4709436 | -0.005266 | Refine |
+The optimisation strategy was designed to balance the competing objectives of improving current performance while continuing to learn about the hidden search landscape. Rather than concentrating exclusively on the highest performing regions, the workflow maintained a balance between exploration, refinement, reassessment and exploitation according to the evidence available for each function.
 
-Function 5 remained the dominant performer and improved again in Week 09. Function 4 also moved in a favourable direction by becoming less negative. Functions 2, 3, 6, 7 and 8 declined by varying amounts, while Function 1 remained unchanged near zero. These mixed results justified differentiated rather than uniform query selection.
+Functions that consistently produced favourable objective values were refined cautiously in order to determine whether additional improvement remained possible. Stable, high performing regions became candidates for controlled exploitation, while functions showing inconsistent or declining behaviour were reassessed before further refinement was attempted. Functions that continued to provide little useful information remained exploration targets so that alternative regions of the search space could be investigated.
 
-## 8. Evaluation Metrics
+This adaptive strategy allowed each function to follow its own optimisation pathway while ensuring that the overall search process remained responsive to newly acquired evidence. As confidence increased, optimisation decisions became progressively more focused, but sufficient exploration was retained throughout the project to reduce the risk of overlooking potentially productive regions.
 
-The workflow is evaluated using observed outputs rather than access to the true functions. The principal measures are:
+## 10. Decision Making Framework
 
-- best-so-far objective value;
-- change from the preceding round;
-- direction and stability of longer-term trends;
-- consistency among neighbouring queries;
-- whether the selected strategy matched the available evidence;
-- compliance with dimensionality, range and precision constraints;
-- preservation of sufficient exploratory capacity.
+Every optimisation decision followed the same structured process throughout the project. The workflow began by reviewing the complete history of submitted queries and returned objective values before examining recent changes in performance and longer term optimisation trends. The available evidence was then interpreted to determine which optimisation strategy was most appropriate for each function.
 
-Cross-function rankings are used only for descriptive context because the objective functions operate on different numerical scales. Performance is therefore judged primarily within each function across time.
+Once candidate query vectors had been generated, they were assessed within the context of previous optimisation rounds rather than being accepted solely on the basis of recent results. This broader perspective reduced the influence of isolated observations and encouraged decisions that reflected the cumulative optimisation history.
 
-## 9. Strengths
+Human review formed the final stage of the decision making process. Candidate recommendations were examined before submission to ensure that they remained consistent with the available evidence, satisfied the search constraints and reflected the overall objectives of the optimisation strategy. This combination of computational analysis and human judgement provided a balanced framework that supported transparent, evidence based optimisation while recognising the uncertainty inherent in black box search problems.
 
-A major strength is adaptability. The workflow can alter its strategy as new evidence appears, allowing promising functions to be refined while uncertain functions continue to be explored.
+## 11. Model Performance
 
-A second strength is transparency. Each recommendation is accompanied by evidence and a stated rationale rather than being presented as an unexplained output.
+Model performance was assessed by examining how effectively each optimisation round improved understanding of the hidden objective functions while maintaining steady progress towards stronger objective values. Since the mathematical form of the optimisation landscape remained unknown, performance could not be measured against a known optimum. Instead, evaluation focused on the quality of the optimisation decisions and the consistency of the improvements achieved across successive rounds.
 
-The workflow also preserves human oversight. Computational analysis organises the evidence, but the final submission remains subject to review. This reduces the risk of blindly following a misleading local pattern.
+As the project progressed, the optimisation strategy became increasingly selective because more evidence was available to guide decision making. Productive regions were identified with greater confidence, allowing local refinement where appropriate while preserving broader exploration for functions that remained poorly understood. This adaptive approach produced a more balanced optimisation strategy than would have been achieved through either unrestricted exploration or exclusive exploitation alone.
 
-Finally, the repository retains raw data, code, summaries and documentation, supporting reproducibility and later audit.
+By Round 9, individual functions displayed distinct optimisation behaviour. Some functions showed consistent improvement and supported cautious refinement, while others continued to require exploration or reassessment. This demonstrated that the workflow had progressed beyond a uniform search strategy and had developed into an evidence driven optimisation process that responded to the observed behaviour of each function independently.
 
-## 10. Intended Uses
+## 12. Performance Evaluation
 
-The workflow is intended for:
+Performance was evaluated continuously throughout the project rather than at a single point in time. Every optimisation round was compared with the previous rounds to determine whether new query points contributed useful information or improved objective values. This allowed the optimisation strategy to evolve gradually as additional evidence became available.
 
-- weekly query recommendation within this BBO challenge;
-- analysis of exploration and exploitation strategies;
-- transparent explanation of optimisation decisions;
-- comparison of strategy evolution across rounds;
-- educational study of sequential optimisation under uncertainty;
-- reproducible computational analysis of the capstone data.
+Several complementary measures were considered when assessing performance. Changes in objective values provided direct evidence of improvement or deterioration, while longer term trends helped determine whether a function continued to benefit from local refinement or required a change in direction. The stability of neighbouring query points, consistency of the optimisation strategy and the balance between exploration and exploitation were also considered when interpreting the results.
 
-## 11. Unsuitable Uses
+Evaluation was therefore based on the overall development of the optimisation process rather than isolated numerical improvements. This broader perspective reduced the influence of individual observations and provided a more reliable assessment of whether the optimisation strategy was progressing in a meaningful direction.
 
-The workflow should not be used to:
+## 13. Strengths of the Model
 
-- infer the exact analytical form of the hidden functions;
-- claim that a global optimum has been proven;
-- submit queries autonomously without review;
-- transfer recommendations directly to unrelated optimisation tasks;
-- support clinical, financial or safety-critical decisions;
-- treat qualitative confidence estimates as calibrated probabilities.
+One of the principal strengths of the workflow is its ability to adapt as new evidence becomes available. Rather than relying on fixed optimisation rules, the strategy develops progressively by learning from the accumulated optimisation history. This allows the search process to respond naturally to changing evidence while remaining flexible enough to investigate alternative regions whenever necessary.
 
-Any use beyond the capstone setting would require separate validation and a reassessment of assumptions, constraints and risks.
+Another important strength is the transparency of the decision making process. Every recommendation is supported by documented evidence derived from previous optimisation rounds, allowing the reasoning behind each submission to be understood and reviewed. Maintaining this level of documentation improves reproducibility and makes it possible to evaluate how individual optimisation decisions contributed to the overall development of the project.
 
-## 12. Model Assumptions
+The workflow also performs well in situations where little information is available about the underlying optimisation landscape. By combining careful exploration with targeted refinement, it makes effective use of a limited query budget while continuing to gather new information throughout the search process. This balance between learning and optimisation allows the workflow to remain effective despite the uncertainty that characterises black box optimisation problems.
 
-The workflow assumes that historical observations provide useful guidance for future query selection and that larger objective values are preferable. It also assumes that cautious local movement may be reasonable where repeated improvement has occurred.
+## 14. Intended Uses
 
-These assumptions do not guarantee local smoothness. A hidden function may contain discontinuities, irregular interactions or noise, meaning that nearby points can behave differently. Assumptions are therefore treated as provisional and are reviewed after every new output.
+The workflow has been developed specifically to support sequential Bayesian Black Box Optimisation within the Imperial College London capstone project. Its primary purpose is to assist with selecting informative query points, interpreting optimisation behaviour and documenting the reasoning behind each optimisation decision.
 
-## 13. Known Limitations
+It is intended for educational and research applications where the objective functions remain unknown and optimisation must rely on previously observed evidence rather than explicit mathematical models. The workflow is particularly suited to studying adaptive optimisation, evidence based decision making and the practical challenges associated with balancing exploration and exploitation in complex search spaces.
 
-The workflow is constrained by a small sequential dataset, unknown objective functions, unknown noise properties and a limited query budget. Higher-dimensional functions are especially difficult to explore because each new point covers only a very small proportion of the search space.
+The accompanying documentation also makes the workflow suitable for teaching transparent research practice by demonstrating how optimisation decisions can be recorded, justified and reproduced using a structured analytical framework.
 
-Confidence estimates are partly qualitative, and recommendations depend on human interpretation. Adaptive sampling also means that observations are not independent or uniformly distributed.
+## 15. Unsuitable Uses
 
-The workflow cannot verify whether an apparent improvement path leads to a local or global optimum. Its recommendations represent the strongest decision supported by the available evidence, not a definitive solution.
+The workflow should not be used to identify the mathematical form of the hidden objective functions or to claim that a global optimum has been reached. Because the optimisation process relies entirely on observed behaviour, all recommendations remain dependent upon the available evidence and should be interpreted within that context.
 
-## 14. Potential Failure Modes
+The workflow has been developed specifically for this optimisation challenge and should not be transferred directly to unrelated optimisation problems without further validation. Differences in search landscapes, objective functions or optimisation constraints may require alternative strategies that fall outside the scope of the present model.
 
-Potential failure modes include:
+It is also unsuitable for applications where optimisation decisions have direct consequences for safety, healthcare, finance or other high risk environments. In such situations, substantially stronger evidence, formal validation and independent verification would be required before the workflow could be considered appropriate for operational use.
 
-- premature convergence around a productive but suboptimal region;
-- local overfitting to recent observations;
-- excessive boundary concentration;
-- misleading local trends caused by noise or discontinuity;
-- insufficient exploration of distant regions;
-- incorrect interpretation of heterogeneous function scales;
-- propagation of an early mistaken assumption into later rounds.
+## 16. Model Assumptions
 
-These risks are managed through continued exploration, explicit reassessment, comparison with prior rounds and mandatory human review.
+The workflow is built upon several practical assumptions that support optimisation under conditions of uncertainty. The most important assumption is that information gathered during previous optimisation rounds provides useful guidance when selecting future query points. Although the hidden objective functions remain unknown, the accumulated observations are assumed to contain meaningful patterns that can be used to improve subsequent decisions.
 
-## 15. Sources of Bias
+A second assumption is that neighbouring query points may demonstrate related behaviour, making cautious local refinement appropriate when repeated observations indicate consistent improvement. At the same time, the workflow recognises that this relationship may not always hold, particularly within complex or irregular optimisation landscapes. For this reason, local refinement is balanced with continued exploration to reduce the risk of relying too heavily on a single region of the search space.
 
-Adaptive sampling bias occurs because promising regions receive more queries than weaker areas. Local refinement bias develops when repeated queries cluster near a known productive point. Boundary bias may occur where strong outputs encourage continued movement close to the edge of the permitted domain.
+The workflow also assumes that optimisation is an iterative learning process rather than a sequence of isolated events. Every optimisation round contributes additional evidence that improves understanding of the search landscape, allowing future recommendations to become progressively more informed. These assumptions provide a practical framework for decision making while recognising that they remain open to revision as new evidence becomes available.
 
-Temporal bias is also present because later decisions benefit from more information than early decisions. These biases are inherent to sequential optimisation and must be recognised when interpreting the dataset and performance.
+## 17. Known Limitations
 
-## 16. Human Oversight and Risk Controls
+The workflow operates within several important constraints that influence the interpretation of its recommendations. The most significant limitation is that the mathematical form of the hidden objective functions is never revealed. As a result, optimisation decisions are based entirely on observed behaviour rather than complete knowledge of the search landscape.
 
-Human review is mandatory before submission. Candidate queries are checked against the historical evidence, dimensionality requirements, permitted range and intended strategy.
+The limited query budget also restricts the amount of information that can be collected during each optimisation round. With only one new observation available for each function, large areas of the search space remain unexplored, particularly for functions with higher dimensionality. Consequently, recommendations are based on the strongest available evidence rather than complete coverage of the optimisation landscape.
 
-Risk controls include:
+Another limitation is that later optimisation decisions depend upon earlier observations. While this sequential approach reflects the nature of adaptive optimisation, it also means that incorrect interpretations during the early stages of the project may influence later search directions until sufficient evidence becomes available to support an alternative strategy.
 
-- preservation of raw records;
-- exact input validation;
-- comparison with earlier rounds;
-- explicit strategy labels and assumptions;
-- retention of exploratory capacity;
-- documentation of alternatives and uncertainty;
-- reproducible scripts and analytical summaries.
+These limitations do not reduce the value of the workflow but provide important context when interpreting the optimisation results.
 
-Human oversight does not remove uncertainty, but it provides a critical check against automatic acceptance of weak or contradictory recommendations.
+## 18. Potential Failure Modes
 
-## 17. Transparency and Interpretability
+Like any optimisation approach operating under uncertainty, the workflow may perform less effectively under certain conditions. One possible failure mode is premature convergence, where repeated refinement within a productive region discourages exploration of other areas that may contain stronger solutions. Closely related to this is the possibility of becoming trapped within a local optimum, particularly when neighbouring observations consistently suggest only small improvements.
 
-The workflow is designed so that each recommendation can be traced from historical observations to strategy classification and final query selection. The repository preserves the relevant data, code, summaries and written rationale.
+The workflow may also encounter difficulties when the hidden objective functions contain abrupt changes, irregular local structure or substantial stochastic variation. Under these conditions, neighbouring query points may behave very differently, reducing the effectiveness of local refinement and making optimisation decisions less predictable.
 
-Interpretability is supported by using clear strategy categories and by explaining why each function was treated differently. The process therefore provides both a recommendation and an account of how that recommendation was reached.
+Another potential limitation arises when the available observations remain too sparse to distinguish genuine optimisation trends from random variation. In these situations, additional exploration becomes necessary to improve understanding of the search landscape before stronger optimisation decisions can be made.
 
-## 18. Reproducibility
+Recognising these potential failure modes encourages a balanced optimisation strategy and reinforces the importance of continual reassessment as new evidence becomes available.
 
-Reproducibility is supported by retaining the original query and output files, cumulative histories, Python analysis scripts, figures and weekly documentation. Another researcher can repeat the analytical calculations and review the evidence available at the time of each decision.
+## 19. Sources of Bias
 
-The accompanying [Datasheet](DATASHEET.md) documents the provenance, composition, preprocessing, quality controls and limitations of the data. Additional supporting files include [DATASET.md](DATASET.md), [DECISION_CARD.md](DECISION_CARD.md), [ASSUMPTIONS.md](ASSUMPTIONS.md) and [VALIDATION.md](VALIDATION.md).
+Several sources of bias naturally arise during sequential optimisation because every new query is influenced by previous observations. The most important is adaptive sampling bias. Regions that demonstrate encouraging performance receive more attention during later optimisation rounds, while areas producing weaker results are explored less frequently. Although this improves optimisation efficiency, it also creates uneven coverage of the search space.
 
-## 19. Ethical Considerations
+A second source of bias is local refinement bias. Once productive regions have been identified, neighbouring query points are often sampled repeatedly in an effort to achieve incremental improvements. This increases confidence within those regions but reduces opportunities to discover alternative solutions elsewhere in the search landscape.
 
-The workflow was developed for educational and research purposes. It contains no personal or sensitive data. Ethical responsibility therefore centres on truthful reporting, appropriate interpretation and clear acknowledgement of uncertainty.
+The workflow may also exhibit boundary bias because high performing query points occasionally occur close to the limits of the permitted search interval. Continued refinement around these regions increases the concentration of observations near the search boundaries and may reduce exploration of the central regions of the search space.
 
-The workflow should not be presented as proving optimality or transferred to high-risk settings without formal validation. Human review should remain in place, and both successful and unsuccessful results should be retained to avoid selective reporting.
+Finally, the optimisation history itself introduces temporal bias. Early decisions were made using limited evidence, whereas later recommendations benefited from substantially more information. Consequently, optimisation behaviour changes naturally throughout the project as knowledge of the search landscape increases.
 
-## 20. Distribution, Version Control and Maintenance
+## 20. Human Oversight
 
-The workflow is maintained in the `tpnandakumar/Imperial_BBO_Capstone` GitHub repository. Each round is stored in a separate weekly folder with its source data, analysis, figures and documentation.
+Human judgement remained an essential part of the optimisation workflow throughout the project. Although computational analysis provided evidence to support query selection, every recommendation was reviewed before submission to ensure that it remained consistent with the available observations and the overall objectives of the optimisation strategy.
 
-Git version control preserves changes over time and allows earlier rounds to be revisited. The workflow is maintained by Dr N T Pisharam. Later updates should preserve historical records, document corrections and keep the Datasheet, Model Card and related files consistent.
+Human oversight also provided an opportunity to question analytical results rather than accepting them automatically. Unexpected changes in objective values, conflicting evidence or unusually large movements within the search space were examined carefully before decisions were finalised. This review process helped reduce the risk of overinterpreting individual observations while encouraging a more balanced assessment of the available evidence.
 
-## 21. Future Development
+Maintaining human involvement throughout the optimisation process also strengthened transparency and accountability. Every submitted query represented a considered decision supported by both computational analysis and independent review. This combination allowed the workflow to benefit from systematic analysis while retaining the flexibility and critical judgement that remain important when working with incomplete information and unknown optimisation landscapes.
 
-Future development may include stronger uncertainty estimation, additional performance metrics, improved response-surface visualisation and more formal comparison of alternative candidate queries. As the dataset grows, the workflow may support increasingly quantitative acquisition methods while retaining human review and transparent documentation.
+## 21. Transparency and Interpretability
 
-## 22. Version History
+Transparency and interpretability were fundamental principles throughout the development of the optimisation workflow. Every recommendation was supported by the evidence available at the time rather than being presented as an unexplained outcome. Historical query vectors, returned objective values and analytical summaries were preserved so that the reasoning behind each optimisation decision could be examined and understood.
 
-| Version | Date | Round | Summary |
-|---|---|---:|---|
-| 0.9 / Document 1.0 | August 2026 | 9 | Final Module 21 model card submission |
+Interpretability was achieved by documenting how the optimisation strategy changed as new evidence became available. Instead of producing recommendations through an opaque process, the workflow recorded why particular functions were explored, refined, reassessed or exploited. This made it possible to understand how the optimisation strategy evolved and how individual observations influenced later decisions.
 
-## References
+Maintaining this level of transparency strengthened confidence in the optimisation process because every recommendation could be traced back to the observations that supported it. The workflow therefore provides not only the optimisation results but also a clear explanation of how those results were obtained.
 
-Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., and Gebru, T. (2019). *Model Cards for Model Reporting*. Proceedings of the Conference on Fairness, Accountability, and Transparency, 220-229.
+## 22. Reproducibility
 
-Frazier, P. I. (2018). *A Tutorial on Bayesian Optimization*. arXiv:1807.02811.
+Reproducibility formed an important objective throughout the project. The original optimisation records were preserved together with the computational scripts used to generate analytical summaries and figures. This allows the reported analyses to be repeated directly from the stored data without modifying the original observations.
 
-Snoek, J., Larochelle, H., and Adams, R. P. (2012). *Practical Bayesian Optimization of Machine Learning Algorithms*. Advances in Neural Information Processing Systems, 25, 2951-2959.
+The repository also maintains a complete record of the optimisation history, allowing every optimisation round to be reproduced using the evidence available at that stage of the project. Because the analytical summaries are generated from the validated source data, the reported findings remain consistent with the original optimisation records.
 
-Imperial College London. (2026). *Module 21: Transparency, Interpretability and Responsible AI*. Professional Certificate in Machine Learning and Artificial Intelligence.
+Comprehensive documentation accompanies the dataset and computational workflow, enabling other researchers to understand the methodology and repeat the analytical process. This combination of preserved data, reproducible analysis and detailed documentation provides a reliable foundation for future investigation and independent verification.
+
+The accompanying [Datasheet](DATASHEET.md) documents the provenance, composition, preprocessing, quality controls, limitations and governance of the data used by this workflow.
+
+## 23. Ethical Considerations
+
+The workflow was developed solely for educational and research purposes within the Bayesian Black Box Optimisation capstone project. It was designed to encourage responsible research practice by documenting every stage of the optimisation process and by presenting both the strengths and limitations of the resulting recommendations.
+
+The optimisation data contain no personal information or sensitive records. All observations relate exclusively to numerical optimisation tasks generated within the capstone challenge, avoiding the ethical concerns commonly associated with datasets containing identifiable individuals or confidential information.
+
+Responsible interpretation of the results remained an important consideration throughout the project. Recommendations were presented as evidence based decisions rather than definitive solutions, and uncertainty was acknowledged whenever the available observations did not support stronger conclusions. This balanced approach encourages appropriate use of the workflow while recognising the limitations inherent in optimisation under uncertainty.
+
+## 24. Distribution and Accessibility
+
+The optimisation workflow is maintained within the Imperial_BBO_Capstone GitHub repository together with the supporting dataset, computational scripts, analytical summaries and documentation. Organising the project within a structured repository provides a single location from which the optimisation process can be examined, reproduced and maintained.
+
+The repository has been arranged so that users can move easily between the raw optimisation records, analytical outputs and supporting documentation. This structure improves accessibility while ensuring that the relationship between the original observations and the derived analyses remains clear.
+
+The workflow has been prepared primarily for educational and research purposes. Future users should preserve the accompanying documentation whenever the repository is shared so that the optimisation process continues to be interpreted within its intended context.
+
+## 25. Version Control
+
+Version control has been maintained throughout the project to preserve the complete development history of the optimisation workflow. Every optimisation round represents a new stage in the evolution of the model, allowing earlier recommendations and analytical results to remain available for comparison with later developments.
+
+Each repository update records newly submitted query vectors, returned objective values, revised analyses and supporting documentation. Maintaining this chronological record provides a transparent account of how the optimisation strategy developed as additional evidence became available.
+
+Version control also strengthens reproducibility by allowing individual optimisation rounds to be revisited whenever required. Earlier recommendations can therefore be examined using the evidence available at that time, providing a reliable audit trail for both the optimisation process and the accompanying documentation.
+
+## 26. Maintenance
+
+The optimisation workflow will continue to develop as additional optimisation rounds are completed. After each new round, the repository will be updated with the latest query vectors, returned objective values, revised analytical summaries and supporting documentation. Earlier records will remain unchanged so that the complete optimisation history is preserved.
+
+Routine maintenance includes checking the consistency of the optimisation records, confirming that analytical summaries agree with the source data and ensuring that all supporting documentation reflects the latest evidence. This ongoing review helps maintain the reliability of the workflow while preserving a transparent record of every stage of its development.
+
+By combining regular updates with careful version control and comprehensive documentation, the workflow is able to evolve without losing the historical evidence that supports its recommendations. This ensures that the optimisation process remains transparent, reproducible and straightforward to maintain throughout the remainder of the capstone project.
+
+## 27. Future Development
+
+The optimisation workflow will continue to develop as additional optimisation rounds provide new evidence. Each successive round will strengthen understanding of the hidden objective functions, allowing the optimisation strategy to become progressively more informed while preserving the flexibility to respond to unexpected changes within the search landscape.
+
+Future work will focus on refining the balance between exploration and exploitation as the amount of available evidence increases. Longer optimisation histories will provide opportunities to examine performance trends over extended periods, compare alternative optimisation strategies and assess how individual functions respond to different search approaches. These developments will improve understanding of the optimisation process while maintaining the adaptive principles on which the workflow is based.
+
+The supporting documentation will also continue to evolve. Future versions of the workflow may include additional performance measures, expanded validation procedures and more detailed analytical visualisations. These enhancements will strengthen interpretation of the optimisation process without changing the original optimisation records that form the foundation of the repository.
+
+Although the workflow has been developed for the current capstone challenge, the underlying documentation framework has wider potential. The combination of transparent decision making, reproducible analysis and comprehensive reporting provides a practical model that could be adapted for other optimisation studies where clear documentation and responsible research practice are important.
+
+## 28. Conclusion
+
+This model card describes the optimisation workflow developed for the Bayesian Black Box Optimisation capstone project and explains how historical observations were transformed into evidence based optimisation decisions. Rather than relying on explicit mathematical models of the hidden objective functions, the workflow progressively improved its recommendations by interpreting the optimisation history accumulated across successive rounds.
+
+A key strength of the workflow is its ability to adapt as new evidence becomes available. Exploration, refinement, reassessment and exploitation were applied according to the observed behaviour of each function, allowing the optimisation strategy to become increasingly focused while maintaining sufficient flexibility to investigate areas that remained uncertain. Human review remained an important part of every optimisation round, ensuring that computational analysis supported rather than replaced informed judgement.
+
+Transparency and reproducibility formed the foundation of the workflow. Every optimisation recommendation can be traced back to the observations that supported it, while the accompanying documentation provides a complete record of how the optimisation strategy evolved throughout the project. This makes the workflow straightforward to understand, review and reproduce.
+
+Although the hidden objective functions and limited query budget impose unavoidable constraints, the workflow demonstrates that careful interpretation of accumulated evidence can support effective optimisation under uncertainty. The result is not simply a sequence of submitted query vectors, but a structured and well documented optimisation process that records both the decisions made and the reasoning that guided them.
+
+## 29. References
+
+Frazier, P. I. (2018). A Tutorial on Bayesian Optimization. arXiv:1807.02811.
+
+Gebru, T., Morgenstern, J., Vecchione, B., Vaughan, J. W., Wallach, H., Daumé III, H., and Crawford, K. (2021). Datasheets for Datasets. Communications of the ACM, 64(12), 86-92.
+
+Imperial College London. (2026). Module 21: Transparency, Interpretability and Responsible AI. Professional Certificate in Machine Learning and Artificial Intelligence. Course materials.
+
+Mitchell, M., Wu, S., Zaldivar, A., Barnes, P., Vasserman, L., Hutchinson, B., Spitzer, E., Raji, I. D., and Gebru, T. (2019). Model Cards for Model Reporting. Proceedings of the Conference on Fairness, Accountability, and Transparency, 220-229.
+
+Nocedal, J., and Wright, S. J. (2006). Numerical Optimization (2nd ed.). Springer.
+
+Pisharam, N. T. (2026). Imperial_BBO_Capstone: Bayesian Black Box Optimisation Repository. GitHub project documentation.
+
+Snoek, J., Larochelle, H., and Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25, 2951-2959.
