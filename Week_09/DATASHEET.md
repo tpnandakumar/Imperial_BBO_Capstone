@@ -47,6 +47,9 @@ Each input coordinate is a continuous value between 0 and 1. Submission values a
 
 The Week 09 folder contains the raw weekly records, cumulative histories, analytical summaries, code, figures and documentation needed to review the round and reproduce the analysis.
 
+<img width="1536" height="1024" alt="dataset_composition" src="https://github.com/user-attachments/assets/d236414e-32c1-4ca8-bb2b-30a4739573d3" />
+
+
 ## 5. Collection Process
 
 Data were collected sequentially across nine optimisation rounds. At the start of each round, the full history of earlier inputs and outputs was reviewed. One new query vector was then selected for each function and submitted through the official platform. Returned values were recorded without modification and added to the cumulative dataset.
