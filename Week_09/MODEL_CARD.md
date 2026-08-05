@@ -39,6 +39,9 @@ The workflow follows a sequential cycle:
 
 This architecture allows each function to follow an individual optimisation pathway. A strong region may justify controlled exploitation, while a weak or uninformative region may require broader exploration. The same strategy is not imposed across all eight functions.
 
+<img width="1536" height="1024" alt="model_workflow" src="https://github.com/user-attachments/assets/f9007ac9-ee63-4e3d-91fb-0411e6f4c68e" />
+
+
 ## 4. Model Inputs
 
 The principal inputs are:
