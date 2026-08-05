@@ -98,6 +98,9 @@ Following each optimisation round, the new observations were analysed alongside 
 
 Repeating this workflow throughout the project ensured that every optimisation decision was supported by the strongest available evidence while maintaining a transparent and reproducible record of how the search strategy developed from one round to the next.
 
+<img width="1402" height="1122" alt="optimisation_workflow" src="https://github.com/user-attachments/assets/d40f148e-b82d-4396-9117-7e1c5903531a" />
+
+
 ## 9. Data Preprocessing
 
 The original optimisation records were preserved throughout the project to ensure that the dataset remained an accurate representation of every submitted query and returned objective value. No scaling, normalisation or numerical transformation was applied to the raw data. Instead, preprocessing focused on preparing the dataset for analysis while preserving the integrity of the original observations.
