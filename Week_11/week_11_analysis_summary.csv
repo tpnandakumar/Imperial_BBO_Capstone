@@ -1,0 +1,9 @@
+Function,Output,Rank,Strategy,Status,Week_10_Output,Exact_Change,Direction
+Function 5,4411.0387356061765,1,Boundary directed probe,Positive,4394.868042481448,16.1706931247285,Improved
+Function 8,9.58024,2,Exploit confirmed best,Positive,9.4646525,0.1155875,Improved
+Function 7,1.3579108517237013,3,Tight trust region refinement,Positive,1.285160161342515,0.0727506903811863,Improved
+Function 2,0.5848554940277205,4,Local trust region probe,Positive,0.5311818841205426,0.0536736099071779,Improved
+Function 1,0.025559285339829783,5,Exploit confirmed narrow peak,Positive,2.8950706668499033e-23,0.02555928533982978299997104929,Improved
+Function 3,-0.06542982421105416,6,Local refinement,Negative,-0.08697581687486715,0.02154599266381299,Improved
+Function 6,-0.7268715077444687,7,Best basin recovery,Negative,-1.2283806967341901,0.5015091889897214,Improved
+Function 4,-4.868852987697114,8,Local recovery probe,Negative,-13.483642655031158,8.614789667334044,Improved
