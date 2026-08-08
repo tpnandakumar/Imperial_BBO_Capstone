@@ -1,0 +1,9 @@
+Function,Week_10_output,Clustering_interpretation,Decision_consequence
+Function 1,2.8950706668499033e-23,No convincing productive cluster,Continue broader exploration
+Function 2,0.5311818841205426,Emerging productive neighbourhood,Confirm and refine locally
+Function 3,-0.08697581687486715,"More favourable local grouping, still uncertain",Continue targeted refinement
+Function 4,-13.483642655031158,Week 10 neighbourhood not supported,Change direction and reassess
+Function 5,4394.868042481448,Strongest evidence of a stable high performing neighbourhood,Precise exploitation and boundary refinement
+Function 6,-1.2283806967341901,Current local direction weakened,Reassess neighbourhood
+Function 7,1.285160161342515,Productive but relatively flat neighbourhood,Conservative local refinement
+Function 8,9.4646525,"Compact, stable positive neighbourhood",Cautious boundary testing
