@@ -8,6 +8,12 @@
 
 - [Datasheet for the Bayesian Black Box Optimisation Capstone Dataset](DATASHEET.md)
 - [Model Card for the Bayesian Black Box Optimisation Workflow](MODEL_CARD.md)
+- [Dataset Record](DATASET.md)
+- [Assumptions](ASSUMPTIONS.md)
+- [Validation Record](VALIDATION.md)
+- [Decision Card](DECISION_CARD.md)
+- [Documentation Changelog](CHANGELOG.md)
+- [Research Note](RESEARCH_NOTE.md)
 
 The submitted inputs and returned results remain the authoritative numerical record for Week 10.
 
@@ -185,11 +191,17 @@ The scripts use a flat structure and do not create a separate figures directory.
 
 ## 12. Repository Files and Reproducibility
 
-The Week 10 folder contains the following core files:
+The Week 10 folder contains the following assessment and reproducibility files:
 
 - `README.md`
 - [`DATASHEET.md`](DATASHEET.md)
 - [`MODEL_CARD.md`](MODEL_CARD.md)
+- [`DATASET.md`](DATASET.md)
+- [`ASSUMPTIONS.md`](ASSUMPTIONS.md)
+- [`VALIDATION.md`](VALIDATION.md)
+- [`DECISION_CARD.md`](DECISION_CARD.md)
+- [`CHANGELOG.md`](CHANGELOG.md)
+- [`RESEARCH_NOTE.md`](RESEARCH_NOTE.md)
 - `week_10_inputs.csv`
 - `week_10_results.csv`
 - `week_10_analysis_summary.csv`
@@ -208,28 +220,4 @@ The analysis script requires `Week_09/week_09_results.csv` for the exact weekly 
 
 ## 13. Conclusion
 
-Week 10 strengthened the evidence base for the remaining optimisation rounds. Function 2 and Function 3 improved, Function 5 reproduced its highest result exactly, and Function 1 remained unresolved despite broader exploration. Functions 4 and 6 required a change in direction, while Functions 7 and 8 continued to occupy stable positive regions despite small declines.
-
-The results supported a selective Week 11 strategy rather than a uniform response. The strongest regions justified precise local work, the declining functions required reassessment, and the near zero function required continued exploration. This approach preserved useful gains while directing attention towards the areas with the greatest remaining uncertainty.
-
-## 14. Automation Decision
-
-The Week 10 folder uses a repeatable computational workflow, but the analytical interpretation remains evidence led. The scripts validate the stored data, calculate exact comparisons, generate summaries and produce figures without changing the original numerical precision.
-
-Future weekly updates can use the same flat structure once both the submitted inputs and returned outputs have been verified. A weekly folder should not be treated as complete until all seven core files agree with the source data and the scripts run successfully.
-
-This staged automation supports consistency without removing the verification step that protects the repository from incomplete or inferred values.
-
-## 15. References
-
-Harris, C. R., Millman, K. J., van der Walt, S. J., et al. (2020). Array programming with NumPy. Nature, 585, 357-362.
-
-Hunter, J. D. (2007). Matplotlib: A 2D graphics environment. Computing in Science & Engineering, 9(3), 90-95.
-
-Jones, D. R., Schonlau, M., and Welch, W. J. (1998). Efficient Global Optimization of Expensive Black-Box Functions. Journal of Global Optimization, 13(4), 455-492.
-
-McKinney, W. (2010). Data Structures for Statistical Computing in Python. Proceedings of the 9th Python in Science Conference, 56-61.
-
-Shahriari, B., Swersky, K., Wang, Z., Adams, R. P., and de Freitas, N. (2016). Taking the Human Out of the Loop: A Review of Bayesian Optimization. Proceedings of the IEEE, 104(1), 148-175.
-
-Snoek, J., Larochelle, H., and Adams, R. P. (2012). Practical Bayesian Optimization of Machine Learning Algorithms. Advances in Neural Information Processing Systems, 25, 2951-2959.
+Week 10 strengthened the evidence base for the remaining optimisation rounds. Function 2 and Function 3 improved, Function 5 reproduced its
