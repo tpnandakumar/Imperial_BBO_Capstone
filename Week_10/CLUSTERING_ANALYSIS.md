@@ -42,6 +42,16 @@ Clustering was also used to interpret poor results. A weak observation is not au
 
 This distinction is important for Functions 3, 4 and 6. Their negative outputs are not grouped merely because they share a sign. Input location, proximity and repeated behaviour are considered together.
 
+## Data driven figures
+
+Three figures were specified from the exact Weeks 1 to 10 history:
+
+1. `week_10_clustering_figure_1_cluster_separation.png` reports exploratory K means separation by function using the best silhouette score from candidate partitions with k equal to 2 or 3.
+2. `week_10_clustering_figure_2_function5_cluster.png` plots Function 5 output against normalised Euclidean distance from the Week 10 query. Bubble size increases with output, making the tightening high value neighbourhood visible directly.
+3. `week_10_clustering_figure_3_decision_evidence.png` links Week 10 cluster evidence to the Week 11 query decision for all eight functions. Distances are normalised by the square root of dimensionality and Week 11 outputs are excluded.
+
+The source values used to construct these figures are exported to `week_10_clustering_figure_source.csv`. The figure generator is stored as `generate_week_10_clustering_figures.py`, so the visual evidence can be regenerated directly from the repository record.
+
 ## Link to the Week 11 submission
 
 The Week 10 clustering interpretation informed the next query set by changing both direction and step size. Supported neighbourhoods were refined, apparently flat regions were tested cautiously at their boundaries, and unresolved functions retained greater exploratory movement. This creates an auditable chain:
@@ -56,15 +66,18 @@ Run:
 
 ```bash
 python Week_10/week_10_clustering_analysis.py
+python Week_10/generate_week_10_clustering_figures.py
 ```
 
-The script searches the weekly folders from Week 01 through Week 10, parses the submitted input vectors and outputs, validates dimensions, calculates pairwise and nearest neighbour distances, performs conservative exploratory K means where the data permit, evaluates candidate partitions with silhouette score, and exports a cluster evidence table.
+The analysis script calculates pairwise and nearest neighbour distances, performs conservative exploratory K means where the data permit, evaluates candidate partitions with silhouette score and exports a cluster evidence table. The figure generator uses the exact Weeks 1 to 10 input and output history and creates the three clustering visualisations plus their source table.
 
-Expected output:
+Expected analytical outputs:
 
 - `Week_10/week_10_cluster_summary.csv`
-
-The numerical summary is intended to complement the Week 10 figures and narrative rather than replace direct inspection of the underlying observations.
+- `Week_10/week_10_clustering_figure_source.csv`
+- `Week_10/week_10_clustering_figure_1_cluster_separation.png`
+- `Week_10/week_10_clustering_figure_2_function5_cluster.png`
+- `Week_10/week_10_clustering_figure_3_decision_evidence.png`
 
 ## Limitations
 
