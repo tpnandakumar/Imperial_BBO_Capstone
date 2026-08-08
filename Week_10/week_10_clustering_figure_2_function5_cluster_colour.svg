@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#ffffff"/>
+<rect x="0" y="0" width="1200" height="86" fill="#0F2D4A"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#ffffff">Figure 2. Function 5 High-Value Cluster</text>
+<text x="600" y="67" text-anchor="middle" font-family="Arial" font-size="16" fill="#DCE8F2">Output against normalised distance from the Week 10 query</text>
+<rect x="110" y="130" width="990" height="430" fill="#ffffff" stroke="#CBD5E1"/>
+<rect x="110" y="130" width="330" height="430" fill="#DCFCE7" opacity="0.45"/>
+<g stroke="#E2E8F0" stroke-width="1"><line x1="110" y1="474" x2="1100" y2="474"/><line x1="110" y1="388" x2="1100" y2="388"/><line x1="110" y1="302" x2="1100" y2="302"/><line x1="110" y1="216" x2="1100" y2="216"/></g>
+<line x1="110" y1="560" x2="1100" y2="560" stroke="#334155" stroke-width="2"/><line x1="110" y1="130" x2="110" y2="560" stroke="#334155" stroke-width="2"/>
+<g font-family="Arial" font-size="13" fill="#475569"><text x="70" y="564">1000</text><text x="70" y="478">2000</text><text x="70" y="392">3000</text><text x="70" y="306">4000</text><text x="70" y="220">5000</text></g>
+<g font-family="Arial" font-size="13" fill="#475569"><text x="105" y="586">0.00</text><text x="285" y="586">0.02</text><text x="465" y="586">0.04</text><text x="645" y="586">0.06</text><text x="825" y="586">0.08</text><text x="1005" y="586">0.10</text></g>
+<polyline points="1055,524 713,447 565,401 448,367 333,328 264,307 142,277 119,270 110,267 110,267" fill="none" stroke="#94A3B8" stroke-width="3"/>
+<g stroke="#ffffff" stroke-width="2">
+<circle cx="1055" cy="524" r="11" fill="#440154"/><circle cx="713" cy="447" r="13" fill="#482878"/><circle cx="565" cy="401" r="15" fill="#3E4989"/><circle cx="448" cy="367" r="17" fill="#31688E"/><circle cx="333" cy="328" r="19" fill="#26828E"/><circle cx="264" cy="307" r="21" fill="#1F9E89"/><circle cx="142" cy="277" r="23" fill="#35B779"/><circle cx="119" cy="270" r="25" fill="#6DCD59"/><circle cx="110" cy="267" r="27" fill="#B4DE2C"/><circle cx="110" cy="267" r="20" fill="none" stroke="#0F2D4A" stroke-width="3"/>
+</g>
+<g font-family="Arial" font-size="12" font-weight="700" fill="#0F172A"><text x="1068" y="518">W1</text><text x="726" y="441">W2</text><text x="578" y="395">W3</text><text x="461" y="361">W4</text><text x="346" y="322">W5</text><text x="277" y="301">W6</text><text x="155" y="271">W7</text><text x="132" y="245">W8</text><text x="92" y="235">W9/W10</text></g>
+<text x="605" y="620" text-anchor="middle" font-family="Arial" font-size="16" font-weight="700" fill="#334155">Normalised Euclidean distance from the Week 10 Function 5 query</text>
+<text x="35" y="360" transform="rotate(-90 35 360)" font-family="Arial" font-size="16" font-weight="700" fill="#334155">Function 5 output</text>
+<rect x="130" y="145" width="240" height="44" rx="8" fill="#DCFCE7" stroke="#86EFAC"/><text x="250" y="172" text-anchor="middle" font-family="Arial" font-size="13" font-weight="700" fill="#166534">Tight high-value neighbourhood</text>
+<rect x="55" y="645" width="1090" height="84" rx="10" fill="#F1F5F9" stroke="#CBD5E1"/>
+<text x="75" y="672" font-family="Arial" font-size="14" font-weight="700" fill="#0F2D4A">Embedded caption</text>
+<text x="75" y="695" font-family="Arial" font-size="13" fill="#334155">Function 5 rose from 1415.876 in Week 1 to 4394.868 by Week 9. Week 10 repeated the same query and reproduced 4394.868 exactly.</text>
+<text x="75" y="716" font-family="Arial" font-size="13" fill="#334155">The later high outputs lie close to the Week 10 point, supporting cautious local exploitation while not proving that the global optimum has been reached.</text>
+</svg>
