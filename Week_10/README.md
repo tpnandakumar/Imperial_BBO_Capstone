@@ -4,6 +4,24 @@
 
 ### Week 10 Analysis
 
+## Assessment Summary
+
+Week 10 advances the documentation standard established in Week 09 by making the evidence trail more explicit. The round produced three improvements, four declines and one unchanged objective value. Function 5 repeated the Week 09 result of `4394.868042481448` at the identical submitted point, providing direct repeatability evidence for that exact query. Functions 2 and 3 improved, while the unsuccessful movements in Functions 4 and 6 provided negative evidence that changed the next search direction.
+
+The Week 10 record therefore distinguishes objective improvement, negative evidence and information gained without numerical improvement. This distinction is documented through explicit assumptions, validation, decision provenance and reproducibility checks so that an assessor can trace the reasoning from verified observations to the next query decision.
+
+## What changed since Week 09
+
+Week 09 established the detailed documentation framework. Week 10 retains that structure and adds a stronger audit layer:
+
+- an evidence and provenance matrix linking major claims to source observations;
+- an explicit reproducibility checklist;
+- a dedicated negative evidence and failed hypotheses record;
+- a decision provenance chain from Week 09 evidence through the Week 10 result to the verified Week 11 query;
+- clearer separation between direct observations, derived calculations and human supervised interpretation.
+
+These additions are methodological improvements in documentation and validation. They do not alter the historical Week 10 inputs, returned outputs or the chronology of the optimisation process.
+
 ## Documentation
 
 - [Datasheet for the Bayesian Black Box Optimisation Capstone Dataset](DATASHEET.md)
@@ -12,6 +30,9 @@
 - [Assumptions](ASSUMPTIONS.md)
 - [Validation Record](VALIDATION.md)
 - [Decision Card](DECISION_CARD.md)
+- [Evidence and Provenance Matrix](EVIDENCE_PROVENANCE.md)
+- [Reproducibility Checklist](REPRODUCIBILITY_CHECKLIST.md)
+- [Negative Evidence and Failed Hypotheses](NEGATIVE_EVIDENCE.md)
 - [Documentation Changelog](CHANGELOG.md)
 - [Research Note](RESEARCH_NOTE.md)
 
@@ -185,39 +206,4 @@ The Week 10 computational workflow uses two Python scripts.
 
 `week_10_analysis.py` validates the dimensions and bounds of the input vectors, reads the Week 09 and Week 10 results, calculates exact changes with `Decimal`, ranks the functions and exports `week_10_analysis_summary.csv`.
 
-`generate_week_10_figures.py` stores the verified historical outputs as exact strings, constructs the Week 09 to Week 10 comparison, exports `week_10_figure_data_summary.csv` and generates five analytical figures in the Week 10 folder. Decimal values are converted to floating point numbers only when required by Matplotlib for plotting. The stored CSV values remain unchanged.
-
-The scripts use a flat structure and do not create a separate figures directory. This keeps the Week 10 artefacts together and follows the established repository convention.
-
-## 12. Repository Files and Reproducibility
-
-The Week 10 folder contains the following assessment and reproducibility files:
-
-- `README.md`
-- [`DATASHEET.md`](DATASHEET.md)
-- [`MODEL_CARD.md`](MODEL_CARD.md)
-- [`DATASET.md`](DATASET.md)
-- [`ASSUMPTIONS.md`](ASSUMPTIONS.md)
-- [`VALIDATION.md`](VALIDATION.md)
-- [`DECISION_CARD.md`](DECISION_CARD.md)
-- [`CHANGELOG.md`](CHANGELOG.md)
-- [`RESEARCH_NOTE.md`](RESEARCH_NOTE.md)
-- `week_10_inputs.csv`
-- `week_10_results.csv`
-- `week_10_analysis_summary.csv`
-- `week_10_figure_data_summary.csv`
-- `week_10_analysis.py`
-- `generate_week_10_figures.py`
-
-The analysis can be reproduced from the repository root with:
-
-```bash
-python Week_10/week_10_analysis.py
-python Week_10/generate_week_10_figures.py
-```
-
-The analysis script requires `Week_09/week_09_results.csv` for the exact weekly comparison. The figure script uses the verified historical output series stored within the script and writes all generated files directly into `Week_10`.
-
-## 13. Conclusion
-
-Week 10 strengthened the evidence base for the remaining optimisation rounds. Function 2 and Function 3 improved, Function 5 reproduced its
+`generate_week_10_figures.py` stores the verified historical outputs as exact strings, constructs the Week 09 to Week 10 comparison, exports `week_10_figure_data_summary.csv` and generates five analytical figures in the Week 10 folder. Decimal values are converted to floating point numbers only when required by Matplotlib for plotting. The stored CSV values remain
