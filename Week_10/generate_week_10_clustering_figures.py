@@ -1,7 +1,7 @@
-"""Generate Week 10 clustering figures from exact Weeks 1 to 10 BBO history.
+"""Generate colour coded Week 10 clustering figures from the exact BBO history.
 
-Week 11 outputs are deliberately excluded. Week 11 query decisions are shown only
-as downstream decisions informed by Week 10 evidence.
+Only Weeks 1 to 10 are used as analytical evidence. Week 11 outputs are excluded.
+The authoritative history is read from PFRAMOS/data/recovered_exact_history.csv.
 """
 from pathlib import Path
 import numpy as np
@@ -10,98 +10,165 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
-OUTDIR = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[1]
+OUTDIR = ROOT / "Week_10"
+HISTORY = ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv"
+DPI = 300
 
-INPUTS = [
-[[0.74,0.74],[0.72,0.94],[0.53,0.64,0.25],[0.6,0.43,0.42,0.25],[0.21,0.87,0.9,0.9],[0.75,0.18,0.7,0.72,0.04],[0.05,0.5,0.25,0.22,0.42,0.74],[0.06,0.07,0.03,0.04,0.41,0.82,0.5,0.91]],
-[[0.3,0.3],[0.76,0.9],[0.75,0.25,0.75],[0.2,0.8,0.8,0.8],[0.18,0.9,0.95,0.95],[0.25,0.75,0.3,0.3,0.8],[0.08,0.55,0.3,0.25,0.45,0.78],[0.08,0.08,0.05,0.05,0.45,0.85,0.55,0.95]],
-[[0.6,0.6],[0.8,0.92],[0.2,0.8,0.2],[0.8,0.2,0.2,0.2],[0.17,0.92,0.97,0.97],[0.7,0.2,0.7,0.7,0.2],[0.1,0.58,0.32,0.27,0.47,0.8],[0.04,0.04,0.04,0.04,0.47,0.88,0.58,0.97]],
-[[0.7,0.7],[0.68,0.96],[0.85,0.15,0.85],[0.9,0.1,0.1,0.1],[0.16,0.94,0.98,0.98],[0.8,0.15,0.8,0.8,0.15],[0.06,0.52,0.28,0.24,0.44,0.76],[0.07,0.07,0.05,0.05,0.44,0.84,0.54,0.94]],
-[[0.45,0.45],[0.64,0.98],[0.9,0.1,0.9],[0.95,0.05,0.05,0.05],[0.15,0.96,0.99,0.99],[0.9,0.1,0.9,0.9,0.1],[0.04,0.48,0.26,0.22,0.42,0.74],[0.06,0.06,0.05,0.05,0.43,0.85,0.55,0.95]],
-[[0.5,0.5],[0.7,0.95],[0.95,0.05,0.95],[0.98,0.02,0.02,0.02],[0.14,0.97,0.995,0.995],[0.95,0.05,0.95,0.95,0.05],[0.05,0.5,0.25,0.2,0.4,0.75],[0.05,0.05,0.05,0.05,0.45,0.85,0.55,0.95]],
-[[0.35,0.7],[0.76,0.985],[0.25,0.85,0.3],[0.3,0.7,0.65,0.25],[0.12,0.99,0.999,0.999],[0.25,0.75,0.25,0.8,0.3],[0.05,0.52,0.24,0.18,0.41,0.77],[0.05,0.05,0.05,0.05,0.46,0.86,0.56,0.98]],
-[[0.35,0.7],[0.72,0.94],[0.26,0.86,0.29],[0.32,0.72,0.68,0.22],[0.12,0.995,0.9995,0.9995],[0.24,0.76,0.24,0.82,0.28],[0.06,0.5,0.25,0.22,0.42,0.74],[0.05,0.05,0.05,0.05,0.47,0.87,0.57,0.98]],
-[[0.35,0.7],[0.725,0.945],[0.255,0.855,0.295],[0.31,0.71,0.67,0.23],[0.12,0.997,0.9998,0.9998],[0.24,0.76,0.24,0.82,0.28],[0.058,0.495,0.248,0.218,0.425,0.742],[0.05,0.05,0.05,0.05,0.468,0.872,0.572,0.982]],
-[[0.45,0.65],[0.7,0.955],[0.28,0.875,0.315],[0.29,0.73,0.69,0.21],[0.12,0.997,0.9998,0.9998],[0.26,0.78,0.26,0.84,0.3],[0.06,0.5,0.25,0.22,0.43,0.74],[0.05,0.05,0.05,0.05,0.47,0.875,0.575,0.985]]
-]
-
-OUTPUTS = np.array([
-[6.854713532414845e-19,0.45494185399727516,-0.10183633971746164,-4.359874926582439,1415.8763939603884,-0.7001549808025808,1.3199939052019112,9.58024],
-[6.659572754640724e-23,0.41213721316888097,-0.1332555781557258,-23.120154471959825,2308.1487028593933,-2.0702463923015775,1.0696579739950232,9.5241],
-[0.025559285339829783,0.14098828808535324,-0.12787021171886992,-14.554028542475695,2840.9903787629305,-0.648848297397347,0.8966026942687082,9.44296],
-[1.4754580129542488e-07,0.5228458934672892,-0.06037987403160633,-22.55187651826871,3238.333368768757,-0.8733671274789931,1.1968303712356705,9.53944],
-[0.012779642669914939,0.28016822307722516,-0.11392206377710448,-27.44051496086922,3682.2110623386798,-1.073875453695542,1.3809299933612855,9.5113],
-[2.6752879910742468e-09,0.5712475315739602,-0.3071823694141529,-31.20347777578016,3922.7652233497042,-1.3792272680368016,1.3529491169887171,9.5148],
-[-1.4546199699251391e-58,0.2399291698606551,-0.09116928906376276,-10.745961383135121,4278.816638076986,-1.119713499832813,1.1543358123792982,9.49476],
-[-1.4546199699251391e-58,0.5672775862793291,-0.0991107637427902,-12.305008897187289,4359.384134322703,-1.1197178425911847,1.3346391663186332,9.47621],
-[-1.4546199699251391e-58,0.47297842839949866,-0.1156707106126581,-11.788939969158545,4394.868042481448,-1.1733030029888645,1.314307996450604,9.4709436],
-[2.8950706668499033e-23,0.5311818841205426,-0.08697581687486715,-13.483642655031158,4394.868042481448,-1.2283806967341901,1.285160161342515,9.4646525]
-], dtype=float)
-
-STRATEGIES = [
-"Exploit narrow peak","Local trust-region probe","Local refinement","Local recovery probe",
-"Boundary-directed probe","Best-basin recovery","Tight trust-region refinement","Exploit confirmed best"
-]
+FUNCTION_COLOURS = ["#2563EB", "#F59E0B", "#10B981", "#EF4444", "#8B5CF6", "#14B8A6", "#EC4899", "#64748B"]
+STATUS_COLOURS = {
+    "Explore": "#2563EB",
+    "Refine": "#16A34A",
+    "Exploit": "#15803D",
+    "Boundary test": "#D97706",
+    "Reassess": "#64748B",
+}
+DECISIONS = {
+    1: "Explore", 2: "Refine", 3: "Refine", 4: "Reassess",
+    5: "Exploit", 6: "Reassess", 7: "Refine", 8: "Boundary test",
+}
 
 
-def build_summary():
-    rows=[]
-    for f in range(8):
-        X=np.array([INPUTS[w][f] for w in range(10)],dtype=float)
-        y=OUTPUTS[:,f]
-        best_i=int(np.argmax(y)); norm=np.sqrt(X.shape[1])
-        d_best=np.linalg.norm(X[-1]-X[best_i])/norm
-        D=np.sqrt(((X[:,None,:]-X[None,:,:])**2).sum(axis=2))/norm
-        np.fill_diagonal(D,np.inf)
-        nn10=float(D[-1].min())
-        candidates=[]
-        for k in (2,3):
-            km=KMeans(n_clusters=k,random_state=42,n_init=50).fit(X)
-            candidates.append((silhouette_score(X,km.labels_),k,km.labels_))
-        sil,k,labels=max(candidates,key=lambda z:z[0])
-        rows.append({"Function":f"F{f+1}","Dimensions":X.shape[1],"Selected_k":k,
-                     "Silhouette":sil,"Best_week":best_i+1,"Week10_output":y[-1],
-                     "W10_to_best_norm_distance":d_best,"W10_nearest_neighbour_distance":nn10,
-                     "W10_same_cluster_as_best":bool(labels[-1]==labels[best_i]),
-                     "Week11_strategy":STRATEGIES[f]})
+def load_history():
+    df = pd.read_csv(HISTORY)
+    df = df[df["Week"].between(1, 10)].copy()
+    if len(df) != 80:
+        raise ValueError(f"Expected 80 Week 1 to 10 observations, found {len(df)}")
+    return df
+
+
+def input_matrix(df, function):
+    sub = df[df["Function"] == function].sort_values("Week")
+    dim = int(sub["Dimension"].iloc[0])
+    cols = [f"Input_{i}" for i in range(1, dim + 1)]
+    return sub, sub[cols].to_numpy(float)
+
+
+def build_summary(df):
+    rows = []
+    for f in range(1, 9):
+        sub, X = input_matrix(df, f)
+        y = sub["Output"].to_numpy(float)
+        candidates = []
+        for k in (2, 3):
+            km = KMeans(n_clusters=k, random_state=42, n_init=50).fit(X)
+            candidates.append((silhouette_score(X, km.labels_), k, km.labels_))
+        sil, k, labels = max(candidates, key=lambda z: z[0])
+        best = int(np.argmax(y))
+        norm = np.sqrt(X.shape[1])
+        distances = np.linalg.norm(X - X[-1], axis=1) / norm
+        nn = min(v for i, v in enumerate(distances) if i != len(distances) - 1)
+        rows.append({
+            "Function": f"F{f}",
+            "Dimensions": X.shape[1],
+            "Selected_k": k,
+            "Silhouette": sil,
+            "Best_week": int(sub.iloc[best]["Week"]),
+            "Week10_output": y[-1],
+            "W10_to_best_norm_distance": distances[best],
+            "W10_nearest_neighbour_distance": nn,
+            "W10_same_cluster_as_best": bool(labels[-1] == labels[best]),
+            "Decision": DECISIONS[f],
+        })
     return pd.DataFrame(rows)
 
 
+def save(fig, stem):
+    fig.savefig(OUTDIR / f"{stem}.png", dpi=DPI, bbox_inches="tight")
+    fig.savefig(OUTDIR / f"{stem}.svg", bbox_inches="tight")
+    plt.close(fig)
+
+
+def figure_1(summary):
+    fig, ax = plt.subplots(figsize=(12, 7.2))
+    bars = ax.bar(range(8), summary["Silhouette"], color=FUNCTION_COLOURS)
+    ax.set_xticks(range(8), [f"F{i}" for i in range(1, 9)])
+    ax.set_ylabel("Silhouette score")
+    ax.set_xlabel("BBO function")
+    ax.set_title("Figure 1. Exploratory Cluster Separation Across Functions, Weeks 1 to 10", weight="bold")
+    ax.grid(axis="y", alpha=0.22)
+    for i, bar in enumerate(bars):
+        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.012,
+                f'{summary.loc[i, "Silhouette"]:.3f}\nk={int(summary.loc[i, "Selected_k"])}',
+                ha="center", va="bottom", fontsize=9)
+    fig.text(0.05, 0.018,
+             "Embedded caption: Each function is analysed independently in its own input space. Bars show the best exploratory K-means separation for k = 2 or 3. Higher silhouette scores indicate clearer separation between sampled neighbourhoods, but ten observations per function remain sparse and do not establish the global structure of the hidden objective.",
+             ha="left", va="bottom", fontsize=9, wrap=True)
+    fig.subplots_adjust(bottom=0.20)
+    save(fig, "week_10_clustering_figure_1_cluster_separation_colour")
+
+
+def figure_2(df):
+    sub, X = input_matrix(df, 5)
+    y = sub["Output"].to_numpy(float)
+    dist = np.linalg.norm(X - X[-1], axis=1) / np.sqrt(X.shape[1])
+    fig, ax = plt.subplots(figsize=(12, 7.2))
+    colours = plt.cm.viridis(np.linspace(0.12, 0.92, 10))
+    sizes = 90 + 260 * (y - y.min()) / (y.max() - y.min())
+    ax.scatter(dist, y, s=sizes, c=colours, edgecolor="white", linewidth=1.2, zorder=3)
+    ax.plot(dist, y, color="#94A3B8", alpha=0.45, zorder=1)
+    for week, dx, yy in zip(sub["Week"], dist, y):
+        ax.annotate(f"W{int(week)}", (dx, yy), xytext=(6, 5), textcoords="offset points", fontsize=9, weight="bold")
+    ax.axvspan(0, 0.04, color="#DCFCE7", alpha=0.60, label="Tight Week 9 to 10 neighbourhood")
+    ax.set_xlabel("Normalised Euclidean distance from the Week 10 Function 5 query")
+    ax.set_ylabel("Function 5 output")
+    ax.set_title("Figure 2. Function 5 High-Value Cluster Near the Week 10 Boundary Region", weight="bold")
+    ax.grid(alpha=0.22)
+    ax.legend(loc="lower right")
+    fig.text(0.05, 0.018,
+             "Embedded caption: Function 5 increased from 1415.876 in Week 1 to 4394.868 by Week 9. Week 10 repeated the Week 9 query 0.120000, 0.997000, 0.999800, 0.999800 and reproduced 4394.868 exactly. Later high outputs are concentrated close to the Week 10 point, supporting cautious local exploitation without claiming that the global optimum has been reached.",
+             ha="left", va="bottom", fontsize=9, wrap=True)
+    fig.subplots_adjust(bottom=0.21)
+    save(fig, "week_10_clustering_figure_2_function5_cluster_colour")
+
+
+def figure_3(summary):
+    fig, ax = plt.subplots(figsize=(14.5, 7.8))
+    ax.axis("off")
+    rows = []
+    for _, r in summary.iterrows():
+        rows.append([
+            r["Function"], f'{int(r["Dimensions"])}D', f'{r["Week10_output"]:.6g}',
+            f'W{int(r["Best_week"])}', f'{r["W10_to_best_norm_distance"]:.3f}',
+            f'{r["W10_nearest_neighbour_distance"]:.3f}',
+            "Yes" if r["W10_same_cluster_as_best"] else "No", r["Decision"]
+        ])
+    headers = ["Function", "Dim.", "Week 10 output", "Best week", "W10 to best\nnorm. distance",
+               "W10 nearest\nneighbour", "Same cluster\nas best", "Week 11 decision"]
+    table = ax.table(cellText=rows, colLabels=headers, cellLoc="center", colLoc="center",
+                     colWidths=[.07, .06, .12, .08, .15, .14, .12, .18], loc="center")
+    table.auto_set_font_size(False)
+    table.set_fontsize(9)
+    table.scale(1, 1.9)
+    for c in range(len(headers)):
+        table[(0, c)].set_facecolor("#0F2D4A")
+        table[(0, c)].set_text_props(color="white", weight="bold")
+    for i, r in enumerate(summary.itertuples(), start=1):
+        table[(i, 0)].set_facecolor(FUNCTION_COLOURS[i - 1])
+        table[(i, 0)].set_text_props(color="white", weight="bold")
+        table[(i, 7)].set_facecolor(STATUS_COLOURS[r.Decision])
+        table[(i, 7)].set_text_props(color="white", weight="bold")
+        for c in range(1, 7):
+            table[(i, c)].set_facecolor("#F8FAFC" if i % 2 else "#EEF2F7")
+    ax.set_title("Figure 3. Week 10 Cluster Evidence to Week 11 Optimisation Decision", weight="bold", pad=20)
+    ax.text(0.02, 0.105,
+            "Decision colours: green = refine or exploit; amber = boundary testing; blue = continued exploration; grey = reassess or widen the search.",
+            transform=ax.transAxes, fontsize=9.5, weight="bold")
+    ax.text(0.02, 0.035,
+            "Embedded caption: This table links clustering evidence available at the end of Week 10 to the next-query strategy. Distances are normalised by the square root of dimensionality. Week 11 outputs are excluded, so the decision column records a downstream choice rather than retrospective evidence.",
+            transform=ax.transAxes, fontsize=9, wrap=True)
+    save(fig, "week_10_clustering_figure_3_decision_evidence_colour")
+
+
 def main():
-    summary=build_summary()
-    summary.to_csv(OUTDIR/"week_10_clustering_figure_source.csv",index=False)
+    df = load_history()
+    summary = build_summary(df)
+    summary.to_csv(OUTDIR / "week_10_clustering_figure_source.csv", index=False)
+    figure_1(summary)
+    figure_2(df)
+    figure_3(summary)
+    print("Generated three verified colour clustering figures. Week 11 outputs were not used.")
 
-    fig,ax=plt.subplots(figsize=(11,6.5))
-    x=np.arange(1,9); bars=ax.bar(x,summary["Silhouette"])
-    ax.set_xticks(x,summary["Function"]); ax.set_xlabel("Function"); ax.set_ylabel("Silhouette score")
-    ax.set_title("Figure 1. Exploratory Cluster Separation by Function, Weeks 1 to 10")
-    ax.grid(axis="y",alpha=0.25)
-    for b,k,d in zip(bars,summary["Selected_k"],summary["Dimensions"]):
-        ax.text(b.get_x()+b.get_width()/2,b.get_height()+0.015,f"k={int(k)}\n{int(d)}D",ha="center",va="bottom",fontsize=9)
-    fig.tight_layout(); fig.savefig(OUTDIR/"week_10_clustering_figure_1_cluster_separation.png",dpi=300,bbox_inches="tight"); plt.close(fig)
-
-    X5=np.array([INPUTS[w][4] for w in range(10)],dtype=float); y5=OUTPUTS[:,4]
-    dist=np.linalg.norm(X5-X5[-1],axis=1)/np.sqrt(X5.shape[1])
-    sizes=80+260*(y5-y5.min())/(y5.max()-y5.min())
-    fig,ax=plt.subplots(figsize=(11,6.5)); ax.scatter(dist,y5,s=sizes,alpha=0.8)
-    for w,(dx,yy) in enumerate(zip(dist,y5),1): ax.annotate(f"W{w}",(dx,yy),xytext=(5,5),textcoords="offset points",fontsize=9)
-    ax.set_xlabel("Normalised Euclidean distance from the Week 10 Function 5 query"); ax.set_ylabel("Function 5 output")
-    ax.set_title("Figure 2. Function 5 High-Value Cluster Tightens Near the Week 10 Boundary Region"); ax.grid(alpha=0.25)
-    fig.tight_layout(); fig.savefig(OUTDIR/"week_10_clustering_figure_2_function5_cluster.png",dpi=300,bbox_inches="tight"); plt.close(fig)
-
-    t=summary[["Function","Best_week","Week10_output","W10_to_best_norm_distance","W10_nearest_neighbour_distance","W10_same_cluster_as_best","Week11_strategy"]].copy()
-    t["Week10_output"]=t["Week10_output"].map(lambda v:f"{v:.6g}")
-    t["W10_to_best_norm_distance"]=t["W10_to_best_norm_distance"].map(lambda v:f"{v:.3f}")
-    t["W10_nearest_neighbour_distance"]=t["W10_nearest_neighbour_distance"].map(lambda v:f"{v:.3f}")
-    t["W10_same_cluster_as_best"]=t["W10_same_cluster_as_best"].map({True:"Yes",False:"No"})
-    t.columns=["Function","Best week","Week 10 output","W10 to best norm. distance","W10 nearest neighbour","Same cluster as best","Week 11 decision"]
-    fig,ax=plt.subplots(figsize=(14,6.5)); ax.axis("off")
-    tab=ax.table(cellText=t.values,colLabels=t.columns,cellLoc="center",colLoc="center",loc="center",colWidths=[0.07,0.08,0.12,0.14,0.12,0.10,0.29])
-    tab.auto_set_font_size(False); tab.set_fontsize(9); tab.scale(1,1.8)
-    ax.set_title("Figure 3. Week 10 Cluster Evidence and the Week 11 Query Decision",pad=18,fontsize=15)
-    fig.tight_layout(); fig.savefig(OUTDIR/"week_10_clustering_figure_3_decision_evidence.png",dpi=300,bbox_inches="tight"); plt.close(fig)
-
-    print("Week 10 clustering figures generated. Week 11 outputs were not used.")
 
 if __name__ == "__main__":
     main()
