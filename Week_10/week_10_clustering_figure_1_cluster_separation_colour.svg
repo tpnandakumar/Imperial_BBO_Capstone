@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+<rect width="1200" height="760" fill="#ffffff"/>
+<rect x="0" y="0" width="1200" height="86" fill="#0F2D4A"/>
+<text x="600" y="38" text-anchor="middle" font-family="Arial" font-size="27" font-weight="700" fill="#ffffff">Figure 1. Exploratory Cluster Separation Across Functions</text>
+<text x="600" y="67" text-anchor="middle" font-family="Arial" font-size="16" fill="#DCE8F2">Weeks 1 to 10 | exploratory K-means in each function's own input space</text>
+<line x1="110" y1="570" x2="1110" y2="570" stroke="#334155" stroke-width="2"/>
+<line x1="110" y1="130" x2="110" y2="570" stroke="#334155" stroke-width="2"/>
+<g font-family="Arial" font-size="13" fill="#475569">
+<text x="72" y="574">0.0</text><text x="72" y="464">0.2</text><text x="72" y="354">0.4</text><text x="72" y="244">0.6</text><text x="72" y="134">0.8</text>
+</g>
+<g stroke="#CBD5E1" stroke-width="1"><line x1="110" y1="460" x2="1110" y2="460"/><line x1="110" y1="350" x2="1110" y2="350"/><line x1="110" y1="240" x2="1110" y2="240"/><line x1="110" y1="130" x2="1110" y2="130"/></g>
+<g font-family="Arial" text-anchor="middle">
+<rect x="145" y="248" width="80" height="322" rx="5" fill="#2563EB"/><text x="185" y="236" font-size="14" font-weight="700">0.586</text><text x="185" y="594" font-size="16" font-weight="700">F1</text><text x="185" y="615" font-size="12">k=3</text>
+<rect x="265" y="321" width="80" height="249" rx="5" fill="#F59E0B"/><text x="305" y="309" font-size="14" font-weight="700">0.453</text><text x="305" y="594" font-size="16" font-weight="700">F2</text><text x="305" y="615" font-size="12">k=2</text>
+<rect x="385" y="114" width="80" height="456" rx="5" fill="#10B981"/><text x="425" y="103" font-size="14" font-weight="700">0.829</text><text x="425" y="594" font-size="16" font-weight="700">F3</text><text x="425" y="615" font-size="12">k=2</text>
+<rect x="505" y="192" width="80" height="378" rx="5" fill="#EF4444"/><text x="545" y="180" font-size="14" font-weight="700">0.687</text><text x="545" y="594" font-size="16" font-weight="700">F4</text><text x="545" y="615" font-size="12">k=2</text>
+<rect x="625" y="253" width="80" height="317" rx="5" fill="#8B5CF6"/><text x="665" y="241" font-size="14" font-weight="700">0.577</text><text x="665" y="594" font-size="16" font-weight="700">F5</text><text x="665" y="615" font-size="12">k=2</text>
+<rect x="745" y="159" width="80" height="411" rx="5" fill="#14B8A6"/><text x="785" y="147" font-size="14" font-weight="700">0.748</text><text x="785" y="594" font-size="16" font-weight="700">F6</text><text x="785" y="615" font-size="12">k=3</text>
+<rect x="865" y="224" width="80" height="346" rx="5" fill="#EC4899"/><text x="905" y="212" font-size="14" font-weight="700">0.630</text><text x="905" y="594" font-size="16" font-weight="700">F7</text><text x="905" y="615" font-size="12">k=2</text>
+<rect x="985" y="280" width="80" height="290" rx="5" fill="#64748B"/><text x="1025" y="268" font-size="14" font-weight="700">0.528</text><text x="1025" y="594" font-size="16" font-weight="700">F8</text><text x="1025" y="615" font-size="12">k=3</text>
+</g>
+<text x="35" y="360" transform="rotate(-90 35 360)" font-family="Arial" font-size="16" font-weight="700" fill="#334155">Silhouette score</text>
+<rect x="55" y="645" width="1090" height="84" rx="10" fill="#F1F5F9" stroke="#CBD5E1"/>
+<text x="75" y="672" font-family="Arial" font-size="14" font-weight="700" fill="#0F2D4A">Embedded caption</text>
+<text x="75" y="695" font-family="Arial" font-size="13" fill="#334155">Each function is analysed independently. Higher silhouette scores indicate clearer separation between sampled neighbourhoods.</text>
+<text x="75" y="716" font-family="Arial" font-size="13" fill="#334155">With only ten observations per function, these clusters guide exploration and refinement but do not establish global function structure.</text>
+</svg>
