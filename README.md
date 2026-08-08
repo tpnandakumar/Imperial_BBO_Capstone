@@ -10,6 +10,13 @@ Imperial College Business School
 Black-Box Optimisation Capstone Portfolio for the Imperial College Business School Artificial Intelligence and Machine Learning Programme.
 
 ---
+## Assessment Navigation
+
+The core assessed work in this repository is contained in the weekly BBO folders, experiment records, analytical code, notebooks, model documentation and supporting reproducibility material. The `PGC` and `PFRAMOS` directories are extended research streams that developed from questions raised during the capstone. They supplement the assessed work but do not replace it.
+
+For a detailed explanation of their relationship to the capstone, see [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
+
+---
 ## Module 21 and Week 09 Documentation
 
 Module 21 corresponds to Week 09 of the BBO capstone. The required assignment documents are linked below:
@@ -28,6 +35,19 @@ The challenge mirrors many real-world machine learning problems where systems ar
 Throughout the capstone, optimisation decisions evolve from exploratory sampling towards increasingly data-driven approaches incorporating concepts from Bayesian optimisation, regression modelling, uncertainty estimation and Support Vector Machines (SVMs).
 
 This repository serves as both a project archive and a technical portfolio documenting the development of optimisation strategies across multiple iterations of the challenge.
+
+---
+## Extended Research and Validation
+
+The capstone generated further questions about reliability, robustness, validation and the assessment of optimisation decisions over time. Two research streams developed from those questions.
+
+**PGC** records work on validation and experimental checking, including executable experiments, validation protocols and formal verification workflows. Its relevance to the capstone is the attempt to strengthen confidence in computational behaviour through explicit and reproducible checks.
+
+**PFRAMOS** records broader work on historical analysis, candidate comparison, walk forward evaluation and structured experimental investigation. Its relevance here is the examination of optimisation behaviour across repeated observations rather than judging a strategy from a single returned value.
+
+Both streams subsequently developed beyond the immediate requirements of the Imperial BBO assignment. They are retained as supplementary research arising from the capstone. The weekly BBO submissions and returned competition outputs remain the authoritative evidence for the assessed optimisation challenge.
+
+[Read the full scope and limitations of the extended research](EXTENDED_RESEARCH_AND_VALIDATION.md).
 
 ---
 ## Real-World Relevance
@@ -240,26 +260,22 @@ As additional observations become available, optimisation decisions can become i
 
 ## Repository Structure
 
-```bash
+The repository contains the core weekly BBO record alongside clearly identified supplementary research streams. The weekly folders and experiment records should be treated as the primary assessment path.
+
+```text
 Imperial_BBO_Capstone/
 |
 |-- README.md
-|-- data/
-|-- figures/
-|-- results/
-|-- reports/
-|-- references/
-|
+|-- EXTENDED_RESEARCH_AND_VALIDATION.md
+|-- Experiments/
 |-- Week_01/
 |-- Week_02/
-|-- Week_03/
-|
-|-- notebooks/
-|-- optimisation_logs/
-|-- visualisations/
-|
-`-- docs/
+|-- ...
+|-- Week_11/
+|-- PGC/        supplementary research arising from the capstone
+`-- PFRAMOS/    supplementary research arising from the capstone
 ```
+
 ## References
 
 Imperial College Business School. Artificial Intelligence and Machine Learning Programme.
