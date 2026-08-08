@@ -4,6 +4,13 @@
 
 ### Week 10 Analysis
 
+## Documentation
+
+- [Datasheet for the Bayesian Black Box Optimisation Capstone Dataset](DATASHEET.md)
+- [Model Card for the Bayesian Black Box Optimisation Workflow](MODEL_CARD.md)
+
+The submitted inputs and returned results remain the authoritative numerical record for Week 10.
+
 ## Contents
 
 1. Introduction
@@ -181,6 +188,8 @@ The scripts use a flat structure and do not create a separate figures directory.
 The Week 10 folder contains the following core files:
 
 - `README.md`
+- [`DATASHEET.md`](DATASHEET.md)
+- [`MODEL_CARD.md`](MODEL_CARD.md)
 - `week_10_inputs.csv`
 - `week_10_results.csv`
 - `week_10_analysis_summary.csv`
