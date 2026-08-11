@@ -6,7 +6,7 @@ The core of this repository documents the Imperial Bayesian Black Box Optimisati
 
 During the capstone, additional questions arose about how optimisation decisions could be tested more rigorously, how computational behaviour could be validated, and how candidate selection could be examined beyond a single returned objective value. These questions led to two extended research streams, PGC and PFRAMOS.
 
-The extended work is retained here because it records the development path that arose from the capstone. It should be read as supplementary research and validation, not as a substitute for the core BBO submission.
+The extended work records research and validation that developed from the capstone and is presented separately from the core BBO submission.
 
 ## PGC
 
@@ -22,7 +22,7 @@ PFRAMOS developed as a broader experimental framework for examining optimisation
 
 Within the context of this capstone, its relevance lies in the attempt to examine optimisation decisions across time rather than judging a query only by its immediate returned value. Historical trajectories, candidate comparison and repeated validation provide a wider perspective on robustness and strategy selection.
 
-PFRAMOS subsequently developed beyond the immediate requirements of the capstone. Material concerned with broader architecture, training, publication planning and later research directions should therefore be understood as extended work arising from the project rather than assessed BBO requirements.
+PFRAMOS subsequently developed beyond the immediate requirements of the capstone. Material concerned with broader architecture, training, publication planning and later research directions forms part of the extended research arising from the project rather than the assessed BBO requirements.
 
 ## Relationship to the assessed capstone
 
@@ -48,9 +48,9 @@ The extended research does not alter the submitted BBO results and is not presen
 
 ## Evidence and limitations
 
-The presence of an experiment, workflow or research proposal does not by itself establish that a method is superior to Bayesian optimisation or to another optimisation strategy. Claims should be limited to what the corresponding experiment and recorded results support.
+The presence of an experiment, workflow or research proposal does not by itself establish that a method is superior to Bayesian optimisation or to another optimisation strategy. The corresponding experiment and recorded results define the evidence available for each claim.
 
-Similarly, later PGC and PFRAMOS developments should not be interpreted retrospectively as methods used in earlier BBO rounds unless the relevant weekly documentation explicitly records their use. This distinction preserves the chronology of the capstone and separates observed results from subsequent methodological development.
+Later PGC and PFRAMOS developments are identified separately from the methods recorded in the weekly BBO rounds. This distinction preserves the chronology of the capstone and separates observed results from subsequent methodological development.
 
 ## Why the extended work is retained
 
