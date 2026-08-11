@@ -1,110 +1,57 @@
 # Imperial BBO Capstone
----
-## Author
 
-Dr Nandakumar Theekkootu Pisharam
+## Bayesian Black Box Optimisation Portfolio
 
-Consultant Neurologist
-Imperial College Business School
+**Author:** Dr Nandakumar Theekkootu Pisharam  
+**Programme:** Imperial College Business School Artificial Intelligence and Machine Learning Programme  
+**Repository status:** Public  
+**Default branch:** `main`
 
-Black-Box Optimisation Capstone Portfolio for the Imperial College Business School Artificial Intelligence and Machine Learning Programme.
+## Assessment navigation
 
----
-## Assessment Navigation
+The assessed capstone work is organised through the weekly BBO folders. Each completed round preserves the submitted inputs, returned outputs, analysis, figures and the reasoning used to select the next queries.
 
-The core assessed work in this repository is contained in the weekly BBO folders, experiment records, analytical code, notebooks, model documentation and supporting reproducibility material. The `PGC` and `PFRAMOS` directories are extended research streams that developed from questions raised during the capstone. They supplement the assessed work but do not replace it.
+Key assessment links:
 
-For a detailed explanation of their relationship to the capstone, see [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
+- [Week 09: Module 21 analysis](Week_09/README.md)
+- [Week 09 Datasheet](Week_09/DATASHEET.md)
+- [Week 09 Model Card](Week_09/MODEL_CARD.md)
+- [Week 10: Component 22.1 clustering and strategy refinement](Week_10/README.md)
+- [Week 11: latest completed optimisation round](Week_11/README.md)
 
----
-## Module 21 and Week 09 Documentation
+The `PGC` and `PFRAMOS` directories contain supplementary research that developed from questions raised during the capstone. They support the project but do not replace the weekly assessed record. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
 
-Module 21 corresponds to Week 09 of the BBO capstone. The required assignment documents are linked below:
+## Project overview
 
-- [Datasheet for the Bayesian Black Box Optimisation Capstone Dataset](Week_09/DATASHEET.md)
-- [Model Card for the Bayesian Black Box Optimisation Workflow](Week_09/MODEL_CARD.md)
-- [Week 09 analysis and supporting evidence](Week_09/README.md)
+The challenge contains eight hidden objective functions with dimensionalities ranging from two to eight variables. One query vector is submitted for each function during every optimisation round. Because the mathematical form of each function is unknown, decisions are based on previously observed inputs and returned objective values.
 
----
-## Project Overview
+The repository preserves the full optimisation history rather than presenting only the best final results. Unsuccessful queries are retained because they also provide evidence. A deterioration can rule out a direction, a repeated output can support stability, and a return to an earlier strong point can test reproducibility.
 
-This repository documents my work on the Imperial College Business School Black-Box Optimisation (BBO) Capstone Challenge. The project focuses on optimising eight unknown objective functions with varying dimensionality while operating under strict query constraints. Unlike traditional optimisation problems, the mathematical structure of the objective functions remains hidden, requiring optimisation decisions to be made using only information gathered from previous observations.
+The strategy has developed gradually from broad exploration towards function specific refinement, recovery, controlled exploitation and boundary testing.
 
-The challenge mirrors many real-world machine learning problems where systems are expensive to evaluate, poorly understood, or analytically intractable. Rather than relying on explicit equations or gradients, optimisation must be performed through iterative experimentation, evidence-based reasoning and progressive refinement of query selection strategies.
+## Current position
 
-Throughout the capstone, optimisation decisions evolve from exploratory sampling towards increasingly data-driven approaches incorporating concepts from Bayesian optimisation, regression modelling, uncertainty estimation and Support Vector Machines (SVMs).
+Week 11 is the latest completed and fully documented round. Every function improved relative to Week 10.
 
-This repository serves as both a project archive and a technical portfolio documenting the development of optimisation strategies across multiple iterations of the challenge.
+| Function | Week 11 output | Interpretation |
+| --- | ---: | --- |
+| F1 | 0.025559285339829783 | Recovered the confirmed narrow positive peak |
+| F2 | 0.5848554940277205 | New best through a local probe |
+| F3 | -0.06542982421105416 | Improved through local refinement |
+| F4 | -4.868852987697114 | Strong recovery after the Week 10 decline |
+| F5 | 4411.0387356061765 | New verified best near the boundary |
+| F6 | -0.7268715077444687 | Recovered towards the strongest known basin |
+| F7 | 1.3579108517237013 | Improved through tight local refinement |
+| F8 | 9.58024 | Returned to the best verified value |
 
----
-## Extended Research and Validation
+These results do not prove global optimality. They show that the Week 11 function specific decisions improved on the immediately preceding round.
 
-The capstone generated further questions about reliability, robustness, validation and the assessment of optimisation decisions over time. Two research streams developed from those questions.
+Week 12 should only be added once its submitted inputs and returned outputs have been verified.
 
-**PGC** records work on validation and experimental checking, including executable experiments, validation protocols and formal verification workflows. Its relevance to the capstone is the attempt to strengthen confidence in computational behaviour through explicit and reproducible checks.
-
-**PFRAMOS** records broader work on historical analysis, candidate comparison, walk forward evaluation and structured experimental investigation. Its relevance here is the examination of optimisation behaviour across repeated observations rather than judging a strategy from a single returned value.
-
-Both streams subsequently developed beyond the immediate requirements of the Imperial BBO assignment. They are retained as supplementary research arising from the capstone. The weekly BBO submissions and returned competition outputs remain the authoritative evidence for the assessed optimisation challenge.
-
-[Read the full scope and limitations of the extended research](EXTENDED_RESEARCH_AND_VALIDATION.md).
-
----
-## Real-World Relevance
-
-Black-box optimisation is widely used across machine learning, engineering, robotics, finance, pharmaceutical development and healthcare. Many practical optimisation problems involve systems whose underlying mathematical relationships are unknown, computationally expensive to evaluate, or inaccessible to direct analytical methods.
-
-Applications include:
-
-- Hyperparameter optimisation of machine learning models
-- Reinforcement learning policy optimisation
-- Drug discovery and molecular design
-- Engineering design optimisation
-- Resource allocation and scheduling
-- Clinical decision-support systems
-
-As a consultant neurologist with an interest in healthcare artificial intelligence, the concepts explored within this project have direct relevance to future work involving referral triage systems, diagnostic support tools and optimisation of healthcare resources under uncertainty.
-
----
-
-## Problem Statement
-
-The challenge consists of eight independent black-box functions ranging from two to eight dimensions. The mathematical form of each function is hidden from participants.
-
-Each optimisation round requires the submission of one query point per function. Following evaluation, the optimisation platform returns an objective value representing the quality of the selected query location.
-
-The objective is to maximise performance while operating under conditions of uncertainty, limited observations and restricted query budgets.
-
-Key challenges include:
-
-- Unknown response surfaces
-- Limited sampling opportunities
-- High-dimensional search spaces
-- Potential local optima
-- Absence of gradient information
-- Uncertainty regarding feature interactions
-
-Success depends on progressively improving query selection using evidence gathered from previous optimisation rounds.
-
----
-## Inputs and Outputs
-
-### Input Format
-
-Each function accepts a vector of values constrained between 0 and 1. Inputs are submitted to six decimal places.
-
-Example:
-
-```text
-0.600000-0.600000
-```
----
-### Function Dimensionality
-
-The challenge contains eight functions ranging from two to eight dimensions.
+## Function dimensionality
 
 | Function | Dimensions |
-|-----------|-----------|
+| --- | ---: |
 | Function 1 | 2 |
 | Function 2 | 2 |
 | Function 3 | 3 |
@@ -114,174 +61,61 @@ The challenge contains eight functions ranging from two to eight dimensions.
 | Function 7 | 6 |
 | Function 8 | 8 |
 
-Increasing dimensionality expands the search space and increases optimisation complexity.
+Every coordinate lies between 0 and 1 and is submitted to six decimal places.
 
-### Output Format
+## Strategy framework
 
-Each submitted query returns a numerical objective value.
+Later rounds use four broad actions rather than applying one treatment to every function:
 
-Example:
+- **Explore:** move to a meaningfully different region when earlier observations remain uninformative.
+- **Refine:** make controlled local changes where evidence supports a productive neighbourhood.
+- **Reassess or recover:** change direction after deterioration or move back towards a stronger historical basin.
+- **Exploit or boundary test:** stay close to a well supported region while testing whether further improvement remains available.
 
-```text
-2308.148
-```
----
-These outputs provide the only information available about function behaviour and guide future optimisation decisions.
+Academic feedback also led to clearer checks for excessive exploitation. Later rounds consider plateau length, diminishing improvement, repeated local concentration, material deterioration, boundary concentration and weak wider search space coverage before continuing to tighten around a strong region.
 
----
-## Challenge Objectives
+## Module 21: transparency and interpretability
 
-### Primary Goal
+Module 21 corresponds to Week 09. The required documentation is stored separately so that the dataset and optimisation workflow can be reviewed directly.
 
-The primary objective is to maximise the output returned by each black-box function.
+- [Datasheet](Week_09/DATASHEET.md)
+- [Model Card](Week_09/MODEL_CARD.md)
+- [Week 09 supporting analysis](Week_09/README.md)
 
-### Constraints
+The Datasheet records provenance, composition, collection, preprocessing, quality assurance, bias, limitations, transparency and maintenance. The Model Card records the workflow, inputs, outputs, performance, assumptions, failure modes, human oversight and reproducibility, including an F1 to F8 performance summary and explicit workflow versioning.
 
-Key constraints include:
+## Component 22.1: clustering lens
 
-- Unknown response surfaces
-- Limited observations
-- One query per function per round
-- No gradient information
-- Potential local optima
-- High-dimensional search spaces
+[Week 10](Week_10/README.md) records the clustering based reflection used to prepare the Week 11 query set. The analysis does not claim statistically validated clusters from sparse data. It uses recurring local regions, distance between queries, stability of neighbouring outputs and boundary behaviour as practical cues.
 
-### Success Criteria
+The Week 10 documentation also records why weaker directions were stopped rather than continued automatically.
 
-Success depends on progressively improving query quality while maintaining an effective balance between exploration and exploitation.
+## Weekly record
 
----
-## Optimisation Timeline
+| Round | Documentation |
+| --- | --- |
+| Week 01 | [README](Week_01/README.md) |
+| Week 02 | [README](Week_02/README.md) |
+| Week 03 | [README](Week_03/README.md) |
+| Week 04 | [README](Week_04/README.md) |
+| Week 05 | [README](Week_05/README.md) |
+| Week 06 | [README](Week_06/README.md) |
+| Week 07 | [README](Week_07/README.md) |
+| Week 08 | [README](Week_08/README.md) |
+| Week 09 | [README](Week_09/README.md) |
+| Week 10 | [README](Week_10/README.md) |
+| Week 11 | [README](Week_11/README.md) |
 
-### Week 1 - Baseline Exploration
+Earlier weekly documents are preserved as historical records. They show how the reasoning changed over time and should not be rewritten simply to make the earlier strategy appear more advanced than it was at the time.
 
-The first optimisation round focused on broad exploration to establish baseline behaviour across all functions.
+## Reproducibility and evidence
 
-### Week 2 - Exploration-Exploitation Balancing
+Raw submitted inputs and returned outputs remain the authoritative numerical record. Analysis scripts, CSV summaries, figures, rankings and strategy labels are derived material and are kept separate from those source observations.
 
-Results revealed substantial variation between functions. Strong-performing regions became candidates for exploitation, while weaker-performing functions required additional exploration.
+Later rounds add stronger evidence trails through validation records, assumptions, decision cards, provenance material and reproducibility checks where relevant.
 
-### Week 3 - Evidence based Query Selection
+## Academic feedback and continuous improvement
 
-Query selection became increasingly evidence based. Previous observations informed future sampling decisions, reflecting a transition from heuristic exploration towards model-guided optimisation.
----
+Academic feedback has been incorporated into later work rather than used to rewrite the historical record. The main changes include more concise comparisons between functions, clearer differences between F1 to F8, explicit recognition of adaptive sampling bias, stronger workflow versioning, concise performance summaries and clearer triggers for detecting plateaux, diminishing returns and excessive local concentration.
 
-## Technical Approach
-
-### Bayesian Optimisation Concepts
-
-The challenge naturally aligns with Bayesian optimisation principles, where observations collected during previous iterations guide future query selection. Rather than relying on exhaustive search, Bayesian optimisation uses prior information and observed results to identify promising regions of the search space.
-
-### Exploration and Exploitation
-
-Exploration involves sampling uncertain or previously untested regions of the search space. Exploitation focuses on refining regions that have already demonstrated strong performance. Effective optimisation requires a balance between these competing objectives.
-
-### Support Vector Machines (SVMs)
-
-Support Vector Machines could potentially classify regions of the search space into high-performing and lower-performing zones. Soft-margin SVMs allow for uncertainty and noisy observations, while kernel SVMs can model non-linear decision boundaries. These techniques may become increasingly useful as the dataset grows.
-
----
-
-## Current Results
-
-The optimisation process has revealed substantial variation between functions. Some functions demonstrated stable positive performance, while others continued to exhibit weak or negative responses despite exploration of alternative regions.
-
-### Performance Snapshot (Week 2)
-
-| Function | Output | Observation |
-|-----------|-----------|-------------|
-| Function 1 | ~0 | Near-zero response |
-| Function 2 | 0.412 | Stable positive response |
-| Function 3 | -0.133 | Weak-performing region |
-| Function 4 | -23.120 | Significant deterioration |
-| Function 5 | 2308.149 | Strongest performer |
-| Function 6 | -2.070 | Continued decline |
-| Function 7 | 1.070 | Moderate positive response |
-| Function 8 | 9.524 | Stable high-performing region |
-
----
-
-## Visualisation Gallery
-
-Figure 1 - Function Performance Dashboard
-
-[Insert Performance Snapshot Infographic]
-
-Figure 2 - Function Dimensionality Dashboard
-
-[Insert Function Dimensions Infographic]
-
-Figure 3 - Exploration vs Exploitation Framework
-
-[Insert Exploration-Exploitation Infographic]
-
-Figure 4 - Bayesian Optimisation Workflow
-
-[Insert Bayesian Optimisation Workflow]
-
-Figure 5 - Repository Architecture
-
-[Insert Repository Structure Infographic]
-
----
-
-## Lessons Learned
-
-### Learning Under Uncertainty
-
-The challenge demonstrated the importance of making optimisation decisions with incomplete information. Because the objective functions remained hidden throughout the competition, every query represented a balance between risk and potential reward.
-
-### Local versus Global Optima
-
-Strong-performing regions do not necessarily represent global optima. Continued exploration remains essential throughout the optimisation process to avoid premature convergence.
-
-### Evidence-Based Decision Making
-
-One of the most valuable lessons was the transition from intuition-driven exploration to evidence-based optimisation. Query selection became progressively informed by historical observations and emerging patterns.
-
----
-
-## Future Work
-
-Future developments may include:
-
-- Gaussian Process Optimisation
-- Expected Improvement acquisition functions
-- Probability of Improvement methods
-- Thompson Sampling
-- Support Vector Machine classification
-- Response Surface Modelling
-- Kernel-based optimisation approaches
-- Advanced visual analytics and dashboards
-
-As additional observations become available, optimisation decisions can become increasingly model-driven, allowing more sophisticated use of Bayesian optimisation and machine learning techniques.
-
----
-
-## Repository Structure
-
-The repository contains the core weekly BBO record alongside clearly identified supplementary research streams. The weekly folders and experiment records should be treated as the primary assessment path.
-
-```text
-Imperial_BBO_Capstone/
-|
-|-- README.md
-|-- EXTENDED_RESEARCH_AND_VALIDATION.md
-|-- Experiments/
-|-- Week_01/
-|-- Week_02/
-|-- ...
-|-- Week_11/
-|-- PGC/        supplementary research arising from the capstone
-`-- PFRAMOS/    supplementary research arising from the capstone
-```
-
-## References
-
-Imperial College Business School. Artificial Intelligence and Machine Learning Programme.
-
-Scikit-learn Developers. Machine Learning Documentation.
-
-Rasmussen CE, Williams CKI. Gaussian Processes for Machine Learning.
-
-Sutton RS, Barto AG. Reinforcement Learning: An Introduction.
+The repository is intended to show both the optimisation results and the development of the method used to obtain them.
