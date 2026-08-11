@@ -6,36 +6,49 @@
 
 ## Stage 2 Component 22.1: Clustering Lens and Week 11 Strategy Refinement
 
-The Week 10 evidence was reviewed through a clustering lens before the 11th round of queries was selected. The aim was not to claim that eight sparse optimisation histories formed statistically validated clusters. Instead, recurring local regions, distances between successive queries, stability of nearby outputs and changes at apparent local boundaries were used as practical clustering cues. This distinguishes genuine repeated structure from isolated observations and prevents a single strong or weak result from determining the next query without context.
+The Week 10 evidence was reviewed through a clustering lens before the 11th round of queries was selected. With only ten observations per function, I did not treat the emerging groups as statistically established clusters. Instead, I looked for repeated local behaviour, the distance between successive queries, stability of nearby outputs and signs that a productive region was beginning to plateau. This gave me a more disciplined way to distinguish recurring structure from isolated results.
+
+### How earlier academic feedback changed the strategy
+
+Feedback on Component 12.1 highlighted two weaknesses in the earlier approach. First, the analysis could become repetitive when similar local refinement arguments were described separately for every function. Second, decisions about when to stop exploiting a strong region relied too heavily on visual trends. From Week 10 onwards, I therefore compare functions directly and use clearer switching signals alongside visual interpretation.
+
+The practical triggers are deliberately simple because the dataset remains small:
+
+| Trigger | Evidence considered | Strategy response |
+| --- | --- | --- |
+| Plateau | No meaningful improvement across 2 or more consecutive rounds | Reduce exploitation and test a neighbouring or alternative region |
+| Diminishing return | Successive gains become progressively smaller | Tighten the step once, then reassess if improvement remains weak |
+| Local concentration | Several consecutive queries remain close together without a new best result | Increase exploratory distance |
+| Material deterioration | A local move produces a clear fall in objective value | Stop continuing in that direction and reassess |
+| Boundary concentration | Improvement repeatedly pushes coordinates towards 0 or 1 | Test the boundary carefully while retaining an alternative search route |
+| Weak coverage | A local region is well sampled but much of the search space remains untested | Allocate a query to broader exploration |
+
+These are decision rules rather than calibrated statistical thresholds. Their purpose is to make the reasoning explicit and to prevent a promising local pattern from becoming an automatic exploitation loop.
 
 ### F1 to F8 clustering evidence and Week 11 decisions
 
 | Function | Week 10 evidence | Cluster or recurring-region interpretation | Similarity or distance cue | Less effective direction avoided | Week 11 decision |
 | --- | --- | --- | --- | --- | --- |
-| F1 | `2.8950706668499033e-23`, still effectively zero | No reliable productive cluster identified | Large movement still produced negligible response | Repeated local refinement around near-zero observations | Explore at `0.600000,0.600000` |
-| F2 | Improved from `0.47297842839949866` to `0.5311818841205426` | Recurring positive local region | Stay close to the recent productive neighbourhood | Large jump away from improving region | Tight local refinement at `0.695000,0.950000` |
-| F3 | Improved from `-0.1156707106126581` to `-0.08697581687486715` | Evidence of a better region, but not yet a compact stable cluster | Improvement supports testing a different nearby structural direction | Continuing weaker earlier parameter combinations | Targeted reassessment at `0.840000,0.160000,0.840000` |
-| F4 | Declined from `-11.788939969158545` to `-13.483642655031158` | Week 10 point sits in a weaker local region | Negative separation from the previously better observations | Continuing the Week 10 movement | Redirect to `0.620000,0.420000,0.440000,0.250000` |
-| F5 | Repeated `4394.868042481448` at `0.120000,0.997000,0.999800,0.999800` | Clearest high-performing cluster or boundary region | Very small distance from established best point and tightening near upper boundaries | Large exploratory movement away from repeated peak | Boundary refinement at `0.110000,0.998000,0.999900,0.999900` |
-| F6 | Declined from `-1.1733030029888645` to `-1.2283806967341901` | Current local region not supported as productive | Deterioration indicates separation from stronger earlier observations | Further movement along the Week 10 direction | Reassess at `0.720000,0.190000,0.700000,0.710000,0.150000` |
-| F7 | Positive but declined slightly to `1.285160161342515` | Stable positive recurring neighbourhood | Small coordinate changes around an established region | Large movement that could leave the positive neighbourhood | Conservative refinement at `0.045000,0.485000,0.255000,0.220000,0.420000,0.745000` |
-| F8 | Small decline to `9.4646525` | Stable high-performing region with signs of a local plateau | Nearby queries produce similarly high values | Aggressive movement away from stable region | Controlled variation at `0.060000,0.070000,0.030000,0.040000,0.410000,0.820000,0.500000,0.910000` |
+| F1 | `2.8950706668499033e-23`, still effectively zero | No reliable productive cluster | A substantial move still produced negligible response | Repeated refinement of a near-zero region | Explore at `0.600000,0.600000` |
+| F2 | Improved from `0.47297842839949866` to `0.5311818841205426` | Emerging positive neighbourhood | Remain close enough to test whether the improvement persists | Large jump away from the improving region | Refine at `0.695000,0.950000` |
+| F3 | Improved from `-0.1156707106126581` to `-0.08697581687486715` | Better region emerging, but not yet a stable cluster | Improvement justifies another structured test | Returning to weaker earlier combinations | Reassess at `0.840000,0.160000,0.840000` |
+| F4 | Declined from `-11.788939969158545` to `-13.483642655031158` | Week 10 point separated from the better local region | Material deterioration triggers a change of direction | Continuing the Week 10 movement | Redirect to `0.620000,0.420000,0.440000,0.250000` |
+| F5 | Repeated `4394.868042481448` at `0.120000,0.997000,0.999800,0.999800` | Clearest high-performing boundary region | Very small distance from the best point, with several coordinates close to 1 | A large jump away from the repeated peak | Boundary refinement at `0.110000,0.998000,0.999900,0.999900` |
+| F6 | Declined from `-1.1733030029888645` to `-1.2283806967341901` | Current local direction is not supported | Deterioration separates the new point from stronger earlier observations | Further movement along the same path | Reassess at `0.720000,0.190000,0.700000,0.710000,0.150000` |
+| F7 | Positive but declined slightly to `1.285160161342515` | Stable positive neighbourhood | Small changes around an established region | A large move that could lose the positive region | Conservative refinement at `0.045000,0.485000,0.255000,0.220000,0.420000,0.745000` |
+| F8 | Small decline to `9.4646525` | Stable high-performing region with plateau characteristics | Nearby queries continue to return similar high values | Aggressive movement away from a reliable region | Controlled variation at `0.060000,0.070000,0.030000,0.040000,0.410000,0.820000,0.500000,0.910000` |
 
 ### Reflection against the 22.1 rubric
 
-**Patterns from past queries.** The strongest recurring pattern is F5, where successive refinements concentrated near a boundary region and the Week 10 repeat returned exactly `4394.868042481448`. That repeat strengthened the interpretation that this was not an isolated high value. F2 and F3 improved in Week 10, supporting further targeted investigation, while the deterioration in F4 and F6 provided direct evidence that their latest directions should not simply be continued. F7 and F8 remained positive but declined slightly, suggesting stable neighbourhoods where smaller movements were preferable to broad exploration.
+**Patterns from past queries.** F5 provides the clearest recurring pattern. Successive refinements concentrated near a boundary region and the Week 10 repeat returned exactly `4394.868042481448`. F2 and F3 improved, which justified further targeted investigation. F4 and F6 moved in the opposite direction, so their latest paths were not continued. F7 and F8 remained positive but slipped slightly, suggesting that smaller changes were more appropriate than aggressive movement.
 
-**Clusters and recurring regions.** I treated a cluster as a group of nearby queries that produced broadly consistent or improving outputs, rather than grouping functions simply because their output values were similar. F5 provides the clearest high-performing cluster, while F7 and F8 show compact positive regions and F2 shows an emerging productive neighbourhood. F1 does not yet provide enough evidence for a meaningful cluster because materially different inputs have continued to return values effectively equal to zero. F3 has improved, but the evidence is still too sparse to describe its current region as a stable cluster with confidence.
+**Clusters and recurring regions.** I treated a cluster as nearby queries producing broadly consistent or improving results, not simply functions with similar output values. F5 has the strongest high-performing grouping. F7 and F8 show compact positive regions, while F2 appears to be developing a productive neighbourhood. F1 still lacks a meaningful cluster because materially different inputs continue to return values effectively equal to zero. F3 has improved, but the evidence remains too sparse to describe its current region as stable with confidence.
 
-**Ineffective strategies and adjustments.** The Week 10 movements for F4 and F6 were less effective because both reduced the objective value. Their Week 11 queries therefore change direction rather than continuing incremental movement along the same path. F1 also demonstrates that repeatedly refining an uninformative near-zero region is not useful, so exploration remains necessary. Conversely, the F5 result argues against unnecessary large movements away from the best-established region.
+**Ineffective strategies and adjustments.** F4 and F6 show why local refinement should not continue automatically. Both deteriorated in Week 10, which triggered reassessment. F1 also shows that repeated refinement of an uninformative region is not useful. At the other extreme, the repeated F5 result raises the risk of becoming too exploitation-heavy. Its next move is therefore deliberately small, and a further plateau would be a reason to widen the search rather than continue tightening indefinitely.
 
-**Relationship to clustering.** The refinement process parallels clustering because I am looking for local concentration, similarity and separation. Repeated strong neighbouring observations act like a dense high-value cluster, while isolated results are treated more cautiously as possible noise. Boundary tightening around F5 resembles refining the edge of a cluster after its centre of activity has become clearer. F4 and F6 illustrate the opposite case: deterioration increases their effective distance from the better-performing neighbourhood and triggers reassessment rather than forced membership of the previous local pattern.
+**Relationship to clustering.** The optimisation process now uses clustering ideas in a practical sense. Repeated strong neighbouring observations suggest local concentration. Isolated observations are treated more cautiously because they may represent noise. F5 illustrates boundary tightening around a well-supported region. F4 and F6 illustrate separation, where a deteriorating point moves away from the better-performing neighbourhood and prompts a change of direction.
 
-**Expected visual patterns and next actions.** If the queries were plotted, I would expect F5 to show a tight concentration near the high-value boundary, F7 and F8 to show compact positive groupings, and F2 to show an emerging local cluster. F1 would appear comparatively dispersed without a useful output gradient. F4 and F6 would show recent points separating from better earlier regions. These visual patterns support small local steps inside established clusters, boundary testing where improvement is concentrated, and larger directional changes when new points move away from productive groups.
-
-## Assessment Summary
-
-Week 10 advances the documentation standard established in Week 09 by making the evidence trail more explicit. The round produced three improvements, four declines and one unchanged objective value. Function 5 repeated the Week 09 result of `4394.868042481448` at the identical submitted point, providing direct repeatability evidence for that exact query. Functions 2 and 3 improved, while the unsuccessful movements in Functions 4 and 6 provided negative evidence that changed the next search direction.
+**Expected visual patterns and next actions.** If the queries were plotted, I would expect F5 to form a tight concentration near the upper boundary, F7 and F8 to form compact positive groupings, and F2 to show an emerging local cluster. F1 would remain comparatively dispersed without a useful output gradient. F4 and F6 would show recent points moving away from better earlier regions. These patterns help determine whether the next step should stay local, test a boundary or deliberately increase exploratory distance.
 
 ## Week 10 Results
 
@@ -54,7 +67,7 @@ Week 10 advances the documentation standard established in Week 09 by making the
 
 | Function | Week 09 output | Week 10 output | Change | Direction |
 | --- | ---: | ---: | ---: | --- |
-| F1 | -1.4546199699251391e-58 | 2.8950706668499033e-23 | ≈ +2.8951e-23 | Improved, but effectively zero |
+| F1 | -1.4546199699251391e-58 | 2.8950706668499033e-23 | approximately +2.8951e-23 | Improved, but effectively zero |
 | F2 | 0.47297842839949866 | 0.5311818841205426 | +0.05820345572104394 | Improved |
 | F3 | -0.1156707106126581 | -0.08697581687486715 | +0.02869489373779095 | Improved |
 | F4 | -11.788939969158545 | -13.483642655031158 | -1.694702685872613 | Declined |
@@ -77,4 +90,4 @@ Week 10 advances the documentation standard established in Week 09 by making the
 - [Documentation Changelog](CHANGELOG.md)
 - [Research Note](RESEARCH_NOTE.md)
 
-The submitted inputs and returned results remain the authoritative numerical record for Week 10. The clustering interpretation is an analytical layer used to explain the Week 11 strategy and does not alter the historical observations.
+The submitted inputs and returned results remain the authoritative numerical record for Week 10. The clustering interpretation and switching triggers provide an analytical framework for explaining the Week 11 strategy. They do not alter the historical observations.
