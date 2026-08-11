@@ -46,7 +46,7 @@ Week 11 is the latest completed and fully documented round. Every function impro
 
 These results do not prove global optimality. They show that the Week 11 function specific decisions improved on the immediately preceding round.
 
-Week 12 should only be added once its submitted inputs and returned outputs have been verified.
+Week 12 will be documented once its submitted inputs and returned outputs have been verified.
 
 ## Function dimensionality
 
@@ -106,7 +106,7 @@ The Week 10 documentation also records why weaker directions were stopped rather
 | Week 10 | [README](Week_10/README.md) |
 | Week 11 | [README](Week_11/README.md) |
 
-Earlier weekly documents are preserved as historical records. They show how the reasoning changed over time and should not be rewritten simply to make the earlier strategy appear more advanced than it was at the time.
+The weekly record shows the chronological development of the optimisation approach as additional observations became available. Later documentation adds validation and analysis while the submitted inputs and returned outputs preserve the underlying experimental record.
 
 ## Reproducibility and evidence
 
@@ -116,6 +116,6 @@ Later rounds add stronger evidence trails through validation records, assumption
 
 ## Academic feedback and continuous improvement
 
-Academic feedback has been incorporated into later work rather than used to rewrite the historical record. The main changes include more concise comparisons between functions, clearer differences between F1 to F8, explicit recognition of adaptive sampling bias, stronger workflow versioning, concise performance summaries and clearer triggers for detecting plateaux, diminishing returns and excessive local concentration.
+Academic feedback informed the subsequent development of the optimisation approach. Later work introduced more concise comparisons between functions, clearer differentiation across F1 to F8, explicit recognition of adaptive sampling bias, stronger workflow versioning, concise performance summaries and clearer triggers for detecting plateaux, diminishing returns and excessive local concentration.
 
-The repository is intended to show both the optimisation results and the development of the method used to obtain them.
+The repository records both the optimisation results and the progressive development of the methods used to obtain them.
