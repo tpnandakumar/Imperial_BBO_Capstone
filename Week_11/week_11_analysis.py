@@ -1,13 +1,9 @@
-"""
-Week 11 Analysis Tool
-Imperial BBO Capstone
+"""Week 11 analysis for the Imperial BBO Capstone.
 
-This script validates the Week 11 input and result files, compares the
-Week 11 outputs with Week 10, ranks all eight objective functions and
-exports week_11_analysis_summary.csv.
-
-Numerical source values are retained as strings and Decimal values so
-that no rounding or truncation is introduced during the analysis.
+Clustering belongs to Week 10, where it informed the Week 11 queries.
+This script evaluates those outcomes and adds exploratory PCA as preparation
+for the later Week 12 decision. Verified source values remain as strings or
+Decimal values wherever exact arithmetic is possible.
 """
 
 from __future__ import annotations
@@ -15,329 +11,231 @@ from __future__ import annotations
 import csv
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
-from typing import Dict, List
+from typing import Dict, List, Sequence, Tuple
 
+import numpy as np
 
 CURRENT_DIRECTORY = Path(__file__).resolve().parent
-
 WEEK_11_INPUTS_FILE = CURRENT_DIRECTORY / "week_11_inputs.csv"
 WEEK_11_RESULTS_FILE = CURRENT_DIRECTORY / "week_11_results.csv"
 WEEK_11_SUMMARY_FILE = CURRENT_DIRECTORY / "week_11_analysis_summary.csv"
-WEEK_10_RESULTS_FILE = (
-    CURRENT_DIRECTORY.parent / "Week_10" / "week_10_results.csv"
-)
+WEEK_10_RESULTS_FILE = CURRENT_DIRECTORY.parent / "Week_10" / "week_10_results.csv"
 
-STRATEGY = {
-    "Function 1": "Exploit confirmed narrow peak",
-    "Function 2": "Local trust region probe",
-    "Function 3": "Local refinement",
-    "Function 4": "Local recovery probe",
-    "Function 5": "Boundary directed probe",
-    "Function 6": "Best basin recovery",
-    "Function 7": "Tight trust region refinement",
-    "Function 8": "Exploit confirmed best",
+FUNCTIONS = [f"Function {number}" for number in range(1, 9)]
+EXPECTED_DIMENSIONS = dict(zip(FUNCTIONS, [2, 2, 3, 4, 4, 5, 6, 8]))
+
+WEEK_11_ACTION = {
+    "Function 1": "Recover confirmed narrow peak",
+    "Function 2": "Local cluster refinement",
+    "Function 3": "Recovery towards stronger historical region",
+    "Function 4": "Recovery towards stronger historical region",
+    "Function 5": "Boundary cluster refinement",
+    "Function 6": "Recovery towards stronger historical basin",
+    "Function 7": "Compact positive cluster refinement",
+    "Function 8": "Recover confirmed historical best",
 }
 
-NEAR_ZERO_THRESHOLD = Decimal("1e-12")
-EXPECTED_DIMENSIONS = {
-    "Function 1": 2,
-    "Function 2": 2,
-    "Function 3": 3,
-    "Function 4": 4,
-    "Function 5": 4,
-    "Function 6": 5,
-    "Function 7": 6,
-    "Function 8": 8,
+CLUSTERING_OUTCOME = {
+    "Function 1": "Repeatability confirmed at the prior best point",
+    "Function 2": "Emerging positive local region strengthened",
+    "Function 3": "Recovery towards the stronger historical region was supported",
+    "Function 4": "Recovery towards the stronger historical region was supported",
+    "Function 5": "Boundary region strengthened and produced a new best",
+    "Function 6": "Recovery towards the stronger historical basin was supported",
+    "Function 7": "Compact positive region remained productive",
+    "Function 8": "Repeatability confirmed at the prior best point",
+}
+
+# Complete verified history supplied with the Week 11 package.
+INPUT_ROWS: Dict[int, List[str]] = {
+    1: ["0.74,0.74", "0.72,0.94", "0.53,0.64,0.25", "0.6,0.43,0.42,0.25", "0.21,0.87,0.9,0.9", "0.75,0.18,0.7,0.72,0.04", "0.05,0.5,0.25,0.22,0.42,0.74", "0.06,0.07,0.03,0.04,0.41,0.82,0.5,0.91"],
+    2: ["0.3,0.3", "0.76,0.9", "0.75,0.25,0.75", "0.2,0.8,0.8,0.8", "0.18,0.9,0.95,0.95", "0.25,0.75,0.3,0.3,0.8", "0.08,0.55,0.3,0.25,0.45,0.78", "0.08,0.08,0.05,0.05,0.45,0.85,0.55,0.95"],
+    3: ["0.6,0.6", "0.8,0.92", "0.2,0.8,0.2", "0.8,0.2,0.2,0.2", "0.17,0.92,0.97,0.97", "0.7,0.2,0.7,0.7,0.2", "0.1,0.58,0.32,0.27,0.47,0.8", "0.04,0.04,0.04,0.04,0.47,0.88,0.58,0.97"],
+    4: ["0.7,0.7", "0.68,0.96", "0.85,0.15,0.85", "0.9,0.1,0.1,0.1", "0.16,0.94,0.98,0.98", "0.8,0.15,0.8,0.8,0.15", "0.06,0.52,0.28,0.24,0.44,0.76", "0.07,0.07,0.05,0.05,0.44,0.84,0.54,0.94"],
+    5: ["0.45,0.45", "0.64,0.98", "0.9,0.1,0.9", "0.95,0.05,0.05,0.05", "0.15,0.96,0.99,0.99", "0.9,0.1,0.9,0.9,0.1", "0.04,0.48,0.26,0.22,0.42,0.74", "0.06,0.06,0.05,0.05,0.43,0.85,0.55,0.95"],
+    6: ["0.5,0.5", "0.7,0.95", "0.95,0.05,0.95", "0.98,0.02,0.02,0.02", "0.14,0.97,0.995,0.995", "0.95,0.05,0.95,0.95,0.05", "0.05,0.5,0.25,0.2,0.4,0.75", "0.05,0.05,0.05,0.05,0.45,0.85,0.55,0.95"],
+    7: ["0.35,0.7", "0.76,0.985", "0.25,0.85,0.3", "0.3,0.7,0.65,0.25", "0.12,0.99,0.999,0.999", "0.25,0.75,0.25,0.8,0.3", "0.05,0.52,0.24,0.18,0.41,0.77", "0.05,0.05,0.05,0.05,0.46,0.86,0.56,0.98"],
+    8: ["0.35,0.7", "0.72,0.94", "0.26,0.86,0.29", "0.32,0.72,0.68,0.22", "0.12,0.995,0.9995,0.9995", "0.24,0.76,0.24,0.82,0.28", "0.06,0.5,0.25,0.22,0.42,0.74", "0.05,0.05,0.05,0.05,0.47,0.87,0.57,0.98"],
+    9: ["0.35,0.7", "0.725,0.945", "0.255,0.855,0.295", "0.31,0.71,0.67,0.23", "0.12,0.997,0.9998,0.9998", "0.24,0.76,0.24,0.82,0.28", "0.058,0.495,0.248,0.218,0.425,0.742", "0.05,0.05,0.05,0.05,0.468,0.872,0.572,0.982"],
+    10: ["0.45,0.65", "0.7,0.955", "0.28,0.875,0.315", "0.29,0.73,0.69,0.21", "0.12,0.997,0.9998,0.9998", "0.26,0.78,0.26,0.84,0.3", "0.06,0.5,0.25,0.22,0.43,0.74", "0.05,0.05,0.05,0.05,0.47,0.875,0.575,0.985"],
+    11: ["0.6,0.6", "0.695,0.95", "0.84,0.16,0.84", "0.62,0.42,0.44,0.25", "0.11,0.998,0.9999,0.9999", "0.72,0.19,0.7,0.71,0.15", "0.045,0.485,0.255,0.22,0.42,0.745", "0.06,0.07,0.03,0.04,0.41,0.82,0.5,0.91"],
+}
+
+OUTPUT_ROWS: Dict[int, List[str]] = {
+    1: ["6.854713532414845e-19", "0.45494185399727516", "-0.10183633971746164", "-4.359874926582439", "1415.8763939603884", "-0.7001549808025808", "1.3199939052019112", "9.58024"],
+    2: ["6.659572754640724e-23", "0.41213721316888097", "-0.1332555781557258", "-23.120154471959825", "2308.1487028593933", "-2.0702463923015775", "1.0696579739950232", "9.5241"],
+    3: ["0.025559285339829783", "0.14098828808535324", "-0.12787021171886992", "-14.554028542475695", "2840.9903787629305", "-0.648848297397347", "0.8966026942687082", "9.44296"],
+    4: ["1.4754580129542488e-07", "0.5228458934672892", "-0.06037987403160633", "-22.55187651826871", "3238.333368768757", "-0.8733671274789931", "1.1968303712356705", "9.539439999999999"],
+    5: ["0.012779642669914939", "0.28016822307722516", "-0.11392206377710448", "-27.44051496086922", "3682.2110623386798", "-1.073875453695542", "1.3809299933612855", "9.5113"],
+    6: ["2.6752879910742468e-09", "0.5712475315739602", "-0.3071823694141529", "-31.20347777578016", "3922.7652233497042", "-1.3792272680368016", "1.3529491169887171", "9.5148"],
+    7: ["-1.4546199699251391e-58", "0.2399291698606551", "-0.09116928906376276", "-10.745961383135121", "4278.816638076986", "-1.119713499832813", "1.1543358123792982", "9.49476"],
+    8: ["-1.4546199699251391e-58", "0.5672775862793291", "-0.0991107637427902", "-12.305008897187289", "4359.384134322703", "-1.1197178425911847", "1.3346391663186332", "9.47621"],
+    9: ["-1.4546199699251391e-58", "0.47297842839949866", "-0.1156707106126581", "-11.788939969158545", "4394.868042481448", "-1.1733030029888645", "1.314307996450604", "9.4709436"],
+    10: ["2.8950706668499033e-23", "0.5311818841205426", "-0.08697581687486715", "-13.483642655031158", "4394.868042481448", "-1.2283806967341901", "1.285160161342515", "9.4646525"],
+    11: ["0.025559285339829783", "0.5848554940277205", "-0.06542982421105416", "-4.868852987697114", "4411.0387356061765", "-0.7268715077444687", "1.3579108517237013", "9.58024"],
+}
+
+WEEKLY_INPUT_TEXT = {
+    week: {function: tuple(row.split(",")) for function, row in zip(FUNCTIONS, rows)}
+    for week, rows in INPUT_ROWS.items()
+}
+WEEKLY_OUTPUT_TEXT = {
+    week: dict(zip(FUNCTIONS, rows)) for week, rows in OUTPUT_ROWS.items()
 }
 
 
 def normalise_function_name(value: str) -> str:
-    """Convert labels such as F1 or Function 1 into Function 1."""
-
     cleaned = value.strip()
-
     if cleaned.lower().startswith("function"):
-        number = cleaned.lower().replace("function", "").strip()
-        return f"Function {number}"
-
+        return f"Function {cleaned.lower().replace('function', '').strip()}"
     if cleaned.upper().startswith("F"):
-        number = cleaned[1:].strip()
-        return f"Function {number}"
-
+        return f"Function {cleaned[1:].strip()}"
     raise ValueError(f"Unrecognised function label: {value}")
 
 
-def validate_function_set(
-    values: Dict[str, Dict[str, object]],
-    source_name: str,
-) -> None:
-    """Confirm that all eight functions are present exactly once."""
-
-    expected_functions = {f"Function {number}" for number in range(1, 9)}
-    actual_functions = set(values)
-
-    missing_functions = expected_functions.difference(actual_functions)
-    unexpected_functions = actual_functions.difference(expected_functions)
-
-    if missing_functions:
-        missing = ", ".join(sorted(missing_functions))
-        raise ValueError(f"{source_name} is missing: {missing}")
-
-    if unexpected_functions:
-        unexpected = ", ".join(sorted(unexpected_functions))
-        raise ValueError(f"{source_name} contains unexpected rows: {unexpected}")
-
-
-def read_results(file_path: Path) -> Dict[str, Dict[str, object]]:
-    """Read a results CSV while preserving the original output strings."""
-
-    if not file_path.exists():
-        raise FileNotFoundError(f"Results file not found: {file_path}")
-
-    results: Dict[str, Dict[str, object]] = {}
-
+def read_inputs(file_path: Path) -> Dict[str, Tuple[str, ...]]:
+    inputs: Dict[str, Tuple[str, ...]] = {}
     with file_path.open("r", encoding="utf-8-sig", newline="") as csv_file:
         reader = csv.DictReader(csv_file)
-
-        if reader.fieldnames is None:
-            raise ValueError(f"No CSV header found in {file_path.name}")
-
-        required_columns = {"Function", "Output"}
-        if not required_columns.issubset(set(reader.fieldnames)):
-            raise ValueError(
-                f"{file_path.name} must contain the columns "
-                "'Function' and 'Output'."
-            )
-
+        if reader.fieldnames is None or not {"Function", "Input"}.issubset(reader.fieldnames):
+            raise ValueError(f"{file_path.name} must contain Function and Input columns")
         for row in reader:
-            function_name = normalise_function_name(row["Function"])
-            output_text = row["Output"].strip()
+            function = normalise_function_name(row["Function"])
+            if function in inputs:
+                raise ValueError(f"Duplicate input row for {function}")
+            inputs[function] = tuple(value.strip() for value in row["Input"].split(","))
 
+    if set(inputs) != set(FUNCTIONS):
+        raise ValueError(f"{file_path.name} must contain Functions 1 to 8")
+    for function, values in inputs.items():
+        if len(values) != EXPECTED_DIMENSIONS[function]:
+            raise ValueError(f"Incorrect dimension for {function}")
+        for text in values:
             try:
-                output_decimal = Decimal(output_text)
+                value = Decimal(text)
             except InvalidOperation as error:
-                raise ValueError(
-                    f"Invalid output for {function_name}: {output_text}"
-                ) from error
+                raise ValueError(f"Invalid input for {function}: {text}") from error
+            if not Decimal("0") <= value <= Decimal("1"):
+                raise ValueError(f"Input outside [0, 1] for {function}: {text}")
+    return inputs
 
-            if function_name in results:
-                raise ValueError(
-                    f"Duplicate result row for {function_name} in {file_path.name}"
-                )
 
-            results[function_name] = {
-                "output_text": output_text,
-                "output_decimal": output_decimal,
-            }
-
-    validate_function_set(results, file_path.name)
+def read_results(file_path: Path) -> Dict[str, str]:
+    results: Dict[str, str] = {}
+    with file_path.open("r", encoding="utf-8-sig", newline="") as csv_file:
+        reader = csv.DictReader(csv_file)
+        if reader.fieldnames is None or not {"Function", "Output"}.issubset(reader.fieldnames):
+            raise ValueError(f"{file_path.name} must contain Function and Output columns")
+        for row in reader:
+            function = normalise_function_name(row["Function"])
+            if function in results:
+                raise ValueError(f"Duplicate result row for {function}")
+            text = row["Output"].strip()
+            try:
+                Decimal(text)
+            except InvalidOperation as error:
+                raise ValueError(f"Invalid output for {function}: {text}") from error
+            results[function] = text
+    if set(results) != set(FUNCTIONS):
+        raise ValueError(f"{file_path.name} must contain Functions 1 to 8")
     return results
 
 
-def validate_inputs_file() -> None:
-    """Validate the Week 11 input vectors and their dimensions."""
-
-    if not WEEK_11_INPUTS_FILE.exists():
-        raise FileNotFoundError(f"Input file not found: {WEEK_11_INPUTS_FILE}")
-
-    rows: Dict[str, List[str]] = {}
-
-    with WEEK_11_INPUTS_FILE.open(
-        "r",
-        encoding="utf-8-sig",
-        newline="",
-    ) as csv_file:
-        reader = csv.DictReader(csv_file)
-
-        if reader.fieldnames is None:
-            raise ValueError(
-                f"No CSV header found in {WEEK_11_INPUTS_FILE.name}"
-            )
-
-        required_columns = {"Function", "Input"}
-        if not required_columns.issubset(set(reader.fieldnames)):
-            raise ValueError(
-                f"{WEEK_11_INPUTS_FILE.name} must contain the columns "
-                "'Function' and 'Input'."
-            )
-
-        for row in reader:
-            function_name = normalise_function_name(row["Function"])
-            input_values = [value.strip() for value in row["Input"].split(",")]
-
-            if function_name in rows:
-                raise ValueError(
-                    f"Duplicate input row for {function_name} in "
-                    f"{WEEK_11_INPUTS_FILE.name}"
-                )
-
-            rows[function_name] = input_values
-
-    if set(rows) != set(EXPECTED_DIMENSIONS):
-        raise ValueError(
-            f"{WEEK_11_INPUTS_FILE.name} must contain Functions 1 to 8."
-        )
-
-    for function_name, expected_dimension in EXPECTED_DIMENSIONS.items():
-        input_values = rows[function_name]
-
-        if len(input_values) != expected_dimension:
-            raise ValueError(
-                f"{function_name} should contain {expected_dimension} values, "
-                f"but contains {len(input_values)}."
-            )
-
-        for value_text in input_values:
-            try:
-                value = Decimal(value_text)
-            except InvalidOperation as error:
-                raise ValueError(
-                    f"Invalid input for {function_name}: {value_text}"
-                ) from error
-
-            if value < 0 or value > 1:
-                raise ValueError(
-                    f"Input outside [0, 1] for {function_name}: {value_text}"
-                )
+def validate_week_11(inputs: Dict[str, Tuple[str, ...]], results: Dict[str, str]) -> None:
+    for function in FUNCTIONS:
+        stored_input = tuple(Decimal(value) for value in inputs[function])
+        verified_input = tuple(Decimal(value) for value in WEEKLY_INPUT_TEXT[11][function])
+        if stored_input != verified_input:
+            raise ValueError(f"Week 11 input mismatch for {function}")
+        if Decimal(results[function]) != Decimal(WEEKLY_OUTPUT_TEXT[11][function]):
+            raise ValueError(f"Week 11 output mismatch for {function}")
 
 
-def classify_status(output: Decimal) -> str:
-    """Classify an output as Positive, Negative or Near Zero."""
-
-    if abs(output) < NEAR_ZERO_THRESHOLD:
-        return "Near Zero"
-
-    if output > 0:
-        return "Positive"
-
-    return "Negative"
+def prior_best(function: str) -> Tuple[int, str, Tuple[str, ...]]:
+    week = max(range(1, 11), key=lambda number: Decimal(WEEKLY_OUTPUT_TEXT[number][function]))
+    return week, WEEKLY_OUTPUT_TEXT[week][function], WEEKLY_INPUT_TEXT[week][function]
 
 
-def classify_direction(change: Decimal) -> str:
-    """Classify the exact change relative to Week 10."""
-
-    if change > 0:
-        return "Improved"
-
-    if change < 0:
-        return "Declined"
-
-    return "Unchanged"
+def squared_distance_exact(first: Sequence[str], second: Sequence[str]) -> str:
+    total = sum((Decimal(a) - Decimal(b)) ** 2 for a, b in zip(first, second))
+    return str(total)
 
 
-def format_exact_change(change: Decimal) -> str:
-    """Return a stable exact text representation for a Decimal change."""
+def pca_metrics(function: str) -> Tuple[str, str, str, str]:
+    if EXPECTED_DIMENSIONS[function] <= 2:
+        return "Not applied, direct two dimensional geometry retained", "", "", ""
 
-    if change == 0:
-        return "0"
-
-    return str(change)
-
-
-def build_summary(
-    week_10_results: Dict[str, Dict[str, object]],
-    week_11_results: Dict[str, Dict[str, object]],
-) -> List[Dict[str, object]]:
-    """Rank Week 11 functions and build the exact comparison summary."""
-
-    ranked_functions = sorted(
-        week_11_results.items(),
-        key=lambda item: item[1]["output_decimal"],
-        reverse=True,
+    matrix = np.array([
+        [float(Decimal(value)) for value in WEEKLY_INPUT_TEXT[week][function]]
+        for week in range(1, 12)
+    ])
+    centred = matrix - matrix.mean(axis=0)
+    _, singular_values, _ = np.linalg.svd(centred, full_matrices=False)
+    explained = (singular_values ** 2) / (matrix.shape[0] - 1)
+    ratio = explained / explained.sum()
+    cumulative = np.cumsum(ratio)
+    components_90 = int(np.searchsorted(cumulative, 0.90) + 1)
+    return (
+        "Exploratory centred PCA on Weeks 1 to 11 inputs",
+        repr(float(ratio[0])),
+        repr(float(cumulative[1])),
+        str(components_90),
     )
 
-    summary_rows: List[Dict[str, object]] = []
 
-    for rank, (function_name, values) in enumerate(
-        ranked_functions,
-        start=1,
-    ):
-        week_10_value = week_10_results[function_name]["output_decimal"]
-        week_11_value = values["output_decimal"]
-        change = week_11_value - week_10_value
+def build_summary(week_10_results: Dict[str, str]) -> List[Dict[str, str]]:
+    ranked = sorted(FUNCTIONS, key=lambda name: Decimal(WEEKLY_OUTPUT_TEXT[11][name]), reverse=True)
+    rank = {function: index for index, function in enumerate(ranked, start=1)}
+    rows: List[Dict[str, str]] = []
 
-        summary_rows.append(
-            {
-                "Function": function_name,
-                "Output": values["output_text"],
-                "Rank": rank,
-                "Strategy": STRATEGY[function_name],
-                "Status": classify_status(week_11_value),
-                "Week_10_Output": week_10_results[function_name][
-                    "output_text"
-                ],
-                "Exact_Change": format_exact_change(change),
-                "Direction": classify_direction(change),
-            }
+    for function in FUNCTIONS:
+        week_10 = week_10_results[function]
+        week_11 = WEEKLY_OUTPUT_TEXT[11][function]
+        change = Decimal(week_11) - Decimal(week_10)
+        best_week, best_output, best_input = prior_best(function)
+        current = Decimal(week_11)
+        previous = Decimal(best_output)
+        best_status = (
+            "New verified best" if current > previous
+            else "Matched prior verified best" if current == previous
+            else "Below prior verified best"
         )
-
-    return summary_rows
-
-
-def write_summary(summary_rows: List[Dict[str, object]]) -> None:
-    """Export the Week 11 analysis summary without changing source values."""
-
-    fieldnames = [
-        "Function",
-        "Output",
-        "Rank",
-        "Strategy",
-        "Status",
-        "Week_10_Output",
-        "Exact_Change",
-        "Direction",
-    ]
-
-    with WEEK_11_SUMMARY_FILE.open(
-        "w",
-        encoding="utf-8",
-        newline="",
-    ) as csv_file:
-        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(summary_rows)
-
-
-def print_summary_report(summary_rows: List[Dict[str, object]]) -> None:
-    """Print the Week 11 ranking and strategy report."""
-
-    best = summary_rows[0]
-    worst = summary_rows[-1]
-
-    print("\nWeek 11 BBO Analysis Report")
-    print("=" * 76)
-    print(f"Best function: {best['Function']}")
-    print(f"Highest output: {best['Output']}")
-    print(f"Lowest ranked function: {worst['Function']}")
-    print(f"Lowest output: {worst['Output']}")
-
-    print("\nWeek 11 ranking and comparison")
-    print("-" * 76)
-
-    for row in summary_rows:
-        print(
-            f"Rank {row['Rank']}: {row['Function']} | "
-            f"Output = {row['Output']} | "
-            f"Change = {row['Exact_Change']} | "
-            f"{row['Direction']} | "
-            f"Strategy = {row['Strategy']}"
-        )
-
-    print(
-        f"\nAnalysis summary exported to: "
-        f"{WEEK_11_SUMMARY_FILE.name}"
-    )
+        pca_status, pc1, pc12, components_90 = pca_metrics(function)
+        rows.append({
+            "Function": function,
+            "Week_11_Output": week_11,
+            "Week_11_Rank": str(rank[function]),
+            "Week_10_Output": week_10,
+            "Exact_Change": str(change),
+            "Direction": "Improved" if change > 0 else "Declined" if change < 0 else "Unchanged",
+            "Week_10_Clustering_Informed_Action": WEEK_11_ACTION[function],
+            "Clustering_Outcome": CLUSTERING_OUTCOME[function],
+            "Prior_Best_Week": str(best_week),
+            "Prior_Best_Output": best_output,
+            "Exact_Squared_Distance_To_Prior_Best_Input": squared_distance_exact(WEEKLY_INPUT_TEXT[11][function], best_input),
+            "Week_11_Best_Status": best_status,
+            "PCA_Status": pca_status,
+            "PCA_PC1_Explained_Variance_Ratio": pc1,
+            "PCA_PC1_PC2_Cumulative_Ratio": pc12,
+            "PCA_Components_To_Reach_90pct": components_90,
+        })
+    return rows
 
 
 def main() -> None:
-    """Run the complete Week 11 analysis."""
-
-    validate_inputs_file()
-    week_10_results = read_results(WEEK_10_RESULTS_FILE)
+    week_11_inputs = read_inputs(WEEK_11_INPUTS_FILE)
     week_11_results = read_results(WEEK_11_RESULTS_FILE)
-    summary_rows = build_summary(week_10_results, week_11_results)
-    write_summary(summary_rows)
-    print_summary_report(summary_rows)
+    week_10_results = read_results(WEEK_10_RESULTS_FILE)
+    validate_week_11(week_11_inputs, week_11_results)
+    rows = build_summary(week_10_results)
+
+    with WEEK_11_SUMMARY_FILE.open("w", encoding="utf-8", newline="") as csv_file:
+        writer = csv.DictWriter(csv_file, fieldnames=list(rows[0].keys()))
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print("Week 11 analysis complete")
+    print("PCA is exploratory preparation only and did not guide the Week 11 queries")
 
 
 if __name__ == "__main__":
