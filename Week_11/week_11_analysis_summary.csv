@@ -1,9 +1,9 @@
-Function,Output,Rank,Strategy,Status,Week_10_Output,Exact_Change,Direction
-Function 5,4411.0387356061765,1,Boundary directed probe,Positive,4394.868042481448,16.1706931247285,Improved
-Function 8,9.58024,2,Exploit confirmed best,Positive,9.4646525,0.1155875,Improved
-Function 7,1.3579108517237013,3,Tight trust region refinement,Positive,1.285160161342515,0.0727506903811863,Improved
-Function 2,0.5848554940277205,4,Local trust region probe,Positive,0.5311818841205426,0.0536736099071779,Improved
-Function 1,0.025559285339829783,5,Exploit confirmed narrow peak,Positive,2.8950706668499033e-23,0.02555928533982978299997104929,Improved
-Function 3,-0.06542982421105416,6,Local refinement,Negative,-0.08697581687486715,0.02154599266381299,Improved
-Function 6,-0.7268715077444687,7,Best basin recovery,Negative,-1.2283806967341901,0.5015091889897214,Improved
-Function 4,-4.868852987697114,8,Local recovery probe,Negative,-13.483642655031158,8.614789667334044,Improved
+Function,Week_11_Output,Week_11_Rank,Week_10_Output,Exact_Change,Direction,Week_10_Clustering_Informed_Action,Clustering_Outcome,Prior_Best_Week,Prior_Best_Output,Exact_Squared_Distance_To_Prior_Best_Input,Week_11_Best_Status,PCA_Status,PCA_PC1_Explained_Variance_Ratio,PCA_PC1_PC2_Cumulative_Ratio,PCA_Components_To_Reach_90pct
+Function 1,0.025559285339829783,5,2.8950706668499033e-23,0.02555928533982978299997104929,Improved,Recover confirmed narrow peak,Repeatability confirmed at the prior best point,3,0.025559285339829783,0,Matched prior verified best,"Not applied, direct two dimensional geometry retained",,,
+Function 2,0.5848554940277205,4,0.5311818841205426,0.0536736099071779,Improved,Local cluster refinement,Emerging positive local region strengthened,6,0.5712475315739602,0.000025,New verified best,"Not applied, direct two dimensional geometry retained",,,
+Function 3,-0.06542982421105416,6,-0.08697581687486715,0.02154599266381299,Improved,Recovery towards stronger historical region,Recovery towards the stronger historical region was supported,4,-0.06037987403160633,0.0003,Below prior verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.9824765956583574,0.9966917983027923,1
+Function 4,-4.868852987697114,8,-13.483642655031158,8.614789667334044,Improved,Recovery towards stronger historical region,Recovery towards the stronger historical region was supported,1,-4.359874926582439,0.0009,Below prior verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.929457542635097,0.9990069305772716,1
+Function 5,4411.0387356061765,1,4394.868042481448,16.1706931247285,Improved,Boundary cluster refinement,Boundary region strengthened and produced a new best,9,4394.868042481448,0.00010102,New verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.9676115302998125,0.997726663010752,1
+Function 6,-0.7268715077444687,7,-1.2283806967341901,0.5015091889897214,Improved,Recovery towards stronger historical basin,Recovery towards the stronger historical basin was supported,3,-0.648848297397347,0.0031,Below prior verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.864773785020967,0.9866734368322968,2
+Function 7,1.3579108517237013,3,1.285160161342515,0.0727506903811863,Improved,Compact positive cluster refinement,Compact positive region remained productive,5,1.3809299933612855,0.000100,Below prior verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.8602299516486513,0.9692454132352497,2
+Function 8,9.58024,2,9.4646525,0.1155875,Improved,Recover confirmed historical best,Repeatability confirmed at the prior best point,1,9.58024,0,Matched prior verified best,Exploratory centred PCA on Weeks 1 to 11 inputs,0.9021092653998608,0.9666706798190747,1
