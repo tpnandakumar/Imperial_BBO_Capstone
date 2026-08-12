@@ -1,32 +1,19 @@
 # Datasheet for the Bayesian Black Box Optimisation Capstone Dataset
 
 **Author:** Dr N T Pisharam  
-**Project:** Imperial BBO Optimisation  
 **Capstone week:** 10  
 **Optimisation round:** 10  
-**Document status:** Full detailed datasheet
+**Document status:** Week 10 datasheet
 
-## 1. Executive Summary
+## 1. Purpose
 
-This datasheet documents the Bayesian Black Box Optimisation dataset at the completion of Week 10. The dataset records the sequential optimisation of eight hidden objective functions using only submitted query vectors and the objective values returned by the competition platform. By the end of Week 10, each function had ten recorded observations, giving eighty submitted query vectors and eighty corresponding objective values across the eight optimisation pathways.
+This datasheet records the dataset available at the end of Week 10. It covers eight hidden objective functions, the submitted query vectors, the returned objective values and the derived comparisons used to interpret the round.
 
-Week 10 added an important validation point to the accumulated dataset. Function 5 was deliberately submitted at the exact Week 09 best known input and returned the exact same objective value, `4394.868042481448`. This provided direct evidence of repeatability at that tested location. Functions 2 and 3 improved, Function 1 changed sign but remained effectively near zero, and Functions 4, 6, 7 and 8 declined. The mixed outcome strengthened the case for treating each function independently rather than applying a uniform optimisation rule.
+By the end of Week 10, each function had ten recorded observations. Across the eight functions, the cumulative record therefore contained eighty submitted query vectors and eighty returned objective values.
 
-The raw observations remain authoritative. Derived rankings, strategy labels, comparisons, figures and information gain interpretations are analytical products generated from the verified data and are stored separately from the source observations.
+The source observations remain authoritative. Rankings, strategy labels, figures and written interpretations are derived from those observations.
 
-## 2. Motivation
-
-The dataset was created to preserve the complete history of a sequential black box optimisation problem in which the underlying mathematical functions are not disclosed. Because gradients, equations and direct access to the response surfaces are unavailable, every later query depends on evidence accumulated from earlier submissions.
-
-A central motivation is traceability. The repository records not only which query was submitted but also what result was returned, how that result compared with earlier observations and how it influenced the next decision. Week 10 is particularly useful because it contains both successful local movements and clear counterexamples to continuation in previously tested directions.
-
-## 3. Dataset Overview
-
-The Week 10 dataset contains observations for eight independent hidden objective functions. Input dimensionality ranges from two to eight variables. Every coordinate is constrained to the interval from zero to one and is submitted to six decimal places.
-
-The dataset is sequential rather than independently sampled. Later observations were selected using evidence available from earlier rounds, so the sampling distribution changes as the search becomes more informed. By the completion of Week 10, ten observations were available for every function.
-
-## 4. Dataset Composition
+## 2. Dataset structure
 
 | Function | Dimensions | Observations by Week 10 |
 |---|---:|---:|
@@ -39,9 +26,9 @@ The dataset is sequential rather than independently sampled. Later observations 
 | Function 7 | 6 | 10 |
 | Function 8 | 8 | 10 |
 
-The dimensional structure remains fixed across all rounds. Week 10 adds one verified observation to each function without altering any earlier record.
+Every input coordinate lies between 0 and 1 and is submitted to six decimal places. The hidden meaning of each coordinate is not disclosed, so features are positional rather than semantically labelled.
 
-## 5. Week 10 Submitted Inputs
+## 3. Exact Week 10 inputs
 
 | Function | Input |
 |---|---|
@@ -54,9 +41,9 @@ The dimensional structure remains fixed across all rounds. Week 10 adds one veri
 | Function 7 | `0.060000,0.500000,0.250000,0.220000,0.430000,0.740000` |
 | Function 8 | `0.050000,0.050000,0.050000,0.050000,0.470000,0.875000,0.575000,0.985000` |
 
-These values are reproduced exactly from `week_10_inputs.csv`.
+These values are taken directly from `week_10_inputs.csv`.
 
-## 6. Week 10 Returned Outputs
+## 4. Exact Week 10 outputs
 
 | Function | Output |
 |---|---:|
@@ -69,9 +56,9 @@ These values are reproduced exactly from `week_10_inputs.csv`.
 | Function 7 | `1.285160161342515` |
 | Function 8 | `9.4646525` |
 
-These values are reproduced exactly from `week_10_results.csv`.
+These values are taken directly from `week_10_results.csv`.
 
-## 7. Week 09 to Week 10 Change
+## 5. Week 09 to Week 10 comparison
 
 | Function | Week 09 output | Week 10 output | Exact change |
 |---|---:|---:|---:|
@@ -84,138 +71,91 @@ These values are reproduced exactly from `week_10_results.csv`.
 | Function 7 | `1.314307996450604` | `1.285160161342515` | `-0.029147835108089` |
 | Function 8 | `9.4709436` | `9.4646525` | `-0.0062911` |
 
-## 8. Data Collection Methodology
+Functions 2 and 3 improved. Function 5 repeated its Week 09 value exactly. Functions 4, 6, 7 and 8 declined. Function 1 changed sign but remained effectively near zero.
 
-Each round followed the same collection sequence. Historical observations were reviewed, a new query vector was selected for each function, all values were checked against dimensionality and range constraints, and the eight queries were submitted through the official platform. Returned values were then copied into the repository without transformation.
+## 6. How the data were collected
 
-Week 10 retained this procedure. Function 5 was intentionally repeated at the exact Week 09 best known input. The returned value was identical, providing a useful repeat observation within the otherwise adaptive dataset.
+Each round followed the same basic sequence. Earlier observations were reviewed, one new query vector was selected for each function, the vectors were checked for dimensionality, range and precision, and the queries were submitted through the official platform. The returned values were then stored in the weekly result file.
 
-## 9. Query Generation Strategy
+The dataset is therefore adaptive. Later points are not independent random samples because earlier results influence where the next query is placed.
 
-The Week 10 query set combined different strategies because the eight functions had developed different evidence profiles.
+## 7. Week 10 sampling choices
 
-Function 5 was exploited through exact repetition of the established best input. Functions 2, 3, 7 and 8 were refined locally. Functions 4 and 6 were moved within alternative local regions after mixed earlier behaviour. Function 1 received broader exploration because previous outputs had remained effectively zero.
+Week 10 used different treatments for different functions.
 
-## 10. Optimisation Workflow
+Function 5 repeated the exact Week 09 input to test whether the strongest known result could be reproduced. Functions 2, 3, 7 and 8 received local refinement. Functions 4 and 6 were moved to alternative local positions. Function 1 received broader exploration because its earlier outputs had remained effectively near zero.
 
-The workflow followed a repeated sequence of historical review, function specific assessment, candidate selection, dimensionality and range checking, official submission, exact result capture and comparison with the preceding round.
+## 8. Repeatability evidence
 
-This structure preserves a clear distinction between observed data and later interpretation.
+Function 5 used the same input in Weeks 09 and 10:
 
-## 11. Data Preprocessing
+`0.120000,0.997000,0.999800,0.999800`
 
-No scaling, normalisation, imputation or transformation was applied to the raw inputs or returned outputs. Input vectors were preserved to six decimal places exactly as submitted. Returned values were stored at the precision provided by the platform.
+Both rounds returned:
 
-Preprocessing was limited to structural validation, parsing for analysis and generation of derived summaries.
+`4394.868042481448`
 
-## 12. Data Validation and Quality Assurance
+This provides repeatability evidence for that exact tested point. It does not establish stability across the surrounding region and does not prove global optimality.
 
-Quality assurance checks confirmed that every Week 10 function had exactly one query vector and one returned result. Input dimensionality was checked against the fixed specification for each function, and all coordinates were confirmed to remain within the permitted interval.
+## 9. Data quality checks
 
-The Week 10 scripts use exact decimal comparison for changes between Weeks 09 and 10. Raw CSV files remain separate from figures and narrative interpretation.
+The Week 10 record contains one input vector and one returned value for each of the eight functions. Dimensionality and range checks are included in the analysis script. Week 09 to Week 10 changes are calculated using exact decimal arithmetic.
 
-## 13. Feature Description
+No scaling, normalisation, imputation or transformation is applied to the source inputs or returned outputs. Derived summaries are written separately.
 
-Each input feature is a continuous numerical coordinate within the corresponding function's search space. Feature names are positional because the underlying semantic meaning of each coordinate is not disclosed by the competition.
+## 10. Derived fields
 
-The target for each observation is a single continuous objective value. Higher returned values are treated as better within each function because the challenge objective is maximisation.
+The repository also contains rankings, weekly changes, strategy classifications and figure data. These are analytical fields created from the stored observations.
 
-## 14. Data Labelling and Derived Variables
+They are not outputs returned by the competition platform and should be read as interpretations rather than ground truth about the hidden functions.
 
-Derived fields include function rank, week to week change, strategy classification, status and information gain interpretations. These variables are generated from the verified observations and are intended to support analysis.
+## 11. Sampling limitations
 
-They are not competition outputs and should not be interpreted as ground truth labels for the hidden functions.
+The dataset is small and adaptively sampled. Ten observations per function provide sparse coverage, especially for functions with five, six or eight dimensions. Productive regions receive more attention over time, so the dataset does not provide uniform coverage of the search space.
 
-## 15. Week 10 Strategy Classification
+The eight functions also operate on different numerical scales. Raw values should therefore be compared mainly within each function across time rather than between functions.
 
-| Function | Week 10 output | Strategy after Week 10 |
-|---|---:|---|
-| Function 1 | `2.8950706668499033e-23` | Explore |
-| Function 2 | `0.5311818841205426` | Refine |
-| Function 3 | `-0.08697581687486715` | Refine |
-| Function 4 | `-13.483642655031158` | Reassess |
-| Function 5 | `4394.868042481448` | Exploit |
-| Function 6 | `-1.2283806967341901` | Reassess |
-| Function 7 | `1.285160161342515` | Refine |
-| Function 8 | `9.4646525` | Refine |
+## 12. Intended use
 
-## 16. Exploratory Data Characteristics
+The dataset is suitable for analysing sequential black box optimisation, exploration and exploitation decisions, query history, repeatability and reproducibility within this capstone.
 
-The dataset contains a mixture of broad exploratory observations and increasingly concentrated local observations. Productive regions receive more attention over time, while unresolved functions retain broader search behaviour.
+It is not suitable for claiming that the hidden mathematical functions have been recovered or that a global optimum has been proved.
 
-Function 5 is the clearest example of concentration around a high performing boundary region. Function 1 provides the opposite pattern, with repeated attempts still producing values effectively near zero.
+## 13. Provenance and integrity
 
-## 17. Repeatability Evidence
+The authoritative Week 10 files are:
 
-Week 10 provides a direct repeat observation for Function 5. The Week 09 input `0.120000,0.997000,0.999800,0.999800` was submitted again in Week 10 and returned `4394.868042481448` on both occasions.
+- `week_10_inputs.csv`
+- `week_10_results.csv`
 
-This supports repeatability at that tested point. It does not establish the mathematical form of Function 5, prove global optimality or demonstrate stability throughout the surrounding search region.
+Supporting files include:
 
-## 18. Missing Data
+- `week_10_analysis_summary.csv`
+- `week_10_figure_data_summary.csv`
+- `week_10_analysis.py`
+- `generate_week_10_figures.py`
 
-The verified Week 10 files contain a complete input and output record for all eight functions. No Week 10 observation is missing from the stored weekly dataset.
+The source CSV files are not overwritten during analysis.
 
-The hidden mathematical definitions of the objective functions remain unavailable by design and are therefore not treated as missing records.
+## 14. Reproducibility
 
-## 19. Data Provenance
-
-The primary data originate from query vectors submitted through the official BBO platform and objective values returned by that platform. The repository stores those values in `week_10_inputs.csv` and `week_10_results.csv`.
-
-Analytical summaries and figures are derived from those source files and from verified Week 09 comparison data.
-
-## 20. Data Integrity
-
-Source observations are not overwritten during analysis. Derived outputs are written to separate summary files. The authoritative Week 10 files are `week_10_inputs.csv` and `week_10_results.csv`.
-
-## 21. Bias and Sampling Considerations
-
-The dataset is intentionally adaptively sampled. Query points are selected using earlier results, so observations are not independent or uniformly distributed across the search spaces. Productive areas can become overrepresented as exploitation increases.
-
-This is appropriate for optimisation but limits claims about the global geometry of the hidden functions.
-
-## 22. Limitations
-
-The true functions and global optima are unknown. Ten observations per function remain sparse, particularly for the higher dimensional objectives. Apparent trends may represent local behaviour rather than global structure.
-
-Cross function numerical rankings should also be interpreted cautiously because the eight objectives operate on different scales.
-
-## 23. Intended Uses
-
-The dataset is intended for analysis of sequential black box optimisation, exploration and exploitation behaviour, reproducibility, strategy development and educational study of decision making under uncertainty.
-
-## 24. Unsuitable Uses
-
-The dataset should not be used to claim recovery of the hidden objective functions, proof of a global optimum or general superiority of one optimisation algorithm over another.
-
-It should not be transferred directly into safety critical decision making without independent validation and substantially stronger evidence.
-
-## 25. Ethical and Responsible Use
-
-The capstone dataset contains optimisation values rather than personal or clinical records. The principal responsible use issues concern transparency, reproducibility and appropriate limits on claims.
-
-Derived interpretations should remain clearly distinguishable from platform returned observations. Later methodological developments should not be presented retrospectively as though they had been used in earlier rounds unless the contemporaneous record supports that statement.
-
-## 26. Reproducibility
-
-Week 10 analysis can be reproduced from the repository root with:
+From the repository root:
 
 ```bash
 python Week_10/week_10_analysis.py
 python Week_10/generate_week_10_figures.py
 ```
 
-The analysis script uses the Week 09 result file for exact comparison. The figure script writes generated files directly into `Week_10` and does not require a separate figures folder.
+## 15. Week 10 summary
 
-## 27. Week 10 Summary
+Week 10 added a useful mixture of positive, negative and repeat observations. Functions 2 and 3 improved. Function 5 reproduced its strongest known value exactly. Function 4 deteriorated substantially and Function 6 also declined, giving clear reasons to reassess those directions. Functions 7 and 8 remained positive but moved slightly lower. Function 1 remained unresolved.
 
-Week 10 expanded the cumulative dataset to eighty submitted query vectors and eighty returned objective values. Functions 2 and 3 improved, Function 5 repeated its best known result exactly, Function 1 remained effectively near zero, and Functions 4, 6, 7 and 8 declined.
-
-The value of the round lies not only in the successful movements but also in the information supplied by unsuccessful ones. The Week 10 observations narrowed the evidence available for subsequent decisions and provided the basis for a more differentiated Week 11 strategy.
+The value of the round lies in both the objective values and the information gained about which search directions deserved to continue.
 
 ## References
 
-Imperial College Business School. Artificial Intelligence and Machine Learning Programme, Black Box Optimisation Capstone Challenge.
+Imperial College Business School. Black Box Optimisation Capstone Challenge.
 
-Rasmussen, C. E. and Williams, C. K. I. Gaussian Processes for Machine Learning. MIT Press.
+Rasmussen, C. E. and Williams, C. K. I. *Gaussian Processes for Machine Learning*. MIT Press.
 
-Frazier, P. I. A Tutorial on Bayesian Optimization. arXiv:1807.02811.
+Frazier, P. I. *A Tutorial on Bayesian Optimization*. arXiv:1807.02811.

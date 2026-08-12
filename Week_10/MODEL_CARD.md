@@ -4,109 +4,52 @@
 **Capstone week:** 10  
 **Optimisation round:** 10  
 **Model name:** Pisharam Bayesian Black Box Optimisation Workflow  
-**Model type:** Human supervised, LLM assisted sequential optimisation workflow  
-**Document status:** Week 10 full model card
+**Model type:** Human supervised sequential optimisation workflow  
+**Document status:** Week 10 model card
 
-## 1. Executive Summary
+## 1. Purpose
 
-This model card documents the optimisation workflow used for Week 10 of the Imperial Bayesian Black Box Optimisation capstone. The workflow supports sequential selection of one query vector for each of eight hidden objective functions using only the evidence accumulated from prior submissions and the objective values returned by the competition platform.
+This model card documents the decision process used for Week 10 of the Imperial Bayesian Black Box Optimisation capstone. The task was to select one query vector for each of eight hidden objective functions using only the history of submitted points and returned values.
 
-By Week 10, the workflow had moved beyond broad exploratory search and was using function specific strategies. Function 5 was tested through exact repetition of the Week 09 best known input, Functions 2, 3, 7 and 8 were refined locally, Functions 4 and 6 were reassessed after mixed earlier behaviour, and Function 1 continued broader exploration because its outputs remained effectively near zero.
+The workflow did not attempt to reconstruct the hidden functions. Its purpose was narrower: review the evidence available for each function, decide whether the next move called for exploration, refinement, reassessment or exploitation, and record the reasoning behind that choice.
 
-The Week 10 results reinforced the value of differentiated decision making. Functions 2 and 3 improved, Function 5 reproduced its best known result exactly, Function 1 remained unresolved, and Functions 4, 6, 7 and 8 declined. These outcomes informed the Week 11 strategy and provided additional evidence about local stability, diminishing returns and the need for directional change in some functions.
+## 2. Why the workflow changed by Week 10
 
-## 2. Model Overview
+The early rounds contained too little information to justify narrow local search across every function. By Week 10, the eight functions had developed clearly different histories. Function 5 had a strong and persistent high value. Function 1 remained effectively near zero. Functions 2, 3, 4, 6, 7 and 8 showed different mixtures of improvement, deterioration and local stability.
 
-The workflow is a human supervised, LLM assisted decision support process for black box optimisation under limited observations. It does not know the mathematical form of the eight objective functions and does not claim to reconstruct them. Instead, it uses the cumulative history of submitted query vectors and returned objective values to guide the next set of candidate queries.
+For that reason, Week 10 used a function specific strategy rather than one rule for all eight functions.
 
-The workflow treats each function independently because dimensionality, numerical scale and observed behaviour differ substantially across the eight objectives. Historical evidence is used to decide whether a function should be explored, refined, reassessed or exploited.
+## 3. Inputs to the decision process
 
-## 3. Model Purpose
+The workflow used:
 
-The primary purpose of the workflow is to improve query selection under uncertainty while preserving a transparent record of why each decision was made.
+- the full history of submitted query vectors;
+- the returned objective values;
+- each function's dimensionality;
+- the permitted input range from 0 to 1;
+- the six decimal place submission requirement;
+- the latest change in objective value;
+- recent local behaviour;
+- the longer term direction of travel.
 
-A secondary purpose is to support reproducibility. Exact inputs, outputs, changes, strategy labels and analytical scripts are stored so that the reported Week 10 reasoning can be reconstructed from the repository.
+The stored CSV files remain the authoritative record. Rankings and strategy labels are derived interpretations.
 
-## 4. Scope
+## 4. Week 10 strategy
 
-The workflow is scoped to the Imperial BBO capstone and the evidence available within that project. It is not presented as a general purpose replacement for Bayesian optimisation, Gaussian process optimisation or other established methods.
-
-Its role is structured decision support for a small sequential dataset with hidden objectives and a strict query budget.
-
-## 5. Model Architecture
-
-The workflow follows a repeated evidence cycle:
-
-```text
-Verified optimisation history
-        |
-        v
-Function specific trend review
-        |
-        v
-Candidate strategy selection
-        |
-        v
-Candidate query generation
-        |
-        v
-Human review and constraint checking
-        |
-        v
-Official submission
-        |
-        v
-Returned objective values
-        |
-        v
-Exact comparison and strategy update
-```
-
-The cyclical structure ensures that each new round incorporates the latest evidence without altering earlier observations.
-
-## 6. Model Inputs
-
-The primary inputs are:
-
-- historical query vectors for all eight functions;
-- historical returned objective values;
-- dimensionality of each function;
-- allowed input range from zero to one;
-- six decimal place submission requirement;
-- week to week changes in objective values;
-- recent local search direction;
-- longer term performance trends.
-
-Derived summaries may be used to support interpretation, but the raw observations remain authoritative.
-
-## 7. Model Outputs
-
-The principal output is one recommended query vector for each function for the next optimisation round.
-
-Supporting outputs include exact change calculations, function rankings, strategy classifications, local trend interpretations, information gain summaries and figures showing progression and comparison. These supporting outputs explain the decision process but are not competition returned values.
-
-## 8. Development History
-
-The workflow evolved as evidence accumulated across successive rounds. Early decisions placed greater emphasis on exploration because little was known about the hidden response surfaces. Later rounds allowed more selective local refinement and exploitation where repeated evidence supported those choices.
-
-By Week 10, the workflow had enough historical context to test repeatability deliberately. Function 5 was held at the exact Week 09 best known input rather than moved automatically. The identical returned value provided evidence of repeatability at that tested point.
-
-## 9. Week 10 Strategy
-
-| Function | Week 10 treatment | Rationale |
+| Function | Treatment | Reason |
 |---|---|---|
-| Function 1 | Explore | Prior outputs remained effectively near zero |
-| Function 2 | Refine | Positive region with evidence supporting local improvement |
+| Function 1 | Explore | Previous outputs remained effectively near zero |
+| Function 2 | Refine | Positive region with scope for a controlled local move |
 | Function 3 | Refine | Opportunity to improve within a negative region |
-| Function 4 | Reassess | Earlier direction remained uncertain |
-| Function 5 | Exploit and confirm | Highest known result required a repeatability check |
-| Function 6 | Reassess | Recent local behaviour did not justify direct continuation |
-| Function 7 | Refine | Positive region with modest local structure |
-| Function 8 | Refine | Stable high performing region with cautious local movement |
+| Function 4 | Reassess | Earlier local behaviour remained uncertain |
+| Function 5 | Exploit and confirm | Highest known result justified a repeatability check |
+| Function 6 | Reassess | Recent local movement did not justify simple continuation |
+| Function 7 | Refine | Positive region with modest local variation |
+| Function 8 | Refine | Stable high value with scope for a cautious local move |
 
-## 10. Week 10 Inputs
+## 5. Exact Week 10 inputs
 
-| Function | Exact input |
+| Function | Input |
 |---|---|
 | Function 1 | `0.450000,0.650000` |
 | Function 2 | `0.700000,0.955000` |
@@ -117,9 +60,9 @@ By Week 10, the workflow had enough historical context to test repeatability del
 | Function 7 | `0.060000,0.500000,0.250000,0.220000,0.430000,0.740000` |
 | Function 8 | `0.050000,0.050000,0.050000,0.050000,0.470000,0.875000,0.575000,0.985000` |
 
-## 11. Week 10 Outputs
+## 6. Exact Week 10 outputs
 
-| Function | Exact output |
+| Function | Output |
 |---|---:|
 | Function 1 | `2.8950706668499033e-23` |
 | Function 2 | `0.5311818841205426` |
@@ -130,7 +73,7 @@ By Week 10, the workflow had enough historical context to test repeatability del
 | Function 7 | `1.285160161342515` |
 | Function 8 | `9.4646525` |
 
-## 12. Week 09 to Week 10 Performance
+## 7. Week 09 to Week 10 change
 
 | Function | Week 09 | Week 10 | Exact change |
 |---|---:|---:|---:|
@@ -143,115 +86,118 @@ By Week 10, the workflow had enough historical context to test repeatability del
 | Function 7 | `1.314307996450604` | `1.285160161342515` | `-0.029147835108089` |
 | Function 8 | `9.4709436` | `9.4646525` | `-0.0062911` |
 
-## 13. Decision Making Framework
+The round produced three improvements, four declines and one unchanged result. That mixture is more useful than a simple success count because it shows which local assumptions held and which did not.
 
-The workflow reviews each function across three levels of evidence: the latest movement, the recent local trajectory and the longer term optimisation history. Candidate points are then selected according to whether the evidence supports continued movement, reduced step size, direction change, confirmation or broader exploration.
+## 8. Repeatability test
 
-The final query remains subject to human review. This prevents a derived strategy label from being treated as an automatic instruction when the broader evidence suggests caution.
+Function 5 used exactly the same input in Weeks 09 and 10:
 
-## 14. Exploration and Exploitation
+`0.120000,0.997000,0.999800,0.999800`
 
-Week 10 deliberately retained both exploration and exploitation. Function 5 represented the strongest exploitation case, while Function 1 remained the clearest exploration case. The remaining functions occupied intermediate states where local refinement or reassessment was more appropriate.
+Both submissions returned:
 
-This mixed allocation reduced the risk of committing the entire query budget to previously successful regions while still preserving the strongest known result.
+`4394.868042481448`
 
-## 15. Repeatability Assessment
+This is direct repeatability evidence for that exact tested point. It does not prove that the surrounding region is stable or that the global optimum has been found.
 
-Function 5 returned `4394.868042481448` in both Week 09 and Week 10 at the exact same input, `0.120000,0.997000,0.999800,0.999800`.
+## 9. What Week 10 taught us
 
-This supports repeatability at that specific tested point. It does not prove that the surrounding region is stable, that the global optimum has been found or that the function is deterministic everywhere.
+Function 2 improved, supporting another controlled local refinement. Function 3 also improved, although its output remained negative. Function 4 deteriorated substantially, so continuing in the same direction would have ignored the new evidence. Function 6 also declined and required reassessment.
 
-## 16. Model Performance
+Functions 7 and 8 stayed positive but fell slightly. That supported cautious refinement rather than a larger move. Function 1 remained unresolved because the change in sign occurred at a magnitude that was still effectively near zero.
 
-Week 10 performance was mixed. Functions 2 and 3 improved. Function 5 remained unchanged at the highest known value. Function 1 changed sign but remained effectively near zero. Functions 4, 6, 7 and 8 declined.
+The Function 5 repeat was useful for a different reason. It did not improve the objective value, but it reduced uncertainty about whether the strongest known point could be reproduced.
 
-The workflow therefore provided useful information even when numerical improvement was absent. Negative movements helped identify directions that should not be continued automatically, while the Function 5 repeat strengthened confidence in the tested location.
+## 10. Decision process
 
-## 17. Evaluation Metrics
+The practical sequence was:
 
-Evaluation uses best so far value within each function, exact change from the preceding round, direction of recent movement, stability of repeated or neighbouring observations, consistency between evidence and selected strategy, dimensionality and range compliance, and preservation of exploration where uncertainty remains high.
+```text
+Review verified history
+        |
+Assess each function separately
+        |
+Choose explore, refine, reassess or exploit
+        |
+Generate candidate query
+        |
+Check dimensions, bounds and precision
+        |
+Human review
+        |
+Submit
+        |
+Record returned value
+        |
+Compare with previous evidence
+```
 
-Cross function ranking is treated as descriptive because the objective scales differ.
+The workflow remains human supervised. Strategy labels support the decision but do not replace judgement.
 
-## 18. Information Gain
+## 11. Evaluation
 
-Information gain is interpreted qualitatively from how much a new observation changes understanding of the search direction. Function 5 provided strong information about repeatability. Function 2 strengthened confidence in its local region. Function 3 supplied a favourable directional signal. Function 4 ruled against automatic continuation in the Week 10 direction.
+The workflow is evaluated within each function rather than by comparing raw values across functions. The main checks are:
 
-Information gain scores stored elsewhere in the repository are project interpretation values rather than competition returned measurements.
+- best value observed so far;
+- exact change from the previous round;
+- whether recent movement improved or worsened the result;
+- whether a repeated point behaves consistently;
+- whether the chosen strategy matches the available evidence;
+- compliance with dimensionality, range and precision requirements.
 
-## 19. Robustness
+Because the eight functions use different numerical scales, cross function ranking is descriptive only.
 
-Robustness in this workflow means avoiding unsupported large movements, preserving strong known points where appropriate and changing direction when recent evidence becomes adverse.
+## 12. Computational implementation
 
-Week 10 improved the robustness of later decision making because it supplied both a repeat observation and several clear tests of local movement.
+`week_10_analysis.py` validates the stored inputs, reads the Week 09 and Week 10 outputs, calculates exact changes using `Decimal`, ranks the functions and writes the analytical summary.
 
-## 20. Human Oversight
+`generate_week_10_figures.py` prepares the historical series, writes the figure data summary and generates the Week 10 figures in the weekly folder.
 
-The workflow does not submit queries autonomously. Human review remains required before each official submission. The reviewer checks whether the recommendation agrees with the evidence, whether input dimensions are correct and whether all coordinates satisfy the permitted range and precision requirements.
+The source CSV files are not replaced by these derived outputs.
 
-## 21. Computational Implementation
+## 13. Reproducibility
 
-`week_10_analysis.py` validates input dimensions and ranges, reads Week 09 and Week 10 results, calculates exact changes using `Decimal`, ranks functions and exports the Week 10 analytical summary.
-
-`generate_week_10_figures.py` prepares the verified historical series, exports figure data and generates Week 10 analytical figures directly into the weekly folder.
-
-## 22. Reproducibility
-
-The Week 10 workflow can be reproduced from the repository root with:
+From the repository root:
 
 ```bash
 python Week_10/week_10_analysis.py
 python Week_10/generate_week_10_figures.py
 ```
 
-The stored CSV values remain authoritative. Plotting conversions do not replace the original numerical records.
+The authoritative numerical files are `week_10_inputs.csv` and `week_10_results.csv`.
 
-## 23. Strengths
+## 14. Strengths
 
-The principal strengths of the workflow are transparency, function specific strategy selection, exact preservation of competition values and the ability to adapt after both favourable and unfavourable observations.
+The main strengths are straightforward:
 
-The Week 10 repeatability test for Function 5 also shows that the workflow can use a query for confirmation rather than treating every round as a requirement to move.
+- decisions are tied to recorded observations;
+- different functions can follow different strategies;
+- exact competition values are retained;
+- successful and unsuccessful moves both influence the next decision;
+- the reasoning can be checked against the stored data.
 
-## 24. Limitations
+## 15. Limitations
 
-The hidden mathematical functions remain unknown. Ten observations per function provide only sparse coverage, especially in higher dimensions. Local trends may not generalise to other regions, and no global optimum can be confirmed from the available evidence.
+Ten observations per function remain sparse, especially in the higher dimensional search spaces. The hidden functions are unknown, so local improvement cannot be treated as evidence of global structure. A repeated point can demonstrate repeatability at that point, but not across a wider region.
 
-The workflow also includes human interpretation and LLM assistance, so some strategy judgements are qualitative rather than outputs from a fixed statistical model.
+The workflow also contains human judgement. Strategy classifications are therefore interpretations of the evidence rather than outputs from a fixed statistical model.
 
-## 25. Risks
+## 16. Intended use
 
-The main risks are premature exploitation, overinterpretation of sparse local evidence, assuming smoothness where none has been demonstrated and confusing derived analytical labels with observed competition data.
+This workflow is intended for the Imperial BBO capstone, for documenting sequential optimisation under uncertainty, and for analysing how query choices change as evidence accumulates.
 
-These risks are reduced through exact data preservation, explicit strategy labels, repeated comparison and human review.
+It is not evidence that the hidden functions have been identified, that a global optimum has been proved, or that this approach is superior to established optimisation methods without direct comparison.
 
-## 26. Intended Uses
+## 17. Week 10 conclusion
 
-The workflow is intended for educational analysis of the Imperial BBO capstone, sequential optimisation under uncertainty, reproducible experiment tracking and reflection on exploration versus exploitation.
+Week 10 was useful because it tested several different assumptions in the same round. Functions 2 and 3 supported continued refinement. Function 5 confirmed repeatability at the strongest known point. Function 4 showed clearly that its tested direction should be changed. Functions 6, 7 and 8 called for more cautious movement, while Function 1 remained an exploration problem.
 
-It may also be used as a case study for how a decision support workflow evolves as evidence accumulates.
-
-## 27. Unsuitable Uses
-
-The workflow should not be used to claim that the hidden functions have been identified, that a global optimum has been proven or that the method is superior to established optimisation algorithms without comparative evidence.
-
-It is not suitable for direct deployment in clinical, financial or other safety critical decision making without independent validation.
-
-## 28. Responsible Interpretation
-
-Later frameworks or research extensions should not be described as though they were used in earlier rounds unless the contemporaneous repository record supports that claim. This protects the chronology of the capstone and distinguishes observed evidence from later methodological development.
-
-Similarly, PGC and PFRAMOS are supplementary research streams arising from the wider project. Their later capabilities should not be used to reinterpret Week 10 outcomes retrospectively.
-
-## 29. Week 10 Conclusion
-
-Week 10 was valuable because it tested several different strategic assumptions at once. Functions 2 and 3 justified further refinement, Function 5 demonstrated repeatability at its best known point, Function 1 remained unresolved, and Functions 4, 6, 7 and 8 supplied evidence that local continuation should be cautious or redirected.
-
-The resulting evidence supported a more selective Week 11 submission and strengthened the overall experimental record by showing that confirmation, refinement, reassessment and exploration can all have legitimate roles within the same optimisation round.
+That evidence made the Week 11 decision more selective and more defensible than a simple continuation of the previous search direction.
 
 ## References
 
-Imperial College Business School. Artificial Intelligence and Machine Learning Programme, Black Box Optimisation Capstone Challenge.
+Imperial College Business School. Black Box Optimisation Capstone Challenge.
 
-Rasmussen, C. E. and Williams, C. K. I. Gaussian Processes for Machine Learning. MIT Press.
+Rasmussen, C. E. and Williams, C. K. I. *Gaussian Processes for Machine Learning*. MIT Press.
 
-Frazier, P. I. A Tutorial on Bayesian Optimization. arXiv:1807.02811.
+Frazier, P. I. *A Tutorial on Bayesian Optimization*. arXiv:1807.02811.
