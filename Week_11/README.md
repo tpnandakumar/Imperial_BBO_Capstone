@@ -4,6 +4,13 @@
 
 ### Week 11 Analysis
 
+## Documentation
+
+- [PCA Strategy Comparison](PCA_STRATEGY_COMPARISON.md)
+- [Week 12 Decision Record](WEEK_12_DECISION_RECORD.md)
+
+The Week 11 inputs and returned outputs remain the authoritative numerical record for this round.
+
 ## Contents
 
 1. Introduction
@@ -11,7 +18,7 @@
 3. Comparison of Week 10 and Week 11 Performance
 4. Query Selection Strategy
 5. Exploration vs Exploitation Analysis
-6. Reflection on Week 12 Query Selection
+6. Week 12 Query Selection
 7. Functional Ranking Evolution
 8. High Performing Region Identification
 9. Decision Matrix and Resource Allocation
@@ -19,16 +26,16 @@
 11. Computational Analysis and Coding Implementation
 12. Repository Files and Reproducibility
 13. Conclusion
-14. Automation Decision
+14. Submission Decision
 15. References
 
 ## 1. Introduction
 
-Week 11 is the outcome stage of the clustering work completed in Week 10. The Week 10 clustering lens, distance cues, recurring regions and boundary tightening were used to choose the eleventh round of queries. This folder therefore tests those decisions rather than presenting clustering as a new Week 11 method.
+Week 11 tested the clustering work completed in Week 10. Distance cues, recurring regions and boundary tightening had been used to choose the eleventh round of queries, so the returned values provided a direct test of those decisions.
 
-Every objective improved relative to Week 10. Functions 2 and 5 produced new verified best outputs, while Functions 1 and 8 exactly matched earlier verified best values. The Week 11 results give useful evidence about whether the regions identified in Week 10 were worth revisiting or refining.
+Every objective improved relative to Week 10. Functions 2 and 5 produced new verified best outputs, while Functions 1 and 8 exactly matched earlier verified best values. Functions 3, 4 and 6 recovered after weaker recent rounds, and Function 7 returned to a strong positive region.
 
-This analysis also adds a limited principal component analysis as preparation for the next course topic. PCA was not used to choose the Week 11 queries. It is included only as a head start for Week 12, using the complete Weeks 1 to 11 query history to describe the geometry of the higher dimensional search paths.
+Module 23 then introduced principal component analysis as a way of examining structure in the accumulated query history. PCA was not used to choose the Week 11 queries. It was applied after the Week 11 results were known and compared with the full objective history before the Week 12 submission was selected.
 
 ## 2. Week 11 Results
 
@@ -83,13 +90,56 @@ Function 5 gives the clearest boundary result. A small movement beyond the Week 
 
 Week 11 was mainly a controlled regional test rather than broad exploration. Functions 1 and 8 tested repeatability. Function 5 refined the strongest boundary region. Function 2 stayed within a tight positive neighbourhood. Functions 3, 4 and 6 used evidence led recovery, while Function 7 remained close to its productive positive region.
 
-The result supports the Week 10 clustering decisions, but it does not justify indefinite local tightening. Function 5 is already close to several boundaries. Function 2 has a new best but the width of the productive region is not known. Repeating Functions 1 and 8 again would preserve known performance but add little information.
+The result supports the Week 10 clustering decisions, but it does not justify indefinite local tightening. Function 5 is already close to several boundaries. Function 2 has a new best but the width of the productive region is not known. Functions 1 and 8 provide repeatability evidence at their known best points.
 
-## 6. Reflection on Week 12 Query Selection
+## 6. Week 12 Query Selection
 
-No Week 12 input set is authorised here. The next decision should use the full history, the Week 11 outcome analysis and the formal PCA module before exact coordinates are locked.
+The Week 12 decision used three layers of evidence: the complete Weeks 1 to 11 objective history, the Week 11 outcome analysis, and the PCA structure introduced in Module 23. PCA was treated as a comparison method rather than a replacement for the existing strategy.
 
-The PCA work in this folder is deliberately preparatory. It can identify concentrated directions in the recorded query paths, especially for the higher dimensional functions, but it cannot determine an optimum or replace the observed outputs. Once the PCA module is completed, this preliminary implementation should be reviewed against the course treatment before candidate Week 12 queries are compared.
+For Functions 3, 4, 5 and 8, more than 90 percent of the recorded query variance lay in the first principal component. Functions 6 and 7 required two components to reach the same threshold. That concentration showed that the historical query paths had become structurally narrow, but it did not establish that the principal directions were the directions of greatest objective improvement.
+
+The principal component results were therefore compared with direct performance evidence. This led to different choices across the eight functions:
+
+| Function | Strongest evidence used | Week 12 decision |
+| --- | --- | --- |
+| Function 1 | Exact repeat of the prior best | Retain confirmed best point |
+| Function 2 | New Week 11 best and favourable local direction | Small local refinement |
+| Function 3 | Stronger verified historical point | Return to historical best |
+| Function 4 | Large recovery towards stronger historical region | Return to historical best |
+| Function 5 | PCA concentration and objective trend agree | Further controlled boundary refinement |
+| Function 6 | Two component structure and stronger historical point | Return to historical best |
+| Function 7 | Two component structure and stronger historical point | Return to historical best |
+| Function 8 | Exact repeat of the prior best | Retain confirmed best point |
+
+The submitted Week 12 queries were:
+
+```text
+Function 1
+0.600000-0.600000
+
+Function 2
+0.690000-0.950000
+
+Function 3
+0.850000-0.150000-0.850000
+
+Function 4
+0.600000-0.430000-0.420000-0.250000
+
+Function 5
+0.100000-0.999000-1.000000-1.000000
+
+Function 6
+0.700000-0.200000-0.700000-0.700000-0.200000
+
+Function 7
+0.040000-0.480000-0.260000-0.220000-0.420000-0.740000
+
+Function 8
+0.060000-0.070000-0.030000-0.040000-0.410000-0.820000-0.500000-0.910000
+```
+
+The full function by function reasoning is recorded in [PCA_STRATEGY_COMPARISON.md](PCA_STRATEGY_COMPARISON.md) and [WEEK_12_DECISION_RECORD.md](WEEK_12_DECISION_RECORD.md).
 
 ## 7. Functional Ranking Evolution
 
@@ -114,30 +164,30 @@ Function 5 remains the clearest high performing region. Its Week 11 point `0.110
 
 Function 2 produced a new best after a very small movement from its previous strongest point. Functions 1 and 8 reproduced earlier best outputs at exactly the same coordinates, supporting repeatability but not yet defining the surrounding surfaces.
 
-Functions 3, 4 and 6 improved after moving towards stronger historical areas, while Function 7 returned its second strongest recorded value within a compact positive region. These observations are useful for candidate generation, but they are not evidence that any of those locations is a global optimum.
+Functions 3, 4 and 6 improved after moving towards stronger historical areas, while Function 7 returned its second strongest recorded value within a compact positive region. These observations informed the Week 12 candidate review without being treated as proof of a global optimum.
 
 ## 9. Decision Matrix and Resource Allocation
 
-| Function | Main Week 11 evidence | Main uncertainty before Week 12 | Priority |
-| --- | --- | --- | --- |
-| Function 1 | Prior best reproduced | Shape around the narrow positive point | Medium |
-| Function 2 | New best | Width and direction of the productive neighbourhood | High |
-| Function 3 | Recovery close to prior best | Whether further recovery remains worthwhile | Medium |
-| Function 4 | Large recovery | Whether the earlier strong region can be approached more closely | High |
-| Function 5 | New boundary best | Further gain versus over concentration risk | High |
-| Function 6 | Clear recovery | Whether the stronger historical basin can be regained | Medium |
-| Function 7 | Strong positive result | Whether refinement is reaching diminishing returns | Medium |
-| Function 8 | Prior best reproduced | Information value of leaving a repeatable best point | Medium |
+| Function | Main Week 11 evidence | Week 12 treatment |
+| --- | --- | --- |
+| Function 1 | Prior best reproduced | Confirmed best retained |
+| Function 2 | New best | Small local refinement |
+| Function 3 | Recovery close to prior best | Historical best selected |
+| Function 4 | Large recovery | Historical best selected |
+| Function 5 | New boundary best | Boundary refinement continued |
+| Function 6 | Clear recovery | Historical best selected |
+| Function 7 | Strong positive result | Historical best selected |
+| Function 8 | Prior best reproduced | Confirmed best retained |
 
-These priorities guide preparation only. They are not Week 12 submissions.
+The Week 12 allocation therefore combines confirmation, local refinement, historical recovery and one PCA consistent boundary move rather than applying a single rule across all functions.
 
 ## 10. Information Gain Analysis
 
 Week 11 added both performance and structural information. Functions 1 and 8 confirmed repeatability. Function 5 showed that its boundary region could still improve after a plateau. Function 2 strengthened evidence for a compact positive neighbourhood. Functions 3, 4 and 6 showed that recovery towards earlier strong regions could reverse recent declines.
 
-### Exploratory PCA head start
+### PCA comparison
 
-PCA is applied only to Functions 3 to 8. Functions 1 and 2 remain in direct two dimensional geometry. The calculation uses centred input coordinates without additional scaling. All BBO coordinates share the same nominal `[0,1]` range, so this first pass retains the actual movement magnitude recorded in the search history.
+PCA was applied to Functions 3 to 8. Functions 1 and 2 remained in direct two dimensional geometry. The calculation used centred input coordinates without additional scaling because all BBO coordinates share the same nominal `[0,1]` range.
 
 | Function | PC1 explained variance ratio | PC1 plus PC2 cumulative ratio | Components for at least 90 percent |
 | --- | ---: | ---: | ---: |
@@ -148,13 +198,13 @@ PCA is applied only to Functions 3 to 8. Functions 1 and 2 remain in direct two 
 | Function 7 | `0.8602299516486513` | `0.9692454132352497` | 2 |
 | Function 8 | `0.9021092653998608` | `0.9666706798190747` | 1 |
 
-The recorded query paths are therefore concentrated in one or two principal directions. This is not evidence that the hidden objective surfaces have the same dimensionality. The points were deliberately generated by a structured search, so concentration is expected. The useful question for next week is whether the principal directions help explain how the coordinates have been moving together and whether that should influence the candidate review.
+The result shows that the submitted query paths were concentrated in one or two principal directions. The objective history was then used to decide whether those directions should influence the next submission. Function 5 showed the strongest agreement between structural concentration and objective improvement. For the remaining higher dimensional functions, verified historical performance provided the stronger immediate target.
 
 ## 11. Computational Analysis and Coding Implementation
 
 `week_11_analysis.py` validates the Week 11 inputs and outputs, checks them against the verified history, calculates exact Week 10 to Week 11 changes, identifies the strongest pre Week 11 observations, and calculates exact squared distances to those inputs. It then performs centred PCA for Functions 3 to 8 using NumPy singular value decomposition.
 
-`generate_week_11_figures.py` exports `week_11_figure_data_summary.csv` and creates six figures in the Week 11 folder. The first four figures examine the outcome history and proximity to prior best regions. The final two summarise the exploratory PCA variance concentration.
+`generate_week_11_figures.py` exports `week_11_figure_data_summary.csv` and creates six figures in the Week 11 folder. The first four figures examine the outcome history and proximity to prior best regions. The final two summarise the PCA variance concentration.
 
 Source inputs and outputs remain exact strings or `Decimal` values. Floating point conversion is limited to plotting and PCA, where it is required by the numerical routines.
 
@@ -163,6 +213,8 @@ Source inputs and outputs remain exact strings or `Decimal` values. Floating poi
 The flat Week 11 structure contains:
 
 - `README.md`
+- `PCA_STRATEGY_COMPARISON.md`
+- `WEEK_12_DECISION_RECORD.md`
 - `week_11_inputs.csv`
 - `week_11_results.csv`
 - `week_11_analysis_summary.csv`
@@ -181,21 +233,23 @@ The analysis script should be run first because the figure script reads its summ
 
 ## 13. Conclusion
 
-Week 11 provides a strong outcome test of the clustering work completed in Week 10. All eight functions improved relative to Week 10. Functions 2 and 5 reached new verified best outputs, while Functions 1 and 8 reproduced earlier best values exactly.
+Week 11 provided a strong outcome test of the clustering work completed in Week 10. All eight functions improved relative to Week 10. Functions 2 and 5 reached new verified best outputs, while Functions 1 and 8 reproduced earlier best values exactly.
 
-The PCA work adds a useful head start for the next module without changing the chronology. It describes the search trajectories already observed and will be reviewed again before Week 12 candidate queries are locked.
+Module 23 then provided a useful structural test through PCA. The principal component results were compared with the objective history rather than used as an automatic optimisation rule. This comparison led to a mixed Week 12 strategy in which direct historical evidence remained dominant for most functions, while Function 5 supported a further PCA consistent boundary refinement and Function 2 supported a small local move from its new best.
 
-## 14. Automation Decision
+## 14. Submission Decision
 
-No automatic Week 12 submission is authorised. The scripts may validate data, calculate distances, perform exploratory PCA and prepare figures, but they must not promote a Week 12 input set as final.
+The Week 12 input set has now been submitted. The Week 11 repository therefore records the complete decision trail from Week 11 inputs and outputs through PCA comparison to the final Week 12 coordinates.
 
-Final Week 12 coordinates require manual review after the PCA module, full function by function comparison, bounds checking, dimensional validation and confirmation of six decimal submission formatting.
+Week 12 returned outputs are not yet part of this record. They will be added when they are received and verified, at which point the next weekly analysis can test whether the selected strategies were supported by the new evidence.
 
 ## 15. References
 
-1. `Week_10/README.md`, Stage 2 Component 22.1: Clustering Lens and Week 11 Strategy Refinement.
+1. `Week_10/README.md`, clustering analysis and Week 11 strategy refinement.
 2. `Week_10/CLUSTERING_ANALYSIS.md`, clustering evidence used before the eleventh query round.
 3. `Week_11/week_11_inputs.csv`, verified Week 11 inputs.
 4. `Week_11/week_11_results.csv`, verified Week 11 outputs.
-5. Verified Weeks 1 to 11 input and output histories supplied with the Week 11 submission record.
-6. Course sequence supplied for this stage: clustering techniques followed by principal component analysis.
+5. `Week_11/PCA_STRATEGY_COMPARISON.md`, PCA comparison used before the Week 12 submission.
+6. `Week_11/WEEK_12_DECISION_RECORD.md`, final Week 12 decision record.
+7. Verified Weeks 1 to 11 input and output histories used in the Week 11 analysis.
+8. Module 23 course material introducing principal component analysis for the next optimisation stage.
