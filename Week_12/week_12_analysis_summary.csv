@@ -1,0 +1,9 @@
+function,week_11_output,week_12_output,exact_change,week_12_status,strategy_test
+Function 1,0.025559285339829783,0.025559285339829783,0,Exact repeat of verified best,Confirmed best retained
+Function 2,0.5848554940277205,0.7335252043269003,0.1486697102991798,New verified best,Small local refinement succeeded
+Function 3,-0.06542982421105416,-0.05985127532683556,0.00557854888421860,New verified best,Historical region recovery succeeded
+Function 4,-4.868852987697114,-4.359874926582439,0.508978061114675,Historical best recovered,Historical best recovery succeeded
+Function 5,4411.0387356061765,4427.343995806448,16.3052602002715,New verified best,PCA consistent boundary refinement succeeded
+Function 6,-0.7268715077444687,-0.7078316130911375,0.0190398946533312,Improved but below historical best,Historical best recovery improved performance
+Function 7,1.3579108517237013,1.3809299933612855,0.0230191416375842,Historical best recovered,Historical best recovery succeeded
+Function 8,9.58024,9.58024,0,Exact repeat of verified best,Confirmed best retained
