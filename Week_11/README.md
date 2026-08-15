@@ -215,9 +215,9 @@ The next development was analytical rather than simply numerical. PCA was tested
 
 ## 14. Submission Status
 
-The Week 12 input set has been submitted and is preserved in `../Week_12/week_12_inputs.csv`. Week 12 outputs are still pending and are not included in the Week 11 record.
+The Week 12 input set and verified outputs are preserved in `../Week_12/week_12_inputs.csv` and `../Week_12/week_12_results.csv`. The Week 12 results provide the outcome test for the strategy documented here and inform the final Round 13 decision.
 
-Once those outputs are received, they will provide the outcome test for the strategy documented here and will inform the final Round 13 decision.
+The completed Component 23.1 reflection is recorded in `../Week_12/COMPONENT_23_1_CAPSTONE_REFLECTION.md`.
 
 ## 15. References
 
