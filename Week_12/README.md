@@ -9,6 +9,8 @@
 - [Pre Result Record](PRE_RESULT_RECORD.md)
 - [Module 23 Reflection Preparation](MODULE_23_REFLECTION_PREPARATION.md)
 - [Completed Component 23.1 Capstone Reflection](COMPONENT_23_1_CAPSTONE_REFLECTION.md)
+- [PCA Evidence Record](PCA_EVIDENCE.md)
+- [Validation Record](VALIDATION.md)
 - [Verified Week 12 Results](week_12_results.csv)
 - [Week 12 Analysis Summary](week_12_analysis_summary.csv)
 
@@ -86,10 +88,12 @@ These observations provide the starting point for the final exploration versus e
 
 The Week 12 folder now contains the verified submitted inputs, returned outputs, pre result reasoning, Module 23 reflection preparation and the exact Week 11 to Week 12 comparison.
 
-The next development stage will add the full reproducible analysis, figure data, validation, datasheet and model card once the Week 12 strategy review and final round preparation are completed.
+The reproducible analysis and figure generation code are now included. The PCA calculation used in Week 11 is repeated with the Week 12 observation, allowing the change in explained variance, component retention, loadings and coordinate correlation to be examined.
+
+Week 13 inputs have not been selected. The repository will remain at the Week 12 evidence stage until the next course material is reviewed and any newly required strategy is identified.
 
 ## 9. Conclusion
 
 Week 12 provides strong evidence that comparing methods before selecting each query was useful. Every function either improved or retained a verified best level relative to Week 11. Three functions reached new best values, two recovered historical best values, and two repeated confirmed best values exactly.
 
-The most useful lesson is not that one technique won across the portfolio. Different functions responded to different forms of evidence. That distinction will be central to the final Round 13 strategy.
+The most useful lesson is not that one technique won across the portfolio. Different functions responded to different forms of evidence. This completed Week 12 analysis will be compared with the next course strategy before any Week 13 submission is selected.
