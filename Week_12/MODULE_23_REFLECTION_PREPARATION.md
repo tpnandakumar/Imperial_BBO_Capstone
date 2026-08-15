@@ -2,9 +2,9 @@
 
 ## Purpose
 
-This file maps the Component 23.1 reflection prompts to the evidence already available in the capstone record. It is a preparation document, not the final discussion board submission.
+This file preserves the preparation pathway used for Component 23.1. The Week 12 objective values have now been returned and verified.
 
-The final reflection remains pending until the Week 12 objective values are returned and verified.
+The completed evidence based record is available in [Component 23.1 Capstone Reflection](COMPONENT_23_1_CAPSTONE_REFLECTION.md).
 
 ## Strategy maturation
 
@@ -80,4 +80,4 @@ Within this capstone, PCA provides a structured way to examine how the submitted
 
 ## Final reflection status
 
-The final Component 23.1 response will be written after Week 12 outputs are verified. It will remain under the 700 word limit and will be based on the actual optimisation record rather than predicted results.
+The Component 23.1 reflection has been completed using the verified Week 11 and Week 12 evidence. The final record distinguishes query variance from objective behaviour, retains uncertainty and does not claim a global optimum.
