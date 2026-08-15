@@ -17,7 +17,9 @@ Key assessment links:
 - [Week 09 Datasheet](Week_09/DATASHEET.md)
 - [Week 09 Model Card](Week_09/MODEL_CARD.md)
 - [Week 10: Component 22.1 clustering and strategy refinement](Week_10/README.md)
-- [Week 11: latest completed optimisation round](Week_11/README.md)
+- [Week 11: PCA comparison and Week 12 decision pathway](Week_11/README.md)
+- [Week 12: verified outcome and capstone reflection](Week_12/README.md)
+- [Component 23.1: completed capstone reflection](Week_12/COMPONENT_23_1_CAPSTONE_REFLECTION.md)
 
 The `PGC` and `PFRAMOS` directories contain supplementary research that developed from questions raised during the capstone. They support the project but do not replace the weekly assessed record. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
 
@@ -31,22 +33,20 @@ The strategy has developed gradually from broad exploration towards function spe
 
 ## Current position
 
-Week 11 is the latest completed and fully documented round. Every function improved relative to Week 10.
+Week 12 is the latest completed and verified round. No function deteriorated relative to Week 11. Functions 2, 3 and 5 reached new verified best values, Functions 4 and 7 recovered their historical best values, and Functions 1 and 8 repeated verified best values.
 
 | Function | Week 11 output | Interpretation |
 | --- | ---: | --- |
-| F1 | 0.025559285339829783 | Recovered the confirmed narrow positive peak |
-| F2 | 0.5848554940277205 | New best through a local probe |
-| F3 | -0.06542982421105416 | Improved through local refinement |
-| F4 | -4.868852987697114 | Strong recovery after the Week 10 decline |
-| F5 | 4411.0387356061765 | New verified best near the boundary |
-| F6 | -0.7268715077444687 | Recovered towards the strongest known basin |
-| F7 | 1.3579108517237013 | Improved through tight local refinement |
-| F8 | 9.58024 | Returned to the best verified value |
+| F1 | 0.025559285339829783 | Exact repeat of verified best |
+| F2 | 0.7335252043269003 | New verified best |
+| F3 | -0.05985127532683556 | New verified best |
+| F4 | -4.359874926582439 | Historical best recovered |
+| F5 | 4427.343995806448 | New verified best near the boundary |
+| F6 | -0.7078316130911375 | Improved, but below historical best |
+| F7 | 1.3809299933612855 | Historical best recovered |
+| F8 | 9.58024 | Exact repeat of verified best |
 
-These results do not prove global optimality. They show that the Week 11 function specific decisions improved on the immediately preceding round.
-
-Week 12 will be documented once its submitted inputs and returned outputs have been verified.
+These results do not prove global optimality. They show that the Week 12 function specific decisions improved or retained performance relative to the immediately preceding round.
 
 ## Function dimensionality
 
@@ -105,6 +105,7 @@ The Week 10 documentation also records why weaker directions were stopped rather
 | Week 09 | [README](Week_09/README.md) |
 | Week 10 | [README](Week_10/README.md) |
 | Week 11 | [README](Week_11/README.md) |
+| Week 12 | [README](Week_12/README.md) |
 
 The weekly record shows the chronological development of the optimisation approach as additional observations became available. Later documentation adds validation and analysis while the submitted inputs and returned outputs preserve the underlying experimental record.
 
