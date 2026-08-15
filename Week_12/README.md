@@ -8,6 +8,7 @@
 
 - [Pre Result Record](PRE_RESULT_RECORD.md)
 - [Module 23 Reflection Preparation](MODULE_23_REFLECTION_PREPARATION.md)
+- [Completed Component 23.1 Capstone Reflection](COMPONENT_23_1_CAPSTONE_REFLECTION.md)
 - [Verified Week 12 Results](week_12_results.csv)
 - [Week 12 Analysis Summary](week_12_analysis_summary.csv)
 
