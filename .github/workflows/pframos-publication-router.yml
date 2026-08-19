@@ -7,8 +7,6 @@ on:
       - 'PFRAMOS/training_results/**'
       - 'PFRAMOS/publication_automation/**'
       - 'PFRAMOS/publishable_papers/**'
-  schedule:
-    - cron: '15 3 * * 2'
 
 permissions:
   contents: read

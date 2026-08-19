@@ -2,8 +2,6 @@ name: PFRAMOS Concurrent Schooling
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '30 1 * * 1'
 
 permissions:
   contents: read

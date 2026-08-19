@@ -2,9 +2,6 @@ name: PFRAMOS Competition Scout
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '45 3 * * 4'
-    - cron: '45 8 * * 0'
 
 permissions:
   contents: read
