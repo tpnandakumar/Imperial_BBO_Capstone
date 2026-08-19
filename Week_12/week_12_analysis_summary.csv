@@ -1,9 +1,9 @@
-function,week_11_output,week_12_output,exact_change,week_12_status,strategy_test
-Function 1,0.025559285339829783,0.025559285339829783,0,Exact repeat of verified best,Confirmed best retained
-Function 2,0.5848554940277205,0.7335252043269003,0.1486697102991798,New verified best,Small local refinement succeeded
-Function 3,-0.06542982421105416,-0.05985127532683556,0.00557854888421860,New verified best,Historical region recovery succeeded
-Function 4,-4.868852987697114,-4.359874926582439,0.508978061114675,Historical best recovered,Historical best recovery succeeded
-Function 5,4411.0387356061765,4427.343995806448,16.3052602002715,New verified best,PCA consistent boundary refinement succeeded
-Function 6,-0.7268715077444687,-0.7078316130911375,0.0190398946533312,Improved but below historical best,Historical best recovery improved performance
-Function 7,1.3579108517237013,1.3809299933612855,0.0230191416375842,Historical best recovered,Historical best recovery succeeded
-Function 8,9.58024,9.58024,0,Exact repeat of verified best,Confirmed best retained
+Function,Week_11_Input,Week_12_Input,Week_11_Output,Week_12_Output,Exact_Change,Direction,Exact_Squared_Query_Distance,Previous_Best_Output,Previous_Best_Weeks,Week_12_Best_Status,Observed_Action,Week_13_Status
+Function 1,"0.6,0.6","0.600000,0.600000",0.025559285339829783,0.025559285339829783,0,Unchanged,0,0.025559285339829783,3|11,Matched prior verified best,Repeated the Week 11 coordinate,Not selected
+Function 2,"0.695,0.95","0.690000,0.950000",0.5848554940277205,0.7335252043269003,0.1486697102991798,Improved,0.000025000000,0.5848554940277205,11,New verified best,Small local move from Week 11,Not selected
+Function 3,"0.84,0.16,0.84","0.850000,0.150000,0.850000",-0.06542982421105416,-0.05985127532683556,0.00557854888421860,Improved,0.000300000000,-0.06037987403160633,4,New verified best,Returned to the Week 4 coordinate,Not selected
+Function 4,"0.62,0.42,0.44,0.25","0.600000,0.430000,0.420000,0.250000",-4.868852987697114,-4.359874926582439,0.508978061114675,Improved,0.000900000000,-4.359874926582439,1,Matched prior verified best,Returned to the Week 1 coordinate,Not selected
+Function 5,"0.11,0.998,0.9999,0.9999","0.100000,0.999000,1.000000,1.000000",4411.0387356061765,4427.343995806448,16.3052602002715,Improved,0.000101020000,4411.0387356061765,11,New verified best,Continued a small boundary movement,Not selected
+Function 6,"0.72,0.19,0.7,0.71,0.15","0.700000,0.200000,0.700000,0.700000,0.200000",-0.7268715077444687,-0.7078316130911375,0.0190398946533312,Improved,0.003100000000,-0.648848297397347,3,Below prior verified best,Returned to the Week 3 coordinate,Not selected
+Function 7,"0.045,0.485,0.255,0.22,0.42,0.745","0.040000,0.480000,0.260000,0.220000,0.420000,0.740000",1.3579108517237013,1.3809299933612855,0.0230191416375842,Improved,0.000100000000,1.3809299933612855,5,Matched prior verified best,Returned to the Week 5 coordinate,Not selected
+Function 8,"0.06,0.07,0.03,0.04,0.41,0.82,0.5,0.91","0.060000,0.070000,0.030000,0.040000,0.410000,0.820000,0.500000,0.910000",9.58024,9.58024,0,Unchanged,0,9.58024,1|11,Matched prior verified best,Repeated the Week 11 coordinate,Not selected
