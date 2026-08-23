@@ -1,0 +1,63 @@
+name: Install Week 13 capstone record
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/week13-bootstrap.yml"
+      - "bootstrap/week13_bundle.part.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Reconstruct source bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          cat bootstrap/week13_bundle.part.* > /tmp/week13_bundle.b64
+          base64 --decode /tmp/week13_bundle.b64 > /tmp/week13_bundle.zip
+          unzip -o /tmp/week13_bundle.zip -d .
+
+      - name: Validate and generate outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m py_compile \
+            Experiments/RL_Q_EXPERIMENT_001_WEEK_13_POLICY_REPLAY/rl_q_policy_replay.py \
+            Week_13/generate_week_13_infographics.py
+          python Experiments/RL_Q_EXPERIMENT_001_WEEK_13_POLICY_REPLAY/rl_q_policy_replay.py \
+            | tee Experiments/RL_Q_EXPERIMENT_001_WEEK_13_POLICY_REPLAY/run_output.txt
+          python Week_13/generate_week_13_infographics.py
+
+      - name: Commit Week 13 record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm -f bootstrap/week13_bundle.part.* .github/workflows/week13-bootstrap.yml
+          git add \
+            .github/workflows/week13-rl-q-build.yml \
+            README.md \
+            Experiments/README.md \
+            Experiments/RL_Q_EXPERIMENT_001_WEEK_13_POLICY_REPLAY \
+            Week_13
+          git commit -m "Add Week 13 reflection, RL and Q evidence, outputs and infographics"
+          git push
