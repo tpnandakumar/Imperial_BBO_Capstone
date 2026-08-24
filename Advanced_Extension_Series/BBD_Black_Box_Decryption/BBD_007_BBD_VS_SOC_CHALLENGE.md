@@ -2,9 +2,9 @@
 
 ## Purpose
 
-BBD 007 tests whether the reconstructed mathematical mechanisms can predict genuinely later observations better than the flexible SOC surrogate library.
+BBD 007 tests whether reconstructed mathematical mechanisms can predict later observations better than the flexible SOC surrogate library.
 
-The comparison is prospective within the historical record. At each test round, only earlier observations are available for model selection and fitting. The held-out later observation is then predicted. This avoids using the full thirteen-round history to choose a model before pretending to predict an earlier point.
+The comparison is prospective within the historical record. At each test round, only earlier observations are available for model selection and fitting. The held-out later observation is then predicted. This avoids using the complete thirteen-round history to choose a model before pretending to predict an earlier point.
 
 ## Competitors
 
@@ -16,29 +16,34 @@ The BBD side selects between:
 - regularised degree 2 symbolic equations;
 - constrained transformed benchmark families used in BBD 005.
 
-Model selection is performed separately inside each training window using leave-one-out error.
-
 ### SOC
 
-The SOC side uses the existing surrogate library, including Gaussian Processes, tree ensembles and distance-weighted nearest neighbours. Its model is also selected only from the training window using leave-one-out error.
+The SOC side uses the existing surrogate library, including Gaussian Processes, tree ensembles and distance-weighted nearest neighbours.
+
+## Inner model selection
+
+Within each training window, the most recent available observation is reserved as an **inner chronological validation point**. Candidate models are fitted only to the observations before that point and are ranked by their error on the reserved observation. The selected model is then refitted to the complete training window before predicting the next unseen round.
+
+This rolling-origin inner validation was chosen instead of ordinary leave-one-out selection because it preserves temporal direction and avoids repeatedly allowing later training observations to predict earlier ones. It also keeps the full BBD versus SOC challenge computationally reproducible.
 
 ## Challenge protocol
 
 For each function:
 
-1. begin once at least five earlier observations are available;
-2. select the strongest BBD candidate using only those observations;
-3. select the strongest SOC candidate using only those observations;
-4. fit both competitors to the available history;
-5. predict the next chronological observation;
-6. reveal the true output and record both errors;
-7. expand the training set by one observation and repeat.
+1. begin once at least six earlier observations are available;
+2. reserve the latest of those observations for inner chronological model selection;
+3. select the strongest BBD candidate without seeing the next round;
+4. select the strongest SOC candidate under the same rule;
+5. refit both selected competitors to all currently available observations;
+6. predict the next chronological observation;
+7. reveal the true output and record both errors;
+8. expand the training set by one observation and repeat.
 
 This produces a sequence of pseudo-prospective tests rather than one retrospective fit.
 
 ## Primary metric
 
-The main comparison is mean absolute prediction error normalised by the full observed response standard deviation for that function. The script also reports the number of individual test rounds won by BBD and SOC.
+The main comparison is mean absolute prediction error normalised by the full observed response standard deviation for that function. The script also reports the number of individual forward tests won by BBD and SOC.
 
 ## Interpretation boundary
 
