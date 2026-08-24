@@ -2,21 +2,21 @@
 
 ## Purpose
 
-This datasheet describes the assessment-facing evidence set for the completed thirteen-round Imperial Bayesian Black Box Optimisation capstone. It does not replace the weekly source files. The submitted inputs and returned objective values stored in `Week_01` through `Week_13` remain the authoritative numerical record.
+This datasheet describes the assessment-facing evidence set for the completed thirteen-round Imperial Bayesian Black Box Optimisation capstone. It does not replace the underlying source evidence.
 
 ## Dataset composition
 
-The capstone contains eight independent hidden objective functions with dimensions 2, 2, 3, 4, 4, 5, 6 and 8. One coordinate vector was submitted for each function in each of thirteen rounds, giving 104 weekly query vectors and 104 returned objective values in the completed experimental sequence.
+The capstone contains eight independent hidden objective functions with dimensions 2, 2, 3, 4, 4, 5, 6 and 8. One coordinate vector was submitted for each function in each of thirteen rounds, giving 104 query vectors and 104 returned objective values in the completed experimental sequence.
 
 ## Source and provenance
 
-The evidence was accumulated sequentially during the capstone. Each weekly folder records the query submitted for that round, the objective value returned by the authorised evaluator and the analysis used to prepare subsequent decisions. Later analytical methods were not written back into earlier rounds as though they had been available at the time.
+The evidence was accumulated sequentially during the capstone. The historical Week 01 to Week 13 folders preserve the chronological reasoning and, where available, round-specific source files. Later analytical methods were not written back into earlier rounds as though they had been available at the time.
 
-The final-round authoritative files are `Week_13/week_13_inputs.csv` and `Week_13/week_13_results.csv`. The final historical comparison is stored in `Week_13/week_13_analysis_summary.csv` and the assessment-facing winner table is `Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv`.
+The machine-readable exact numerical history for Weeks 1 to 11 is stored in `PFRAMOS/data/recovered_exact_history.csv`. Weeks 12 and 13 are read directly from their verified input and result CSV files. The final historical comparison is stored in `Week_13/week_13_analysis_summary.csv`, and the assessment-facing winner table is `Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv`.
 
 ## Data representation
 
-All coordinate values lie within the permitted interval from 0 to 1. Submitted coordinates retain the required decimal representation. Returned objective values are preserved as supplied rather than rounded for analysis files. Floating-point conversion is used only where needed for plotting.
+All coordinate values lie within the permitted interval from 0 to 1. Submitted coordinates retain the recorded decimal representation. Returned objective values are preserved as supplied rather than rounded for analysis files. Floating-point conversion is used only where needed for plotting.
 
 ## Analytical use
 
