@@ -1,0 +1,41 @@
+name: Final repository audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - 'Week_*/**'
+      - 'Module_25_Final_BBO_Submission/**'
+      - 'tools/repository_audit.py'
+      - '.github/workflows/final_repository_audit.yml'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  repository-audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run repository audit
+        run: python tools/repository_audit.py
+
+      - name: Reproduce Week 13 final analysis
+        run: python Week_13/week_13_analysis.py
+
+      - name: Install figure dependency
+        run: python -m pip install -r requirements-final.txt
+
+      - name: Reproduce Week 13 figures
+        run: python Week_13/generate_week_13_figures.py
