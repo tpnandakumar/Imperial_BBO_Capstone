@@ -82,14 +82,18 @@ F2 provides useful negative evidence. The Week 12 local best improved sharply, b
 
 ## Reproducibility
 
-The final Week 13 analysis can be reproduced from the repository root with:
+A clean environment can reproduce the final assessment analysis with:
 
 ```bash
+python -m pip install -r requirements-final.txt
+python tools/repository_audit.py
 python Week_13/week_13_analysis.py
 python Week_13/generate_week_13_figures.py
 ```
 
-The analysis reads the committed weekly source files. Objective values remain stored exactly as supplied, and exact Week 12 to Week 13 changes are calculated with decimal arithmetic. Figure generation uses floating-point conversion only for visualisation.
+The repository audit checks the required Module 25 evidence files, Week 01 to Week 13 navigation, internal Markdown links and common unfinished placeholder markers. The Week 13 analysis reconstructs the complete thirteen-round history from committed evidence and calculates the final comparisons. Objective values remain stored exactly as supplied, and exact Week 12 to Week 13 changes are calculated with decimal arithmetic. Figure generation uses floating-point conversion only for visualisation.
+
+A GitHub Actions workflow also runs the repository audit and final Week 13 reproducibility sequence on changes affecting the final assessment record.
 
 See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for the assessment-facing route.
 
