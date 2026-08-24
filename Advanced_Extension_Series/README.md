@@ -18,6 +18,14 @@ The competition pathway is:
 
 See [SOC 1: Surrogate Optimisation Competition](SOC_Surrogate_Optimisation_Competition/README.md).
 
+## BBD: Black Box Decryption
+
+**BBD, Black Box Decryption**, is a separate system-identification research track. SOC asks which surrogate predicts well. BBD asks a deeper question: what kind of mathematical generating mechanism is consistent with the complete sequential evidence?
+
+BBD retains temporal ordering, coordinate movement, repeated points and previous outputs. Its first experiment compares static, noisy, time-augmented, movement-aware and state-aware explanations using chronological walk-forward validation.
+
+See [BBD: Black Box Decryption](BBD_Black_Box_Decryption/README.md).
+
 ## Optimisation lifecycle
 
 **SOC -> Explore -> Exploit -> Extend -> Eliminate -> Validate -> Winner -> Stop**
@@ -39,7 +47,7 @@ A function can move backwards in this sequence when the evidence requires it. A 
 
 ## Active functions
 
-F2, F3, F5 and F6 remain active because the thirteen round evidence does not yet justify a final stopping claim. F1, F4, F7 and F8 remain frozen unless SOC or later extension evidence gives a specific reason to reopen them.
+F2, F3, F5 and F6 remain active because the thirteen round evidence does not yet justify a final stopping claim. F1, F4, F7 and F8 remain frozen unless SOC, BBD or later extension evidence gives a specific reason to reopen them.
 
 ## Extension numbering
 
@@ -50,14 +58,14 @@ All optimisation work after SOC uses the following sequence:
 - Optimisation Extension 3
 - subsequent extensions only when justified by new evidence
 
-SOC itself is numbered separately as the surrogate competition stage, beginning with **SOC 1**.
+SOC itself is numbered separately as the surrogate competition stage, beginning with **SOC 1**. BBD uses its own experimental sequence beginning with **BBD 001**.
 
 ## Evidence rule
 
 A proposed coordinate is not a verified winner until an objective value has actually been returned by the authorised evaluation process. Modelled, interpolated or extrapolated candidates are labelled as candidates. No output is invented.
 
-SOC predictions are surrogate evidence. They can guide search, compare candidate regions and define stopping logic, but they are not written into Weeks 01 to 13 as observed results.
+SOC predictions and BBD reconstructions are post capstone model evidence. They can guide search, compare candidate regions and test hypotheses about the hidden mechanism, but they are not written into Weeks 01 to 13 as observed results.
 
 ## Completion rule
 
-The Advanced Extension Series closes only when every function has one winning coordinate supported by the available evidence and a documented stopping reason. Where further black box evaluation is unavailable, the series records the strongest verified winner and separately records the final surrogate extension winner, its uncertainty and the reason the search stopped.
+The Advanced Extension Series closes only when every function has one winning coordinate supported by the available evidence and a documented stopping reason. Where further black box evaluation is unavailable, the series records the strongest verified winner and separately records the final surrogate or decryption-based extension winner, its uncertainty and the reason the search stopped.
