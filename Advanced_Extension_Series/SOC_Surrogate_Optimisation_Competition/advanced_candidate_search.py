@@ -10,7 +10,7 @@ from sklearn.base import clone
 from surrogate_evaluator import DATA, evaluate, function_xy, model_library
 
 HERE = Path(__file__).resolve().parent
-OUT = HERE / "surrogate_extension_candidates.csv"
+OUT = HERE / "soc_extension_candidates.csv"
 RANDOM_STATE = 42
 N_GLOBAL = 50000
 N_LOCAL = 25000
@@ -43,8 +43,6 @@ def generate_candidates(best_x: np.ndarray, rng: np.random.Generator) -> tuple[n
         1.0,
     )
 
-    # Include direct axis perturbations and clipped boundary probes so that
-    # the search does not depend entirely on random draws.
     deterministic = [best_x.copy()]
     for j in range(dim):
         for step in (0.0025, 0.005, 0.01, 0.02, 0.05):
@@ -70,8 +68,6 @@ def generate_candidates(best_x: np.ndarray, rng: np.random.Generator) -> tuple[n
 
 
 def nearest_sample_distance(candidates: np.ndarray, observed: np.ndarray) -> np.ndarray:
-    # Euclidean distance in original [0,1] coordinate space.
-    # The small data set makes this direct calculation inexpensive enough.
     result = np.empty(len(candidates))
     batch = 5000
     for start in range(0, len(candidates), batch):
@@ -82,13 +78,11 @@ def nearest_sample_distance(candidates: np.ndarray, observed: np.ndarray) -> np.
 
 
 def gp_mean_std(model, X: np.ndarray):
-    # Pipeline support: transform through all preprocessing stages, then ask
-    # the final Gaussian Process estimator for mean and standard deviation.
     if hasattr(model, "named_steps") and "model" in model.named_steps:
         final = model.named_steps["model"]
         if final.__class__.__name__ == "GaussianProcessRegressor":
             transformed = X
-            for name, step in model.steps[:-1]:
+            for _, step in model.steps[:-1]:
                 transformed = step.transform(transformed)
             return final.predict(transformed, return_std=True)
     return model.predict(X), np.full(len(X), np.nan)
@@ -118,16 +112,13 @@ def build_candidates() -> pd.DataFrame:
         pred_mean, pred_std = gp_mean_std(model, candidate_x)
         distance = nearest_sample_distance(candidate_x, X)
 
-        # Conservative extrapolation penalty. A large predicted value far from
-        # every observed point should not automatically become the winner.
         observed_range = float(np.max(y) - np.min(y))
         scale = observed_range if observed_range > 0 else max(abs(best_y), 1.0)
         distance_penalty = 0.15 * scale * distance
         conservative_score = pred_mean - distance_penalty
 
-        # For GP models, retain a separate exploration score as a diagnostic.
         if np.isfinite(pred_std).any():
-            exploration_score = pred_mean + 1.0 * np.nan_to_num(pred_std, nan=0.0) - distance_penalty
+            exploration_score = pred_mean + np.nan_to_num(pred_std, nan=0.0) - distance_penalty
         else:
             exploration_score = conservative_score.copy()
 
@@ -149,7 +140,7 @@ def build_candidates() -> pd.DataFrame:
             row = {
                 "Function": fn,
                 "Dimension": dim,
-                "SelectedModel": selected["Model"],
+                "SOCWinningModel": selected["Model"],
                 "ValidationRelativeRMSE": selected["RelativeRMSE_toObservedRange"],
                 "ValidationInterpretation": selected["ValidationInterpretation"],
                 "CandidateRole": mode,
@@ -174,7 +165,7 @@ def build_candidates() -> pd.DataFrame:
 if __name__ == "__main__":
     candidates = build_candidates()
     columns = [
-        "Function", "SelectedModel", "ValidationInterpretation", "CandidateRole",
+        "Function", "SOCWinningModel", "ValidationInterpretation", "CandidateRole",
         "PredictedMean", "PredictedStd", "NearestObservedDistance",
         "HistoricalBestOutput", "PredictedGainOverHistoricalBest",
     ]

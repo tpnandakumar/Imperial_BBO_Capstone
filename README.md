@@ -21,6 +21,9 @@ Key assessment links:
 - [Week 12: verified outcome and capstone reflection](Week_12/README.md)
 - [Component 23.1: completed capstone reflection](Week_12/COMPONENT_23_1_CAPSTONE_REFLECTION.md)
 - [Week 13: final round analysis](Week_13/README.md)
+- [Week 25: Final BBO Submission synthesis](Week_25_Final_BBO_Submission/README.md)
+
+The Week 25 section is a final synthesis of the completed thirteen round BBO record. It is not an additional optimisation round. It brings together the function specific evidence, strategies used, reasons for changing strategy, final stopping logic and the relationship between the assessed capstone and the later research extension.
 
 The `PGC` and `PFRAMOS` directories contain supplementary research that developed from questions raised during the capstone. They support the project but do not replace the weekly assessed record. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
 
@@ -96,6 +99,18 @@ The Week 10 documentation also records why weaker directions were stopped rather
 Week 11 added PCA as a structural comparison method. Week 12 tested a function specific combination of confirmed best points, local refinement, historical recovery and boundary movement. Week 13 then completed the process by evaluating the final actions through the complete thirteen round history and the exploration versus exploitation ideas introduced in Module 24.
 
 The final analysis also identified an important exception to simple repeatability assumptions. Function 6 returned different values at the same recorded coordinate across Weeks 3, 12 and 13, so fixed input repeatability cannot be assumed for every objective.
+
+## Week 25 final synthesis
+
+[Week 25: Final BBO Submission](Week_25_Final_BBO_Submission/README.md) provides the assessment facing synthesis of the complete BBO project. It explains, function by function, what strategy was used, why it was chosen, how the strategy was applied, when the decision changed and what evidence caused the change.
+
+It also records the final stopping logic and separates the assessed thirteen round BBO record from the post capstone Advanced Extension Series.
+
+## Advanced Extension Series
+
+The [Advanced Extension Series](Advanced_Extension_Series/README.md) begins only after the official capstone sequence. Its first analytical stage is [SOC 1: Surrogate Optimisation Competition](Advanced_Extension_Series/SOC_Surrogate_Optimisation_Competition/README.md).
+
+SOC makes several surrogate model families compete independently for Functions 1 to 8 using held out predictive performance. It is a post capstone research competition and does not alter the original Week 01 to Week 13 record.
 
 ## Weekly record
 

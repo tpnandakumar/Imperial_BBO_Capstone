@@ -18,8 +18,8 @@ from sklearn.linear_model import Ridge
 
 HERE = Path(__file__).resolve().parent
 DATA = HERE / "complete_13_round_history.csv"
-MODEL_RESULTS = HERE / "surrogate_validation_results.csv"
-MODEL_SELECTION = HERE / "surrogate_model_selection.csv"
+MODEL_RESULTS = HERE / "soc_validation_results.csv"
+MODEL_SELECTION = HERE / "soc_model_selection.csv"
 
 RANDOM_STATE = 42
 
@@ -93,8 +93,6 @@ def model_library(n_samples: int, dimension: int) -> list[CandidateModel]:
         ),
     ]
 
-    # A full quadratic has 1 + d + d(d+1)/2 coefficients. Only include it
-    # where the held-out training folds have more observations than terms.
     quadratic_terms = 1 + dimension + dimension * (dimension + 1) // 2
     if n_samples - 1 > quadratic_terms:
         models.append(
@@ -198,9 +196,6 @@ def evaluate() -> tuple[pd.DataFrame, pd.DataFrame]:
         .first()
     )
 
-    # Reliability labels are intentionally cautious. These are not claims of
-    # truth, only screening labels based on held-out error relative to the
-    # historical output range.
     def label(value: float) -> str:
         if pd.isna(value):
             return "Unresolved"
@@ -219,7 +214,7 @@ def evaluate() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 if __name__ == "__main__":
     results, winners = evaluate()
-    print("Selected surrogate per function")
+    print("SOC winning surrogate per function")
     print(winners[["Function", "Model", "RMSE", "MAE", "RelativeRMSE_toObservedRange", "ValidationInterpretation"]].to_string(index=False))
-    print(f"\nDetailed validation: {MODEL_RESULTS}")
-    print(f"Selection table: {MODEL_SELECTION}")
+    print(f"\nDetailed SOC validation: {MODEL_RESULTS}")
+    print(f"SOC selection table: {MODEL_SELECTION}")
