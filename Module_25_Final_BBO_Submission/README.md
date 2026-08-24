@@ -16,50 +16,36 @@ The actual 25.1 and 25.2 responses will be prepared only after the corresponding
 
 The official optimisation history remains in `Week_01` through `Week_13`. Week 13 closes the thirteen-round BBO experiment. It records the final submitted coordinates, returned outputs, function-specific interpretation, final verified best points and stopping considerations.
 
-## Evidence prepared for Component 25.1
+Key closing evidence:
 
-The retrospective evidence will draw on:
+- [Week 13 final analysis](../Week_13/README.md)
+- [Final strategy outcome](../Week_13/FINAL_STRATEGY_OUTCOME.md)
+- [Final capstone synthesis and stopping logic](../Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
+- [RL, MAB, MDP and Q-learning review](../Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md)
+- [Final verified winner summary](Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
-- progression from initial local search to function-specific optimisation
-- changes in exploration and exploitation across the thirteen rounds
-- unsuccessful moves and what they taught us
-- clustering and local-region analysis
-- hyperparameter reasoning used in analytical methods
-- PCA as a structural comparison method
-- reinforcement-learning concepts as a final decision lens
-- recovery, boundary behaviour and stopping decisions
-- differences between low-dimensional and higher-dimensional functions
-- limitations, uncertainty and repeatability
+## Component 25.1 evidence
 
-See `25_1_Retrospective/EVIDENCE_MAP.md`.
+The retrospective evidence is prepared in [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
 
-## Evidence prepared for Component 25.2
+## Component 25.2 evidence
 
-The successful-strategy analysis will distinguish between strategies that worked, strategies that failed, and strategies whose value depended on the function being optimised.
+The successful-strategy evidence is prepared in [25.2 Successful Optimisation Strategies Evidence Map](25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md). It separates strategies that worked from those that failed or required modification and records the strongest examples from F1 to F8.
 
-The evidence will cover:
+## Component 25.3 GitHub submission evidence
 
-- broad exploration
-- local refinement
-- exploitation of productive regions
-- recovery after deterioration
-- boundary testing
-- clustering-informed regional interpretation
-- PCA-informed structural comparison
-- stopping and reopening rules
-- the strongest examples from F1 to F8
+The final repository assessment is treated separately from the reflective components. Current assessment-facing documents are:
 
-See `25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md`.
+- [Repository audit](25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
+- [Final capstone datasheet](25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md)
+- [Final capstone model card](25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md)
+- [Final reproducibility guide](25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
 
-## Component 25.3 repository submission
+The known grading requirements include clear reproducible code, a complete datasheet, a complete model card, an approximately 100-word non-technical project summary in the root README, and a well-organised repository containing the relevant project files.
 
-The final repository assessment is treated separately from the reflective components. The known grading requirements include clear reproducible code, a complete datasheet, a complete model card, an approximately 100-word non-technical project summary in the README, and a well-organised repository containing the relevant project files.
+## Final infographics
 
-See `25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md`.
-
-## Final thirteen-round evidence
-
-The final experimental evidence remains grounded in the verified Week 01 to Week 13 record. The Week 13 analysis is the principal closing analysis for the optimisation experiment and should be read before the Module 25 retrospective.
+The numerical evidence needed for the final Module 25 infographics is being retained in the Week 13 summary and figure-data files. Final reflection graphics will be chosen after the 25.1 and 25.2 prompts and rubrics unlock so that each visual answers the actual assessment question rather than a guessed rubric.
 
 ## Post-capstone research boundary
 
