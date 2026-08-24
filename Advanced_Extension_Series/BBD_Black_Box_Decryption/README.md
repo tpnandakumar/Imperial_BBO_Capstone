@@ -55,17 +55,25 @@ F1 selects Rastrigin and F2/F3 select Ackley, but their held-out errors remain t
 
 See [BBD 005: Benchmark Family Matching](BBD_005_BENCHMARK_MATCHING.md).
 
+## BBD 006: Decryption ensemble and confidence ranking
+
+BBD 006 combines the evidence from the first five stages rather than allowing one excellent fit to dominate the interpretation. The confidence ensemble separately scores predictive equation performance, equation compactness, gradient coherence, repeatability, mechanism simplicity and benchmark-family support.
+
+The output is an auditable ranking for F1 to F8 with each component retained in the result table. The score measures how strongly the available evidence supports the current reconstruction. It is not interpreted as a probability that the exact Imperial equation has been recovered.
+
+See [BBD 006: Decryption Ensemble and Confidence Ranking](BBD_006_DECRYPTION_CONFIDENCE.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information. Later stages compare this sequential evidence with explicit equation families.
 
 ## Evidence boundary
 
-All BBD equations, gradients, benchmark matches and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
+All BBD equations, gradients, benchmark matches, confidence scores and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
 
 ## Outputs
 
-BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery and benchmark-family datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family and decryption-confidence datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -78,6 +86,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_resid
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_reconstruction.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recovery.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matching.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_confidence.py
 ```
 
 ## Research sequence
