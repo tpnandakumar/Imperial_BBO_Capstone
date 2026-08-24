@@ -1,20 +1,20 @@
 from __future__ import annotations
 
-import csv
+from decimal import Decimal
 from pathlib import Path
 
 import matplotlib.pyplot as plt
 
-ROOT = Path(__file__).resolve().parents[1]
-WEEK = ROOT / "Week_13"
-FUNCTIONS = [f"Function {i}" for i in range(1, 9)]
+from week_13_analysis import FUNCTIONS, load_history
+
+WEEK = Path(__file__).resolve().parent
 
 
-def read_week(week: int) -> dict[str, float]:
-    path = ROOT / f"Week_{week:02d}" / f"week_{week:02d}_results.csv"
-    with path.open(newline="", encoding="utf-8") as handle:
-        rows = list(csv.DictReader(handle))
-    return {row["function"]: float(row["output"]) for row in rows}
+def as_float_history(history: dict[int, dict[str, Decimal]]) -> dict[int, dict[str, float]]:
+    return {
+        week: {function: float(value) for function, value in values.items()}
+        for week, values in history.items()
+    }
 
 
 def save_final_change(history: dict[int, dict[str, float]]) -> None:
@@ -83,11 +83,13 @@ def save_best_week(history: dict[int, dict[str, float]]) -> None:
 
 
 def main() -> None:
-    history = {week: read_week(week) for week in range(1, 14)}
+    decimal_history, _ = load_history()
+    history = as_float_history(decimal_history)
     save_final_change(history)
     save_normalised_progress(history)
     save_function5(history)
     save_best_week(history)
+    print(f"Wrote Week 13 figures to {WEEK}")
 
 
 if __name__ == "__main__":
