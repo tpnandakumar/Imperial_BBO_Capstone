@@ -60,4 +60,4 @@ Provide the commands needed to run the weekly analysis and regenerate figures.
 
 ## 9. Companion datasheet
 
-For motivation, provenance, collection strategy, assumptions, limitations, intended uses and maintenance, see [`DATASHEET.md`](DATASHEET.md).
+When this template is instantiated in a weekly folder, the companion provenance and limitations record should be stored as `DATASHEET.md` in that same folder.
