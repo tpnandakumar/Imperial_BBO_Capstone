@@ -2,11 +2,22 @@
 
 ## Scope
 
-This guide provides a short assessor-facing route for reproducing the closing Week 13 analysis from the committed source evidence. It does not attempt to rerun the hidden Imperial objective functions, which are not available in the repository.
+This guide provides a short assessor-facing route for reproducing the closing Week 13 analysis from committed evidence. It does not attempt to rerun the hidden Imperial objective functions, which are not available in the repository.
 
-## Authoritative evidence
+## Authoritative evidence used by the final script
 
-The weekly `week_XX_inputs.csv` and `week_XX_results.csv` files are the source record. Week 13 closes the experiment with eight submitted vectors and eight returned values.
+The early exact numerical history for Weeks 1 to 11 is stored in:
+
+`PFRAMOS/data/recovered_exact_history.csv`
+
+The final two rounds are read directly from their verified source files:
+
+- `Week_12/week_12_inputs.csv`
+- `Week_12/week_12_results.csv`
+- `Week_13/week_13_inputs.csv`
+- `Week_13/week_13_results.csv`
+
+The historical Week 01 to Week 11 READMEs remain the chronological narrative record. The consolidated exact-history CSV provides the machine-readable early numerical evidence needed for the final reproducibility script.
 
 ## Final analysis
 
@@ -16,7 +27,7 @@ From the repository root, run:
 python Week_13/week_13_analysis.py
 ```
 
-This script reads Weeks 01 to 13, calculates exact Week 12 to Week 13 changes with Python `Decimal`, identifies each function's strongest observed output and associated week or weeks, and reports repeated coordinates that returned non-identical outputs.
+The script reconstructs the complete thirteen-round history from the committed sources above, calculates exact Week 12 to Week 13 changes with Python `Decimal`, identifies each function's strongest observed output and associated week or weeks, and reports repeated coordinates that returned non-identical outputs.
 
 The principal derived table is:
 
@@ -30,7 +41,7 @@ Run:
 python Week_13/generate_week_13_figures.py
 ```
 
-The script generates the final-round change plot, within-function normalised progress, the F5 trajectory and the latest round in which each best value was observed.
+The figure script uses the same history loader as the numerical analysis. It generates the final-round change plot, within-function normalised progress, the F5 trajectory and the latest round in which each best value was observed.
 
 The supporting source table is:
 
