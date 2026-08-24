@@ -12,55 +12,50 @@ For each function, BBD asks:
 
 > What is the simplest predictive mechanism consistent with the observed coordinates, outputs, repeated points, temporal order and movement between rounds?
 
-The first competition distinguishes five broad hypotheses.
-
-| Hypothesis | Model idea | Interpretation |
-| --- | --- | --- |
-| H0a | `y = f_linear(x)` | approximately static linear surface |
-| H0b | `y = f_nonlinear(x)` | static nonlinear surface |
-| H1 | `y = f(x) + noise` | static surface with response variability |
-| H2 | `y = f(x,t)` | temporal information improves prediction beyond coordinates alone |
-| H4/H5 | `y = f(x,t,y_prev,delta_x)` | path, state or movement history adds predictive information |
-
-These are competing empirical explanations. Better prediction by a temporal model is evidence that temporal features contain information; it is not by itself proof that the hidden mathematical function literally changes with time.
-
 ## BBD 001: Static versus temporal system identification
 
-The first experiment uses chronological walk-forward validation. For a test round, the model is trained only on earlier rounds. This avoids allowing future observations to influence predictions of the past.
-
-Models currently competing are static ridge regression, static quadratic ridge regression, static Gaussian process regression, time-augmented models, movement-aware regression and state-aware regression.
+BBD 001 compares static, nonlinear, temporal, movement-aware and state-aware predictors using chronological walk-forward validation.
 
 ## BBD 002: Temporal residual structure and repeatability
 
-BBD 002 starts from a coordinate-only Gaussian Process and studies the chronological residuals that remain after coordinate effects have been modelled. It tests whether time, previous residuals or repeated evaluations contain additional predictive information.
+BBD 002 starts from a coordinate-only Gaussian Process and studies chronological residuals and repeated-coordinate behaviour. It showed that most apparent temporal effects did not survive direct residual correction, while F6 retained the clearest variability or short-memory signal.
 
 See [BBD 002: Temporal Residual Structure and Repeatability](BBD_002_TEMPORAL_RESIDUALS.md).
 
 ## BBD 003: Directional derivative and gradient reconstruction
 
-BBD 003 converts consecutive Week 01 to Week 13 input-output changes into directional-derivative constraints. It estimates regularised global and recent gradient vectors, tests their held-out transition prediction and identifies near-axis movements that provide the closest available empirical partial-derivative evidence.
+BBD 003 converts consecutive Week 01 to Week 13 input-output changes into directional-derivative constraints. It estimates regularised global and recent gradient vectors and identifies near-axis movements that provide the closest available empirical partial-derivative evidence.
 
-The first reconstruction found the strongest coherent directional structure in **F5, F7 and F8**, with F2 as a secondary candidate. F6 retained a strong global fit but poor recent-gradient agreement, consistent with its repeatability uncertainty. F1, F3 and F4 did not support a useful first-order gradient representation.
+The strongest coherent directional structure was found in **F5, F7 and F8**, with F2 as a secondary candidate. F6 retained a strong global transition fit but poor recent-gradient agreement. F1, F3 and F4 did not support a useful first-order gradient representation.
 
 See [BBD 003: Directional Derivative and Gradient Reconstruction](BBD_003_GRADIENT_RECONSTRUCTION.md).
 
+## BBD 004: Symbolic equation recovery
+
+BBD 004 tests explicit regularised polynomial equations with leave-one-out validation and a mild complexity penalty.
+
+The strongest current equation-recovery results are:
+
+- **F5:** quadratic, normalised LOOCV MAE about `0.00575`;
+- **F8:** simple linear equation, normalised LOOCV MAE about `0.0173`;
+- **F7:** quadratic, normalised LOOCV MAE about `0.0257`;
+- **F4:** quadratic, normalised LOOCV MAE about `0.118`, revealing nonlinear structure missed by a first-order gradient description.
+
+F8 is the strongest compact decryption candidate because an eight-term linear equation reproduces the observed relationship with very low held-out error and coefficient signs that agree with BBD 003. F5 has the lowest numerical validation error, but its 14-term quadratic and near-zero regularisation require stronger challenge testing before structural claims are made.
+
+See [BBD 004: Symbolic Equation Recovery](BBD_004_SYMBOLIC_RECOVERY.md).
+
 ## Why temporal ordering is retained
 
-The thirteen observations are not treated as an unordered cloud. For round `t`, BBD derives the coordinate vector, round index, coordinate displacement, movement magnitude and previous observed output. Later stages also use the ordered transition relation `delta_y_t` versus `delta_x_t`.
+The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information. Later stages compare this sequential evidence with explicit equation families.
 
-This allows BBD to test whether the route through the search space contains predictive information that is lost by ordinary `x -> y` surrogate modelling.
+## Evidence boundary
 
-## Natural repeatability experiments
-
-Repeated coordinates are especially valuable. If the same recorded coordinate returns different outputs, a perfectly deterministic `y=f(x)` explanation cannot fit those observations simultaneously without a noise or hidden-state term.
-
-F6 remains an important diagnostic function because its repeated-coordinate evidence differs from the more stable repeatability seen in several other functions.
+All BBD equations, gradients and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
 
 ## Outputs
 
-BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient and near-axis derivative datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
-
-These values are model diagnostics and reconstructions. They are not Imperial black-box evaluations.
+BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative and equation-recovery datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -71,6 +66,7 @@ python -m pip install -r Advanced_Extension_Series/BBD_Black_Box_Decryption/requ
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_001_system_identification.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_residuals.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_reconstruction.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recovery.py
 ```
 
 ## Research sequence
@@ -78,7 +74,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_recon
 **BBD 001** Static versus temporal mechanism competition  
 **BBD 002** Residual temporal structure and repeatability analysis  
 **BBD 003** Local directional derivative and gradient reconstruction  
-**BBD 004** Symbolic-regression search for compact equations  
+**BBD 004** Symbolic equation recovery  
 **BBD 005** Benchmark-family matching under coordinate and output transformations  
 **BBD 006** Decryption ensemble and confidence ranking  
 **BBD 007** Predicted function challenge against SOC
