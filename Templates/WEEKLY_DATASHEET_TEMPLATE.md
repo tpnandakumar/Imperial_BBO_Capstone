@@ -13,7 +13,7 @@ Why was this weekly dataset created? What optimisation task and decision does it
 
 Describe the functions, input dimensions, number of queries, returned objective values, derived summaries and figures included for this week.
 
-For the exact files, schemas, record counts and reproduction instructions, see [`DATASET.md`](DATASET.md).
+For the exact files, schemas, record counts and reproduction instructions, use the companion `DATASET.md` created in the instantiated weekly folder.
 
 ## 3. Collection process
 
