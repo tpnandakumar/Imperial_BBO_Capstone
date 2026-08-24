@@ -41,7 +41,7 @@ The strongest current equation-recovery results are:
 - **F7:** quadratic, normalised LOOCV MAE about `0.0257`;
 - **F4:** quadratic, normalised LOOCV MAE about `0.118`, revealing nonlinear structure missed by a first-order gradient description.
 
-F8 is the strongest compact decryption candidate because an eight-term linear equation reproduces the observed relationship with very low held-out error and coefficient signs that agree with BBD 003. F5 has the lowest numerical validation error, but its 14-term quadratic and near-zero regularisation require stronger challenge testing before structural claims are made.
+These are strong retrospective reconstructions, not proof of exact hidden equations.
 
 See [BBD 004: Symbolic Equation Recovery](BBD_004_SYMBOLIC_RECOVERY.md).
 
@@ -49,31 +49,33 @@ See [BBD 004: Symbolic Equation Recovery](BBD_004_SYMBOLIC_RECOVERY.md).
 
 BBD 005 compares the observed history against constrained transformed versions of Sphere, Ellipsoid, Rastrigin, Ackley, Griewank, Schwefel and Rosenbrock functions.
 
-The strongest new lead is **F4**, where a Rosenbrock-like transformed feature reduces normalised held-out error from about `0.118` for the BBD 004 quadratic to about `0.079`. F5, F7 and F8 also select Rosenbrock as the best tested benchmark family, but their BBD 004 equations remain substantially more predictive. This argues against simply identifying them as transformed Rosenbrock functions.
-
-F1 selects Rastrigin and F2/F3 select Ackley, but their held-out errors remain too large for confident family identification. F6 selects Rosenbrock, while its non-identical repeated outputs still require an uncertainty or hidden-state term.
+The strongest new lead is **F4**, where a Rosenbrock-like transformed feature reduces normalised held-out error from about `0.118` for the BBD 004 quadratic to about `0.079`. F5, F7 and F8 also select Rosenbrock as the best tested benchmark family, but their BBD 004 equations remain substantially more predictive over full-history validation.
 
 See [BBD 005: Benchmark Family Matching](BBD_005_BENCHMARK_MATCHING.md).
 
 ## BBD 006: Decryption ensemble and confidence ranking
 
-BBD 006 combines the evidence from the first five stages rather than allowing one excellent fit to dominate the interpretation. The confidence ensemble separately scores predictive equation performance, equation compactness, gradient coherence, repeatability, mechanism simplicity and benchmark-family support.
+BBD 006 combines the evidence from the first five stages. It separately scores predictive equation performance, equation compactness, gradient coherence, repeatability, mechanism simplicity and benchmark-family support.
 
-The output is an auditable ranking for F1 to F8 with each component retained in the result table. The score measures how strongly the available evidence supports the current reconstruction. It is not interpreted as a probability that the exact Imperial equation has been recovered.
+Before prospective challenge testing, F8 and F5 ranked highest. These scores should now be read specifically as **retrospective structural confidence**, because BBD 007 showed that strong full-history reconstruction does not automatically imply superior forward prediction.
 
 See [BBD 006: Decryption Ensemble and Confidence Ranking](BBD_006_DECRYPTION_CONFIDENCE.md).
 
 ## BBD 007: BBD versus SOC prediction challenge
 
-BBD 007 moves beyond retrospective fit. It performs expanding-window chronological prediction in which both BBD and SOC must choose and fit their model using only observations available before the held-out round.
+BBD 007 moves beyond retrospective fit. It performs expanding-window chronological prediction in which BBD and SOC select and fit their models without access to the next historical output.
 
-BBD competes with regularised symbolic equations and constrained benchmark-family reconstructions. SOC competes with the existing flexible surrogate library. At every step the next historical output remains unseen until both predictions have been produced. This makes BBD 007 a pseudo-prospective generalisation test rather than another full-history model comparison.
+The result was deliberately challenging for BBD. **SOC won 7 of the 8 functions. BBD won F6 only.** Across functions, mean normalised MAE was approximately `0.3159` for BBD and `0.2118` for SOC.
+
+This is one of the most important findings in the decryption series. F5 and F8 can be described extremely closely by compact equations when the complete history is available, yet the flexible SOC models predict later observations more accurately. The distinction between *describing the sampled history* and *recovering a mechanism that generalises prospectively* is therefore now explicit.
+
+F6 is the exception. BBD achieved lower forward error than SOC despite F6's repeated-coordinate variability. That result makes F6 a priority for uncertainty-aware structural investigation rather than a candidate for simple deterministic decryption.
 
 See [BBD 007: BBD versus SOC Prediction Challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md).
 
 ## Why temporal ordering is retained
 
-The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information. Later stages compare this sequential evidence with explicit equation families.
+The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
 
 ## Evidence boundary
 
@@ -105,7 +107,8 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_cha
 **BBD 003** Local directional derivative and gradient reconstruction  
 **BBD 004** Symbolic equation recovery  
 **BBD 005** Benchmark-family matching under constrained coordinate and output transformations  
-**BBD 006** Decryption ensemble and confidence ranking  
-**BBD 007** Prospective BBD versus SOC prediction challenge
+**BBD 006** Decryption ensemble and retrospective confidence ranking  
+**BBD 007** Prospective BBD versus SOC prediction challenge  
+**BBD 008** Prospective-evidence confidence recalibration
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
