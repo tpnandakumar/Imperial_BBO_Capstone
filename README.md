@@ -20,6 +20,7 @@ Key assessment links:
 - [Week 11: PCA comparison and Week 12 decision pathway](Week_11/README.md)
 - [Week 12: verified outcome and capstone reflection](Week_12/README.md)
 - [Component 23.1: completed capstone reflection](Week_12/COMPONENT_23_1_CAPSTONE_REFLECTION.md)
+- [Week 13: final round analysis](Week_13/README.md)
 
 The `PGC` and `PFRAMOS` directories contain supplementary research that developed from questions raised during the capstone. They support the project but do not replace the weekly assessed record. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
 
@@ -29,24 +30,24 @@ The challenge contains eight hidden objective functions with dimensionalities ra
 
 The repository preserves the full optimisation history rather than presenting only the best final results. Unsuccessful queries are retained because they also provide evidence. A deterioration can rule out a direction, a repeated output can support stability, and a return to an earlier strong point can test reproducibility.
 
-The strategy has developed gradually from broad exploration towards function specific refinement, recovery, controlled exploitation and boundary testing.
+The strategy developed from broad exploration towards function specific refinement, recovery, controlled exploitation, boundary testing, PCA comparison and final reward based decision review.
 
 ## Current position
 
-Week 12 is the latest completed and verified round. No function deteriorated relative to Week 11. Functions 2, 3 and 5 reached new verified best values, Functions 4 and 7 recovered their historical best values, and Functions 1 and 8 repeated verified best values.
+All thirteen rounds are complete. The final round produced new overall best values for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 retained their strongest observed values exactly. Function 2 finished below its Week 12 peak.
 
-| Function | Week 11 output | Interpretation |
+| Function | Final output | Final interpretation |
 | --- | ---: | --- |
-| F1 | 0.025559285339829783 | Exact repeat of verified best |
-| F2 | 0.7335252043269003 | New verified best |
-| F3 | -0.05985127532683556 | New verified best |
-| F4 | -4.359874926582439 | Historical best recovered |
-| F5 | 4427.343995806448 | New verified best near the boundary |
-| F6 | -0.7078316130911375 | Improved, but below historical best |
-| F7 | 1.3809299933612855 | Historical best recovered |
-| F8 | 9.58024 | Exact repeat of verified best |
+| F1 | 0.025559285339829783 | Best retained exactly |
+| F2 | 0.6413430885133908 | Below Week 12 best of 0.7335252043269003 |
+| F3 | -0.05685061601567621 | New overall best |
+| F4 | -4.359874926582439 | Best retained exactly |
+| F5 | 4440.957216598753 | New overall best |
+| F6 | -0.6071562248604215 | New overall best |
+| F7 | 1.3809299933612855 | Best retained exactly |
+| F8 | 9.58024 | Best retained exactly |
 
-These results do not prove global optimality. They show that the Week 12 function specific decisions improved or retained performance relative to the immediately preceding round.
+The final record does not prove global optimality. It identifies the strongest values observed within the thirteen submitted rounds and records the evidence used to interpret them.
 
 ## Function dimensionality
 
@@ -65,14 +66,14 @@ Every coordinate lies between 0 and 1 and is submitted to six decimal places.
 
 ## Strategy framework
 
-Later rounds use four broad actions rather than applying one treatment to every function:
+Later rounds used four broad actions rather than applying one treatment to every function:
 
 - **Explore:** move to a meaningfully different region when earlier observations remain uninformative.
 - **Refine:** make controlled local changes where evidence supports a productive neighbourhood.
 - **Reassess or recover:** change direction after deterioration or move back towards a stronger historical basin.
 - **Exploit or boundary test:** stay close to a well supported region while testing whether further improvement remains available.
 
-Academic feedback also led to clearer checks for excessive exploitation. Later rounds consider plateau length, diminishing improvement, repeated local concentration, material deterioration, boundary concentration and weak wider search space coverage before continuing to tighten around a strong region.
+Academic feedback also led to clearer checks for excessive exploitation. Later rounds considered plateau length, diminishing improvement, repeated local concentration, material deterioration, boundary concentration and weak wider search space coverage before continuing to tighten around a strong region.
 
 ## Module 21: transparency and interpretability
 
@@ -90,6 +91,12 @@ The Datasheet records provenance, composition, collection, preprocessing, qualit
 
 The Week 10 documentation also records why weaker directions were stopped rather than continued automatically.
 
+## Final analytical progression
+
+Week 11 added PCA as a structural comparison method. Week 12 tested a function specific combination of confirmed best points, local refinement, historical recovery and boundary movement. Week 13 then completed the process by evaluating the final actions through the complete thirteen round history and the exploration versus exploitation ideas introduced in Module 24.
+
+The final analysis also identified an important exception to simple repeatability assumptions. Function 6 returned different values at the same recorded coordinate across Weeks 3, 12 and 13, so fixed input repeatability cannot be assumed for every objective.
+
 ## Weekly record
 
 | Round | Documentation |
@@ -106,6 +113,7 @@ The Week 10 documentation also records why weaker directions were stopped rather
 | Week 10 | [README](Week_10/README.md) |
 | Week 11 | [README](Week_11/README.md) |
 | Week 12 | [README](Week_12/README.md) |
+| Week 13 | [README](Week_13/README.md) |
 
 The weekly record shows the chronological development of the optimisation approach as additional observations became available. Later documentation adds validation and analysis while the submitted inputs and returned outputs preserve the underlying experimental record.
 
