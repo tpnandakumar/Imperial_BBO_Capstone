@@ -17,21 +17,19 @@ REQUIRED_PATHS = [
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "FINAL_REPRODUCIBILITY.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "REPOSITORY_AUDIT.md",
     ROOT / "Module_25_Final_BBO_Submission" / "Final_13_Round_Evidence" / "FINAL_RESULTS_SUMMARY.csv",
+    ROOT / "Module_25_Final_BBO_Submission" / "Final_13_Round_Evidence" / "INFOGRAPHIC_SOURCE_MAP.md",
+    ROOT / "Module_25_Final_BBO_Submission" / "Final_13_Round_Evidence" / "FIGURE_STATUS.md",
     ROOT / "Week_13" / "week_13_inputs.csv",
     ROOT / "Week_13" / "week_13_results.csv",
     ROOT / "Week_13" / "week_13_analysis.py",
     ROOT / "Week_13" / "generate_week_13_figures.py",
 ]
 
-PLACEHOLDER_TERMS = (
-    "TODO",
-    "TBD",
-    "PLACEHOLDER",
-    "YOUR CODE HERE",
-    "INSERT HERE",
-)
-
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+UNFINISHED_MARKER = re.compile(
+    r"(?:^|\s)(?:TODO|TBD|YOUR CODE HERE|INSERT HERE|PLACEHOLDER)\s*(?::|$)",
+    re.IGNORECASE,
+)
 
 
 def iter_markdown_files() -> list[Path]:
@@ -80,21 +78,22 @@ def check_internal_links() -> list[str]:
     return sorted(set(broken))
 
 
-def check_placeholders() -> list[str]:
+def check_unfinished_markers() -> list[str]:
     hits = []
-    for path in iter_markdown_files():
-        text = path.read_text(encoding="utf-8", errors="replace")
-        upper = text.upper()
-        for term in PLACEHOLDER_TERMS:
-            if term in upper:
-                hits.append(f"{path.relative_to(ROOT)}: {term}")
-    for path in ROOT.rglob("*.py"):
-        if "tools/repository_audit.py" in path.as_posix():
+    candidate_files = iter_markdown_files() + list(ROOT.rglob("*.py"))
+    for path in candidate_files:
+        if path.resolve() == Path(__file__).resolve():
             continue
-        text = path.read_text(encoding="utf-8", errors="replace").upper()
-        for term in PLACEHOLDER_TERMS:
-            if term in text:
-                hits.append(f"{path.relative_to(ROOT)}: {term}")
+        text = path.read_text(encoding="utf-8", errors="replace")
+        in_fence = False
+        for number, line in enumerate(text.splitlines(), start=1):
+            if line.strip().startswith("```"):
+                in_fence = not in_fence
+                continue
+            if in_fence:
+                continue
+            if UNFINISHED_MARKER.search(line):
+                hits.append(f"{path.relative_to(ROOT)}:{number}: {line.strip()}")
     return sorted(set(hits))
 
 
@@ -111,15 +110,15 @@ def main() -> int:
     missing_required = check_required_paths()
     missing_weeks = check_week_navigation()
     broken_links = check_internal_links()
-    placeholders = check_placeholders()
+    unfinished = check_unfinished_markers()
 
     print("Imperial BBO Capstone repository audit")
     print_section("Required final-assessment files", missing_required)
     print_section("Week 01 to Week 13 navigation", missing_weeks)
     print_section("Internal Markdown links", broken_links)
-    print_section("Unfinished placeholder markers", placeholders)
+    print_section("Unfinished work markers", unfinished)
 
-    failures = missing_required + missing_weeks + broken_links + placeholders
+    failures = missing_required + missing_weeks + broken_links + unfinished
     print(f"\nTotal findings: {len(failures)}")
     return 1 if failures else 0
 

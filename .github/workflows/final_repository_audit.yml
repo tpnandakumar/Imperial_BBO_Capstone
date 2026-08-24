@@ -8,6 +8,7 @@ on:
       - 'Week_*/**'
       - 'Module_25_Final_BBO_Submission/**'
       - 'tools/repository_audit.py'
+      - 'requirements-final.txt'
       - '.github/workflows/final_repository_audit.yml'
   pull_request:
     branches: [main]
@@ -39,3 +40,11 @@ jobs:
 
       - name: Reproduce Week 13 figures
         run: python Week_13/generate_week_13_figures.py
+
+      - name: Verify generated Week 13 figures
+        run: |
+          test -s Week_13/week_13_figure_1_final_change.png
+          test -s Week_13/week_13_figure_2_normalised_progress.png
+          test -s Week_13/week_13_figure_3_function_5_trajectory.png
+          test -s Week_13/week_13_figure_4_latest_best_round.png
+          echo 'All four Week 13 analytical figures generated successfully.'

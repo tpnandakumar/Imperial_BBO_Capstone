@@ -43,9 +43,12 @@ The final repository assessment is treated separately from the reflective compon
 
 The known grading requirements include clear reproducible code, a complete datasheet, a complete model card, an approximately 100-word non-technical project summary in the root README, and a well-organised repository containing the relevant project files.
 
-## Final infographics
+## Final figures and infographics
 
-The numerical evidence needed for the final Module 25 infographics is being retained in the Week 13 summary and figure-data files. Final reflection graphics will be chosen after the 25.1 and 25.2 prompts and rubrics unlock so that each visual answers the actual assessment question rather than a guessed rubric.
+- [Infographic source map](Final_13_Round_Evidence/INFOGRAPHIC_SOURCE_MAP.md)
+- [Figure audit status](Final_13_Round_Evidence/FIGURE_STATUS.md)
+
+The four Week 13 analytical figures are reproducible outputs generated from committed evidence. The audit workflow now verifies that each file is produced and is non-empty. Final 25.1 and 25.2 reflection infographics will be chosen only after the prompts and rubrics unlock so that each visual answers the actual assessment question rather than a guessed rubric.
 
 ## Post-capstone research boundary
 
