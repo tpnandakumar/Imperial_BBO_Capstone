@@ -1,4 +1,4 @@
-name: BBD 001 Black Box Decryption
+name: BBD Black Box Decryption
 
 on:
   pull_request:
@@ -17,7 +17,7 @@ permissions:
   contents: read
 
 jobs:
-  bbd-001:
+  bbd:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -28,8 +28,10 @@ jobs:
         run: python -m pip install -r Advanced_Extension_Series/BBD_Black_Box_Decryption/requirements-bbd.txt
       - name: Run BBD 001
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_001_system_identification.py
-      - name: Upload BBD 001 outputs
+      - name: Run BBD 002
+        run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_residuals.py
+      - name: Upload BBD outputs
         uses: actions/upload-artifact@v4
         with:
-          name: BBD-001-results
+          name: BBD-results
           path: Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/*.csv
