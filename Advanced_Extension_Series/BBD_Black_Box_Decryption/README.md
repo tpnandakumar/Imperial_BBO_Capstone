@@ -63,6 +63,14 @@ The output is an auditable ranking for F1 to F8 with each component retained in 
 
 See [BBD 006: Decryption Ensemble and Confidence Ranking](BBD_006_DECRYPTION_CONFIDENCE.md).
 
+## BBD 007: BBD versus SOC prediction challenge
+
+BBD 007 moves beyond retrospective fit. It performs expanding-window chronological prediction in which both BBD and SOC must choose and fit their model using only observations available before the held-out round.
+
+BBD competes with regularised symbolic equations and constrained benchmark-family reconstructions. SOC competes with the existing flexible surrogate library. At every step the next historical output remains unseen until both predictions have been produced. This makes BBD 007 a pseudo-prospective generalisation test rather than another full-history model comparison.
+
+See [BBD 007: BBD versus SOC Prediction Challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information. Later stages compare this sequential evidence with explicit equation families.
@@ -73,7 +81,7 @@ All BBD equations, gradients, benchmark matches, confidence scores and model dia
 
 ## Outputs
 
-BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family and decryption-confidence datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence and BBD-versus-SOC prospective prediction datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -87,6 +95,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_recon
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recovery.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matching.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_confidence.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_challenge.py
 ```
 
 ## Research sequence
@@ -97,6 +106,6 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_con
 **BBD 004** Symbolic equation recovery  
 **BBD 005** Benchmark-family matching under constrained coordinate and output transformations  
 **BBD 006** Decryption ensemble and confidence ranking  
-**BBD 007** Predicted function challenge against SOC
+**BBD 007** Prospective BBD versus SOC prediction challenge
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
