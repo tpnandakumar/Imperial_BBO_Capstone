@@ -40,6 +40,14 @@ Models currently competing are:
 
 Each function is evaluated independently because F1 to F8 have different dimensionalities, scales and response behaviour.
 
+## BBD 002: Temporal residual structure and repeatability
+
+BBD 002 starts from a coordinate-only Gaussian Process and studies the chronological residuals that remain after coordinate effects have been modelled. It tests whether time, previous residuals or repeated evaluations contain additional predictive information.
+
+BBD 002 therefore provides a stricter test of the temporal signals suggested by BBD 001. A temporal explanation is treated as practically useful only if a correction trained solely on earlier residuals reduces later prediction error relative to leaving the static residual uncorrected.
+
+See [BBD 002: Temporal Residual Structure and Repeatability](BBD_002_TEMPORAL_RESIDUALS.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. For round `t`, BBD derives:
@@ -66,6 +74,13 @@ Running `bbd_001_system_identification.py` creates:
 - `outputs/BBD_001_TEMPORAL_DIAGNOSTICS.csv`
 - `outputs/BBD_001_HYPOTHESIS_SUMMARY.csv`
 
+Running `bbd_002_temporal_residuals.py` creates:
+
+- `outputs/BBD_002_TEMPORAL_RESIDUAL_SUMMARY.csv`
+- `outputs/BBD_002_STATIC_GP_RESIDUALS.csv`
+- `outputs/BBD_002_RESIDUAL_CORRECTION_COMPETITION.csv`
+- `outputs/BBD_002_REPEATABILITY_DETAIL.csv` when repeated coordinates are present
+
 The output values are model diagnostics and predictions. They are not Imperial black-box evaluations.
 
 ## Run
@@ -75,6 +90,7 @@ From the repository root:
 ```bash
 python -m pip install -r Advanced_Extension_Series/BBD_Black_Box_Decryption/requirements-bbd.txt
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_001_system_identification.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_residuals.py
 ```
 
 ## Research sequence
