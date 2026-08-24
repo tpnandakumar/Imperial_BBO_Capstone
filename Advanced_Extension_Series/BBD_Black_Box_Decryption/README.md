@@ -45,17 +45,27 @@ F8 is the strongest compact decryption candidate because an eight-term linear eq
 
 See [BBD 004: Symbolic Equation Recovery](BBD_004_SYMBOLIC_RECOVERY.md).
 
+## BBD 005: Benchmark family matching
+
+BBD 005 compares the observed history against constrained transformed versions of Sphere, Ellipsoid, Rastrigin, Ackley, Griewank, Schwefel and Rosenbrock functions.
+
+The strongest new lead is **F4**, where a Rosenbrock-like transformed feature reduces normalised held-out error from about `0.118` for the BBD 004 quadratic to about `0.079`. F5, F7 and F8 also select Rosenbrock as the best tested benchmark family, but their BBD 004 equations remain substantially more predictive. This argues against simply identifying them as transformed Rosenbrock functions.
+
+F1 selects Rastrigin and F2/F3 select Ackley, but their held-out errors remain too large for confident family identification. F6 selects Rosenbrock, while its non-identical repeated outputs still require an uncertainty or hidden-state term.
+
+See [BBD 005: Benchmark Family Matching](BBD_005_BENCHMARK_MATCHING.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information. Later stages compare this sequential evidence with explicit equation families.
 
 ## Evidence boundary
 
-All BBD equations, gradients and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
+All BBD equations, gradients, benchmark matches and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
 
 ## Outputs
 
-BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative and equation-recovery datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD currently produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery and benchmark-family datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -67,6 +77,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_001_system_identif
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_residuals.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_reconstruction.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recovery.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matching.py
 ```
 
 ## Research sequence
@@ -75,7 +86,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recov
 **BBD 002** Residual temporal structure and repeatability analysis  
 **BBD 003** Local directional derivative and gradient reconstruction  
 **BBD 004** Symbolic equation recovery  
-**BBD 005** Benchmark-family matching under coordinate and output transformations  
+**BBD 005** Benchmark-family matching under constrained coordinate and output transformations  
 **BBD 006** Decryption ensemble and confidence ranking  
 **BBD 007** Predicted function challenge against SOC
 
