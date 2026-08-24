@@ -2,13 +2,25 @@
 
 ## Purpose
 
-This series begins after the official thirteen-round capstone. It is deliberately separate from Week 01 to Week 13 and does not create an unofficial Week 14.
+This series begins after the official thirteen round capstone. It is deliberately separate from Week 01 to Week 13 and does not create an unofficial Week 14.
 
 The aim is to continue the optimisation reasoning until each function has one defensible winning coordinate, with a documented reason to continue, eliminate a candidate, validate a winner or stop.
 
+## SOC: Surrogate Optimisation Competition
+
+The first analytical stage is **SOC, the Surrogate Optimisation Competition**. SOC is our post capstone competition between surrogate models. Several plausible model families compete independently for each of Functions 1 to 8 using the verified thirteen round input output history.
+
+SOC does not change the original capstone record. It selects one surrogate model winner per function by held out predictive performance, then passes those winning evaluators into the Optimisation Extension series.
+
+The competition pathway is:
+
+**Observed evidence -> competing surrogate models -> leave one out validation -> SOC model winner per function -> candidate generation -> Optimisation Extension series**
+
+See [SOC 1: Surrogate Optimisation Competition](SOC_Surrogate_Optimisation_Competition/README.md).
+
 ## Optimisation lifecycle
 
-**Explore -> Exploit -> Extend -> Eliminate -> Validate -> Winner -> Stop**
+**SOC -> Explore -> Exploit -> Extend -> Eliminate -> Validate -> Winner -> Stop**
 
 A function can move backwards in this sequence when the evidence requires it. A failed exploitation step can reopen exploration. An apparent winner can return to validation if repeatability is uncertain.
 
@@ -27,23 +39,25 @@ A function can move backwards in this sequence when the evidence requires it. A 
 
 ## Active functions
 
-F2, F3, F5 and F6 remain active because the thirteen-round evidence does not yet justify a final stopping claim. F1, F4, F7 and F8 remain frozen unless new evidence gives a specific reason to reopen them.
+F2, F3, F5 and F6 remain active because the thirteen round evidence does not yet justify a final stopping claim. F1, F4, F7 and F8 remain frozen unless SOC or later extension evidence gives a specific reason to reopen them.
 
 ## Extension numbering
 
-All work after Week 13 uses the following sequence:
+All optimisation work after SOC uses the following sequence:
 
 - Optimisation Extension 1
 - Optimisation Extension 2
 - Optimisation Extension 3
 - subsequent extensions only when justified by new evidence
 
+SOC itself is numbered separately as the surrogate competition stage, beginning with **SOC 1**.
+
 ## Evidence rule
 
 A proposed coordinate is not a verified winner until an objective value has actually been returned by the authorised evaluation process. Modelled, interpolated or extrapolated candidates are labelled as candidates. No output is invented.
 
-This distinction is essential. The repository can complete the analytical design and candidate selection offline, but it cannot truthfully declare a new post-capstone objective winner without new evaluations from the black box.
+SOC predictions are surrogate evidence. They can guide search, compare candidate regions and define stopping logic, but they are not written into Weeks 01 to 13 as observed results.
 
 ## Completion rule
 
-The Advanced Extension Series closes only when every function has one winning coordinate supported by the available evidence and a documented stopping reason. Where further black-box evaluation is unavailable, the series records the strongest verified winner and separately records unresolved candidate tests rather than presenting estimates as observations.
+The Advanced Extension Series closes only when every function has one winning coordinate supported by the available evidence and a documented stopping reason. Where further black box evaluation is unavailable, the series records the strongest verified winner and separately records the final surrogate extension winner, its uncertainty and the reason the search stopped.
