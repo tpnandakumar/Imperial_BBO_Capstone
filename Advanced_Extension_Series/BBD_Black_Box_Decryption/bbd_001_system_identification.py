@@ -1,11 +1,9 @@
 from __future__ import annotations
 
-import csv
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.compose import TransformedTargetRegressor
 from sklearn.gaussian_process import GaussianProcessRegressor
 from sklearn.gaussian_process.kernels import ConstantKernel, RBF, WhiteKernel
 from sklearn.linear_model import Ridge
@@ -18,6 +16,15 @@ OUT = HERE / "outputs"
 OUT.mkdir(exist_ok=True)
 
 DIMS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
+
+
+def parse_weekly_input(irow: pd.Series, dim: int) -> list[float]:
+    if "Input" in irow.index:
+        values = [float(v.strip()) for v in str(irow["Input"]).split(",")]
+        if len(values) != dim:
+            raise ValueError(f"Expected {dim} coordinates, found {len(values)}")
+        return values
+    return [float(irow[f"x{i}"]) for i in range(1, dim + 1)]
 
 
 def load_history() -> pd.DataFrame:
@@ -37,9 +44,10 @@ def load_history() -> pd.DataFrame:
         for f in range(1, 9):
             irow = inp.iloc[f - 1]
             orow = out.iloc[f - 1]
+            coords = parse_weekly_input(irow, DIMS[f])
             row = {"week": week, "function": f, "output": float(orow["output"])}
-            for i in range(1, DIMS[f] + 1):
-                row[f"x{i}"] = float(irow[f"x{i}"])
+            for i, value in enumerate(coords, start=1):
+                row[f"x{i}"] = value
             rows.append(row)
     return pd.DataFrame(rows).sort_values(["function", "week"]).reset_index(drop=True)
 
@@ -74,14 +82,10 @@ def model_specs(dim: int):
 def walk_forward_scores(g: pd.DataFrame, dim: int) -> list[dict]:
     specs = model_specs(dim)
     results = []
-    # Start at week 5 so each training fold has at least four observations.
     test_weeks = [w for w in g["week"].tolist() if w >= 5]
     scale = float(np.std(g["output"], ddof=1)) or 1.0
     for name, (features, model) in specs.items():
-        errs = []
-        preds = []
-        truths = []
-        weeks = []
+        errs, preds, truths, weeks = [], [], [], []
         for w in test_weeks:
             train = g[g["week"] < w].dropna(subset=features + ["output"])
             test = g[g["week"] == w].dropna(subset=features + ["output"])
@@ -128,9 +132,7 @@ def repeated_coordinate_diagnostics(g: pd.DataFrame, dim: int) -> dict:
 
 def main() -> None:
     hist = load_history()
-    competition = []
-    diagnostics = []
-    summary = []
+    competition, diagnostics, summary = [], [], []
 
     for f in range(1, 9):
         g = enrich(hist[hist["function"] == f], DIMS[f])
