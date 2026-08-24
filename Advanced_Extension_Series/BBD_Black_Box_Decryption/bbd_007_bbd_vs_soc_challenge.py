@@ -17,7 +17,7 @@ from bbd_001_system_identification import DIMS, load_history
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "outputs"
 OUT.mkdir(exist_ok=True)
-ROOT = HERE.parents[2]
+ROOT = HERE.parents[1]
 SOC_DIR = ROOT / "Advanced_Extension_Series" / "SOC_Surrogate_Optimisation_Competition"
 sys.path.insert(0, str(SOC_DIR))
 from surrogate_evaluator import model_library as soc_model_library  # noqa: E402
