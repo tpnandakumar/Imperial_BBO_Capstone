@@ -1,0 +1,9 @@
+function,winning_coordinate,best_verified_output,best_week_or_weeks,week_13_output,final_interpretation
+Function 1,"0.600000,0.600000",0.025559285339829783,"3;11;12;13",0.025559285339829783,"Best retained with repeated confirmation"
+Function 2,"0.690000,0.950000",0.7335252043269003,12,0.6413430885133908,"Week 12 remains strongest; Week 13 local refinement deteriorated"
+Function 3,"0.855000,0.145000,0.855000",-0.05685061601567621,13,-0.05685061601567621,"New overall best in Week 13"
+Function 4,"0.600000,0.430000,0.420000,0.250000",-4.359874926582439,"1;12;13",-4.359874926582439,"Historical best recovered and retained"
+Function 5,"0.090000,0.999999,0.999999,0.999999",4440.957216598753,13,4440.957216598753,"New overall best in Week 13 after sustained boundary refinement"
+Function 6,"0.700000,0.200000,0.700000,0.700000,0.200000",-0.6071562248604215,13,-0.6071562248604215,"New overall best with repeated-coordinate response variability"
+Function 7,"0.040000,0.480000,0.260000,0.220000,0.420000,0.740000",1.3809299933612855,"5;12;13",1.3809299933612855,"Historical best recovered and retained"
+Function 8,"0.060000,0.070000,0.030000,0.040000,0.410000,0.820000,0.500000,0.910000",9.58024,"1;11;12;13",9.58024,"Best retained with repeated confirmation"
