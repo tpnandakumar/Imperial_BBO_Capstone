@@ -93,6 +93,16 @@ The output is an evidence-strength index rather than a probability of exact reco
 
 See [BBD 009: Prospective-Evidence Confidence Recalibration](BBD_009_PROSPECTIVE_CONFIDENCE.md).
 
+## BBD 010: F6-specific decryption
+
+BBD 010 begins function-specific decryption with F6 because F6 ranked first after the prospective recalibration and was the only function where BBD beat SOC in the function-level forward challenge.
+
+The experiment separates coordinate-only and state-aware explanations using expanding-window prediction. State-aware candidates include the F6 coordinates together with week index, previous observed F6 output and movement from the preceding F6 coordinate. Exact repeated coordinates are analysed separately to quantify the inconsistency that a deterministic coordinate-only equation cannot explain.
+
+The purpose is to determine whether F6 is better described as a static response surface or as a response surface plus a state, path or hidden-context component. It does not assume that the available state proxies are the true hidden variables.
+
+See [BBD 010: F6-Specific Decryption](BBD_010_F6_SPECIFIC_DECRYPTION.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
@@ -103,7 +113,7 @@ All BBD equations, gradients, benchmark matches, confidence scores, discriminato
 
 ## Outputs
 
-BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction, discriminatory-query and prospectively recalibrated evidence datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction, discriminatory-query, prospectively recalibrated evidence and F6-specific mechanism datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -120,6 +130,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_con
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_challenge.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory_query_design.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_confidence.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_decryption.py
 ```
 
 ## Research sequence
@@ -132,6 +143,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_co
 **BBD 006** Decryption ensemble and retrospective confidence ranking  
 **BBD 007** Prospective BBD versus SOC prediction challenge  
 **BBD 008** Discriminatory query design for active falsification  
-**BBD 009** Prospective-evidence confidence recalibration
+**BBD 009** Prospective-evidence confidence recalibration  
+**BBD 010** F6-specific static-versus-state mechanism decryption
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
