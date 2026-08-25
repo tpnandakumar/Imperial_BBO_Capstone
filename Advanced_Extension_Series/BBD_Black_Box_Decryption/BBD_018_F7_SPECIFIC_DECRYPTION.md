@@ -17,27 +17,46 @@ The experiment compares:
 
 All comparisons preserve chronological ordering. Each prediction is made from earlier rounds only.
 
-## Structural evidence carried forward
+## Result
 
-BBD 003 reported a global-to-recent gradient cosine of approximately `0.975357` for F7, indicating unusually stable directional structure across the sampled trajectory.
+The strongest model was **quadratic ridge with alpha 1e-4**, with normalised chronological walk-forward MAE of approximately `0.034870` across eight prospective historical tests.
 
-BBD 004 produced a strong quadratic retrospective reconstruction, although its 27 retained terms reduced confidence that the recovered expression represented the exact hidden equation.
+The ranking was:
 
-BBD 007 then provided the necessary caution: SOC achieved normalised prospective MAE of about `0.195676`, compared with about `0.291394` for the then-current BBD mechanism.
+| Rank | Model | Normalised walk-forward MAE |
+| --- | --- | ---: |
+| 1 | quadratic ridge 1e-4 | 0.034870 |
+| 2 | linear ridge 1e-4 | 0.041639 |
+| 3 | quadratic ridge 1e-2 | 0.045187 |
+| 4 | quadratic ridge 0.1 | 0.055636 |
+| 5 | linear ridge 1e-2 | 0.056973 |
+| 6 | quadratic Lasso 1e-3 | 0.057266 |
+| 7 | quadratic Lasso 1e-2 | 0.059168 |
+| 8 | Matérn 2.5 GP | 0.097483 |
 
-BBD 018 therefore does not treat the earlier quadratic equation as established truth. It re-tests simpler and more regularised coordinate-only mechanisms prospectively.
+This is a substantial improvement over the earlier BBD 007 F7 mechanism, which had normalised prospective MAE of approximately `0.291394`. It is also well below the SOC value reported in BBD 007, approximately `0.195676`. The comparison is not a rerun of SOC under BBD 018, so it should be read as evidence that the F7-specific reconstruction has materially improved, not as a new head-to-head challenge.
+
+## Coordinate effects
+
+The full-history linear ridge diagnostic estimated the strongest coordinate effects as:
+
+1. `x5`: decrease, effect approximately `-4.585639`
+2. `x2`: decrease, effect approximately `-3.014723`
+3. `x6`: decrease, effect approximately `-2.474043`
+4. `x4`: increase, effect approximately `+1.785813`
+5. `x1`: increase, effect approximately `+0.958966`
+6. `x3`: increase, effect approximately `+0.878948`
+
+These directions agree with the sign pattern identified in BBD 003, which reported a global-to-recent gradient cosine of approximately `0.975357`.
 
 ## Repeatability
 
-The script also checks exact repeated coordinates. Any non-identical outputs would prevent exact coordinate-only determinism from being claimed.
+F7 contains one repeated-coordinate group in the recovered history, and its outputs are identical. The maximum repeated-coordinate range is therefore `0.0` in the current data. Unlike F6, the existing F7 evidence does not contradict coordinate-only determinism.
 
-## Interpretation rule
+## Interpretation
 
-A model can be called a strong F7 structural candidate only if it combines:
+BBD 018 provides strong evidence that F7 behaves as a **static, structured coordinate-dependent surface over the sampled region**, with a lightly regularised quadratic representation currently giving the best chronological prediction.
 
-1. low chronological walk-forward error;
-2. stable coordinate-effect signs;
-3. no unresolved repeated-coordinate contradiction;
-4. substantially simpler structure than the earlier 27-term quadratic where possible.
+The result does not establish the exact Imperial equation. The remaining uncertainty concerns global extrapolation and whether the quadratic structure survives discriminatory queries outside the historical trajectory.
 
-Even then, exact function recovery remains false without independent discriminatory evaluations away from the historical trajectory.
+Exact function recovery therefore remains `False`, and an independent query is still required for strict decryption.
