@@ -70,7 +70,6 @@ def main():
     y = g["output"].to_numpy(float)
     yrange = float(np.ptp(y)) or 1.0
 
-    # Direct same-protocol rechallenge. The BBD 023 winning model is compared with the full SOC library.
     roster = [("BBD023_GP_Matern_2.5", gp("matern"))]
     roster += [(f"SOC_{c.name}", c.estimator) for c in model_library(len(g), D)]
 
@@ -97,18 +96,25 @@ def main():
     bbd_row = comp[comp["model"] == "BBD023_GP_Matern_2.5"].iloc[0]
     soc_comp = comp[comp["model"].str.startswith("SOC_")].copy()
     best_soc = soc_comp.iloc[0]
-    direct_winner = "BBD023_GP_Matern_2.5" if bbd_row["normalised_walk_forward_mae"] <= best_soc["normalised_walk_forward_mae"] else str(best_soc["model"])
+    bbd_err = float(bbd_row["normalised_walk_forward_mae"])
+    soc_err = float(best_soc["normalised_walk_forward_mae"])
+    if np.isclose(bbd_err, soc_err, rtol=1e-10, atol=1e-12):
+        direct_winner = "tie_equivalent_matern_implementation"
+    elif bbd_err < soc_err:
+        direct_winner = "BBD023_GP_Matern_2.5"
+    else:
+        direct_winner = str(best_soc["model"])
 
-    # Falsification roster keeps the BBD 023 winner, an interpretable quadratic candidate,
-    # and the two strongest distinct SOC alternatives under the same chronological protocol.
     estimator_map = dict(roster)
     finalist_estimators = {
         "BBD023_GP_Matern_2.5": gp("matern"),
         "BBD023_quadratic_ridge_1e-4": poly_ridge(2, 1e-4),
     }
     for soc_name in soc_comp["model"].tolist():
-        if soc_name not in finalist_estimators:
-            finalist_estimators[soc_name] = estimator_map[soc_name]
+        # SOC GaussianProcess_Matern is numerically the same implementation as the BBD 023 winner here.
+        if soc_name == "SOC_GaussianProcess_Matern":
+            continue
+        finalist_estimators[soc_name] = estimator_map[soc_name]
         if len(finalist_estimators) >= 5:
             break
 
@@ -120,11 +126,9 @@ def main():
             m.fit(X, y)
         fitted[name] = m
 
-    # Prospective identification search. Generated coordinates are hypotheses only, never black-box observations.
     sobol = qmc.Sobol(d=D, scramble=True, seed=RANDOM_STATE)
-    candidates = sobol.random_base2(m=14)  # 16384 points
+    candidates = sobol.random_base2(m=14)
     corners = np.array(np.meshgrid(*[[0.0, 1.0]] * D)).T.reshape(-1, D)
-    # Include boundary-near points because F5 historically concentrated near x2,x3,x4=1.
     eps = np.array([1e-4, 1e-3, 1e-2, 5e-2])
     boundary_pts = []
     for e in eps:
@@ -161,13 +165,14 @@ def main():
     selected.to_csv(OUT / "BBD_024_F5_DISCRIMINATORY_QUERIES.csv", index=False)
 
     top = selected.iloc[0]
+    relative_gain = 0.0 if np.isclose(soc_err, bbd_err, rtol=1e-10, atol=1e-12) else float((soc_err - bbd_err) / soc_err)
     summary = pd.DataFrame([{
         "function": F,
-        "bbd023_matern_normalised_walk_forward_mae": float(bbd_row["normalised_walk_forward_mae"]),
+        "bbd023_matern_normalised_walk_forward_mae": bbd_err,
         "best_soc_model_same_protocol": str(best_soc["model"]),
-        "best_soc_normalised_walk_forward_mae": float(best_soc["normalised_walk_forward_mae"]),
+        "best_soc_normalised_walk_forward_mae": soc_err,
         "direct_rechallenge_winner": direct_winner,
-        "bbd_relative_gain_vs_best_soc": float((best_soc["normalised_walk_forward_mae"] - bbd_row["normalised_walk_forward_mae"]) / best_soc["normalised_walk_forward_mae"]),
+        "bbd_relative_gain_vs_best_soc": relative_gain,
         "top_discriminatory_coordinate": str(top["coordinate"]),
         "top_discrimination_score": float(top["discrimination_score"]),
         "top_normalised_prediction_spread": float(top["normalised_prediction_spread"]),
