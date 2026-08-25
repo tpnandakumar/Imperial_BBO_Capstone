@@ -23,17 +23,44 @@ The state-aware feature set contains the five F6 coordinates plus three quantiti
 
 These are proxies for possible temporal, path or hidden-context effects. They are not assumed to be the true hidden state.
 
+## Result
+
+The coordinate-only Gaussian Process was the strongest model in eight walk-forward tests.
+
+| Rank | Model | Feature mode | Normalised walk-forward MAE |
+| --- | --- | --- | ---: |
+| 1 | Static Gaussian Process | Coordinates only | **0.0441** |
+| 2 | Static quadratic ridge | Coordinates only | **0.0547** |
+| 3 | State-aware Gaussian Process | Coordinates plus state proxies | 0.1697 |
+| 4 | State-aware ridge | Coordinates plus state proxies | 0.2717 |
+
+The best state-aware model was therefore worse than the best static model by about `0.1257` normalised MAE. On the available thirteen observations, the tested week, previous-output and movement proxies do **not** improve prospective prediction.
+
+The BBD 010 mechanism decision is therefore:
+
+`static_surface_preferred`
+
+This is stronger evidence for a predominantly coordinate-driven F6 response than the earlier residual analysis alone suggested.
+
 ## Repeated-coordinate test
 
-Exact repeated F6 coordinates are analysed separately. For every repeated coordinate BBD 010 records the weeks, outputs, within-coordinate range and whether the returned values were identical.
+F6 contains **two exact repeated-coordinate groups**, and both have non-identical outputs. The maximum within-coordinate output range is approximately `0.100675`.
 
-Where the same coordinate produces different outputs, a deterministic coordinate-only equation cannot reproduce all observations exactly. The experiment therefore calculates the mean absolute error of the best constant within each repeated-coordinate group. This is used as an empirical lower bound for any deterministic coordinate-only explanation at those repeated points.
+A deterministic coordinate-only function cannot reproduce two different outputs at the exact same coordinate. Across the repeated groups, the empirical mean absolute error floor for the best within-coordinate constant prediction is approximately `0.030852`.
 
-## Interpretation rule
+This creates an important distinction. The broad response is best predicted by a static coordinate-only surface, but the repeated evaluations show an additional unresolved variability component.
 
-If the best state-aware model improves chronological prediction over the best static model, BBD 010 records evidence for `state_or_hidden_context_supported`. If it does not, the static-surface explanation remains preferred despite the repeat variability.
+A parsimonious current representation is therefore:
 
-Neither outcome establishes the exact Imperial mechanism. Unobserved evaluator state, stochasticity and other hidden variables remain possible.
+`observed F6 response = static coordinate-dependent surface + unresolved variability`
+
+The available evidence does not establish whether that variability is evaluator noise, an unmeasured hidden state, numerical context or another mechanism.
+
+## Interpretation
+
+BBD 010 does **not** support adding simple temporal or path features merely because repeated coordinates differed. In fact, those additions substantially worsened forward prediction.
+
+The next F6 decryption stage should therefore focus on decomposing the residual variability around a strong static surface rather than replacing the static surface with a time-dependent function.
 
 ## Outputs
 
@@ -56,4 +83,4 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_de
 
 ## Evidence boundary
 
-BBD 010 is a post-capstone system-identification experiment. It does not modify the official Week 01 to Week 13 record and does not claim that F6 has been exactly recovered without independent black-box validation.
+BBD 010 is a post-capstone system-identification experiment. It does not modify the official Week 01 to Week 13 record. F6 remains explicitly marked as not exactly recovered because the repeated-coordinate inconsistency and lack of an independent discriminatory black-box evaluation prevent an exact-function claim.
