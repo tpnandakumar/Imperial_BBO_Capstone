@@ -65,43 +65,35 @@ See [BBD 006: Decryption Ensemble and Confidence Ranking](BBD_006_DECRYPTION_CON
 
 BBD 007 moves beyond retrospective fit. It performs expanding-window chronological prediction in which BBD and SOC select and fit their models without access to the next historical output.
 
-The result was deliberately challenging for BBD. **SOC won 7 of the 8 functions. BBD won F6 only.** Across functions, mean normalised MAE was approximately `0.3159` for BBD and `0.2118` for SOC.
-
-This is one of the most important findings in the decryption series. F5 and F8 can be described extremely closely by compact equations when the complete history is available, yet the flexible SOC models predict later observations more accurately. The distinction between *describing the sampled history* and *recovering a mechanism that generalises prospectively* is therefore now explicit.
-
-F6 is the exception. BBD achieved lower forward error than SOC despite F6's repeated-coordinate variability. That result makes F6 a priority for uncertainty-aware structural investigation rather than a candidate for simple deterministic decryption.
+SOC won 7 of the 8 functions. BBD won F6 only. Across functions, mean normalised MAE was approximately `0.3159` for BBD and `0.2118` for SOC.
 
 See [BBD 007: BBD versus SOC Prediction Challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md).
 
 ## BBD 008: Discriminatory query design
 
-BBD 008 changes the objective from prediction to **falsification and identification**. It searches the original bounded coordinate space for points where the strongest remaining BBD and SOC mechanisms make maximally different predictions.
-
-A discriminatory query is valuable because one genuine evaluation at such a point could eliminate several competing explanations at once. The design combines normalised prediction disagreement, maximum model spread and distance from previously sampled coordinates. Numerically explosive extrapolations are excluded so that unstable polynomial behaviour is not mistaken for useful evidence.
-
-BBD 008 produces five diverse proposed identification coordinates for every function and records the prediction of every retained candidate model. These are proposed experiments only, not Imperial submissions or observed outputs.
+BBD 008 changes the objective from prediction to falsification and identification. It searches the original bounded coordinate space for points where the strongest remaining BBD and SOC mechanisms make maximally different predictions.
 
 See [BBD 008: Discriminatory Query Design](BBD_008_DISCRIMINATORY_QUERY_DESIGN.md).
 
 ## BBD 009: Prospective-evidence confidence recalibration
 
-BBD 009 recalibrates the earlier structural ranking using the forward-prediction evidence from BBD 007 and the unresolved mechanism disagreement from BBD 008. The new score is deliberately prospective-heavy. Retrospective fit contributes only one quarter of the index, while prospective competitiveness and forward test wins contribute three fifths.
-
-If SOC wins the function-level forward challenge, the recalibrated index cannot enter the strongest evidence band regardless of how closely a full-history equation fits. Large BBD 008 prediction spread also lowers the score because it shows that materially different mechanisms remain compatible with the historical data.
-
-The output is an evidence-strength index rather than a probability of exact recovery. Every function remains explicitly marked as not exactly recovered until a genuinely independent discriminatory evaluation is available.
+BBD 009 recalibrates the earlier structural ranking using the forward-prediction evidence from BBD 007 and the unresolved mechanism disagreement from BBD 008. F6 becomes the strongest current candidate after prospective evidence is given greater weight.
 
 See [BBD 009: Prospective-Evidence Confidence Recalibration](BBD_009_PROSPECTIVE_CONFIDENCE.md).
 
 ## BBD 010: F6-specific decryption
 
-BBD 010 begins function-specific decryption with F6 because F6 ranked first after the prospective recalibration and was the only function where BBD beat SOC in the function-level forward challenge.
-
-The experiment separates coordinate-only and state-aware explanations using expanding-window prediction. State-aware candidates include the F6 coordinates together with week index, previous observed F6 output and movement from the preceding F6 coordinate. Exact repeated coordinates are analysed separately to quantify the inconsistency that a deterministic coordinate-only equation cannot explain.
-
-The purpose is to determine whether F6 is better described as a static response surface or as a response surface plus a state, path or hidden-context component. It does not assume that the available state proxies are the true hidden variables.
+BBD 010 begins function-specific decryption with F6. Coordinate-only Gaussian Process prediction outperformed the tested state-aware alternatives, favouring a static response surface despite non-identical repeated outputs.
 
 See [BBD 010: F6-Specific Decryption](BBD_010_F6_SPECIFIC_DECRYPTION.md).
+
+## BBD 011: F6 residual decomposition
+
+BBD 011 holds the static F6 surface as the baseline and studies the remaining unexplained component. It tests GP uncertainty, coordinate novelty, movement, local response roughness, nearest-output difference, week and previous residual.
+
+The strongest residual correction used the **previous residual alone**, reducing MAE on the five eligible forward tests from `0.056843` to `0.048096`. Other broad state proxies did not improve prediction. The current F6 interpretation is therefore a strong static coordinate-dependent surface plus a small unresolved residual component with preliminary short-memory evidence.
+
+See [BBD 011: F6 Residual Decomposition](BBD_011_F6_RESIDUAL_DECOMPOSITION.md).
 
 ## Why temporal ordering is retained
 
@@ -110,10 +102,6 @@ The thirteen observations are not treated as an unordered cloud. BBD preserves r
 ## Evidence boundary
 
 All BBD equations, gradients, benchmark matches, confidence scores, discriminatory queries and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
-
-## Outputs
-
-BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction, discriminatory-query, prospectively recalibrated evidence and F6-specific mechanism datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -131,6 +119,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_cha
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory_query_design.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_confidence.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_decryption.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_decomposition.py
 ```
 
 ## Research sequence
@@ -144,6 +133,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_de
 **BBD 007** Prospective BBD versus SOC prediction challenge  
 **BBD 008** Discriminatory query design for active falsification  
 **BBD 009** Prospective-evidence confidence recalibration  
-**BBD 010** F6-specific static-versus-state mechanism decryption
+**BBD 010** F6-specific static-versus-state mechanism decryption  
+**BBD 011** F6 residual decomposition and short-memory test
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
