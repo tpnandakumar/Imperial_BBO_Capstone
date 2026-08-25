@@ -16,15 +16,35 @@ The experiment compares three small-sample stochastic models fitted to the chron
 
 The comparison uses AICc rather than training fit alone because the residual sequence is very short and extra parameters must be penalised heavily.
 
+## Results
+
+The heteroscedastic model was the strongest of the three tested residual mechanisms:
+
+| Residual model | AICc |
+|---|---:|
+| Heteroscedastic, variance linked to GP uncertainty | **-20.8270** |
+| Independent Gaussian | -11.0242 |
+| AR(1) Gaussian | -8.9018 |
+
+The AICc gap from the best model to the second-best model was approximately **9.80**, which meets the experiment's threshold for a tentative preference. The estimated heteroscedastic coefficient was negative, meaning the fitted residual variance decreased as the standardised GP uncertainty increased over this very small residual sample. That direction is counter-intuitive and therefore should not be over-interpreted as a physical mechanism.
+
+The direct Spearman association between absolute residual size and GP predictive standard deviation was only `-0.357` with `p = 0.385`. The lag-one residual correlation was approximately `-0.082`. These diagnostics do not support a strong simple autoregressive explanation and do not independently confirm the heteroscedastic mechanism.
+
 ## Determinism test
 
-Repeated coordinates are analysed separately. If an identical coordinate has different observed outputs, an exact deterministic rule of the form `y = f(x)` is falsified for the recorded data unless there is unobserved state, stochasticity or evaluator variation.
+F6 contains two repeated-coordinate groups with non-identical outputs. Therefore an exact deterministic rule of the form `y = f(x)` is falsified for the recorded observations unless there is unobserved state, evaluator variation or stochasticity.
 
-This does not prove that the underlying objective itself is stochastic. It proves only that the observable coordinate vector is insufficient to reproduce every recorded output exactly.
+This does not prove that the underlying objective itself is stochastic. It shows that the observable five-coordinate vector alone is insufficient to reproduce every recorded F6 output exactly.
 
-## Conservative interpretation rule
+## Current interpretation
 
-Because there are only eight walk-forward residuals, BBD 012 does not label a stochastic family as established unless it clearly separates from the next-best tested model. A difference of at least four AICc units is used as a tentative, not definitive, preference threshold.
+The strongest current representation is:
+
+`observed F6 = static coordinate-dependent surface + unresolved non-constant residual process`
+
+The residual process is **tentatively heteroscedastic among the three models tested**, but the sample contains only eight walk-forward residuals. The earlier BBD 011 short-memory improvement remains useful predictive evidence, while BBD 012 shows that a simple AR(1) likelihood model is not the strongest global residual description.
+
+Exact function recovery remains false.
 
 ## Outputs
 
@@ -37,4 +57,4 @@ Running `bbd_012_f6_stochastic_deterministic.py` creates:
 
 ## Evidence boundary
 
-BBD 012 remains a post-capstone system-identification experiment. The sample is too small to infer the exact stochastic law of F6. The purpose is to eliminate unsupported explanations and state the strongest remaining mechanism with an explicit uncertainty boundary.
+BBD 012 remains a post-capstone system-identification experiment. The sample is too small to infer the exact stochastic law of F6. The result narrows the surviving explanations but still requires an independent black-box evaluation before any exact decryption claim can be made.
