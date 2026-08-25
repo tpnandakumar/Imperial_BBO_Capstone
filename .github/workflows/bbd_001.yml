@@ -65,6 +65,8 @@ jobs:
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_018_f7_specific_decryption.py
       - name: Run BBD 019
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_019_f7_quadratic_simplification.py
+      - name: Run BBD 020
+        run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_020_f7_discriminatory_falsification.py
       - name: Upload BBD outputs
         uses: actions/upload-artifact@v4
         with:
