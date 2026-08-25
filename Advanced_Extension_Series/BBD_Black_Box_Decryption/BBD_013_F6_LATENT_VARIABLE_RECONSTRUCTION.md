@@ -31,6 +31,18 @@ First, the correlation between the leading latent component and the static-GP re
 
 A latent explanation is treated as supported only if it reduces forward residual MAE relative to the uncorrected baseline on the same eligible observations.
 
+## Results
+
+The one-component latent model had a leading-component residual correlation of only `0.120759`. On the five observations eligible for prospective latent correction, the uncorrected residual MAE was `0.056843`, while the one-component latent correction increased MAE to `0.090492`. The resulting MAE gain was therefore `-0.033649`.
+
+The two-component representation was worse again. Its prospective corrected residual MAE was `0.109641`, giving an MAE gain of `-0.052798` relative to the same baseline.
+
+Neither latent representation therefore improved forward prediction. Under the pre-specified decision rule, the available observable context does not support a useful low-dimensional latent state for F6.
+
+Four repeated-coordinate pairs were available for the context comparison. The descriptive correlation between context distance and absolute output change was approximately `-0.644142`. With only four pairs this is not reliable evidence of a mechanism, and its negative direction does not support a simple claim that greater observable-context change produced greater repeat-output variation.
+
+The current interpretation is therefore **no observable latent-context advantage**. This does not rule out an unobserved latent variable that was never recorded. It shows that the particular context variables available from the thirteen-round history do not reconstruct such a state in a way that improves prospective residual prediction.
+
 ## Repeated-coordinate context
 
 Repeated F6 coordinates are analysed separately. For each repeat pair, the experiment records the output change and the distance between the corresponding observable-context vectors. This asks whether the same coordinate produced a different output when the surrounding context was materially different.
