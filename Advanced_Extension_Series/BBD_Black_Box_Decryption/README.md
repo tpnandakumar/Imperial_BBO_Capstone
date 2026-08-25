@@ -73,17 +73,27 @@ F6 is the exception. BBD achieved lower forward error than SOC despite F6's repe
 
 See [BBD 007: BBD versus SOC Prediction Challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md).
 
+## BBD 008: Discriminatory query design
+
+BBD 008 changes the objective from prediction to **falsification and identification**. It searches the original bounded coordinate space for points where the strongest remaining BBD and SOC mechanisms make maximally different predictions.
+
+A discriminatory query is valuable because one genuine evaluation at such a point could eliminate several competing explanations at once. The design combines normalised prediction disagreement, maximum model spread and distance from previously sampled coordinates. Numerically explosive extrapolations are excluded so that unstable polynomial behaviour is not mistaken for useful evidence.
+
+BBD 008 produces five diverse proposed identification coordinates for every function and records the prediction of every retained candidate model. These are proposed experiments only, not Imperial submissions or observed outputs.
+
+See [BBD 008: Discriminatory Query Design](BBD_008_DISCRIMINATORY_QUERY_DESIGN.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
 
 ## Evidence boundary
 
-All BBD equations, gradients, benchmark matches, confidence scores and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
+All BBD equations, gradients, benchmark matches, confidence scores, discriminatory queries and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
 
 ## Outputs
 
-BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence and BBD-versus-SOC prospective prediction datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction and discriminatory-query datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -98,6 +108,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recov
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matching.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_confidence.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_challenge.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory_query_design.py
 ```
 
 ## Research sequence
@@ -109,6 +120,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_cha
 **BBD 005** Benchmark-family matching under constrained coordinate and output transformations  
 **BBD 006** Decryption ensemble and retrospective confidence ranking  
 **BBD 007** Prospective BBD versus SOC prediction challenge  
-**BBD 008** Prospective-evidence confidence recalibration
+**BBD 008** Discriminatory query design for active falsification  
+**BBD 009** Prospective-evidence confidence recalibration
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
