@@ -8,7 +8,7 @@ BBD 023 found that a dedicated Matérn 2.5 Gaussian Process predicted the histor
 
 The BBD 023 winning Matérn 2.5 model was compared against the full SOC model library using the same chronological walk-forward protocol. Each model trained only on observations available before the test week. Testing began after five historical observations and produced eight forward predictions.
 
-The result was:
+The validated result was:
 
 | Rank | Model | Normalised walk-forward MAE |
 | --- | --- | ---: |
@@ -29,7 +29,7 @@ The RBF Gaussian Process was only slightly weaker at `0.001666`. The meaningful 
 
 ## Falsification roster
 
-The duplicate SOC Matérn implementation was removed from the falsification roster so that identical models did not artificially increase agreement. The retained models were:
+The duplicate SOC Matérn implementation was removed from the falsification roster so that identical models did not artificially increase agreement. The five retained models were:
 
 - BBD 023 Matérn 2.5 Gaussian Process;
 - BBD 023 quadratic ridge model;
@@ -43,7 +43,7 @@ The strongest proposed F5 falsification point was:
 
 `1.000000-0.000000-0.000000-0.000000`
 
-At this coordinate the retained models predicted:
+At this coordinate the validated printed predictions included:
 
 | Model | Predicted F5 |
 | --- | ---: |
@@ -51,15 +51,16 @@ At this coordinate the retained models predicted:
 | BBD 023 quadratic ridge | 28467.707925 |
 | SOC Gaussian Process RBF | 3699.993190 |
 | SOC Extra Trees | 1415.876394 |
-| SOC Random Forest | 1851.890283 |
 
-The corresponding discrimination score was `7.689893`, the normalised prediction spread was `8.942515`, and novelty relative to the historical F5 coordinates was `1.732339`.
+The fifth retained model, SOC Random Forest, is included in the underlying falsification calculation and output file but was not included in the compact printed query table produced by the workflow log.
+
+The validated discrimination score was `7.601011`, the normalised prediction spread was `8.942515`, and novelty relative to the historical F5 coordinates was `1.732339`.
 
 The quadratic reconstruction therefore makes a radically different global extrapolation from the smooth GP and tree-based models. A genuine black-box response at this coordinate would provide far more information about the generating mechanism than another small refinement near the historical optimum.
 
 ## Sequential falsification queue
 
-Ten spatially separated candidate points were retained. The leading coordinates are:
+Ten spatially separated candidate points were retained. The validated coordinates are:
 
 1. `1.000000-0.000000-0.000000-0.000000`
 2. `0.999303-0.279466-0.027128-0.043419`
