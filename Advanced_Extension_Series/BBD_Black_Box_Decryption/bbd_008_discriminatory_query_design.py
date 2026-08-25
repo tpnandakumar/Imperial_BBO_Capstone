@@ -19,7 +19,6 @@ from bbd_007_bbd_vs_soc_challenge import (
     CENTRES,
     SCALES,
     benchmark_feature,
-    loo_predictions,
 )
 
 HERE = Path(__file__).resolve().parent
@@ -36,6 +35,19 @@ MAX_MODELS = 5
 N_SOBOL = 2 ** 14
 TOP_QUERIES = 5
 MIN_QUERY_SEPARATION_FRACTION = 0.12
+
+
+def loo_predictions(estimator, X: np.ndarray, y: np.ndarray) -> np.ndarray:
+    pred = np.empty(len(y), dtype=float)
+    for i in range(len(y)):
+        mask = np.ones(len(y), dtype=bool)
+        mask[i] = False
+        model = clone(estimator)
+        with warnings.catch_warnings():
+            warnings.simplefilter("ignore")
+            model.fit(X[mask], y[mask])
+        pred[i] = float(model.predict(X[i:i + 1])[0])
+    return pred
 
 
 def symbolic_pool(dim: int):
@@ -89,7 +101,6 @@ def evaluate_model_pool(X: np.ndarray, y: np.ndarray):
 
     records.sort(key=lambda z: z[0])
 
-    # Preserve structural diversity rather than retaining several near-duplicate variants.
     selected = []
     seen_families = set()
     for row in records:
@@ -136,7 +147,6 @@ def candidate_points(dim: int) -> np.ndarray:
     sampler = qmc.Sobol(d=dim, scramble=True, seed=RANDOM_STATE)
     points = sampler.random_base2(m=int(np.log2(N_SOBOL)))
 
-    # Explicit corners are useful because disagreement can concentrate near boundaries.
     if dim <= 8:
         corners = np.array(
             [[float((mask >> j) & 1) for j in range(dim)] for mask in range(2 ** dim)],
@@ -147,7 +157,6 @@ def candidate_points(dim: int) -> np.ndarray:
 
 
 def novelty(points: np.ndarray, observed: np.ndarray) -> np.ndarray:
-    # Euclidean distance to the nearest historical query, scaled to [0, 1].
     dist = np.sqrt(((points[:, None, :] - observed[None, :, :]) ** 2).sum(axis=2)).min(axis=1)
     return np.clip(dist / np.sqrt(points.shape[1]), 0.0, 1.0)
 
@@ -194,7 +203,6 @@ def main():
         P = candidate_points(d)
         pred_matrix = np.column_stack([predict_model(m, P) for m in fitted])
 
-        # Remove points where any candidate produces implausibly explosive extrapolation.
         credible = np.all(np.isfinite(pred_matrix), axis=1)
         credible &= np.all(np.abs(pred_matrix - ymedian) <= 5.0 * yrange, axis=1)
         P = P[credible]
@@ -203,9 +211,6 @@ def main():
         disagreement = np.std(pred_matrix, axis=1, ddof=0) / yrange
         max_spread = (np.max(pred_matrix, axis=1) - np.min(pred_matrix, axis=1)) / yrange
         nov = novelty(P, X)
-
-        # Decryption score rewards model disagreement first, while preferring points that add
-        # information beyond already sampled coordinates. It is not an optimisation score.
         score = (0.65 * disagreement + 0.35 * max_spread) * (0.60 + 0.40 * nov)
         chosen = choose_diverse_top(P, score, TOP_QUERIES, d)
 
