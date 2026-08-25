@@ -53,6 +53,8 @@ jobs:
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_deterministic.py
       - name: Run BBD 013
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_013_f6_latent_variable_reconstruction.py
+      - name: Run BBD 014
+        run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_014_f6_deterministic_surface_refinement.py
       - name: Upload BBD outputs
         uses: actions/upload-artifact@v4
         with:
