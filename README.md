@@ -3,19 +3,24 @@
 ## Bayesian Black Box Optimisation Portfolio
 
 **Author:** Dr Nandakumar Theekkootu Pisharam  
-**Programme:** Imperial College Business School Artificial Intelligence and Machine Learning Programme  
 **Repository status:** Public  
 **Default branch:** `main`
 
-## Project summary
+## What this project was about
 
-This project explored how to find strong solutions for eight unknown mathematical functions when only a limited number of evaluations were available. Across thirteen rounds, I submitted new coordinates, examined the returned results and changed the search strategy according to the evidence. Early rounds explored broadly, while later rounds focused on promising regions, recovered from unsuccessful moves and tested whether further improvement remained possible. The final round produced new best results for Functions 3, 5 and 6, while several other functions retained their strongest earlier results. The repository preserves the full decision trail, including unsuccessful trials, analysis, code, figures and final conclusions.
+The task was to find strong answers for eight hidden mathematical functions. The equations were not provided. I could choose one set of numbers for each function in each round, then the evaluator returned a score.
 
-## Assessment navigation
+There were thirteen rounds. Each new choice had to be based on the results already available. Early rounds tested different parts of the search space. Later rounds concentrated on promising areas, returned to earlier strong points when necessary and stopped taking unnecessary risks when a result had been confirmed.
 
-The assessed BBO history is preserved chronologically in `Week_01` through `Week_13`. Module 25 is the final assessment stage and is kept separate from the thirteen optimisation rounds.
+This repository keeps the full record, including unsuccessful choices. Those results matter because they show which directions failed and why the strategy changed.
 
-### Final assessment hub
+## The official assessment record
+
+The assessed experiment is preserved in `Week_01` through `Week_13`. Module 25 contains the final assessment material. It is not an additional optimisation round.
+
+The later BBD and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
+
+### Final assessment material
 
 - [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/README.md)
 - [25.1 Retrospective Evidence Map](Module_25_Final_BBO_Submission/25_1_Retrospective/EVIDENCE_MAP.md)
@@ -26,76 +31,49 @@ The assessed BBO history is preserved chronologically in `Week_01` through `Week
 - [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
 - [Final Verified Winner Summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
-### Key analytical stages
+## How the search developed
+
+The same strategy did not suit every function. Four practical actions became important:
+
+- **Explore:** test a different area when there was not enough evidence.
+- **Refine:** make a small change near a promising result.
+- **Recover:** return towards an earlier strong point after a poor result.
+- **Retain:** keep a result when repeated tests showed that further movement was unlikely to help.
+
+Clustering helped identify recurring regions in the later rounds. Principal component analysis helped show whether several coordinates were moving together. These methods supported the decisions, but the returned scores remained the main evidence.
+
+## Final results after thirteen rounds
+
+Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 kept their strongest earlier results. Function 2 performed best in Week 12, then declined after another small change in Week 13.
+
+| Function | Strongest verified result | Best week or weeks | Plain explanation |
+| --- | ---: | --- | --- |
+| F1 | `0.025559285339829783` | 3, 11, 12, 13 | The same best result was confirmed several times |
+| F2 | `0.7335252043269003` | 12 | The next small move made the result worse |
+| F3 | `-0.05685061601567621` | 13 | The final small adjustment improved the result |
+| F4 | `-4.359874926582439` | 1, 12, 13 | An early best point was recovered and confirmed |
+| F5 | `4440.957216598753` | 13 | Careful movement towards the boundary kept improving the score |
+| F6 | `-0.6071562248604215` | 13 | The best result was found, but repeated tests showed variation |
+| F7 | `1.3809299933612855` | 5, 12, 13 | An earlier best point was recovered and confirmed |
+| F8 | `9.58024` | 1, 11, 12, 13 | The same best result was confirmed several times |
+
+These are the strongest results observed during the thirteen authorised rounds. They do not prove that the mathematical global optimum was found.
+
+## What the results taught us
+
+Function 5 showed the clearest sustained improvement. Its score rose from `1415.8763939603884` in Week 1 to `4440.957216598753` in Week 13. The search improved because it followed a consistent direction while the evidence remained favourable.
+
+Function 2 showed why small changes are not automatically safe. Week 12 found a new best, but the next nearby point performed worse. Function 6 raised a different concern because the same coordinate returned different values on separate occasions. This means repeatability must be checked for each function rather than assumed.
+
+## Key weekly analysis
 
 - [Week 09: Module 21 analysis](Week_09/README.md)
-- [Week 09 Datasheet](Week_09/DATASHEET.md)
-- [Week 09 Model Card](Week_09/MODEL_CARD.md)
 - [Week 10: clustering and strategy refinement](Week_10/README.md)
-- [Week 11: PCA comparison and Week 12 decision pathway](Week_11/README.md)
+- [Week 11: principal component comparison and Week 12 decision](Week_11/README.md)
 - [Week 12: verified outcome and capstone reflection](Week_12/README.md)
-- [Component 23.1 reflection](Week_12/COMPONENT_23_1_CAPSTONE_REFLECTION.md)
 - [Week 13: final round analysis](Week_13/README.md)
 - [Week 13 final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md)
 - [Week 13 final capstone synthesis](Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
-- [Week 13 RL, MAB, MDP and Q-learning review](Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md)
-
-## Project overview
-
-The challenge contains eight hidden objective functions with dimensionalities from two to eight variables. One query vector was submitted for each function during every optimisation round. Because the mathematical form of each function was unknown, decisions were based on previously observed inputs and returned objective values.
-
-The repository preserves the complete optimisation history rather than presenting only the strongest final values. Unsuccessful queries remain part of the evidence because deterioration can reject a direction, repeated results can support stability and recovery to an earlier point can test whether a previously strong basin remains useful.
-
-## Final thirteen-round position
-
-Round 13 produced new overall best values for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 retained their strongest verified values. Function 2 ended below its Week 12 peak, so the Week 12 coordinate remains its strongest verified point.
-
-| Function | Strongest verified output | Best week or weeks | Final interpretation |
-| --- | ---: | --- | --- |
-| F1 | `0.025559285339829783` | 3, 11, 12, 13 | Best repeatedly confirmed |
-| F2 | `0.7335252043269003` | 12 | Week 13 local refinement deteriorated |
-| F3 | `-0.05685061601567621` | 13 | New overall best |
-| F4 | `-4.359874926582439` | 1, 12, 13 | Historical best recovered and retained |
-| F5 | `4440.957216598753` | 13 | New overall best after sustained boundary refinement |
-| F6 | `-0.6071562248604215` | 13 | New overall best with repeatability uncertainty |
-| F7 | `1.3809299933612855` | 5, 12, 13 | Historical best recovered and retained |
-| F8 | `9.58024` | 1, 11, 12, 13 | Best repeatedly confirmed |
-
-These are the strongest observations in the thirteen-round record. They are not claims of mathematical global optimality.
-
-## Strategy evolution
-
-The search developed from broad exploration into function-specific decision making. Later rounds used four main actions:
-
-- **Explore:** move to a meaningfully different region when existing evidence remained weak.
-- **Refine:** make controlled local changes where a productive neighbourhood had emerged.
-- **Recover or reassess:** change direction after deterioration or return towards a stronger historical basin.
-- **Exploit or test a boundary:** remain close to a well-supported region while improvement continued.
-
-Week 10 added clustering as a practical lens for recurring local regions and switching signals. Week 11 compared PCA with direct objective evidence and used dimensional structure only where it improved the decision. The final rounds used exploration versus exploitation, reward and stopping concepts from Module 24 to interpret the remaining query budget.
-
-## What worked and what did not
-
-F5 provides the clearest sustained exploitation success, rising from `1415.8763939603884` in Week 1 to `4440.957216598753` in Week 13 as the search approached a productive boundary. F3 also benefited from late local refinement. Recovery was valuable for F4 and F7, while repeated best points supported stopping for F1 and F8.
-
-F2 provides useful negative evidence. The Week 12 local best improved sharply, but the next small move in Week 13 reduced the result. F6 adds a different limitation because the same recorded coordinate returned different outputs in Weeks 3, 12 and 13. These results show why optimisation and stopping decisions must remain function-specific.
-
-## Reproducibility
-
-A clean environment can reproduce the final assessment analysis with:
-
-```bash
-python -m pip install -r requirements-final.txt
-python tools/repository_audit.py
-python Week_13/week_13_analysis.py
-python Week_13/generate_week_13_figures.py
-```
-
-The repository audit checks the required Module 25 evidence files, Week 01 to Week 13 navigation, internal Markdown links and common unfinished placeholder markers. The Week 13 analysis reconstructs the complete thirteen-round history from committed evidence and calculates the final comparisons. Objective values remain stored exactly as supplied, and exact Week 12 to Week 13 changes are calculated with decimal arithmetic. Figure generation uses floating-point conversion only for visualisation.
-
-A GitHub Actions workflow also runs the repository audit and final Week 13 reproducibility sequence on changes affecting the final assessment record.
-
-See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for the assessment-facing route.
 
 ## Weekly record
 
@@ -115,8 +93,25 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 | Week 12 | [README](Week_12/README.md) |
 | Week 13 | [README](Week_13/README.md) |
 
-## Extended research and post-capstone boundary
+## Reproducing the final assessment results
 
-The `PGC` and `PFRAMOS` directories contain supplementary research that developed from questions raised during the capstone. They support the project but do not replace the weekly assessed record. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
+Run the following commands from the repository root:
 
-The [Advanced Extension Series](Advanced_Extension_Series/README.md) begins only after the official thirteen-round experiment. Its first analytical stage is [SOC: Surrogate Optimisation Competition](Advanced_Extension_Series/SOC_Surrogate_Optimisation_Competition/README.md). SOC is post-capstone research. It was not used to generate the Week 01 to Week 13 outputs and does not retrospectively alter the assessed record.
+```bash
+python -m pip install -r requirements-final.txt
+python tools/repository_audit.py
+python Week_13/week_13_analysis.py
+python Week_13/generate_week_13_figures.py
+```
+
+The audit checks the required assessment files, the weekly navigation, the internal links and unfinished placeholders. The analysis rebuilds the thirteen-round history from the recorded evidence and reproduces the final comparisons.
+
+See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for full instructions.
+
+## What happened after the capstone
+
+The [Advanced Extension Series](Advanced_Extension_Series/README.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
+
+The [BBD research](Advanced_Extension_Series/BBD_Black_Box_Decryption/README.md) asks whether the behaviour of each hidden function can be explained well enough to identify its likely mathematical structure. These later studies are clearly labelled as post-capstone work.
+
+The `PGC` and `PFRAMOS` directories contain additional validation and research material. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
