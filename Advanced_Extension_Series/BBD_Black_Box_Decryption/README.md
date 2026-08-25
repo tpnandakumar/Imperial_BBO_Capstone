@@ -103,6 +103,14 @@ Repeated coordinates remain a separate determinism test. Non-identical outputs a
 
 See [BBD 012: F6 Stochastic-versus-Deterministic Decomposition](BBD_012_F6_STOCHASTIC_DETERMINISTIC.md).
 
+## BBD 013: F6 latent variable reconstruction
+
+BBD 013 tests whether several weak contextual signals can be compressed into a low-dimensional latent representation that explains part of the residual left by the static F6 surface. Week, previous output, movement, coordinate novelty and local response statistics are standardised and reduced by PCA to one- and two-component latent states.
+
+The latent representation is judged by forward residual correction, not by retrospective correlation alone. Repeated-coordinate pairs are also compared in context space to see whether identical coordinates that produced different outputs occurred under materially different surrounding conditions.
+
+See [BBD 013: F6 Latent Variable Reconstruction](BBD_013_F6_LATENT_VARIABLE_RECONSTRUCTION.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
@@ -129,6 +137,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_co
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_decryption.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_decomposition.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_deterministic.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_013_f6_latent_variable_reconstruction.py
 ```
 
 ## Research sequence
@@ -144,6 +153,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_
 **BBD 009** Prospective-evidence confidence recalibration  
 **BBD 010** F6-specific static-versus-state mechanism decryption  
 **BBD 011** F6 residual decomposition and short-memory test  
-**BBD 012** F6 stochastic-versus-deterministic residual classification
+**BBD 012** F6 stochastic-versus-deterministic residual classification  
+**BBD 013** F6 low-dimensional latent-context reconstruction
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
