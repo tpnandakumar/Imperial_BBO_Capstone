@@ -95,6 +95,14 @@ The strongest residual correction used the **previous residual alone**, reducing
 
 See [BBD 011: F6 Residual Decomposition](BBD_011_F6_RESIDUAL_DECOMPOSITION.md).
 
+## BBD 012: F6 stochastic-versus-deterministic decomposition
+
+BBD 012 asks whether the remaining F6 residual is better described as independent Gaussian variation, a first-order autoregressive process, or heteroscedastic variation linked to GP uncertainty. Model comparison uses AICc because the residual sequence is very small.
+
+Repeated coordinates remain a separate determinism test. Non-identical outputs at an identical coordinate falsify exact coordinate-only determinism for the observed data, while still leaving open stochasticity, hidden evaluator state and other unobserved mechanisms.
+
+See [BBD 012: F6 Stochastic-versus-Deterministic Decomposition](BBD_012_F6_STOCHASTIC_DETERMINISTIC.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
@@ -120,6 +128,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_confidence.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_decryption.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_decomposition.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_deterministic.py
 ```
 
 ## Research sequence
@@ -134,6 +143,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_de
 **BBD 008** Discriminatory query design for active falsification  
 **BBD 009** Prospective-evidence confidence recalibration  
 **BBD 010** F6-specific static-versus-state mechanism decryption  
-**BBD 011** F6 residual decomposition and short-memory test
+**BBD 011** F6 residual decomposition and short-memory test  
+**BBD 012** F6 stochastic-versus-deterministic residual classification
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
