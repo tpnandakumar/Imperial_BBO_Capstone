@@ -1,177 +1,134 @@
 # BBD: Black Box Decryption
 
-## Purpose
+## What BBD means
 
-**BBD, Black Box Decryption**, is a post-capstone system-identification experiment. Its aim is not merely to predict a good next coordinate, but to determine what kind of mathematical mechanism could plausibly have generated the thirteen-round input-output history for each hidden function.
+BBD stands for Black Box Decryption. It began after the official thirteen-round capstone had finished.
 
-BBD is deliberately separate from the assessed Week 01 to Week 13 record. It does not alter historical observations and it does not claim access to the original Imperial objective functions.
+During the capstone, we knew which numbers had been submitted and which scores had been returned, but we did not know the hidden equations. BBD uses that completed history to ask a simple question:
 
-## Central question
+> What kind of mathematical rule could have produced these results?
 
-For each function, BBD asks:
+BBD does not change the original results. It does not claim that a predicted value came from the Imperial evaluator. It also does not claim that an exact equation has been found unless the evidence can prove it.
 
-> What is the simplest predictive mechanism consistent with the observed coordinates, outputs, repeated points, temporal order and movement between rounds?
+## A simple example
 
-## BBD 001: Static versus temporal system identification
+Imagine trying to understand a locked machine. You can choose the settings on its dials and observe the number shown on its screen. After several trials, you may learn that one dial matters greatly, two dials move together or the same setting sometimes produces a different answer.
 
-BBD 001 compares static, nonlinear, temporal, movement-aware and state-aware predictors using chronological walk-forward validation.
+You may then build several possible explanations and check which one predicts earlier unseen results most accurately. That is what BBD does with the eight hidden functions.
 
-## BBD 002: Temporal residual structure and repeatability
+## How the checks are made
 
-BBD 002 starts from a coordinate-only Gaussian Process and studies chronological residuals and repeated-coordinate behaviour. It showed that most apparent temporal effects did not survive direct residual correction, while F6 retained the clearest variability or short-memory signal.
+BBD follows four basic steps:
 
-See [BBD 002: Temporal Residual Structure and Repeatability](BBD_002_TEMPORAL_RESIDUALS.md).
+1. Build several possible explanations from the earlier results.
+2. Ask each explanation to predict the next historical result without seeing it first.
+3. Compare the prediction with the result that was actually returned.
+4. Keep, revise or reject the explanation according to the evidence.
 
-## BBD 003: Directional derivative and gradient reconstruction
+The order of the thirteen rounds is preserved. This matters because a fair test must use only the information that was available at that point in time.
 
-BBD 003 converts consecutive Week 01 to Week 13 input-output changes into directional-derivative constraints. It estimates regularised global and recent gradient vectors and identifies near-axis movements that provide the closest available empirical partial-derivative evidence.
+## What has been learned so far
 
-The strongest coherent directional structure was found in **F5, F7 and F8**, with F2 as a secondary candidate. F6 retained a strong global transition fit but poor recent-gradient agreement. F1, F3 and F4 did not support a useful first-order gradient representation.
+| Function | Current finding | What remains uncertain |
+| --- | --- | --- |
+| F4 | The surface is repeatable and strongly nonlinear. A smooth Matérn model currently predicts it best | The exact equation and its behaviour far from the tested path |
+| F5 | The surface is smooth, repeatable and strongly directed towards a boundary | Whether the local pattern describes the whole function |
+| F6 | The same coordinate can return different results | Whether this is random variation, hidden state or another unobserved cause |
+| F7 | A simple quadratic description works well in the tested region | Whether it remains valid in untested parts of the search space |
+| F8 | A low-complexity description performs well | Whether the apparent simplicity is global or limited to the sampled path |
+| F1, F2 and F3 | Their historical behaviour has been examined in the shared studies | Dedicated function-specific decryption is still required |
 
-See [BBD 003: Directional Derivative and Gradient Reconstruction](BBD_003_GRADIENT_RECONSTRUCTION.md).
+## Have the hidden functions been decrypted?
 
-## BBD 004: Symbolic equation recovery
+BBD has successfully narrowed the likely behaviour of several functions. It has found useful and reproducible explanations for parts of the observed search space.
 
-BBD 004 tests explicit regularised polynomial equations with leave-one-out validation and a mild complexity penalty.
+It has not recovered the exact hidden equations. It has also not proved the global optimum of any function. The correct conclusion is therefore:
 
-The strongest current equation-recovery results are:
+- useful function-specific decryption has been achieved;
+- several weak explanations have been rejected;
+- the strongest remaining explanations have been identified;
+- exact mathematical recovery remains unproved.
 
-- **F5:** quadratic, normalised LOOCV MAE about `0.00575`;
-- **F8:** simple linear equation, normalised LOOCV MAE about `0.0173`;
-- **F7:** quadratic, normalised LOOCV MAE about `0.0257`;
-- **F4:** quadratic, normalised LOOCV MAE about `0.118`, revealing nonlinear structure missed by a first-order gradient description.
+## Research stages
 
-These are strong retrospective reconstructions, not proof of exact hidden equations.
+### BBD 001 to BBD 009: building the method
 
-See [BBD 004: Symbolic Equation Recovery](BBD_004_SYMBOLIC_RECOVERY.md).
+The first nine studies compared static, time-related, movement-related and state-related explanations. They examined repeated coordinates, changes between rounds, simple equations, known benchmark shapes and forward prediction.
 
-## BBD 005: Benchmark family matching
+The main lesson was that fitting the full history well is not enough. A credible explanation must also predict later historical results using only earlier observations.
 
-BBD 005 compares the observed history against constrained transformed versions of Sphere, Ellipsoid, Rastrigin, Ackley, Griewank, Schwefel and Rosenbrock functions.
+- [BBD 002: residual structure and repeatability](BBD_002_TEMPORAL_RESIDUALS.md)
+- [BBD 003: directional reconstruction](BBD_003_GRADIENT_RECONSTRUCTION.md)
+- [BBD 004: equation recovery](BBD_004_SYMBOLIC_RECOVERY.md)
+- [BBD 005: benchmark-family matching](BBD_005_BENCHMARK_MATCHING.md)
+- [BBD 006: confidence ranking](BBD_006_DECRYPTION_CONFIDENCE.md)
+- [BBD 007: BBD versus SOC prediction challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md)
+- [BBD 008: tests designed to separate competing explanations](BBD_008_DISCRIMINATORY_QUERY_DESIGN.md)
+- [BBD 009: confidence updated using forward evidence](BBD_009_PROSPECTIVE_CONFIDENCE.md)
 
-The strongest new lead is **F4**, where a Rosenbrock-like transformed feature reduces normalised held-out error from about `0.118` for the BBD 004 quadratic to about `0.079`. F5, F7 and F8 also select Rosenbrock as the best tested benchmark family, but their BBD 004 equations remain substantially more predictive over full-history validation.
+### BBD 010 to BBD 017: Function 6
 
-See [BBD 005: Benchmark Family Matching](BBD_005_BENCHMARK_MATCHING.md).
+These studies examined why Function 6 returned different outputs at repeated coordinates. A strong coordinate-based surface was found, but the remaining variation could not be explained reliably by the tested time, movement or compressed context measures.
 
-## BBD 006: Decryption ensemble and confidence ranking
+- [BBD 010: F6-specific decryption](BBD_010_F6_SPECIFIC_DECRYPTION.md)
+- [BBD 011: F6 residual decomposition](BBD_011_F6_RESIDUAL_DECOMPOSITION.md)
+- [BBD 012: F6 stochastic or deterministic test](BBD_012_F6_STOCHASTIC_DETERMINISTIC.md)
+- [BBD 013: F6 latent-context test](BBD_013_F6_LATENT_VARIABLE_RECONSTRUCTION.md)
 
-BBD 006 combines the evidence from the first five stages. It separately scores predictive equation performance, equation compactness, gradient coherence, repeatability, mechanism simplicity and benchmark-family support.
+### BBD 018 to BBD 020: Function 7
 
-Before prospective challenge testing, F8 and F5 ranked highest. These scores should now be read specifically as **retrospective structural confidence**, because BBD 007 showed that strong full-history reconstruction does not automatically imply superior forward prediction.
+Function 7 was best described by a lightly regularised quadratic model within the historical region. Later tests simplified the explanation and identified coordinates that could separate competing global interpretations.
 
-See [BBD 006: Decryption Ensemble and Confidence Ranking](BBD_006_DECRYPTION_CONFIDENCE.md).
+- [BBD 018: F7-specific decryption](BBD_018_F7_SPECIFIC_DECRYPTION.md)
+- [BBD 019: F7 quadratic simplification](BBD_019_F7_QUADRATIC_SIMPLIFICATION.md)
+- [BBD 020: F7 falsification design](BBD_020_F7_DISCRIMINATORY_FALSIFICATION.md)
 
-## BBD 007: BBD versus SOC prediction challenge
+### BBD 021 and BBD 022: Function 8
 
-BBD 007 moves beyond retrospective fit. It performs expanding-window chronological prediction in which BBD and SOC select and fit their models without access to the next historical output.
+Function 8 showed comparatively simple structure over the observed path. The follow-up study compared that explanation with the strongest competing surrogate and designed tests for the remaining disagreement.
 
-SOC won 7 of the 8 functions. BBD won F6 only. Across functions, mean normalised MAE was approximately `0.3159` for BBD and `0.2118` for SOC.
+- [BBD 021: F8-specific decryption](BBD_021_F8_SPECIFIC_DECRYPTION.md)
+- [BBD 022: F8 SOC rechallenge](BBD_022_F8_SOC_RECHALLENGE_FALSIFICATION.md)
 
-See [BBD 007: BBD versus SOC Prediction Challenge](BBD_007_BBD_VS_SOC_CHALLENGE.md).
+### BBD 023 and BBD 024: Function 5
 
-## BBD 008: Discriminatory query design
+Function 5 was highly predictable along the historical path. A Matérn model performed best, while a quadratic equation remained a useful local approximation. The later challenge showed that these explanations disagree sharply in untested regions.
 
-BBD 008 changes the objective from prediction to falsification and identification. It searches the original bounded coordinate space for points where the strongest remaining BBD and SOC mechanisms make maximally different predictions.
+- [BBD 023: F5-specific decryption](BBD_023_F5_SPECIFIC_DECRYPTION.md)
+- [BBD 024: F5 SOC rechallenge and falsification](BBD_024_F5_SOC_RECHALLENGE_FALSIFICATION.md)
 
-See [BBD 008: Discriminatory Query Design](BBD_008_DISCRIMINATORY_QUERY_DESIGN.md).
+### BBD 025: Function 4
 
-## BBD 009: Prospective-evidence confidence recalibration
+BBD 025 tested the earlier suggestion that Function 4 might resemble a Rosenbrock function. The test selected the Rosenbrock settings inside each historical training window, which prevented later results from influencing earlier predictions.
 
-BBD 009 recalibrates the earlier structural ranking using the forward-prediction evidence from BBD 007 and the unresolved mechanism disagreement from BBD 008. F6 becomes the strongest current candidate after prospective evidence is given greater weight.
+The Matérn model ranked first with a normalised forward error of `0.021834`. The Rosenbrock explanation ranked fifth at `0.032816`. The Rosenbrock shape remains a useful clue, but it is not the strongest current explanation.
 
-See [BBD 009: Prospective-Evidence Confidence Recalibration](BBD_009_PROSPECTIVE_CONFIDENCE.md).
+The best F4 coordinate was tested in Weeks 1, 12 and 13. It returned exactly the same result each time. This supports a stable coordinate-based surface over the observed region.
 
-## BBD 010: F6-specific decryption
+- [BBD 025: F4-specific decryption](BBD_025_F4_SPECIFIC_DECRYPTION.md)
 
-BBD 010 begins function-specific decryption with F6. Coordinate-only Gaussian Process prediction outperformed the tested state-aware alternatives, favouring a static response surface despite non-identical repeated outputs.
+## Why new evaluator results would help
 
-See [BBD 010: F6-Specific Decryption](BBD_010_F6_SPECIFIC_DECRYPTION.md).
+Several explanations can fit the same short historical path. The most useful new test is not another point close to the known best. It is a point where the remaining explanations predict clearly different results.
 
-## BBD 011: F6 residual decomposition
+A genuine evaluator result at such a point could reject one explanation and support another. Without new authorised evaluations, BBD can rank the explanations and design the best tests, but it cannot prove the exact global equation.
 
-BBD 011 holds the static F6 surface as the baseline and studies the remaining unexplained component. It tests GP uncertainty, coordinate novelty, movement, local response roughness, nearest-output difference, week and previous residual.
+## Reproducing the work
 
-The strongest residual correction used the **previous residual alone**, reducing MAE on the five eligible forward tests from `0.056843` to `0.048096`. Other broad state proxies did not improve prediction. The current F6 interpretation is therefore a strong static coordinate-dependent surface plus a small unresolved residual component with preliminary short-memory evidence.
-
-See [BBD 011: F6 Residual Decomposition](BBD_011_F6_RESIDUAL_DECOMPOSITION.md).
-
-## BBD 012: F6 stochastic-versus-deterministic decomposition
-
-BBD 012 asks whether the remaining F6 residual is better described as independent Gaussian variation, a first-order autoregressive process, or heteroscedastic variation linked to GP uncertainty. Model comparison uses AICc because the residual sequence is very small.
-
-Repeated coordinates remain a separate determinism test. Non-identical outputs at an identical coordinate falsify exact coordinate-only determinism for the observed data, while still leaving open stochasticity, hidden evaluator state and other unobserved mechanisms.
-
-See [BBD 012: F6 Stochastic-versus-Deterministic Decomposition](BBD_012_F6_STOCHASTIC_DETERMINISTIC.md).
-
-## BBD 013: F6 latent variable reconstruction
-
-BBD 013 tests whether several weak contextual signals can be compressed into a low-dimensional latent representation that explains part of the residual left by the static F6 surface. Week, previous output, movement, coordinate novelty and local response statistics are standardised and reduced by PCA to one- and two-component latent states.
-
-The result is negative but informative. The one-component latent correction increased prospective residual MAE from `0.056843` to `0.090492`, while the two-component model increased it further to `0.109641`. The leading latent component correlated only `0.120759` with the static-GP residual. The available observable context therefore does not support a useful low-dimensional latent state for F6.
-
-Repeated-coordinate context distance also failed to provide a simple explanation. Across four repeat pairs, the descriptive correlation with absolute output change was approximately `-0.644142`, but the sample is far too small for that value to establish a mechanism.
-
-See [BBD 013: F6 Latent Variable Reconstruction](BBD_013_F6_LATENT_VARIABLE_RECONSTRUCTION.md).
-
-## BBD 014 to BBD 025: Function-specific decryption sequence
-
-BBD 014 to BBD 017 refined the F6 surface and examined repeated-coordinate variability. BBD 018 to BBD 020 decrypted and challenged F7. BBD 021 and BBD 022 examined F8, while BBD 023 and BBD 024 examined F5 and its disagreement with SOC.
-
-BBD 025 begins dedicated F4 decryption. Under leakage-controlled chronological testing, a Matérn 2.5 Gaussian Process ranked first with normalised walk-forward MAE of `0.021834`. The nested Rosenbrock model ranked fifth at `0.032816`. The result retains Rosenbrock-like geometry as a structural clue but rejects it as the strongest current predictive mechanism.
-
-The F4 best coordinate was repeated in Weeks 1, 12 and 13 with an identical output each time. This supports a static, repeatable nonlinear surface over the observed region, but does not establish the exact hidden equation.
-
-See [BBD 025: F4-Specific Decryption](BBD_025_F4_SPECIFIC_DECRYPTION.md).
-
-## Why temporal ordering is retained
-
-The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
-
-## Evidence boundary
-
-All BBD equations, gradients, benchmark matches, confidence scores, discriminatory queries and model diagnostics are post-capstone reconstructions. They are never labelled as observed Imperial evaluations or exact hidden equations unless independent evidence could establish that claim.
-
-## Run
-
-From the repository root:
+Install the required packages from the repository root:
 
 ```bash
 python -m pip install -r Advanced_Extension_Series/BBD_Black_Box_Decryption/requirements-bbd.txt
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_001_system_identification.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_002_temporal_residuals.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_003_gradient_reconstruction.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_004_symbolic_recovery.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matching.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_confidence.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_challenge.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory_query_design.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_confidence.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_decryption.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_decomposition.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_deterministic.py
-python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_013_f6_latent_variable_reconstruction.py
-# BBD 014 to BBD 024 continue the function-specific sequence
+```
+
+Each numbered script can then be run directly. For example:
+
+```bash
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_025_f4_specific_decryption.py
 ```
 
-## Research sequence
+The scripts write their result tables to the `outputs` folder. The GitHub workflow also runs the complete BBD sequence and collects the output tables.
 
-**BBD 001** Static versus temporal mechanism competition  
-**BBD 002** Residual temporal structure and repeatability analysis  
-**BBD 003** Local directional derivative and gradient reconstruction  
-**BBD 004** Symbolic equation recovery  
-**BBD 005** Benchmark-family matching under constrained coordinate and output transformations  
-**BBD 006** Decryption ensemble and retrospective confidence ranking  
-**BBD 007** Prospective BBD versus SOC prediction challenge  
-**BBD 008** Discriminatory query design for active falsification  
-**BBD 009** Prospective-evidence confidence recalibration  
-**BBD 010** F6-specific static-versus-state mechanism decryption  
-**BBD 011** F6 residual decomposition and short-memory test  
-**BBD 012** F6 stochastic-versus-deterministic residual classification  
-**BBD 013 to BBD 017** F6 surface refinement, repeatability forensics and repeat design  
-**BBD 018 to BBD 020** F7 decryption, simplification and falsification  
-**BBD 021 to BBD 022** F8 decryption and SOC rechallenge  
-**BBD 023 to BBD 024** F5 decryption and SOC rechallenge  
-**BBD 025** F4-specific leakage-controlled mechanism competition
+## Evidence boundary
 
-The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
+All BBD work is post-capstone research. Weeks 01 to 13 remain the official assessed record. BBD predictions, proposed coordinates and reconstructed equations are not presented as Imperial evaluator results.
