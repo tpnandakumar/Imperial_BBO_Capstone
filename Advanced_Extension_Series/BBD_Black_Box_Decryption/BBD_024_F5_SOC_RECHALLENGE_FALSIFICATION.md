@@ -6,37 +6,84 @@ BBD 023 found that a dedicated Matérn 2.5 Gaussian Process predicted the histor
 
 ## Direct rechallenge
 
-The BBD 023 winning Matérn 2.5 model is compared against the full SOC model library using the same chronological walk-forward protocol. Each model trains only on observations available before the test week. Testing begins after five historical observations and produces eight forward predictions.
+The BBD 023 winning Matérn 2.5 model was compared against the full SOC model library using the same chronological walk-forward protocol. Each model trained only on observations available before the test week. Testing began after five historical observations and produced eight forward predictions.
 
-This removes a major source of ambiguity from the earlier BBD 007 comparison because the dedicated F5 model and SOC alternatives now face the same train-test sequence.
+The result was:
+
+| Rank | Model | Normalised walk-forward MAE |
+| --- | --- | ---: |
+| 1 | BBD023 GP Matérn 2.5 | 0.001616 |
+| 2 | SOC Gaussian Process Matérn | 0.001616 |
+| 3 | SOC Gaussian Process RBF | 0.001666 |
+| 4 | SOC Extra Trees | 0.031355 |
+| 5 | SOC Random Forest | 0.055520 |
+| 6 | SOC Distance Weighted KNN | 0.069500 |
+
+The BBD 023 Matérn model and SOC Matérn model produced the same error because, in this implementation, they are effectively the same Matérn Gaussian Process. The direct result is therefore recorded as:
+
+`tie_equivalent_matern_implementation`
+
+This is not independent confirmation from two unrelated mechanisms. It resolves the earlier BBD versus SOC label conflict by showing that the strongest dedicated F5 model and the strongest SOC model are the same effective model family under the matched protocol.
+
+The RBF Gaussian Process was only slightly weaker at `0.001666`. The meaningful mechanism comparison is therefore between a smooth Gaussian-process response surface and the interpretable quadratic reconstruction, rather than between the BBD and SOC labels themselves.
 
 ## Falsification roster
 
-The prospective identification stage retains:
+The duplicate SOC Matérn implementation was removed from the falsification roster so that identical models did not artificially increase agreement. The retained models were:
 
-- the BBD 023 Matérn 2.5 Gaussian Process;
-- the BBD 023 quadratic ridge approximation;
-- the strongest SOC alternatives under the direct rechallenge.
+- BBD 023 Matérn 2.5 Gaussian Process;
+- BBD 023 quadratic ridge model;
+- SOC Gaussian Process RBF;
+- SOC Extra Trees;
+- SOC Random Forest.
 
-The models are fitted to all available historical F5 observations only after the chronological competition has been completed.
+## Highest-value discriminatory coordinate
 
-## Query search
+The strongest proposed F5 falsification point was:
 
-A Sobol design samples the four-dimensional unit hypercube, with additional corners and boundary-near candidates. For each candidate coordinate the experiment measures:
+`1.000000-0.000000-0.000000-0.000000`
 
-- prediction standard deviation across the finalist models;
-- full prediction spread;
-- distance from the nearest historical F5 coordinate;
-- a combined discrimination score that rewards both disagreement and novelty.
+At this coordinate the retained models predicted:
 
-The highest scoring spatially diverse points form a sequential falsification queue. They are proposed experiments, not returned Imperial outputs.
+| Model | Predicted F5 |
+| --- | ---: |
+| BBD 023 Matérn 2.5 GP | 3013.054147 |
+| BBD 023 quadratic ridge | 28467.707925 |
+| SOC Gaussian Process RBF | 3699.993190 |
+| SOC Extra Trees | 1415.876394 |
+| SOC Random Forest | 1851.890283 |
 
-## Interpretation rule
+The corresponding discrimination score was `7.689893`, the normalised prediction spread was `8.942515`, and novelty relative to the historical F5 coordinates was `1.732339`.
 
-A future black-box result close to the Matérn prediction would strengthen the smooth local-surface interpretation. A result closer to the quadratic or another SOC alternative would weaken it. The most informative observation is therefore not necessarily the coordinate expected to maximise F5, but the coordinate at which plausible mechanisms make sharply different predictions.
+The quadratic reconstruction therefore makes a radically different global extrapolation from the smooth GP and tree-based models. A genuine black-box response at this coordinate would provide far more information about the generating mechanism than another small refinement near the historical optimum.
+
+## Sequential falsification queue
+
+Ten spatially separated candidate points were retained. The leading coordinates are:
+
+1. `1.000000-0.000000-0.000000-0.000000`
+2. `0.999303-0.279466-0.027128-0.043419`
+3. `0.692926-0.068398-0.025112-0.000089`
+4. `1.000000-1.000000-0.000000-0.000000`
+5. `0.920541-0.734015-0.036031-0.010284`
+6. `0.889024-0.024863-0.260639-0.044857`
+7. `0.859402-0.026780-0.066852-0.224917`
+8. `0.802693-0.464679-0.017355-0.062125`
+9. `0.973451-0.325259-0.005047-0.293595`
+10. `0.759187-0.243902-0.212109-0.004874`
+
+These should be used sequentially if independent evaluator access becomes available. After each genuine observation, the surviving models should be refitted before the next coordinate is chosen.
+
+## Interpretation
+
+BBD 024 strengthens the conclusion that F5 is a highly smooth, strongly directional deterministic surface over the sampled trajectory. It also shows that excellent local prediction does not identify the global equation. The quadratic model remains valuable as an interpretable local approximation, but its extreme extrapolation at the leading falsification point means that global quadratic structure is not established.
+
+The result therefore narrows the unresolved question to:
+
+`locally excellent smooth GP representation` versus `globally valid low-order algebraic structure`.
 
 ## Evidence boundary
 
-BBD 024 can establish which candidate model currently predicts the observed chronology best and can define efficient falsification experiments. It cannot establish the exact original F5 generating equation without independent black-box responses at discriminatory coordinates.
+The discriminatory coordinates are proposed experiments only. No generated prediction is recorded as an Imperial black-box observation. The exact original F5 generating equation remains unproved until an independent evaluator returns values at genuinely unseen discriminatory coordinates.
 
 `exact_function_recovered = False`
