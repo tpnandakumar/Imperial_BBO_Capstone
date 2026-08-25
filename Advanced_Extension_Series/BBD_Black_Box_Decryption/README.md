@@ -83,6 +83,16 @@ BBD 008 produces five diverse proposed identification coordinates for every func
 
 See [BBD 008: Discriminatory Query Design](BBD_008_DISCRIMINATORY_QUERY_DESIGN.md).
 
+## BBD 009: Prospective-evidence confidence recalibration
+
+BBD 009 recalibrates the earlier structural ranking using the forward-prediction evidence from BBD 007 and the unresolved mechanism disagreement from BBD 008. The new score is deliberately prospective-heavy. Retrospective fit contributes only one quarter of the index, while prospective competitiveness and forward test wins contribute three fifths.
+
+If SOC wins the function-level forward challenge, the recalibrated index cannot enter the strongest evidence band regardless of how closely a full-history equation fits. Large BBD 008 prediction spread also lowers the score because it shows that materially different mechanisms remain compatible with the historical data.
+
+The output is an evidence-strength index rather than a probability of exact recovery. Every function remains explicitly marked as not exactly recovered until a genuinely independent discriminatory evaluation is available.
+
+See [BBD 009: Prospective-Evidence Confidence Recalibration](BBD_009_PROSPECTIVE_CONFIDENCE.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
@@ -93,7 +103,7 @@ All BBD equations, gradients, benchmark matches, confidence scores, discriminato
 
 ## Outputs
 
-BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction and discriminatory-query datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
+BBD produces model-competition, temporal-residual, repeatability, transition, gradient, near-axis derivative, equation-recovery, benchmark-family, decryption-confidence, BBD-versus-SOC prospective prediction, discriminatory-query and prospectively recalibrated evidence datasets in `Advanced_Extension_Series/BBD_Black_Box_Decryption/outputs/`.
 
 ## Run
 
@@ -109,6 +119,7 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_005_benchmark_matc
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_006_decryption_confidence.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_007_bbd_vs_soc_challenge.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_008_discriminatory_query_design.py
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_009_prospective_confidence.py
 ```
 
 ## Research sequence
