@@ -63,6 +63,8 @@ jobs:
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_017_f6_optimal_repeat_design.py
       - name: Run BBD 018
         run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_018_f7_specific_decryption.py
+      - name: Run BBD 019
+        run: python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_019_f7_quadratic_simplification.py
       - name: Upload BBD outputs
         uses: actions/upload-artifact@v4
         with:
