@@ -107,7 +107,9 @@ See [BBD 012: F6 Stochastic-versus-Deterministic Decomposition](BBD_012_F6_STOCH
 
 BBD 013 tests whether several weak contextual signals can be compressed into a low-dimensional latent representation that explains part of the residual left by the static F6 surface. Week, previous output, movement, coordinate novelty and local response statistics are standardised and reduced by PCA to one- and two-component latent states.
 
-The latent representation is judged by forward residual correction, not by retrospective correlation alone. Repeated-coordinate pairs are also compared in context space to see whether identical coordinates that produced different outputs occurred under materially different surrounding conditions.
+The result is negative but informative. The one-component latent correction increased prospective residual MAE from `0.056843` to `0.090492`, while the two-component model increased it further to `0.109641`. The leading latent component correlated only `0.120759` with the static-GP residual. The available observable context therefore does not support a useful low-dimensional latent state for F6.
+
+Repeated-coordinate context distance also failed to provide a simple explanation. Across four repeat pairs, the descriptive correlation with absolute output change was approximately `-0.644142`, but the sample is far too small for that value to establish a mechanism.
 
 See [BBD 013: F6 Latent Variable Reconstruction](BBD_013_F6_LATENT_VARIABLE_RECONSTRUCTION.md).
 
