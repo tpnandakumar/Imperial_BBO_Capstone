@@ -10,48 +10,71 @@ BBD 021 addresses that contradiction directly by rebuilding F8 as a function-spe
 
 The thirteen F8 observations are ordered by week. Each candidate model is trained only on the observations available before the test week and then predicts the next unseen observation.
 
-The model set includes:
+The model set includes ordinary linear regression, several linear ridge models, quadratic ridge and lasso models, elastic-net models and a Matérn 2.5 Gaussian Process.
 
-- ordinary linear regression;
-- linear ridge models across several regularisation strengths;
-- quadratic ridge models;
-- quadratic lasso models;
-- linear elastic-net models;
-- a Matérn 2.5 Gaussian Process.
+## Result
 
-The comparison therefore asks whether F8 is best regarded as a compact linear surface, a lightly regularised low-order nonlinear surface, or a more flexible local function.
+The best function-specific model was **ordinary linear regression**, with eight chronological walk-forward tests and normalised MAE:
+
+`0.016539`
+
+The next two models were essentially identical:
+
+- linear ridge `alpha = 1e-6`: `0.016539`;
+- linear ridge `alpha = 1e-4`: `0.016570`.
+
+The best quadratic model was slightly weaker at `0.017342`, and the Matérn Gaussian Process was weaker again at `0.029135`.
+
+This is a major change from the original BBD 007 F8 result. Under the F8-specific protocol, the compact linear surface predicts chronologically unseen observations much more accurately than the earlier general BBD implementation.
+
+The BBD 021 result is also lower than the historical BBD 007 SOC normalised MAE of `0.043917`. This comparison is informative but is **not labelled as a fresh BBD-versus-SOC win**, because SOC has not yet been rerun under the exact BBD 021 train/test protocol.
+
+## Recovered linear equation
+
+The full-history low-regularisation linear equation is:
+
+`F8(x) ≈ 10.97788502 + 0.116539399*x1 + 0.1910685871*x2 + 0.05156106233*x3 + 0.8145764473*x4 + 0.3239666929*x5 - 1.411856604*x6 - 0.7715635142*x7 - 0.04556514659*x8`
+
+This is effectively the same equation identified in BBD 004.
 
 ## Coefficient stability
 
-A compact linear equation is persuasive only if its coefficients remain directionally stable as the history grows. BBD 021 therefore refits the low-regularisation linear ridge model after each additional observation and records the raw coordinate coefficients.
+All eight final coefficient signs were stable in at least 75% of expanding training windows. Five coordinates had 100% sign stability and the remaining three were still directionally consistent enough to pass the pre-specified 75% threshold.
 
-For each coordinate the experiment reports:
+The strongest effects were:
 
-- full-history coefficient;
-- mean and median coefficient across expanding windows;
-- coefficient dispersion;
-- sign stability relative to the final coefficient;
-- absolute effect rank.
+1. `x6 = -1.411857`
+2. `x4 = +0.814576`
+3. `x7 = -0.771564`
+4. `x5 = +0.323967`
+5. `x2 = +0.191069`
 
-This distinguishes a genuinely stable linear mechanism from a final equation that appears clean only because all thirteen observations were fitted at once.
+This aligns well with the earlier BBD 003 gradient evidence, where F8 had a global-versus-recent gradient cosine of approximately `0.936764`.
 
 ## Repeatability
 
-F8 repeated coordinates are checked separately. Identical repeated outputs would support coordinate-only determinism over the sampled points, while non-identical repeats would require the same caution applied to F6.
+F8 contains one repeated coordinate group, repeated four times:
 
-## Prior evidence retained for comparison
+`0.060000-0.070000-0.030000-0.040000-0.410000-0.820000-0.500000-0.910000`
 
-BBD 021 records, but does not reinterpret as new tests, the earlier results:
+All four outputs were identical, with output range `0.0`.
 
-- BBD 004 linear normalised LOOCV MAE: approximately `0.017307`;
-- BBD 003 global versus recent gradient cosine: approximately `0.936764`;
-- BBD 007 BBD forward normalised MAE: approximately `0.167497`;
-- BBD 007 SOC forward normalised MAE: approximately `0.043917`.
+Unlike F6, there is therefore no observed repeatability contradiction to a coordinate-only deterministic F8 mechanism over the sampled points.
 
-The new function-specific chronological result is compared with those values, but it is not labelled as a fresh SOC contest unless SOC is rerun under the same BBD 021 protocol.
+## Interpretation
+
+BBD 021 materially strengthens the case that F8 is governed, at least over the sampled region, by a stable static linear or very low-order surface.
+
+The evidence now combines:
+
+- BBD 004 compact linear LOOCV error of approximately `0.017307`;
+- BBD 021 chronological walk-forward error of approximately `0.016539`;
+- BBD 003 gradient coherence of approximately `0.936764`;
+- 100% of coefficients meeting the 75% sign-stability threshold;
+- four identical outputs at the repeated F8 coordinate.
+
+This resolves much of the earlier apparent contradiction from BBD 007. The weakness appears to have been in the earlier general-purpose BBD implementation rather than in the F8 linear hypothesis itself.
 
 ## Evidence boundary
 
-A low walk-forward error would strengthen the case that F8 has a stable low-order generating surface in the sampled region. It would still not establish the exact Imperial function because BBD 008 showed large disagreement among surviving models away from the historical path.
-
-Exact function recovery therefore remains false until independent discriminatory queries are evaluated.
+Exact function recovery remains false. BBD 008 showed that candidate F8 models can still diverge strongly away from the historical trajectory. The next test must therefore be discriminatory falsification using independent coordinates, ideally with SOC rerun under the same prospective protocol before any claim of true recovery is made.
