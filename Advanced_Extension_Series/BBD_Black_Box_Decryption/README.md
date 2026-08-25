@@ -113,6 +113,16 @@ Repeated-coordinate context distance also failed to provide a simple explanation
 
 See [BBD 013: F6 Latent Variable Reconstruction](BBD_013_F6_LATENT_VARIABLE_RECONSTRUCTION.md).
 
+## BBD 014 to BBD 025: Function-specific decryption sequence
+
+BBD 014 to BBD 017 refined the F6 surface and examined repeated-coordinate variability. BBD 018 to BBD 020 decrypted and challenged F7. BBD 021 and BBD 022 examined F8, while BBD 023 and BBD 024 examined F5 and its disagreement with SOC.
+
+BBD 025 begins dedicated F4 decryption. Under leakage-controlled chronological testing, a Matérn 2.5 Gaussian Process ranked first with normalised walk-forward MAE of `0.021834`. The nested Rosenbrock model ranked fifth at `0.032816`. The result retains Rosenbrock-like geometry as a structural clue but rejects it as the strongest current predictive mechanism.
+
+The F4 best coordinate was repeated in Weeks 1, 12 and 13 with an identical output each time. This supports a static, repeatable nonlinear surface over the observed region, but does not establish the exact hidden equation.
+
+See [BBD 025: F4-Specific Decryption](BBD_025_F4_SPECIFIC_DECRYPTION.md).
+
 ## Why temporal ordering is retained
 
 The thirteen observations are not treated as an unordered cloud. BBD preserves round order, coordinate displacement, objective change, repeated points and previous-state information.
@@ -140,6 +150,8 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_010_f6_specific_de
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_011_f6_residual_decomposition.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_012_f6_stochastic_deterministic.py
 python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_013_f6_latent_variable_reconstruction.py
+# BBD 014 to BBD 024 continue the function-specific sequence
+python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_025_f4_specific_decryption.py
 ```
 
 ## Research sequence
@@ -156,6 +168,10 @@ python Advanced_Extension_Series/BBD_Black_Box_Decryption/bbd_013_f6_latent_vari
 **BBD 010** F6-specific static-versus-state mechanism decryption  
 **BBD 011** F6 residual decomposition and short-memory test  
 **BBD 012** F6 stochastic-versus-deterministic residual classification  
-**BBD 013** F6 low-dimensional latent-context reconstruction
+**BBD 013 to BBD 017** F6 surface refinement, repeatability forensics and repeat design  
+**BBD 018 to BBD 020** F7 decryption, simplification and falsification  
+**BBD 021 to BBD 022** F8 decryption and SOC rechallenge  
+**BBD 023 to BBD 024** F5 decryption and SOC rechallenge  
+**BBD 025** F4-specific leakage-controlled mechanism competition
 
 The project advances only when each stage has a reproducible result and a stated uncertainty boundary.
