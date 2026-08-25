@@ -21,18 +21,39 @@ The tested complexity levels are `3, 5, 7, 9, 12, 15, 20, 27` terms.
 
 This nested selection prevents later observations from deciding which terms are available for an earlier prediction.
 
-## Stability analysis
+## Result
 
-The experiment also tracks each quadratic coefficient as the training history grows. For every term it records mean and median coefficient, coefficient dispersion, average absolute magnitude and sign stability across training windows.
+The strict predictive winner remained the full 27-term quadratic:
 
-A term is structurally more persuasive when it is both predictive and directionally stable, rather than merely large in the final full-history fit.
+| Terms retained | Normalised walk-forward MAE |
+|---:|---:|
+| 27 | **0.034870** |
+| 20 | 0.035026 |
+| 15 | 0.039251 |
+| 12 | 0.043354 |
+| 9 | 0.047645 |
+| 7 | 0.053126 |
+| 5 | 0.054900 |
+| 3 | 0.105531 |
 
-## Final candidate equation
+Therefore BBD 019 did **not** establish a smaller equation that predicts better than the complete quadratic feature set.
 
-After the best complexity level is selected prospectively, BBD 019 refits that number of terms using the full thirteen-round F7 history and reports the resulting compact equation.
+The 20-term model is nevertheless practically close. Its normalised MAE is only `0.000156` higher, about `0.45%` relative deterioration compared with the 27-term model. This means some compression is possible with very little loss, but the strict evidence rule retains 27 terms because it has the lowest prospective error.
 
-That expression is a **candidate local generating equation over the sampled region**, not a claim that the original hidden Imperial function has been recovered exactly.
+## Recovered full-history quadratic
+
+The full-history refit gives the current local F7 candidate:
+
+`3.222883305 - 6.206057477*x1*x4 - 4.923745036*x5^2 - 3.797132871*x1*x5 + 3.446675454*x4 - 2.849456561*x4*x5 + 2.280576415*x1^2 + 1.927903931*x1 - 1.879457184*x2*x5 + 1.815170033*x1*x2 - 1.580173815*x2*x4 + 1.571575904*x5 + 1.519593818*x3^2 + 1.415401762*x1*x6 - 1.263975393*x3*x5 + 1.106076304*x1*x3 - 1.030552944*x6 - 0.9928952301*x2 - 0.9338415791*x2*x3 + 0.8658612655*x3 + 0.8320693141*x4*x6 - 0.6367826485*x2*x6 - 0.5786588889*x2^2 + 0.5294575222*x3*x4 + 0.4970744051*x4^2 - 0.4067067698*x6^2 - 0.2575313218*x5*x6 + 0.02628985877*x3*x6`
+
+The strongest fitted terms include the interactions `x1*x4`, `x1*x5` and `x4*x5`, together with the `x5^2` curvature term. This is consistent with BBD 018 showing that F7 is not merely a simple additive linear surface.
+
+## Interpretation
+
+BBD 019 gives a useful negative result. F7's excellent predictive performance is not preserved by aggressive term pruning. The data currently favour a **distributed quadratic interaction surface** rather than a sparse equation with only a few dominant terms.
+
+The near-equivalence of the 20-term model suggests that the weakest seven terms may contribute little, but removing more terms progressively degrades chronological prediction. This is exactly the distinction BBD is intended to preserve: retrospective elegance is not allowed to override prospective performance.
 
 ## Evidence boundary
 
-Exact function recovery remains false until the compact equation survives independent discriminatory queries away from the historical trajectory. BBD 008 already showed that competing F7 models can diverge substantially in unsampled regions, so simplification must be followed by falsification rather than treated as proof.
+The 27-term equation is a **candidate local generating equation over the sampled region**, not proof of the original hidden Imperial function. Exact function recovery remains false until the equation survives independent discriminatory evaluations away from the historical trajectory. BBD 008 already showed substantial model disagreement in unsampled F7 regions, so the next F7 step should test the full quadratic candidate against alternative models at deliberately high-disagreement coordinates.
