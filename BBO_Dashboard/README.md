@@ -1,7 +1,7 @@
 # Imperial BBO Challenge Dashboard
 
 > “Life is a stone. Sculpt yourself a masterpiece.”  
-> Dr N T Pisharam, [*Be and Become*](https://honeycombpublications.com/books/be-and-become/), [Honeycomb Publications](https://honeycombpublications.com/)
+> Dr N T Pisharam, *Be and Become*
 
 The quotation frames the dashboard as a visual story of development. It opens the journey and returns in the post-BBO chapter, where Method, Methodology, Modulation, Modification, Magnificence and Masterpiece describe how the work was progressively shaped.
 
