@@ -12,6 +12,10 @@ EVIDENCE_FILE = APP_DIR / "data" / "complete_internal_evidence.csv"
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 FUNCTION_NAMES = {function: f"Function {function} · {dimension} dimensions" for function, dimension in DIMENSIONS.items()}
+FUNCTION_COLOURS = {
+    1: "#8ecae6", 2: "#8dd3c7", 3: "#c9b6e4", 4: "#f6c98d",
+    5: "#f3a6b5", 6: "#a9c7e8", 7: "#a8d8b9", 8: "#d7b5dd",
+}
 
 
 @st.cache_data
@@ -54,6 +58,133 @@ def winners(evidence: pd.DataFrame) -> pd.DataFrame:
 def page_header(title: str, introduction: str) -> None:
     st.title(title)
     st.markdown(f"<p class='lead'>{introduction}</p>", unsafe_allow_html=True)
+
+
+def navigate(page: str, *, function: int | None = None, week: int | None = None) -> None:
+    st.session_state["page"] = page
+    if function is not None:
+        st.session_state["selected_function"] = function
+    if week is not None:
+        st.session_state["selected_week"] = week
+
+
+def section_label(kicker: str, title: str, text: str = "") -> None:
+    st.markdown(
+        f"<div class='section-label'><span>{kicker}</span><h2>{title}</h2><p>{text}</p></div>",
+        unsafe_allow_html=True,
+    )
+
+
+def landing_page(evidence: pd.DataFrame) -> None:
+    best = winners(evidence)
+    st.markdown(
+        """
+        <section class="hero">
+          <div class="hero-kicker">IMPERIAL COLLEGE LONDON · BLACK BOX OPTIMISATION</div>
+          <h1>Thirteen weeks.<br><span>Eight hidden functions.</span></h1>
+          <p>An interactive visual companion to the capstone retrospective, connecting every submission, result, experiment and strategic decision.</p>
+          <div class="hero-tags"><span>104 submissions</span><span>2 to 8 dimensions</span><span>One evolving strategy</span></div>
+        </section>
+        """, unsafe_allow_html=True,
+    )
+    section_label("CHRONOLOGICAL STORY", "Journey through the thirteen rounds", "Open any week to see all eight submissions, returned outputs and their place in the optimisation story.")
+    week_columns = st.columns(7)
+    for week in range(1, 14):
+        with week_columns[(week - 1) % 7]:
+            if st.button(f"WEEK\n{week:02d}", key=f"home_week_{week}", use_container_width=True):
+                navigate("Week story", week=week)
+                st.rerun()
+    section_label("FUNCTION STORIES", "Follow one function from F1 to F8", "Each page brings together its inputs, outputs, coordinate movement, winning result and full week-by-week evidence.")
+    function_columns = st.columns(4)
+    for function in range(1, 9):
+        row = best[best.function == function].iloc[0]
+        with function_columns[(function - 1) % 4]:
+            st.markdown(
+                f"""<div class="function-card" style="--accent:{FUNCTION_COLOURS[function]}">
+                <div class="function-number">F{function}</div><div class="function-meta">{DIMENSIONS[function]} dimensions</div>
+                <div class="function-result">{format_number(row.output)}</div><div class="function-caption">Best output · Week {int(row.week)}</div></div>""",
+                unsafe_allow_html=True,
+            )
+            if st.button(f"Open F{function} story →", key=f"home_function_{function}", use_container_width=True):
+                navigate("Function story", function=function)
+                st.rerun()
+    section_label("STRATEGIC EVOLUTION", "How the search learned", "The competition moved from broad discovery to evidence-led refinement and confirmation.")
+    st.markdown(
+        """<div class="story-ribbon"><div><b>01</b><strong>Explore</strong><span>Map unfamiliar regions</span></div><i>→</i>
+        <div><b>02</b><strong>Learn</strong><span>Read patterns and failures</span></div><i>→</i>
+        <div><b>03</b><strong>Exploit</strong><span>Refine strong coordinates</span></div><i>→</i>
+        <div><b>04</b><strong>Confirm</strong><span>Test and retain winners</span></div></div>""", unsafe_allow_html=True,
+    )
+
+
+def week_story(evidence: pd.DataFrame) -> None:
+    week = int(st.session_state.get("selected_week", 13))
+    page_header(f"Week {week:02d}", f"The complete eight-function submission and evaluator response for Round {week}.")
+    selected = st.select_slider("Move through the competition", options=list(range(1, 14)), value=week)
+    if selected != week:
+        navigate("Week story", week=selected)
+        st.rerun()
+    current = evidence[evidence.week == week].sort_values("function")
+    prior = evidence[evidence.week == week - 1].set_index("function") if week > 1 else None
+    cards = st.columns(4)
+    for _, row in current.iterrows():
+        function = int(row.function)
+        delta = None if prior is None else float(row.output - prior.loc[function, "output"])
+        delta_text = "Opening result" if delta is None else f"{delta:+.3g} from Week {week - 1}"
+        with cards[(function - 1) % 4]:
+            st.markdown(f"""<div class="week-result" style="--accent:{FUNCTION_COLOURS[function]}"><span>F{function} · {DIMENSIONS[function]}D</span><strong>{format_number(row.output)}</strong><small>{delta_text}</small></div>""", unsafe_allow_html=True)
+            if st.button(f"Inspect F{function}", key=f"week_{week}_f{function}", use_container_width=True):
+                navigate("Function story", function=function, week=week)
+                st.rerun()
+    st.subheader("Round evidence")
+    table = current[["function", *[f"x{i}" for i in range(1, 9)], "output"]].copy()
+    table["function"] = table.function.map(lambda value: f"F{value}")
+    st.dataframe(table.dropna(axis=1, how="all"), hide_index=True, use_container_width=True)
+    left, right = st.columns(2)
+    if week > 1 and left.button(f"← Week {week - 1:02d}", use_container_width=True):
+        navigate("Week story", week=week - 1); st.rerun()
+    if week < 13 and right.button(f"Week {week + 1:02d} →", use_container_width=True):
+        navigate("Week story", week=week + 1); st.rerun()
+
+
+def function_story(evidence: pd.DataFrame) -> None:
+    function = int(st.session_state.get("selected_function", 1))
+    frame = evidence[evidence.function == function].sort_values("week").copy()
+    best = frame.loc[frame.output.idxmax()]
+    final = frame.iloc[-1]
+    coordinate_columns = [f"x{i}" for i in range(1, DIMENSIONS[function] + 1)]
+    page_header(f"F{function} · Function Story", f"Thirteen rounds of evidence for the {DIMENSIONS[function]}-dimensional hidden function.")
+    function_tabs = st.columns(8)
+    for candidate in range(1, 9):
+        with function_tabs[candidate - 1]:
+            if st.button(f"F{candidate}", key=f"story_nav_f{candidate}", type="primary" if candidate == function else "secondary", use_container_width=True):
+                navigate("Function story", function=candidate); st.rerun()
+    metrics = st.columns(4)
+    metrics[0].metric("Dimensions", DIMENSIONS[function])
+    metrics[1].metric("Best output", format_number(best.output))
+    metrics[2].metric("Winning week", f"Week {int(best.week):02d}")
+    metrics[3].metric("Week 13 output", format_number(final.output))
+    tabs = st.tabs(["Visual story", "Inputs and outputs", "Coordinate movement", "Week-by-week evidence"])
+    with tabs[0]:
+        chart = frame[["week", "output"]].copy()
+        chart["Cumulative best"] = chart.output.cummax()
+        st.subheader("Output development")
+        st.line_chart(chart.set_index("week").rename(columns={"output": "Weekly output"}), height=420, color=[FUNCTION_COLOURS[function], "#e6b95c"])
+        st.markdown(f"<div class='winner-callout'><span>WINNING COORDINATE</span><strong>{coordinate_text(best, function)}</strong><small>Returned {format_number(best.output)} in Week {int(best.week)}</small></div>", unsafe_allow_html=True)
+    with tabs[1]:
+        display = frame[["week", *coordinate_columns, "output"]].copy()
+        display["Cumulative best"] = frame.output.cummax().to_numpy()
+        st.dataframe(display, hide_index=True, use_container_width=True, height=500)
+    with tabs[2]:
+        st.line_chart(frame.set_index("week")[coordinate_columns], height=430)
+        st.caption("Each line shows how one submitted coordinate changed across the thirteen rounds.")
+    with tabs[3]:
+        for _, row in frame.iterrows():
+            selected_week = int(row.week) == int(st.session_state.get("selected_week", -1))
+            with st.expander(f"Week {int(row.week):02d} · Output {format_number(row.output)}", expanded=selected_week):
+                st.code(coordinate_text(row, function), language=None)
+                if st.button(f"Open complete Week {int(row.week):02d}", key=f"f{function}_week_{int(row.week)}"):
+                    navigate("Week story", week=int(row.week)); st.rerun()
 
 
 def overview(evidence: pd.DataFrame) -> None:
@@ -506,15 +637,48 @@ def apply_style() -> None:
     st.markdown(
         """
         <style>
-        :root { --navy: #17365d; --gold: #d0a247; }
-        .stApp { background: linear-gradient(180deg, #f9fbfd 0%, #edf3f8 100%); }
-        [data-testid="stSidebar"] { background: #172b49; }
-        [data-testid="stSidebar"] * { color: #f7f4ea; }
-        h1, h2, h3 { color: var(--navy); letter-spacing: -0.02em; }
+        :root { --navy: #203a59; --gold: #e6b95c; --mint: #dff4ee; --blue: #e4f1f8; --lavender: #eee8f7; --peach: #fff0df; }
+        .stApp { background: radial-gradient(circle at 88% 0%, #e8f6f4 0, transparent 30%), linear-gradient(180deg, #fffdfa 0%, #f3f7fa 100%); }
+        .main .block-container { max-width: 1380px; padding-top: 2rem; padding-bottom: 5rem; }
+        [data-testid="stSidebar"] { background: linear-gradient(180deg, #e7f1f7 0%, #edf5f1 55%, #f4eef8 100%); border-right: 1px solid #d4e1e8; }
+        [data-testid="stSidebar"] * { color: #29445f; }
+        h1, h2, h3 { color: var(--navy); letter-spacing: -0.035em; }
         .lead { color: #53667d; font-size: 1.12rem; max-width: 780px; margin-top: -0.55rem; }
-        [data-testid="stMetric"] { background: white; border: 1px solid #dbe4ee; border-radius: 14px; padding: 1rem; }
+        [data-testid="stMetric"] { background: rgba(255,255,255,.9); border: 1px solid #dbe5eb; border-radius: 18px; padding: 1rem; box-shadow: 0 10px 30px rgba(32,58,89,.06); }
         [data-testid="stMetricValue"] { color: var(--navy); }
-        .stButton > button, .stDownloadButton > button { border-radius: 10px; border-color: var(--gold); }
+        .stButton > button, .stDownloadButton > button { border-radius: 12px; border-color: #c9d9e2; font-weight: 650; min-height: 2.75rem; background: rgba(255,255,255,.78); }
+        .stButton > button:hover { border-color: #80b8b0; color: var(--navy); box-shadow: 0 5px 18px rgba(32,58,89,.10); }
+        .hero { background: linear-gradient(125deg, #dff1f7 0%, #e5f4ef 48%, #eee7f6 100%); border:1px solid #d4e4ea; border-radius:28px; padding:4rem 4.25rem; margin-bottom:3rem; box-shadow:0 24px 60px rgba(32,58,89,.10); position:relative; overflow:hidden; }
+        .hero:after { content:""; position:absolute; width:350px; height:350px; right:-90px; top:-150px; border:1px solid rgba(53,107,126,.14); border-radius:50%; box-shadow:0 0 0 60px rgba(255,255,255,.25),0 0 0 120px rgba(255,255,255,.18); }
+        .hero-kicker { color:#4f8982; font-weight:800; font-size:.76rem; letter-spacing:.16em; margin-bottom:1.3rem; }
+        .hero h1 { color:#203a59; font-size:clamp(2.8rem,5vw,5.2rem); line-height:.98; margin:0 0 1.5rem; max-width:900px; }
+        .hero h1 span { color:#8672a5; }
+        .hero p { font-size:1.18rem; color:#536a7e; max-width:760px; line-height:1.65; }
+        .hero-tags { display:flex; gap:.7rem; flex-wrap:wrap; margin-top:2rem; }
+        .hero-tags span { border:1px solid rgba(66,111,126,.20); background:rgba(255,255,255,.45); border-radius:999px; padding:.5rem .85rem; color:#3d6074; font-size:.86rem; }
+        .section-label { margin:3.4rem 0 1.25rem; }
+        .section-label span { color:#5b918b; font-size:.74rem; font-weight:800; letter-spacing:.15em; }
+        .section-label h2 { margin:.25rem 0 .3rem; font-size:2rem; }
+        .section-label p { color:#627489; max-width:850px; margin:0; }
+        .function-card { background:rgba(255,255,255,.9); border-radius:20px; padding:1.25rem 1.3rem; margin-top:.8rem; border-top:6px solid var(--accent); box-shadow:0 12px 32px rgba(32,58,89,.08); min-height:155px; }
+        .function-number { font-size:1.8rem; font-weight:850; color:var(--navy); }
+        .function-meta,.function-caption { color:#738397; font-size:.79rem; }
+        .function-result { font-size:1.24rem; font-weight:750; color:#294963; margin-top:1.15rem; overflow-wrap:anywhere; }
+        .week-result { background:rgba(255,255,255,.92); border-left:6px solid var(--accent); border-radius:16px; padding:1rem 1.1rem; margin:.55rem 0 .25rem; box-shadow:0 8px 24px rgba(32,58,89,.07); }
+        .week-result span,.week-result small { display:block; color:#718196; }
+        .week-result strong { display:block; color:var(--navy); font-size:1.28rem; margin:.35rem 0; overflow-wrap:anywhere; }
+        .story-ribbon { display:flex; align-items:center; justify-content:space-between; gap:1rem; background:linear-gradient(100deg,#e2f3ee,#e7f0f8,#f0e9f7,#fff0df); padding:1.6rem; border:1px solid #d8e3e7; border-radius:20px; color:#29445f; }
+        .story-ribbon div { display:grid; gap:.15rem; }
+        .story-ribbon b { color:#5a938b; font-size:.72rem; }
+        .story-ribbon strong { font-size:1.08rem; }
+        .story-ribbon span { color:#687c8e; font-size:.78rem; }
+        .story-ribbon i { color:#a88952; font-style:normal; font-size:1.4rem; }
+        .winner-callout { background:linear-gradient(120deg,#fff3df,#fff); border:1px solid #eed8aa; border-radius:18px; padding:1.25rem 1.4rem; margin:1.25rem 0; }
+        .winner-callout span,.winner-callout small { display:block; color:#78663e; }
+        .winner-callout span { font-size:.7rem; font-weight:800; letter-spacing:.13em; }
+        .winner-callout strong { display:block; color:#203a59; font-size:1.05rem; margin:.4rem 0; overflow-wrap:anywhere; }
+        [data-testid="stDataFrame"] { border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(32,58,89,.05); }
+        @media(max-width:800px) { .hero{padding:2.2rem 1.5rem}.story-ribbon{display:grid}.story-ribbon i{transform:rotate(90deg)} }
         </style>
         """, unsafe_allow_html=True,
     )
@@ -528,26 +692,32 @@ def main() -> None:
     apply_style()
     evidence = load_assessed_evidence()
     complete = load_complete_internal_evidence()
+    if "page" not in st.session_state:
+        st.session_state["page"] = "Visual home"
     with st.sidebar:
-        st.markdown("## Imperial BBO Challenge")
-        st.caption("Thirteen-round capstone dashboard")
+        st.markdown("## ◈ Imperial BBO")
+        st.caption("Interactive capstone evidence")
+        pages = [
+            "Visual home", "Week story", "Function story", "Round dashboard",
+            "Weekly progress", "Capstone retrospective", "Assessment evidence",
+        ]
         page = st.radio(
-            "Navigate", [
-                "Overview", "Round dashboard", "Weekly progress", "Function explorer",
-                "Capstone retrospective", "Assessment evidence",
-            ],
+            "Navigate", pages,
+            key="page",
             label_visibility="collapsed",
         )
         st.divider()
         st.caption("Official Week 1 to Week 13 evidence only")
-    if page == "Overview":
-        overview(evidence)
+    if page == "Visual home":
+        landing_page(evidence)
+    elif page == "Week story":
+        week_story(evidence)
+    elif page == "Function story":
+        function_story(evidence)
     elif page == "Round dashboard":
         round_dashboard(evidence, complete)
     elif page == "Weekly progress":
         weekly_progress(evidence)
-    elif page == "Function explorer":
-        function_explorer(evidence)
     elif page == "Capstone retrospective":
         retrospective(evidence)
     else:
