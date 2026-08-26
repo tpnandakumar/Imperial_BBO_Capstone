@@ -111,7 +111,7 @@ def landing_page(evidence: pd.DataFrame) -> None:
         </section>
         <blockquote class="book-epigraph">
           <p>“Life is a stone. Sculpt yourself a masterpiece.”</p>
-          <cite>Dr N T Pisharam, <a href="https://honeycombpublications.com/books/be-and-become/" target="_blank"><em>Be and Become</em></a> · <a href="https://honeycombpublications.com/" target="_blank">Honeycomb Publications</a></cite>
+          <cite>Dr N T Pisharam, <em>Be and Become</em></cite>
         </blockquote>
         """, unsafe_allow_html=True,
     )
@@ -328,7 +328,7 @@ def extend_evolve_chapter() -> None:
         </div>
         <blockquote class="book-epigraph closing-epigraph">
           <p>“Life is a stone. Sculpt yourself a masterpiece.”</p>
-          <cite>Dr N T Pisharam, <a href="https://honeycombpublications.com/books/be-and-become/" target="_blank"><em>Be and Become</em></a> · <a href="https://honeycombpublications.com/" target="_blank">Honeycomb Publications</a></cite>
+          <cite>Dr N T Pisharam, <em>Be and Become</em></cite>
         </blockquote>""",
         unsafe_allow_html=True,
     )
@@ -952,8 +952,6 @@ def apply_style() -> None:
         .book-epigraph { max-width:850px; margin:-1.55rem auto 3.2rem; padding:1.25rem 1.6rem; text-align:center; background:rgba(255,255,255,.72); border:1px solid #dde6eb; border-radius:18px; box-shadow:0 10px 28px rgba(32,58,89,.06); }
         .book-epigraph p { margin:0; color:#29445f; font-family:Georgia,serif; font-size:1.25rem; font-style:italic; }
         .book-epigraph cite { display:block; margin-top:.55rem; color:#718196; font-size:.82rem; font-style:normal; }
-        .book-epigraph cite a { color:#537f82; text-decoration:none; border-bottom:1px solid rgba(83,127,130,.35); }
-        .book-epigraph cite a:hover { color:#29445f; border-bottom-color:#29445f; }
         .section-label { margin:3.4rem 0 1.25rem; }
         .section-label span { color:#5b918b; font-size:.74rem; font-weight:800; letter-spacing:.15em; }
         .section-label h2 { margin:.25rem 0 .3rem; font-size:2rem; }
