@@ -1,0 +1,9 @@
+function,experiment_week,method,candidate_clusters,selected_clusters,n_init,random_state,selection_measure,selection_score,observations
+F1,10,KMeans exploratory clustering HPO,"2,3",3,50,42,silhouette score,0.5869830130703245,10
+F2,10,KMeans exploratory clustering HPO,"2,3",2,50,42,silhouette score,0.5259373483496523,10
+F3,10,KMeans exploratory clustering HPO,"2,3",2,50,42,silhouette score,0.8276869855194843,10
+F4,10,KMeans exploratory clustering HPO,"2,3",3,50,42,silhouette score,0.651132045817894,10
+F5,10,KMeans exploratory clustering HPO,"2,3",2,50,42,silhouette score,0.5694856844555669,10
+F6,10,KMeans exploratory clustering HPO,"2,3",3,50,42,silhouette score,0.7122881284409617,10
+F7,10,KMeans exploratory clustering HPO,"2,3",2,50,42,silhouette score,0.6228719595207801,10
+F8,10,KMeans exploratory clustering HPO,"2,3",3,50,42,silhouette score,0.4271112220662444,10
