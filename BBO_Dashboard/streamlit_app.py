@@ -87,6 +87,19 @@ def landing_page(evidence: pd.DataFrame) -> None:
         </section>
         """, unsafe_allow_html=True,
     )
+    section_label("CHOOSE A READING ROUTE", "Enter the visual book", "Read chronologically, follow one hidden function, or reproduce selected analytical experiments.")
+    route_columns = st.columns(3)
+    routes = [
+        ("Read by Week", "Thirteen chronological chapters showing how the complete strategy developed.", "Week story", {"week": 1}),
+        ("Read by Function", "Eight function chapters tracing inputs, outputs, turning points and winners.", "Function story", {"function": 1}),
+        ("Explore the Code", "A controlled laboratory for reproducing and varying selected experiments.", "Code laboratory", {}),
+    ]
+    for column, (title, description, target, arguments) in zip(route_columns, routes):
+        with column:
+            st.markdown(f"<div class='route-card'><span>VISUAL BOOK</span><h3>{title}</h3><p>{description}</p></div>", unsafe_allow_html=True)
+            if st.button(f"Open {title} →", key=f"route_{target}", use_container_width=True):
+                navigate(target, **arguments)
+                st.rerun()
     section_label("CHRONOLOGICAL STORY", "Journey through the thirteen rounds", "Open any week to see all eight submissions, returned outputs and their place in the optimisation story.")
     week_columns = st.columns(7)
     for week in range(1, 14):
@@ -145,6 +158,8 @@ def week_story(evidence: pd.DataFrame) -> None:
         navigate("Week story", week=week - 1); st.rerun()
     if week < 13 and right.button(f"Week {week + 1:02d} →", use_container_width=True):
         navigate("Week story", week=week + 1); st.rerun()
+    if week == 13 and right.button("Continue to Chapter Summary →", use_container_width=True):
+        navigate("Chapter Summary"); st.rerun()
 
 
 def function_story(evidence: pd.DataFrame) -> None:
@@ -185,6 +200,138 @@ def function_story(evidence: pd.DataFrame) -> None:
                 st.code(coordinate_text(row, function), language=None)
                 if st.button(f"Open complete Week {int(row.week):02d}", key=f"f{function}_week_{int(row.week)}"):
                     navigate("Week story", week=int(row.week)); st.rerun()
+
+
+def summary_chapter(evidence: pd.DataFrame) -> None:
+    page_header("Chapter Summary", "The thirteen-week story condensed into outcomes, turning points, trade-offs and learning.")
+    best = winners(evidence)
+    first = evidence[evidence.week == 1].set_index("function")
+    final = evidence[evidence.week == 13].set_index("function")
+    st.markdown("<div class='chapter-banner'><span>SHARED FINAL CHAPTER</span><h2>What the complete journey established</h2><p>This chapter joins both reading routes before the project moves beyond the official competition.</p></div>", unsafe_allow_html=True)
+    metrics = st.columns(4)
+    metrics[0].metric("Competition chapters", "13")
+    metrics[1].metric("Function stories", "8")
+    metrics[2].metric("Official evaluations", "104")
+    metrics[3].metric("Objective", "Maximise")
+    st.subheader("Final evidence across all functions")
+    rows = []
+    for _, row in best.iterrows():
+        function = int(row.function)
+        rows.append({
+            "Function": f"F{function}",
+            "Week 1": format_number(first.loc[function, "output"]),
+            "Week 13": format_number(final.loc[function, "output"]),
+            "Best output": format_number(row.output),
+            "Winning week": int(row.week),
+            "Winning input": row.coordinate,
+        })
+    st.dataframe(pd.DataFrame(rows), hide_index=True, use_container_width=True)
+    columns = st.columns(3)
+    with columns[0]:
+        st.markdown("### What changed")
+        st.write("The search moved from broad sampling towards function-specific refinement, confirmation and selective boundary testing.")
+    with columns[1]:
+        st.markdown("### What mattered")
+        st.write("Dimensionality, repeatability, response scale and the shape of previous results determined the next sensible move.")
+    with columns[2]:
+        st.markdown("### What was learned")
+        st.write("No single optimisation rule was suitable for all eight functions. Feedback had to change both the coordinate and the method.")
+    if st.button("Continue to Extend and Evolve →", use_container_width=True):
+        navigate("Extend and Evolve"); st.rerun()
+
+
+def extend_evolve_chapter() -> None:
+    page_header("Extend and Evolve", "The bridge from the assessed Imperial challenge to the independent post-BBO programme.")
+    st.warning("Everything beyond this point is post-capstone research and is not part of the official thirteen-round submission.")
+    st.markdown(
+        """<div class="evolve-loop">
+        <div><b>Explore and Exploit</b><span>Optimise using current evidence</span></div><i>→</i>
+        <div><b>Extend</b><span>Widen the question</span></div><i>→</i>
+        <div><b>Evolve</b><span>Improve the method</span></div><i>→</i>
+        <div><b>Experiment</b><span>Run a reproducible test</span></div><i>→</i>
+        <div><b>Evaluate</b><span>Judge the evidence</span></div><i>↺</i>
+        </div>""", unsafe_allow_html=True,
+    )
+    st.subheader("Post-BBO Advanced Next Stage")
+    columns = st.columns(3)
+    stages = [
+        ("Maximisation", "Continue numbered optimisation runs until one defensible winning coordinate remains for each active function."),
+        ("Resolution", "Reconstruct behaviour, test competing equations and separate supported findings from provisional hypotheses."),
+        ("Evolution", "Use every evaluated experiment to redesign the next search and strengthen its validation."),
+    ]
+    for column, (title, text) in zip(columns, stages):
+        with column:
+            st.markdown(f"### {title}")
+            st.write(text)
+    st.info("The post-BBO repository section will be linked here once its public Advanced Next Stage index is created.")
+
+
+def code_laboratory(evidence: pd.DataFrame, complete: pd.DataFrame) -> None:
+    page_header("Explore the Code", "Reproduce an official analysis, change controlled settings and compare the result without altering the capstone record.")
+    st.markdown("<div class='lab-notice'><strong>Safe experiment boundary</strong><span>Official evidence is read-only. Results created here are interactive demonstrations and are never presented as submitted competition outcomes.</span></div>", unsafe_allow_html=True)
+    experiment = st.selectbox("Choose an experiment", ["PCA coordinate analysis", "Movement classification", "Output progression"])
+    function = st.selectbox("Function", list(DIMENSIONS), format_func=lambda value: FUNCTION_NAMES[value], key="lab_function")
+    week = st.select_slider("Evidence available through", options=list(range(1, 14)), value=13, key="lab_week")
+    coordinate_columns = [f"x{i}" for i in range(1, DIMENSIONS[function] + 1)]
+    official = evidence[(evidence.function == function) & (evidence.week <= week)].sort_values("week")
+    official_tab, variation_tab, source_tab = st.tabs(["Official reproduction", "Interactive variation", "Open the code"])
+    with official_tab:
+        st.success("OFFICIAL REPRODUCTION · Uses saved evidence and the dashboard's documented calculation.")
+        if experiment == "PCA coordinate analysis":
+            allowed = ["starter", *[f"week_{value:02d}" for value in range(1, week + 1)]]
+            values = complete[(complete.function == function) & complete.source.isin(allowed)][coordinate_columns].dropna().to_numpy(float)
+            centred = values - values.mean(axis=0, keepdims=True)
+            _, singular_values, components = np.linalg.svd(centred, full_matrices=False)
+            variance = singular_values ** 2
+            ratio = variance / variance.sum()
+            pca = pd.DataFrame({"Component": [f"PC{i}" for i in range(1, len(ratio) + 1)], "Explained variance": ratio, "Cumulative variance": np.cumsum(ratio)})
+            st.bar_chart(pca.set_index("Component")[["Explained variance"]], color=FUNCTION_COLOURS[function])
+            st.dataframe(pca, hide_index=True, use_container_width=True)
+            with st.expander("Component loadings"):
+                st.dataframe(pd.DataFrame(components, columns=coordinate_columns, index=pca.Component), use_container_width=True)
+        elif experiment == "Movement classification":
+            threshold = 0.05 * np.sqrt(DIMENSIONS[function])
+            values = official[coordinate_columns].to_numpy(float)
+            movement = np.r_[np.nan, np.linalg.norm(np.diff(values, axis=0), axis=1)]
+            roles = ["Opening query" if np.isnan(value) else "Confirmation" if value == 0 else "Local exploitation" if value <= threshold else "Broader exploration" for value in movement]
+            st.metric("Documented movement threshold", f"{threshold:.6f}")
+            st.dataframe(pd.DataFrame({"Week": official.week, "Movement": movement, "Observed role": roles, "Output": official.output}), hide_index=True, use_container_width=True)
+        else:
+            progression = official[["week", "output"]].copy()
+            progression["Cumulative best"] = progression.output.cummax()
+            st.line_chart(progression.set_index("week"), height=420, color=[FUNCTION_COLOURS[function], "#e6b95c"])
+    with variation_tab:
+        st.info("INTERACTIVE VARIATION · The settings below were not necessarily used in the official submission.")
+        if experiment == "PCA coordinate analysis":
+            include_starter = st.toggle("Include starter observations", value=True)
+            scale_coordinates = st.toggle("Standardise coordinates", value=False)
+            sources = [*(["starter"] if include_starter else []), *[f"week_{value:02d}" for value in range(1, week + 1)]]
+            values = complete[(complete.function == function) & complete.source.isin(sources)][coordinate_columns].dropna().to_numpy(float)
+            if scale_coordinates:
+                standard_deviation = values.std(axis=0, ddof=0)
+                values = (values - values.mean(axis=0)) / np.where(standard_deviation == 0, 1, standard_deviation)
+            centred = values - values.mean(axis=0, keepdims=True)
+            _, singular_values, _ = np.linalg.svd(centred, full_matrices=False)
+            ratio = singular_values ** 2 / np.sum(singular_values ** 2)
+            st.bar_chart(pd.DataFrame({"Explained variance": ratio}, index=[f"PC{i}" for i in range(1, len(ratio) + 1)]), color="#b9a7d4")
+        elif experiment == "Movement classification":
+            threshold = st.slider("Local-movement threshold", 0.001, 0.500, float(min(0.05 * np.sqrt(DIMENSIONS[function]), 0.5)), 0.001)
+            values = official[coordinate_columns].to_numpy(float)
+            movement = np.r_[np.nan, np.linalg.norm(np.diff(values, axis=0), axis=1)]
+            roles = ["Opening query" if np.isnan(value) else "Confirmation" if value == 0 else "Local exploitation" if value <= threshold else "Broader exploration" for value in movement]
+            st.dataframe(pd.DataFrame({"Week": official.week, "Movement": movement, "Interactive role": roles}), hide_index=True, use_container_width=True)
+        else:
+            normalise = st.toggle("Normalise output to the observed range", value=True)
+            progression = official[["week", "output"]].copy()
+            if normalise:
+                span = progression.output.max() - progression.output.min()
+                progression["output"] = (progression.output - progression.output.min()) / (span if span else 1)
+            progression["Cumulative best"] = progression.output.cummax()
+            st.line_chart(progression.set_index("week"), height=420, color=["#9bcfc5", "#dfb7c0"])
+    with source_tab:
+        st.write("The live demonstrations are implemented in the dashboard source. The repository file can be inspected, downloaded or run locally.")
+        st.link_button("Open streamlit_app.py on GitHub", "https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/BBO_Dashboard/streamlit_app.py")
+        st.code("streamlit run BBO_Dashboard/streamlit_app.py", language="bash")
 
 
 def overview(evidence: pd.DataFrame) -> None:
@@ -661,6 +808,10 @@ def apply_style() -> None:
         .section-label h2 { margin:.25rem 0 .3rem; font-size:2rem; }
         .section-label p { color:#627489; max-width:850px; margin:0; }
         .function-card { background:rgba(255,255,255,.9); border-radius:20px; padding:1.25rem 1.3rem; margin-top:.8rem; border-top:6px solid var(--accent); box-shadow:0 12px 32px rgba(32,58,89,.08); min-height:155px; }
+        .route-card { background:rgba(255,255,255,.82); border:1px solid #dbe6eb; border-radius:20px; padding:1.35rem; min-height:178px; box-shadow:0 12px 30px rgba(32,58,89,.06); }
+        .route-card span { color:#5b918b; font-size:.68rem; font-weight:850; letter-spacing:.14em; }
+        .route-card h3 { margin:.45rem 0; }
+        .route-card p { color:#65788a; font-size:.9rem; line-height:1.55; }
         .function-number { font-size:1.8rem; font-weight:850; color:var(--navy); }
         .function-meta,.function-caption { color:#738397; font-size:.79rem; }
         .function-result { font-size:1.24rem; font-weight:750; color:#294963; margin-top:1.15rem; overflow-wrap:anywhere; }
@@ -677,8 +828,20 @@ def apply_style() -> None:
         .winner-callout span,.winner-callout small { display:block; color:#78663e; }
         .winner-callout span { font-size:.7rem; font-weight:800; letter-spacing:.13em; }
         .winner-callout strong { display:block; color:#203a59; font-size:1.05rem; margin:.4rem 0; overflow-wrap:anywhere; }
+        .chapter-banner { background:linear-gradient(110deg,#e5f3f0,#e8f1f8,#f1eaf7); border:1px solid #d6e3e8; border-radius:22px; padding:1.65rem 1.8rem; margin:1rem 0 1.5rem; }
+        .chapter-banner span { color:#5b918b; font-size:.68rem; font-weight:850; letter-spacing:.14em; }
+        .chapter-banner h2 { margin:.4rem 0; }
+        .chapter-banner p { margin:0; color:#65788a; }
+        .lab-notice { display:grid; gap:.35rem; background:#fff4e5; border:1px solid #ecd8b4; border-radius:16px; padding:1rem 1.2rem; margin:1rem 0 1.5rem; }
+        .lab-notice strong { color:#6f5931; }
+        .lab-notice span { color:#786b55; }
+        .evolve-loop { display:flex; gap:.6rem; align-items:stretch; margin:1.5rem 0 2rem; }
+        .evolve-loop div { flex:1; display:grid; align-content:center; gap:.35rem; background:linear-gradient(145deg,#edf7f4,#f2eef8); border:1px solid #d9e4e7; border-radius:16px; padding:1rem; }
+        .evolve-loop b { color:#29445f; }
+        .evolve-loop span { color:#687c8e; font-size:.78rem; }
+        .evolve-loop i { align-self:center; color:#a88952; font-style:normal; font-size:1.25rem; }
         [data-testid="stDataFrame"] { border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(32,58,89,.05); }
-        @media(max-width:800px) { .hero{padding:2.2rem 1.5rem}.story-ribbon{display:grid}.story-ribbon i{transform:rotate(90deg)} }
+        @media(max-width:800px) { .hero{padding:2.2rem 1.5rem}.story-ribbon,.evolve-loop{display:grid}.story-ribbon i,.evolve-loop i{transform:rotate(90deg)} }
         </style>
         """, unsafe_allow_html=True,
     )
@@ -698,7 +861,8 @@ def main() -> None:
         st.markdown("## ◈ Imperial BBO")
         st.caption("Interactive capstone evidence")
         pages = [
-            "Visual home", "Week story", "Function story", "Round dashboard",
+            "Visual home", "Week story", "Function story", "Code laboratory",
+            "Chapter Summary", "Extend and Evolve", "Round dashboard",
             "Weekly progress", "Capstone retrospective", "Assessment evidence",
         ]
         page = st.radio(
@@ -714,6 +878,12 @@ def main() -> None:
         week_story(evidence)
     elif page == "Function story":
         function_story(evidence)
+    elif page == "Code laboratory":
+        code_laboratory(evidence, complete)
+    elif page == "Chapter Summary":
+        summary_chapter(evidence)
+    elif page == "Extend and Evolve":
+        extend_evolve_chapter()
     elif page == "Round dashboard":
         round_dashboard(evidence, complete)
     elif page == "Weekly progress":
