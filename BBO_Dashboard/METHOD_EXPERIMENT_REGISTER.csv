@@ -1,0 +1,21 @@
+method,family,week_or_stage,status,confirmed_role,confirmed_parameters,evidence_path,dashboard_action
+Exploration and exploitation,Search strategy,Weeks 1 to 9,Verified and linked,Function-specific broad search and local refinement,,Week_01/README.md to Week_09/README.md,Show chronological strategy evolution
+Linear regression,Regression,Week to recover,Performed but source path unresolved,Continuous-output surrogate experiment,,,Locate code reflection and saved result
+Logistic regression,Classification,Week to recover,Performed but source path unresolved,Classification experiment requiring a documented target definition,,,Locate code reflection target and saved result
+Polynomial regression,Regression,Week to recover,Performed but source path unresolved,Non-linear continuous-output surrogate experiment,,,Locate code reflection and saved result
+Kernel method,Non-linear surrogate,Week to recover,Performed but exact kernel unresolved,Kernel-based function approximation,,,Identify kernel model parameters and output
+Support vector regression,Non-linear surrogate,Week to recover,Performed but source path unresolved,Continuous-output kernel regression,,,Locate code reflection and saved result
+Gaussian process,Probabilistic surrogate,Week to recover,Performed but source path unresolved,Uncertainty-aware black-box surrogate,,,Locate code reflection and saved result
+Decision tree,Tree model,Week to recover,Performed but source path unresolved,Non-linear surrogate or rule experiment,,,Locate code reflection and saved result
+Random forest,Ensemble model,Week to recover,Performed but source path unresolved,Bagged tree surrogate experiment,,,Locate code reflection and saved result
+Bootstrap,Validation,Week to recover,Performed but source path unresolved,Stability and uncertainty assessment,,,Locate resampling code and interval outputs
+Hyperparameter optimisation,Model selection,Week 10,Verified and linked,Selected exploratory KMeans partition by silhouette score,"k=2 or 3; n_init=50; random_state=42",Week_10/week_10_clustering_analysis.py,Reproduce genuine Week 10 HPO
+KMeans,Clustering,Week 10,Verified and linked,Partitioned ten weekly coordinates per function,"k=2 or 3; n_init=50; random_state=42",Week_10/CLUSTERING_ANALYSIS.md,Show scores labels and consequences
+Clustering interpretation,Structural analysis,Week 10,Verified and linked,Identified recurring productive and weak regions,,Week_10/README.md,Connect clusters to Week 11 decisions
+PCA,Dimensional analysis,Week 11,Verified and linked,Compared variance concentration and coordinate movement,Centred SVD without additional scaling,Week_11/PCA_STRATEGY_COMPARISON.md,Reproduce PCA and show loadings
+PCA update,Dimensional analysis,Week 12,Verified and linked,Updated component evidence after Week 12 results,Centred SVD without additional scaling,Week_12/PCA_EVIDENCE.md,Compare Week 11 and Week 12 PCA
+CNN,Neural model,Week to recover,Performed but source path unresolved,Sequential or reshaped-coordinate experiment requiring architecture evidence,,,Locate architecture training code and outputs
+Reinforcement learning,Sequential decision framework,Weeks 12 to 13,Verified and linked,Reviewed action feedback and strategy revision,,Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md,Show decision interpretation
+Multi-armed bandit,Sequential decision framework,Weeks 12 to 13,Verified and linked,Compared exploration and exploitation in a continuous action setting,,Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md,Show conceptual mapping and limitations
+Markov decision process,Sequential decision framework,Weeks 12 to 13,Verified and linked,Treated accumulated evidence as state and query as action,,Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md,Show state action reward mapping
+Q-learning,Sequential decision framework,Weeks 12 to 13,Verified and linked,Assessed suitability and rejected a literal Q table because visits were sparse,,Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md,Show why it was not used literally
