@@ -36,7 +36,9 @@ The visual design uses a restrained pastel palette. Each function has a consiste
 
 The dashboard can be read chronologically by Week, followed by function from F1 to F8, or explored as a small code laboratory. Official reproductions use the saved competition evidence. Interactive variations are labelled clearly and never overwrite or masquerade as official results.
 
-Hyperparameter optimisation is treated as a core Week 10 experiment and runs on the genuine Weeks 1 to 10 function-specific evidence. The official reproduction compares KMeans `k=2` and `k=3`, with `n_init=50` and `random_state=42`, and selects the exploratory partition by silhouette score. Broader cluster searches and polynomial Ridge tuning are clearly labelled as interactive or post-hoc extensions rather than original Week 10 submissions.
+The course chronology is mapped separately from the BBO evidence chronology. Module 18 introduced HPO while Week 6 evidence was available and informed Week 7. Module 22 later introduced clustering while Week 10 evidence was being analysed to inform Week 11. That later clustering application compared KMeans `k=2` and `k=3`, with `n_init=50` and `random_state=42`, selecting by silhouette score. Broader cluster searches and polynomial Ridge tuning are labelled as interactive or post-hoc extensions.
+
+`COURSE_CAPSTONE_TOPIC_MAP.md` records the course module, the evaluator week analysed and the following submission separately. It also preserves the break after Module 17 without creating an artificial BBO round.
 
 The dashboard deliberately excludes all post-capstone BBD research.
 
