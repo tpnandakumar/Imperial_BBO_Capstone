@@ -1,0 +1,9 @@
+function,state_week,latest_reward,best_reward_to_week12,recent_reward_change,latest_is_best,repeat_count,repeat_stable,repeat_variable,boundary_fraction,selected_action,selected_action_label,policy_reason,reward_range_to_week12,week13_reward,week13_new_best,week13_retained_best
+F1,12,0.0255592853398297,0.0255592853398297,0.0,True,3,True,False,0.0,retain,Retain winner,Winning coordinate was reproduced exactly,0.0255592853398297,0.0255592853398297,False,True
+F2,12,0.7335252043269003,0.7335252043269003,0.14866971029917975,True,1,False,False,0.0,local,Local refinement,New best and recent gain supported controlled refinement,0.592536916241547,0.6413430885133908,False,False
+F3,12,-0.0598512753268355,-0.0598512753268355,0.005578548884218604,True,2,False,True,0.0,local,Local refinement,New best and recent gain supported controlled refinement,0.2473310940873174,-0.0568506160156762,True,False
+F4,12,-4.359874926582439,-4.359874926582439,0.508978061114675,True,2,True,False,0.0,retain,Retain winner,Winning coordinate was reproduced exactly,26.843602849197723,-4.359874926582439,False,True
+F5,12,4427.343995806448,4427.343995806448,16.305260200271732,True,1,False,False,0.75,boundary,Boundary refinement,Recent reward improved along an active boundary direction,3011.4676018460596,4440.957216598753,True,False
+F6,12,-0.7078316130911375,-0.648848297397347,0.019039894653331224,False,2,False,True,0.0,repeat,Repeat for uncertainty,Repeated coordinate had not reliably reproduced its reward,1.4213980949042302,-0.6071562248604215,True,False
+F7,12,1.3809299933612855,1.3809299933612855,0.02301914163758423,True,2,True,False,0.0,retain,Retain winner,Winning coordinate was reproduced exactly,0.4843272990925773,1.3809299933612855,False,True
+F8,12,9.58024,9.58024,0.0,True,3,True,False,0.0,retain,Retain winner,Winning coordinate was reproduced exactly,0.1372800000000005,9.58024,False,True

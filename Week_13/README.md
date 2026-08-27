@@ -14,6 +14,7 @@
 - [Figure Generation Code](generate_week_13_figures.py)
 - [Final Strategy Outcome](FINAL_STRATEGY_OUTCOME.md)
 - [RL, MAB, MDP and Q Learning Review](RL_MAB_MDP_QLEARNING_REVIEW.md)
+- [Week 13 RL-Informed Decision Experiment](RL_DECISION_EXPERIMENT/README.md)
 - [Validation Record](VALIDATION.md)
 
 The input and result files are the authoritative numerical record for the final competition round. All comparisons below are derived from those verified values and the committed Weeks 1 to 12 history. No source value has been rounded, shortened or reconstructed from an estimate.
@@ -127,6 +128,8 @@ Functions 1, 4, 7 and 8 used direct exploitation. Function 6 repeated a known po
 The reinforcement learning material provides a useful language for reviewing the sequence. Each submitted coordinate can be viewed as an action and each returned objective as a reward. The information available after each round changes what should be attempted next.
 
 A multi armed bandit analogy helps with the exploration and exploitation trade off, but each function has a continuous coordinate space rather than a small fixed set of arms. A Markov decision process analogy is useful if the state is treated as the accumulated knowledge about the function. Q learning is less directly suited to this dataset because there are too few repeated state and action visits to estimate a stable action value table.
+
+The [Week 13 RL-Informed Decision Experiment](RL_DECISION_EXPERIMENT/README.md) executes this policy against the verified Week 1 to Week 12 evidence. It reproduces the final action pattern and then evaluates those actions using the returned Week 13 outputs.
 
 ## 8. Repeatability and Response Variability
 
