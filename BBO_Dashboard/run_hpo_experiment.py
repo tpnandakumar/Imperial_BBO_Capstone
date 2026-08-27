@@ -45,10 +45,8 @@ def main() -> None:
         cluster_rows.append(cluster_results)
         winner_rows.append({
             "function": f"F{function}",
-            "course_module": 22,
             "evidence_week_analysed": 10,
             "submission_week_informed": 11,
-            "hpo_course_origin_module": 18,
             "method": "KMeans exploratory clustering HPO",
             "candidate_clusters": "2,3",
             "selected_clusters": int(cluster_winner["clusters"]),
