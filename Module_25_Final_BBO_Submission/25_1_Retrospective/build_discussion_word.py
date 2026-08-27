@@ -16,8 +16,8 @@ from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-ASSETS = HERE / "infographics"
-OUT = HERE / "BBO_25_1_Discussion_With_20_Infographics.docx"
+ASSETS = HERE / "academic_infographics"
+OUT = HERE / "BBO_25_1_Academic_Retrospective_With_20_Figures.docx"
 POST = HERE / "SECTION_25_1_DISCUSSION_BOARD_POST.md"
 HISTORY = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 
@@ -248,18 +248,18 @@ def build_doc(figures):
         content.append(line)
 
     placement={
-        (1,1):[1], (1,2):[3], (1,3):[2],
-        (2,1):[4,5], (2,2):[6,7], (2,3):[8,9],
-        (3,1):[12], (3,2):[13], (3,3):[14,15], (3,4):[16,17],
-        (4,1):[18], (4,4):[19], (4,5):[10,11],
-        (5,3):[20],
+        (1,1):[1], (1,3):[2],
+        (2,1):[3,4], (2,2):[13,14], (2,3):[5,6],
+        (2,4):[15,16], (2,5):[17,18], (2,6):[11,12], (2,7):[19],
+        (3,1):[20], (3,2):[9], (3,3):[7], (3,4):[10],
+        (4,3):[8],
     }
 
     def add_figures(numbers):
         for n in numbers:
             pic=doc.add_paragraph(); pic.alignment=WD_ALIGN_PARAGRAPH.CENTER; pic.paragraph_format.keep_with_next=True
             pic.paragraph_format.space_before=Pt(3); pic.paragraph_format.space_after=Pt(1)
-            pic.add_run().add_picture(str(figures[n-1]), width=Inches(5.65))
+            pic.add_run().add_picture(str(figures[n-1]), width=Inches(6.65))
             cap=doc.add_paragraph(); cap.alignment=WD_ALIGN_PARAGRAPH.CENTER
             cap.paragraph_format.space_after=Pt(7)
             rr=cap.add_run(f"Figure {n}"); set_font(rr,"Aptos",8.5,MUTED,True)
@@ -288,6 +288,7 @@ def build_doc(figures):
 
 
 if __name__ == "__main__":
-    figs=create_infographics()
+    from generate_academic_infographics import generate
+    figs=generate()
     output=build_doc(figs)
     print(output)
