@@ -47,9 +47,19 @@ The supporting source table is:
 
 `Week_13/week_13_figure_data_summary.csv`
 
+## Week 13 RL-informed decision experiment
+
+Run:
+
+```bash
+python Week_13/RL_DECISION_EXPERIMENT/run_rl_decision_experiment.py
+```
+
+The experiment uses the verified Week 1 to Week 12 record to select the final action type for each function, then adds the returned Week 13 outputs to evaluate what followed those actions. It writes a state-action-reward CSV and two assessment-ready PNG figures to `Week_13/RL_DECISION_EXPERIMENT/outputs/`.
+
 ## Dependencies
 
-The numerical Week 13 analysis uses Python's standard library. Figure generation requires `matplotlib`.
+The numerical Week 13 analysis uses Python's standard library. Figure generation requires `matplotlib`. The RL decision experiment also uses `pandas` and `numpy`. These packages are recorded in `requirements-final.txt`.
 
 Earlier analytical stages use additional libraries where documented in their weekly files, including clustering and PCA workflows. Their committed source files and documentation remain in the relevant weekly folders.
 

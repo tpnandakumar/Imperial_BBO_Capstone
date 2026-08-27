@@ -10,7 +10,7 @@ This section is organised around the three assessed Module 25 components:
 2. **Component 25.2: Successful optimisation strategies**
 3. **Final submission 25.3: Submitting the GitHub repository**
 
-The actual 25.1 and 25.2 responses will be prepared only after the corresponding Imperial prompts and rubrics are available. Until then, this folder provides an evidence structure rather than pre-empting the assessed questions.
+The Component 25.1 discussion-board response has now been prepared from the released Imperial prompt and the verified repository evidence. Component 25.2 remains organised through its evidence map until its final response is completed.
 
 ## Completed experimental record
 
@@ -22,11 +22,12 @@ Key closing evidence:
 - [Final strategy outcome](../Week_13/FINAL_STRATEGY_OUTCOME.md)
 - [Final capstone synthesis and stopping logic](../Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
 - [RL, MAB, MDP and Q-learning review](../Week_13/RL_MAB_MDP_QLEARNING_REVIEW.md)
+- [Week 13 RL-informed decision experiment](../Week_13/RL_DECISION_EXPERIMENT/README.md)
 - [Final verified winner summary](Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
 ## Component 25.1 evidence
 
-The retrospective evidence is prepared in [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
+The discussion-board response is available in [Component 25.1 Discussion Board Post](25_1_Retrospective/SECTION_25_1_DISCUSSION_BOARD_POST.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
 
 ## Component 25.2 evidence
 
@@ -48,7 +49,7 @@ The known grading requirements include clear reproducible code, a complete datas
 - [Infographic source map](Final_13_Round_Evidence/INFOGRAPHIC_SOURCE_MAP.md)
 - [Figure audit status](Final_13_Round_Evidence/FIGURE_STATUS.md)
 
-The four Week 13 analytical figures are reproducible outputs generated from committed evidence. The audit workflow now verifies that each file is produced and is non-empty. Final 25.1 and 25.2 reflection infographics will be chosen only after the prompts and rubrics unlock so that each visual answers the actual assessment question rather than a guessed rubric.
+The Week 13 analytical figures and RL decision figures are reproducible outputs generated from committed evidence. The RL experiment image used in Component 25.1 is generated from repository data rather than copied from a teaching page.
 
 ## Post-capstone research boundary
 

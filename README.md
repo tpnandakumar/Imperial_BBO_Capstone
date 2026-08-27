@@ -74,6 +74,7 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 - [Week 13: final round analysis](Week_13/README.md)
 - [Week 13 final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md)
 - [Week 13 final capstone synthesis](Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
+- [Week 13 RL-informed decision experiment](Week_13/RL_DECISION_EXPERIMENT/README.md)
 
 ## Weekly record
 
