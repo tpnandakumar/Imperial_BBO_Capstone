@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#fbf8fc"/>
+  <text x="85" y="85" font-family="Arial" font-size="30" font-weight="700" fill="#7c3aed">POST-BBO RESOLUTION</text>
+  <text x="85" y="148" font-family="Arial" font-size="52" font-weight="700" fill="#24324a">Chronological prediction separated the explanations</text>
+  <text x="85" y="195" font-family="Arial" font-size="24" fill="#526173">Normalised walk-forward MAE from the strongest completed function-specific model. Lower is better.</text>
+  <g font-family="Arial">
+    <line x1="290" y1="250" x2="290" y2="770" stroke="#aeb7c6" stroke-width="2"/>
+    <line x1="290" y1="770" x2="1450" y2="770" stroke="#aeb7c6" stroke-width="2"/>
+    <g font-size="23" fill="#344054" text-anchor="end"><text x="260" y="323">F4 Matérn GP</text><text x="260" y="423">F5 Matérn GP</text><text x="260" y="523">F6 Static GP</text><text x="260" y="623">F7 Quadratic</text><text x="260" y="723">F8 Linear</text></g>
+    <rect x="290" y="285" width="507" height="55" rx="12" fill="#f6d98c"/><text x="820" y="322" font-size="25" font-weight="700" fill="#344054">0.021834</text>
+    <rect x="290" y="385" width="38" height="55" rx="12" fill="#9edcf2"/><text x="350" y="422" font-size="25" font-weight="700" fill="#344054">0.001616</text>
+    <rect x="290" y="485" width="1024" height="55" rx="12" fill="#e8a9bd"/><text x="1337" y="522" font-size="25" font-weight="700" fill="#344054">0.044100</text>
+    <rect x="290" y="585" width="810" height="55" rx="12" fill="#a9dfb4"/><text x="1123" y="622" font-size="25" font-weight="700" fill="#344054">0.034870</text>
+    <rect x="290" y="685" width="384" height="55" rx="12" fill="#cbb7ef"/><text x="697" y="722" font-size="25" font-weight="700" fill="#344054">0.016539</text>
+    <g font-size="19" fill="#667085" text-anchor="middle"><text x="290" y="810">0.00</text><text x="522" y="810">0.01</text><text x="754" y="810">0.02</text><text x="986" y="810">0.03</text><text x="1218" y="810">0.04</text><text x="1450" y="810">0.05</text></g>
+  </g>
+  <rect x="1030" y="235" width="430" height="160" rx="22" fill="#ffffff" stroke="#d5dbea" stroke-width="2"/>
+  <text x="1065" y="285" font-family="Arial" font-size="24" font-weight="700" fill="#24324a">Strongest predictive result</text>
+  <text x="1065" y="335" font-family="Arial" font-size="42" font-weight="700" fill="#176b87">F5: 0.001616</text>
+  <text x="1065" y="372" font-family="Arial" font-size="19" fill="#526173">Smooth and strongly boundary-directed</text>
+  <line x1="85" y1="875" x2="1515" y2="875" stroke="#c8cfdd" stroke-width="2"/>
+  <text x="85" y="925" font-family="Arial" font-size="22" font-weight="700" fill="#7c3aed">BBR-3</text>
+  <text x="185" y="912" font-family="Arial" font-size="20" fill="#344054">Best model comparison. Errors are normalised within each function, allowing scale-adjusted comparison.</text>
+  <text x="185" y="942" font-family="Arial" font-size="20" fill="#344054">Chronological predictive accuracy does not by itself prove global equation recovery.</text>
+</svg>

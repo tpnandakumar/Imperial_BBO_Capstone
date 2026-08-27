@@ -1,0 +1,14 @@
+figure,function,measure,value,interpretation
+BBR-1,All,official_rounds,13,Completed BBO history preserved
+BBR-1,All,functions,8,Eight hidden objectives investigated
+BBR-1,All,official_evaluations,104,Thirteen weekly evaluations for each function
+BBR-2,F4,normalised_walk_forward_MAE,0.021834,Matérn 2.5 GP selected
+BBR-2,F5,normalised_walk_forward_MAE,0.001616,Matérn 2.5 GP selected
+BBR-2,F6,normalised_walk_forward_MAE,0.044100,Static coordinate GP selected
+BBR-2,F7,normalised_walk_forward_MAE,0.034870,Full 27-term quadratic selected
+BBR-2,F8,normalised_walk_forward_MAE,0.016539,Ordinary linear regression selected
+BBR-4,F4,repeat_output_range,0.0,Three identical evaluations
+BBR-4,F6,maximum_repeat_output_range,0.100675,Two repeated-coordinate groups differed
+BBR-4,F6,within_coordinate_MAE_floor,0.030852,Unresolved variability remains
+BBR-4,F8,repeat_output_range,0.0,Four identical evaluations
+BBR-4,F8,gradient_cosine,0.936764,Strong gradient agreement

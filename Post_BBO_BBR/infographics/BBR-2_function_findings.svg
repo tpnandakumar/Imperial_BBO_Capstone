@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#f7f8fc"/>
+  <text x="80" y="85" font-family="Arial" font-size="30" font-weight="700" fill="#7c3aed">POST-BBO RESOLUTION</text>
+  <text x="80" y="148" font-family="Arial" font-size="52" font-weight="700" fill="#24324a">What the function-specific studies found</text>
+  <text x="80" y="195" font-family="Arial" font-size="24" fill="#526173">Best chronological model and strongest measured finding for each completed function-specific investigation.</text>
+  <g font-family="Arial">
+    <rect x="70" y="260" width="460" height="245" rx="26" fill="#fff1c7"/>
+    <text x="105" y="315" font-size="30" font-weight="700" fill="#8a6500">F4  Nonlinear and repeatable</text>
+    <text x="105" y="365" font-size="25" fill="#344054">Matérn 2.5 GP</text><text x="105" y="405" font-size="42" font-weight="700" fill="#24324a">0.021834</text>
+    <text x="300" y="405" font-size="21" fill="#526173">normalised forward MAE</text>
+    <text x="105" y="457" font-size="21" fill="#526173">Same coordinate, 3 tests, output range 0.0</text>
+    <rect x="570" y="260" width="460" height="245" rx="26" fill="#dff4ff"/>
+    <text x="605" y="315" font-size="29" font-weight="700" fill="#176b87">F5  Smooth boundary direction</text>
+    <text x="605" y="365" font-size="25" fill="#344054">Matérn 2.5 GP</text><text x="605" y="405" font-size="42" font-weight="700" fill="#24324a">0.001616</text>
+    <text x="800" y="405" font-size="21" fill="#526173">normalised forward MAE</text>
+    <text x="605" y="457" font-size="21" fill="#526173">x2 strongest linear direction: +17,750.44</text>
+    <rect x="1070" y="260" width="460" height="245" rx="26" fill="#f8e5eb"/>
+    <text x="1105" y="315" font-size="29" font-weight="700" fill="#9b3f61">F6  Unresolved variability</text>
+    <text x="1105" y="365" font-size="25" fill="#344054">Static coordinate GP</text><text x="1105" y="405" font-size="42" font-weight="700" fill="#24324a">0.0441</text>
+    <text x="1270" y="405" font-size="21" fill="#526173">normalised forward MAE</text>
+    <text x="1105" y="457" font-size="21" fill="#526173">2 repeat groups, maximum range 0.100675</text>
+    <rect x="320" y="555" width="460" height="245" rx="26" fill="#e6f6e8"/>
+    <text x="355" y="610" font-size="34" font-weight="700" fill="#24744a">F7  Distributed quadratic</text>
+    <text x="355" y="660" font-size="25" fill="#344054">Full 27-term quadratic</text><text x="355" y="700" font-size="42" font-weight="700" fill="#24324a">0.034870</text>
+    <text x="550" y="700" font-size="21" fill="#526173">normalised forward MAE</text>
+    <text x="355" y="752" font-size="21" fill="#526173">20 terms were only 0.45% worse</text>
+    <rect x="820" y="555" width="460" height="245" rx="26" fill="#eee6fb"/>
+    <text x="855" y="610" font-size="34" font-weight="700" fill="#6941a5">F8  Stable low-order surface</text>
+    <text x="855" y="660" font-size="25" fill="#344054">Ordinary linear regression</text><text x="855" y="700" font-size="42" font-weight="700" fill="#24324a">0.016539</text>
+    <text x="1050" y="700" font-size="21" fill="#526173">normalised forward MAE</text>
+    <text x="855" y="752" font-size="21" fill="#526173">4 identical repeats, gradient cosine 0.936764</text>
+  </g>
+  <line x1="80" y1="875" x2="1520" y2="875" stroke="#c8cfdd" stroke-width="2"/>
+  <text x="80" y="925" font-family="Arial" font-size="22" font-weight="700" fill="#7c3aed">BBR-2</text>
+  <text x="180" y="912" font-family="Arial" font-size="20" fill="#344054">Function-level resolution findings. Lower normalised forward MAE indicates better chronological prediction</text>
+  <text x="180" y="942" font-family="Arial" font-size="20" fill="#344054">within each function's observed output range.</text>
+</svg>
