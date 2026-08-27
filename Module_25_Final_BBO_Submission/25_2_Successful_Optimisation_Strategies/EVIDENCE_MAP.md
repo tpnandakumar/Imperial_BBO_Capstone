@@ -2,7 +2,17 @@
 
 ## Status
 
-Evidence preparation only. The assessed response will be written after the official Component 25.2 prompt and rubric are available.
+Completed against the official Component 25.2 prompt and five-part, 25-point rubric. The discussion-board master is `SECTION_25_2_DISCUSSION_BOARD_POST.md`, supported by thirty sequentially numbered scientific figures and a rendered Word version.
+
+## Rubric coverage
+
+| Criterion | Evidence in the final response |
+| --- | --- |
+| Strong strategies and influence on decisions | Function-specific exploration, refinement, boundary exploitation, recovery, replication and stopping, with exact F2, F3, F5 and F6 evidence |
+| Definition of success | Outcome, adaptability, falsifiability and query efficiency, including the value of negative results and stopping |
+| Professional application | Clinical neurology referral thresholds, urgent-recall rules, validation, calibration, subgroup safety and governance |
+| Peer strategies and comparison | Eduardo's identification, structural probing, parametric modelling, replication and pre-registration, compared with the sequential project pipeline |
+| Suggestions and broadened understanding | Prospective experiment ledger, early boundary probes, repeat distributions, and the distinction between diagnosis and action |
 
 ## Strategy evaluation framework
 
