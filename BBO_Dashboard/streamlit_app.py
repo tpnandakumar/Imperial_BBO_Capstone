@@ -12,6 +12,7 @@ from hpo_engine import tune_clustering, tune_surrogate
 APP_DIR = Path(__file__).resolve().parent
 EVIDENCE_FILE = APP_DIR / "data" / "complete_internal_evidence.csv"
 METHOD_REGISTER_FILE = APP_DIR / "METHOD_EXPERIMENT_REGISTER.csv"
+COURSE_MAP_FILE = APP_DIR / "COURSE_CAPSTONE_TOPIC_MAP.csv"
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 FUNCTION_NAMES = {function: f"Function {function} · {dimension} dimensions" for function, dimension in DIMENSIONS.items()}
@@ -21,19 +22,19 @@ FUNCTION_COLOURS = {
 }
 
 WEEK_CONTEXT = {
-    1: ("Explore", "Establish an opening benchmark and begin mapping eight unfamiliar response surfaces."),
-    2: ("Compare", "Use the first evaluator feedback to distinguish promising movement from weak movement."),
-    3: ("Explore", "Test alternative regions while the available evidence is still sparse."),
-    4: ("Learn", "Compare direction, response scale and dimensional behaviour rather than forcing one rule across every function."),
-    5: ("Exploit", "Move selectively towards stronger observed regions while retaining room to correct course."),
-    6: ("Refine", "Use smaller evidence-led changes where local improvement appears credible."),
-    7: ("Challenge", "Test whether apparent winners remain strong and whether boundaries offer further improvement."),
-    8: ("Recover", "Respond to weak or unstable results by reopening the search where necessary."),
-    9: ("Consolidate", "Bring accumulated inputs and outputs together before formal structural analysis."),
-    10: ("Optimise the method", "Compare KMeans settings k=2 and k=3 with n_init=50 and random_state=42, selecting by silhouette score."),
-    11: ("Reduce dimensions", "Use centred PCA to examine variance concentration, coordinate relationships and redundancy."),
-    12: ("Update and evolve", "Update the PCA evidence and frame the remaining search as a sequential decision problem."),
-    13: ("Evaluate", "Balance exploitation, confirmation and final learning, then assess the full thirteen-round journey."),
+    1: ("Bayesian optimisation", "Use surrogate thinking, acquisition rules and exploration versus exploitation to begin mapping eight unfamiliar response surfaces."),
+    2: ("Logistic regression", "Test whether previous movements can support an improvement probability while recognising that the evaluator output itself is continuous."),
+    3: ("Support vector machines", "Explore margins, kernels and robustness to noise as alternative ways to separate promising from weak regions."),
+    4: ("Neural function approximation", "Examine small neural surrogates, activation choices, gradient descent and the risk of overfitting sparse observations."),
+    5: ("Network architecture", "Compare shallow and deeper representations and make the experimental software structure reproducible."),
+    6: ("Convolutional experiment", "Test whether ordered local patterns add signal and document the limitations of applying CNN ideas to small tabular BBO data."),
+    7: ("Hyperparameter optimisation", "Compare tuning choices, validation rules and stopping conditions after the course break without creating an extra capstone round."),
+    8: ("Attention and prompting", "Use transparent attention-style ranking as a course-linked experiment while keeping it separate from genuine evaluator evidence."),
+    9: ("Scaling and emergence", "Examine whether increasing model complexity produces stable improvement or only an apparent threshold effect."),
+    10: ("Transparency and interpretability", "Audit the evidence with datasheets, model cards and interpretable decision rules before later structural methods."),
+    11: ("Clustering", "Compare hierarchical and KMeans structure, using clusters as search aids rather than proof of the hidden surface."),
+    12: ("Principal component analysis", "Use centred PCA, variance and loadings to examine redundancy and guide the amount of coordinate movement."),
+    13: ("Reinforcement learning", "Interpret the final sequence through bandits, MDPs and Q-learning, then evaluate the complete journey."),
 }
 
 
@@ -56,6 +57,11 @@ def load_complete_internal_evidence() -> pd.DataFrame:
 @st.cache_data
 def load_method_register() -> pd.DataFrame:
     return pd.read_csv(METHOD_REGISTER_FILE)
+
+
+@st.cache_data
+def load_course_map() -> pd.DataFrame:
+    return pd.read_csv(COURSE_MAP_FILE)
 
 
 def format_number(value: float) -> str:
@@ -334,7 +340,7 @@ def extend_evolve_chapter() -> None:
     )
 
 
-def method_evolution_page(register: pd.DataFrame) -> None:
+def method_evolution_page(register: pd.DataFrame, course_map: pd.DataFrame) -> None:
     page_header("Methods and Evolution", "The analytical experiments, why they were introduced, and the evidence status of each claim.")
     st.markdown(
         """<div class="chapter-banner"><span>HOW THE WORK WAS SCULPTED</span>
@@ -342,29 +348,60 @@ def method_evolution_page(register: pd.DataFrame) -> None:
         <p>Early rounds asked where to search. Later rounds asked how to interpret structure, tune decisions, reduce complexity and evaluate the remaining uncertainty.</p></div>""",
         unsafe_allow_html=True,
     )
+    st.subheader("Course module and capstone week crosswalk")
+    displayed_map = course_map.fillna("").copy()
+    displayed_map["Module week"] = displayed_map.apply(
+        lambda row: f"Module {int(row.course_module)}" if row.course_module != "" else "Break week",
+        axis=1,
+    )
+    displayed_map["Capstone stage"] = displayed_map.apply(
+        lambda row: (
+            "No BBO round"
+            if row.calendar_marker == "Break week"
+            else f"{row.evidence_week_analysed} analysed; {row.submission_week_informed}"
+        ),
+        axis=1,
+    )
+    displayed_map = displayed_map.rename(columns={
+        "module_topic": "Topic",
+        "evidence_week_analysed": "Evidence available",
+        "course_topics": "Topics covered",
+        "bbo_experiment_direction": "Experiment purpose",
+    })
+    st.dataframe(
+        displayed_map[["Module week", "Topic", "Topics covered", "Evidence available", "Capstone stage", "Experiment purpose"]],
+        hide_index=True,
+        width="stretch",
+    )
+    st.info("The break after Module 17 is a calendar pause and creates no BBO round. The module topic, the evidence week being analysed and the following submission are shown separately.")
     stages = [
-        ("Explore and Exploit", "Weeks 1 to 9", "Map the unknown surfaces, follow useful signals, recover from weak moves and retain verified winners."),
-        ("HPO and Clustering", "Week 10", "Compare candidate KMeans partitions and use silhouette score to select an exploratory structure."),
-        ("PCA", "Weeks 11 to 12", "Measure coordinate variance and redundancy before deciding how much each function should move."),
-        ("Sequential Decisions", "Weeks 12 to 13", "Interpret query selection through RL, MAB, MDP and Q-learning concepts while recognising continuous-action limitations."),
-        ("Extend and Evolve", "Post BBO", "Turn each evaluated experiment into the starting evidence for the next controlled optimisation run."),
+        ("Surrogates and classification", "Weeks 1 to 3", "Bayesian optimisation, logistic improvement modelling, support vectors and kernels."),
+        ("Neural experiments", "Weeks 4 to 6", "Function approximation, architecture comparison and a cautious convolutional experiment."),
+        ("HPO and attention", "Weeks 7 to 9", "Tuning, attention-style ranking, scaling and emergence tests after the break."),
+        ("Interpret and structure", "Weeks 10 to 12", "Transparency, clustering and principal component analysis."),
+        ("Sequential decisions", "Week 13", "Bandit, MDP and Q-learning interpretations followed by final evaluation."),
     ]
     for number, (name, period, purpose) in enumerate(stages, 1):
         st.markdown(f"<div class='method-chapter'><b>{number:02d}</b><span>{period}</span><strong>{name}</strong><p>{purpose}</p></div>", unsafe_allow_html=True)
-    verified = register[register.status.eq("Verified and linked")].copy()
-    unresolved = register[~register.status.eq("Verified and linked")].copy()
-    verified_tab, recovery_tab = st.tabs(["Verified experiments", "Evidence recovery register"])
-    with verified_tab:
-        st.success("Every item in this table has a traceable week or stage and a documented role.")
+    decision_mask = register.status.str.contains(
+        "Decision-influencing|Verified conceptual|repository documented|verified later",
+        case=False,
+        regex=True,
+    )
+    decision_evidence = register[decision_mask].copy()
+    course_linked = register[~decision_mask].copy()
+    decision_tab, course_tab = st.tabs(["Decision evidence", "Course-linked experiments"])
+    with decision_tab:
+        st.success("These items have repository evidence, a documented later application, or a verified conceptual role in the final decision record.")
         st.dataframe(
-            verified[["method", "family", "week_or_stage", "confirmed_role", "confirmed_parameters", "evidence_path"]],
+            decision_evidence[["method", "family", "week_or_stage", "status", "confirmed_role", "confirmed_parameters", "evidence_path"]],
             hide_index=True,
             width="stretch",
         )
-    with recovery_tab:
-        st.warning("These methods are remembered as experiments but are not assigned to an official week until their code, reflection and output are recovered. This prevents the dashboard from inventing evidence.")
+    with course_tab:
+        st.warning("The course connection is confirmed for these methods, but that alone does not prove that each method selected a submitted coordinate. BBO-specific code and outputs must be indexed or rebuilt as retrospective experiments.")
         st.dataframe(
-            unresolved[["method", "family", "status", "confirmed_role", "dashboard_action"]],
+            course_linked[["method", "family", "week_or_stage", "status", "confirmed_role", "dashboard_action"]],
             hide_index=True,
             width="stretch",
         )
@@ -392,18 +429,18 @@ def code_laboratory(evidence: pd.DataFrame, complete: pd.DataFrame) -> None:
     with official_tab:
         st.success("OFFICIAL REPRODUCTION · Uses saved evidence and the dashboard's documented calculation.")
         if experiment == "Hyperparameter optimisation":
-            st.markdown("### Week 10 HPO reproduction")
-            st.write("Week 10 compared KMeans cluster counts `k=2` and `k=3`. Each candidate used `n_init=50` and `random_state=42`; the higher silhouette score selected the exploratory partition.")
+            st.markdown("### Clustering HPO reproduction for the Week 11 decision")
+            st.write("The clustering analysis used evidence available through Week 10 to inform the Week 11 submission. It compared KMeans cluster counts `k=2` and `k=3`. Each candidate used `n_init=50` and `random_state=42`; the higher silhouette score selected the exploratory partition.")
             week10 = evidence[(evidence.function == function) & (evidence.week <= 10)].sort_values("week")
             values = week10[coordinate_columns].to_numpy(float)
             results, winner = tune_clustering(values, cluster_counts=(2, 3), n_init_values=(50,), random_state=42)
             metrics = st.columns(4)
-            metrics[0].metric("Experiment week", "Week 10")
+            metrics[0].metric("Submission informed", "Week 11")
             metrics[1].metric("Observations", len(week10))
             metrics[2].metric("Selected k", int(winner["clusters"]))
             metrics[3].metric("Silhouette score", f"{winner['silhouette_score']:.4f}")
             st.dataframe(results, hide_index=True, width="stretch")
-            st.caption("This reproduces the parameter comparison recorded in Week 10. Clusters were an exploratory decision aid, not proof of the hidden function's true geometry.")
+            st.caption("This reproduces analysis stored with the Week 10 evidence and used for the following submission. Clusters were an exploratory decision aid, not proof of the hidden function's true geometry.")
         elif experiment == "PCA coordinate analysis":
             allowed = ["starter", *[f"week_{value:02d}" for value in range(1, week + 1)]]
             values = complete[(complete.function == function) & complete.source.isin(allowed)][coordinate_columns].dropna().to_numpy(float)
@@ -1016,6 +1053,7 @@ def main() -> None:
     evidence = load_assessed_evidence()
     complete = load_complete_internal_evidence()
     method_register = load_method_register()
+    course_map = load_course_map()
     if "page" not in st.session_state:
         st.session_state["page"] = "Visual home"
     with st.sidebar:
@@ -1042,7 +1080,7 @@ def main() -> None:
     elif page == "Code laboratory":
         code_laboratory(evidence, complete)
     elif page == "Methods and Evolution":
-        method_evolution_page(method_register)
+        method_evolution_page(method_register, course_map)
     elif page == "Chapter Summary":
         summary_chapter(evidence)
     elif page == "Extend and Evolve":
