@@ -227,8 +227,12 @@ app_ui = ui.page_navbar(
                     ui.input_switch("week_cumulative", "Cumulative best", True),
                     class_="view-switcher",
                 ),
-                ui.panel_conditional("input.week_view === 'outputs'", ui.card(ui.card_header("Returned outputs and retained best"), output_widget("week_rank_plot", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
-                ui.panel_conditional("input.week_view === 'movement'", ui.card(ui.card_header("Coordinate movement from the preceding round"), output_widget("week_movement_plot", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
+                ui.div(
+                    ui.h2("View the selected Week graph"),
+                    ui.p("Open the graph in a separate full-screen viewer. Close it to return to this Week without losing your place."),
+                    ui.input_action_button("open_week_graph", "Open graph", class_="btn-accent graph-open-button"),
+                    class_="graph-launch-panel",
+                ),
                 class_="evidence-spread compact-page-body",
             ),
             class_="book-page",
@@ -249,8 +253,15 @@ app_ui = ui.page_navbar(
                     ui.input_switch("show_starter", "Starter points", False),
                     class_="view-switcher",
                 ),
-                ui.panel_conditional("input.function_view === 'output'", ui.card(ui.card_header("Actual output, week change and retained maximum"), output_widget("function_trajectory", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
-                ui.panel_conditional("input.function_view === 'coordinates'", ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
+                ui.panel_conditional(
+                    "input.function_view !== 'record'",
+                    ui.div(
+                        ui.h2("View the selected Function graph"),
+                        ui.p("Open the graph in a separate full-screen viewer. Close it to return to this Function without losing your place."),
+                        ui.input_action_button("open_function_graph", "Open graph", class_="btn-accent graph-open-button"),
+                        class_="graph-launch-panel",
+                    ),
+                ),
                 ui.panel_conditional("input.function_view === 'record'", ui.card(ui.output_data_frame("function_table"), class_="table-page")),
                 class_="evidence-spread compact-page-body",
             ),
@@ -268,7 +279,12 @@ app_ui = ui.page_navbar(
                 class_="inline-controls",
             ),
             ui.div(
-                ui.card(ui.card_header("Comparable trajectories across all eight functions"), output_widget("atlas_plot", height="clamp(180px, 32dvh, 340px)"), class_="viewport-chart-card"),
+                ui.div(
+                    ui.h2("Open the selected Atlas graph"),
+                    ui.p("The comparison opens in a full-screen viewer and closes back to this page."),
+                    ui.input_action_button("open_atlas_graph", "Open graph", class_="btn-accent graph-open-button"),
+                    class_="graph-launch-panel",
+                ),
                 ui.div(
                         stat_box("First winning week", str(int(winning_rows().week.min())), "Earliest retained maximum", PASTELS[4]),
                         stat_box("Last winning week", str(int(winning_rows().week.max())), "Latest retained maximum", PASTELS[5]),
@@ -658,6 +674,53 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         def _open_home_function(value=value):
             ui.update_select("function", selected=str(value))
             ui.update_navs("main_navigation", selected="Read by Function")
+
+    @reactive.effect
+    @reactive.event(input.open_week_graph)
+    def _open_week_graph():
+        output_id = "week_movement_plot" if input.week_view() == "movement" else "week_rank_plot"
+        title = f"Week {int(input.week())}: " + ("coordinate movement" if input.week_view() == "movement" else "outputs and retained best")
+        ui.modal_show(
+            ui.modal(
+                ui.div(output_widget(output_id, height="70dvh"), class_="graph-modal-stage"),
+                title=title,
+                size="xl",
+                easy_close=True,
+                footer=ui.modal_button("Close graph", class_="btn-accent"),
+                class_="graph-viewer-modal",
+            )
+        )
+
+    @reactive.effect
+    @reactive.event(input.open_function_graph)
+    def _open_function_graph():
+        coordinate_view = input.function_view() == "coordinates"
+        output_id = "coordinate_trajectory" if coordinate_view else "function_trajectory"
+        title = f"F{int(input.function())}: " + ("coordinate movement" if coordinate_view else "output and rate of change")
+        ui.modal_show(
+            ui.modal(
+                ui.div(output_widget(output_id, height="70dvh"), class_="graph-modal-stage"),
+                title=title,
+                size="xl",
+                easy_close=True,
+                footer=ui.modal_button("Close graph", class_="btn-accent"),
+                class_="graph-viewer-modal",
+            )
+        )
+
+    @reactive.effect
+    @reactive.event(input.open_atlas_graph)
+    def _open_atlas_graph():
+        ui.modal_show(
+            ui.modal(
+                ui.div(output_widget("atlas_plot", height="70dvh"), class_="graph-modal-stage"),
+                title="Scientific Atlas",
+                size="xl",
+                easy_close=True,
+                footer=ui.modal_button("Close graph", class_="btn-accent"),
+                class_="graph-viewer-modal",
+            )
+        )
 
     @reactive.effect
     @reactive.event(input.previous_week)
