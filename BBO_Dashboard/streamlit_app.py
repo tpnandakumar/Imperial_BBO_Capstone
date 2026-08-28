@@ -21,6 +21,28 @@ FUNCTION_COLOURS = {
     5: "#f3a6b5", 6: "#a9c7e8", 7: "#a8d8b9", 8: "#d7b5dd",
 }
 
+BOOK_PAGES = {
+    "Week story": ("PART I", "Thirteen rounds", 1),
+    "Function story": ("PART II", "Eight hidden functions", 2),
+    "Methods and Evolution": ("PART III", "Methods and decisions", 3),
+    "Chapter Summary": ("PART IV", "What the evidence established", 4),
+    "Extend and Evolve": ("EPILOGUE", "Beyond the assessed challenge", 5),
+}
+
+PAGE_LABELS = {
+    "Visual home": "Home and reading routes",
+    "Week story": "Book I: Week chapters",
+    "Function story": "Book II: Function chapters",
+    "Methods and Evolution": "Book III: Methods and evolution",
+    "Chapter Summary": "Book IV: Chapter summary",
+    "Extend and Evolve": "Epilogue: Extend and evolve",
+    "Code laboratory": "Laboratory: Reproduce analyses",
+    "Round dashboard": "Dashboard: Inspect each round",
+    "Weekly progress": "Dashboard: Weekly progress",
+    "Capstone retrospective": "Evidence: Retrospective",
+    "Assessment evidence": "Evidence: Complete record",
+}
+
 WEEK_CONTEXT = {
     1: ("Opening exploration", "Establish the first benchmark and begin mapping eight unfamiliar response surfaces."),
     2: ("Function-specific strategy", "Exploit the strongest supported direction while allowing uncertain functions more exploration."),
@@ -101,6 +123,21 @@ def navigate(page: str, *, function: int | None = None, week: int | None = None)
 def section_label(kicker: str, title: str, text: str = "") -> None:
     st.markdown(
         f"<div class='section-label'><span>{kicker}</span><h2>{title}</h2><p>{text}</p></div>",
+        unsafe_allow_html=True,
+    )
+
+
+def book_progress_header(page: str) -> None:
+    """Add restrained book furniture to narrative pages."""
+    if page not in BOOK_PAGES:
+        return
+    part, chapter, position = BOOK_PAGES[page]
+    progress = position / len(BOOK_PAGES) * 100
+    st.markdown(
+        f"""<div class="book-progress">
+        <div class="book-progress-copy"><span>{part}</span><strong>{chapter}</strong><small>{position:02d} / {len(BOOK_PAGES):02d}</small></div>
+        <div class="book-progress-track"><i style="width:{progress:.0f}%"></i></div>
+        </div>""",
         unsafe_allow_html=True,
     )
 
@@ -254,6 +291,16 @@ def function_story(evidence: pd.DataFrame) -> None:
                 st.code(coordinate_text(row, function), language=None)
                 if st.button(f"Open complete Week {int(row.week):02d}", key=f"f{function}_week_{int(row.week)}"):
                     navigate("Week story", week=int(row.week)); st.rerun()
+    st.markdown("<div class='chapter-rule'><span>CONTINUE READING</span></div>", unsafe_allow_html=True)
+    previous_column, contents_column, next_column = st.columns(3)
+    if function > 1 and previous_column.button(f"Previous: F{function - 1}", width="stretch"):
+        navigate("Function story", function=function - 1); st.rerun()
+    if contents_column.button("Return to visual home", width="stretch"):
+        navigate("Visual home"); st.rerun()
+    if function < 8 and next_column.button(f"Next: F{function + 1}", width="stretch"):
+        navigate("Function story", function=function + 1); st.rerun()
+    if function == 8 and next_column.button("Continue to methods", width="stretch"):
+        navigate("Methods and Evolution"); st.rerun()
 
 
 def summary_chapter(evidence: pd.DataFrame) -> None:
@@ -952,17 +999,33 @@ def evidence_table(evidence: pd.DataFrame) -> None:
     )
 
 
-def apply_style() -> None:
+def apply_style(reading_mode: bool = True, text_scale: int = 100) -> None:
+    content_width = "1060px" if reading_mode else "1380px"
+    body_size = text_scale / 100
     st.markdown(
         """
         <style>
         :root { --navy: #203a59; --gold: #e6b95c; --mint: #dff4ee; --blue: #e4f1f8; --lavender: #eee8f7; --peach: #fff0df; }
         .stApp { background: radial-gradient(circle at 88% 0%, #e8f6f4 0, transparent 30%), linear-gradient(180deg, #fffdfa 0%, #f3f7fa 100%); }
-        .main .block-container { max-width: 1380px; padding-top: 2rem; padding-bottom: 5rem; }
+        .main .block-container { max-width: __CONTENT_WIDTH__; padding-top: 1.35rem; padding-bottom: 5rem; }
+        .main .block-container p, .main .block-container li { font-size:__BODY_SIZE__rem; line-height:1.72; }
         [data-testid="stSidebar"] { background: linear-gradient(180deg, #e7f1f7 0%, #edf5f1 55%, #f4eef8 100%); border-right: 1px solid #d4e1e8; }
         [data-testid="stSidebar"] * { color: #29445f; }
+        .sidebar-section { margin:.9rem 0 .45rem; color:#6b7f90; font-size:.64rem; font-weight:850; letter-spacing:.16em; }
+        [data-testid="stSidebar"] [role="radiogroup"] label { border-radius:10px; padding:.34rem .45rem; margin:.08rem 0; }
+        [data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) { background:rgba(255,255,255,.72); box-shadow:0 3px 12px rgba(32,58,89,.08); }
         h1, h2, h3 { color: var(--navy); letter-spacing: -0.035em; }
+        h1 { font-family:Georgia,'Times New Roman',serif; font-weight:650; }
         .lead { color: #53667d; font-size: 1.12rem; max-width: 780px; margin-top: -0.55rem; }
+        .book-progress { margin:0 0 2.35rem; padding:.85rem 0 0; border-bottom:1px solid #d8e2e8; }
+        .book-progress-copy { display:grid; grid-template-columns:auto 1fr auto; align-items:baseline; gap:1rem; padding-bottom:.72rem; }
+        .book-progress-copy span { color:#5b918b; font-size:.69rem; font-weight:850; letter-spacing:.16em; }
+        .book-progress-copy strong { color:#29445f; font-family:Georgia,'Times New Roman',serif; font-size:.92rem; font-weight:600; }
+        .book-progress-copy small { color:#7a8998; font-variant-numeric:tabular-nums; }
+        .book-progress-track { height:3px; background:#e1e9ed; }
+        .book-progress-track i { display:block; height:100%; background:linear-gradient(90deg,#5b918b,#8672a5); }
+        .chapter-rule { display:flex; align-items:center; gap:1rem; margin:2.8rem 0 1rem; color:#718196; font-size:.68rem; font-weight:800; letter-spacing:.15em; }
+        .chapter-rule:before,.chapter-rule:after { content:""; height:1px; background:#d8e2e8; flex:1; }
         [data-testid="stMetric"] { background: rgba(255,255,255,.9); border: 1px solid #dbe5eb; border-radius: 18px; padding: 1rem; box-shadow: 0 10px 30px rgba(32,58,89,.06); }
         [data-testid="stMetricValue"] { color: var(--navy); }
         .stButton > button, .stDownloadButton > button { border-radius: 12px; border-color: #c9d9e2; font-weight: 650; min-height: 2.75rem; background: rgba(255,255,255,.78); }
@@ -1027,9 +1090,10 @@ def apply_style() -> None:
         .method-chapter p { color:#65788a; margin:0; line-height:1.45; }
         .closing-epigraph { margin:2rem auto .5rem; background:linear-gradient(120deg,#fff3df,#f1eaf7); }
         [data-testid="stDataFrame"] { border-radius:16px; overflow:hidden; box-shadow:0 8px 25px rgba(32,58,89,.05); }
-        @media(max-width:800px) { .hero{padding:2.2rem 1.5rem}.story-ribbon,.evolve-loop{display:grid}.story-ribbon i,.evolve-loop i{transform:rotate(90deg)}.method-ribbon{grid-template-columns:1fr}.method-chapter{grid-template-columns:42px 1fr}.method-chapter p{grid-column:1/-1} }
+        @media(max-width:800px) { .hero{padding:2.2rem 1.5rem}.story-ribbon,.evolve-loop{display:grid}.story-ribbon i,.evolve-loop i{transform:rotate(90deg)}.method-ribbon{grid-template-columns:1fr}.method-chapter{grid-template-columns:42px 1fr}.method-chapter p{grid-column:1/-1}.book-progress-copy{grid-template-columns:1fr auto}.book-progress-copy span{grid-column:1/-1} }
         </style>
-        """, unsafe_allow_html=True,
+        """.replace("__CONTENT_WIDTH__", content_width).replace("__BODY_SIZE__", f"{body_size:.2f}"),
+        unsafe_allow_html=True,
     )
 
 
@@ -1038,7 +1102,6 @@ def main() -> None:
         page_title="Imperial BBO Challenge", page_icon="◈", layout="wide",
         initial_sidebar_state="expanded",
     )
-    apply_style()
     evidence = load_assessed_evidence()
     complete = load_complete_internal_evidence()
     method_register = load_method_register()
@@ -1047,7 +1110,8 @@ def main() -> None:
         st.session_state["page"] = "Visual home"
     with st.sidebar:
         st.markdown("## ◈ Imperial BBO")
-        st.caption("Interactive capstone evidence")
+        st.caption("A visual book and analytical companion")
+        st.markdown("<div class='sidebar-section'>TABLE OF CONTENTS</div>", unsafe_allow_html=True)
         pages = [
             "Visual home", "Week story", "Function story", "Code laboratory",
             "Methods and Evolution", "Chapter Summary", "Extend and Evolve", "Round dashboard",
@@ -1057,9 +1121,23 @@ def main() -> None:
             "Navigate", pages,
             key="page",
             label_visibility="collapsed",
+            format_func=lambda value: PAGE_LABELS[value],
+        )
+        st.divider()
+        st.markdown("<div class='sidebar-section'>READING DISPLAY</div>", unsafe_allow_html=True)
+        reading_mode = st.toggle(
+            "Book reading width", value=True,
+            help="Narrows narrative pages to a comfortable reading measure.",
+        )
+        text_scale = st.select_slider(
+            "Text size", options=[90, 100, 110, 120], value=100,
+            format_func=lambda value: f"{value}%",
         )
         st.divider()
         st.caption("Official Week 1 to Week 13 evidence only")
+    narrative_page = page in BOOK_PAGES or page == "Visual home"
+    apply_style(reading_mode=reading_mode and narrative_page, text_scale=text_scale)
+    book_progress_header(page)
     if page == "Visual home":
         landing_page(evidence)
     elif page == "Week story":
