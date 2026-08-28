@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f8f5ff"/><stop offset="1" stop-color="#eef9f5"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#64748b" flood-opacity=".16"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#667085"/></marker>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#bg)"/>
+  <text x="90" y="92" font-family="Arial" font-size="30" font-weight="700" fill="#7c3aed">POST-BBO RESOLUTION</text>
+  <text x="90" y="155" font-family="Arial" font-size="54" font-weight="700" fill="#24324a">From optimisation to Black Box Resolution</text>
+  <text x="90" y="202" font-family="Arial" font-size="24" fill="#526173">Thirteen completed rounds became evidence for a separate, chronological system-identification programme.</text>
+  <g font-family="Arial">
+    <rect x="85" y="300" rx="28" width="270" height="300" fill="#fff3c4"/>
+    <text x="120" y="360" font-size="24" font-weight="700" fill="#7a5b00">1  PRESERVE</text>
+    <text x="120" y="420" font-size="42" font-weight="700" fill="#24324a">13 rounds</text>
+    <text x="120" y="466" font-size="26" fill="#526173">8 functions</text>
+    <text x="120" y="508" font-size="26" fill="#526173">104 evaluations</text>
+    <text x="120" y="560" font-size="20" fill="#526173">Official record unchanged</text>
+    <rect x="450" y="300" rx="28" width="270" height="300" fill="#dff4ff"/>
+    <text x="485" y="360" font-size="24" font-weight="700" fill="#176b87">2  COMPARE</text>
+    <text x="485" y="420" font-size="30" font-weight="700" fill="#24324a">Candidate models</text>
+    <text x="485" y="468" font-size="24" fill="#526173">Static surfaces</text>
+    <text x="485" y="508" font-size="24" fill="#526173">State-aware models</text>
+    <text x="485" y="548" font-size="24" fill="#526173">Symbolic equations</text>
+    <rect x="815" y="300" rx="28" width="270" height="300" fill="#e5f7e9"/>
+    <text x="850" y="360" font-size="24" font-weight="700" fill="#24744a">3  TEST</text>
+    <text x="850" y="420" font-size="30" font-weight="700" fill="#24324a">Walk forward</text>
+    <text x="850" y="468" font-size="24" fill="#526173">Train on earlier weeks</text>
+    <text x="850" y="508" font-size="24" fill="#526173">Predict the next week</text>
+    <text x="850" y="548" font-size="24" fill="#526173">Keep chronology intact</text>
+    <rect x="1180" y="300" rx="28" width="335" height="300" fill="#f8e8f2"/>
+    <text x="1215" y="360" font-size="24" font-weight="700" fill="#9a3f70">4  RESOLVE</text>
+    <text x="1215" y="420" font-size="30" font-weight="700" fill="#24324a">Evidence status</text>
+    <text x="1215" y="468" font-size="24" fill="#526173">Support</text>
+    <text x="1215" y="508" font-size="24" fill="#526173">Revise or falsify</text>
+    <text x="1215" y="548" font-size="24" fill="#526173">Design the next test</text>
+  </g>
+  <g stroke="#667085" stroke-width="5" fill="none" marker-end="url(#arrow)"><path d="M365 450 H435"/><path d="M730 450 H800"/><path d="M1095 450 H1165"/></g>
+  <rect x="95" y="690" width="1410" height="115" rx="24" fill="#ffffff" stroke="#d5dbea" stroke-width="2"/>
+  <text x="130" y="738" font-family="Arial" font-size="25" font-weight="700" fill="#24324a">Resolution boundary</text>
+  <text x="130" y="780" font-family="Arial" font-size="23" fill="#526173">A best-supported local structure is not automatically the original equation or a proven global optimum.</text>
+  <line x1="90" y1="875" x2="1510" y2="875" stroke="#c8cfdd" stroke-width="2"/>
+  <text x="90" y="925" font-family="Arial" font-size="22" font-weight="700" fill="#7c3aed">BBR-1</text>
+  <text x="190" y="912" font-family="Arial" font-size="20" fill="#344054">Black Box Resolution pathway. The completed BBO record is preserved, modelled and tested chronologically.</text>
+  <text x="190" y="942" font-family="Arial" font-size="20" fill="#344054">Resolution is reported only to the level supported by evidence.</text>
+</svg>

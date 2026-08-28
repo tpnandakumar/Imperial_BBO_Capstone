@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+  <rect width="1600" height="1000" fill="#f6faf9"/>
+  <text x="85" y="85" font-family="Arial" font-size="30" font-weight="700" fill="#7c3aed">POST-BBO RESOLUTION</text>
+  <text x="85" y="148" font-family="Arial" font-size="52" font-weight="700" fill="#24324a">Repeatability drew the resolution boundary</text>
+  <text x="85" y="195" font-family="Arial" font-size="24" fill="#526173">Identical inputs provided a direct test of whether a coordinate-only explanation was consistent with the observed record.</text>
+  <g font-family="Arial">
+    <rect x="80" y="270" width="420" height="420" rx="30" fill="#e6f6e8"/>
+    <text x="120" y="335" font-size="40" font-weight="700" fill="#24744a">F4</text><text x="120" y="390" font-size="30" font-weight="700" fill="#24324a">3 identical tests</text>
+    <text x="120" y="450" font-size="48" font-weight="700" fill="#24744a">Range 0.0</text>
+    <text x="120" y="510" font-size="22" fill="#526173">Output each time:</text><text x="120" y="548" font-size="23" fill="#24324a">-4.359874926582439</text>
+    <text x="120" y="620" font-size="22" fill="#526173">Consistent with a stable</text><text x="120" y="652" font-size="22" fill="#526173">coordinate-based surface</text>
+    <rect x="590" y="270" width="420" height="420" rx="30" fill="#f8e5eb"/>
+    <text x="630" y="335" font-size="40" font-weight="700" fill="#9b3f61">F6</text><text x="630" y="390" font-size="30" font-weight="700" fill="#24324a">2 repeat groups</text>
+    <text x="630" y="450" font-size="48" font-weight="700" fill="#9b3f61">Range 0.100675</text>
+    <text x="630" y="510" font-size="22" fill="#526173">Within-coordinate MAE floor:</text><text x="630" y="550" font-size="34" font-weight="700" fill="#24324a">0.030852</text>
+    <text x="630" y="620" font-size="22" fill="#526173">Static surface plus unresolved</text><text x="630" y="652" font-size="22" fill="#526173">variability or hidden context</text>
+    <rect x="1100" y="270" width="420" height="420" rx="30" fill="#eee6fb"/>
+    <text x="1140" y="335" font-size="40" font-weight="700" fill="#6941a5">F8</text><text x="1140" y="390" font-size="30" font-weight="700" fill="#24324a">4 identical tests</text>
+    <text x="1140" y="450" font-size="48" font-weight="700" fill="#6941a5">Range 0.0</text>
+    <text x="1140" y="510" font-size="22" fill="#526173">Coefficient sign stability:</text><text x="1140" y="550" font-size="34" font-weight="700" fill="#24324a">all ≥ 75%</text>
+    <text x="1140" y="620" font-size="22" fill="#526173">Consistent with a stable</text><text x="1140" y="652" font-size="22" fill="#526173">low-order coordinate surface</text>
+  </g>
+  <rect x="180" y="740" width="1240" height="90" rx="22" fill="#fff3c4"/>
+  <text x="220" y="780" font-family="Arial" font-size="22" font-weight="700" fill="#735c00">Key finding: F6 prevents an unjustified claim that every evaluator output is fully determined</text>
+  <text x="220" y="812" font-family="Arial" font-size="22" font-weight="700" fill="#735c00">by the recorded coordinate alone.</text>
+  <line x1="85" y1="875" x2="1515" y2="875" stroke="#c8cfdd" stroke-width="2"/>
+  <text x="85" y="925" font-family="Arial" font-size="22" font-weight="700" fill="#7c3aed">BBR-4</text>
+  <text x="185" y="912" font-family="Arial" font-size="20" fill="#344054">Repeatability evidence. Zero repeat ranges support static coordinate explanations for F4 and F8.</text>
+  <text x="185" y="942" font-family="Arial" font-size="20" fill="#344054">F6 retains a genuine unresolved component.</text>
+</svg>
