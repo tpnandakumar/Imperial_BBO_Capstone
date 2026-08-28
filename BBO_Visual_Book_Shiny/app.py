@@ -128,14 +128,17 @@ app_ui = ui.page_navbar(
                         class_="page-buttons",
                     ),
                     ui.input_switch("week_cumulative", "Show cumulative best", True),
-                    ui.p("Choose a spread. Only that spread is loaded.", class_="control-note"),
+                    ui.p("The chapter, ranking and movement evidence remain visible together.", class_="control-note"),
                     title="Chapter controls", open="desktop",
                 ),
-                ui.navset_card_tab(
-                    ui.nav_panel("Chapter", ui.output_ui("week_chapter")),
-                    ui.nav_panel("Ranking", output_widget("week_rank_plot", height="52vh")),
-                    ui.nav_panel("Movement", output_widget("week_movement_plot", height="52vh")),
-                    id="week_spread",
+                ui.div(
+                    ui.output_ui("week_chapter"),
+                    ui.div(
+                        ui.card(ui.card_header("Returned outputs and retained best"), output_widget("week_rank_plot", height="31vh")),
+                        ui.card(ui.card_header("Coordinate movement from the preceding round"), output_widget("week_movement_plot", height="31vh")),
+                        class_="evidence-grid",
+                    ),
+                    class_="evidence-spread",
                 ),
                 class_="book-layout",
             ),
@@ -159,11 +162,19 @@ app_ui = ui.page_navbar(
                     ui.input_switch("show_starter", "Include starter points in input view", False),
                     title="Function controls", open="desktop",
                 ),
-                ui.navset_card_tab(
-                    ui.nav_panel("Overview", ui.div(ui.output_ui("function_summary"), class_="summary-slot"), output_widget("function_trajectory", height="43vh")),
-                    ui.nav_panel("Coordinates", output_widget("coordinate_trajectory", height="52vh")),
-                    ui.nav_panel("Evidence", ui.output_data_frame("function_table")),
-                    id="function_spread",
+                ui.div(
+                    ui.div(ui.output_ui("function_summary"), class_="summary-slot"),
+                    ui.div(
+                        ui.card(ui.card_header("Output trajectory across thirteen rounds"), output_widget("function_trajectory", height="31vh")),
+                        ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="31vh")),
+                        class_="evidence-grid",
+                    ),
+                    ui.tags.details(
+                        ui.tags.summary("Open the complete thirteen-row evidence table"),
+                        ui.output_data_frame("function_table"),
+                        class_="evidence-disclosure",
+                    ),
+                    class_="evidence-spread",
                 ),
                 class_="book-layout",
             ),
@@ -179,19 +190,16 @@ app_ui = ui.page_navbar(
                 ui.input_select("atlas_view", "Atlas view", {"weekly": "Weekly trajectories", "heatmap": "Function by week heat map", "winners": "Winning week and result"}, selected="weekly"),
                 class_="inline-controls",
             ),
-            ui.navset_card_tab(
-                ui.nav_panel("Interactive figure", output_widget("atlas_plot", height="51vh")),
-                ui.nav_panel(
-                    "Summary",
-                    ui.div(
+            ui.div(
+                ui.card(ui.card_header("Comparable trajectories across all eight functions"), output_widget("atlas_plot", height="48vh")),
+                ui.div(
                         stat_box("First winning week", str(int(winning_rows().week.min())), "Earliest retained maximum", PASTELS[4]),
                         stat_box("Last winning week", str(int(winning_rows().week.max())), "Latest retained maximum", PASTELS[5]),
                         stat_box("Functions peaking in Week 13", str(int((winning_rows().week == 13).sum())), "Final-round maxima", PASTELS[6]),
                         stat_box("Observed dimensions", "2 to 8", "Heterogeneous search spaces", PASTELS[7]),
-                        class_="stat-grid compact",
-                    ),
+                        class_="atlas-stats",
                 ),
-                id="atlas_spread",
+                class_="atlas-spread",
             ),
             class_="book-page",
         ),
@@ -200,10 +208,8 @@ app_ui = ui.page_navbar(
         "BBR and Strategy",
         ui.div(
             book_heading("BOOK IV  |  BLACK BOX RESOLUTION", "From optimisation to resolution", "Each spread explains one part of the post-BBO reasoning without changing the official thirteen-round record."),
-            ui.navset_card_tab(
-                ui.nav_panel(
-                    "Resolution loop",
-                    ui.div(
+            ui.div(
+                ui.div(
                         ui.div(ui.span("01"), ui.strong("Evaluate"), ui.p("Judge the returned evidence")),
                         ui.div(ui.span("02"), ui.strong("Resolve"), ui.p("Clarify what is known and uncertain")),
                         ui.div(ui.span("03"), ui.strong("Explore  ↔  Exploit"), ui.p("Choose information or refinement")),
@@ -211,28 +217,24 @@ app_ui = ui.page_navbar(
                         ui.div(ui.span("05"), ui.strong("Optimise"), ui.p("Select the next coordinate")),
                         ui.div(ui.span("06"), ui.strong("Evolve"), ui.p("Adapt the method")),
                         ui.div(ui.span("07"), ui.strong("Experiment"), ui.p("Run the next reproducible test")),
-                        class_="strategy-loop reveal",
-                    ),
+                    class_="strategy-loop reveal",
                 ),
-                ui.nav_panel(
-                    "BBR definition",
+                ui.div(
                     ui.div(
                         ui.h2("Black Box Resolution"),
                         ui.p("Black Box Resolution is the structured investigation of a hidden function using its recorded inputs and outputs. It compares competing explanations, tests chronological predictive performance and rejects explanations that fail."),
                         ui.p("BBR may identify a best-supported local structure without claiming recovery of the original hidden equation or its global optimum."),
-                        class_="reading-panel reveal",
+                        class_="reading-panel reveal compact-reading",
                     ),
-                ),
-                ui.nav_panel(
-                    "Trade-offs",
                     ui.div(
                         ui.card(ui.card_header("Exploration"), ui.p("Broader movement purchased information about untested regions but risked leaving a strong local area."), class_="pastel-card mint"),
                         ui.card(ui.card_header("Exploitation"), ui.p("Smaller movement refined supported regions but could miss a separate and better optimum."), class_="pastel-card blue"),
                         ui.card(ui.card_header("Confirmation"), ui.p("Repeated coordinates tested stability, although every repeat consumed a scarce weekly evaluation."), class_="pastel-card lavender"),
                         class_="three-column",
                     ),
+                    class_="bbr-evidence",
                 ),
-                id="bbr_spread",
+                class_="bbr-spread",
             ),
             class_="book-page",
         ),
