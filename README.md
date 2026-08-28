@@ -166,26 +166,14 @@ python Week_13/generate_week_13_figures.py
 
 For a guided route through the data and final calculations, open the [Final Capstone Notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb).
 
-### Interactive visual editions
+### Interactive Visual Book
 
-Two interfaces read the same audited evidence without changing the official record:
+No installation is required for readers. Open the complete public application directly:
 
-- [Shiny Visual Book](BBO_Visual_Book_Shiny/README.md): the premium book-style presentation with animated weekly chapters, interactive Plotly trajectories, a function-by-week heat map, maxima atlas and filterable evidence appendix.
-- [Streamlit Dashboard](BBO_Dashboard/README.md): the verified assessment-facing dashboard, code laboratory and reproducible round inspector.
+| [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+|:---:|
 
-Run the Shiny edition from the repository root:
-
-```bash
-python -m pip install -r BBO_Visual_Book_Shiny/requirements.txt
-python -m shiny run BBO_Visual_Book_Shiny/app.py
-```
-
-Run the Streamlit edition from the repository root:
-
-```bash
-python -m pip install -r BBO_Dashboard/requirements.txt
-python -m streamlit run BBO_Dashboard/streamlit_app.py
-```
+The live Shiny book is the main interactive edition. It reads the audited evidence without changing the official record. The earlier [Streamlit assessment dashboard](BBO_Dashboard/README.md) remains in the repository as reproducible supporting code, but readers do not need to run it.
 
 The audit checks the required assessment files, the weekly navigation, the internal links and unfinished placeholders. The analysis rebuilds the thirteen-round history from the recorded evidence and reproduces the final comparisons.
 
