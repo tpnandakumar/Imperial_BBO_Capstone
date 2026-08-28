@@ -42,5 +42,6 @@ The live public deployment was checked again at a 1280 by 720 pixel viewport aft
 - The BBR method ended at y=372, leaving all evidence visible within the 720 pixel viewport.
 - Repository wording identified Shiny as the live reader-facing edition and linked to the public GitHub record.
 - Graph explanations were checked for natural British English, distinct interpretation guidance and evidence limits.
+- A changed PDHIS selection could leave a completed Plotly graph inside a hidden Shiny output container. The graph-stage visibility rule now keeps every generated graph visible, including F5 Delta 2.
 
 Final completion result: passed.
