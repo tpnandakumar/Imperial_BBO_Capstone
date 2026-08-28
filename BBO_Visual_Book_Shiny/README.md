@@ -1,6 +1,6 @@
 # Imperial BBO Visual Book, Shiny edition
 
-This is the enhanced presentation layer for the Imperial BBO capstone. It reads the same audited `279`-observation evidence file as the verified Streamlit dashboard and does not modify any official input or output.
+This is the reader-facing presentation layer for the Imperial BBO capstone. It reads the audited `279`-observation evidence file and does not modify any official input or output.
 
 ## What happens when this link opens
 

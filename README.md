@@ -173,7 +173,7 @@ No installation is required for readers. Open the complete public application di
 | [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
 |:---:|
 
-The live Shiny book is the main interactive edition. It reads the audited evidence without changing the official record. The earlier [Streamlit assessment dashboard](BBO_Dashboard/README.md) remains in the repository as reproducible supporting code, but readers do not need to run it.
+The live Visual Book is the reader-facing interactive edition. It reads the audited evidence without changing the official record. Supporting and legacy application code remains available for technical reproduction, but readers do not need to install or run it.
 
 The audit checks the required assessment files, the weekly navigation, the internal links and unfinished placeholders. The analysis rebuilds the thirteen-round history from the recorded evidence and reproduces the final comparisons.
 

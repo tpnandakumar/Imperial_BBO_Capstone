@@ -34,6 +34,48 @@ WEEK_CONTEXT = {
     13: ("Final evaluation", "Balance controlled risk, repeatability and sequential-decision reflection before stopping."),
 }
 
+DELTA_MEANINGS = [
+    ("Δ1", "y(t) - y(t-1)", "Direct observed change: its direction and magnitude."),
+    ("Δ2", "Δ1(t) - Δ1(t-1)", "Change of change: acceleration, curvature, an emerging plateau or reversal."),
+    ("Δ3", "Δ2(t) - Δ2(t-1)", "Whether the second-order behaviour is itself changing."),
+    ("Δ4", "Δ3(t) - Δ3(t-1)", "Persistence, reversal or a developing oscillation in the third-order pattern."),
+    ("Δ5", "Δ4(t) - Δ4(t-1)", "Whether a repeated-change pattern continues to propagate."),
+    ("Δ6", "Δ5(t) - Δ5(t-1)", "Deeper recursive change, interpreted only with the lower Delta levels."),
+    ("Δ7", "Δ6(t) - Δ6(t-1)", "Higher-order propagation or instability already present in the sequence."),
+    ("Δ8", "Δ7(t) - Δ7(t-1)", "Deep repeated change, increasingly exploratory as evidence narrows."),
+    ("Δ9", "Δ8(t) - Δ8(t-1)", "A high-order pattern requiring strong consistency across lower levels."),
+    ("Δ10", "Δ9(t) - Δ9(t-1)", "The practical cap for this thirteen-week record; hypothesis-generating, not proof."),
+]
+
+PDHIS_EXPLANATIONS = {
+    "hierarchy": (
+        "The Lotus hierarchy",
+        "Each ring is the change in the preceding Delta level. Move outwards from direct change at Δ1 to increasingly nested change. "
+        "Higher levels contain fewer usable comparisons, so they must agree with the lower levels before they are treated as a candidate signal."
+    ),
+    "trajectory": (
+        "Reading a Delta trajectory",
+        "The horizontal zero line separates positive from negative recursive change. A sign switch marks a reversal at the selected level; "
+        "a movement towards zero can indicate a plateau; repeated alternating signs can indicate oscillation. Magnitude shows the size of the change, "
+        "not its importance. The curve describes observed change and does not by itself prove prediction."
+    ),
+    "orders": (
+        "Reading the predictability graph",
+        "The lines show chronological association between each Delta order and the following output or following change. The shaded shuffled range is a noise reference. "
+        "A value outside that range is a candidate relationship, but it is not a confirmed forecasting rule unless it also survives multiple-testing correction and later prospective data."
+    ),
+    "functions": (
+        "Reading the function relationship map",
+        "Each cell compares one function and one Delta order. Blue indicates a negative relationship with the following change, rose a positive relationship, "
+        "and pale cells little observed relationship. The number n is the available sample size; small n means greater uncertainty."
+    ),
+    "evidence": (
+        "Reading the evidence-boundary graph",
+        "Bars show how many forward comparisons remain at each Delta order. The second line shows adjusted evidence after controlling false discoveries. "
+        "Evidence falls at higher orders because every recursive difference removes an observation. No order currently crosses the confirmation threshold."
+    ),
+}
+
 
 def load_data() -> tuple[pd.DataFrame, pd.DataFrame]:
     complete = pd.read_csv(DATA_FILE)
@@ -105,6 +147,43 @@ def numbered_buttons(prefix: str, values: range, label_prefix: str) -> ui.Tag:
             for value in values
         ],
         class_="numbered-index",
+    )
+
+
+def graph_actions(open_id: str, explain_id: str) -> ui.Tag:
+    return ui.div(
+        ui.input_action_button(open_id, "Open graph", class_="btn-accent"),
+        ui.input_action_button(explain_id, "Explain graph", class_="btn-soft"),
+        class_="graph-actions",
+    )
+
+
+def explanation_dialog(title: str, summary: str, points: list[str]) -> ui.Tag:
+    return ui.modal(
+        ui.div(
+            ui.p(summary, class_="explanation-lead"),
+            ui.tags.ul(*[ui.tags.li(point) for point in points]),
+            class_="explanation-dialog",
+        ),
+        title=title,
+        easy_close=True,
+        footer=ui.modal_button("Close explanation", class_="btn-accent"),
+        class_="explanation-modal",
+    )
+
+
+def delta_meanings_table() -> ui.Tag:
+    rows = []
+    for index, (level, definition, meaning) in enumerate(DELTA_MEANINGS, start=1):
+        cases = int(PDHIS_ORDERS.loc[PDHIS_ORDERS.order == index, "forward_cases"].iloc[0])
+        rows.append(ui.tags.tr(ui.tags.td(level), ui.tags.td(definition), ui.tags.td(meaning), ui.tags.td(str(cases))))
+    return ui.div(
+        ui.tags.table(
+            ui.tags.thead(ui.tags.tr(ui.tags.th("Level"), ui.tags.th("Recursive definition"), ui.tags.th("Practical meaning"), ui.tags.th("Forward cases"))),
+            ui.tags.tbody(*rows),
+            class_="delta-table",
+        ),
+        class_="delta-table-wrap",
     )
 
 
@@ -230,7 +309,7 @@ app_ui = ui.page_navbar(
                 ui.div(
                     ui.h2("View the selected Week graph"),
                     ui.p("Open the graph in a separate full-screen viewer. Close it to return to this Week without losing your place."),
-                    ui.input_action_button("open_week_graph", "Open graph", class_="btn-accent graph-open-button"),
+                    graph_actions("open_week_graph", "explain_week_graph"),
                     class_="graph-launch-panel",
                 ),
                 class_="evidence-spread compact-page-body",
@@ -258,7 +337,7 @@ app_ui = ui.page_navbar(
                     ui.div(
                         ui.h2("View the selected Function graph"),
                         ui.p("Open the graph in a separate full-screen viewer. Close it to return to this Function without losing your place."),
-                        ui.input_action_button("open_function_graph", "Open graph", class_="btn-accent graph-open-button"),
+                        graph_actions("open_function_graph", "explain_function_graph"),
                         class_="graph-launch-panel",
                     ),
                 ),
@@ -282,7 +361,7 @@ app_ui = ui.page_navbar(
                 ui.div(
                     ui.h2("Open the selected Atlas graph"),
                     ui.p("The comparison opens in a full-screen viewer and closes back to this page."),
-                    ui.input_action_button("open_atlas_graph", "Open graph", class_="btn-accent graph-open-button"),
+                    graph_actions("open_atlas_graph", "explain_atlas_graph"),
                     class_="graph-launch-panel",
                 ),
                 ui.div(
@@ -301,10 +380,20 @@ app_ui = ui.page_navbar(
         "Repository",
         ui.div(
             page_toolbar("repository_home", "repository_up", "repository_previous", "repository_next"),
-            book_heading("REPRODUCIBLE RECORD", "Repository and dashboard", "Open the source record, inspect the documented methods or run this visual book locally."),
+            book_heading("REPRODUCIBLE RECORD", "Repository and live Visual Book", "The live book explains the results. The repository preserves the evidence, calculations and source code behind them."),
             ui.div(
-                ui.div(ui.h2("Public repository"), ui.p("The repository contains the canonical evidence, weekly analyses, notebooks, figures, final submission material and the visual book source."), ui.a("Open Imperial BBO Capstone on GitHub", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone", target="_blank", class_="external-button"), class_="reading-panel"),
-                ui.div(ui.h2("Run the dashboard"), ui.p("From the repository root, install the listed requirements once, then start the application with:"), ui.tags.code("python -m shiny run BBO_Visual_Book_Shiny/app.py"), ui.p("The running application has already loaded NumPy, pandas, Plotly and Shiny. A web page cannot silently install software on another computer, so the repository keeps installation explicit and reproducible."), class_="reading-panel"),
+                ui.div(
+                    ui.h2("What is the repository?"),
+                    ui.p("It is the permanent project record: 279 observations, thirteen weekly analyses, notebooks, figures, the final submission and the code for this Visual Book."),
+                    ui.input_action_button("explain_repository", "How to use the repository", class_="btn-soft"),
+                    class_="reading-panel",
+                ),
+                ui.div(
+                    ui.h2("Open the project record"),
+                    ui.p("This live application is the reader-friendly Shiny edition. GitHub is for inspecting or reproducing the underlying work; readers do not need to install or run anything."),
+                    ui.a("Open Imperial BBO Capstone on GitHub", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone", target="_blank", class_="external-button"),
+                    class_="reading-panel",
+                ),
                 class_="repository-grid",
             ),
             class_="book-page",
@@ -314,16 +403,16 @@ app_ui = ui.page_navbar(
         "Above and Beyond",
         ui.div(
             page_toolbar("above_home", "above_up", "above_previous", "above_next"),
-            book_heading("THE POST-CHALLENGE LIBRARY", "Above and Beyond BBO", "Choose Above for Black Box Resolution or Beyond for the PDHIS analysis of recursively nested change."),
+            book_heading("THE POST-CHALLENGE LIBRARY", "Above and Beyond BBO", "Choose Above for Black Box Resolution (BBR), or Beyond for Pisharam Delta Hierarchy and Influence State (PDHIS)."),
             ui.div(
                 ui.input_action_button(
                     "open_above_bbr",
-                    ui.TagList(ui.span("ABOVE BBO", class_="route-kicker"), ui.strong("BBR Book"), ui.tags.small("Resolve hidden structure through competing explanations, chronological tests and falsification")),
+                    ui.TagList(ui.span("ABOVE BBO", class_="route-kicker"), ui.strong("BBR: Black Box Resolution"), ui.tags.small("Resolve hidden structure through competing explanations, chronological tests and falsification")),
                     class_="gateway-book rose-route",
                 ),
                 ui.input_action_button(
                     "open_beyond_pdhis",
-                    ui.TagList(ui.span("BEYOND BBO", class_="route-kicker"), ui.strong("PDHIS Book"), ui.tags.small("Study Delta 1 to Delta 10, trajectory, predictability and the limits of the evidence")),
+                    ui.TagList(ui.span("BEYOND BBO", class_="route-kicker"), ui.strong("PDHIS: Pisharam Delta Hierarchy and Influence State"), ui.tags.small("Study Delta 1 to Delta 10, trajectory, predictability and the limits of the evidence")),
                     class_="gateway-book lavender-route",
                 ),
                 class_="gateway-books post-bbo-gateway",
@@ -335,7 +424,7 @@ app_ui = ui.page_navbar(
         "Resolution",
         ui.div(
             page_toolbar("resolution_home", "resolution_up", "resolution_previous", "resolution_next"),
-            book_heading("BOOK IV  |  RESOLUTION", "Black Box Resolution", "Investigate hidden structure by comparing explanations, testing them chronologically and rejecting those that fail."),
+            book_heading("BOOK IV  |  RESOLUTION", "BBR: Black Box Resolution", "Investigate hidden structure by comparing explanations, testing them chronologically and rejecting those that fail."),
             ui.div(
                 ui.input_radio_buttons(
                     "resolution_section", None,
@@ -370,6 +459,7 @@ app_ui = ui.page_navbar(
                         class_="strategy-loop reveal",
                     ),
                     ui.p("Evaluate → Resolve → Explore ↔ Exploit → Extend → Optimise → Evolve → Experiment → Evaluate, then repeat.", class_="strategy-loop-caption"),
+                    ui.input_action_button("explain_bbr", "What does BBR mean?", class_="btn-soft framework-explain-button"),
                     ui.div(
                         ui.div(
                             ui.h2("Black Box Resolution"),
@@ -395,7 +485,7 @@ app_ui = ui.page_navbar(
         "Beyond BBO",
         ui.div(
             page_toolbar("pdhis_home", "pdhis_up", "pdhis_previous", "pdhis_next"),
-            book_heading("BOOK V  |  BEYOND BBO", "Delta of BBO: PDHIS analysis of F1 to F8", "After the official optimisation phase, the completed record becomes evidence for resolution. Examine how recursively nested change develops across the thirteen weekly outputs and whether an early Delta pattern carries information about later direction or trajectory."),
+            book_heading("BOOK V  |  BEYOND BBO", "PDHIS: Pisharam Delta Hierarchy and Influence State", "Delta of BBO examines recursively nested change across F1 to F8 and asks whether an early pattern carries information about later direction or trajectory."),
             ui.div(
                 ui.input_radio_buttons(
                     "pdhis_view", None,
@@ -447,7 +537,27 @@ app_ui = ui.page_navbar(
                             class_="inline-controls pdhis-trajectory-controls",
                         ),
                     ),
-                    ui.card(ui.card_header(ui.output_text("pdhis_chart_title")), output_widget("pdhis_plot", height="100%")),
+                    ui.panel_conditional(
+                        "input.pdhis_view === 'meanings'",
+                        ui.div(
+                            delta_meanings_table(),
+                            ui.div(
+                                ui.input_select("delta_explain_level", "Explain a Delta level", {str(i): f"Delta {i}" for i in range(1, 11)}, selected="1"),
+                                ui.input_action_button("explain_delta_level", "Open explanation", class_="btn-accent"),
+                                class_="delta-explain-controls",
+                            ),
+                            class_="delta-meanings-page",
+                        ),
+                    ),
+                    ui.panel_conditional(
+                        "input.pdhis_view !== 'meanings'",
+                        ui.div(
+                            ui.h2(ui.output_text("pdhis_chart_title")),
+                            ui.p("Open the graph in a centred viewer. Close it to return to this PDHIS page."),
+                            graph_actions("open_pdhis_graph", "explain_pdhis_graph"),
+                            class_="graph-launch-panel pdhis-graph-launch",
+                        ),
+                    ),
                     ui.div(ui.output_text("pdhis_interpretation"), class_="pdhis-note"),
                     class_="resolution-body pdhis-body",
                 ),
@@ -465,7 +575,16 @@ app_ui = ui.page_navbar(
                 ui.input_slider("evidence_weeks", "Week range", 1, 13, [1, 13], step=1),
                 class_="inline-controls",
             ),
-            ui.card(ui.output_data_frame("evidence_table"), class_="evidence-card"),
+            ui.div(
+                ui.output_ui("evidence_table"),
+                ui.div(
+                    ui.input_action_button("evidence_page_previous", "Previous rows", class_="btn-soft"),
+                    ui.output_text("evidence_page_label"),
+                    ui.input_action_button("evidence_page_next", "Next rows", class_="btn-accent"),
+                    class_="evidence-pager",
+                ),
+                class_="evidence-card evidence-page-card",
+            ),
             class_="book-page",
         ),
     ),
@@ -483,6 +602,8 @@ app_ui = ui.page_navbar(
 
 
 def server(input: Inputs, output: Outputs, session: Session) -> None:
+    evidence_page = reactive.Value(0)
+
     @reactive.effect
     @reactive.event(input.global_home, input.bbo_home, input.above_home, input.week_home, input.function_home,
                     input.readme_home, input.repository_home, input.atlas_home, input.resolution_home,
@@ -721,6 +842,114 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                 class_="graph-viewer-modal",
             )
         )
+
+    @reactive.effect
+    @reactive.event(input.open_pdhis_graph)
+    def _open_pdhis_graph():
+        view = input.pdhis_view()
+        if view not in PDHIS_EXPLANATIONS:
+            return
+        title = PDHIS_EXPLANATIONS[view][0]
+        if view == "trajectory":
+            title = f"F{int(input.pdhis_function())}, Delta {int(input.pdhis_order())} trajectory"
+        ui.modal_show(
+            ui.modal(
+                ui.div(output_widget("pdhis_plot", height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
+                title=title,
+                size="xl",
+                easy_close=True,
+                footer=ui.modal_button("Close graph", class_="btn-accent"),
+                class_="graph-viewer-modal",
+            )
+        )
+
+    @reactive.effect
+    @reactive.event(input.explain_week_graph)
+    def _explain_week_graph():
+        movement = input.week_view() == "movement"
+        if movement:
+            dialog = explanation_dialog(
+                "How to read the Week coordinate graph",
+                "Each line shows how one input coordinate changed for F1 to F8 in the selected week.",
+                ["Large movement indicates exploration of a different region.", "Small movement indicates exploitation or local refinement.", "A move is evidence of the chosen strategy, not proof that the strategy improved the output."],
+            )
+        else:
+            dialog = explanation_dialog(
+                "How to read the Week output graph",
+                "The graph compares the eight returned outputs in the selected week with the best values retained so far.",
+                ["Each function has its own scale, so compare change within a function rather than raw height across functions.", "A new retained best marks improvement for that function.", "Repeated best values indicate confirmation or a plateau, depending on the submitted coordinate."],
+            )
+        ui.modal_show(dialog)
+
+    @reactive.effect
+    @reactive.event(input.explain_function_graph)
+    def _explain_function_graph():
+        coordinate_view = input.function_view() == "coordinates"
+        if coordinate_view:
+            dialog = explanation_dialog(
+                f"How to read the F{int(input.function())} coordinate graph",
+                "Each coloured line is one input coordinate across thirteen weekly submissions.",
+                ["Broad movement indicates exploration.", "Small directed movement indicates exploitation or refinement.", "A flat coordinate means that dimension was retained while other dimensions changed."],
+            )
+        else:
+            dialog = explanation_dialog(
+                f"How to read the F{int(input.function())} output graph",
+                "The weekly line shows returned output; the cumulative-best line keeps only the strongest result observed up to each week.",
+                ["An upward step in cumulative best is a new improvement.", "A flat cumulative-best line means no later query beat the retained result.", "Rate of change shows week-to-week movement and may be volatile even when the retained best is stable."],
+            )
+        ui.modal_show(dialog)
+
+    @reactive.effect
+    @reactive.event(input.explain_atlas_graph)
+    def _explain_atlas_graph():
+        ui.modal_show(explanation_dialog(
+            "How to read the Scientific Atlas",
+            "The Atlas compares all eight functions without pretending that their raw output scales are directly comparable.",
+            ["Relative progress rescales each function only against its own observed range.", "The heat map highlights timing and direction, not absolute magnitude between functions.", "The winning-week view shows when each retained participant-query maximum first or last appeared."],
+        ))
+
+    @reactive.effect
+    @reactive.event(input.explain_pdhis_graph)
+    def _explain_pdhis_graph():
+        view = input.pdhis_view()
+        title, summary = PDHIS_EXPLANATIONS.get(view, ("PDHIS graph", "This graph describes recursively nested change in the completed BBO record."))
+        if view == "trajectory":
+            title = f"How to read F{int(input.pdhis_function())}, Delta {int(input.pdhis_order())}"
+        ui.modal_show(explanation_dialog(
+            title,
+            summary,
+            ["Read the graph together with the lower Delta levels and the available sample size.", "A visible pattern is a candidate signal, not definite function recovery.", "Prediction requires chronological confirmation on later observations."],
+        ))
+
+    @reactive.effect
+    @reactive.event(input.explain_delta_level)
+    def _explain_delta_level():
+        index = int(input.delta_explain_level()) - 1
+        level, definition, meaning = DELTA_MEANINGS[index]
+        cases = int(PDHIS_ORDERS.loc[PDHIS_ORDERS.order == index + 1, "forward_cases"].iloc[0])
+        ui.modal_show(explanation_dialog(
+            f"{level}: what this Delta level means",
+            meaning,
+            [f"Recursive definition: {definition}.", f"Available forward comparisons in this record: {cases}.", "Interpret it with the preceding Delta levels; it does not amplify or create change that is not present in the observed sequence."],
+        ))
+
+    @reactive.effect
+    @reactive.event(input.explain_bbr)
+    def _explain_bbr():
+        ui.modal_show(explanation_dialog(
+            "BBR: Black Box Resolution",
+            "BBR is the post-challenge method for testing what structure may be supported by the recorded inputs and outputs.",
+            ["It compares competing explanations rather than assuming one equation.", "It tests explanations chronologically and rejects those that fail.", "It may support a local explanation without claiming the original hidden equation or a global optimum."],
+        ))
+
+    @reactive.effect
+    @reactive.event(input.explain_repository)
+    def _explain_repository():
+        ui.modal_show(explanation_dialog(
+            "How to use the repository",
+            "The live Visual Book is for reading and interaction. The GitHub repository is the auditable record behind it.",
+            ["Data folders preserve the 279 observations and weekly submissions.", "Analysis files preserve calculations, figures and notebooks.", "The Visual Book source shows how the live Shiny application is produced; ordinary readers do not need to run it."],
+        ))
 
     @reactive.effect
     @reactive.event(input.previous_week)
@@ -1094,14 +1323,64 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         fig.update_yaxes(title="Pooled Spearman correlation", range=[-.8, .7])
         return plot_layout(fig, "Chronological relationship by Delta order")
 
-    @render.data_frame
-    def evidence_table():
+    @reactive.calc
+    def filtered_evidence() -> pd.DataFrame:
         start, end = input.evidence_weeks()
         frame = EVIDENCE[EVIDENCE.week.between(start, end)].copy()
         if input.evidence_function() != "all":
             frame = frame[frame.function == int(input.evidence_function())]
-        columns = ["function", "week", *[f"x{i}" for i in range(1, 9)], "output"]
-        return render.DataGrid(frame[columns].dropna(axis=1, how="all"), filters=True, selection_mode="rows", height="54vh")
+        return frame.sort_values(["week", "function"]).reset_index(drop=True)
+
+    @reactive.effect
+    @reactive.event(input.evidence_function, input.evidence_weeks)
+    def _reset_evidence_page():
+        evidence_page.set(0)
+
+    @reactive.effect
+    @reactive.event(input.evidence_page_previous)
+    def _evidence_page_previous():
+        evidence_page.set(max(0, evidence_page() - 1))
+
+    @reactive.effect
+    @reactive.event(input.evidence_page_next)
+    def _evidence_page_next():
+        last_page = max(0, (len(filtered_evidence()) - 1) // 6)
+        evidence_page.set(min(last_page, evidence_page() + 1))
+
+    @render.text
+    def evidence_page_label():
+        total = len(filtered_evidence())
+        if total == 0:
+            return "No matching rows"
+        start = evidence_page() * 6 + 1
+        end = min(total, start + 5)
+        return f"Rows {start} to {end} of {total}"
+
+    @render.ui
+    def evidence_table():
+        frame = filtered_evidence()
+        start = evidence_page() * 6
+        page = frame.iloc[start:start + 6]
+        rows = []
+        for row in page.itertuples():
+            inputs = []
+            for index in range(1, DIMENSIONS[int(row.function)] + 1):
+                value = getattr(row, f"x{index}")
+                if pd.notna(value):
+                    inputs.append(f"x{index}={float(value):.4g}")
+            rows.append(
+                ui.tags.tr(
+                    ui.tags.td(f"F{int(row.function)}"),
+                    ui.tags.td(str(int(row.week))),
+                    ui.tags.td(", ".join(inputs), class_="evidence-inputs"),
+                    ui.tags.td(format_number(row.output)),
+                )
+            )
+        return ui.tags.table(
+            ui.tags.thead(ui.tags.tr(ui.tags.th("Function"), ui.tags.th("Week"), ui.tags.th("Submitted coordinates"), ui.tags.th("Returned output"))),
+            ui.tags.tbody(*rows),
+            class_="compact-evidence-table",
+        )
 
 
 app = App(app_ui, server, static_assets=APP_DIR / "www")
