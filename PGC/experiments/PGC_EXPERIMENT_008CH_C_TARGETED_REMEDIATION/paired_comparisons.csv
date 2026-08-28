@@ -1,7 +1,0 @@
-condition,arm,mean_accuracy_difference,wins,ties,losses,wilcoxon_p_raw
-high_dimensional_sparse,targeted_specialist_full,0.005333333333333345,3,1,1,0.75
-high_dimensional_sparse,A_DMIC_gated_specialist,0.005333333333333345,3,1,1,0.75
-noisy_missing_binary,targeted_specialist_full,0.0,0,5,0,1.0
-noisy_missing_binary,A_DMIC_gated_specialist,0.0,0,5,0,1.0
-temporal_drift_binary,targeted_specialist_full,0.020666666666666656,5,0,0,0.0625
-temporal_drift_binary,A_DMIC_gated_specialist,0.020666666666666656,5,0,0,0.0625

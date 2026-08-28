@@ -1,6 +1,0 @@
-corrected_proof_ms,corrected_status,counterexample,false_proof_claim,flawed_proof_ms,flawed_status,formal_proof_success,simplex_invariant_proven,simplex_invariant_status,task
-0.105257000001302,unsat,"{""x"": ""-1""}",False,1.6146839999962026,sat,True,,,absolute_value
-0.08516999999841346,unsat,"{""x"": ""0"", ""y"": ""0""}",False,1.7273650000007024,sat,True,,,safe_divide
-0.08852599999897848,unsat,"{""x"": ""2""}",False,0.461624999999799,sat,True,,,bounded_clamp
-0.08230400000286409,unsat,"{""x"": ""0""}",False,0.08484900000382822,sat,True,,,monotonic_increment
-0.09251299999846196,unsat,"{""a"": ""-1"", ""b"": ""-1""}",False,1.5469370000005256,sat,True,True,unsat,probability_normalisation
