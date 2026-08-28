@@ -129,11 +129,12 @@ def home_best_cards() -> ui.Tag:
 
 def plot_layout(fig: go.Figure, title: str = "") -> go.Figure:
     fig.update_layout(
-        title=dict(text=title, x=0.02, xanchor="left", font=dict(size=16, color="#263f5a")),
+        autosize=True,
+        title=dict(text=title, x=0.02, xanchor="left", font=dict(size=14, color="#263f5a")),
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(255,255,255,0.68)",
-        font=dict(family="Inter, Arial, sans-serif", size=12, color="#425b70"),
-        margin=dict(l=40, r=18, t=52, b=38),
-        hoverlabel=dict(bgcolor="white", font_size=12),
+        font=dict(family="Inter, Arial, sans-serif", size=11, color="#425b70"),
+        margin=dict(l=36, r=16, t=44, b=32),
+        hoverlabel=dict(bgcolor="white", font_size=11),
         legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1),
     )
     fig.update_xaxes(gridcolor="rgba(95,125,145,0.12)", zeroline=False)
@@ -226,8 +227,8 @@ app_ui = ui.page_navbar(
                     ui.input_switch("week_cumulative", "Cumulative best", True),
                     class_="view-switcher",
                 ),
-                ui.panel_conditional("input.week_view === 'outputs'", ui.card(ui.card_header("Returned outputs and retained best"), output_widget("week_rank_plot", height="40vh"))),
-                ui.panel_conditional("input.week_view === 'movement'", ui.card(ui.card_header("Coordinate movement from the preceding round"), output_widget("week_movement_plot", height="40vh"))),
+                ui.panel_conditional("input.week_view === 'outputs'", ui.card(ui.card_header("Returned outputs and retained best"), output_widget("week_rank_plot", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
+                ui.panel_conditional("input.week_view === 'movement'", ui.card(ui.card_header("Coordinate movement from the preceding round"), output_widget("week_movement_plot", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
                 class_="evidence-spread compact-page-body",
             ),
             class_="book-page",
@@ -248,8 +249,8 @@ app_ui = ui.page_navbar(
                     ui.input_switch("show_starter", "Starter points", False),
                     class_="view-switcher",
                 ),
-                ui.panel_conditional("input.function_view === 'output'", ui.card(ui.card_header("Actual output, week change and retained maximum"), output_widget("function_trajectory", height="39vh"))),
-                ui.panel_conditional("input.function_view === 'coordinates'", ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="39vh"))),
+                ui.panel_conditional("input.function_view === 'output'", ui.card(ui.card_header("Actual output, week change and retained maximum"), output_widget("function_trajectory", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
+                ui.panel_conditional("input.function_view === 'coordinates'", ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="clamp(160px, 28dvh, 300px)"), class_="viewport-chart-card")),
                 ui.panel_conditional("input.function_view === 'record'", ui.card(ui.output_data_frame("function_table"), class_="table-page")),
                 class_="evidence-spread compact-page-body",
             ),
@@ -267,7 +268,7 @@ app_ui = ui.page_navbar(
                 class_="inline-controls",
             ),
             ui.div(
-                ui.card(ui.card_header("Comparable trajectories across all eight functions"), output_widget("atlas_plot", height="48vh")),
+                ui.card(ui.card_header("Comparable trajectories across all eight functions"), output_widget("atlas_plot", height="clamp(180px, 32dvh, 340px)"), class_="viewport-chart-card"),
                 ui.div(
                         stat_box("First winning week", str(int(winning_rows().week.min())), "Earliest retained maximum", PASTELS[4]),
                         stat_box("Last winning week", str(int(winning_rows().week.max())), "Latest retained maximum", PASTELS[5]),
