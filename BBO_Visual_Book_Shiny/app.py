@@ -919,11 +919,49 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         view = input.pdhis_view()
         title, summary = PDHIS_EXPLANATIONS.get(view, ("PDHIS graph", "This graph describes recursively nested change in the completed BBO record."))
         if view == "trajectory":
-            title = f"How to read F{int(input.pdhis_function())}, Delta {int(input.pdhis_order())}"
+            order = int(input.pdhis_order())
+            title = f"How to read F{int(input.pdhis_function())}, Delta {order}"
+            comparison = (
+                "Read Delta 1 beside the normalised output history because it is the direct change between consecutive weeks."
+                if order == 1 else
+                f"Read Delta {order} beside Delta {order - 1} and the lower levels to check whether the same interpretation continues through the hierarchy."
+            )
+            points = [
+                comparison,
+                "Crossing zero marks a change of direction at the selected level. Movement towards zero may indicate flattening, while alternating signs may indicate oscillation.",
+                "Check whether the pattern persists across several observations before relating it to what happens next.",
+            ]
+        else:
+            points = {
+                "hierarchy": [
+                    "Begin with direct change at Delta 1 and move outwards. Each ring shows how the preceding level changed.",
+                    "Agreement across neighbouring levels gives a pattern more weight than a strong movement in one outer ring.",
+                    "The number of usable comparisons falls at every level, so the outer rings require greater caution.",
+                ],
+                "orders": [
+                    "The green line relates each Delta order to the following change. The purple line relates it to the following output.",
+                    "The gold shuffled range shows relationships that can appear when chronological order is disrupted. Values outside it deserve closer examination.",
+                    "Delta 2, Delta 4 and Delta 5 have the strongest inverse relationships here, but none passes the adjusted confirmation threshold.",
+                ],
+                "functions": [
+                    "Blue cells show negative relationships with the following change, rose cells show positive relationships and pale cells show little observed relationship.",
+                    "Each cell reports n, the number of usable comparisons. A smaller n means greater uncertainty.",
+                    "A run of similar colour across neighbouring Delta orders is more informative than one isolated cell.",
+                ],
+                "evidence": [
+                    "The green bars show how many forward comparisons remain at each Delta order. The count falls from 88 at Delta 1 to 16 at Delta 10.",
+                    "The purple line shows adjusted evidence as minus log10(q). The dashed line marks the q equals 0.05 threshold.",
+                    "No order crosses that threshold, so the present patterns remain research findings rather than a validated forecasting rule.",
+                ],
+            }.get(view, [
+                "Read the graph with the available sample size in view.",
+                "Look for agreement across related Delta levels.",
+                "Use later observations to test any predictive interpretation.",
+            ])
         ui.modal_show(explanation_dialog(
             title,
             summary,
-            ["Read the graph together with the lower Delta levels and the available sample size.", "A visible pattern becomes more informative when related levels support the same interpretation.", "Later observations are needed to test its predictive value."],
+            points,
         ))
 
     @reactive.effect
