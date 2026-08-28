@@ -1,0 +1,81 @@
+# Imperial BBO Capstone Executive Summary
+
+## Purpose
+
+This project documents a thirteen week Black Box Optimisation challenge involving eight hidden functions with between two and eight dimensions. The course supplied 175 starter observations. I then selected one new coordinate for each function in every weekly round, producing 104 prospective portal evaluations and a final audited record of 279 observations.
+
+The central challenge was not simply to find a high output. Each decision had to be made before the result was known, within a small and fixed query budget. A useful strategy therefore needed to improve or retain performance, respond when the evidence changed, distinguish a repeatable result from an isolated return and keep a clear record of why each coordinate was chosen.
+
+The strongest conclusion is that no single optimisation rule suited all eight functions. Progress came from treating each function according to its own history, dimensionality, response pattern and uncertainty.
+
+## How the strategy developed
+
+The early rounds used broad exploration because the local response surfaces were unknown. As evidence accumulated, the strategy became more selective. Weekly movement, output change and retained best values were reviewed together. This led to four practical actions:
+
+1. **Refinement**, when repeated gains supported another small movement.
+2. **Recovery**, when an earlier coordinate was stronger than the current search region.
+3. **Confirmation**, when repeating a coordinate could test stability.
+4. **Retention or stopping**, when further movement offered little expected benefit.
+
+Clustering helped organise recurring search regions. Principal component analysis showed where submitted coordinates were moving together. Chronological surrogate comparisons tested whether a fitted relationship could predict later observations without using future information. A held-out Week 13 policy experiment assigned retain, local refinement, boundary refinement or repeat actions using only evidence from Weeks 1 to 12.
+
+These methods supported decisions but did not replace the returned outputs. When a model and the verified objective history disagreed, the objective history remained the deciding evidence.
+
+## Final verified results
+
+| Function | Best participant query output | Best week | Main interpretation |
+| --- | ---: | ---: | --- |
+| F1 | `0.025559285339829783` | 3 | An early best was reproduced in later rounds |
+| F2 | `0.7335252043269003` | 12 | A further small move in Week 13 reduced performance |
+| F3 | `-0.05685061601567621` | 13 | Final local refinement produced a new best |
+| F4 | `-4.359874926582439` | 1 | Recovery returned to and confirmed the early best |
+| F5 | `4440.957216598753` | 13 | Controlled boundary movement produced sustained improvement |
+| F6 | `-0.6071562248604215` | 13 | The best weekly return was accompanied by repeatability uncertainty |
+| F7 | `1.3809299933612855` | 5 | An earlier best was recovered and confirmed |
+| F8 | `9.58024` | 1 | Repeated coordinates confirmed a stable retained best |
+
+Function 5 gave the clearest sustained improvement. Its output increased as the search moved towards the boundary, and a final small movement produced another gain. Function 3 also benefited from local refinement. Function 2 showed the limit of that approach because the Week 13 continuation moved away from the Week 12 best.
+
+Recovery was effective for Functions 4 and 7. Exact repetition was informative for Functions 1 and 8. Function 6 showed why a favourable return should not automatically be treated as a stable optimum. The same coordinate produced different outputs, leaving an unresolved repeatability question.
+
+These are the strongest participant selected observations within the authorised budget. The hidden equations and mathematical global optima remain unknown.
+
+## What made the work successful
+
+Success depended on economical reasoning rather than constant movement. A query could be valuable even when it did not improve the score. The decline in Function 2 discouraged further movement in the same direction. Weak exploratory results for Function 4 supported recovery. Variation in repeated Function 6 results exposed uncertainty that would otherwise have remained hidden.
+
+Stopping also became an active decision. Functions with reproducible winners did not need the same treatment as functions with a supported direction or unresolved behaviour. By the final round, the query budget was allocated according to the value of further improvement or further information.
+
+The repository preserves positive and negative results, analytical additions, decision records and interpretation limits. This allows another reader to follow the path from observation to interpretation, decision and outcome.
+
+## Beyond the assessed challenge
+
+The post challenge work extends the completed record without changing the official capstone results.
+
+**Black Box Resolution (BBR)** compares possible explanations of hidden behaviour, tests them chronologically and rejects explanations that fail. It can support a local structural account while leaving the original hidden equation unresolved.
+
+**Pisharam Delta Hierarchy and Influence State (PDHIS)** examines recursively nested change from Delta 1 to Delta 10. Its central idea is Delta as the Signature of Change. The relevant pattern is formed by direction, persistence, reversal, plateau or oscillation across related Delta levels, rather than by one isolated peak.
+
+An advanced PDHIS extension tested whether Delta information available at the end of one week could classify improvement in the following week. The analysis used 56 forward cases, comprising 29 improvements and 27 non-improvements. A regularised logistic model fitted by batch gradient descent combined Delta 1 to Delta 5 with persistence, sign change and cross-level coherence.
+
+In leave-one-function-out testing, the full Delta signature achieved balanced accuracy of `0.624`, ROC AUC of `0.659` and Brier score of `0.238`. Expanding-week validation was weaker, with balanced accuracy of `0.563`, ROC AUC of `0.642` and Brier score of `0.275`. A within-function permutation test gave `p = 0.0297` across 100 permutations.
+
+This is a promising screening result, not a forecasting rule. Chronological calibration did not improve on the simple baseline, the sample remains small and several Delta features are related. The correct next step is prospective validation on later observations defined before their outcomes are known.
+
+The original research opportunity is to test whether a multilevel Delta signature carries information that a single change measure misses. That question is falsifiable and can be studied across optimisation, service improvement and other sequential processes. The next study should register its hypotheses and measures in advance, lock the model before testing, use new functions and compare PDHIS with simple persistence and time-series baselines. Independent replication would then determine whether the pattern is generalisable rather than specific to this capstone record.
+
+## Relevance beyond optimisation
+
+The project has direct relevance to decisions made under uncertainty. In clinical neurology, service improvement and organisational planning, evidence often arrives sequentially and evaluation is costly. A defensible process must balance immediate benefit, further learning, reliability and risk.
+
+The transferable lesson is simple. Define the question, record the decision before the outcome is known, examine contradictory evidence, test repeatability and stop when further action is unlikely to add value. Sophisticated analysis is useful only when it improves that process and remains clear about its limits.
+
+## Reader routes
+
+- [Open the live Imperial BBO Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/)
+- [Read the main GitHub README](README.md)
+- [Review the final assessment material](Module_25_Final_BBO_Submission/README.md)
+- [Inspect the advanced PDHIS findings](Post_BBO_BBR/PDHIS/PDHIS_ADVANCED_FINDINGS.md)
+- [Open the reproducibility guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
+
+The project is complete as an audited optimisation record and remains open as a carefully bounded research programme. Its strongest contribution is not a claim of complete function recovery. It is a transparent method for learning from sparse evidence, revising decisions and showing exactly where confidence should end.

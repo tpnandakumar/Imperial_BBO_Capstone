@@ -45,3 +45,16 @@ The live public deployment was checked again at a 1280 by 720 pixel viewport aft
 - A changed PDHIS selection could leave a completed Plotly graph inside a hidden Shiny output container. The graph-stage visibility rule now keeps every generated graph visible, including F5 Delta 2.
 
 Final completion result: passed.
+
+## Advanced analysis and repository check
+
+Date: 2026-08-29
+
+- The Advanced model page displayed its grouped validation graph at 1085 by 360 pixels in the centred graph viewer.
+- The graph remained visible after changing PDHIS selections and required no page or modal scrolling.
+- The explanation dialogue defined balanced accuracy, both validation methods, the prevalence baseline and the exploratory permutation result.
+- The interpretation stated that chronological probability calibration did not beat the baseline and that prospective validation is required.
+- The Repository page displayed separate links to the executive summary, the GitHub README and the complete repository.
+- The three repository cards collapsed to one column at the existing mobile breakpoint.
+
+Advanced analysis completion result: passed locally. Public deployment verification follows the checked push to `main`.

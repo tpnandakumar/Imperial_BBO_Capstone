@@ -1,5 +1,7 @@
 # Delta of BBO: PDHIS Analysis of the Eight Functions
 
+The latest extension adds [regularised logistic classification, chronological validation, leave-one-function-out testing, permutation analysis, coefficient stability and influence-state summaries](PDHIS_ADVANCED_FINDINGS.md). These results are exploratory and do not replace the original Delta evidence or establish a validated forecasting rule.
+
 This analysis applies the Pisharam Delta Hierarchy and Influence States
 (PDHIS) to the eight hidden functions in the completed BBO challenge.
 "Delta of BBO" refers to this specific application. PDHIS is the analytical

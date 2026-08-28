@@ -1,0 +1,313 @@
+validation,model,function,end_week,observed,probability,baseline_probability
+Leave one function out,Delta 1 only,1,6,0,0.7988909954586262,0.5510204081632653
+Leave one function out,Delta 1 only,1,7,0,0.5950273939961676,0.5510204081632653
+Leave one function out,Delta 1 only,1,8,0,0.5950273438245086,0.5510204081632653
+Leave one function out,Delta 1 only,1,9,1,0.5950273438245086,0.5510204081632653
+Leave one function out,Delta 1 only,1,10,1,0.5950273438245086,0.5510204081632653
+Leave one function out,Delta 1 only,1,11,0,0.1673686867935207,0.5510204081632653
+Leave one function out,Delta 1 only,1,12,0,0.5950273438245086,0.5510204081632653
+Leave one function out,Delta 1 only,2,6,0,0.29900183988112194,0.5102040816326531
+Leave one function out,Delta 1 only,2,7,1,0.7753018543085385,0.5102040816326531
+Leave one function out,Delta 1 only,2,8,0,0.274108092289087,0.5102040816326531
+Leave one function out,Delta 1 only,2,9,1,0.6088257272093499,0.5102040816326531
+Leave one function out,Delta 1 only,2,10,1,0.48254288071657575,0.5102040816326531
+Leave one function out,Delta 1 only,2,11,1,0.4863429656147118,0.5102040816326531
+Leave one function out,Delta 1 only,2,12,0,0.40764223953903483,0.5102040816326531
+Leave one function out,Delta 1 only,3,6,1,0.8375093273095815,0.4897959183673469
+Leave one function out,Delta 1 only,3,7,0,0.18754916266409105,0.4897959183673469
+Leave one function out,Delta 1 only,3,8,0,0.5359353797530118,0.4897959183673469
+Leave one function out,Delta 1 only,3,9,1,0.5513057315817721,0.4897959183673469
+Leave one function out,Delta 1 only,3,10,1,0.4701883438502874,0.4897959183673469
+Leave one function out,Delta 1 only,3,11,1,0.48300780987272696,0.4897959183673469
+Leave one function out,Delta 1 only,3,12,1,0.5116965264779832,0.4897959183673469
+Leave one function out,Delta 1 only,4,6,1,0.6192754405894363,0.5102040816326531
+Leave one function out,Delta 1 only,4,7,0,0.1827546066499939,0.5102040816326531
+Leave one function out,Delta 1 only,4,8,1,0.5697709569097099,0.5102040816326531
+Leave one function out,Delta 1 only,4,9,0,0.5282869304894524,0.5102040816326531
+Leave one function out,Delta 1 only,4,10,1,0.5724554119693953,0.5102040816326531
+Leave one function out,Delta 1 only,4,11,1,0.3679492576922777,0.5102040816326531
+Leave one function out,Delta 1 only,4,12,0,0.5284296870623681,0.5102040816326531
+Leave one function out,Delta 1 only,5,6,1,0.37166789492739766,0.46938775510204084
+Leave one function out,Delta 1 only,5,7,1,0.31575231444994006,0.46938775510204084
+Leave one function out,Delta 1 only,5,8,1,0.4548404067567739,0.46938775510204084
+Leave one function out,Delta 1 only,5,9,0,0.47895938998029386,0.46938775510204084
+Leave one function out,Delta 1 only,5,10,1,0.49801761883421314,0.46938775510204084
+Leave one function out,Delta 1 only,5,11,1,0.48932837004720015,0.46938775510204084
+Leave one function out,Delta 1 only,5,12,1,0.4892560808051015,0.46938775510204084
+Leave one function out,Delta 1 only,6,6,1,0.6369116843132514,0.5102040816326531
+Leave one function out,Delta 1 only,6,7,0,0.4676401763274279,0.5102040816326531
+Leave one function out,Delta 1 only,6,8,0,0.546893312394586,0.5102040816326531
+Leave one function out,Delta 1 only,6,9,0,0.5630941118226765,0.5102040816326531
+Leave one function out,Delta 1 only,6,10,1,0.5635436390317329,0.5102040816326531
+Leave one function out,Delta 1 only,6,11,1,0.3951027392597399,0.5102040816326531
+Leave one function out,Delta 1 only,6,12,1,0.541109218299722,0.5102040816326531
+Leave one function out,Delta 1 only,7,6,0,0.606763193000078,0.5306122448979592
+Leave one function out,Delta 1 only,7,7,1,0.7987760814022898,0.5306122448979592
+Leave one function out,Delta 1 only,7,8,0,0.3274548731252859,0.5306122448979592
+Leave one function out,Delta 1 only,7,9,0,0.5966109427337315,0.5306122448979592
+Leave one function out,Delta 1 only,7,10,1,0.6083040720466807,0.5306122448979592
+Leave one function out,Delta 1 only,7,11,1,0.4690124907539117,0.5306122448979592
+Leave one function out,Delta 1 only,7,12,0,0.5377521275193168,0.5306122448979592
+Leave one function out,Delta 1 only,8,6,0,0.5999574399532417,0.5714285714285714
+Leave one function out,Delta 1 only,8,7,0,0.7072494718638269,0.5714285714285714
+Leave one function out,Delta 1 only,8,8,0,0.7009623031426282,0.5714285714285714
+Leave one function out,Delta 1 only,8,9,0,0.6417208233849871,0.5714285714285714
+Leave one function out,Delta 1 only,8,10,1,0.6464783397389997,0.5714285714285714
+Leave one function out,Delta 1 only,8,11,0,0.18574297119825287,0.5714285714285714
+Leave one function out,Delta 1 only,8,12,0,0.6168445205703172,0.5714285714285714
+Expanding week,Delta 1 only,1,7,0,0.4710686484640837,0.5
+Expanding week,Delta 1 only,2,7,1,0.6768469345526309,0.5
+Expanding week,Delta 1 only,3,7,0,0.24946325390854493,0.5
+Expanding week,Delta 1 only,4,7,0,0.24946325390854493,0.5
+Expanding week,Delta 1 only,5,7,1,0.3753912762119685,0.5
+Expanding week,Delta 1 only,6,7,0,0.42658299513853615,0.5
+Expanding week,Delta 1 only,7,7,1,0.6309223530143747,0.5
+Expanding week,Delta 1 only,8,7,0,0.5222029035401711,0.5
+Expanding week,Delta 1 only,1,8,0,0.42315039891891576,0.4375
+Expanding week,Delta 1 only,2,8,0,0.1706918049747322,0.4375
+Expanding week,Delta 1 only,3,8,0,0.43650677226571194,0.4375
+Expanding week,Delta 1 only,4,8,1,0.45093988544089014,0.4375
+Expanding week,Delta 1 only,5,8,1,0.39085587683819495,0.4375
+Expanding week,Delta 1 only,6,8,0,0.42315150453058337,0.4375
+Expanding week,Delta 1 only,7,8,0,0.2314435064340658,0.4375
+Expanding week,Delta 1 only,8,8,0,0.49379618259856695,0.4375
+Expanding week,Delta 1 only,1,9,1,0.3727612650359968,0.375
+Expanding week,Delta 1 only,2,9,1,0.47542052700026155,0.375
+Expanding week,Delta 1 only,3,9,1,0.4038647665156579,0.375
+Expanding week,Delta 1 only,4,9,0,0.36273881980142114,0.375
+Expanding week,Delta 1 only,5,9,0,0.3570145259107944,0.375
+Expanding week,Delta 1 only,6,9,0,0.38794271491501847,0.375
+Expanding week,Delta 1 only,7,9,0,0.40019112692796566,0.375
+Expanding week,Delta 1 only,8,9,0,0.3948161404526423,0.375
+Expanding week,Delta 1 only,1,10,1,0.36445623772809055,0.375
+Expanding week,Delta 1 only,2,10,1,0.299210300950904,0.375
+Expanding week,Delta 1 only,3,10,1,0.3072172706801579,0.375
+Expanding week,Delta 1 only,4,10,1,0.402333511976124,0.375
+Expanding week,Delta 1 only,5,10,1,0.36445623772809055,0.375
+Expanding week,Delta 1 only,6,10,1,0.38199655653726444,0.375
+Expanding week,Delta 1 only,7,10,1,0.40898052495334375,0.375
+Expanding week,Delta 1 only,8,10,1,0.39415527027979513,0.375
+Expanding week,Delta 1 only,1,11,0,0.13546986404848094,0.5
+Expanding week,Delta 1 only,2,11,1,0.4402184872564523,0.5
+Expanding week,Delta 1 only,3,11,1,0.45917471908137353,0.5
+Expanding week,Delta 1 only,4,11,1,0.31715886381980213,0.5
+Expanding week,Delta 1 only,5,11,1,0.49738404271782033,0.5
+Expanding week,Delta 1 only,6,11,1,0.34554003651461773,0.5
+Expanding week,Delta 1 only,7,11,1,0.3938216002161934,0.5
+Expanding week,Delta 1 only,8,11,0,0.13546986404848094,0.5
+Expanding week,Delta 1 only,1,12,0,0.5778519460947481,0.5416666666666666
+Expanding week,Delta 1 only,2,12,0,0.4178566620056148,0.5416666666666666
+Expanding week,Delta 1 only,3,12,1,0.5673732276439307,0.5416666666666666
+Expanding week,Delta 1 only,4,12,0,0.5677579122244012,0.5416666666666666
+Expanding week,Delta 1 only,5,12,1,0.5704438597331246,0.5416666666666666
+Expanding week,Delta 1 only,6,12,1,0.5724248702786351,0.5416666666666666
+Expanding week,Delta 1 only,7,12,0,0.5465730608147625,0.5416666666666666
+Expanding week,Delta 1 only,8,12,0,0.5778519460947481,0.5416666666666666
+Leave one function out,Delta 1 to Delta 2,1,6,0,0.7977362534427509,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,7,0,0.5607279329590512,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,8,0,0.5854634745032611,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,9,1,0.5854634796410663,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,10,1,0.5854634796410663,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,11,0,0.18146796700851314,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,1,12,0,0.6335541945243564,0.5510204081632653
+Leave one function out,Delta 1 to Delta 2,2,6,0,0.29239712125908734,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,7,1,0.7787690833271004,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,8,0,0.2658287842063683,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,9,1,0.6167578346203239,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,10,1,0.47770506557835024,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,11,1,0.48675954612278693,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,2,12,0,0.40877585837788427,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,3,6,1,0.8470431592012501,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,7,0,0.16248022786831331,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,8,0,0.5945531764408692,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,9,1,0.5332592334777565,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,10,1,0.4565343805937198,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,11,1,0.4835648212656489,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,3,12,1,0.5072059827721267,0.4897959183673469
+Leave one function out,Delta 1 to Delta 2,4,6,1,0.5984446115297494,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,7,0,0.17457900228104586,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,8,1,0.6173188734494712,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,9,0,0.5172860169969393,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,10,1,0.566908309030556,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,11,1,0.3585940196204069,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,4,12,0,0.5453458837986767,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,5,6,1,0.33033992363658343,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,7,1,0.3197657161026472,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,8,1,0.4067538933523442,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,9,0,0.4734018916421224,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,10,1,0.49618047098442214,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,11,1,0.4957395725900116,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,5,12,1,0.492811846434089,0.46938775510204084
+Leave one function out,Delta 1 to Delta 2,6,6,1,0.6201724876711481,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,7,0,0.45596205923717686,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,8,0,0.5459059942542693,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,9,0,0.554544912438223,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,10,1,0.5535802863322968,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,11,1,0.39382622391624544,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,6,12,1,0.5467357402115322,0.5102040816326531
+Leave one function out,Delta 1 to Delta 2,7,6,0,0.6531517961979499,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,7,1,0.7679632420176535,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,8,0,0.2657074336932936,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,9,0,0.6428399459947128,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,10,1,0.5824219110939141,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,11,1,0.4484426426376609,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,7,12,0,0.5504832923329014,0.5306122448979592
+Leave one function out,Delta 1 to Delta 2,8,6,0,0.5884228848302655,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,7,0,0.7013183148405523,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,8,0,0.6897886010551089,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,9,0,0.6317810592322951,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,10,1,0.6397326252151844,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,11,0,0.18762169953120963,0.5714285714285714
+Leave one function out,Delta 1 to Delta 2,8,12,0,0.6410664112586894,0.5714285714285714
+Expanding week,Delta 1 to Delta 2,1,7,0,0.3983465167387155,0.5
+Expanding week,Delta 1 to Delta 2,2,7,1,0.7381109091694286,0.5
+Expanding week,Delta 1 to Delta 2,3,7,0,0.16847975591215655,0.5
+Expanding week,Delta 1 to Delta 2,4,7,0,0.18097130617129678,0.5
+Expanding week,Delta 1 to Delta 2,5,7,1,0.32936504382976184,0.5
+Expanding week,Delta 1 to Delta 2,6,7,0,0.3804089144700587,0.5
+Expanding week,Delta 1 to Delta 2,7,7,1,0.6125783719000558,0.5
+Expanding week,Delta 1 to Delta 2,8,7,0,0.5016173443514811,0.5
+Expanding week,Delta 1 to Delta 2,1,8,0,0.4114620172408192,0.4375
+Expanding week,Delta 1 to Delta 2,2,8,0,0.10207252172689395,0.4375
+Expanding week,Delta 1 to Delta 2,3,8,0,0.5717760920921231,0.4375
+Expanding week,Delta 1 to Delta 2,4,8,1,0.6485025896886556,0.4375
+Expanding week,Delta 1 to Delta 2,5,8,1,0.6069604793378665,0.4375
+Expanding week,Delta 1 to Delta 2,6,8,0,0.4370834568500942,0.4375
+Expanding week,Delta 1 to Delta 2,7,8,0,0.148882998551538,0.4375
+Expanding week,Delta 1 to Delta 2,8,8,0,0.4469279145287468,0.4375
+Expanding week,Delta 1 to Delta 2,1,9,1,0.3237344097547294,0.375
+Expanding week,Delta 1 to Delta 2,2,9,1,0.6182908225141348,0.375
+Expanding week,Delta 1 to Delta 2,3,9,1,0.3430656115077913,0.375
+Expanding week,Delta 1 to Delta 2,4,9,0,0.29349325764318607,0.375
+Expanding week,Delta 1 to Delta 2,5,9,0,0.36397639530816067,0.375
+Expanding week,Delta 1 to Delta 2,6,9,0,0.33639922711317943,0.375
+Expanding week,Delta 1 to Delta 2,7,9,0,0.5012472035937922,0.375
+Expanding week,Delta 1 to Delta 2,8,9,0,0.30534504372178506,0.375
+Expanding week,Delta 1 to Delta 2,1,10,1,0.31490292012083293,0.375
+Expanding week,Delta 1 to Delta 2,2,10,1,0.2140833759281525,0.375
+Expanding week,Delta 1 to Delta 2,3,10,1,0.25426208610032697,0.375
+Expanding week,Delta 1 to Delta 2,4,10,1,0.3611406514334372,0.375
+Expanding week,Delta 1 to Delta 2,5,10,1,0.3527235193290932,0.375
+Expanding week,Delta 1 to Delta 2,6,10,1,0.321944601542127,0.375
+Expanding week,Delta 1 to Delta 2,7,10,1,0.3393498641045165,0.375
+Expanding week,Delta 1 to Delta 2,8,10,1,0.3286493555166487,0.375
+Expanding week,Delta 1 to Delta 2,1,11,0,0.16884000464409613,0.5
+Expanding week,Delta 1 to Delta 2,2,11,1,0.4552575724770209,0.5
+Expanding week,Delta 1 to Delta 2,3,11,1,0.46785188008862777,0.5
+Expanding week,Delta 1 to Delta 2,4,11,1,0.28727121919305304,0.5
+Expanding week,Delta 1 to Delta 2,5,11,1,0.4676128159079793,0.5
+Expanding week,Delta 1 to Delta 2,6,11,1,0.34797228516251316,0.5
+Expanding week,Delta 1 to Delta 2,7,11,1,0.36695813927654497,0.5
+Expanding week,Delta 1 to Delta 2,8,11,0,0.13924054401750963,0.5
+Expanding week,Delta 1 to Delta 2,1,12,0,0.6904236813346443,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,2,12,0,0.4462672202658057,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,3,12,1,0.568256977981809,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,4,12,0,0.6361572832455397,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,5,12,1,0.5590833734429332,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,6,12,1,0.6062924993752768,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,7,12,0,0.5761390128769102,0.5416666666666666
+Expanding week,Delta 1 to Delta 2,8,12,0,0.7246899382894841,0.5416666666666666
+Leave one function out,Delta signature,1,6,0,0.7129961238022163,0.5510204081632653
+Leave one function out,Delta signature,1,7,0,0.4089208093107076,0.5510204081632653
+Leave one function out,Delta signature,1,8,0,0.8595677698167166,0.5510204081632653
+Leave one function out,Delta signature,1,9,1,0.8112238895903326,0.5510204081632653
+Leave one function out,Delta signature,1,10,1,0.7974999782974387,0.5510204081632653
+Leave one function out,Delta signature,1,11,0,0.36240569983786086,0.5510204081632653
+Leave one function out,Delta signature,1,12,0,0.7075050128424696,0.5510204081632653
+Leave one function out,Delta signature,2,6,0,0.13370347251807538,0.5102040816326531
+Leave one function out,Delta signature,2,7,1,0.5282003285876276,0.5102040816326531
+Leave one function out,Delta signature,2,8,0,0.12389742664693085,0.5102040816326531
+Leave one function out,Delta signature,2,9,1,0.3903306382622224,0.5102040816326531
+Leave one function out,Delta signature,2,10,1,0.18794491837797664,0.5102040816326531
+Leave one function out,Delta signature,2,11,1,0.5203714212964733,0.5102040816326531
+Leave one function out,Delta signature,2,12,0,0.44273988073654785,0.5102040816326531
+Leave one function out,Delta signature,3,6,1,0.5931850368995651,0.4897959183673469
+Leave one function out,Delta signature,3,7,0,0.1045262222502965,0.4897959183673469
+Leave one function out,Delta signature,3,8,0,0.4964566328118005,0.4897959183673469
+Leave one function out,Delta signature,3,9,1,0.3317484094720011,0.4897959183673469
+Leave one function out,Delta signature,3,10,1,0.6468719538404221,0.4897959183673469
+Leave one function out,Delta signature,3,11,1,0.4387214062001765,0.4897959183673469
+Leave one function out,Delta signature,3,12,1,0.715783454148378,0.4897959183673469
+Leave one function out,Delta signature,4,6,1,0.867098136427953,0.5102040816326531
+Leave one function out,Delta signature,4,7,0,0.06557922755075356,0.5102040816326531
+Leave one function out,Delta signature,4,8,1,0.3713074305501904,0.5102040816326531
+Leave one function out,Delta signature,4,9,0,0.2299239599300565,0.5102040816326531
+Leave one function out,Delta signature,4,10,1,0.42578089035697325,0.5102040816326531
+Leave one function out,Delta signature,4,11,1,0.15657064987035382,0.5102040816326531
+Leave one function out,Delta signature,4,12,0,0.520304175342895,0.5102040816326531
+Leave one function out,Delta signature,5,6,1,0.504033744610536,0.46938775510204084
+Leave one function out,Delta signature,5,7,1,0.3520314582793883,0.46938775510204084
+Leave one function out,Delta signature,5,8,1,0.6038842226883451,0.46938775510204084
+Leave one function out,Delta signature,5,9,0,0.5965971650418441,0.46938775510204084
+Leave one function out,Delta signature,5,10,1,0.78622381087099,0.46938775510204084
+Leave one function out,Delta signature,5,11,1,0.4148359578352102,0.46938775510204084
+Leave one function out,Delta signature,5,12,1,0.7552300545170371,0.46938775510204084
+Leave one function out,Delta signature,6,6,1,0.740591153636677,0.5102040816326531
+Leave one function out,Delta signature,6,7,0,0.25319374863880656,0.5102040816326531
+Leave one function out,Delta signature,6,8,0,0.37636757281140343,0.5102040816326531
+Leave one function out,Delta signature,6,9,0,0.6364916902105079,0.5102040816326531
+Leave one function out,Delta signature,6,10,1,0.7232481004386146,0.5102040816326531
+Leave one function out,Delta signature,6,11,1,0.24761097188819872,0.5102040816326531
+Leave one function out,Delta signature,6,12,1,0.5092905122653275,0.5102040816326531
+Leave one function out,Delta signature,7,6,0,0.6188160425555921,0.5306122448979592
+Leave one function out,Delta signature,7,7,1,0.8330421221047605,0.5306122448979592
+Leave one function out,Delta signature,7,8,0,0.2598526706483897,0.5306122448979592
+Leave one function out,Delta signature,7,9,0,0.5107736630685876,0.5306122448979592
+Leave one function out,Delta signature,7,10,1,0.529722708545956,0.5306122448979592
+Leave one function out,Delta signature,7,11,1,0.7222842202216169,0.5306122448979592
+Leave one function out,Delta signature,7,12,0,0.4480851684489156,0.5306122448979592
+Leave one function out,Delta signature,8,6,0,0.2875014679282662,0.5714285714285714
+Leave one function out,Delta signature,8,7,0,0.63598013809421,0.5714285714285714
+Leave one function out,Delta signature,8,8,0,0.5898153349820251,0.5714285714285714
+Leave one function out,Delta signature,8,9,0,0.8809013498504726,0.5714285714285714
+Leave one function out,Delta signature,8,10,1,0.5932721144966691,0.5714285714285714
+Leave one function out,Delta signature,8,11,0,0.146488451286195,0.5714285714285714
+Leave one function out,Delta signature,8,12,0,0.2890200137560109,0.5714285714285714
+Expanding week,Delta signature,1,7,0,0.5147373911745288,0.5
+Expanding week,Delta signature,2,7,1,0.2935171622710649,0.5
+Expanding week,Delta signature,3,7,0,0.03467004283092199,0.5
+Expanding week,Delta signature,4,7,0,0.04207208742825747,0.5
+Expanding week,Delta signature,5,7,1,0.6960081406846136,0.5
+Expanding week,Delta signature,6,7,0,0.08922590976117523,0.5
+Expanding week,Delta signature,7,7,1,0.7785756507222831,0.5
+Expanding week,Delta signature,8,7,0,0.15460856150351443,0.5
+Expanding week,Delta signature,1,8,0,0.9275470857960995,0.4375
+Expanding week,Delta signature,2,8,0,0.00997430827287924,0.4375
+Expanding week,Delta signature,3,8,0,0.27309745493708454,0.4375
+Expanding week,Delta signature,4,8,1,0.34438546019011707,0.4375
+Expanding week,Delta signature,5,8,1,0.9724573408461361,0.4375
+Expanding week,Delta signature,6,8,0,0.13268032151669268,0.4375
+Expanding week,Delta signature,7,8,0,0.02155874688536092,0.4375
+Expanding week,Delta signature,8,8,0,0.5012782463592733,0.4375
+Expanding week,Delta signature,1,9,1,0.6727959486322369,0.375
+Expanding week,Delta signature,2,9,1,0.38188055060743653,0.375
+Expanding week,Delta signature,3,9,1,0.2360929310060812,0.375
+Expanding week,Delta signature,4,9,0,0.08147402858283069,0.375
+Expanding week,Delta signature,5,9,0,0.728574020813083,0.375
+Expanding week,Delta signature,6,9,0,0.24796439325219655,0.375
+Expanding week,Delta signature,7,9,0,0.2520924449982943,0.375
+Expanding week,Delta signature,8,9,0,0.6486847551919526,0.375
+Expanding week,Delta signature,1,10,1,0.6044717275182303,0.375
+Expanding week,Delta signature,2,10,1,0.047830280473489285,0.375
+Expanding week,Delta signature,3,10,1,0.05278602560559675,0.375
+Expanding week,Delta signature,4,10,1,0.16041667244712118,0.375
+Expanding week,Delta signature,5,10,1,0.6732064159510167,0.375
+Expanding week,Delta signature,6,10,1,0.6217678454333504,0.375
+Expanding week,Delta signature,7,10,1,0.27512028080607137,0.375
+Expanding week,Delta signature,8,10,1,0.6832405017873565,0.375
+Expanding week,Delta signature,1,11,0,0.3662554005716119,0.5
+Expanding week,Delta signature,2,11,1,0.5284240669421867,0.5
+Expanding week,Delta signature,3,11,1,0.5001551639746611,0.5
+Expanding week,Delta signature,4,11,1,0.13557507816607536,0.5
+Expanding week,Delta signature,5,11,1,0.6682870177232548,0.5
+Expanding week,Delta signature,6,11,1,0.18509342172675933,0.5
+Expanding week,Delta signature,7,11,1,0.299321026495405,0.5
+Expanding week,Delta signature,8,11,0,0.07070619315941731,0.5
+Expanding week,Delta signature,1,12,0,0.7438507141921621,0.5416666666666666
+Expanding week,Delta signature,2,12,0,0.5456101879769155,0.5416666666666666
+Expanding week,Delta signature,3,12,1,0.7692757852047727,0.5416666666666666
+Expanding week,Delta signature,4,12,0,0.6895377266308731,0.5416666666666666
+Expanding week,Delta signature,5,12,1,0.7800103571571512,0.5416666666666666
+Expanding week,Delta signature,6,12,1,0.6733762881254827,0.5416666666666666
+Expanding week,Delta signature,7,12,0,0.6111005002314144,0.5416666666666666
+Expanding week,Delta signature,8,12,0,0.6340891059055683,0.5416666666666666

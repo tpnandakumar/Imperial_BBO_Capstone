@@ -1,0 +1,6 @@
+influence_state,cases,next_improvements,next_improvement_rate,median_next_change
+Reversal,20,9,0.45,-1.3376439955371234e-09
+Plateau,19,8,0.42105263157894735,0.0
+Irregular or oscillating,8,6,0.75,0.05072279205948865
+Directed improvement,5,3,0.6,35.48390815874518
+Directed decline,4,3,0.75,0.18755063410199435

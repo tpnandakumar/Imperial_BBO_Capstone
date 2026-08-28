@@ -235,7 +235,7 @@ body {
 .readme-grid .reading-panel { padding: 1rem; }
 .readme-grid .reading-panel h2 { font-size: 1.15rem; }
 .readme-grid .reading-panel p { line-height: 1.45; }
-.repository-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .7rem; }
+.repository-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: .7rem; }
 .repository-grid .reading-panel { padding: 1.15rem; }
 .external-button { display: inline-block; padding: .55rem .8rem; border-radius: 10px; background: #557f99; color: white; text-decoration: none; }
 .table-page { height: 44vh; overflow: hidden; }

@@ -7,6 +7,8 @@
 
 The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) reading routes.
 
+> **New reader?** Start with the [Imperial BBO Executive Summary](EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
+
 ## Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.

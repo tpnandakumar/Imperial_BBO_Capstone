@@ -1,0 +1,2 @@
+test,permutations,observed_lofo_balanced_accuracy,null_mean,null_95_low,null_95_high,permutation_p
+Within-function outcome permutation,100,0.623882503192848,0.4503448275862069,0.2687739463601532,0.6010057471264366,0.0297029702970297

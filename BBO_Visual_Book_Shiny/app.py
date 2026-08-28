@@ -15,6 +15,8 @@ ROOT = APP_DIR.parent
 DATA_FILE = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 PDHIS_ORDER_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_PREDICTABILITY_BY_ORDER.csv"
 PDHIS_FUNCTION_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FUNCTION_RELATIONSHIPS.csv"
+PDHIS_ADVANCED_METRICS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_METRICS.csv"
+PDHIS_ADVANCED_COEFFICIENTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_COEFFICIENTS.csv"
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -79,6 +81,11 @@ PDHIS_EXPLANATIONS = {
         "Evidence falls at higher orders because every recursive difference removes an observation. This graph prevents an intricate visual signature from being mistaken "
         "for statistical confirmation: no order currently crosses the confirmation threshold."
     ),
+    "advanced": (
+        "Reading the advanced Delta model",
+        "The grouped bars compare regularised logistic classification with the prevalence baseline. Balanced accuracy gives equal weight to improvement and non-improvement. "
+        "Leave-one-function-out testing asks whether the pattern transfers to a function excluded from fitting. Expanding-week testing preserves the order in which evidence arrived."
+    ),
 }
 
 
@@ -104,6 +111,17 @@ def load_pdhis_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 PDHIS_ORDERS, PDHIS_FUNCTIONS = load_pdhis_data()
+
+
+def load_pdhis_advanced_data() -> tuple[pd.DataFrame, pd.DataFrame]:
+    metrics = pd.read_csv(PDHIS_ADVANCED_METRICS_FILE)
+    coefficients = pd.read_csv(PDHIS_ADVANCED_COEFFICIENTS_FILE)
+    if len(metrics) != 12 or len(coefficients) != 8:
+        raise ValueError("Advanced PDHIS evidence must contain twelve validation rows and eight coefficients.")
+    return metrics, coefficients
+
+
+PDHIS_ADVANCED_METRICS, PDHIS_ADVANCED_COEFFICIENTS = load_pdhis_advanced_data()
 
 
 def format_number(value: float) -> str:
@@ -388,14 +406,20 @@ app_ui = ui.page_navbar(
             book_heading("REPRODUCIBLE RECORD", "Repository and live Visual Book", "The live book explains the results. The repository preserves the evidence, calculations and source code behind them."),
             ui.div(
                 ui.div(
-                    ui.h2("What is the repository?"),
-                    ui.p("It is the permanent project record: 279 observations, thirteen weekly analyses, notebooks, figures, the final submission and the code for this Visual Book."),
-                    ui.input_action_button("explain_repository", "How to use the repository", class_="btn-soft"),
+                    ui.h2("Executive summary"),
+                    ui.p("Begin with the concise account of the challenge, strategy, final results, BBR and the advanced PDHIS findings."),
+                    ui.a("Read the Executive Summary", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/EXECUTIVE_SUMMARY.md", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
                 ui.div(
-                    ui.h2("Open the project record"),
-                    ui.p("This live application is the reader-friendly Shiny edition. GitHub is for inspecting or reproducing the underlying work; readers do not need to install or run anything."),
+                    ui.h2("GitHub README"),
+                    ui.p("Use the README as the contents page for the assessment record, weekly evidence, reproducibility guidance and later research."),
+                    ui.a("Read the GitHub README", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone#readme", target="_blank", class_="external-button"),
+                    class_="reading-panel",
+                ),
+                ui.div(
+                    ui.h2("Full repository"),
+                    ui.p("Inspect the permanent record of 279 observations, weekly analyses, notebooks, figures, final submission and Visual Book source."),
                     ui.a("Open Imperial BBO Capstone on GitHub", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
@@ -494,7 +518,7 @@ app_ui = ui.page_navbar(
             ui.div(
                 ui.input_radio_buttons(
                     "pdhis_view", None,
-                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary"},
+                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model"},
                     selected="overview", inline=True,
                 ),
                 class_="resolution-index pdhis-page-index",
@@ -524,6 +548,7 @@ app_ui = ui.page_navbar(
                                 ("orders", "Predictability: chronological tests", "peach-route"),
                                 ("functions", "F1 to F8: relationship map", "rose-route"),
                                 ("evidence", "Evidence boundary: what remains", "mint-route"),
+                                ("advanced", "Advanced model: next-week improvement", "blue-route"),
                             ]
                         ],
                         class_="pdhis-route-grid",
@@ -953,6 +978,11 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                     "The purple line shows adjusted evidence as minus log10(q). The dashed line marks the q equals 0.05 threshold.",
                     "No order crosses that threshold, so the present patterns remain research findings rather than a validated forecasting rule.",
                 ],
+                "advanced": [
+                    "The full Delta signature combines Delta 1 to Delta 5 with persistence, sign change and agreement across levels.",
+                    "Held-out-function balanced accuracy was 0.624. Expanding-week balanced accuracy was lower at 0.563, showing that chronological transfer remains difficult.",
+                    "The permutation result was 0.0297, but chronological probability calibration did not beat the baseline. Prospective validation is still required.",
+                ],
             }.get(view, [
                 "Read the graph with the available sample size in view.",
                 "Look for agreement across related Delta levels.",
@@ -1180,6 +1210,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "orders": "Does a Delta order predict the next change?",
             "functions": "Function-specific Delta relationships",
             "evidence": "Predictive evidence decreases at higher orders",
+            "advanced": "Can the Delta signature classify next-week improvement?",
         }[input.pdhis_view()]
 
     @render.text
@@ -1192,6 +1223,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "orders": "Across ten levels of Delta freedom, Delta 2, Delta 4 and Delta 5 show the strongest inverse associations with later change. These relationships need further chronological testing before they can support forecasting.",
             "functions": "F2 has the clearest reversal signature across Delta 1 to Delta 4. F5 differs, with a positive Delta 1 relationship. Function-level samples remain small.",
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
+            "advanced": "The full regularised Delta signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker and probability calibration did not improve, so the result supports prospective study rather than operational forecasting.",
         }[input.pdhis_view()]
 
     @render_widget
@@ -1342,6 +1374,29 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             fig.update_yaxes(title="Forward comparisons")
             fig.update_layout(yaxis2=dict(title="Adjusted evidence, -log10(q)", overlaying="y", side="right", showgrid=False))
             return plot_layout(fig, "Evidence count and false-discovery correction")
+
+        if view == "advanced":
+            frame = PDHIS_ADVANCED_METRICS.copy()
+            frame = frame[frame.model == "Delta signature"].copy()
+            frame["Validation"] = frame.validation.map({
+                "Leave one function out": "Held-out function",
+                "Expanding week": "Expanding week",
+            })
+            frame["Prediction"] = frame.prediction.map({
+                "Regularised logistic": "Delta signature",
+                "Prevalence baseline": "Baseline",
+            })
+            fig = px.bar(
+                frame, x="Validation", y="balanced_accuracy", color="Prediction", barmode="group",
+                color_discrete_map={"Delta signature": "#4f9d96", "Baseline": "#cbd5e1"},
+                custom_data=["roc_auc", "brier_score", "n"],
+            )
+            fig.update_traces(
+                hovertemplate="%{x}<br>%{fullData.name}<br>Balanced accuracy %{y:.3f}<br>ROC AUC %{customdata[0]:.3f}<br>Brier score %{customdata[1]:.3f}<br>Cases %{customdata[2]}<extra></extra>"
+            )
+            fig.add_hline(y=.5, line=dict(color="#d4a72c", dash="dash"), annotation_text="Chance-balanced reference")
+            fig.update_yaxes(title="Balanced accuracy", range=[0, .75])
+            return plot_layout(fig, "Out-of-sample next-week improvement classification")
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(
