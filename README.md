@@ -5,7 +5,7 @@
 | [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
 |:---:|
 
-The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, BBR and PDHIS reading routes.
+The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) reading routes.
 
 ## Enter the project
 
@@ -14,7 +14,7 @@ This repository tells two connected stories. The first is the official thirteen-
 | **Interactive Visual Book** | **Assessment Record** | **Reproduce the Work** |
 |:---:|:---:|:---:|
 | [**Open the Live Visual Book →**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
-| Read by week, function or scientific theme. Continue into Black Box Resolution and PDHIS. | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
+| Read by week, function or scientific theme. Continue into Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS). | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
 
 > **Interactive status:** The public Shiny deployment is live. Use the CLICK ME link above to open the complete interactive Visual Book. GitHub retains the documented evidence, source code and reproducibility record.
 
@@ -184,5 +184,82 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 The [Advanced Extension Series](Advanced_Extension_Series/README.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
 The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decryption/README.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. The legacy folder name contains `BBD`, but the assessment-facing term is Black Box Resolution. These later studies are clearly labelled as post-capstone work.
+
+### How to read the PDHIS graphs
+
+**Pisharam Delta Hierarchy and Influence State (PDHIS)** examines change recursively. Delta 1 (Δ1) is the direct week-to-week change in an output. Delta 2 (Δ2) is the change in Δ1, and each later Delta repeats that operation. The central idea is **Delta as the Signature of Change**: not one isolated spike, but a structured, recurring and directionally coherent pattern across related Delta levels.
+
+For an output sequence `y(t)`, the hierarchy is calculated as:
+
+```text
+Δ1(t) = y(t) − y(t−1)
+Δ2(t) = Δ1(t) − Δ1(t−1)
+Δn(t) = Δ(n−1)(t) − Δ(n−1)(t−1)
+```
+
+The interactive trajectories use range-normalised outputs so that the shape of change can be examined without confusing the very different raw scales of F1 to F8. Normalisation does not make the functions equal and does not change their chronological order.
+
+| Graph | Question it answers | What to inspect | What it cannot establish alone |
+| --- | --- | --- | --- |
+| Lotus hierarchy | How is direct change transformed into nested change? | Agreement, propagation and reversal across adjacent Delta levels | That a visually complex outer level is meaningful |
+| Delta trajectory | When does a selected order change direction, magnitude or persistence? | Zero crossings, flattening, alternating signs and cross-level coherence | That one peak forecasts the next observation |
+| Predictability | Does an earlier Delta value relate to a later output or change? | Sign and size of chronological correlation relative to shuffled data | A validated forecasting rule without corrected and prospective evidence |
+| Function relationship map | Is the relationship shared or function-specific? | Colour direction, neighbouring-order consistency and sample size `n` | Reliable function recovery from a small cell count |
+| Evidence boundary | How much evidence remains at each recursive order? | Falling comparison counts and adjusted `q` evidence | Confirmation when the threshold is not crossed |
+
+#### A worked reading example
+
+Suppose a function has four illustrative normalised outputs: `0.20, 0.50, 0.70, 0.75`. Its Δ1 values are `+0.30, +0.20, +0.05`: the output is still improving, but each improvement is smaller. Its Δ2 values are `−0.10, −0.15`: the rate of improvement is falling. Read together, positive Δ1 moving towards zero and negative Δ2 form a candidate plateau signature. This is an interpretation of observed structure, not proof that the next output will be flat. A predictive claim would require the pattern to be defined before the next observation and then tested against that later observation.
+
+PDHIS therefore uses three distinct evidence labels:
+
+1. **Observed pattern:** a shape visible in Delta values already calculated from the record.
+2. **Candidate Signature of Change:** an observed pattern that is persistent, coherent across related levels and potentially informative about what follows.
+3. **Confirmed predictor:** a pre-specified candidate that survives chronological testing, shuffled-data comparison, multiple-testing correction and prospective validation. The present analysis does not reach this third level.
+
+![PDHIS Lotus hierarchy from Delta 1 to Delta 10](Post_BBO_BBR/PDHIS/infographics/PDHIS-01_delta_hierarchy.jpg)
+
+*Read from Δ1 towards Δ10. Each level records how the level before it changed. Higher orders can expose repeated reversal, plateau or oscillation, but every recursive step leaves fewer observations. A complex higher-order shape is therefore exploratory unless it remains coherent with lower orders and survives chronological testing.*
+
+#### 1. Lotus hierarchy — where the signature is built
+
+The hierarchy graph places direct change at Δ1 and increasingly nested change at later levels. Moving through the hierarchy does not create new evidence; it reorganises change already present in the observed sequence. A possible Signature of Change appears when related levels tell a consistent story—for example, Δ1 approaches zero while Δ2 indicates deceleration, supporting an approaching plateau. One dramatic outer level without lower-level agreement is more likely to be unstable noise.
+
+#### 2. Delta trajectory — how the signature moves through time
+
+The trajectory graph plots one selected function and Delta order against the week at which that value becomes available.
+
+- Values above zero indicate positive recursive change at that level; values below zero indicate negative recursive change.
+- A crossing of zero marks a reversal at the selected level.
+- Movement towards zero can indicate flattening or an approaching plateau.
+- Repeated alternating signs can indicate oscillation.
+- Magnitude shows the size of recursive change, not its scientific importance.
+
+Interpret the chosen trajectory beside the lower Delta levels. The Signature of Change is the combined shape, persistence, reversals and cross-level agreement—not the highest point on one line. The graph describes what was observed; it does not by itself prove that the pattern predicts a later result.
+
+#### 3. Predictability graph — whether the signature carries forward information
+
+This graph compares each Delta order with the next output and the next week-to-week change using chronological Spearman correlations. The shaded shuffled range is a reference for relationships that can arise after disrupting temporal order.
+
+- A correlation near zero indicates little observed monotonic relationship.
+- A positive correlation means larger Delta values tend to precede larger later values or changes.
+- A negative correlation means larger Delta values tend to precede smaller or opposite later values or changes.
+- A line outside the shuffled range is a candidate signal, not automatic confirmation.
+
+In this record, Δ2, Δ4 and Δ5 show the strongest inverse relationships with later change. They remain candidate components of the Signature of Change because none survives the adjusted false-discovery threshold. Confirmation requires later, prospectively collected observations.
+
+#### 4. Function relationship map — where the signature differs
+
+The heat map separates the pooled result into F1 to F8. Blue cells show negative relationships with the following change, rose cells show positive relationships and pale cells show little observed relationship. Each cell also reports `n`, the number of usable comparisons.
+
+Repeated colour across neighbouring Delta orders is more consistent with a coherent function-specific signature than one isolated cell. F2 shows the clearest reversal pattern across Δ1 to Δ4, while F5 differs by showing a positive Δ1 relationship. These interpretations are provisional because the function-level samples are small.
+
+#### 5. Evidence-boundary graph — where interpretation must stop
+
+The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
+
+No Delta order crosses the adjusted confirmation threshold. The graph therefore separates an interpretable visual signature from a statistically confirmed predictor: PDHIS identifies structured candidate patterns in this completed record, but it does not claim exact recovery of a hidden function or a validated forecasting rule.
+
+Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/README.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 
 The `PGC` and `PFRAMOS` directories contain additional validation and research material. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).

@@ -49,30 +49,35 @@ DELTA_MEANINGS = [
 
 PDHIS_EXPLANATIONS = {
     "hierarchy": (
-        "The Lotus hierarchy",
-        "Each ring is the change in the preceding Delta level. Move outwards from direct change at Δ1 to increasingly nested change. "
+        "The Lotus hierarchy: building the Signature of Change",
+        "Each ring asks how the preceding Delta level changed. Read outwards from direct change at Δ1 to increasingly nested change. "
+        "A possible Signature of Change is not one dramatic ring: it is a structured, recurring and directionally coherent pattern across related Delta levels. "
         "Higher levels contain fewer usable comparisons, so they must agree with the lower levels before they are treated as a candidate signal."
     ),
     "trajectory": (
-        "Reading a Delta trajectory",
+        "Reading a Delta trajectory: the Signature of Change",
         "The horizontal zero line separates positive from negative recursive change. A sign switch marks a reversal at the selected level; "
         "a movement towards zero can indicate a plateau; repeated alternating signs can indicate oscillation. Magnitude shows the size of the change, "
-        "not its importance. The curve describes observed change and does not by itself prove prediction."
+        "not its importance. The Signature of Change is the shape, persistence and cross-level coherence of these movements—not a single peak. "
+        "The curve describes observed change and does not by itself prove prediction."
     ),
     "orders": (
-        "Reading the predictability graph",
+        "Testing whether the Signature of Change predicts",
         "The lines show chronological association between each Delta order and the following output or following change. The shaded shuffled range is a noise reference. "
-        "A value outside that range is a candidate relationship, but it is not a confirmed forecasting rule unless it also survives multiple-testing correction and later prospective data."
+        "A value outside that range suggests that part of the Delta signature may carry forward information. It is not a confirmed forecasting rule unless it also "
+        "survives multiple-testing correction and later prospective data."
     ),
     "functions": (
-        "Reading the function relationship map",
+        "Comparing the Signature of Change across functions",
         "Each cell compares one function and one Delta order. Blue indicates a negative relationship with the following change, rose a positive relationship, "
-        "and pale cells little observed relationship. The number n is the available sample size; small n means greater uncertainty."
+        "and pale cells little observed relationship. Repeated colour across neighbouring Delta orders is more consistent with a coherent signature than one isolated cell. "
+        "The number n is the available sample size; small n means greater uncertainty."
     ),
     "evidence": (
-        "Reading the evidence-boundary graph",
+        "Where the Signature of Change reaches its evidence boundary",
         "Bars show how many forward comparisons remain at each Delta order. The second line shows adjusted evidence after controlling false discoveries. "
-        "Evidence falls at higher orders because every recursive difference removes an observation. No order currently crosses the confirmation threshold."
+        "Evidence falls at higher orders because every recursive difference removes an observation. This graph prevents an intricate visual signature from being mistaken "
+        "for statistical confirmation: no order currently crosses the confirmation threshold."
     ),
 }
 
@@ -498,8 +503,8 @@ app_ui = ui.page_navbar(
                 "input.pdhis_view === 'overview'",
                 ui.div(
                     ui.div(
-                        ui.strong("Why PDHIS?"),
-                        ui.span("PDHIS seeks the earliest observable occurrence of structured change. It tests whether a developing Delta sequence can distinguish vector-directed change, an approaching plateau, reversal or oscillation from irregular fluctuation, then tests whether the sequence predicts later direction and trajectory."),
+                        ui.strong("Delta: the Signature of Change"),
+                        ui.span("PDHIS seeks the earliest observable pattern of structured change. The Signature of Change is the shape, persistence and directional coherence of movement across related Delta levels. It may distinguish vector-directed change, plateau, reversal or oscillation from irregular fluctuation; chronological tests then ask whether that signature predicts what happens next."),
                         class_="pdhis-rationale",
                     ),
                     ui.div(
@@ -1145,7 +1150,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "overview": "PDHIS applies the Delta hierarchy to the completed BBO record while preserving the official optimisation results unchanged.",
             "meanings": "Each level measures recursively nested change already present in the observed sequence. PDHIS then tests the timing, persistence and directional coherence of the Delta series for an early indication of vector, plateau, reversal, oscillation or irregular fluctuation. Predictive value and subsequent trajectory must be established chronologically.",
             "hierarchy": "Delta n is calculated from successive values of Delta n minus 1. A higher level cannot occur independently before its preceding level, but it may expose repeated oscillation, plateau, improvement or deterioration. Delta 10 is the current practical cap, while Delta n remains extendable when the preceding level changes materially and sufficient evidence remains. Coherent propagation may support genuine vector-directed change, while unstable or directionally inconsistent patterns may indicate chaotic noise. This hypothesis requires prospective validation.",
-            "trajectory": "The selected curve is calculated recursively from the range-normalised weekly outputs of one function. It shows when the chosen Delta level changes sign, magnitude or persistence. It describes observed change; any predictive interpretation must use only information available before the later outcome.",
+            "trajectory": "The selected curve is calculated recursively from the range-normalised weekly outputs of one function. Look for the Signature of Change in its direction, persistence, reversals and agreement with lower Delta levels—not in a single high point. It describes observed change; any predictive interpretation must use only information available before the later outcome.",
             "orders": "Across ten levels of Delta freedom, Delta 2, Delta 4 and Delta 5 show the strongest inverse associations with later change. These are early candidate signals, not confirmed forecasting rules.",
             "functions": "F2 has the clearest reversal signature across Delta 1 to Delta 4. F5 differs, with a positive Delta 1 relationship. Function-level samples remain small.",
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
