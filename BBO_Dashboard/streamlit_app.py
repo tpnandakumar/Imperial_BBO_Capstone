@@ -183,37 +183,37 @@ def page_navigation_controls(page: str, location: str) -> None:
 
 
 def landing_page(evidence: pd.DataFrame) -> None:
-    best = winners(evidence)
-    st.markdown(
-        """
-        <section class="hero">
-          <div class="hero-kicker">IMPERIAL COLLEGE LONDON · BLACK BOX OPTIMISATION</div>
-          <h1>Thirteen weeks.<br><span>Eight hidden functions.</span></h1>
-          <p>An interactive visual companion to the capstone retrospective, connecting every submission, result, experiment and strategic decision.</p>
-          <div class="hero-tags"><span>104 submissions</span><span>2 to 8 dimensions</span><span>One evolving strategy</span></div>
-        </section>
-        <blockquote class="book-epigraph">
-          <p>“Life is a stone. Sculpt yourself a masterpiece.”</p>
-          <cite>Dr N T Pisharam, <em>Be and Become</em></cite>
-        </blockquote>
-        """, unsafe_allow_html=True,
-    )
-    section_label("CHOOSE A READING ROUTE", "Enter the visual book", "Read chronologically, follow one hidden function, or reproduce selected analytical experiments.")
     routes = {
         "Read by Week": ("Thirteen chronological chapters showing how the complete strategy developed.", "Week story", {"week": 1}),
         "Read by Function": ("Eight function chapters tracing inputs, outputs, turning points and winners.", "Function story", {"function": 1}),
         "Explore the Code": ("A controlled laboratory for reproducing and varying selected experiments.", "Code laboratory", {}),
     }
-    selected_route = st.radio("Reading route", list(routes), horizontal=True, label_visibility="collapsed")
-    description, target, arguments = routes[selected_route]
-    st.markdown(
-        f"<div class='route-card compact-route'><span>VISUAL BOOK</span>"
-        f"<h3>{selected_route}</h3><p>{description}</p></div>",
-        unsafe_allow_html=True,
-    )
-    if st.button(f"Open {selected_route} →", key="open_selected_route", width="stretch"):
-        navigate(target, **arguments)
-        st.rerun()
+    cover_column, route_column = st.columns([1.35, 1], gap="large", vertical_alignment="center")
+    with cover_column:
+        st.markdown(
+            """
+            <section class="hero">
+              <div class="hero-kicker">IMPERIAL COLLEGE LONDON · BLACK BOX OPTIMISATION</div>
+              <h1>Thirteen weeks.<br><span>Eight hidden functions.</span></h1>
+              <p>An interactive visual companion connecting every submission, result, experiment and strategic decision.</p>
+              <div class="hero-tags"><span>104 submissions</span><span>2 to 8 dimensions</span><span>One evolving strategy</span></div>
+              <div class="hero-quote">“Life is a stone. Sculpt yourself a masterpiece.”<small>Dr N T Pisharam, <em>Be and Become</em></small></div>
+            </section>
+            """,
+            unsafe_allow_html=True,
+        )
+    with route_column:
+        section_label("CHOOSE A READING ROUTE", "Enter the visual book", "Select one route. Each click opens a separate, compact spread.")
+        selected_route = st.radio("Reading route", list(routes), label_visibility="collapsed")
+        description, target, arguments = routes[selected_route]
+        st.markdown(
+            f"<div class='route-card compact-route'><span>SELECTED ROUTE</span>"
+            f"<h3>{selected_route}</h3><p>{description}</p></div>",
+            unsafe_allow_html=True,
+        )
+        if st.button(f"Open {selected_route} →", key="open_selected_route", width="stretch", type="primary"):
+            navigate(target, **arguments)
+            st.rerun()
     # Keep the opening spread to one screen.  The detailed week, function and
     # method indexes live on their own navigable pages rather than below it.
     return
@@ -1098,20 +1098,22 @@ def apply_style(reading_mode: bool = True, text_scale: int = 100) -> None:
         [data-baseweb="tab"] { color:#5f7185 !important; }
         [data-baseweb="tab"] p { color:inherit !important; }
         .stButton > button:hover { border-color: #80b8b0; color: var(--navy); box-shadow: 0 5px 18px rgba(32,58,89,.10); }
-        .hero { background: linear-gradient(125deg, #dff1f7 0%, #e5f4ef 48%, #eee7f6 100%); border:1px solid #d4e4ea; border-radius:clamp(16px,1.6vw,24px); padding:clamp(1.25rem,3.2vh,2.35rem) clamp(1.15rem,3.2vw,3rem); margin-bottom:clamp(1.1rem,2.5vh,1.8rem); box-shadow:0 18px 45px rgba(32,58,89,.09); position:relative; overflow:hidden; }
+        .hero { background: linear-gradient(125deg, #dff1f7 0%, #e5f4ef 48%, #eee7f6 100%); border:1px solid #d4e4ea; border-radius:clamp(16px,1.6vw,24px); padding:clamp(.85rem,1.8vh,1.35rem) clamp(1.15rem,3.2vw,3rem); margin-bottom:clamp(.55rem,1.1vh,.85rem); box-shadow:0 18px 45px rgba(32,58,89,.09); position:relative; overflow:hidden; }
         .hero:after { content:""; position:absolute; width:280px; height:280px; right:-75px; top:-135px; border:1px solid rgba(53,107,126,.14); border-radius:50%; box-shadow:0 0 0 50px rgba(255,255,255,.25),0 0 0 100px rgba(255,255,255,.18); }
-        .hero-kicker { color:#4f8982; font-weight:800; font-size:.7rem; letter-spacing:.15em; margin-bottom:.85rem; }
-        .hero h1 { color:#203a59; font-size:clamp(2rem,min(3.6vw,6.2vh),3.85rem); line-height:1.02; margin:0 0 clamp(.55rem,1.4vh,.9rem); max-width:820px; }
+        .hero-kicker { color:#4f8982; font-weight:800; font-size:.66rem; letter-spacing:.15em; margin-bottom:.5rem; }
+        .hero h1 { color:#203a59; font-size:clamp(1.85rem,min(3vw,4.8vh),3.15rem); line-height:1.01; margin:0 0 clamp(.35rem,.8vh,.6rem); max-width:820px; }
         .hero h1 span { color:#8672a5; }
         .hero p { font-size:clamp(.88rem,1.15vw,1rem); color:#536a7e; max-width:720px; line-height:1.5; margin-bottom:0; }
-        .hero-tags { display:flex; gap:clamp(.35rem,.7vw,.55rem); flex-wrap:wrap; margin-top:clamp(.7rem,1.8vh,1.2rem); }
+        .hero-tags { display:flex; gap:clamp(.3rem,.6vw,.5rem); flex-wrap:wrap; margin-top:clamp(.4rem,.8vh,.65rem); }
         .hero-tags span { border:1px solid rgba(66,111,126,.20); background:rgba(255,255,255,.45); border-radius:999px; padding:.36rem .7rem; color:#3d6074; font-size:.78rem; }
-        .book-epigraph { max-width:850px; margin:-.55rem auto 2.2rem; padding:.9rem 1.35rem; text-align:center; background:rgba(255,255,255,.72); border:1px solid #dde6eb; border-radius:18px; box-shadow:0 10px 28px rgba(32,58,89,.06); }
-        .book-epigraph p { margin:0; color:#29445f; font-family:Georgia,serif; font-size:1.25rem; font-style:italic; }
-        .book-epigraph cite { display:block; margin-top:.55rem; color:#718196; font-size:.82rem; font-style:normal; }
-        .section-label { margin:3.4rem 0 1.25rem; }
+        .hero-quote { margin-top:clamp(.65rem,1.3vh,1rem); padding-top:.55rem; border-top:1px solid rgba(66,111,126,.16); color:#53667d; font-family:Georgia,serif; font-size:.88rem; font-style:italic; }
+        .hero-quote small { display:block; margin-top:.15rem; color:#718196; font-family:inherit; font-size:.68rem; font-style:normal; }
+        .book-epigraph { max-width:850px; margin:0 auto .75rem; padding:.42rem 1rem; text-align:center; background:rgba(255,255,255,.72); border:1px solid #dde6eb; border-radius:14px; box-shadow:0 10px 28px rgba(32,58,89,.06); }
+        .book-epigraph p { margin:0; color:#29445f; font-family:Georgia,serif; font-size:1rem; line-height:1.25 !important; font-style:italic; }
+        .book-epigraph cite { display:block; margin-top:.18rem; color:#718196; font-size:.7rem; font-style:normal; }
+        .section-label { margin:1rem 0 .55rem; }
         .section-label span { color:#5b918b; font-size:.74rem; font-weight:800; letter-spacing:.15em; }
-        .section-label h2 { margin:.25rem 0 .3rem; font-size:2rem; }
+        .section-label h2 { margin:.15rem 0 .2rem; font-size:clamp(1.25rem,2vw,1.65rem); }
         .section-label p { color:#627489; max-width:850px; margin:0; }
         .function-card { background:rgba(255,255,255,.9); border-radius:20px; padding:1.25rem 1.3rem; margin-top:.8rem; border-top:6px solid var(--accent); box-shadow:0 12px 32px rgba(32,58,89,.08); min-height:155px; }
         .route-card { background:rgba(255,255,255,.82); border:1px solid #dbe6eb; border-radius:20px; padding:1.35rem; min-height:178px; box-shadow:0 12px 30px rgba(32,58,89,.06); }
