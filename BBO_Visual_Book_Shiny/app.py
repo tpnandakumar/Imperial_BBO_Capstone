@@ -165,8 +165,8 @@ app_ui = ui.page_navbar(
                 ui.div(
                     ui.div(ui.output_ui("function_summary"), class_="summary-slot"),
                     ui.div(
-                        ui.card(ui.card_header("Output trajectory across thirteen rounds"), output_widget("function_trajectory", height="31vh")),
-                        ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="31vh")),
+                        ui.card(ui.card_header("Output trajectory across thirteen rounds"), output_widget("function_trajectory", height="25vh")),
+                        ui.card(ui.card_header("Coordinate trajectory through the search space"), output_widget("coordinate_trajectory", height="25vh")),
                         class_="evidence-grid",
                     ),
                     ui.tags.details(

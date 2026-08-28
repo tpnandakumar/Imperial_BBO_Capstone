@@ -76,6 +76,8 @@ body {
 .book-layout .bslib-sidebar-layout > .sidebar { background: linear-gradient(180deg, rgba(227,240,248,.86), rgba(238,231,247,.74)); border: 1px solid rgba(67,95,116,.12); border-radius: 20px; }
 .control-note { color: var(--muted); font-size: .8rem; line-height: 1.55; }
 .summary-slot { margin-bottom: .5rem; }
+.book-layout .summary-slot .stat-grid { margin: .3rem 0 .45rem; }
+.book-layout .summary-slot .stat-card { min-height: clamp(70px, 9vh, 88px); padding-block: .5rem; }
 .evidence-spread { min-width: 0; height: 100%; overflow: hidden; }
 .evidence-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .65rem; min-width: 0; }
 .evidence-grid .card { min-width: 0; margin: 0; }
@@ -129,6 +131,13 @@ body {
   .atlas-spread { grid-template-columns: minmax(0, 1fr) 170px; }
   .bbr-evidence { grid-template-columns: 1fr; }
   .bbr-evidence .compact-reading { display: none; }
+}
+@media (max-height: 820px) and (min-width: 721px) {
+  .book-heading { margin: 0 auto .3rem; }
+  .book-heading h1 { font-size: 1.6rem; }
+  .chapter-lead { font-size: .76rem; }
+  .book-layout .summary-slot .stat-card { min-height: 62px; }
+  .book-layout .summary-slot .stat-card small { display: none; }
 }
 @media (max-width: 720px) {
   html, body { overflow: hidden; }
