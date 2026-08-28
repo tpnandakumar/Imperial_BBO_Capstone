@@ -1,5 +1,43 @@
 # Imperial BBO Capstone
 
+![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
+
+## Enter the project
+
+This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.
+
+| **Interactive Visual Book** | **Assessment Record** | **Reproduce the Work** |
+|:---:|:---:|:---:|
+| [**Enter the Visual Book →**](BBO_Visual_Book_Shiny/README.md) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
+| Read by week, function or scientific theme. Continue into Black Box Resolution and PDHIS. | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
+
+> **Interactive status:** GitHub displays the complete documented record but does not execute Python applications. The Visual Book currently runs locally from this repository. A public launch button will replace the local route when the Shiny deployment address is connected.
+
+### The verified record at a glance
+
+| 13 rounds | 8 functions | 175 starter observations | 104 prospective queries | 279 observations retained |
+|:---:|:---:|:---:|:---:|:---:|
+| One weekly decision cycle | 2 to 8 dimensions | Supplied starting evidence | One query per function per round | Complete audited evidence |
+
+### Final retained participant-query results
+
+| F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |
+|---:|---:|---:|---:|---:|---:|---:|---:|
+| `0.025559` | `0.733525` | `-0.056851` | `-4.359875` | `4440.957217` | `-0.607156` | `1.380930` | `9.580240` |
+
+These values are the strongest results produced by the participant-selected queries. They do not claim the unknown mathematical global optima.
+
+### Run the Visual Book
+
+```bash
+python -m pip install -r BBO_Visual_Book_Shiny/requirements.txt
+python -m shiny run BBO_Visual_Book_Shiny/app.py
+```
+
+Open the local address printed by Shiny. The cover presents two routes: **Imperial BBO Capstone** and **Above and Beyond BBO**. The second route separates the **Above BBO BBR Book** from the **Beyond BBO PDHIS Book**.
+
+---
+
 ## Bayesian Black Box Optimisation Portfolio
 
 **Author:** Dr Nandakumar Theekkootu Pisharam  

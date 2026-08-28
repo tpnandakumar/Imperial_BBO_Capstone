@@ -32,7 +32,7 @@ The canonical machine-readable dataset is [`BBO_Dashboard/data/complete_internal
 - the returned objective value; and
 - a provenance field recording whether an external hash was available.
 
-The weekly folders retain the chronological decision record. Weeks 1 to 11 are also consolidated in [`PFRAMOS/data/recovered_exact_history.csv`](../../PFRAMOS/data/recovered_exact_history.csv). Weeks 12 and 13 use their verified input and result CSV files directly. The final winner table is [`FINAL_RESULTS_SUMMARY.csv`](../Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv).
+The weekly folders retain the chronological decision record. All supplied observations and participant queries are consolidated in the audited [`complete_internal_evidence.csv`](../../BBO_Dashboard/data/complete_internal_evidence.csv). Weeks 12 and 13 also retain their verified input and result CSV files directly. The final winner table is [`FINAL_RESULTS_SUMMARY.csv`](../Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv).
 
 New observations were not sampled independently. Each weekly query was chosen after reviewing the outputs available at that time. The dataset therefore becomes increasingly concentrated around promising, recovering or deliberately repeated coordinates.
 
