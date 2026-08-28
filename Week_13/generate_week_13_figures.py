@@ -42,7 +42,11 @@ def write_figure_data_summary(summary_rows: list[dict[str, str]]) -> Path:
     ]
 
     with path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=fieldnames)
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=fieldnames,
+            lineterminator="\n",
+        )
         writer.writeheader()
         for row in summary_rows:
             best_weeks = [

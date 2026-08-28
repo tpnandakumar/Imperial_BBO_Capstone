@@ -4,6 +4,14 @@
 
 This guide provides a short assessor-facing route for reproducing the closing Week 13 analysis from committed evidence. It does not attempt to rerun the hidden Imperial objective functions, which are not available in the repository.
 
+## Recommended assessor route
+
+Open [`FINAL_CAPSTONE_NOTEBOOK.ipynb`](FINAL_CAPSTONE_NOTEBOOK.ipynb). The notebook verifies the complete 279-row dataset, separates the 175 starter observations from the 104 participant-selected queries, compares their within-function maxima, checks the final participant-query winner table and plots all thirteen query trajectories.
+
+The canonical complete dataset is:
+
+`BBO_Dashboard/data/complete_internal_evidence.csv`
+
 ## Authoritative evidence used by the final script
 
 The early exact numerical history for Weeks 1 to 11 is stored in:
@@ -63,12 +71,20 @@ The numerical Week 13 analysis uses Python's standard library. Figure generation
 
 Earlier analytical stages use additional libraries where documented in their weekly files, including clustering and PCA workflows. Their committed source files and documentation remain in the relevant weekly folders.
 
+To execute the final notebook locally after installing Jupyter, run:
+
+```bash
+jupyter nbconvert --to notebook --execute \
+  Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb \
+  --output FINAL_CAPSTONE_NOTEBOOK.executed.ipynb
+```
+
 ## Numerical integrity
 
 Objective values remain stored in their supplied textual representation. Exact Week 12 to Week 13 changes are calculated with decimal arithmetic. Plotting converts values to floating point only for visual display.
 
 ## Reproducibility boundary
 
-The repository can reproduce analyses derived from the recorded inputs and outputs. It cannot independently regenerate the hidden objective values because the Imperial black-box evaluator is external to the repository.
+The repository can reproduce analyses derived from the recorded inputs and outputs. It cannot independently regenerate the hidden objective values because the Imperial black-box evaluator is external to the repository. The final winner table refers to the strongest participant-query outputs. Starter-data maxima are retained and compared separately rather than being attributed to the optimisation rounds.
 
 The Advanced Extension Series and SOC are post-capstone research and have separate dependencies and reproducibility instructions. They are not required to reproduce the official Week 01 to Week 13 record.

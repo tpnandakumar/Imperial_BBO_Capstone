@@ -41,6 +41,9 @@ jobs:
       - name: Reproduce Week 13 figures
         run: python Week_13/generate_week_13_figures.py
 
+      - name: Execute final assessment notebook cells
+        run: python tools/validate_final_notebook.py
+
       - name: Verify generated Week 13 figures
         run: |
           test -s Week_13/week_13_figure_1_final_change.png

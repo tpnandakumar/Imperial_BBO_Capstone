@@ -8,17 +8,23 @@
 
 ## What this project was about
 
-The task was to find strong answers for eight hidden mathematical functions. The equations were not provided. I could choose one set of numbers for each function in each round, then the evaluator returned a score.
+This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
 
-There were thirteen rounds. Each new choice had to be based on the results already available. Early rounds tested different parts of the search space. Later rounds concentrated on promising areas, returned to earlier strong points when necessary and stopped taking unnecessary risks when a result had been confirmed.
+## Final assessment quick start
 
-This repository keeps the full record, including unsuccessful choices. Those results matter because they show which directions failed and why the strategy changed.
+The five Component 25.3 requirements are available directly from this page:
+
+1. **Clear, reproducible code:** [Final capstone notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) and [reproducibility guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
+2. **Complete dataset:** [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv) and [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md)
+3. **Complete model card:** [Final capstone model card](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md)
+4. **Non-technical explanation:** the 100-word summary above
+5. **Organisation and documentation:** [Module 25 evidence hub](Module_25_Final_BBO_Submission/README.md) and [completed repository audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
 
 ## The official assessment record
 
 The assessed experiment is preserved in `Week_01` through `Week_13`. Module 25 contains the final assessment material. It is not an additional optimisation round.
 
-The later BBD and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
+The later Black Box Resolution and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
 
 ### Final assessment material
 
@@ -46,7 +52,7 @@ Clustering helped identify recurring regions in the later rounds. Principal comp
 
 Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 kept their strongest earlier results. Function 2 performed best in Week 12, then declined after another small change in Week 13.
 
-| Function | Strongest verified result | Best week or weeks | Plain explanation |
+| Function | Best participant-query output | Best query week or weeks | Plain explanation |
 | --- | ---: | --- | --- |
 | F1 | `0.025559285339829783` | 3, 11, 12, 13 | The same best result was confirmed several times |
 | F2 | `0.7335252043269003` | 12 | The next small move made the result worse |
@@ -57,7 +63,17 @@ Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 a
 | F7 | `1.3809299933612855` | 5, 12, 13 | An earlier best point was recovered and confirmed |
 | F8 | `9.58024` | 1, 11, 12, 13 | The same best result was confirmed several times |
 
-These are the strongest results observed during the thirteen authorised rounds. They do not prove that the mathematical global optimum was found.
+These are the strongest results produced by the participant-selected queries during the thirteen authorised rounds. Starter-data maxima are reported separately in the final notebook. None proves that the mathematical global optimum was found.
+
+### Final analytical figures
+
+![Normalised progress across thirteen rounds](Week_13/week_13_figure_2_normalised_progress.png)
+
+*Each function is normalised only against its own observed participant-query range. The figure shows timing and convergence, not comparable raw magnitude across functions.*
+
+![Latest round in which each participant-query best was observed](Week_13/week_13_figure_4_latest_best_round.png)
+
+*Later bars indicate that the final winning query was still being found or reconfirmed near the end of the challenge.*
 
 ## What the results taught us
 
@@ -105,6 +121,8 @@ python Week_13/week_13_analysis.py
 python Week_13/generate_week_13_figures.py
 ```
 
+For a guided route through the data and final calculations, open the [Final Capstone Notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb).
+
 The audit checks the required assessment files, the weekly navigation, the internal links and unfinished placeholders. The analysis rebuilds the thirteen-round history from the recorded evidence and reproduces the final comparisons.
 
 See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for full instructions.
@@ -113,6 +131,6 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 
 The [Advanced Extension Series](Advanced_Extension_Series/README.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
-The [BBD research](Advanced_Extension_Series/BBD_Black_Box_Decryption/README.md) asks whether the behaviour of each hidden function can be explained well enough to identify its likely mathematical structure. These later studies are clearly labelled as post-capstone work.
+The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decryption/README.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. The legacy folder name contains `BBD`, but the assessment-facing term is Black Box Resolution. These later studies are clearly labelled as post-capstone work.
 
 The `PGC` and `PFRAMOS` directories contain additional validation and research material. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).

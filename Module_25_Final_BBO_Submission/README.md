@@ -10,7 +10,7 @@ This section is organised around the three assessed Module 25 components:
 2. **Component 25.2: Successful optimisation strategies**
 3. **Final submission 25.3: Submitting the GitHub repository**
 
-The Component 25.1 discussion-board response has now been prepared from the released Imperial prompt and the verified repository evidence. Component 25.2 remains organised through its evidence map until its final response is completed.
+The Component 25.1 and 25.2 discussion-board responses have been completed from the released Imperial prompts and verified repository evidence. Component 25.3 provides the final assessor-facing repository route.
 
 ## Completed experimental record
 
@@ -31,16 +31,20 @@ The discussion-board response is available in [Component 25.1 Discussion Board P
 
 ## Component 25.2 evidence
 
-The successful-strategy evidence is prepared in [25.2 Successful Optimisation Strategies Evidence Map](25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md). It separates strategies that worked from those that failed or required modification and records the strongest examples from F1 to F8.
+The completed response is available in [Component 25.2 Discussion Board Post](25_2_Successful_Optimisation_Strategies/SECTION_25_2_DISCUSSION_BOARD_POST.md), supported by the [25.2 Successful Optimisation Strategies Evidence Map](25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md). It separates strategies that worked from those that failed or required modification and records the strongest examples from F1 to F8.
 
 ## Component 25.3 GitHub submission evidence
 
 The final repository assessment is treated separately from the reflective components. Current assessment-facing documents are:
 
 - [Repository audit](25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
+- [Exact discussion-board submission](25_3_GitHub_Final_Submission/DISCUSSION_BOARD_SUBMISSION.md)
+- [Final capstone notebook](25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb)
 - [Final capstone datasheet](25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md)
 - [Final capstone model card](25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md)
 - [Final reproducibility guide](25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
+
+The complete evidence file contains 279 observations: 175 course-supplied starter points and 104 prospective portal evaluations. The final participant-query results are reported separately from the starter maxima to preserve provenance.
 
 The known grading requirements include clear reproducible code, a complete datasheet, a complete model card, an approximately 100-word non-technical project summary in the root README, and a well-organised repository containing the relevant project files.
 

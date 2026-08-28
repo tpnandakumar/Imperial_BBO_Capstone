@@ -38,13 +38,15 @@ Targeted searches were made for common unfinished or conversational markers, inc
 
 This does not replace the automated final audit, which should still be run immediately before submission.
 
-## Remaining checks when Module 25 unlocks
+## Checks completed after Module 25 unlocked
 
-- Compare the final datasheet and model card directly against the live 25.3 rubric.
-- Confirm the approximately 100-word non-technical README summary remains within the requested range.
-- Confirm the automated final repository audit completes successfully on the submission commit.
-- Confirm final reflection infographics exist, are linked correctly and use verified source data.
-- Confirm public assessor access and branch protection remain appropriate.
+- Compared the final datasheet and model card directly against the live 25.3 rubric and supplied templates.
+- Expanded the datasheet and model card to cover every template section.
+- Added a concise final Jupyter Notebook for assessor-facing reproduction.
+- Confirmed the complete dataset contains 175 starter observations and 104 prospective queries.
+- Added an automated check for the 279-row dataset and the exact 100-word non-technical summary.
+- Confirmed final reflection infographics are linked to verified source data.
+- Retained the requirement to confirm public assessor access immediately before posting the repository link.
 
 ## Assessment boundary
 

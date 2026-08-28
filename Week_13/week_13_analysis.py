@@ -235,7 +235,11 @@ def build_summary(
 def write_summary(summary_rows: list[dict[str, str]]) -> Path:
     out_path = WEEK / "week_13_analysis_summary.csv"
     with out_path.open("w", newline="", encoding="utf-8") as handle:
-        writer = csv.DictWriter(handle, fieldnames=summary_rows[0].keys())
+        writer = csv.DictWriter(
+            handle,
+            fieldnames=summary_rows[0].keys(),
+            lineterminator="\n",
+        )
         writer.writeheader()
         writer.writerows(summary_rows)
     return out_path
