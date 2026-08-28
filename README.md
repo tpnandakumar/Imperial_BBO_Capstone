@@ -2,16 +2,21 @@
 
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
+| [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+|:---:|
+
+The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, BBR and PDHIS reading routes.
+
 ## Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.
 
 | **Interactive Visual Book** | **Assessment Record** | **Reproduce the Work** |
 |:---:|:---:|:---:|
-| [**Enter the Visual Book →**](BBO_Visual_Book_Shiny/README.md) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
+| [**Open the Live Visual Book →**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
 | Read by week, function or scientific theme. Continue into Black Box Resolution and PDHIS. | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
 
-> **Interactive status:** GitHub displays the complete documented record but does not execute Python applications. The Visual Book currently runs locally from this repository. A public launch button will replace the local route when the Shiny deployment address is connected.
+> **Interactive status:** The public Shiny deployment is live. Use the CLICK ME link above to open the complete interactive Visual Book. GitHub retains the documented evidence, source code and reproducibility record.
 
 ### The verified record at a glance
 

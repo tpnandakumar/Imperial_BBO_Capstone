@@ -112,12 +112,12 @@ body {
 .graph-launch-panel h2 { margin: 0; color: var(--ink); font-family: Georgia, serif; font-size: 1.05rem; }
 .graph-launch-panel p { margin: 0; color: var(--muted); font-size: .74rem; line-height: 1.3; }
 .graph-open-button { grid-column: 2; grid-row: 1 / span 2; min-width: 9rem; }
-.graph-viewer-modal .modal-dialog { width: min(96vw, 1600px); max-width: min(96vw, 1600px); margin: 2dvh auto; }
-.graph-viewer-modal .modal-content { height: 94dvh; overflow: hidden; }
+.graph-viewer-modal .modal-dialog { width: min(86vw, 1400px); max-width: min(86vw, 1400px); margin: 10dvh auto; }
+.graph-viewer-modal .modal-content { height: min(80dvh, 760px); max-height: 80dvh; overflow: hidden; }
 .graph-viewer-modal .modal-header { padding: .55rem 1rem; }
-.graph-viewer-modal .modal-body { min-height: 0; padding: .25rem .65rem; overflow: hidden; }
+.graph-viewer-modal .modal-body { display: flex; align-items: center; justify-content: center; min-height: 0; padding: .25rem .65rem; overflow: hidden; }
 .graph-viewer-modal .modal-footer { padding: .4rem .75rem; }
-.graph-modal-stage { width: 100%; height: 100%; min-height: 0; }
+.graph-modal-stage { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; min-height: 0; }
 .graph-modal-stage .shiny-bound-output,
 .graph-modal-stage .plotly,
 .graph-modal-stage .js-plotly-plot { width: 100% !important; max-width: 100% !important; }

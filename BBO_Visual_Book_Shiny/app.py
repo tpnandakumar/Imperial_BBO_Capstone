@@ -682,7 +682,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         title = f"Week {int(input.week())}: " + ("coordinate movement" if input.week_view() == "movement" else "outputs and retained best")
         ui.modal_show(
             ui.modal(
-                ui.div(output_widget(output_id, height="70dvh"), class_="graph-modal-stage"),
+                ui.div(output_widget(output_id, height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
                 title=title,
                 size="xl",
                 easy_close=True,
@@ -699,7 +699,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         title = f"F{int(input.function())}: " + ("coordinate movement" if coordinate_view else "output and rate of change")
         ui.modal_show(
             ui.modal(
-                ui.div(output_widget(output_id, height="70dvh"), class_="graph-modal-stage"),
+                ui.div(output_widget(output_id, height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
                 title=title,
                 size="xl",
                 easy_close=True,
@@ -713,7 +713,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     def _open_atlas_graph():
         ui.modal_show(
             ui.modal(
-                ui.div(output_widget("atlas_plot", height="70dvh"), class_="graph-modal-stage"),
+                ui.div(output_widget("atlas_plot", height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
                 title="Scientific Atlas",
                 size="xl",
                 easy_close=True,
