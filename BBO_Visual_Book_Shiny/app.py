@@ -84,7 +84,8 @@ PDHIS_EXPLANATIONS = {
     "advanced": (
         "Reading the advanced Delta model",
         "The grouped bars compare regularised logistic classification with the prevalence baseline. Balanced accuracy gives equal weight to improvement and non-improvement. "
-        "Leave-one-function-out testing asks whether the pattern transfers to a function excluded from fitting. Expanding-week testing preserves the order in which evidence arrived."
+        "Leave-one-function-out testing asks whether the pattern transfers to a function excluded from fitting. Expanding-week testing preserves the order in which evidence arrived. "
+        "The earlier Delta signature is the predictor and the later behaviour is the target."
     ),
 }
 
@@ -528,7 +529,7 @@ app_ui = ui.page_navbar(
                 ui.div(
                     ui.div(
                         ui.strong("Delta: the Signature of Change"),
-                        ui.span("PDHIS looks for the earliest clear pattern of structured change. The Signature of Change develops through the shape, persistence and direction of movement across related Delta levels. It may help distinguish directed change, a plateau, a reversal or an oscillation from irregular fluctuation. Chronological tests then examine what happens next."),
+                        ui.span("The Power of Change describes how behaviour develops across successive Delta levels. PDHIS looks for the earliest clear signature in its shape, persistence and direction, then tests whether that earlier signature can predict the later behaviour. The later behaviour is the target."),
                         class_="pdhis-rationale",
                     ),
                     ui.div(
@@ -980,8 +981,10 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                 ],
                 "advanced": [
                     "The full Delta signature combines Delta 1 to Delta 5 with persistence, sign change and agreement across levels.",
+                    "The earlier signature is the predictor. Improvement in the following week is the target behaviour.",
                     "Held-out-function balanced accuracy was 0.624. Expanding-week balanced accuracy was lower at 0.563, showing that chronological transfer remains difficult.",
                     "The permutation result was 0.0297, but chronological probability calibration did not beat the baseline. Prospective validation is still required.",
+                    "A separate higher-order test found that Delta 9 oscillated in 15 of 16 eligible cases. Positive Delta 3 followed in 6 of those 15, with exact p equal to 0.438, so Delta 9 oscillation did not predict positive Delta 3 in this record.",
                 ],
             }.get(view, [
                 "Read the graph with the available sample size in view.",
@@ -1223,7 +1226,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "orders": "Across ten levels of Delta freedom, Delta 2, Delta 4 and Delta 5 show the strongest inverse associations with later change. These relationships need further chronological testing before they can support forecasting.",
             "functions": "F2 has the clearest reversal signature across Delta 1 to Delta 4. F5 differs, with a positive Delta 1 relationship. Function-level samples remain small.",
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
-            "advanced": "The full regularised Delta signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker and probability calibration did not improve, so the result supports prospective study rather than operational forecasting.",
+            "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. Delta 9 oscillation also failed to predict positive Delta 3 in the small higher-order test, so the findings support prospective study rather than operational forecasting.",
         }[input.pdhis_view()]
 
     @render_widget

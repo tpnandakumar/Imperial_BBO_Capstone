@@ -64,6 +64,8 @@ This is a promising screening result, not a forecasting rule. Chronological cali
 
 The original research opportunity is to test whether a multilevel Delta signature carries information that a single change measure misses. That question is falsifiable and can be studied across optimisation, service improvement and other sequential processes. The next study should register its hypotheses and measures in advance, lock the model before testing, use new functions and compare PDHIS with simple persistence and time-series baselines. Independent replication would then determine whether the pattern is generalisable rather than specific to this capstone record.
 
+In this framework, the later behaviour is the target. A higher-order analysis tested whether oscillation in Delta 6 to Delta 10 preceded positive Delta 1, Delta 2 or Delta 3 behaviour one week later. For Delta 9 predicting positive Delta 3, there were 16 eligible cases. Delta 9 oscillated in 15, and positive Delta 3 followed in 6 of those 15. The exact p value was `0.438`, so the present evidence does not support Delta 9 oscillation as a predictor. This negative finding is useful because it shows that very high-order oscillation may become too common to distinguish future states in a short sequence.
+
 ## Relevance beyond optimisation
 
 The project has direct relevance to decisions made under uncertainty. In clinical neurology, service improvement and organisational planning, evidence often arrives sequentially and evaluation is costly. A defensible process must balance immediate benefit, further learning, reliability and risk.

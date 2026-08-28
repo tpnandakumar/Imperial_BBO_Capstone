@@ -26,6 +26,12 @@ A credible study would include a larger independent dataset, untouched test func
 
 The research contribution is therefore a falsifiable framework and an auditable testing method. It is not a claim that PDHIS has already discovered a universal law of change.
 
+## Higher-order pointers
+
+The later behaviour is the target. A separate forward analysis asks whether oscillation in Delta 6 to Delta 10 points towards a positive Delta 1, Delta 2 or Delta 3 value one week later. [Read the complete higher-order result](PDHIS_HIGH_ORDER_POINTERS.md).
+
+For the specific Delta 9 to Delta 3 question, only 16 forward cases are available. Delta 9 oscillated in 15 cases and positive Delta 3 followed in 6 of those 15. The two-sided exact p value is 0.438. Delta 9 oscillation therefore does not predict positive Delta 3 in the present record. Its near-universal occurrence also suggests that very high-order oscillation may arise from repeated differencing rather than identify a distinctive future state.
+
 ## Influence-state summary
 
 | Influence state | Cases | Next improvements | Next improvement rate | Median next change |
