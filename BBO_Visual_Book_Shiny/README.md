@@ -16,10 +16,10 @@ Open the local address printed by Shiny.
 ## Reading routes
 
 - **Cover:** entry page and verified campaign totals
-- **Read by Week:** thirteen animated chronological chapters
-- **Read by Function:** eight complete function trajectories
+- **Read by Week:** thirteen compact chronological chapters with Home, Previous and Next controls
+- **Read by Function:** eight complete function trajectories with page controls and tabbed evidence
 - **Scientific Atlas:** interactive trajectories, heat map and maxima view
-- **Strategy Loop:** exploration, exploitation and feedback-led development
+- **BBR and Strategy:** Black Box Resolution, the resolution loop and optimisation trade-offs
 - **Evidence:** filterable record of all 104 participant queries
 
-The interface uses responsive pastel styling, Plotly hover evidence and restrained motion. Motion is disabled automatically when the browser reports a reduced-motion accessibility preference.
+The interface uses dynamic viewport scaling, compact page tabs, responsive pastel styling, Plotly hover evidence and restrained motion. It is designed for desktop, smaller laptops and mobile screens without turning the visual book into one continuous scroll. Motion is disabled automatically when the browser reports a reduced-motion accessibility preference.

@@ -110,13 +110,8 @@ app_ui = ui.page_navbar(
                 stat_box("Final dataset", "279", "Audited canonical rows", PASTELS[3]),
                 class_="stat-grid",
             ),
-            ui.div(
-                ui.div(ui.span("01"), ui.strong("Read by Week"), ui.p("Follow the decisions chronologically from opening exploration to final evaluation.")),
-                ui.div(ui.span("02"), ui.strong("Read by Function"), ui.p("Trace each hidden function across all thirteen submitted coordinates and outputs.")),
-                ui.div(ui.span("03"), ui.strong("Explore the Evidence"), ui.p("Use interactive scientific figures without altering the official record.")),
-                class_="route-grid reveal",
-            ),
-            class_="book-page",
+            ui.p("Choose a section from the navigation bar. Every analytical view preserves the audited values and adds interactive hover detail.", class_="cover-note"),
+            class_="book-page cover-page",
         ),
     ),
     ui.nav_panel(
@@ -126,13 +121,22 @@ app_ui = ui.page_navbar(
             ui.layout_sidebar(
                 ui.sidebar(
                     ui.input_slider("week", "Choose a chapter", 1, 13, 1, step=1, ticks=True, animate={"interval": 1400, "loop": False}),
+                    ui.div(
+                        ui.input_action_button("week_home", "Home", class_="btn-home"),
+                        ui.input_action_button("previous_week", "Previous", class_="btn-soft"),
+                        ui.input_action_button("next_week", "Next", class_="btn-accent"),
+                        class_="page-buttons",
+                    ),
                     ui.input_switch("week_cumulative", "Show cumulative best", True),
-                    ui.p("Use the play control to animate the complete thirteen-week sequence.", class_="control-note"),
+                    ui.p("Choose a spread. Only that spread is loaded.", class_="control-note"),
                     title="Chapter controls", open="desktop",
                 ),
-                ui.output_ui("week_chapter"),
-                output_widget("week_rank_plot", height="430px"),
-                output_widget("week_movement_plot", height="430px"),
+                ui.navset_card_tab(
+                    ui.nav_panel("Chapter", ui.output_ui("week_chapter")),
+                    ui.nav_panel("Ranking", output_widget("week_rank_plot", height="52vh")),
+                    ui.nav_panel("Movement", output_widget("week_movement_plot", height="52vh")),
+                    id="week_spread",
+                ),
                 class_="book-layout",
             ),
             class_="book-page",
@@ -145,14 +149,22 @@ app_ui = ui.page_navbar(
             ui.layout_sidebar(
                 ui.sidebar(
                     ui.input_select("function", "Hidden function", {str(i): f"F{i}  |  {DIMENSIONS[i]} dimensions" for i in DIMENSIONS}, selected="1"),
+                    ui.div(
+                        ui.input_action_button("function_home", "Home", class_="btn-home"),
+                        ui.input_action_button("previous_function", "Previous", class_="btn-soft"),
+                        ui.input_action_button("next_function", "Next", class_="btn-accent"),
+                        class_="page-buttons",
+                    ),
                     ui.input_switch("show_best", "Show cumulative best", True),
                     ui.input_switch("show_starter", "Include starter points in input view", False),
                     title="Function controls", open="desktop",
                 ),
-                ui.div(ui.output_ui("function_summary"), class_="summary-slot"),
-                output_widget("function_trajectory", height="470px"),
-                output_widget("coordinate_trajectory", height="470px"),
-                ui.card(ui.card_header("Complete weekly evidence"), ui.output_data_frame("function_table"), class_="evidence-card"),
+                ui.navset_card_tab(
+                    ui.nav_panel("Overview", ui.div(ui.output_ui("function_summary"), class_="summary-slot"), output_widget("function_trajectory", height="43vh")),
+                    ui.nav_panel("Coordinates", output_widget("coordinate_trajectory", height="52vh")),
+                    ui.nav_panel("Evidence", ui.output_data_frame("function_table")),
+                    id="function_spread",
+                ),
                 class_="book-layout",
             ),
             class_="book-page",
@@ -167,41 +179,60 @@ app_ui = ui.page_navbar(
                 ui.input_select("atlas_view", "Atlas view", {"weekly": "Weekly trajectories", "heatmap": "Function by week heat map", "winners": "Winning week and result"}, selected="weekly"),
                 class_="inline-controls",
             ),
-            output_widget("atlas_plot", height="590px"),
-            ui.div(
-                stat_box("First winning week", str(int(winning_rows().week.min())), "Earliest retained maximum", PASTELS[4]),
-                stat_box("Last winning week", str(int(winning_rows().week.max())), "Latest retained maximum", PASTELS[5]),
-                stat_box("Functions peaking in Week 13", str(int((winning_rows().week == 13).sum())), "Final-round maxima", PASTELS[6]),
-                stat_box("Observed dimensions", "2 to 8", "Heterogeneous search spaces", PASTELS[7]),
-                class_="stat-grid compact",
+            ui.navset_card_tab(
+                ui.nav_panel("Interactive figure", output_widget("atlas_plot", height="51vh")),
+                ui.nav_panel(
+                    "Summary",
+                    ui.div(
+                        stat_box("First winning week", str(int(winning_rows().week.min())), "Earliest retained maximum", PASTELS[4]),
+                        stat_box("Last winning week", str(int(winning_rows().week.max())), "Latest retained maximum", PASTELS[5]),
+                        stat_box("Functions peaking in Week 13", str(int((winning_rows().week == 13).sum())), "Final-round maxima", PASTELS[6]),
+                        stat_box("Observed dimensions", "2 to 8", "Heterogeneous search spaces", PASTELS[7]),
+                        class_="stat-grid compact",
+                    ),
+                ),
+                id="atlas_spread",
             ),
             class_="book-page",
         ),
     ),
     ui.nav_panel(
-        "Strategy Loop",
+        "BBR and Strategy",
         ui.div(
-            book_heading("BOOK IV  |  DECISION SYSTEM", "How the strategy changed with evidence", "Exploration and exploitation were parallel choices. The broader loop extended each result into the next optimisation decision."),
-            ui.div(
-                ui.div(ui.span("01"), ui.strong("Evaluate"), ui.p("Judge the returned evidence")),
-                ui.div(ui.span("02"), ui.strong("Resolve"), ui.p("Clarify what is known and uncertain")),
-                ui.div(ui.span("03"), ui.strong("Explore  ↔  Exploit"), ui.p("Choose information or refinement")),
-                ui.div(ui.span("04"), ui.strong("Extend"), ui.p("Widen the next question")),
-                ui.div(ui.span("05"), ui.strong("Optimise"), ui.p("Select the next coordinate")),
-                ui.div(ui.span("06"), ui.strong("Evolve"), ui.p("Adapt the method")),
-                ui.div(ui.span("07"), ui.strong("Experiment"), ui.p("Run the next reproducible test")),
-                class_="strategy-loop reveal",
-            ),
-            ui.div(
-                ui.card(ui.card_header("Exploration"), ui.p("Broader movement purchased information about untested regions but risked leaving a strong local area."), class_="pastel-card mint"),
-                ui.card(ui.card_header("Exploitation"), ui.p("Smaller movement refined supported regions but could miss a separate and better optimum."), class_="pastel-card blue"),
-                ui.card(ui.card_header("Confirmation"), ui.p("Repeated coordinates tested stability, although every repeat consumed a scarce weekly evaluation."), class_="pastel-card lavender"),
-                class_="three-column",
-            ),
-            ui.div(
-                ui.h2("The stopping rule"),
-                ui.p("The official challenge ended after thirteen queries per function. This finite budget meant that uncertainty could not be removed completely. A promising region sometimes remained only partly tested, so final decisions had to balance the observed score, repeatability and the value of one last alternative query."),
-                class_="reading-panel reveal",
+            book_heading("BOOK IV  |  BLACK BOX RESOLUTION", "From optimisation to resolution", "Each spread explains one part of the post-BBO reasoning without changing the official thirteen-round record."),
+            ui.navset_card_tab(
+                ui.nav_panel(
+                    "Resolution loop",
+                    ui.div(
+                        ui.div(ui.span("01"), ui.strong("Evaluate"), ui.p("Judge the returned evidence")),
+                        ui.div(ui.span("02"), ui.strong("Resolve"), ui.p("Clarify what is known and uncertain")),
+                        ui.div(ui.span("03"), ui.strong("Explore  ↔  Exploit"), ui.p("Choose information or refinement")),
+                        ui.div(ui.span("04"), ui.strong("Extend"), ui.p("Widen the next question")),
+                        ui.div(ui.span("05"), ui.strong("Optimise"), ui.p("Select the next coordinate")),
+                        ui.div(ui.span("06"), ui.strong("Evolve"), ui.p("Adapt the method")),
+                        ui.div(ui.span("07"), ui.strong("Experiment"), ui.p("Run the next reproducible test")),
+                        class_="strategy-loop reveal",
+                    ),
+                ),
+                ui.nav_panel(
+                    "BBR definition",
+                    ui.div(
+                        ui.h2("Black Box Resolution"),
+                        ui.p("Black Box Resolution is the structured investigation of a hidden function using its recorded inputs and outputs. It compares competing explanations, tests chronological predictive performance and rejects explanations that fail."),
+                        ui.p("BBR may identify a best-supported local structure without claiming recovery of the original hidden equation or its global optimum."),
+                        class_="reading-panel reveal",
+                    ),
+                ),
+                ui.nav_panel(
+                    "Trade-offs",
+                    ui.div(
+                        ui.card(ui.card_header("Exploration"), ui.p("Broader movement purchased information about untested regions but risked leaving a strong local area."), class_="pastel-card mint"),
+                        ui.card(ui.card_header("Exploitation"), ui.p("Smaller movement refined supported regions but could miss a separate and better optimum."), class_="pastel-card blue"),
+                        ui.card(ui.card_header("Confirmation"), ui.p("Repeated coordinates tested stability, although every repeat consumed a scarce weekly evaluation."), class_="pastel-card lavender"),
+                        class_="three-column",
+                    ),
+                ),
+                id="bbr_spread",
             ),
             class_="book-page",
         ),
@@ -219,6 +250,7 @@ app_ui = ui.page_navbar(
             class_="book-page",
         ),
     ),
+    ui.nav_control(ui.input_action_button("global_home", "Home", class_="nav-home-button")),
     title=ui.div(ui.span("◈", class_="brand-mark"), ui.span("Imperial BBO Visual Book")),
     id="main_navigation", selected="Cover",
     navbar_options=ui.navbar_options(position="sticky-top", underline=False, collapsible=True),
@@ -232,6 +264,31 @@ app_ui = ui.page_navbar(
 
 
 def server(input: Inputs, output: Outputs, session: Session) -> None:
+    @reactive.effect
+    @reactive.event(input.global_home, input.week_home, input.function_home)
+    def _go_home():
+        ui.update_navs("main_navigation", selected="Cover")
+
+    @reactive.effect
+    @reactive.event(input.previous_week)
+    def _previous_week():
+        ui.update_slider("week", value=max(1, int(input.week()) - 1))
+
+    @reactive.effect
+    @reactive.event(input.next_week)
+    def _next_week():
+        ui.update_slider("week", value=min(13, int(input.week()) + 1))
+
+    @reactive.effect
+    @reactive.event(input.previous_function)
+    def _previous_function():
+        ui.update_select("function", selected=str(max(1, int(input.function()) - 1)))
+
+    @reactive.effect
+    @reactive.event(input.next_function)
+    def _next_function():
+        ui.update_select("function", selected=str(min(8, int(input.function()) + 1)))
+
     @reactive.calc
     def selected_week() -> pd.DataFrame:
         return EVIDENCE[EVIDENCE.week == int(input.week())].sort_values("function")
@@ -382,7 +439,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         if input.evidence_function() != "all":
             frame = frame[frame.function == int(input.evidence_function())]
         columns = ["function", "week", *[f"x{i}" for i in range(1, 9)], "output"]
-        return render.DataGrid(frame[columns].dropna(axis=1, how="all"), filters=True, selection_mode="rows", height="610px")
+        return render.DataGrid(frame[columns].dropna(axis=1, how="all"), filters=True, selection_mode="rows", height="54vh")
 
 
 app = App(app_ui, server, static_assets=APP_DIR / "www")
