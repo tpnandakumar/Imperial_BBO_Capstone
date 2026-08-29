@@ -1,8 +1,8 @@
 # Detailed Executive Summary
 
-## Imperial BBO Capstone and Component 25.1 Retrospective
+## Imperial BBO Capstone
 
-This Executive Summary repurposes the completed Component 25.1 retrospective as a detailed account of the Imperial BBO Capstone. It explains the challenge, the thirteen-round decision process, the technical development, the final results and the main lessons in one continuous assessment-facing narrative.
+The Imperial BBO Capstone was a thirteen-round search for strong inputs to eight hidden mathematical functions under a fixed weekly query budget. This summary presents the decision process, technical development, verified results and principal lessons from the completed project.
 
 ### 1. Initial codebase, data and experimental design
 
