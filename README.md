@@ -67,11 +67,11 @@ These are the strongest outputs observed from participant-selected queries. They
 | **B. Graphs and Infographics** | [Open the visual summary, final graphs, explanations and figure-generation route](Results/Graphs_and_Infographics/GRAPHS_AND_INFOGRAPHICS.md) |
 | **C. Detailed Discussion** | [Open the interpretation summary and full discussion of all eight functions](Results/Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
-## ADDITIONAL PROJECT CONTRIBUTIONS
+## 🟦 ADDITIONAL PROJECT CONTRIBUTIONS
 
 These additions extend the assessed capstone without changing its thirteen-round evidence or results.
 
-### VISUAL STORYBOARD
+### 🟨 VISUAL STORYBOARD
 
 The Visual Storyboard is the public Shiny reading experience for the complete project. It has two clearly separated sections: **Imperial BBO** and **Above and Beyond**.
 
@@ -82,7 +82,7 @@ The Visual Storyboard is the public Shiny reading experience for the complete pr
 
 The Visual Storyboard opens directly in your browser. It includes the official Imperial BBO account and the separate Above and Beyond routes for Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS).
 
-### IMPERIAL BBO
+### 🟨 IMPERIAL BBO
 
 Imperial BBO presents the official thirteen-round capstone story by week, function and scientific theme. It connects the graphs to the decisions and outcomes, while the Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
 
@@ -90,17 +90,17 @@ Creating the Visual Storyboard provided an additional lesson in data presentatio
 
 The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded British voice narrations. The recordings introduce the project, its journey and results, Delta as the Signature of Change, Black Box Resolution and Pisharam Delta Hierarchy and Influence State. Each section plays a prepared audio file rather than generating speech in the reader's browser. The control pauses, continues and stops playback, while the written evidence remains the complete and authoritative record.
 
-### ABOVE AND BEYOND
+### 🟨 ABOVE AND BEYOND
 
 Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
 
-#### ABOVE: BLACK BOX RESOLUTION (BBR)
+#### 🟩 ABOVE: BLACK BOX RESOLUTION (BBR)
 
 Black Box Resolution (BBR) investigates how much mathematical structure can be recovered from the completed input and output evidence. It includes function-specific analysis and representative surrogate equations while keeping a clear distinction between an evidence-based approximation and the unknown original function.
 
 [Explore Black Box Resolution](Post_BBO_BBR/SECTION_GUIDE.md)
 
-#### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
+#### 🟩 BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
 
 Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure. It asks how behavioural change becomes visible within an observed sequence and provides a mathematical foundation for further prospective research.
 
@@ -112,13 +112,13 @@ The Visual Storyboard therefore keeps the assessed Imperial BBO story separate f
 
 > **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
-### ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
+### 🟨 ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
 
 The project produced two valuable learning outcomes beyond Black Box Optimisation. First, the Visual Storyboard showed how written, visual and auditory storytelling can present the same evidence through complementary routes. Second, developing PIMF and PMOS in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. Together, these experiences demonstrated that effective analytical work depends not only on the optimisation method, but also on how evidence is communicated and how the surrounding process is organised, monitored and improved.
 
 [Read how this learning developed in the Detailed Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md).
 
-## Enter the project
+## 🟦 Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.
 
@@ -129,13 +129,13 @@ This repository tells two connected stories. The first is the official thirteen-
 
 > **Interactive status:** Shiny is used for the public Imperial BBO Visual Book. The live deployment is available through the CLICK ME link above. GitHub retains the documented evidence, source code and reproducibility record.
 
-### The verified record at a glance
+### 🟨 The verified record at a glance
 
 | 13 rounds | 8 functions | 175 starter observations | 104 prospective queries | 279 observations retained |
 |:---:|:---:|:---:|:---:|:---:|
 | One weekly decision cycle | 2 to 8 dimensions | Supplied starting evidence | One query per function per round | Complete audited evidence |
 
-### Final retained participant-query results
+### 🟨 Final retained participant-query results
 
 | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |
 |---:|---:|---:|---:|---:|---:|---:|---:|
@@ -143,7 +143,7 @@ This repository tells two connected stories. The first is the official thirteen-
 
 These values are the strongest results produced by the participant-selected queries. They do not claim the unknown mathematical global optima.
 
-### Run the Visual Book
+### 🟨 Run the Visual Book
 
 ```bash
 python -m pip install -r BBO_Visual_Book_Shiny/requirements.txt
@@ -152,7 +152,7 @@ python -m shiny run BBO_Visual_Book_Shiny/app.py
 
 Open the local address printed by Shiny. The cover presents two routes: **Imperial BBO Capstone** and **Above and Beyond BBO**. The second route separates the **Above BBO BBR Book** from the **Beyond BBO PDHIS Book**.
 
-## Final assessment quick start
+## 🟦 Final assessment quick start
 
 The five Component 25.3 requirements are available directly from this page:
 
@@ -162,25 +162,25 @@ The five Component 25.3 requirements are available directly from this page:
 4. **Non-technical explanation:** the 100-word summary above
 5. **Organisation and documentation:** [Module 25 evidence hub](Module_25_Final_BBO_Submission/SECTION_GUIDE.md) and [completed repository audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
 
-## The official assessment record
+## 🟦 The official assessment record
 
 The assessed experiment is preserved in `Week_01` through `Week_13`. Module 25 contains the final assessment material. It is not an additional optimisation round.
 
 The later Black Box Resolution and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
 
-### Project overview
+### 🟨 Project overview
 
 The challenge was to find strong input coordinates for eight hidden mathematical functions while using a limited weekly query budget. The objective equations, gradients and true optima were not available. Decisions therefore had to be made from the supplied starter observations and the outputs returned after each authorised query. The approach developed from broad exploration into function-specific refinement, recovery, replication and stopping. The final record shows what was attempted, what succeeded, what failed and how each result influenced the next decision.
 
-### Inputs and outputs
+### 🟨 Inputs and outputs
 
 Each input is a coordinate vector bounded between `0` and `1`. The eight functions have between two and eight input dimensions. Imperial supplied 175 starter observations. The capstone added 104 participant-selected queries, comprising one query for each function in each of thirteen rounds. The evaluator returned one numerical objective value for every submitted vector. Higher values were preferred within each function, but values were not compared directly across functions because their scales and behaviour differ.
 
-### Objectives and technical approach
+### 🟨 Objectives and technical approach
 
 The primary objective was to improve the strongest observed output for each function without overstating what sparse evidence could prove. The technical approach combined chronological comparison, local movement, recovery of earlier strong coordinates, repeated-coordinate checks, clustering, principal component analysis and carefully bounded surrogate modelling. Evidence was reviewed separately for each function before the next query was selected. The final notebook reproduces the retained results, compares participant queries with starter observations and reports repeatability concerns and analytical limitations.
 
-### Final assessment material
+### 🟨 Final assessment material
 
 - [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/SECTION_GUIDE.md)
 - [25.1 Retrospective Evidence Map](Module_25_Final_BBO_Submission/25_1_Retrospective/EVIDENCE_MAP.md)
@@ -191,7 +191,7 @@ The primary objective was to improve the strongest observed output for each func
 - [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
 - [Final Verified Winner Summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
-## How the search developed
+## 🟦 How the search developed
 
 The same strategy did not suit every function. Four practical actions became important:
 
@@ -202,7 +202,7 @@ The same strategy did not suit every function. Four practical actions became imp
 
 Clustering helped identify recurring regions in the later rounds. Principal component analysis helped show whether several coordinates were moving together. These methods supported the decisions, but the returned scores remained the main evidence.
 
-## Final results after thirteen rounds
+## 🟦 Final results after thirteen rounds
 
 Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 kept their strongest earlier results. Function 2 performed best in Week 12, then declined after another small change in Week 13.
 
@@ -219,13 +219,13 @@ Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 a
 
 These are the strongest results produced by the participant-selected queries during the thirteen authorised rounds. Starter-data maxima are reported separately in the final notebook. None proves that the mathematical global optimum was found.
 
-## What the results taught us
+## 🟦 What the results taught us
 
 Function 5 showed the clearest sustained improvement. Its score rose from `1415.8763939603884` in Week 1 to `4440.957216598753` in Week 13. The search improved because it followed a consistent direction while the evidence remained favourable.
 
 Function 2 showed why small changes are not automatically safe. Week 12 found a new best, but the next nearby point performed worse. Function 6 raised a different concern because the same coordinate returned different values on separate occasions. This means repeatability must be checked for each function rather than assumed.
 
-## Key weekly analysis
+## 🟦 Key weekly analysis
 
 - [Week 09: Module 21 analysis](Week_09/SECTION_GUIDE.md)
 - [Week 10: clustering and strategy refinement](Week_10/SECTION_GUIDE.md)
@@ -236,7 +236,7 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 - [Week 13 final capstone synthesis](Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
 - [Week 13 RL-informed decision experiment](Week_13/RL_DECISION_EXPERIMENT/SECTION_GUIDE.md)
 
-## Weekly record
+## 🟦 Weekly record
 
 | Round | Documentation |
 | --- | --- |
@@ -254,7 +254,7 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 | Week 12 | [Week guide](Week_12/SECTION_GUIDE.md) |
 | Week 13 | [Week guide](Week_13/SECTION_GUIDE.md) |
 
-## Reproducing the final assessment results
+## 🟦 Reproducing the final assessment results
 
 Run the following commands from the repository root:
 
@@ -267,7 +267,7 @@ python Week_13/generate_week_13_figures.py
 
 For a guided route through the data and final calculations, open the [Final Capstone Notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb).
 
-### Interactive Visual Book
+### 🟨 Interactive Visual Book
 
 No installation is required for readers. Open the complete public application directly:
 
@@ -280,13 +280,13 @@ The audit checks the required assessment files, the weekly navigation, the inter
 
 See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for full instructions.
 
-## What happened after the capstone
+## 🟦 What happened after the capstone
 
 The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
 The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decryption/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. The legacy folder name contains `BBD`, but the assessment-facing term is Black Box Resolution. These later studies are clearly labelled as post-capstone work.
 
-### How to read the PDHIS graphs
+### 🟨 How to read the PDHIS graphs
 
 **Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
 
@@ -312,7 +312,7 @@ The interactive trajectories use range-normalised outputs so that the shape of c
 | Function relationship map | Is the relationship shared or function-specific? | Colour direction, neighbouring-order consistency and sample size `n` | Reliable function recovery from a small cell count |
 | Evidence boundary | How much evidence remains at each recursive order? | Falling comparison counts and adjusted `q` evidence | Confirmation when the threshold is not crossed |
 
-#### A worked reading example
+#### 🟩 A worked reading example
 
 Suppose a function has four illustrative normalised outputs: `0.20, 0.50, 0.70, 0.75`. The Δ1 values are `+0.30, +0.20, +0.05`. The output is improving, although the gain becomes smaller each time. The Δ2 values are `−0.10, −0.15`, which shows that the rate of improvement is falling. When read together, positive Δ1 values moving towards zero and negative Δ2 values suggest that the function may be approaching a plateau. The next observation must still be tested before that interpretation can be used for prediction.
 
@@ -326,11 +326,11 @@ The evidence can be understood in three stages:
 
 *Read from Δ1 towards Δ10. Each level records how the level before it changed. Higher orders can expose repeated reversal, plateau or oscillation, but every recursive step leaves fewer observations. A complex higher-order shape is therefore exploratory unless it remains coherent with lower orders and survives chronological testing.*
 
-#### 1. Lotus hierarchy: where the signature is built
+#### 🟩 1. Lotus hierarchy: where the signature is built
 
 The hierarchy graph places direct change at Δ1, followed by increasingly nested change at later levels. It reorganises change that is already present in the observed sequence. A Signature of Change begins to take shape when related levels tell a consistent story. For example, Δ1 may move towards zero while Δ2 shows deceleration. Together, these movements support an interpretation of an approaching plateau. A strong movement at an outer level carries less weight when the lower levels do not support it.
 
-#### 2. Delta trajectory: how the signature moves through time
+#### 🟩 2. Delta trajectory: how the signature moves through time
 
 The trajectory graph plots one selected function and Delta order against the week at which that value becomes available.
 
@@ -342,7 +342,7 @@ The trajectory graph plots one selected function and Delta order against the wee
 
 Read the chosen trajectory alongside the lower Delta levels. The Signature of Change comes from the overall shape, its persistence, its reversals and the agreement between levels. The highest point on a single line is much less informative on its own. This graph describes the observed movement. Later observations are needed to test whether that movement has predictive value.
 
-#### 3. Predictability graph: whether the signature carries information forward
+#### 🟩 3. Predictability graph: whether the signature carries information forward
 
 This graph compares each Delta order with the next output and the next week-to-week change using chronological Spearman correlations. The shaded shuffled range is a reference for relationships that can arise after disrupting temporal order.
 
@@ -353,13 +353,13 @@ This graph compares each Delta order with the next output and the next week-to-w
 
 In this record, Δ2, Δ4 and Δ5 show the strongest inverse relationships with later change. These levels may contribute to the Signature of Change, but none passes the adjusted false-discovery threshold. Further observations collected after the pattern has been defined are needed before drawing a predictive conclusion.
 
-#### 4. Function relationship map: where the signature differs
+#### 🟩 4. Function relationship map: where the signature differs
 
 The heat map separates the pooled result into F1 to F8. Blue cells show negative relationships with the following change, rose cells show positive relationships and pale cells show little observed relationship. Each cell also reports `n`, the number of usable comparisons.
 
 Repeated colour across neighbouring Delta orders is more consistent with a coherent function-specific signature than one isolated cell. F2 shows the clearest reversal pattern across Δ1 to Δ4, while F5 differs by showing a positive Δ1 relationship. These interpretations are provisional because the function-level samples are small.
 
-#### 5. Evidence boundary graph: where interpretation must stop
+#### 🟩 5. Evidence boundary graph: where interpretation must stop
 
 The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
 
