@@ -25,7 +25,10 @@
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a",
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/09_executive_summary_part_3.m4a"
     ], "Full Executive Summary"],
-    "Repository": ["01_welcome_and_project_purpose.m4a", "Repository overview"],
+    "Repository": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/26_repository_page.m4a?version=1",
+      "Repository page"
+    ],
     "Above and Beyond": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Resolution": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Beyond BBO": ["04_delta_signature_of_change.m4a", "Delta and the Signature of Change"],
