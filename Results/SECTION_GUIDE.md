@@ -26,11 +26,11 @@ The normalised progress figure compares each function only with its own observed
 
 ## 3. Discussion
 
-The results show that no single search behaviour suited all eight hidden functions. Function 5 benefited from sustained directional refinement. Functions 1, 4, 7 and 8 showed the value of retaining or recovering earlier strong points. Function 2 demonstrated that a small additional move can reduce performance, while Function 6 showed why repeated-coordinate checks matter when returned outputs vary.
+### Summary
 
-Taken together, the evidence supports an adaptive sequential strategy. Exploration is useful when the response surface is unclear. Local refinement is appropriate while improvement remains consistent. Recovery protects earlier gains, replication tests stability and stopping prevents unsupported movement after a plateau. Clustering and principal component analysis helped interpret the search, but the returned objective values remained the main decision evidence.
+No single search behaviour suited all eight hidden functions. Function 5 benefited from sustained directional refinement. Functions 1, 4, 7 and 8 showed the value of retaining or recovering strong earlier points. Function 2 demonstrated that a small additional move can reduce performance, while Function 6 showed why repeated-coordinate checks matter when returned outputs vary. Overall, the evidence supports an adaptive sequential strategy that balances exploration, refinement, recovery, replication and stopping.
 
-These results are the strongest outputs observed from participant-selected queries. They do not establish the hidden mathematical global optima.
+[Read the detailed Results Discussion](../Discussion/RESULTS_DISCUSSION.md) for the full interpretation of F1 to F8, what the model taught us, the limitations of the evidence and the practical conclusions.
 
 - [Final strategy outcome](../Week_13/FINAL_STRATEGY_OUTCOME.md)
 - [Final capstone synthesis](../Week_13/FINAL_CAPSTONE_SYNTHESIS.md)

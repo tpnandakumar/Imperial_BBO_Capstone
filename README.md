@@ -49,6 +49,7 @@ These are the strongest outputs observed from participant-selected queries. They
 | [Final figure-generation code](Week_13/generate_week_13_figures.py) | Rebuilds the four final figures displayed below |
 | [Final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md) | Function-level interpretation of what succeeded, plateaued or required recovery |
 | [Successful optimisation strategies](Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md) | Evidence supporting exploration, refinement, recovery, replication and stopping |
+| [Detailed results discussion](Discussion/RESULTS_DISCUSSION.md) | Full interpretation of the eight function outcomes, model learning, limitations and practical conclusions |
 
 ### Final results figures
 
@@ -61,6 +62,8 @@ These are the strongest outputs observed from participant-selected queries. They
 The normalised figure compares timing and direction within each function. It does not imply that raw output magnitudes are comparable between functions.
 
 [Open the organised Results folder](Results/SECTION_GUIDE.md) for the figures, interpretation and links to the code used to reproduce them.
+
+[Read the detailed Results Discussion](Discussion/RESULTS_DISCUSSION.md) for the full function-level interpretation and conclusions.
 
 ## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
 
