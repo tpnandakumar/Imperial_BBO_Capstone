@@ -20,9 +20,18 @@ Imperial College London supplied 175 starter observations covering eight hidden 
 
 The assessed model is a sequential black box optimisation framework. It treats each function separately because the functions have different dimensions, scales and behaviour. Each weekly decision combines the returned objective values with coordinate movement, local comparison, recovery of strong earlier points, repeat testing and evidence from clustering or principal component analysis where appropriate. This approach was chosen because the true equations, gradients and global optima were hidden. It supports transparent decisions without pretending that one fitted equation explains all eight functions. The assumptions, intended use and limitations are recorded in the [final model card](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md).
 
-## HYPERPARAMETER OPTIMSATION
+## HYPERPARAMETER OPTIMISATION
 
 There was no single predictive model with one fixed hyperparameter search. The practical parameters were the size and direction of coordinate changes, the number of clusters considered, the number of principal components retained and the settings used in exploratory local surrogate models. They were selected chronologically from evidence available before each new submission. Candidate settings were compared with earlier results, stability, distance from strong observations and the remaining query budget. Later outputs were not used to revise earlier decisions. This preserves the prospective nature of the thirteen-round challenge and avoids presenting retrospective tuning as genuine prediction.
+
+The optimisation evidence is available directly below. The clustering comparison was used during the capstone. The broader surrogate comparison was completed retrospectively to test how model degree and regularisation behaved across the recorded chronology.
+
+| Optimisation performed | Parameters compared | Selection basis | Evidence and code |
+| --- | --- | --- | --- |
+| Week 10 K-means clustering | Cluster count and restart count | Highest silhouette score, with inertia used as supporting evidence | [Clustering analysis](Week_10/CLUSTERING_ANALYSIS.md), [complete HPO results](BBO_Dashboard/hpo_results/week10_clustering_hpo_all_results.csv), [reproducible HPO code](BBO_Dashboard/hpo_engine.py) |
+| Chronological polynomial Ridge surrogate comparison | Polynomial degree 1 to 3 and Ridge alpha from `0.000001` to `10` | Lowest expanding-window normalised root mean squared error | [Complete surrogate HPO results](BBO_Dashboard/hpo_results/posthoc_surrogate_hpo_all_results.csv), [reproducible HPO code](BBO_Dashboard/hpo_engine.py), [academic figure register](Module_25_Final_BBO_Submission/25_1_Retrospective/ACADEMIC_FIGURE_REGISTER.md) |
+| Principal component analysis | Number and interpretation of retained components | Explained variance and coordinate loading structure, used as decision support rather than an automatic winner | [PCA strategy comparison](Week_11/PCA_STRATEGY_COMPARISON.md), [PCA evidence](Week_12/PCA_EVIDENCE.md) |
+| Representative post-capstone surrogates | F5 Matérn 2.5 settings and F7 quadratic specification | Chronological validation on the complete recorded evidence | [F5 validation](Post_BBO_BBR/representative_surrogates/F5_HYPERPARAMETER_VALIDATION.csv), [F7 validation](Post_BBO_BBR/representative_surrogates/F7_HYPERPARAMETER_VALIDATION.csv), [surrogate equations and interpretation](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md) |
 
 ## RESULTS
 
