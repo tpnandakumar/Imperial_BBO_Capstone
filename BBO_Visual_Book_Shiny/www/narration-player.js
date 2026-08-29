@@ -2,7 +2,10 @@
   "use strict";
 
   const tracks = {
-    "Cover": ["01_welcome_and_project_purpose.m4a", "Welcome and project purpose"],
+    "Cover": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/30_cover_page.m4a?version=1",
+      "Cover page"
+    ],
     "Imperial BBO": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
     "README": [
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/25_readme_page.m4a?version=1",
