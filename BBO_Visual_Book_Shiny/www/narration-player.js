@@ -8,7 +8,11 @@
     "Read by Week": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
     "Read by Function": ["03_results_and_interpretation.m4a", "Results and interpretation"],
     "Scientific Atlas": ["03_results_and_interpretation.m4a", "Results and interpretation"],
-    "Repository": ["01_welcome_and_project_purpose.m4a", "Executive Summary and README"],
+    "Repository": [[
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/07_executive_summary_part_1.m4a",
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a",
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/09_executive_summary_part_3.m4a"
+    ], "Full Executive Summary"],
     "Above and Beyond": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Resolution": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Beyond BBO": ["04_delta_signature_of_change.m4a", "Delta and the Signature of Change"],
@@ -18,6 +22,9 @@
   const pdhisResearchViews = new Set(["model", "advanced", "flicker", "atlas"]);
   const audio = new Audio();
   let currentSource = "";
+  let currentSources = [];
+  let currentPart = 0;
+  let currentTitle = "";
 
   function mainButton() { return document.getElementById("hear_me"); }
   function setStatus(message) {
@@ -47,13 +54,27 @@
     audio.pause();
     audio.currentTime = 0;
     currentSource = "";
+    currentSources = [];
+    currentPart = 0;
+    currentTitle = "";
     setMainLabel("HEAR ME");
     setStatus(message || "Narration stopped.");
   }
+  function sourceUrl(source) {
+    return source.startsWith("http://") || source.startsWith("https://") ? source : "/narration/" + source;
+  }
+  function partStatus(action) {
+    const part = currentSources.length > 1 ? ", part " + (currentPart + 1) + " of " + currentSources.length : "";
+    setStatus(currentTitle + part + " narration " + action + ".");
+  }
   async function startNarration() {
     const track = selectedTrack();
-    const source = "/narration/" + track[0];
-    if (currentSource !== source) {
+    const sources = Array.isArray(track[0]) ? track[0] : [track[0]];
+    const source = sourceUrl(sources[0]);
+    if (currentSources.join("|") !== sources.join("|")) {
+      currentSources = sources;
+      currentPart = 0;
+      currentTitle = track[1];
       audio.src = source;
       currentSource = source;
       audio.currentTime = 0;
@@ -61,7 +82,7 @@
     try {
       await audio.play();
       setMainLabel("PAUSE");
-      setStatus(track[1] + " narration started.");
+      partStatus("started");
     } catch (error) {
       setMainLabel("HEAR ME");
       setStatus("Narration could not start. Please try again.");
@@ -103,7 +124,24 @@
     stopNarration("Narration reset for the selected page.");
   });
   audio.addEventListener("ended", function () {
+    if (currentPart < currentSources.length - 1) {
+      currentPart += 1;
+      currentSource = sourceUrl(currentSources[currentPart]);
+      audio.src = currentSource;
+      audio.currentTime = 0;
+      audio.play().then(function () {
+        setMainLabel("PAUSE");
+        partStatus("started");
+      }).catch(function () {
+        setMainLabel("HEAR ME");
+        setStatus("The next narration part could not start. Please try again.");
+      });
+      return;
+    }
     currentSource = "";
+    currentSources = [];
+    currentPart = 0;
+    currentTitle = "";
     setMainLabel("HEAR ME");
     setStatus("Narration complete.");
   });

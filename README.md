@@ -16,6 +16,8 @@ This project records a thirteen-round search for strong inputs to eight hidden m
 
 [Read the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
+[Listen to the three-part Executive Summary narration](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/tag/executive-summary-narration-v1) while following the written document.
+
 ## DATA
 
 Imperial College London supplied 175 starter observations covering eight hidden functions with between two and eight input dimensions. The capstone added 104 participant-selected observations, comprising one submitted query per function in each of thirteen rounds. The final audited dataset therefore contains 279 rows. Inputs are bounded coordinate vectors between 0 and 1, and each output is the numerical value returned by the Imperial course portal. The complete source is the [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv). Its provenance, variables, limitations and permitted interpretation are documented in the [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md).
