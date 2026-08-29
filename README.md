@@ -14,9 +14,9 @@ This project records a thirteen-round search for strong inputs to eight hidden m
 
 ### EXECUTIVE SUMMARY
 
-[Read the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
+[Open the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
-[Listen to the three-part Executive Summary narration](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/tag/executive-summary-narration-v1) while following the written document.
+To listen while reading, keep the written Executive Summary open in one tab and [open the three-part narration in a second tab](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/tag/executive-summary-narration-v1). Select Part 1 first, followed by Parts 2 and 3.
 
 ## DATA
 
@@ -358,3 +358,4 @@ The bars show the number of forward comparisons remaining at each Delta order. T
 No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
+
