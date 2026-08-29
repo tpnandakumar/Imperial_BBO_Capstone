@@ -236,3 +236,25 @@ The positive finding is that P D H I S identifies specific orders and directions
 
 Open graph displays both correlation lines and the shuffled reference. Explain graph summarises how to read them. Use the page to distinguish an observed chronological association, an adjusted statistical result and a genuinely validated forecasting rule.
 
+## 19. PDHIS F1 to F8 relationship page
+
+This page compares the early Delta relationships across all eight hidden functions. It shows why one universal rule may not describe every function equally well.
+
+Each row represents a function from F One to F Eight. The columns represent Delta One to Delta Four. Every cell contains a Spearman correlation between that Delta order and the following weekly change, together with n, the number of usable comparisons.
+
+Blue indicates a negative relationship. A higher Delta value tends to be followed by a lower change, or a lower Delta value by a higher change. Rose indicates a positive relationship. Pale cells show little observed relationship. Colour describes direction and strength within the completed record. It does not by itself establish statistical significance or causation.
+
+The sample size falls as the order rises. Delta One usually has eleven comparisons within a function, Delta Two has ten, Delta Three has nine and Delta Four has eight. These are small samples, so an intense colour should be treated as a function-specific clue rather than a settled law.
+
+Function Two has the clearest repeated inverse pattern. Its correlations from Delta One to Delta Four are approximately minus zero point seven nine, minus zero point eight three, minus zero point nine and minus zero point eight one. The consistent blue run across neighbouring orders is more coherent than one isolated cell and suggests a reversal-style signature in this record.
+
+Function Five behaves differently. Its Delta One relationship is strongly positive at approximately zero point eight five, which is consistent with the sustained direct improvement seen in its weekly trajectory. The later early orders are weaker or negative, reminding us that the rate and shape of improvement can change even while the retained output rises.
+
+Function Seven shows positive relationships at Delta Two, Three and Four, while Function Eight shows a run of negative relationships across those same orders. Function One is mainly negative in the early columns but less consistent. Functions Three, Four and Six contain mixed patterns that change with the selected order.
+
+The purpose of the map is comparison, not ranking. Repeated colour across neighbouring columns suggests greater cross-order coherence. A single strong cell surrounded by weak or opposing cells is less persuasive. The next question is whether the observed pattern survives chronological testing, a different event definition and later independent observations.
+
+The graph also explains why P D H I S combines a shared mathematical framework with function-specific interpretation. Every function uses the same recursive Delta calculation, but the resulting behavioural signature can differ because the hidden landscapes and observed search paths differ.
+
+Open graph displays the complete heatmap. Explain graph provides the colour and sample-size rules. Read across each function first, then compare rows, and keep the small n visible when judging how much weight to place on any apparent pattern.
+
