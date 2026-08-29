@@ -71,6 +71,8 @@ Imperial BBO presents the official thirteen-round capstone story by week, functi
 
 Creating the Visual Storyboard provided an additional lesson in data presentation. Readers have different preferences and access needs, and not everyone understands evidence most easily through written text alone. Visual storytelling can reveal patterns, comparisons and progression, while auditory storytelling can guide the listener through the meaning of a graph or result. Used alongside clear written explanation, these approaches make the same evidence available through complementary routes and help a wider audience follow the project.
 
+The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded British voice narrations. The recordings introduce the project, its journey and results, Delta as the Signature of Change, Black Box Resolution and Pisharam Delta Hierarchy and Influence State. Each section plays a prepared audio file rather than generating speech in the reader's browser. The control pauses, continues and stops playback, while the written evidence remains the complete and authoritative record.
+
 #### ABOVE AND BEYOND
 
 Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
@@ -354,4 +356,3 @@ The bars show the number of forward comparisons remaining at each Delta order. T
 No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
-

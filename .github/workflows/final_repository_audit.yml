@@ -37,6 +37,9 @@ jobs:
       - name: Check Shiny Visual Book syntax
         run: python -m py_compile BBO_Visual_Book_Shiny/app.py
 
+      - name: Check narration control syntax
+        run: node --check BBO_Visual_Book_Shiny/www/narration-player.js
+
       - name: Reproduce Week 13 final analysis
         run: python Week_13/week_13_analysis.py
 
@@ -56,4 +59,3 @@ jobs:
           test -s Week_13/week_13_figure_3_function_5_trajectory.png
           test -s Week_13/week_13_figure_4_latest_best_round.png
           echo 'All four Week 13 analytical figures generated successfully.'
-

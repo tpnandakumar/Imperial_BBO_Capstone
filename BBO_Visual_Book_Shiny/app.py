@@ -679,6 +679,14 @@ app_ui = ui.page_navbar(
             class_="book-page",
         ),
     ),
+    ui.nav_control(
+        ui.div(
+            ui.tags.button("HEAR ME", id="hear_me", type="button", class_="btn hear-me-button", aria_label="Play natural narration for this section", title="Play natural narration for this section"),
+            ui.tags.button("STOP", id="hear_stop", type="button", class_="btn hear-stop-button", aria_label="Stop narration", title="Stop narration"),
+            ui.tags.span("", id="hear_me_status", class_="visually-hidden", aria_live="polite"),
+            class_="hear-me-controls",
+        )
+    ),
     ui.nav_control(ui.input_action_button("global_home", "Home", class_="nav-home-button")),
     title=ui.div(ui.span("◈", class_="brand-mark"), ui.span("Imperial BBO Visual Book")),
     id="main_navigation", selected="Cover",
@@ -686,6 +694,7 @@ app_ui = ui.page_navbar(
     header=ui.tags.head(
         ui.tags.meta(name="description", content="Interactive visual book and scientific dashboard for the Imperial BBO capstone."),
         ui.include_css(APP_DIR / "www" / "styles.css"),
+        ui.include_js(APP_DIR / "www" / "narration-player.js"),
     ),
     footer=ui.div("Official Week 1 to Week 13 evidence  |  279 observations  |  Reproducible Python application", class_="book-footer"),
     window_title="Imperial BBO Visual Book",
@@ -1665,4 +1674,3 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
 
 app = App(app_ui, server, static_assets=APP_DIR / "www")
-

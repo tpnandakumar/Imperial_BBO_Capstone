@@ -30,6 +30,15 @@ REQUIRED_PATHS = [
     ROOT / "Week_13" / "week_13_analysis.py",
     ROOT / "Week_13" / "generate_week_13_figures.py",
     ROOT / "tools" / "validate_final_notebook.py",
+    ROOT / "BBO_Visual_Book_Shiny" / "app.py",
+    ROOT / "BBO_Visual_Book_Shiny" / "NARRATION_SCRIPTS.md",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration-player.js",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "01_welcome_and_project_purpose.m4a",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "02_imperial_bbo_journey.m4a",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "03_results_and_interpretation.m4a",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "04_delta_signature_of_change.m4a",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "05_black_box_resolution.m4a",
+    ROOT / "BBO_Visual_Book_Shiny" / "www" / "narration" / "06_pdhis_and_conclusion.m4a",
 ]
 
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
@@ -189,4 +198,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
-
