@@ -65,6 +65,12 @@
         "BBR method page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "model") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/11_pdhis_mathematical_model.m4a?version=1",
+        "PDHIS mathematical model page"
+      ];
+    }
     if (section === "Beyond BBO" && pdhisResearchViews.has(selectedValue("pdhis_view"))) {
       return ["06_pdhis_and_conclusion.m4a", "PDHIS and conclusion"];
     }
