@@ -7,7 +7,10 @@
     "README": ["01_welcome_and_project_purpose.m4a", "Project overview and README"],
     "Read by Week": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
     "Read by Function": ["03_results_and_interpretation.m4a", "Results and interpretation"],
-    "Scientific Atlas": ["03_results_and_interpretation.m4a", "Results and interpretation"],
+    "Scientific Atlas": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/22_scientific_atlas_page.m4a?version=1",
+      "Scientific Atlas page"
+    ],
     "Executive Summary": [[
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/07_executive_summary_part_1.m4a?version=2",
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a",
