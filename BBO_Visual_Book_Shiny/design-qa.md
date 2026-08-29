@@ -58,3 +58,14 @@ Date: 2026-08-29
 - The three repository cards collapsed to one column at the existing mobile breakpoint.
 
 Advanced analysis completion result: passed locally. Public deployment verification follows the checked push to `main`.
+
+## Event-locked flicker study
+
+Date: 2026-08-29
+
+- The flicker page states that the analysis is retrospective and that the six-observation fingerprint precedes the known target week.
+- The graph compares nine temporal characteristics across improvement, large-change and new-best targets.
+- The explanation reports the exploratory and adjusted results separately and does not describe the candidate peak-spacing result as confirmed.
+- The supporting static figure was inspected for readable labels, complete axes and unclipped annotations.
+
+Event-locked analysis completion result: passed locally.

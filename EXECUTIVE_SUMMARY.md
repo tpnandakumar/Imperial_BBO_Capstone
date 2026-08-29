@@ -66,6 +66,8 @@ The original research opportunity is to test whether a multilevel Delta signatur
 
 In this framework, the later behaviour is the target. A higher-order analysis tested whether oscillation in Delta 6 to Delta 10 preceded positive Delta 1, Delta 2 or Delta 3 behaviour one week later. For Delta 9 predicting positive Delta 3, there were 16 eligible cases. Delta 9 oscillated in 15, and positive Delta 3 followed in 6 of those 15. The exact p value was `0.438`, so the present evidence does not support Delta 9 oscillation as a predictor. This negative finding is useful because it shows that very high-order oscillation may become too common to distinguish future states in a short sequence.
 
+An event-locked retrospective study then characterised the six observations before each of 56 eligible target weeks. It compared temporal dispersion, sign-change frequency, peak spacing, amplitude, energy, persistence, amplification and flicker density before 29 improvements, 6 large changes and 11 new best outputs. Longer peak spacing was the strongest candidate before new best outputs, averaging `4.00` compared with `2.02` in other windows. Its exploratory p value was `0.034`, but the adjusted value was `0.305`. This identifies a flicker characteristic worth testing, while showing that it is not yet confirmed.
+
 ## Relevance beyond optimisation
 
 The project has direct relevance to decisions made under uncertainty. In clinical neurology, service improvement and organisational planning, evidence often arrives sequentially and evaluation is costly. A defensible process must balance immediate benefit, further learning, reliability and risk.

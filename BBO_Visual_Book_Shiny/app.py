@@ -17,6 +17,7 @@ PDHIS_ORDER_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_PREDICTABILITY_BY_OR
 PDHIS_FUNCTION_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FUNCTION_RELATIONSHIPS.csv"
 PDHIS_ADVANCED_METRICS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_METRICS.csv"
 PDHIS_ADVANCED_COEFFICIENTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_COEFFICIENTS.csv"
+PDHIS_FLICKER_ASSOCIATIONS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_EVENT_LOCKED_FLICKER_ASSOCIATIONS.csv"
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -87,6 +88,11 @@ PDHIS_EXPLANATIONS = {
         "Leave-one-function-out testing asks whether the pattern transfers to a function excluded from fitting. Expanding-week testing preserves the order in which evidence arrived. "
         "The earlier Delta signature is the predictor and the later behaviour is the target."
     ),
+    "flicker": (
+        "Reading the event-locked flicker study",
+        "Each cell compares a characteristic measured during the six observations before a known target week. Positive values mean the characteristic was stronger before events; negative values mean it was weaker. "
+        "The outcome is already known, so this retrospective study discovers candidate fingerprints rather than proving advance prediction."
+    ),
 }
 
 
@@ -123,6 +129,16 @@ def load_pdhis_advanced_data() -> tuple[pd.DataFrame, pd.DataFrame]:
 
 
 PDHIS_ADVANCED_METRICS, PDHIS_ADVANCED_COEFFICIENTS = load_pdhis_advanced_data()
+
+
+def load_pdhis_flicker_data() -> pd.DataFrame:
+    associations = pd.read_csv(PDHIS_FLICKER_ASSOCIATIONS_FILE)
+    if len(associations) != 27:
+        raise ValueError("The event-locked flicker evidence must contain twenty-seven feature and target comparisons.")
+    return associations
+
+
+PDHIS_FLICKER_ASSOCIATIONS = load_pdhis_flicker_data()
 
 
 def format_number(value: float) -> str:
@@ -519,7 +535,7 @@ app_ui = ui.page_navbar(
             ui.div(
                 ui.input_radio_buttons(
                     "pdhis_view", None,
-                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model"},
+                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model", "flicker": "Flicker study"},
                     selected="overview", inline=True,
                 ),
                 class_="resolution-index pdhis-page-index",
@@ -550,6 +566,7 @@ app_ui = ui.page_navbar(
                                 ("functions", "F1 to F8: relationship map", "rose-route"),
                                 ("evidence", "Evidence boundary: what remains", "mint-route"),
                                 ("advanced", "Advanced model: next-week improvement", "blue-route"),
+                                ("flicker", "Event-locked flicker characterisation", "lavender-route"),
                             ]
                         ],
                         class_="pdhis-route-grid",
@@ -766,7 +783,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             ui.update_radio_buttons("pdhis_view", selected="overview")
             ui.update_navs("main_navigation", selected="Beyond BBO")
 
-    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence"]
+    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "advanced", "flicker"]
 
     for page in pdhis_pages[1:]:
         @reactive.effect
@@ -985,6 +1002,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                     "Held-out-function balanced accuracy was 0.624. Expanding-week balanced accuracy was lower at 0.563, showing that chronological transfer remains difficult.",
                     "The permutation result was 0.0297, but chronological probability calibration did not beat the baseline. Prospective validation is still required.",
                     "A separate higher-order test found that Delta 9 oscillated in 15 of 16 eligible cases. Positive Delta 3 followed in 6 of those 15, with exact p equal to 0.438, so Delta 9 oscillation did not predict positive Delta 3 in this record.",
+                ],
+                "flicker": [
+                    "Each of the 56 windows contains the six observations immediately before a target week. The later event never enters the flicker calculation.",
+                    "The targets comprise 29 improvements, 6 large function-adjusted changes and 11 new best outputs.",
+                    "Longer peak spacing was the strongest candidate before new best outputs: 4.00 compared with 2.02 in other windows.",
+                    "Its exploratory p value was 0.034, but the adjusted value was 0.305. The characteristic is therefore a research pointer, not confirmed evidence.",
+                    "Weekly sampling is too sparse for a conventional frequency spectrum, so sign-change rate and peak spacing describe temporal frequency.",
                 ],
             }.get(view, [
                 "Read the graph with the available sample size in view.",
@@ -1214,6 +1238,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "functions": "Function-specific Delta relationships",
             "evidence": "Predictive evidence decreases at higher orders",
             "advanced": "Can the Delta signature classify next-week improvement?",
+            "flicker": "What characterised the flicker before a known event?",
         }[input.pdhis_view()]
 
     @render.text
@@ -1227,6 +1252,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "functions": "F2 has the clearest reversal signature across Delta 1 to Delta 4. F5 differs, with a positive Delta 1 relationship. Function-level samples remain small.",
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
             "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. Delta 9 oscillation also failed to predict positive Delta 3 in the small higher-order test, so the findings support prospective study rather than operational forecasting.",
+            "flicker": "The event-locked study looks backwards from known outcomes and characterises the preceding flicker. Peak spacing was the strongest candidate before new best outputs, but it did not remain significant after adjustment. The result defines a candidate temporal fingerprint for later prospective testing.",
         }[input.pdhis_view()]
 
     @render_widget
@@ -1400,6 +1426,22 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             fig.add_hline(y=.5, line=dict(color="#d4a72c", dash="dash"), annotation_text="Chance-balanced reference")
             fig.update_yaxes(title="Balanced accuracy", range=[0, .75])
             return plot_layout(fig, "Out-of-sample next-week improvement classification")
+
+        if view == "flicker":
+            frame = PDHIS_FLICKER_ASSOCIATIONS.copy()
+            target_order = ["positive_event", "large_event", "new_best_event"]
+            feature_order = list(dict.fromkeys(frame.feature_label))
+            pivot = frame.pivot(index="feature_label", columns="target", values="standardised_difference").reindex(index=feature_order, columns=target_order)
+            hover = frame.pivot(index="feature_label", columns="target", values="holm_p").reindex(index=feature_order, columns=target_order)
+            fig = go.Figure(go.Heatmap(
+                z=pivot.to_numpy(), x=["Any improvement", "Large change", "New best"], y=feature_order,
+                colorscale="RdBu", zmid=0, zmin=-1.25, zmax=1.25,
+                customdata=hover.to_numpy(),
+                hovertemplate="%{y}<br>%{x}<br>Standardised difference %{z:.3f}<br>Adjusted p %{customdata:.3f}<extra></extra>",
+                colorbar=dict(title="Event minus<br>non-event"),
+            ))
+            fig.update_yaxes(autorange="reversed")
+            return plot_layout(fig, "Pre-event temporal flicker fingerprint")
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(

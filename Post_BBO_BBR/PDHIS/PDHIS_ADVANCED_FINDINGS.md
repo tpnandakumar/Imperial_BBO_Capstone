@@ -32,6 +32,8 @@ The later behaviour is the target. A separate forward analysis asks whether osci
 
 For the specific Delta 9 to Delta 3 question, only 16 forward cases are available. Delta 9 oscillated in 15 cases and positive Delta 3 followed in 6 of those 15. The two-sided exact p value is 0.438. Delta 9 oscillation therefore does not predict positive Delta 3 in the present record. Its near-universal occurrence also suggests that very high-order oscillation may arise from repeated differencing rather than identify a distinctive future state.
 
+The [event-locked flicker characterisation](PDHIS_EVENT_LOCKED_FLICKERS.md) takes the complementary retrospective route. It begins with known event and non-event weeks, then measures the temporal fingerprint contained in the six preceding observations.
+
 ## Influence-state summary
 
 | Influence state | Cases | Next improvements | Next improvement rate | Median next change |

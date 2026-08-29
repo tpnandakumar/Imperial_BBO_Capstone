@@ -4,6 +4,8 @@ The latest extension adds [regularised logistic classification, chronological va
 
 A further [higher-order pointer analysis](PDHIS_HIGH_ORDER_POINTERS.md) tests whether oscillation in Delta 6 to Delta 10 precedes positive Delta 1, Delta 2 or Delta 3 behaviour one week later. It defines the later low-order Delta as the target and keeps every predictor within the information available at the prediction week.
 
+The [event-locked flicker study](PDHIS_EVENT_LOCKED_FLICKERS.md) looks backwards from known event and non-event weeks. It characterises the preceding six observations through temporal dispersion, sign-change frequency, peak spacing, energy, amplitude, persistence, amplification, Delta 2 energy and flicker density.
+
 This analysis applies the Pisharam Delta Hierarchy and Influence States
 (PDHIS) to the eight hidden functions in the completed BBO challenge.
 "Delta of BBO" refers to this specific application. PDHIS is the analytical
