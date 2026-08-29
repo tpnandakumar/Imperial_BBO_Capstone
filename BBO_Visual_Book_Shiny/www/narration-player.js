@@ -95,6 +95,12 @@
         "PDHIS Predictability page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "functions") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/19_pdhis_f1_to_f8_relationships.m4a?version=1",
+        "PDHIS F1 to F8 relationship page"
+      ];
+    }
     if (section === "Beyond BBO" && selectedValue("pdhis_view") === "advanced") {
       return [
         "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/12_pdhis_advanced_model.m4a?version=1",
