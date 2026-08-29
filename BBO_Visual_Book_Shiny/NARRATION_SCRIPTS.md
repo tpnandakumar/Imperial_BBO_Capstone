@@ -468,3 +468,27 @@ Use Resolution home as the entrance to this research route. Select BBR method to
 
 The central B B R principle is simple. A proposed explanation earns support by surviving the recorded evidence and chronological tests. It remains a surrogate until independent evidence shows that a stronger claim is justified.
 
+## 29. Beyond BBO home page
+
+Beyond BBO is the home of Pisharam Delta Hierarchy and Influence State, abbreviated as P D H I S. This post-challenge method studies how behavioural change becomes visible across time and across recursively nested Delta orders.
+
+The starting point is the thirteen weekly outputs recorded for each of the eight functions. Delta One is the difference between consecutive outputs. Delta Two measures the change in Delta One. The same operation continues recursively through Delta Ten.
+
+Each level asks a different question. Delta One shows immediate movement. Delta Two shows whether that movement is accelerating, slowing or reversing. Higher orders expose increasingly fine changes in shape, persistence and direction. Together they form a hierarchy of observed behavioural change.
+
+Within P D H I S, Delta is described as the Signature of Change. This does not mean that every oscillation predicts a future event. It means that change already present in the sequence can be characterised by its order, amplitude, persistence, energy, temporal dispersion and relationship to later behaviour.
+
+The later behaviour is the target. A retrospective study can ask whether a known event was preceded by an earlier flicker and how that flicker developed across Delta levels. A prospective study must go further. It must define the signal and target before new observations are revealed, then test the rule on unseen data.
+
+The home page summarises the available evidence. There are one hundred and four weekly participant observations, consisting of thirteen outputs for each of eight functions. Delta orders One to Ten are calculated within each function. As the order rises, fewer comparisons remain because every round of differencing shortens the sequence.
+
+Delta Two, Delta Four and Delta Five are the strongest inverse next-change candidates in the present analysis. None reaches the false discovery rate adjusted confirmation threshold of q below zero point zero five. The correct conclusion is therefore specific. The study identifies structured research candidates and a reproducible testing framework, but the thirteen-week record does not confirm prospective prediction.
+
+The navigation controls separate the analytical questions. Delta meanings defines each order. Lotus hierarchy shows how deeper levels are nested. Delta trajectory compares function and order through time. Predictability presents chronological association tests. F One to F Eight maps relationships across the hidden landscapes. Evidence boundary shows the sample and statistical limits.
+
+The Mathematical Model provides the formal definitions. The Advanced Model studies next-week improvement. The event-locked flicker page asks whether observed events have a preceding temporal signature. The matched atlas compares event and non-event patterns while preserving the distinction between retrospective identification and future testing.
+
+Read these pages as one connected method. Begin with meanings and hierarchy, move to trajectory, then examine predictability and the evidence boundary. Use the mathematical model when formal notation is required. Use flicker and matched events when considering the design of a later event-locked study.
+
+P D H I S contributes a structured language for analysing temporal change in a short black box sequence. Its positive result is the identification of observable Delta behaviour, candidate orders and a clear prospective research design. Its scientific strength comes from stating exactly what the current evidence supports and what must still be tested.
+
