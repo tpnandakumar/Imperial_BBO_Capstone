@@ -10,7 +10,7 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 
 ROOT = Path(__file__).resolve().parents[1]
-HISTORY = ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv"
+HISTORY = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 OUT = ROOT / "Week_10" / "week_10_cluster_summary.csv"
 
 DECISIONS = {
@@ -21,7 +21,15 @@ DECISIONS = {
 
 def load_history():
     df = pd.read_csv(HISTORY)
+    df = df[df["source"].str.match(r"week_\d{2}")].copy()
+    df["Week"] = df["source"].str.removeprefix("week_").astype(int)
     df = df[df["Week"].between(1, 10)].copy()
+    df["Function"] = df["function"].astype(int)
+    df["Output"] = df["output"].astype(float)
+    dimensions = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
+    df["Dimension"] = df["Function"].map(dimensions)
+    for i in range(1, 9):
+        df[f"Input_{i}"] = df[f"x{i}"]
     if len(df) != 80:
         raise ValueError(f"Expected 80 observations through Week 10, found {len(df)}")
     return df

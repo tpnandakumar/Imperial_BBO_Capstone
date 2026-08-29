@@ -44,4 +44,4 @@ The continuous-integration workflow repeats this audit, regenerates the Week 13 
 
 ## Submission boundary
 
-The repository contains additional research undertaken around and after the capstone. The official assessed experiment is confined to the course-supplied starter observations and the thirteen authorised query rounds. Black Box Resolution, PGC and PFRAMOS material is not presented as evidence that generated or altered the official portal results.
+The repository contains additional research undertaken after the capstone. The official assessed experiment is confined to the course-supplied starter observations and the thirteen authorised query rounds. Black Box Resolution and PDHIS material is clearly separated and did not generate or alter the official portal results.

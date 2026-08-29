@@ -4,7 +4,7 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-HISTORY = ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv"
+HISTORY = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 W12_IN = ROOT / "Week_12" / "week_12_inputs.csv"
 W12_OUT = ROOT / "Week_12" / "week_12_results.csv"
 W13_IN = ROOT / "Week_13" / "week_13_inputs.csv"
@@ -65,7 +65,15 @@ def read_late_week(week: int, input_path: Path, output_path: Path) -> pd.DataFra
 
 def build() -> pd.DataFrame:
     early = pd.read_csv(HISTORY)
+    early = early.loc[early["source"].str.match(r"week_\d{2}")].copy()
+    early["Week"] = early["source"].str.removeprefix("week_").astype(int)
     early = early.loc[early["Week"] <= 11].copy()
+    early["Function"] = early["function"].astype(int)
+    early["Dimension"] = early["Function"].map(DIMENSIONS)
+    early["Output"] = early["output"].astype(float)
+    early["Source"] = early["source"]
+    for j in range(1, 9):
+        early[f"Input_{j}"] = early[f"x{j}"]
 
     week12 = read_late_week(12, W12_IN, W12_OUT)
     week13 = read_late_week(13, W13_IN, W13_OUT)

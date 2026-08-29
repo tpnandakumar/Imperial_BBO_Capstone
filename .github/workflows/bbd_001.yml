@@ -6,7 +6,7 @@ on:
     paths:
       - 'Advanced_Extension_Series/BBD_Black_Box_Decryption/**'
       - 'Advanced_Extension_Series/SOC_Surrogate_Optimisation_Competition/**'
-      - 'PFRAMOS/data/recovered_exact_history.csv'
+      - 'BBO_Dashboard/data/complete_internal_evidence.csv'
       - 'Week_12/week_12_inputs.csv'
       - 'Week_12/week_12_results.csv'
       - 'Week_13/week_13_inputs.csv'

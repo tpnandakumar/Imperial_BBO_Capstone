@@ -1,7 +1,7 @@
 """Generate colour coded Week 10 clustering figures from the exact BBO history.
 
 Only Weeks 1 to 10 are used as analytical evidence. Week 11 outputs are excluded.
-The authoritative history is read from PFRAMOS/data/recovered_exact_history.csv.
+The authoritative history is read from BBO_Dashboard/data/complete_internal_evidence.csv.
 """
 from pathlib import Path
 import numpy as np
@@ -12,7 +12,7 @@ from sklearn.metrics import silhouette_score
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTDIR = ROOT / "Week_10"
-HISTORY = ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv"
+HISTORY = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 DPI = 300
 
 FUNCTION_COLOURS = ["#2563EB", "#F59E0B", "#10B981", "#EF4444", "#8B5CF6", "#14B8A6", "#EC4899", "#64748B"]
@@ -31,7 +31,15 @@ DECISIONS = {
 
 def load_history():
     df = pd.read_csv(HISTORY)
+    df = df[df["source"].str.match(r"week_\d{2}")].copy()
+    df["Week"] = df["source"].str.removeprefix("week_").astype(int)
     df = df[df["Week"].between(1, 10)].copy()
+    df["Function"] = df["function"].astype(int)
+    df["Output"] = df["output"].astype(float)
+    dimensions = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
+    df["Dimension"] = df["Function"].map(dimensions)
+    for i in range(1, 9):
+        df[f"Input_{i}"] = df[f"x{i}"]
     if len(df) != 80:
         raise ValueError(f"Expected 80 Week 1 to 10 observations, found {len(df)}")
     return df

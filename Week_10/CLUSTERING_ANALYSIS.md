@@ -10,7 +10,7 @@ Only observations available by the end of Week 10 are used. Week 11 outputs are 
 
 The clustering workflow reads the exact cumulative history stored in:
 
-`PFRAMOS/data/recovered_exact_history.csv`
+`BBO_Dashboard/data/complete_internal_evidence.csv`
 
 The Week 10 analysis filters that file to Weeks 1 to 10, giving 80 observations in total, ten for each of the eight functions. The raw Week 10 inputs and outputs remain independently preserved in `week_10_inputs.csv` and `week_10_results.csv`.
 

@@ -28,14 +28,16 @@ def parse_weekly_input(irow: pd.Series, dim: int) -> list[float]:
 
 
 def load_history() -> pd.DataFrame:
-    early = pd.read_csv(ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv")
-    early = early[early["Week"].astype(int) <= 11].copy()
+    early = pd.read_csv(ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv")
+    early = early[early["source"].str.match(r"week_\d{2}")].copy()
+    early["week"] = early["source"].str.removeprefix("week_").astype(int)
+    early = early[early["week"] <= 11].copy()
     rows = []
     for _, r in early.iterrows():
-        f = int(r["Function"])
-        row = {"week": int(r["Week"]), "function": f, "output": float(r["Output"])}
+        f = int(r["function"])
+        row = {"week": int(r["week"]), "function": f, "output": float(r["output"])}
         for i in range(1, DIMS[f] + 1):
-            row[f"x{i}"] = float(r[f"Input_{i}"])
+            row[f"x{i}"] = float(r[f"x{i}"])
         rows.append(row)
 
     for week in (12, 13):

@@ -269,5 +269,3 @@ The bars show the number of forward comparisons remaining at each Delta order. T
 No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/README.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
-
-The origins and assessment boundary of the later PGC and PFRAMOS research streams are recorded in [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md). Their separate research workspaces are not required for reproducing or assessing the Imperial BBO submission.
