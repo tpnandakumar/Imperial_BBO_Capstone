@@ -35,7 +35,18 @@ The optimisation evidence is available directly below. The clustering comparison
 
 ## RESULTS
 
-The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Function 2 showed that even a small move near a strong point can reduce performance, while Function 6 demonstrated that repeated coordinates may return different values. The main lesson is that effective black box optimisation requires a balance of exploration, careful local refinement, recovery, replication and stopping. The results are strong observed outcomes, not claims that the unknown global optima were found.
+The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Functions 1, 4, 7 and 8 retained strong points found earlier, while Function 2 reached its best result in Week 12 before a further small move reduced performance. Function 6 demonstrated that the same coordinates can return different outputs, making repeat testing important.
+
+The model showed that no single search behaviour suited all eight functions. Broad exploration was useful when the response surface was unclear. Small local movements were effective when improvement remained consistent. Recovery protected earlier gains after an unsuccessful move, and replication helped distinguish stable results from variable outputs. Clustering and principal component analysis supported interpretation, but the returned objective values remained the main decision evidence. The results support a sequential strategy that adapts by function and balances exploration, refinement, recovery, replication and stopping.
+
+These are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima.
+
+| Results evidence | What it contains |
+| --- | --- |
+| [Verified final result summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv) | Best participant-query output and winning week for F1 to F8 |
+| [Final reproducible notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) | Dataset checks, starter comparison, repeatability analysis and thirteen-round trajectories |
+| [Final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md) | Function-level interpretation of what succeeded, plateaued or required recovery |
+| [Successful optimisation strategies](Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md) | Evidence supporting exploration, refinement, recovery, replication and stopping |
 
 ## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
 
