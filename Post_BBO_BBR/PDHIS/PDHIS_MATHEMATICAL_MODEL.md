@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Pisharam Delta Hierarchy and Influence State (PDHIS) is a mathematical framework for describing how an observed sequence changes when its generating equation is unknown. It separates retrospective characterisation from prospective prediction.
+Pisharam Delta Hierarchy and Influence State (PDHIS) is a novel mathematical framework for revealing how change takes form within an observed sequence when its generating equation is unknown. It combines a recursive hierarchy of Delta orders with oscillation energy, frequency, temporal dispersion, persistence, cross-order coherence and event-locked examination. It separates established retrospective identification from the next research stage of prospective prediction.
 
 ## Observed sequence
 

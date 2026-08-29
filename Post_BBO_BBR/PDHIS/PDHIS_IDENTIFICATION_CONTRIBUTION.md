@@ -2,7 +2,9 @@
 
 ## Positive development
 
-Pisharam Delta Hierarchy and Influence State (PDHIS) provides a formal method for extracting mathematical behaviour from an observed sequence when the generating equation is unknown. It identifies the Signature of Change through recursive Delta orders and measurable temporal characteristics.
+Pisharam Delta Hierarchy and Influence State (PDHIS) introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It extracts mathematical behaviour when the generating equation is unknown and traces how movement, oscillatory energy and temporal structure appear and propagate through recursive Delta orders.
+
+PDHIS does not merely measure whether change occurred. It reveals the mathematical behaviour through which change takes form. The framework combines higher-order Delta analysis, oscillation characteristics, cross-order propagation, event-locked examination and representative surrogate equations within one coherent and reproducible model.
 
 The contribution is not limited to forecasting. PDHIS separates four questions that are often confused:
 
@@ -100,7 +102,9 @@ These findings identify the current boundary of the data and prevent a retrospec
 
 ## Contribution statement
 
-> PDHIS extracts a structured and reproducible Signature of Change from sparse black-box sequences. It identifies retrospective mathematical behaviour, candidate event-linked characteristics and the point at which available evidence becomes insufficient for prospective inference. This is a positive methodological contribution even though advance prediction remains a later validation objective.
+> PDHIS is a novel mathematical framework for revealing a structured and reproducible Signature of Change in sparse black-box sequences. It traces how change emerges, disperses and propagates through successive Delta orders, linking subtle higher-order flickers with changes that become visible in the measured function. It combines hierarchical Delta analysis, event-locked examination and representative surrogate equations to reveal mathematical behaviour that conventional trend analysis may overlook.
+
+The present study establishes the identification framework and its mathematical foundation. It also defines a precise route for determining how early and how reliably an emerging Signature of Change can indicate subsequent behaviour. Prospective prediction remains the next validation stage, not a condition placed on the novelty of PDHIS.
 
 ## Positive conclusion and research direction
 
@@ -108,4 +112,4 @@ This work demonstrates that meaningful mathematical behaviour can be identified 
 
 PDHIS converts observed change into a structured mathematical state, separates retrospective identification from prospective prediction and identifies the present boundary of the available evidence. Longer independent sequences, repeated anchor inputs, input-adjusted residual Delta and prospectively defined events now provide a clear programme for determining which characteristics remain stable across time, functions and independent datasets.
 
-PDHIS should therefore be understood as both an identification framework and a developing research model. It already provides a reproducible method for extracting mathematical behaviour from unknown functions. Its next challenge is to establish whether a locked Signature of Change can support validated prospective prediction.
+PDHIS is a novel identification framework and a developing research model. It provides a reproducible method for extracting mathematical behaviour from unknown functions. Its next research challenge is to establish whether a locked Signature of Change can support validated prospective prediction.

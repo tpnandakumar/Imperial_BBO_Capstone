@@ -54,7 +54,9 @@ The post challenge work extends the completed record without changing the offici
 
 **Black Box Resolution (BBR)** compares possible explanations of hidden behaviour, tests them chronologically and rejects explanations that fail. It can support a local structural account while leaving the original hidden equation unresolved.
 
-**Pisharam Delta Hierarchy and Influence State (PDHIS)** examines recursively nested change from Delta 1 to Delta 10. Its central idea is Delta as the Signature of Change. The relevant pattern is formed by direction, persistence, reversal, plateau or oscillation across related Delta levels, rather than by one isolated peak.
+**Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within observed behavioural sequences. It examines recursively nested change from Delta 1 to Delta 10 and traces how direction, persistence, reversal, plateau, oscillatory energy and temporal structure move through related levels. The signature belongs to the sequence as a whole, not to one isolated peak.
+
+PDHIS does more than record whether change occurred. It reveals the mathematical behaviour through which change takes form. By combining hierarchical Delta analysis, event-locked examination and representative surrogate equations, the framework shows that sparse input-output records can contain a rich and reproducible structure that conventional trend analysis may overlook.
 
 An advanced PDHIS extension tested whether Delta information available at the end of one week could classify improvement in the following week. The analysis used 56 forward cases, comprising 29 improvements and 27 non-improvements. A regularised logistic model fitted by batch gradient descent combined Delta 1 to Delta 5 with persistence, sign change and cross-level coherence.
 
@@ -62,7 +64,7 @@ In leave-one-function-out testing, the full Delta signature achieved balanced ac
 
 This is a promising screening result, not a forecasting rule. Chronological calibration did not improve on the simple baseline, the sample remains small and several Delta features are related. The correct next step is prospective validation on later observations defined before their outcomes are known.
 
-The original research opportunity is to test whether a multilevel Delta signature carries information that a single change measure misses. That question is falsifiable and can be studied across optimisation, service improvement and other sequential processes. The next study should register its hypotheses and measures in advance, lock the model before testing, use new functions and compare PDHIS with simple persistence and time-series baselines. Independent replication would then determine whether the pattern is generalisable rather than specific to this capstone record.
+The research opportunity is to determine how early and how reliably a multilevel Delta signature can indicate subsequent behaviour. That question is falsifiable and can be studied across optimisation, service improvement and other sequential processes. The next study should register its hypotheses and measures in advance, lock the model before testing, use new functions and compare PDHIS with simple persistence and time-series baselines. Independent replication will determine which characteristics generalise beyond this capstone record.
 
 In this framework, the later behaviour is the target. A higher-order analysis tested whether oscillation in Delta 6 to Delta 10 preceded positive Delta 1, Delta 2 or Delta 3 behaviour one week later. For Delta 9 predicting positive Delta 3, there were 16 eligible cases. Delta 9 oscillated in 15, and positive Delta 3 followed in 6 of those 15. The exact p value was `0.438`. This identified Delta 9 oscillation as too common to distinguish future states in the present short sequence.
 
@@ -72,7 +74,7 @@ Stronger stability checks located the current identification boundary. Same-func
 
 The mathematical extension preserves two fully reproducible representative surrogate equations. F5 uses a Matérn 2.5 Gaussian-process equation fitted to 33 observations. Its weekly walk-forward MAE was `49.919`, equal to `0.01124` of the complete F5 output range. F7 uses a full quadratic equation with six linear terms, six squared terms and fifteen interactions fitted to 43 observations. Its weekly walk-forward MAE was `0.06667`, equal to `0.04837` of the F7 range. The repository contains every scaling value, F5 kernel weight and F7 coefficient required to reproduce the equations.
 
-These surrogates approximate local input-output structure. PDHIS addresses a different question by modelling the behaviour of change through recursive Delta orders, oscillation, energy, temporal dispersion, persistence and cross-order coherence. Together they show that substantial mathematical behaviour can be extracted from sparse black-box evidence even though the original equations remain unknown. This contribution is descriptive and diagnostic. Reliable advance prediction has not been established.
+These surrogates approximate local input-output structure. PDHIS addresses a different question by modelling the behaviour of change through recursive Delta orders, oscillation, energy, temporal dispersion, persistence and cross-order coherence. Together they show that substantial mathematical behaviour can be extracted from sparse black-box evidence even though the original equations remain unknown. The identification framework and its mathematical foundation are established here. Prospective prediction remains the next stage of validation.
 
 ## Relevance beyond optimisation
 

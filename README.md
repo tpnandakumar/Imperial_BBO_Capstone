@@ -191,7 +191,11 @@ The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decr
 
 ### How to read the PDHIS graphs
 
-**Pisharam Delta Hierarchy and Influence State (PDHIS)** examines how change develops over time. Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same process. Together, these levels can reveal **Delta as the Signature of Change**, a pattern formed through consistent direction, persistence and movement across related Delta levels.
+**Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
+
+Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same recursive process. PDHIS brings these levels together with oscillation frequency, energy, temporal dispersion, persistence, cross-order coherence, event-locked analysis and representative surrogate equations. It therefore moves beyond asking whether change occurred and examines the mathematical behaviour through which change takes form.
+
+The present study establishes PDHIS as a reproducible identification framework and provides its mathematical foundation. Prospective prediction is the next validation stage. This distinction protects the strength of the contribution: PDHIS is novel, while the timing and reliability of future-event prediction must be established using longer independent sequences.
 
 For an output sequence `y(t)`, the hierarchy is calculated as:
 
