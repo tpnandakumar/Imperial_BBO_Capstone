@@ -130,3 +130,25 @@ The value of this study is that it converts the idea of a flicker into measurabl
 
 Open graph displays the complete heatmap. Explain graph provides the principal counts and statistical interpretation. Together, they show how a known event can be traced backwards to characterise the Signature of Change without mistaking retrospective discovery for prediction.
 
+## 14. PDHIS matched event atlas page
+
+This page asks whether the candidate flicker fingerprint remains visible when the comparison is made more demanding.
+
+The earlier event locked study compared event windows with the wider collection of non-event windows. The Matched Event Atlas adds a closer control. Every event is paired with the nearest non-event target week from the same function. Matching within a function reduces the chance that an apparent difference is simply caused by one hidden function having a different scale or behavioural style from another.
+
+The heatmap contains three event definitions. Any improvement is the broadest target and provides twenty nine matched pairs. A large function adjusted change is more selective and provides six pairs. A new best output provides eleven pairs. The same nine temporal characteristics are examined for each target, including amplitude, energy, dispersion, changes of sign, peak spacing, persistence, late amplification, Delta Two energy and flicker density.
+
+Blue cells indicate that a characteristic was stronger before the event than before its matched non-event. Red cells indicate that it was weaker. Pale cells show limited separation. The values are standardised paired differences, so colour describes the direction and relative size of the within-function contrast. The hover label also reports the adjusted p value.
+
+The strongest paired result appeared for temporal dispersion before the six large events. Dispersion was lower before those events, with a standardised paired difference of minus one point zero six. Its unadjusted p value was zero point zero nine four and its adjusted value was zero point eight four five. The contrast is therefore descriptive rather than statistically confirmed.
+
+The new best comparison gives another useful lesson. Peak spacing remained higher before a new best, at four point zero compared with three point four five in the matched windows. However, the direction and strength of that feature were not stable when the definition of a large event changed. A useful predictive characteristic must survive reasonable choices of threshold rather than depend on one particular definition.
+
+The page also tests transfer to a function excluded from fitting. The full flicker fingerprint achieved held out function balanced accuracy of zero point four three three. The prevalence baseline achieved zero point five. The fingerprint also had a higher Brier score, zero point two four four compared with zero point one eight one for the baseline. On this test, the complete fingerprint did not transfer better than the simpler reference.
+
+This does not erase the temporal patterns found in the completed record. It identifies their present boundary. Same-function matching weakens several contrasts, threshold changes affect stability and held out function testing shows that the current fingerprint is not yet general enough for prospective use across unseen functions.
+
+That boundary is a positive research result because it tells us what must improve. A stronger study needs longer independent sequences, more events within each function, event definitions fixed before testing and a fingerprint that remains stable across matching, thresholds and chronological validation.
+
+Open graph displays the paired heatmap. Explain graph summarises the matched counts, the smallest p value and the transfer result. Together, they show how P D H I S moves from finding a candidate Signature of Change to testing whether that signature is stable, selective and transferable.
+
