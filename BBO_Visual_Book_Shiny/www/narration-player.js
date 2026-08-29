@@ -4,11 +4,11 @@
   const tracks = {
     "Cover": ["01_welcome_and_project_purpose.m4a", "Welcome and project purpose"],
     "Imperial BBO": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
-    "README": ["01_welcome_and_project_purpose.m4a", "Welcome and project purpose"],
+    "README": ["01_welcome_and_project_purpose.m4a", "Project overview and README"],
     "Read by Week": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
     "Read by Function": ["03_results_and_interpretation.m4a", "Results and interpretation"],
     "Scientific Atlas": ["03_results_and_interpretation.m4a", "Results and interpretation"],
-    "Repository": ["03_results_and_interpretation.m4a", "Results and interpretation"],
+    "Repository": ["01_welcome_and_project_purpose.m4a", "Executive Summary and README"],
     "Above and Beyond": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Resolution": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Beyond BBO": ["04_delta_signature_of_change.m4a", "Delta and the Signature of Change"],
