@@ -1,6 +1,19 @@
 # Results
 
-This folder provides the assessment-facing final figures linked from the single repository README. The reproducible source figures remain in `Week_13`, where the automated workflow regenerates and verifies them.
+This folder is the assessment-facing results chapter for the Imperial BBO Capstone. It brings the final tables, graphs and discussion together while linking to the authoritative data and code used to reproduce them.
+
+## 1. Tables
+
+| Results table | What it reports | Reproduction route |
+| --- | --- | --- |
+| [Verified final result summary](../Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv) | Strongest participant-query output and winning week for F1 to F8 | [Final numerical analysis code](../Week_13/week_13_analysis.py) |
+| [Week 13 analysis summary](../Week_13/week_13_analysis_summary.csv) | Final-round change, strongest observed output and repeatability findings | [Final numerical analysis code](../Week_13/week_13_analysis.py) |
+| [Final figure data summary](../Week_13/week_13_figure_data_summary.csv) | Source values used in the four assessment figures | [Figure-generation code](../Week_13/generate_week_13_figures.py) |
+| [Complete 279-observation evidence](../BBO_Dashboard/data/complete_internal_evidence.csv) | All 175 starter observations and 104 participant-selected queries | [Executable capstone notebook](../Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
+
+## 2. Graphs
+
+The four figures below are assessment-facing copies. Their reproducible source figures remain in `Week_13`, where the automated workflow regenerates and verifies them.
 
 | Figure | Interpretation | Reproducible source |
 | --- | --- | --- |
@@ -9,14 +22,18 @@ This folder provides the assessment-facing final figures linked from the single 
 | [Function 5 trajectory](figure_03_function_5_trajectory.png) | Shows the clearest sustained improvement in the participant-query record | [`Week_13/week_13_figure_3_function_5_trajectory.png`](../Week_13/week_13_figure_3_function_5_trajectory.png) |
 | [Latest best round](figure_04_latest_best_round.png) | Shows when each function's strongest participant-query result was last observed | [`Week_13/week_13_figure_4_latest_best_round.png`](../Week_13/week_13_figure_4_latest_best_round.png) |
 
-The normalised progress figure compares each function only with its own observed range. It does not make raw objective values comparable across functions.
+The normalised progress figure compares each function only with its own observed range. It does not make raw objective values comparable across functions. All four figures can be regenerated with [`generate_week_13_figures.py`](../Week_13/generate_week_13_figures.py) after installing [`requirements-final.txt`](../requirements-final.txt).
 
-## Reproduction code
+## 3. Discussion
 
-| Code | Purpose |
-| --- | --- |
-| [`week_13_analysis.py`](../Week_13/week_13_analysis.py) | Reconstructs the full thirteen-round record and verifies the final function-level results |
-| [`generate_week_13_figures.py`](../Week_13/generate_week_13_figures.py) | Regenerates the four final assessment figures from committed evidence |
-| [`FINAL_CAPSTONE_NOTEBOOK.ipynb`](../Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) | Runs the assessor-facing data checks, comparisons, repeatability analysis and trajectory plots without path editing |
-| [`requirements-final.txt`](../requirements-final.txt) | Records the required plotting dependency for reproducible execution |
+The results show that no single search behaviour suited all eight hidden functions. Function 5 benefited from sustained directional refinement. Functions 1, 4, 7 and 8 showed the value of retaining or recovering earlier strong points. Function 2 demonstrated that a small additional move can reduce performance, while Function 6 showed why repeated-coordinate checks matter when returned outputs vary.
+
+Taken together, the evidence supports an adaptive sequential strategy. Exploration is useful when the response surface is unclear. Local refinement is appropriate while improvement remains consistent. Recovery protects earlier gains, replication tests stability and stopping prevents unsupported movement after a plateau. Clustering and principal component analysis helped interpret the search, but the returned objective values remained the main decision evidence.
+
+These results are the strongest outputs observed from participant-selected queries. They do not establish the hidden mathematical global optima.
+
+- [Final strategy outcome](../Week_13/FINAL_STRATEGY_OUTCOME.md)
+- [Final capstone synthesis](../Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
+- [Successful optimisation strategies evidence](../Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md)
+- [Final model card](../Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md)
 
