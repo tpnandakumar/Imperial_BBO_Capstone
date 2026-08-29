@@ -68,6 +68,8 @@ In this framework, the later behaviour is the target. A higher-order analysis te
 
 An event-locked retrospective study then characterised the six observations before each of 56 eligible target weeks. It compared temporal dispersion, sign-change frequency, peak spacing, amplitude, energy, persistence, amplification and flicker density before 29 improvements, 6 large changes and 11 new best outputs. Longer peak spacing was the strongest candidate before new best outputs, averaging `4.00` compared with `2.02` in other windows. Its exploratory p value was `0.034`, but the adjusted value was `0.305`. This identifies a flicker characteristic worth testing, while showing that it is not yet confirmed.
 
+Stronger stability checks did not confirm that candidate. Same-function matching produced a smallest paired p value of `0.094`, with an adjusted value of `0.845`. The peak-spacing direction changed across alternative large-event thresholds. When the complete fingerprint was trained on seven functions and tested on the eighth, balanced accuracy was `0.433`, below the `0.500` prevalence baseline, and probability error was worse. Preserving this negative result is important because it prevents a descriptive retrospective pattern from being presented as an early-warning rule.
+
 ## Relevance beyond optimisation
 
 The project has direct relevance to decisions made under uncertainty. In clinical neurology, service improvement and organisational planning, evidence often arrives sequentially and evaluation is costly. A defensible process must balance immediate benefit, further learning, reliability and risk.

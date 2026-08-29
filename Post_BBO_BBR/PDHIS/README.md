@@ -6,6 +6,8 @@ A further [higher-order pointer analysis](PDHIS_HIGH_ORDER_POINTERS.md) tests wh
 
 The [event-locked flicker study](PDHIS_EVENT_LOCKED_FLICKERS.md) looks backwards from known event and non-event weeks. It characterises the preceding six observations through temporal dispersion, sign-change frequency, peak spacing, energy, amplitude, persistence, amplification, Delta 2 energy and flicker density.
 
+The [matched event atlas and stability analysis](PDHIS_MATCHED_EVENT_ATLAS.md) exploits the existing evidence further through same-function matching, event-threshold sensitivity and leave-one-function-out transfer testing. These stronger checks do not confirm the initial flicker candidate.
+
 This analysis applies the Pisharam Delta Hierarchy and Influence States
 (PDHIS) to the eight hidden functions in the completed BBO challenge.
 "Delta of BBO" refers to this specific application. PDHIS is the analytical

@@ -31,6 +31,7 @@ Open the local address printed by Shiny.
 - **PDHIS:** Pisharam Delta Hierarchy and Influence State, the framework used in Delta of BBO to study recursively nested change from Delta 1 to Delta 10. Its central visual idea is **Delta as the Signature of Change**, which develops through consistent direction, persistence and movement across related levels. Each graph includes a plain English interpretation and an **Explain graph** dialogue. Delta to the power n can be extended when the preceding level changes materially and enough evidence remains. Chronological testing, randomisation and evidence limits show whether an observed pattern deserves further study.
 - **Advanced model:** an exploratory regularised logistic analysis of whether the full Delta signature can classify improvement in the following week. The page compares leave-one-function-out and chronological validation with a simple baseline, then explains the findings and limitations in plain English.
 - **Flicker study:** an event-locked retrospective comparison of temporal dispersion, sign-change frequency, peak spacing, amplitude, energy, persistence, amplification and flicker density during the six observations before known event and non-event weeks
+- **Matched atlas:** same-function event matching, threshold sensitivity and held-out-function testing used to challenge the candidate flicker fingerprint
 - **Evidence:** filterable record of all 104 participant queries
 - **Repository:** direct routes to the executive summary, main GitHub README and complete source record
 

@@ -18,6 +18,8 @@ PDHIS_FUNCTION_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FUNCTION_RELATION
 PDHIS_ADVANCED_METRICS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_METRICS.csv"
 PDHIS_ADVANCED_COEFFICIENTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGISTIC_COEFFICIENTS.csv"
 PDHIS_FLICKER_ASSOCIATIONS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_EVENT_LOCKED_FLICKER_ASSOCIATIONS.csv"
+PDHIS_MATCHED_RESULTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_MATCHED_EVENT_RESULTS.csv"
+PDHIS_FLICKER_LOFO_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FLICKER_LOFO_METRICS.csv"
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -93,6 +95,11 @@ PDHIS_EXPLANATIONS = {
         "Each cell compares a characteristic measured during the six observations before a known target week. Positive values mean the characteristic was stronger before events; negative values mean it was weaker. "
         "The outcome is already known, so this retrospective study discovers candidate fingerprints rather than proving advance prediction."
     ),
+    "atlas": (
+        "Reading the matched event atlas",
+        "Each event is paired with the nearest non-event window from the same function. The heat map shows the standardised paired difference. "
+        "The stability checks ask whether the earlier candidate survives closer controls, alternative event thresholds and transfer to a function excluded from fitting."
+    ),
 }
 
 
@@ -139,6 +146,17 @@ def load_pdhis_flicker_data() -> pd.DataFrame:
 
 
 PDHIS_FLICKER_ASSOCIATIONS = load_pdhis_flicker_data()
+
+
+def load_pdhis_matched_data() -> tuple[pd.DataFrame, pd.DataFrame]:
+    matched = pd.read_csv(PDHIS_MATCHED_RESULTS_FILE)
+    transfer = pd.read_csv(PDHIS_FLICKER_LOFO_FILE)
+    if len(matched) != 27 or len(transfer) != 2:
+        raise ValueError("The matched event atlas evidence is incomplete.")
+    return matched, transfer
+
+
+PDHIS_MATCHED_RESULTS, PDHIS_FLICKER_TRANSFER = load_pdhis_matched_data()
 
 
 def format_number(value: float) -> str:
@@ -535,7 +553,7 @@ app_ui = ui.page_navbar(
             ui.div(
                 ui.input_radio_buttons(
                     "pdhis_view", None,
-                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model", "flicker": "Flicker study"},
+                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model", "flicker": "Flicker study", "atlas": "Matched atlas"},
                     selected="overview", inline=True,
                 ),
                 class_="resolution-index pdhis-page-index",
@@ -567,6 +585,7 @@ app_ui = ui.page_navbar(
                                 ("evidence", "Evidence boundary: what remains", "mint-route"),
                                 ("advanced", "Advanced model: next-week improvement", "blue-route"),
                                 ("flicker", "Event-locked flicker characterisation", "lavender-route"),
+                                ("atlas", "Matched event atlas and stability", "peach-route"),
                             ]
                         ],
                         class_="pdhis-route-grid",
@@ -783,7 +802,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             ui.update_radio_buttons("pdhis_view", selected="overview")
             ui.update_navs("main_navigation", selected="Beyond BBO")
 
-    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "advanced", "flicker"]
+    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "advanced", "flicker", "atlas"]
 
     for page in pdhis_pages[1:]:
         @reactive.effect
@@ -1009,6 +1028,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                     "Longer peak spacing was the strongest candidate before new best outputs: 4.00 compared with 2.02 in other windows.",
                     "Its exploratory p value was 0.034, but the adjusted value was 0.305. The characteristic is therefore a research pointer, not confirmed evidence.",
                     "Weekly sampling is too sparse for a conventional frequency spectrum, so sign-change rate and peak spacing describe temporal frequency.",
+                ],
+                "atlas": [
+                    "Every event is compared with the nearest non-event target week from the same function.",
+                    "The smallest paired p value was 0.094 for temporal dispersion before six large events. Its adjusted value was 0.845.",
+                    "The direction of the peak-spacing result was not stable when the large-event threshold changed.",
+                    "The full fingerprint reached held-out-function balanced accuracy of 0.433, below the 0.500 prevalence baseline, and its Brier score was also worse.",
+                    "These results do not support locking the current fingerprint as an early-warning rule. They guide the design of longer prospective sequences.",
                 ],
             }.get(view, [
                 "Read the graph with the available sample size in view.",
@@ -1239,6 +1265,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "evidence": "Predictive evidence decreases at higher orders",
             "advanced": "Can the Delta signature classify next-week improvement?",
             "flicker": "What characterised the flicker before a known event?",
+            "atlas": "Does the flicker fingerprint survive stronger controls?",
         }[input.pdhis_view()]
 
     @render.text
@@ -1253,6 +1280,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
             "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. Delta 9 oscillation also failed to predict positive Delta 3 in the small higher-order test, so the findings support prospective study rather than operational forecasting.",
             "flicker": "The event-locked study looks backwards from known outcomes and characterises the preceding flicker. Peak spacing was the strongest candidate before new best outputs, but it did not remain significant after adjustment. The result defines a candidate temporal fingerprint for later prospective testing.",
+            "atlas": "Same-function matching, threshold sensitivity and held-out-function testing did not confirm the candidate fingerprint. This negative result prevents premature forecasting claims and shows that longer independent sequences are required.",
         }[input.pdhis_view()]
 
     @render_widget
@@ -1442,6 +1470,22 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             ))
             fig.update_yaxes(autorange="reversed")
             return plot_layout(fig, "Pre-event temporal flicker fingerprint")
+
+        if view == "atlas":
+            frame = PDHIS_MATCHED_RESULTS.copy()
+            target_order = ["positive_event", "large_event", "new_best_event"]
+            feature_order = list(dict.fromkeys(frame.feature_label))
+            pivot = frame.pivot(index="feature_label", columns="target", values="paired_standardised_difference").reindex(index=feature_order, columns=target_order)
+            adjusted = frame.pivot(index="feature_label", columns="target", values="holm_p").reindex(index=feature_order, columns=target_order)
+            fig = go.Figure(go.Heatmap(
+                z=pivot.to_numpy(), x=["Any improvement", "Large change", "New best"], y=feature_order,
+                colorscale="RdBu", zmid=0, zmin=-1.25, zmax=1.25,
+                customdata=adjusted.to_numpy(),
+                hovertemplate="%{y}<br>%{x}<br>Standardised paired difference %{z:.3f}<br>Adjusted p %{customdata:.3f}<extra></extra>",
+                colorbar=dict(title="Event minus<br>matched"),
+            ))
+            fig.update_yaxes(autorange="reversed")
+            return plot_layout(fig, "Same-function matched event comparisons")
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(

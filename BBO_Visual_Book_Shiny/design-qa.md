@@ -69,3 +69,14 @@ Date: 2026-08-29
 - The supporting static figure was inspected for readable labels, complete axes and unclipped annotations.
 
 Event-locked analysis completion result: passed locally.
+
+## Matched event atlas
+
+Date: 2026-08-29
+
+- Same-function matching, threshold sensitivity and held-out-function results are reported separately.
+- The Visual Book explanation states that the candidate fingerprint was not confirmed.
+- Standardised paired differences keep characteristics with different units comparable in the graph.
+- The supporting three-panel figure was inspected for readable labels, complete axes and unclipped annotations.
+
+Matched atlas completion result: passed locally.

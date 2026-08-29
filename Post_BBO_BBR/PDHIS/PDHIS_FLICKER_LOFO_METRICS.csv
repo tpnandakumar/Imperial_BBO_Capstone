@@ -1,0 +1,3 @@
+model,cases,events,balanced_accuracy,roc_auc,brier_score
+Flicker fingerprint,56,11,0.43333333333333335,0.3959595959595959,0.24404593041891529
+Prevalence baseline,56,11,0.5,0.08282828282828282,0.18117451062057474
