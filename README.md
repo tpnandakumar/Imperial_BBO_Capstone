@@ -26,7 +26,7 @@ To listen while reading, keep the written Executive Summary open in one tab and 
 | Part 2: final results, interpretation, trade-offs and stopping | [Listen to Part 2](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a) |
 | Part 3: retrospective learning, accessibility and clinical application | [Listen to Part 3](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/09_executive_summary_part_3.m4a) |
 
-The Visual Storyboard provides the simplest continuous listening route. Open its **Repository** page and select the navy blue **HEAR ME** button to play all three parts in order.
+The Visual Storyboard provides the simplest continuous listening route. [Open the Executive Summary page in the Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/?page=executive-summary), then select the navy blue **HEAR ME** button to play all three parts in order.
 
 ## DATA
 
