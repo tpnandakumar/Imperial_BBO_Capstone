@@ -1286,8 +1286,8 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         return plot_layout(fig, "Weekly trajectories across all eight functions")
 
     @render_widget
-    def atlas_trajectories_plot():
-        return _build_atlas_plot("trajectories")
+    def atlas_weekly_plot():
+        return _build_atlas_plot("weekly")
 
     @render_widget
     def atlas_heatmap_plot():
