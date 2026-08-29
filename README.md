@@ -53,19 +53,33 @@ These are the strongest outputs observed from participant-selected queries. They
 | **B. Graphs and Infographics** | [Open the visual summary, final graphs, explanations and figure-generation route](Results/Graphs_and_Infographics/GRAPHS_AND_INFOGRAPHICS.md) |
 | **C. Detailed Discussion** | [Open the interpretation summary and full discussion of all eight functions](Results/Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
-## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
+## ADDITIONAL PROJECT CONTRIBUTIONS
 
-The following additions extend the assessed capstone without changing its thirteen-round evidence or results.
+These additions extend the assessed capstone without changing its thirteen-round evidence or results.
 
-| Added contribution | What it provides | Open it |
-| --- | --- | --- |
-| Imperial BBO Visual Book | A public Shiny reading experience with the full story organised by week, function and scientific theme | [Open the live Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
-| Executive Summary | The completed Component 25.1 retrospective, repurposed as a detailed account of the challenge, decisions, findings and significance | [Read the Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) |
-| Black Box Resolution (BBR) | Post-capstone investigation of mathematical structure that may be supported by the completed input and output evidence | [Explore BBR](Post_BBO_BBR/SECTION_GUIDE.md) |
-| Pisharam Delta Hierarchy and Influence State (PDHIS) | A mathematical framework for examining the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure | [Explore PDHIS](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md) |
-| Scientific Atlas | Interactive comparison of weekly trajectories, function by week patterns and the timing of retained best results | [Open the Scientific Atlas in the Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+### VISUAL STORYBOARD
 
-These additions are clearly identified as supporting communication or post-capstone research. They demonstrate how the completed BBO evidence can be explained visually, examined mathematically and developed into further research questions.
+The Imperial BBO Visual Storyboard is the public Shiny reading experience for the project. It presents the story by week, function and scientific theme, with short explanations that connect the graphs to the decisions and outcomes. Its Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
+
+[Open the live Imperial BBO Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/)
+
+### ABOVE AND BEYOND
+
+This research route begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results.
+
+#### ABOVE: BLACK BOX RESOLUTION (BBR)
+
+Black Box Resolution (BBR) investigates how much mathematical structure can be recovered from the completed input and output evidence. It includes function-specific analysis and representative surrogate equations while keeping a clear distinction between an evidence-based approximation and the unknown original function.
+
+[Explore Black Box Resolution](Post_BBO_BBR/SECTION_GUIDE.md)
+
+#### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
+
+Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure. It asks how behavioural change becomes visible within an observed sequence and provides a mathematical foundation for further prospective research.
+
+[Explore Pisharam Delta Hierarchy and Influence State](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md)
+
+The Visual Storyboard, BBR and PDHIS are clearly identified as communication or post-capstone research contributions. Together, they show how the completed evidence can be explained visually, examined mathematically and developed into further research questions.
 
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
