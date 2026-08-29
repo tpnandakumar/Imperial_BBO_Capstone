@@ -220,7 +220,8 @@ body {
 .nav-home-button { border-radius: 999px !important; margin-left: .35rem; }
 .hear-me-controls { display: flex; align-items: center; gap: .3rem; margin-left: .35rem; }
 .hear-me-button, .hear-stop-button { border-radius: 999px !important; font-size: .7rem !important; font-weight: 800 !important; letter-spacing: .035em; white-space: nowrap; }
-.hear-me-button { min-width: 5.4rem; background: linear-gradient(120deg, #557f99, #6d8eaa) !important; border-color: #557f99 !important; color: #fff !important; }
+.hear-me-button { min-width: 5.4rem; background: #123a63 !important; border-color: #0b2947 !important; color: #fff !important; box-shadow: 0 3px 10px rgba(18,58,99,.28); }
+.hear-me-button:hover, .hear-me-button:active { background: #0b2947 !important; border-color: #071d33 !important; color: #fff !important; }
 .hear-stop-button { background: rgba(255,255,255,.82) !important; border-color: rgba(67,95,116,.28) !important; color: var(--ink) !important; }
 .hear-me-button:focus-visible, .hear-stop-button:focus-visible { outline: 3px solid rgba(100,182,172,.42); outline-offset: 2px; }
 .top-toolbar { display: flex; justify-content: flex-end; gap: .35rem; height: 2.25rem; margin-bottom: .15rem; }
