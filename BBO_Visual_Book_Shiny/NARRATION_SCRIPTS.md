@@ -214,3 +214,25 @@ The chart is descriptive. It shows change already present in the observed record
 
 Open graph displays the selected trajectory in a centred viewer. Explain graph adapts its guidance to the chosen function and level. Use both controls to follow direction, reversals, flattening, oscillation and cross order agreement while keeping the chronological evidence boundary clear.
 
+## 18. PDHIS Predictability page
+
+This page tests whether a Delta value calculated from earlier observations is associated with what happens next. It is the bridge between describing the Signature of Change and asking whether that signature can support forecasting.
+
+The graph compares all ten Delta orders. The green line relates each order to the following weekly change. The purple line relates it to the following output. These are Spearman correlations, which measure whether larger values in one series tend to occur with larger or smaller values in the other without assuming a straight line relationship.
+
+A positive correlation means higher Delta values tend to be followed by higher targets. A negative correlation means higher Delta values tend to be followed by lower targets, or lower Delta values by higher targets. Correlation describes direction and strength of association. It does not establish that the Delta order causes the later outcome.
+
+The gold shuffled range is a noise reference. It is created by disrupting chronological order and recalculating the relationship. A result outside that range deserves closer attention because it is stronger than most associations produced after timing has been broken.
+
+Delta Two, Delta Four and Delta Five show the clearest inverse relationships with the following change. Their correlations are approximately minus zero point two nine nine, minus zero point three zero three and minus zero point three one nine. Their initial permutation p values are about zero point zero one five, zero point zero two one and zero point zero two three.
+
+Several orders are tested on the same record, so the analysis adjusts for multiple comparisons. After false discovery rate correction, each of those three results has a q value of about zero point zero seven seven. None passes the pre-specified zero point zero five confirmation threshold. They are structured research pointers, not confirmed forecasting rules.
+
+The evidence also narrows at higher orders. Delta One has eighty eight usable forward comparisons across the eight functions. Delta Five has fifty six. Delta Ten has only sixteen. The shuffled range widens as the sample becomes smaller, which makes an apparently large high order association less stable.
+
+Direction hit rate provides another view, but it also remains modest. A useful predictor must do more than show correlation in the completed record. It must retain its definition, use only information available before the target and perform on later or independent data.
+
+The positive finding is that P D H I S identifies specific orders and directions that can be tested prospectively. Delta Two, Four and Five provide clearer hypotheses than an unrestricted search across every possible flicker. The current evidence defines those hypotheses while preserving an honest boundary around what has not yet been confirmed.
+
+Open graph displays both correlation lines and the shuffled reference. Explain graph summarises how to read them. Use the page to distinguish an observed chronological association, an adjusted statistical result and a genuinely validated forecasting rule.
+
