@@ -1,4 +1,4 @@
-# Detailed Results Discussion
+# Detailed Results Discussion for the Imperial BBO Capstone
 
 ## Summary
 

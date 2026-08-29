@@ -39,31 +39,13 @@ The thirteen-round search produced new participant-query best results for Functi
 
 The model showed that no single search behaviour suited all eight functions. Broad exploration was useful when the response surface was unclear. Small local movements were effective when improvement remained consistent. Recovery protected earlier gains after an unsuccessful move, and replication helped distinguish stable results from variable outputs. Clustering and principal component analysis supported interpretation, but the returned objective values remained the main decision evidence. The results support a sequential strategy that adapts by function and balances exploration, refinement, recovery, replication and stopping.
 
-These are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima.
+These are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima. The supporting material is organised into three linked subsections so that the README remains concise.
 
-| Results evidence | What it contains |
+| Results subsection | Detailed material |
 | --- | --- |
-| [Verified final result summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv) | Best participant-query output and winning week for F1 to F8 |
-| [Final reproducible notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) | Dataset checks, starter comparison, repeatability analysis and thirteen-round trajectories |
-| [Final numerical analysis code](Week_13/week_13_analysis.py) | Reconstructs the thirteen-round history and produces the verified result summary |
-| [Final figure-generation code](Week_13/generate_week_13_figures.py) | Rebuilds the four final figures displayed below |
-| [Final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md) | Function-level interpretation of what succeeded, plateaued or required recovery |
-| [Successful optimisation strategies](Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md) | Evidence supporting exploration, refinement, recovery, replication and stopping |
-| [Detailed results discussion](Discussion/RESULTS_DISCUSSION.md) | Full interpretation of the eight function outcomes, model learning, limitations and practical conclusions |
-
-### Final results figures
-
-| Final-round change | Normalised thirteen-round progress |
-| --- | --- |
-| [![Final change from Week 12 to Week 13](Results/figure_01_final_round_change.png)](Results/figure_01_final_round_change.png) | [![Normalised progress across thirteen rounds](Results/figure_02_normalised_progress.png)](Results/figure_02_normalised_progress.png) |
-| **Function 5 trajectory** | **Latest week in which each best result appeared** |
-| [![Function 5 trajectory](Results/figure_03_function_5_trajectory.png)](Results/figure_03_function_5_trajectory.png) | [![Latest round in which each participant-query best was observed](Results/figure_04_latest_best_round.png)](Results/figure_04_latest_best_round.png) |
-
-The normalised figure compares timing and direction within each function. It does not imply that raw output magnitudes are comparable between functions.
-
-[Open the organised Results folder](Results/SECTION_GUIDE.md) for the figures, interpretation and links to the code used to reproduce them.
-
-[Read the detailed Results Discussion](Discussion/RESULTS_DISCUSSION.md) for the full function-level interpretation and conclusions.
+| **A. Tables of Numbers** | [Open the verified numerical tables and reproduction links](Results/SECTION_GUIDE.md#a-tables-of-numbers) |
+| **B. Graphs and Infographics** | [Open the final graphs, visual explanations and figure-generation route](Results/SECTION_GUIDE.md#b-graphs-and-infographics) |
+| **C. Discussion** | [Read the detailed discussion of all eight functions, limitations and conclusions](Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
 ## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
 
