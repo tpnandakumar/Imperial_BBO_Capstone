@@ -66,3 +66,23 @@ The Black Box Resolution panel states the interpretation boundary. B B R compare
 
 Use the Resolution home and B B R method controls to move between the overview and this detailed method. The What does B B R mean button provides a shorter written explanation, while this narration guides you through the complete page.
 
+## 11. PDHIS mathematical model page
+
+This page defines Pisharam Delta Hierarchy and Influence State, or P D H I S, as a mathematical description of change through time.
+
+The model begins with the observed output sequence. Delta One is the direct difference between consecutive outputs. Delta Two is the difference between consecutive Delta One values. Each later order repeats the same operation on the level before it. This point matters because Delta Three, for example, is not the change between Week Three and Week Four. It is the third recursive level of change.
+
+With thirteen weekly observations, a function contains twelve Delta One values. Each higher order shortens the available sequence by one. Delta Ten therefore contains only three values. Higher orders can reveal fine changes in shape, but they must be interpreted with care because the evidence becomes smaller as the order rises.
+
+The graph shows how the observed sequence moves through several connected layers. The first layer is the Delta hierarchy. Lower orders describe direct movement and changes in direction. Higher orders describe increasingly fine variation in that movement.
+
+The next layer adds temporal characteristics. Oscillation records repeated changes in direction. Energy measures the strength of movement across the selected window. Temporal dispersion describes how that activity is spread through time. Persistence asks whether a pattern continues rather than appearing once. Cross order coherence asks whether related Delta levels support the same interpretation.
+
+These elements combine to form the Signature of Change. This is not a separate hidden equation. It is a reproducible state calculated from behaviour already present in the observed sequence. A single high order oscillation may be noise. A pattern becomes more informative when it has sufficient energy, persists through time and remains coherent across related orders.
+
+The final part of the graph separates two research questions. Event locked analysis works retrospectively. It starts with a known event and examines only the observations that occurred before it, asking whether the earlier sequence contained a recognisable flicker. Prospective analysis is stricter. It asks whether the same state, calculated without using future information, predicts a genuinely later outcome.
+
+This distinction protects the interpretation. The completed Imperial record supports a detailed mathematical description of temporal behaviour and a clear method for characterising the Signature of Change. It does not yet establish reliable advance prediction. That next step requires longer independent sequences, pre-specified targets and testing on observations that were not used to develop the model.
+
+The Open graph control displays the complete flow model. Explain graph provides a shorter written guide. Together, they show how P D H I S moves from observed output, through recursive Delta orders and temporal characteristics, to a testable description of behavioural change.
+
