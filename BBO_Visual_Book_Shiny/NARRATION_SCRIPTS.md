@@ -258,3 +258,23 @@ The graph also explains why P D H I S combines a shared mathematical framework w
 
 Open graph displays the complete heatmap. Explain graph provides the colour and sample-size rules. Read across each function first, then compare rows, and keep the small n visible when judging how much weight to place on any apparent pattern.
 
+## 20. PDHIS Evidence Boundary page
+
+This page defines how far the present record can support interpretation. It is a necessary part of P D H I S because an interesting Signature of Change must be weighed against the amount and quality of evidence available at each Delta order.
+
+The green bars count the usable forward comparisons across all eight functions. Delta One has eighty eight comparisons. Each higher order requires one more observation before it can be calculated, so eight comparisons are lost at every step, one for each function. By Delta Five, fifty six remain. By Delta Ten, only sixteen remain.
+
+The fall in bar height is therefore not a reduction in effect size. It is a reduction in sample availability. Recursive differencing makes deeper behaviour visible, but it also shortens the sequence. This is the central trade-off of the hierarchy. Higher orders can reveal intricate structure while carrying greater statistical uncertainty.
+
+The purple line converts the false discovery rate adjusted q value into minus log ten q. Larger values indicate stronger adjusted evidence. The dashed reference marks the conventional q equals zero point zero five threshold. A point must rise above that line to meet the chosen confirmation rule after allowing for the fact that several Delta orders were tested.
+
+No order crosses the threshold in this thirteen week record. Delta Two, Four and Five are the strongest research pointers, with adjusted q values close to zero point zero seven seven, but they remain above zero point zero five. The correct interpretation is not that P D H I S found nothing. It identified specific chronological patterns and also showed exactly where the available evidence stops short of confirmation.
+
+This boundary protects the analysis from mistaking visual complexity for predictive certainty. A high order oscillation can look striking because repeated differencing amplifies small changes. When only a few comparisons remain, that appearance may be unstable. Greater weight belongs to patterns that persist across neighbouring orders, align with the original output sequence and survive a prospective test.
+
+The positive outcome is a clear design for the next study. The Signature of Change, target outcome and event definition should be fixed before later data are examined. Longer independent sequences should then be collected, with held-out observations reserved for testing. The selected Delta orders can be evaluated without changing the rule after the result is known.
+
+P D H I S therefore separates three levels of claim. Description identifies change already present in the observed sequence. Association tests whether an earlier Delta relates to a later target. Prediction requires that relationship to hold prospectively in unseen data. The current project provides the first two and defines a reproducible route to the third.
+
+Open graph displays the evidence counts and adjusted results together. Explain graph summarises the threshold and the loss of comparisons. Read the bars first, then the purple line, and use both to judge how confidently any apparent Signature of Change can be carried forward.
+
