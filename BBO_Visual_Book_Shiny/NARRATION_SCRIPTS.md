@@ -348,3 +348,31 @@ The eight functions reward different readings. Function Five shows sustained dir
 
 Open graph displays the selected visual in a full-screen viewer. Explain graph adapts its short guidance to the output or coordinate view. After identifying an important week, use Read by Week to compare all eight decisions made at that stage, or open Evidence to confirm the exact source row.
 
+## 24. Read by Week page
+
+Read by Week presents the challenge as a thirteen chapter decision story. Each chapter places all eight function results beside one another, so the reader can see what the same round achieved across very different hidden landscapes.
+
+The week buttons move directly to a chapter. The slider provides the same control when a continuous journey is more useful. The chapter title and short purpose describe the main decision focus at that point, while the eight cards report the actual portal returns.
+
+In Week One, every value is an opening result. These observations establish the participant-query baseline. From Week Two onwards, each card also shows the change from the preceding week. A positive change means the returned output increased. A negative change means it fell. The size of that change must be interpreted within the same function because the eight output scales differ greatly.
+
+The weekly sequence shows how the method matured. Opening exploration established benchmarks. Function-specific strategy then separated promising directions from uncertain ones. Ranking, movement and selective refinement organised the early evidence without forcing one rule onto every function.
+
+By Weeks Five and Six, reassessment and validation had become essential. Function Five continued to improve strongly, while several other directions weakened or fluctuated. This contrast encouraged the search to protect supported gains while reducing commitment to movements that were not producing better outputs.
+
+Week Seven marks responsive redirection. New evidence could overturn an earlier preference, so recovery and a change of direction became legitimate decisions rather than signs of failure. Week Eight continued productive regions selectively. Week Nine strengthened transparency through explicit records and repeated-coordinate testing.
+
+The final four chapters bring together structure and direct evidence. Week Ten used clustering, distance and stability to support recovery choices. Week Eleven compared principal component patterns with the objective values actually returned. Week Twelve tested repetition, refinement, recovery and boundary movement. Week Thirteen balanced controlled risk with the evidence already secured before the search stopped.
+
+Outputs and retained best is the recommended opening view. The weekly markers show the result returned for every function in the selected round. When cumulative best is switched on, the retained-best layer shows whether that result established a new participant-query maximum or whether an earlier observation remained stronger.
+
+This distinction is important. A weekly value can fall even though the project still retains a good result from an earlier round. Equally, an attractive isolated result should not be treated as a stable trend without looking at what came before and after it.
+
+Coordinate movement changes the question from what happened to what was tried. It shows how the selected inputs moved at that stage. Broad movement suggests exploration. Small directional changes suggest refinement. Repetition can test stability or recover a supported point. The output must then confirm whether the movement was useful.
+
+The thirteen chapters reveal several different timings of success. Function One reached its retained maximum in Week Three. Function Seven did so in Week Five. Function Two peaked in Week Twelve. Functions Three, Five and Six achieved their strongest participant-query result in Week Thirteen. Functions Four and Eight retained maxima first observed in Week One, despite later attempts to improve them.
+
+That variation is the central lesson of this page. Progress was not a smooth shared climb. Some functions rewarded sustained movement, some required recovery and some showed that stopping or retaining an earlier result was more defensible than continuing to chase change.
+
+Use Read by Week to understand the campaign at a particular decision point. Open graph provides a centred full-screen view, and Explain graph gives concise guidance for the selected visual. When one function draws attention, move to Read by Function for its complete trajectory. Use Evidence when the exact submitted coordinates and returned output are required.
+
