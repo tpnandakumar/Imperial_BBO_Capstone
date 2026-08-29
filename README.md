@@ -75,7 +75,12 @@ These additions extend the assessed capstone without changing its thirteen-round
 
 The Visual Storyboard is the public Shiny reading experience for the complete project. It has two clearly separated sections: **Imperial BBO** and **Above and Beyond**.
 
-[Open the live Imperial BBO Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/)
+![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
+
+| [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL STORYBOARD**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+|:---:|
+
+The Visual Storyboard opens directly in your browser. It includes the official Imperial BBO account and the separate Above and Beyond routes for Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS).
 
 #### IMPERIAL BBO
 
@@ -102,13 +107,6 @@ Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of C
 [Explore Pisharam Delta Hierarchy and Influence State](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md)
 
 The Visual Storyboard therefore keeps the assessed Imperial BBO story separate from the later BBR and PDHIS research while presenting all three through one coherent reading experience.
-
-![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
-
-| [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
-|:---:|
-
-The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) reading routes.
 
 > **New reader?** Start with the [detailed Imperial BBO Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
