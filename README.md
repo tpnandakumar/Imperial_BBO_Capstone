@@ -69,6 +69,8 @@ The Visual Storyboard is the public Shiny reading experience for the complete pr
 
 Imperial BBO presents the official thirteen-round capstone story by week, function and scientific theme. It connects the graphs to the decisions and outcomes, while the Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
 
+Creating the Visual Storyboard provided an additional lesson in data presentation. Readers have different preferences and access needs, and not everyone understands evidence most easily through written text alone. Visual storytelling can reveal patterns, comparisons and progression, while auditory storytelling can guide the listener through the meaning of a graph or result. Used alongside clear written explanation, these approaches make the same evidence available through complementary routes and help a wider audience follow the project.
+
 #### ABOVE AND BEYOND
 
 Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
@@ -100,7 +102,7 @@ The live book opens directly in your browser. It includes the Week, Function, Sc
 
 ### ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
 
-PIMF and PMOS produced a valuable learning outcome beyond Black Box Optimisation. Developing them in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. This experience demonstrated that effective analytical work depends not only on the optimisation method, but also on how the surrounding process is organised, monitored and improved.
+The project produced two valuable learning outcomes beyond Black Box Optimisation. First, the Visual Storyboard showed how written, visual and auditory storytelling can present the same evidence through complementary routes. Second, developing PIMF and PMOS in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. Together, these experiences demonstrated that effective analytical work depends not only on the optimisation method, but also on how evidence is communicated and how the surrounding process is organised, monitored and improved.
 
 [Read how this learning developed in the Detailed Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md).
 
