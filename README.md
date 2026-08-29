@@ -8,7 +8,7 @@ This is the single authoritative README for the Imperial BBO Capstone. Supportin
 
 **Default branch:** `main`
 
-## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
+## NON-TECHNICAL EXPLANATION OF MY PROJECT
 
 This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
 
