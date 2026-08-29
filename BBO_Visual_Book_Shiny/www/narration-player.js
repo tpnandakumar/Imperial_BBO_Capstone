@@ -6,7 +6,10 @@
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/30_cover_page.m4a?version=1",
       "Cover page"
     ],
-    "Imperial BBO": ["02_imperial_bbo_journey.m4a", "The Imperial BBO journey"],
+    "Imperial BBO": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/31_imperial_bbo_page.m4a?version=1",
+      "Imperial BBO page"
+    ],
     "README": [
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/25_readme_page.m4a?version=1",
       "README page"
