@@ -59,27 +59,31 @@ These additions extend the assessed capstone without changing its thirteen-round
 
 ### VISUAL STORYBOARD
 
-The Imperial BBO Visual Storyboard is the public Shiny reading experience for the project. It presents the story by week, function and scientific theme, with short explanations that connect the graphs to the decisions and outcomes. Its Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
+The Visual Storyboard is the public Shiny reading experience for the complete project. It has two clearly separated sections: **Imperial BBO** and **Above and Beyond**.
 
 [Open the live Imperial BBO Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/)
 
-### ABOVE AND BEYOND
+#### IMPERIAL BBO
 
-This research route begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results.
+Imperial BBO presents the official thirteen-round capstone story by week, function and scientific theme. It connects the graphs to the decisions and outcomes, while the Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
 
-#### ABOVE: BLACK BOX RESOLUTION (BBR)
+#### ABOVE AND BEYOND
+
+Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
+
+##### ABOVE: BLACK BOX RESOLUTION (BBR)
 
 Black Box Resolution (BBR) investigates how much mathematical structure can be recovered from the completed input and output evidence. It includes function-specific analysis and representative surrogate equations while keeping a clear distinction between an evidence-based approximation and the unknown original function.
 
 [Explore Black Box Resolution](Post_BBO_BBR/SECTION_GUIDE.md)
 
-#### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
+##### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
 
 Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure. It asks how behavioural change becomes visible within an observed sequence and provides a mathematical foundation for further prospective research.
 
 [Explore Pisharam Delta Hierarchy and Influence State](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md)
 
-The Visual Storyboard, BBR and PDHIS are clearly identified as communication or post-capstone research contributions. Together, they show how the completed evidence can be explained visually, examined mathematically and developed into further research questions.
+The Visual Storyboard therefore keeps the assessed Imperial BBO story separate from the later BBR and PDHIS research while presenting all three through one coherent reading experience.
 
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
