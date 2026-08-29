@@ -86,11 +86,11 @@ The transferable lesson is simple. Define the question, record the decision befo
 
 - [Open the live Imperial BBO Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/)
 - [Read the main GitHub README](README.md)
-- [Review the final assessment material](Module_25_Final_BBO_Submission/README.md)
+- [Review the final assessment material](Module_25_Final_BBO_Submission/SECTION_GUIDE.md)
 - [Inspect the advanced PDHIS findings](Post_BBO_BBR/PDHIS/PDHIS_ADVANCED_FINDINGS.md)
 - [Read the formal PDHIS mathematical model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md)
 - [Read the PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md)
-- [Reproduce the F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md)
+- [Reproduce the F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md)
 - [Open the reproducibility guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
 
 ## Positive conclusion and research direction
@@ -98,3 +98,4 @@ The transferable lesson is simple. Define the question, record the decision befo
 The project is complete as an audited optimisation record and remains open as a carefully bounded research programme. Its strongest contribution is not a claim of complete function recovery. It is a transparent method for learning from sparse evidence, extracting mathematical behaviour and identifying where confidence should end.
 
 PDHIS now provides both an identification framework and a developing research model. Longer independent sequences, repeated anchor inputs, input-adjusted residual Delta and prospectively defined events offer a clear incentive for further research into whether a locked Signature of Change can support validated prediction.
+

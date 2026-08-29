@@ -10,11 +10,11 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_PATHS = [
     ROOT / "README.md",
-    ROOT / "Module_25_Final_BBO_Submission" / "README.md",
+    ROOT / "Module_25_Final_BBO_Submission" / "SECTION_GUIDE.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_1_Retrospective" / "EVIDENCE_MAP.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_2_Successful_Optimisation_Strategies" / "EVIDENCE_MAP.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "FINAL_CAPSTONE_DATASHEET.md",
-    ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "README.md",
+    ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "SECTION_GUIDE.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "FINAL_CAPSTONE_MODEL_CARD.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "FINAL_CAPSTONE_NOTEBOOK.ipynb",
     ROOT / "Module_25_Final_BBO_Submission" / "25_3_GitHub_Final_Submission" / "FINAL_REPRODUCIBILITY.md",
@@ -54,7 +54,7 @@ def check_required_paths() -> list[str]:
 def check_week_navigation() -> list[str]:
     missing = []
     for week in range(1, 14):
-        path = ROOT / f"Week_{week:02d}" / "README.md"
+        path = ROOT / f"Week_{week:02d}" / "SECTION_GUIDE.md"
         if not path.exists():
             missing.append(str(path.relative_to(ROOT)))
     return missing
@@ -188,3 +188,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+

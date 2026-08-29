@@ -1,5 +1,7 @@
 # Imperial BBO Capstone
 
+This is the single authoritative README for the Imperial BBO Capstone. Supporting folders use clearly named section guides so that readers always return here for the required project overview, results and submission route.
+
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
 | [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
@@ -9,7 +11,7 @@ The live book opens directly in your browser. It includes the Week, Function, Sc
 
 > **New reader?** Start with the [Imperial BBO Executive Summary](EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
-> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md).
+> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
 ## Enter the project
 
@@ -17,7 +19,7 @@ This repository tells two connected stories. The first is the official thirteen-
 
 | **Interactive Visual Book** | **Assessment Record** | **Reproduce the Work** |
 |:---:|:---:|:---:|
-| [**Open the Live Visual Book →**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
+| [**Open the Live Visual Book →**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/SECTION_GUIDE.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
 | Read by week, function or scientific theme. Continue into Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS). | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
 
 > **Interactive status:** Shiny is used for the public Imperial BBO Visual Book. The live deployment is available through the CLICK ME link above. GitHub retains the documented evidence, source code and reproducibility record.
@@ -65,7 +67,7 @@ The five Component 25.3 requirements are available directly from this page:
 2. **Complete dataset:** [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv) and [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md)
 3. **Complete model card:** [Final capstone model card](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md)
 4. **Non-technical explanation:** the 100-word summary above
-5. **Organisation and documentation:** [Module 25 evidence hub](Module_25_Final_BBO_Submission/README.md) and [completed repository audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
+5. **Organisation and documentation:** [Module 25 evidence hub](Module_25_Final_BBO_Submission/SECTION_GUIDE.md) and [completed repository audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
 
 ## The official assessment record
 
@@ -87,7 +89,7 @@ The primary objective was to improve the strongest observed output for each func
 
 ### Final assessment material
 
-- [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/README.md)
+- [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/SECTION_GUIDE.md)
 - [25.1 Retrospective Evidence Map](Module_25_Final_BBO_Submission/25_1_Retrospective/EVIDENCE_MAP.md)
 - [25.2 Successful Optimisation Strategies Evidence Map](Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md)
 - [25.3 Repository Audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
@@ -142,32 +144,32 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 
 ## Key weekly analysis
 
-- [Week 09: Module 21 analysis](Week_09/README.md)
-- [Week 10: clustering and strategy refinement](Week_10/README.md)
-- [Week 11: principal component comparison and Week 12 decision](Week_11/README.md)
-- [Week 12: verified outcome and capstone reflection](Week_12/README.md)
-- [Week 13: final round analysis](Week_13/README.md)
+- [Week 09: Module 21 analysis](Week_09/SECTION_GUIDE.md)
+- [Week 10: clustering and strategy refinement](Week_10/SECTION_GUIDE.md)
+- [Week 11: principal component comparison and Week 12 decision](Week_11/SECTION_GUIDE.md)
+- [Week 12: verified outcome and capstone reflection](Week_12/SECTION_GUIDE.md)
+- [Week 13: final round analysis](Week_13/SECTION_GUIDE.md)
 - [Week 13 final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md)
 - [Week 13 final capstone synthesis](Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
-- [Week 13 RL-informed decision experiment](Week_13/RL_DECISION_EXPERIMENT/README.md)
+- [Week 13 RL-informed decision experiment](Week_13/RL_DECISION_EXPERIMENT/SECTION_GUIDE.md)
 
 ## Weekly record
 
 | Round | Documentation |
 | --- | --- |
-| Week 01 | [README](Week_01/README.md) |
-| Week 02 | [README](Week_02/README.md) |
-| Week 03 | [README](Week_03/README.md) |
-| Week 04 | [README](Week_04/README.md) |
-| Week 05 | [README](Week_05/README.md) |
-| Week 06 | [README](Week_06/README.md) |
-| Week 07 | [README](Week_07/README.md) |
-| Week 08 | [README](Week_08/README.md) |
-| Week 09 | [README](Week_09/README.md) |
-| Week 10 | [README](Week_10/README.md) |
-| Week 11 | [README](Week_11/README.md) |
-| Week 12 | [README](Week_12/README.md) |
-| Week 13 | [README](Week_13/README.md) |
+| Week 01 | [Week guide](Week_01/SECTION_GUIDE.md) |
+| Week 02 | [Week guide](Week_02/SECTION_GUIDE.md) |
+| Week 03 | [Week guide](Week_03/SECTION_GUIDE.md) |
+| Week 04 | [Week guide](Week_04/SECTION_GUIDE.md) |
+| Week 05 | [Week guide](Week_05/SECTION_GUIDE.md) |
+| Week 06 | [Week guide](Week_06/SECTION_GUIDE.md) |
+| Week 07 | [Week guide](Week_07/SECTION_GUIDE.md) |
+| Week 08 | [Week guide](Week_08/SECTION_GUIDE.md) |
+| Week 09 | [Week guide](Week_09/SECTION_GUIDE.md) |
+| Week 10 | [Week guide](Week_10/SECTION_GUIDE.md) |
+| Week 11 | [Week guide](Week_11/SECTION_GUIDE.md) |
+| Week 12 | [Week guide](Week_12/SECTION_GUIDE.md) |
+| Week 13 | [Week guide](Week_13/SECTION_GUIDE.md) |
 
 ## Reproducing the final assessment results
 
@@ -197,9 +199,9 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 
 ## What happened after the capstone
 
-The [Advanced Extension Series](Advanced_Extension_Series/README.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
+The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
-The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decryption/README.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. The legacy folder name contains `BBD`, but the assessment-facing term is Black Box Resolution. These later studies are clearly labelled as post-capstone work.
+The [Black Box Resolution research](Advanced_Extension_Series/BBD_Black_Box_Decryption/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. The legacy folder name contains `BBD`, but the assessment-facing term is Black Box Resolution. These later studies are clearly labelled as post-capstone work.
 
 ### How to read the PDHIS graphs
 
@@ -280,4 +282,5 @@ The bars show the number of forward comparisons remaining at each Delta order. T
 
 No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
-Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/README.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
+Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
+

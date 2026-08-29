@@ -56,8 +56,9 @@ jobs:
           git add \
             .github/workflows/week13-rl-q-build.yml \
             README.md \
-            Experiments/README.md \
+            Experiments/SECTION_GUIDE.md \
             Experiments/RL_Q_EXPERIMENT_001_WEEK_13_POLICY_REPLAY \
             Week_13
           git commit -m "Add Week 13 reflection, RL and Q evidence, outputs and infographics"
           git push
+

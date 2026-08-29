@@ -24,8 +24,9 @@ The useful contribution of Q learning was reward based action comparison and pre
 
 ## Executed experiment
 
-The [Week 13 RL-Informed Decision Experiment](RL_DECISION_EXPERIMENT/README.md) runs the final policy using only the committed Week 1 to Week 12 history. It records the state features, selected action and reason for all eight functions. The returned Week 13 outputs are then added to assess what followed each selected action.
+The [Week 13 RL-Informed Decision Experiment](RL_DECISION_EXPERIMENT/SECTION_GUIDE.md) runs the final policy using only the committed Week 1 to Week 12 history. It records the state features, selected action and reason for all eight functions. The returned Week 13 outputs are then added to assess what followed each selected action.
 
 ## Final conclusion
 
 The Module 24 methods materially informed the final strategy, especially the exploration and exploitation trade off. They did not replace the direct numerical evidence. The final decisions combined reward based reasoning with function specific history, PCA where informative, repeatability testing and local performance trends.
+
