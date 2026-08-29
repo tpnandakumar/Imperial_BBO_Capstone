@@ -83,6 +83,12 @@
         "PDHIS event-locked flicker study page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "atlas") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/14_pdhis_matched_event_atlas.m4a?version=1",
+        "PDHIS matched event atlas page"
+      ];
+    }
     if (section === "Beyond BBO" && pdhisResearchViews.has(selectedValue("pdhis_view"))) {
       return ["06_pdhis_and_conclusion.m4a", "PDHIS and conclusion"];
     }
