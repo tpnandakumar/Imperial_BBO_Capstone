@@ -26,6 +26,8 @@ The hyperparameters were the size and direction of coordinate changes, the K-mea
 
 The optimisation evidence is available directly below. The clustering comparison was used during the capstone. The broader surrogate comparison was completed retrospectively to test how model degree and regularisation behaved across the recorded chronology.
 
+[Read the Detailed Optimisation Discussion](Optimisation/DETAILED_OPTIMISATION_DISCUSSION.md) for the thirteen-round decision process, parameter comparisons, function-specific findings, limitations and reproducibility links.
+
 | Optimisation performed | Parameters compared | Selection basis | Evidence and code |
 | --- | --- | --- | --- |
 | Week 10 K-means clustering | Cluster count and restart count | Highest silhouette score, with inertia used as supporting evidence | [Clustering analysis](Week_10/CLUSTERING_ANALYSIS.md), [complete HPO results](BBO_Dashboard/hpo_results/week10_clustering_hpo_all_results.csv), [reproducible HPO code](BBO_Dashboard/hpo_engine.py) |
