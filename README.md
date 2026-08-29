@@ -28,6 +28,20 @@ There was no single predictive model with one fixed hyperparameter search. The p
 
 The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Function 2 showed that even a small move near a strong point can reduce performance, while Function 6 demonstrated that repeated coordinates may return different values. The main lesson is that effective black box optimisation requires a balance of exploration, careful local refinement, recovery, replication and stopping. The results are strong observed outcomes, not claims that the unknown global optima were found.
 
+## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
+
+The following additions extend the assessed capstone without changing its thirteen-round evidence or results.
+
+| Added contribution | What it provides | Open it |
+| --- | --- | --- |
+| Imperial BBO Visual Book | A public Shiny reading experience with the full story organised by week, function and scientific theme | [Open the live Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+| Executive Summary | A concise account of the challenge, decisions, findings and practical significance for academic assessors and general readers | [Read the Executive Summary](EXECUTIVE_SUMMARY.md) |
+| Black Box Resolution (BBR) | Post-capstone investigation of mathematical structure that may be supported by the completed input and output evidence | [Explore BBR](Post_BBO_BBR/SECTION_GUIDE.md) |
+| Pisharam Delta Hierarchy and Influence State (PDHIS) | A mathematical framework for examining the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure | [Explore PDHIS](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md) |
+| Scientific Atlas | Interactive comparison of weekly trajectories, function by week patterns and the timing of retained best results | [Open the Scientific Atlas in the Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
+
+These additions are clearly identified as supporting communication or post-capstone research. They demonstrate how the completed BBO evidence can be explained visually, examined mathematically and developed into further research questions.
+
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
 | [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
