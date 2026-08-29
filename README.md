@@ -9,6 +9,8 @@ The live book opens directly in your browser. It includes the Week, Function, Sc
 
 > **New reader?** Start with the [Imperial BBO Executive Summary](EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
+> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md).
+
 ## Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.

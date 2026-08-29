@@ -100,6 +100,11 @@ PDHIS_EXPLANATIONS = {
         "Each event is paired with the nearest non-event window from the same function. The heat map shows the standardised paired difference. "
         "The stability checks ask whether the earlier candidate survives closer controls, alternative event thresholds and transfer to a function excluded from fitting."
     ),
+    "model": (
+        "Reading the PDHIS mathematical model",
+        "The hierarchy begins with the observed output and applies recursive finite differences from first-order Delta to tenth-order Delta. "
+        "The descriptive state adds oscillation, energy, temporal dispersion, persistence and cross-order coherence. A separate prospective layer tests whether that state predicts a genuinely later target."
+    ),
 }
 
 
@@ -458,6 +463,18 @@ app_ui = ui.page_navbar(
                     ui.a("Open Imperial BBO Capstone on GitHub", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
+                ui.div(
+                    ui.h2("PDHIS mathematical model"),
+                    ui.p("Read the formal definitions for recursive Delta, oscillation, energy, temporal dispersion, coherence, event locking and prospective targets."),
+                    ui.a("Read the PDHIS Mathematical Model", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md", target="_blank", class_="external-button"),
+                    class_="reading-panel",
+                ),
+                ui.div(
+                    ui.h2("F5 and F7 equations"),
+                    ui.p("Open the complete Matérn 2.5 and quadratic surrogate package with validation, scaling, kernel weights and all numerical coefficients."),
+                    ui.a("Open the Representative Equations", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/tree/main/Post_BBO_BBR/representative_surrogates", target="_blank", class_="external-button"),
+                    class_="reading-panel",
+                ),
                 class_="repository-grid",
             ),
             class_="book-page",
@@ -553,7 +570,7 @@ app_ui = ui.page_navbar(
             ui.div(
                 ui.input_radio_buttons(
                     "pdhis_view", None,
-                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "advanced": "Advanced model", "flicker": "Flicker study", "atlas": "Matched atlas"},
+                    {"overview": "Delta home", "meanings": "Delta meanings", "hierarchy": "Lotus hierarchy", "trajectory": "Delta trajectory", "orders": "Predictability", "functions": "F1 to F8", "evidence": "Evidence boundary", "model": "Mathematical model", "advanced": "Advanced model", "flicker": "Flicker study", "atlas": "Matched atlas"},
                     selected="overview", inline=True,
                 ),
                 class_="resolution-index pdhis-page-index",
@@ -583,6 +600,7 @@ app_ui = ui.page_navbar(
                                 ("orders", "Predictability: chronological tests", "peach-route"),
                                 ("functions", "F1 to F8: relationship map", "rose-route"),
                                 ("evidence", "Evidence boundary: what remains", "mint-route"),
+                                ("model", "PDHIS mathematical model", "rose-route"),
                                 ("advanced", "Advanced model: next-week improvement", "blue-route"),
                                 ("flicker", "Event-locked flicker characterisation", "lavender-route"),
                                 ("atlas", "Matched event atlas and stability", "peach-route"),
@@ -802,7 +820,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             ui.update_radio_buttons("pdhis_view", selected="overview")
             ui.update_navs("main_navigation", selected="Beyond BBO")
 
-    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "advanced", "flicker", "atlas"]
+    pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "model", "advanced", "flicker", "atlas"]
 
     for page in pdhis_pages[1:]:
         @reactive.effect
@@ -1036,6 +1054,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                     "The full fingerprint reached held-out-function balanced accuracy of 0.433, below the 0.500 prevalence baseline, and its Brier score was also worse.",
                     "These results do not support locking the current fingerprint as an early-warning rule. They guide the design of longer prospective sequences.",
                 ],
+                "model": [
+                    "First-order Delta is the direct change between consecutive outputs. Higher orders are changes in the preceding Delta order, not changes between correspondingly numbered weeks.",
+                    "Delta order k requires k plus 1 observations. With thirteen weeks, each function contains 12 first-order values and 3 tenth-order values.",
+                    "The Signature of Change combines scaled Delta levels with oscillation, energy, temporal dispersion, persistence and cross-order coherence.",
+                    "The event-locked fingerprint uses only observations before a known target week. A prospective model must use information available before a genuinely later outcome.",
+                    "The present evidence supports detailed mathematical description but does not confirm reliable advance prediction.",
+                ],
             }.get(view, [
                 "Read the graph with the available sample size in view.",
                 "Look for agreement across related Delta levels.",
@@ -1266,6 +1291,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "advanced": "Can the Delta signature classify next-week improvement?",
             "flicker": "What characterised the flicker before a known event?",
             "atlas": "Does the flicker fingerprint survive stronger controls?",
+            "model": "How is PDHIS defined mathematically?",
         }[input.pdhis_view()]
 
     @render.text
@@ -1281,6 +1307,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. Delta 9 oscillation also failed to predict positive Delta 3 in the small higher-order test, so the findings support prospective study rather than operational forecasting.",
             "flicker": "The event-locked study looks backwards from known outcomes and characterises the preceding flicker. Peak spacing was the strongest candidate before new best outputs, but it did not remain significant after adjustment. The result defines a candidate temporal fingerprint for later prospective testing.",
             "atlas": "Same-function matching, threshold sensitivity and held-out-function testing did not confirm the candidate fingerprint. This negative result prevents premature forecasting claims and shows that longer independent sequences are required.",
+            "model": "PDHIS defines a reproducible mathematical state from recursive Delta orders and temporal characteristics. It extracts retrospective behaviour from an unknown process while keeping description, association and prospective prediction as separate levels of evidence.",
         }[input.pdhis_view()]
 
     @render_widget
@@ -1486,6 +1513,20 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             ))
             fig.update_yaxes(autorange="reversed")
             return plot_layout(fig, "Same-function matched event comparisons")
+
+        if view == "model":
+            labels = ["Observed output", "Delta 1", "Delta 2 to 5", "Delta 6 to 10", "Oscillation", "Energy and dispersion", "Persistence and coherence", "Signature of Change", "Known event", "Later target"]
+            sources = [0, 1, 2, 3, 1, 2, 3, 4, 5, 6, 7, 7]
+            targets = [1, 2, 3, 7, 4, 5, 6, 7, 7, 7, 8, 9]
+            values = [5, 4, 3, 2, 1, 1, 1, 1, 1, 1, 2, 2]
+            fig = go.Figure(go.Sankey(
+                node=dict(
+                    label=labels, pad=18, thickness=18,
+                    color=["#8da9db", "#64b6ac", "#64b6ac", "#64b6ac", "#f2b880", "#f2b880", "#f2b880", "#b497d6", "#e58aa5", "#e58aa5"],
+                ),
+                link=dict(source=sources, target=targets, value=values, color="rgba(100,150,170,.25)"),
+            ))
+            return plot_layout(fig, "From observed output to the PDHIS Signature of Change")
 
         fig = go.Figure()
         fig.add_trace(go.Scatter(

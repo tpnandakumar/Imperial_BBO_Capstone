@@ -1,0 +1,22 @@
+{
+  "F5_Matern_2_5": {
+    "length_scale": 10.0,
+    "noise": 1e-08,
+    "jitter": 1e-10,
+    "output_mean": 1549.7284681513358,
+    "output_scale": 1842.0106918140762,
+    "training_rows": 33,
+    "walk_forward_mae": 49.91857283507282,
+    "normalised_walk_forward_mae": 0.011240784347206455,
+    "training_max_abs_error": 3.2844206876852695
+  },
+  "F7_full_quadratic": {
+    "alpha": 1e-06,
+    "training_rows": 43,
+    "terms_excluding_intercept": 27,
+    "walk_forward_mae": 0.06666874623919496,
+    "normalised_walk_forward_mae": 0.048372780615454004,
+    "training_rmse": 0.05363773462038866,
+    "training_max_abs_error": 0.1478809714175391
+  }
+}

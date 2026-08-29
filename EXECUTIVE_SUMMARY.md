@@ -70,6 +70,10 @@ An event-locked retrospective study then characterised the six observations befo
 
 Stronger stability checks did not confirm that candidate. Same-function matching produced a smallest paired p value of `0.094`, with an adjusted value of `0.845`. The peak-spacing direction changed across alternative large-event thresholds. When the complete fingerprint was trained on seven functions and tested on the eighth, balanced accuracy was `0.433`, below the `0.500` prevalence baseline, and probability error was worse. Preserving this negative result is important because it prevents a descriptive retrospective pattern from being presented as an early-warning rule.
 
+The mathematical extension preserves two fully reproducible representative surrogate equations. F5 uses a Matérn 2.5 Gaussian-process equation fitted to 33 observations. Its weekly walk-forward MAE was `49.919`, equal to `0.01124` of the complete F5 output range. F7 uses a full quadratic equation with six linear terms, six squared terms and fifteen interactions fitted to 43 observations. Its weekly walk-forward MAE was `0.06667`, equal to `0.04837` of the F7 range. The repository contains every scaling value, F5 kernel weight and F7 coefficient required to reproduce the equations.
+
+These surrogates approximate local input-output structure. PDHIS addresses a different question by modelling the behaviour of change through recursive Delta orders, oscillation, energy, temporal dispersion, persistence and cross-order coherence. Together they show that substantial mathematical behaviour can be extracted from sparse black-box evidence even though the original equations remain unknown. This contribution is descriptive and diagnostic. Reliable advance prediction has not been established.
+
 ## Relevance beyond optimisation
 
 The project has direct relevance to decisions made under uncertainty. In clinical neurology, service improvement and organisational planning, evidence often arrives sequentially and evaluation is costly. A defensible process must balance immediate benefit, further learning, reliability and risk.
@@ -82,6 +86,6 @@ The transferable lesson is simple. Define the question, record the decision befo
 - [Read the main GitHub README](README.md)
 - [Review the final assessment material](Module_25_Final_BBO_Submission/README.md)
 - [Inspect the advanced PDHIS findings](Post_BBO_BBR/PDHIS/PDHIS_ADVANCED_FINDINGS.md)
+- [Read the formal PDHIS mathematical model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md)
+- [Reproduce the F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md)
 - [Open the reproducibility guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
-
-The project is complete as an audited optimisation record and remains open as a carefully bounded research programme. Its strongest contribution is not a claim of complete function recovery. It is a transparent method for learning from sparse evidence, revising decisions and showing exactly where confidence should end.

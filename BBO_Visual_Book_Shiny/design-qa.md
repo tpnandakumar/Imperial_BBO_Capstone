@@ -80,3 +80,14 @@ Date: 2026-08-29
 - The supporting three-panel figure was inspected for readable labels, complete axes and unclipped annotations.
 
 Matched atlas completion result: passed locally.
+
+## Mathematical model and representative equations
+
+Date: 2026-08-29
+
+- The PDHIS Mathematical model page separates first-order change, higher recursive orders, descriptive state, known-event analysis and genuinely later targets.
+- The Repository page links directly to the formal model and complete F5 and F7 equation package.
+- The F5 and F7 validation figure was inspected for readable observed and predicted trajectories, coefficient labels and unclipped annotations.
+- All F5 scaling values and kernel weights and all F7 scaling values and quadratic coefficients are exported in machine-readable tables.
+
+Mathematical model and representative-equation completion result: passed locally.

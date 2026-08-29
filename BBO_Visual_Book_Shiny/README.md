@@ -32,7 +32,8 @@ Open the local address printed by Shiny.
 - **Advanced model:** an exploratory regularised logistic analysis of whether the full Delta signature can classify improvement in the following week. The page compares leave-one-function-out and chronological validation with a simple baseline, then explains the findings and limitations in plain English.
 - **Flicker study:** an event-locked retrospective comparison of temporal dispersion, sign-change frequency, peak spacing, amplitude, energy, persistence, amplification and flicker density during the six observations before known event and non-event weeks
 - **Matched atlas:** same-function event matching, threshold sensitivity and held-out-function testing used to challenge the candidate flicker fingerprint
+- **Mathematical model:** the formal recursive Delta, oscillation, energy, temporal dispersion, coherence, event-locking and prospective-target specification
 - **Evidence:** filterable record of all 104 participant queries
-- **Repository:** direct routes to the executive summary, main GitHub README and complete source record
+- **Repository:** direct routes to the executive summary, main GitHub README, formal PDHIS model, representative F5 and F7 equations and complete source record
 
 The interface uses dynamic viewport scaling, compact page tabs, responsive pastel styling, Plotly hover evidence and restrained motion. It is designed for desktop, smaller laptops and mobile screens without turning the visual book into one continuous scroll. Motion is disabled automatically when the browser reports a reduced-motion accessibility preference.

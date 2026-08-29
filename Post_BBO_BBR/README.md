@@ -14,7 +14,9 @@ predictive claims against chronology and randomised controls.
 ## Evidence routes
 
 - [BBR scientific infographics](infographics/README.md)
+- [Representative F5 and F7 surrogate equations](representative_surrogates/README.md)
 - [Pisharam Delta Hierarchy and Influence States](PDHIS/README.md)
+- [Formal PDHIS mathematical model](PDHIS/PDHIS_MATHEMATICAL_MODEL.md)
 - [PDHIS findings](PDHIS/PDHIS_FINDINGS.md)
 - [Delta 1 to Delta 10 calculations](PDHIS/PDHIS_DELTA_1_TO_10.csv)
 - [Chronological predictability tests](PDHIS/PDHIS_PREDICTABILITY_BY_ORDER.csv)
