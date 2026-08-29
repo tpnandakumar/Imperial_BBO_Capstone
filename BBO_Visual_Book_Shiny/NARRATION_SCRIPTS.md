@@ -152,3 +152,23 @@ That boundary is a positive research result because it tells us what must improv
 
 Open graph displays the paired heatmap. Explain graph summarises the matched counts, the smallest p value and the transfer result. Together, they show how P D H I S moves from finding a candidate Signature of Change to testing whether that signature is stable, selective and transferable.
 
+## 15. PDHIS Delta meanings page
+
+This page explains how to read Delta One through Delta Ten. The number describes the order of recursive change. It does not identify a week.
+
+Start with the observed weekly output. Delta One is the direct difference between consecutive outputs. A positive value means the output rose, a negative value means it fell and its magnitude shows the size of that movement.
+
+Delta Two measures the change in Delta One. It describes whether the direct movement is accelerating, slowing, flattening or reversing. Delta Three then measures whether that second order behaviour is changing. Every later level follows the same rule. Delta n is calculated from consecutive values of Delta n minus one.
+
+This distinction prevents a common misreading. Delta Three is not the difference between Week Three and Week Four. It is the third recursive level derived from the complete sequence available at that point.
+
+The middle orders help describe persistence and propagation. Delta Four can expose reversal or developing oscillation in the third order pattern. Delta Five asks whether repeated change continues to propagate. Delta Six and Delta Seven move deeper into recursive change and become meaningful only when interpreted alongside the lower levels that produced them.
+
+Delta Eight, Delta Nine and Delta Ten are increasingly exploratory. They can reveal fine repeated variation, but they are based on fewer values. Thirteen observations produce twelve Delta One values, eleven Delta Two values and only three Delta Ten values. A dramatic high order movement may therefore be mathematically real within the observed sequence while still being too weakly supported for a predictive conclusion.
+
+P D H I S does not treat a single Delta level as a governing function on its own. It considers direction, magnitude, oscillation, energy, temporal dispersion and persistence. It then asks whether neighbouring orders support the same interpretation. This cross order coherence helps distinguish a structured Signature of Change from an isolated flicker that may be noise.
+
+The practical reading sequence is to begin at Delta One, establish the observed direction, and then move upwards only while material change and sufficient evidence remain. Lower orders explain direct behaviour. Middle orders describe how that behaviour develops. Higher orders generate focused questions for later testing.
+
+Use the selector to choose any Delta level and open its short explanation. The table provides the complete reference. Together, they show how one observed output sequence becomes a hierarchy of nested change without confusing Delta order, calendar week and future prediction.
+
