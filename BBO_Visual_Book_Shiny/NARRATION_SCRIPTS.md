@@ -86,3 +86,25 @@ This distinction protects the interpretation. The completed Imperial record supp
 
 The Open graph control displays the complete flow model. Explain graph provides a shorter written guide. Together, they show how P D H I S moves from observed output, through recursive Delta orders and temporal characteristics, to a testable description of behavioural change.
 
+## 12. PDHIS advanced model page
+
+This page asks the prospective question at the centre of the P D H I S research. Can a Delta signature calculated from earlier observations classify whether a function will improve in the following week?
+
+The earlier signature is the predictor and next week improvement is the target. The predictor combines Delta One to Delta Five with persistence, changes of sign and agreement across levels. Regularised logistic classification was used because the available record is small and the model needs protection against placing too much weight on any single feature.
+
+The graph compares the Delta signature with a simple prevalence baseline. The green bars show the signature model. The grey bars show what the baseline achieved without using the detailed Delta state. The yellow line at zero point five is the chance balanced reference.
+
+Balanced accuracy gives equal importance to the two possible outcomes, improvement and non-improvement. This is useful when one outcome occurs more often than the other. A value above zero point five indicates better separation than chance on this measure.
+
+The first pair of bars uses leave one function out validation. The model is fitted on seven functions and tested on the eighth, then the process is repeated until every function has been held out. The Delta signature reached balanced accuracy of zero point six two four, compared with zero point three seven for the prevalence baseline. Its ROC A U C was zero point six five nine and its Brier score was zero point two three eight. This result shows that the combined temporal state carried transferable information across functions in this completed record.
+
+The second pair uses expanding week validation. Here, the model is trained only on earlier weeks and tested on a later week. This preserves the order in which the evidence arrived and is the more demanding test of prospective use. Balanced accuracy was zero point five six three, with ROC A U C of zero point six four two and Brier score of zero point two seven five. The model remained above the chance balanced reference, but its probability calibration did not improve on the baseline.
+
+A within function permutation test produced a p value of zero point zero two nine seven for the held out function result. This supports the presence of a structured signal under that test. It does not remove the need for independent chronological validation.
+
+The page also records a focused higher order question. Delta Nine oscillated in fifteen of sixteen eligible cases, while positive Delta Three followed in six of those fifteen. The exact p value was zero point four three eight. Delta Nine oscillation was therefore too common to distinguish the later target in this short sequence. That is a useful result because it shows that oscillation alone is not selective enough. Energy, persistence, timing and cross order coherence must be considered together.
+
+The positive conclusion is that P D H I S has identified a measurable candidate signal and has subjected it to both cross function and chronological testing. The cross function result is promising. The chronological result shows where the method must be strengthened. Longer independent sequences can now test a pre-specified signature without changing the definition after seeing the outcome.
+
+Open graph displays the two validation comparisons. Explain graph provides the key numerical interpretation. Together, they show both the predictive potential of the Delta signature and the evidence needed for its next stage of development.
+
