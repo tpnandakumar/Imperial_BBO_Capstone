@@ -2,142 +2,441 @@
 
 ## Purpose
 
-Pisharam Delta Hierarchy and Influence State (PDHIS) is a novel mathematical framework for revealing how change takes form within an observed sequence when its generating equation is unknown. It combines a recursive hierarchy of Delta orders with oscillation energy, frequency, temporal dispersion, persistence, cross-order coherence and event-locked examination. It separates established retrospective identification from the next research stage of prospective prediction.
+Pisharam Delta Hierarchy and Influence State (PDHIS) is a novel integrated framework for examining how behavioural change takes form within an observed sequence when its generating equation is unknown. It combines recursive Delta structure, oscillation energy, temporal dispersion, persistence, cross-order coherence and event-locked analysis into a single mathematical Signature of Change.
 
-## Observed sequence
+PDHIS distinguishes three questions. What mathematical behaviour is already present in the record? Did a known event have a detectable earlier flicker? Can a signature fixed in advance predict a later event? The thirteen-week Black Box Optimisation (BBO) record supports detailed description and retrospective investigation. Prospective prediction remains a separate validation stage.
 
-For one function, let the ordered output be:
+## Notation and evidence boundary
 
-\[
+For one function, let the ordered output sequence be:
+
+$$
 y_1,y_2,\ldots,y_T
-\]
+$$
 
-The first-order Delta at time \(t\) is:
+Here, $t$ is time, $T$ is the number of observations, $k$ is the Delta order, $K$ is the highest order examined and $w$ is the number of valid values in a local window.
 
-\[
-\Delta^1 y_t=y_t-y_{t-1}
-\]
+A Delta of order $k$ first exists at $t=k+1$. Its valid range and number of values are:
 
-Higher orders are recursive:
+$$
+t=k+1,\ldots,T
+$$
 
-\[
-\Delta^k y_t=\Delta^{k-1}y_t-\Delta^{k-1}y_{t-1}
-\]
+$$
+N_k=T-k
+$$
 
-Equivalently:
+For the eight functions in the Imperial BBO record:
 
-\[
-\Delta^k y_t=\sum_{j=0}^{k}(-1)^j {k \choose j}y_{t-j}
-\]
+$$
+N_k^{\mathrm{all}}=8(T-k)
+$$
 
-This form makes the evidence boundary explicit. Delta order \(k\) requires \(k+1\) observations and first exists at time \(k+1\).
+These are raw descriptive values. An analysis pairing a Delta with a later outcome has fewer usable pairs.
 
-## Scale
+## Recursive Delta hierarchy
 
-Functions with different output ranges are compared using a scale calculated within the available history:
+The first-order Delta measures movement between consecutive observations:
 
-\[
-d^k_t=\frac{\Delta^k y_t}{s_{k,t}}
-\]
+$$
+\Delta^1y_t=y_t-y_{t-1}
+$$
 
-where \(s_{k,t}\) is a non-zero historical scale, such as the standard deviation or robust median absolute movement available by time \(t\). Prospective calculations must not use later observations to define this scale.
+Higher orders are calculated recursively:
 
-## Oscillation
+$$
+\Delta^ky_t=\Delta^{k-1}y_t-\Delta^{k-1}y_{t-1}
+$$
 
-A sign reversal at order \(k\) is:
+The equivalent closed form is:
 
-\[
-O^k_t=\mathbf{1}\left(d^k_t d^k_{t-1}<0\right)
-\]
+$$
+\Delta^ky_t=\sum_{j=0}^{k}(-1)^j\binom{k}{j}y_{t-j}
+$$
 
-The sign-change frequency within a window of length \(w\) is:
+Delta 1 measures movement. Delta 2 measures change in that movement. Higher orders identify progressively finer changes in local mathematical behaviour. They also amplify small fluctuations, so they must be interpreted with energy, persistence, propagation and a suitable comparison pattern.
 
-\[
-\nu^k_t=\frac{1}{w-1}\sum_{r=t-w+2}^{t}O^k_r
-\]
+### Worked example
 
-With thirteen weekly observations, this sign-change measure is more defensible than a conventional frequency spectrum.
+Consider:
 
-## Energy and temporal dispersion
+$$
+y_1=10,\qquad y_2=12,\qquad y_3=11,\qquad y_4=15
+$$
 
-Oscillation energy within the window is:
+The first-order Deltas are:
 
-\[
-E^k_t=\frac{1}{w}\sum_{r=t-w+1}^{t}\left(d^k_r\right)^2
-\]
+$$
+\Delta^1y_2=12-10=2,\qquad
+\Delta^1y_3=11-12=-1,\qquad
+\Delta^1y_4=15-11=4
+$$
 
-Let the energy-weighted temporal centre be:
+The second-order Deltas are:
 
-\[
-\mu^k_t=\frac{\sum_r r\left(d^k_r\right)^2}{\sum_r\left(d^k_r\right)^2}
-\]
+$$
+\Delta^2y_3=(-1)-2=-3,\qquad
+\Delta^2y_4=4-(-1)=5
+$$
+
+The sequence changes direction at Delta 1. Delta 2 shows that its rate of movement also changes sharply.
+
+## Historical scaling
+
+Functions with different output ranges require a common scale:
+
+$$
+d_t^k=\frac{\Delta^ky_t}{s_{k,t}}
+$$
+
+A robust historical scale is:
+
+$$
+s_{k,t}=\max\left\{1.4826\operatorname{MAD}\left(\Delta^ky_{k+1},\ldots,\Delta^ky_t\right),\varepsilon\right\}
+$$
+
+For historical values $x_1,\ldots,x_n$, the median absolute deviation is:
+
+$$
+\operatorname{MAD}(x)=\operatorname{median}_i\left|x_i-\operatorname{median}_j(x_j)\right|
+$$
+
+The constant 1.4826 makes the measure comparable with the standard deviation under a normal reference distribution. The term $\varepsilon>0$ prevents division by zero. If there are too few values for a reliable scale, the analysis must report the unscaled Delta or use a scale fixed in advance. Prospective calculations may use information available by time $t$, but never later observations.
+
+### Worked example
+
+If $\Delta^1y_t=4$ and $s_{1,t}=2$, then:
+
+$$
+d_t^1=\frac{4}{2}=2
+$$
+
+The current movement is two historical scale units in magnitude.
+
+## Oscillation and sign-change frequency
+
+Define the sign function as:
+
+$$
+\operatorname{sgn}(x)=
+\begin{cases}
+-1, & x<0\\
+0, & x=0\\
+1, & x>0
+\end{cases}
+$$
+
+Zero values are neutral. Within a chosen window, let $z_1^k,\ldots,z_m^k$ be the ordered signs after zero values have been removed:
+
+$$
+z_q^k\in\{-1,1\},\qquad q=1,\ldots,m
+$$
+
+A sign reversal is:
+
+$$
+O_q^k=\mathbf{1}\left(z_q^kz_{q-1}^k<0\right),\qquad q=2,\ldots,m
+$$
+
+For a window containing $m$ valid non-zero Delta values, sign-change frequency is:
+
+$$
+\nu_t^k=\frac{1}{m-1}\sum_{q=2}^{m}O_q^k
+$$
+
+The value lies between 0 and 1. Zero means no adjacent signs reverse. One means every adjacent pair reverses. With thirteen weekly observations, this is more defensible than estimating a conventional frequency spectrum.
+
+### Worked example
+
+For the scaled values:
+
+$$
+0.5,\ -0.4,\ 0.6,\ -0.3
+$$
+
+all three adjacent pairs reverse sign:
+
+$$
+\nu_t^k=\frac{3}{4-1}=1
+$$
+
+This window contains continuous alternation. It does not, by itself, prove that an event will follow.
+
+## Oscillation energy
+
+Oscillation energy is the mean squared magnitude of the scaled Delta values:
+
+$$
+E_t^k=\frac{1}{w}\sum_{r=t-w+1}^{t}\left(d_r^k\right)^2
+$$
+
+Energy is non-negative. A larger value indicates stronger scaled movement, but not necessarily more frequent sign changes.
+
+### Worked example
+
+Using the same four values:
+
+$$
+E_t^k=\frac{0.5^2+(-0.4)^2+0.6^2+(-0.3)^2}{4}
+$$
+
+$$
+E_t^k=\frac{0.25+0.16+0.36+0.09}{4}=0.215
+$$
+
+The window has a mean squared scaled magnitude of 0.215.
+
+## Energy-weighted temporal centre and dispersion
+
+The energy-weighted temporal centre is:
+
+$$
+\mu_t^k=
+\frac{\displaystyle\sum_{r=t-w+1}^{t}r\left(d_r^k\right)^2}
+{\displaystyle\sum_{r=t-w+1}^{t}\left(d_r^k\right)^2}
+$$
 
 Temporal dispersion is:
 
-\[
-D^k_t=\sqrt{\frac{\sum_r(r-\mu^k_t)^2\left(d^k_r\right)^2}{\sum_r\left(d^k_r\right)^2}}
-\]
+$$
+D_t^k=
+\sqrt{
+\frac{\displaystyle\sum_{r=t-w+1}^{t}\left(r-\mu_t^k\right)^2\left(d_r^k\right)^2}
+{\displaystyle\sum_{r=t-w+1}^{t}\left(d_r^k\right)^2}
+}
+$$
 
-Energy measures strength. Dispersion measures whether that energy is concentrated or distributed through the pre-event period.
+If the denominator is zero, both measures are undefined because the window contains no Delta energy. The temporal centre shows where energy is concentrated. Dispersion shows whether it is localised or distributed across the window.
 
-## Persistence and cross-order coherence
+### Worked example
 
-Directional persistence is the longest same-sign run divided by the available window length:
+At relative positions $r=1,2,3,4$, the squared weights are $0.25,0.16,0.36,0.09$. Therefore:
 
-\[
-R^k_t=\frac{\text{longest same-sign run in }d^k}{w}
-\]
+$$
+\mu_t^k=\frac{1(0.25)+2(0.16)+3(0.36)+4(0.09)}{0.86}=2.34
+$$
 
-Cross-order coherence over orders 1 to \(K\) is:
+Substitution into the dispersion equation gives:
 
-\[
-C_t=\frac{1}{K-1}\sum_{k=1}^{K-1}\mathbf{1}\left(\operatorname{sign}(d^k_t)=\operatorname{sign}(d^{k+1}_t)\right)
-\]
+$$
+D_t^k\approx1.01
+$$
 
-Because recursive differencing can create alternating signs mechanically, coherence must always be compared with the binomial pattern expected from repeated differencing alone.
+The energy is centred slightly before the middle and is spread across about one observation on either side.
 
-## Signature of Change
+## Directional persistence
 
-The PDHIS descriptive state at time \(t\) is the vector:
+Let $n_{k,t}$ be the number of valid non-zero values in the window. Directional persistence is:
 
-\[
-S_t=\left[d^1_t,\ldots,d^K_t,\nu_t,E_t,D_t,R_t,C_t\right]
-\]
+$$
+R_t^k=
+\frac{\text{longest same-sign run among the valid }d_r^k\text{ values}}
+{n_{k,t}}
+$$
 
-This vector describes direct movement, acceleration, higher-order change, oscillation, energy, temporal spread, persistence and agreement across levels. It is the mathematical Signature of Change.
+A value near 1 indicates sustained direction. A smaller value indicates frequent reversal.
+
+### Worked example
+
+For the sign sequence:
+
+$$
++,+,+,-,-,+
+$$
+
+the longest same-sign run has length 3:
+
+$$
+R_t^k=\frac{3}{6}=0.5
+$$
+
+## Cross-order coherence
+
+Cross-order coherence measures directional agreement between adjacent Delta orders. It is available only when $t\geq K+1$. Let $V_t$ be the set of adjacent-order pairs for which both values are non-zero:
+
+$$
+V_t=\left\{k\in\{1,\ldots,K-1\}:d_t^k\ne0\text{ and }d_t^{k+1}\ne0\right\}
+$$
+
+Then:
+
+$$
+C_t=
+\frac{1}{|V_t|}
+\sum_{k\in V_t}
+\mathbf{1}\left[
+\operatorname{sgn}\left(d_t^k\right)
+=
+\operatorname{sgn}\left(d_t^{k+1}\right)
+\right]
+$$
+
+If $V_t$ is empty, coherence is undefined. Repeated differencing can create alternating signs mechanically. Observed coherence must therefore be compared with reference sequences, such as shuffled increments or simulated noise with matched variance.
+
+### Worked example
+
+If four Delta orders have signs:
+
+$$
++,+,-,-
+$$
+
+two of the three adjacent-order pairs agree:
+
+$$
+C_t=\frac{2}{3}=0.667
+$$
+
+## Mathematical Signature of Change
+
+Define the component vectors:
+
+$$
+\mathbf{d}_t=\left(d_t^1,\ldots,d_t^K\right)
+$$
+
+$$
+\boldsymbol{\nu}_t=\left(\nu_t^1,\ldots,\nu_t^K\right),\qquad
+\mathbf{E}_t=\left(E_t^1,\ldots,E_t^K\right)
+$$
+
+$$
+\mathbf{D}_t=\left(D_t^1,\ldots,D_t^K\right),\qquad
+\mathbf{R}_t=\left(R_t^1,\ldots,R_t^K\right)
+$$
+
+The complete PDHIS state is:
+
+$$
+S_t=\left[
+\mathbf{d}_t,
+\boldsymbol{\nu}_t,
+\mathbf{E}_t,
+\mathbf{D}_t,
+\mathbf{R}_t,
+C_t
+\right]
+$$
+
+This state combines movement, acceleration, higher-order variation, oscillation frequency, strength, temporal spread, persistence and agreement across Delta levels. It is the mathematical Signature of Change already present in the observed sequence.
 
 ## Event-locked flicker fingerprint
 
-For a known event at time \(e\), the retrospective fingerprint uses only the preceding window:
+For a known event at time $e$, define a pre-event window that excludes the event value:
 
-\[
-F_e=g\left(y_{e-w},\ldots,y_{e-1}\right)
-\]
+$$
+W_e=\left(y_{e-w},\ldots,y_{e-1}\right)
+$$
 
-The function \(g\) returns amplitude, energy, dispersion, sign-change frequency, peak spacing, persistence, amplification, Delta 2 energy and flicker density. The event value \(y_e\) does not enter the fingerprint.
+Earlier observations may initialise Delta calculations at the left boundary, but do not enter the summarised window. The fingerprint is:
 
-## Prospective target
+$$
+F_e=g(W_e)
+$$
 
-A future event at horizon \(h\) can be defined as:
+A reproducible form is:
 
-\[
-Y_{t+h}=\mathbf{1}\left(y_{t+h}-y_{t+h-1}>\tau_t\right)
-\]
+$$
+F_e=\left[
+\mathbf{A}_e,
+\mathbf{E}_e,
+\mathbf{D}_e,
+\boldsymbol{\nu}_e,
+\mathbf{R}_e,
+\mathbf{G}_e,
+\boldsymbol{\phi}_e
+\right]
+$$
 
-where \(\tau_t\) is fixed from information available by time \(t\). A candidate prediction model is:
+Maximum absolute amplitude at each order is:
 
-\[
-P(Y_{t+h}=1\mid S_t)=\frac{1}{1+\exp\left[-(\beta_0+\beta^\top S_t)\right]}
-\]
+$$
+A_e^k=\max_{r\in W_e}\left|d_r^k\right|
+$$
 
-Gradient descent estimates the coefficients. It does not provide separate scientific evidence.
+Let $M_e^k$ be the number of eligible adjacent non-zero sign comparisons in the pre-event window. Flicker density is:
+
+$$
+\phi_e^k=
+\frac{\displaystyle\sum_{q=2}^{M_e^k+1}O_q^k}
+{M_e^k}
+$$
+
+If $M_e^k=0$, flicker density is undefined.
+
+To measure build-up, divide the pre-event window into an early half $W_e^{(a)}$ and late half $W_e^{(b)}$. Energy amplification is:
+
+$$
+G_e^k=\frac{E_{e,b}^k+\varepsilon}{E_{e,a}^k+\varepsilon}
+$$
+
+A value above 1 indicates stronger Delta energy nearer the event. The event value $y_e$ never enters the fingerprint. This prevents the outcome from defining its own proposed precursor.
+
+## Prospective event target
+
+A two-sided behavioural event at future horizon $h$ is:
+
+$$
+Y_{t+h}=\mathbf{1}\left(\left|y_{t+h}-y_{t+h-1}\right|>\tau_t\right)
+$$
+
+Its direction is recorded separately:
+
+$$
+Q_{t+h}=\operatorname{sgn}\left(y_{t+h}-y_{t+h-1}\right)
+$$
+
+Here, $\tau_t$ is fixed using information available by time $t$. If the question concerns improvement only, the positive target is:
+
+$$
+Y_{t+h}^{+}=\mathbf{1}\left(y_{t+h}-y_{t+h-1}>\tau_t\right)
+$$
+
+## Candidate prospective model
+
+A candidate logistic model is:
+
+$$
+\Pr\left(Y_{t+h}=1\mid S_t\right)=
+\frac{1}{1+\exp\left[-\left(\beta_0+\boldsymbol{\beta}^{\mathsf T}S_t\right)\right]}
+$$
+
+For $n$ prospectively eligible observations, the negative log-likelihood is:
+
+$$
+\mathcal{L}(\boldsymbol{\beta})=
+-\sum_{i=1}^{n}\left[Y_i\log(p_i)+(1-Y_i)\log(1-p_i)\right]
+$$
+
+Gradient descent updates the coefficients through:
+
+$$
+\boldsymbol{\beta}^{(m+1)}=
+\boldsymbol{\beta}^{(m)}-\eta\nabla_{\boldsymbol{\beta}}\mathcal{L}\left(\boldsymbol{\beta}^{(m)}\right)
+$$
+
+Here, $\eta>0$ is the learning rate. Gradient descent estimates the model. It does not provide separate evidence that the Signature of Change predicts future behaviour.
+
+## Interpretation rule
+
+A high-order oscillation is not automatically meaningful. Its interpretation becomes stronger when several features occur together:
+
+1. Delta energy rises above its historical reference level.
+2. Oscillation persists across more than one observation.
+3. The pattern propagates coherently across Delta orders.
+4. Temporal dispersion or amplification shows organised development towards an event.
+5. The pattern differs from matched non-event windows and reference sequences.
+6. The same locked rule performs on untouched later observations.
+
+The Delta hierarchy does not govern the unknown function. It identifies a mathematical Signature of Change expressed by the observed sequence. The governing function remains unknown unless independently recovered and validated.
 
 ## Evidence rule
 
-PDHIS supports three different levels of conclusion:
+PDHIS supports three levels of conclusion:
 
 1. **Description:** the Delta hierarchy characterises mathematical behaviour already present in the observed sequence.
-2. **Retrospective association:** an event-locked fingerprint differs between known event and non-event windows.
-3. **Prospective prediction:** a locked signature predicts untouched later outcomes and improves on a simple baseline in discrimination and calibration.
+2. **Retrospective association:** a fingerprint calculated before known events differs from fingerprints calculated before matched non-events.
+3. **Prospective prediction:** a rule fixed in advance predicts untouched later outcomes and improves on a simple baseline in both discrimination and calibration.
 
-The current BBO record supports detailed description. Matched controls, threshold sensitivity and held-out-function testing locate the present evidence boundary before an advance-warning fingerprint can be locked. PDHIS therefore extracts substantial retrospective mathematical behaviour and defines reliable prospective prediction as the next validation objective.
+The present Imperial BBO record supports detailed mathematical description and event-locked retrospective investigation. Matched controls, threshold sensitivity, reference sequences and held-out-function testing define the next evidence boundary. PDHIS therefore extracts substantial retrospective mathematical behaviour while providing a clear and testable route towards prospective prediction.
+
