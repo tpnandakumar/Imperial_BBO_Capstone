@@ -33,7 +33,10 @@
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/27_above_and_beyond_page.m4a?version=1",
       "Above and Beyond page"
     ],
-    "Resolution": ["05_black_box_resolution.m4a", "Black Box Resolution"],
+    "Resolution": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/28_resolution_home_page.m4a?version=1",
+      "Resolution home page"
+    ],
     "Beyond BBO": ["04_delta_signature_of_change.m4a", "Delta and the Signature of Change"],
     "Evidence": [
       "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/21_verified_evidence_page.m4a?version=1",
