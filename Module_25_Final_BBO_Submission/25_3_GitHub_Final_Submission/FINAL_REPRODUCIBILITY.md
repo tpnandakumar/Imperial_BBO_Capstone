@@ -8,6 +8,8 @@ This guide provides a short assessor-facing route for reproducing the closing We
 
 Open [`FINAL_CAPSTONE_NOTEBOOK.ipynb`](FINAL_CAPSTONE_NOTEBOOK.ipynb). The notebook verifies the complete 279-row dataset, separates the 175 starter observations from the 104 participant-selected queries, compares their within-function maxima, checks the final participant-query winner table and plots all thirteen query trajectories.
 
+No path editing is required. The notebook locates the repository automatically when it is opened from any folder inside a cloned or downloaded copy of `Imperial_BBO_Capstone`. The automated repository check executes every code cell twice: once from the repository root and once from the notebook folder.
+
 The canonical complete dataset is:
 
 `BBO_Dashboard/data/complete_internal_evidence.csv`
@@ -88,3 +90,4 @@ Objective values remain stored in their supplied textual representation. Exact W
 The repository can reproduce analyses derived from the recorded inputs and outputs. It cannot independently regenerate the hidden objective values because the Imperial black-box evaluator is external to the repository. The final winner table refers to the strongest participant-query outputs. Starter-data maxima are retained and compared separately rather than being attributed to the optimisation rounds.
 
 The Advanced Extension Series and SOC are post-capstone research and have separate dependencies and reproducibility instructions. They are not required to reproduce the official Week 01 to Week 13 record.
+

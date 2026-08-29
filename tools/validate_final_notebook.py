@@ -16,21 +16,23 @@ NOTEBOOK = (
 
 
 def main() -> None:
-    """Execute notebook code cells in order as a lightweight CI check."""
+    """Execute every code cell from the two common assessor locations."""
     notebook = json.loads(NOTEBOOK.read_text(encoding="utf-8"))
-    namespace: dict[str, object] = {"__name__": "__main__"}
     previous_directory = Path.cwd()
     try:
-        os.chdir(ROOT)
-        for number, cell in enumerate(notebook["cells"], start=1):
-            if cell.get("cell_type") != "code":
-                continue
-            source = "".join(cell.get("source", []))
-            exec(compile(source, f"{NOTEBOOK.name}:cell-{number}", "exec"), namespace)
+        for working_directory in (ROOT, NOTEBOOK.parent):
+            os.chdir(working_directory)
+            namespace: dict[str, object] = {"__name__": "__main__"}
+            for number, cell in enumerate(notebook["cells"], start=1):
+                if cell.get("cell_type") != "code":
+                    continue
+                source = "".join(cell.get("source", []))
+                exec(compile(source, f"{NOTEBOOK.name}:cell-{number}", "exec"), namespace)
     finally:
         os.chdir(previous_directory)
-    print(f"PASS: executed all code cells in {NOTEBOOK.relative_to(ROOT)}")
+    print(f"PASS: executed all code cells from the repository root and the notebook folder")
 
 
 if __name__ == "__main__":
     main()
+
