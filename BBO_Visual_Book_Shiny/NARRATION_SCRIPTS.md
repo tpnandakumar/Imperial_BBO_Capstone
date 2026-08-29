@@ -192,3 +192,25 @@ The centre of the visual represents the complete P D H I S framework. The surrou
 
 Open graph displays the full lotus diagram. Explain graph gives the three central reading rules. Begin at Delta One, look for agreement across neighbouring levels and become more cautious as the rings move outwards. This is how the hierarchy separates a coherent Signature of Change from a high order flicker that may be unstable.
 
+## 17. PDHIS Delta trajectory page
+
+This page lets you inspect one function and one Delta order at a time. The aim is to see how recursive change develops through the observed sequence rather than reduce the function to one summary number.
+
+Choose a function from F One to F Eight, then choose a Delta level from One to Ten. The calculation begins with that function's thirteen weekly outputs. Those outputs are range normalised within the function before differencing, so the shape can be studied without allowing its original numerical scale to dominate the display.
+
+The horizontal axis shows the week when each Delta value becomes available. A Delta One point at Week Two uses the outputs from Weeks One and Two. Higher orders appear later because each recursive level needs another earlier value. The chart never places a calculated signal before the observations required to produce it.
+
+The horizontal zero line is the main visual reference. A point above zero represents positive recursive change at the selected order. A point below zero represents negative change. Crossing the line marks a reversal at that level. Movement towards zero can indicate flattening, while repeated crossings can describe oscillation.
+
+Magnitude shows how large the recursive movement is. It does not automatically show importance. One tall point may be caused by a sharp weekly result or by amplification through repeated differencing. A more credible Signature of Change has a recognisable shape, persists across observations and agrees with related lower orders.
+
+Begin with Delta One beside the original output history because it describes direct weekly movement. Move to Delta Two to examine acceleration, slowing or reversal. Use the middle orders to look for propagation and persistence. Treat the highest orders as focused exploratory views because their curves contain fewer points.
+
+Comparing functions can reveal different behavioural styles. A stable function may show small direct movements with limited persistence. A volatile function may cross zero repeatedly. A function undergoing sustained improvement may show a run of positive direct change, although later Delta orders can still alternate as the rate of improvement changes.
+
+Comparing orders within the same function is equally important. If Delta Five oscillates while Delta One and Delta Two show no supporting structure, the higher order pattern may be noise. If direction, timing and persistence remain coherent across neighbouring levels, the pattern deserves closer event locked and prospective testing.
+
+The chart is descriptive. It shows change already present in the observed record. To test prediction, the signature must be calculated using only information available before a later target and then evaluated without revising the rule after seeing that outcome.
+
+Open graph displays the selected trajectory in a centred viewer. Explain graph adapts its guidance to the chosen function and level. Use both controls to follow direction, reversals, flattening, oscillation and cross order agreement while keeping the chronological evidence boundary clear.
+
