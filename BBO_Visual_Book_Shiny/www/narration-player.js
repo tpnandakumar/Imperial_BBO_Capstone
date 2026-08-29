@@ -17,7 +17,10 @@
     "Above and Beyond": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Resolution": ["05_black_box_resolution.m4a", "Black Box Resolution"],
     "Beyond BBO": ["04_delta_signature_of_change.m4a", "Delta and the Signature of Change"],
-    "Evidence": ["03_results_and_interpretation.m4a", "Results and interpretation"]
+    "Evidence": [
+      "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/21_verified_evidence_page.m4a?version=1",
+      "Verified Evidence page"
+    ]
   };
 
   const pdhisResearchViews = new Set(["model", "advanced", "flicker", "atlas"]);
