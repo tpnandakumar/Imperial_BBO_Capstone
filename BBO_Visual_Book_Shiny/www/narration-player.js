@@ -26,6 +26,15 @@
   let currentPart = 0;
   let currentTitle = "";
 
+  function openRequestedPage() {
+    const requestedPage = new URLSearchParams(window.location.search).get("page");
+    if (requestedPage === "executive-summary" && window.Shiny) {
+      window.Shiny.setInputValue("deep_link_page", "executive-summary", { priority: "event" });
+    }
+  }
+
+  document.addEventListener("shiny:connected", openRequestedPage);
+
   function mainButton() { return document.getElementById("hear_me"); }
   function setStatus(message) {
     const node = document.getElementById("hear_me_status");
@@ -159,3 +168,4 @@
   });
   window.addEventListener("beforeunload", function () { audio.pause(); });
 })();
+
