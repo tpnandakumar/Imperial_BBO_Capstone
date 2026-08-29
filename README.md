@@ -20,7 +20,7 @@ This repository tells two connected stories. The first is the official thirteen-
 | [**Open the Live Visual Book →**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) | [**Open Components 25.1, 25.2 and 25.3 →**](Module_25_Final_BBO_Submission/README.md) | [**Open the verified notebook →**](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) |
 | Read by week, function or scientific theme. Continue into Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS). | Review the retrospective, successful strategies, datasheet, model card and repository audit. | Inspect the data, calculations, figures and reproducibility instructions. |
 
-> **Interactive status:** The public Shiny deployment is live. Use the CLICK ME link above to open the complete interactive Visual Book. GitHub retains the documented evidence, source code and reproducibility record.
+> **Interactive status:** Shiny is used for the public Imperial BBO Visual Book. The live deployment is available through the CLICK ME link above. GitHub retains the documented evidence, source code and reproducibility record.
 
 ### The verified record at a glance
 
