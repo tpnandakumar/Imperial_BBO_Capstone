@@ -278,3 +278,23 @@ P D H I S therefore separates three levels of claim. Description identifies chan
 
 Open graph displays the evidence counts and adjusted results together. Explain graph summarises the threshold and the loss of comparisons. Read the bars first, then the purple line, and use both to judge how confidently any apparent Signature of Change can be carried forward.
 
+## 21. Verified Evidence page
+
+This page is the audit trail for the thirteen round challenge. It displays every participant-selected query exactly as recorded in the canonical evidence file, with its submitted coordinates and returned output.
+
+The complete dataset contains two hundred and seventy nine observations. One hundred and seventy five were supplied as starter evidence. A further one hundred and four were generated prospectively during the challenge, consisting of one query for each of eight functions in every one of thirteen weeks. This table focuses on those one hundred and four weekly evaluations because they record the decisions made during the assessed search.
+
+Each row links four essential facts. Function identifies the hidden landscape. Week preserves when the decision was made. Submitted coordinates record the exact input sent to the black box. Returned output records the value received from the portal. Keeping these elements together makes the result traceable from a reported conclusion back to its original observation.
+
+The number of coordinates differs by function because the hidden problems have different dimensionalities. Function One and Function Two use two inputs. Later functions contain more dimensions, reaching eight inputs for Function Eight. A coordinate should therefore be interpreted within its own function rather than compared directly with a coordinate from another landscape.
+
+The outputs also operate on very different numerical scales. Function One can return values close to zero, Function Four contains negative values and Function Five reaches values in the thousands. A large-looking number is not automatically a stronger result across the whole project. Performance is judged within the same function and against that function's earlier evidence.
+
+The Function control lets you isolate one optimisation story from F One to F Eight. The Week range control limits the record to a selected chronological interval. Used together, these filters can reproduce a statement such as which coordinate was submitted for Function Five in a particular week and what output it returned.
+
+The table shows six rows at a time to preserve readability. Previous rows and Next rows move through the filtered evidence without changing its order. The row counter states exactly which part of the record is visible and how many observations satisfy the current filters.
+
+This page also protects the prospective nature of the project. The weekly inputs and actual outputs are presented as recorded. It does not reconstruct a numerical guess after the result is known. Later interpretations, figures and surrogate studies may examine this evidence, but they do not alter the original sequence.
+
+Use the Evidence page when checking a graph, table or discussion statement elsewhere in the Visual Storyboard. Select the relevant function and weeks, locate the source rows and compare them with the reported interpretation. This creates a clear route from visual storytelling back to the reproducible numerical record.
+
