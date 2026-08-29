@@ -45,8 +45,22 @@ These are the strongest outputs observed from participant-selected queries. They
 | --- | --- |
 | [Verified final result summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv) | Best participant-query output and winning week for F1 to F8 |
 | [Final reproducible notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb) | Dataset checks, starter comparison, repeatability analysis and thirteen-round trajectories |
+| [Final numerical analysis code](Week_13/week_13_analysis.py) | Reconstructs the thirteen-round history and produces the verified result summary |
+| [Final figure-generation code](Week_13/generate_week_13_figures.py) | Rebuilds the four final figures displayed below |
 | [Final strategy outcome](Week_13/FINAL_STRATEGY_OUTCOME.md) | Function-level interpretation of what succeeded, plateaued or required recovery |
 | [Successful optimisation strategies](Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md) | Evidence supporting exploration, refinement, recovery, replication and stopping |
+
+### Final results figures
+
+| Final-round change | Normalised thirteen-round progress |
+| --- | --- |
+| [![Final change from Week 12 to Week 13](Results/figure_01_final_round_change.png)](Results/figure_01_final_round_change.png) | [![Normalised progress across thirteen rounds](Results/figure_02_normalised_progress.png)](Results/figure_02_normalised_progress.png) |
+| **Function 5 trajectory** | **Latest week in which each best result appeared** |
+| [![Function 5 trajectory](Results/figure_03_function_5_trajectory.png)](Results/figure_03_function_5_trajectory.png) | [![Latest round in which each participant-query best was observed](Results/figure_04_latest_best_round.png)](Results/figure_04_latest_best_round.png) |
+
+The normalised figure compares timing and direction within each function. It does not imply that raw output magnitudes are comparable between functions.
+
+[Open the organised Results folder](Results/SECTION_GUIDE.md) for the figures, interpretation and links to the code used to reproduce them.
 
 ## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
 
@@ -173,16 +187,6 @@ Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 a
 | F8 | `9.58024` | 1, 11, 12, 13 | The same best result was confirmed several times |
 
 These are the strongest results produced by the participant-selected queries during the thirteen authorised rounds. Starter-data maxima are reported separately in the final notebook. None proves that the mathematical global optimum was found.
-
-### Final analytical figures
-
-![Normalised progress across thirteen rounds](Week_13/week_13_figure_2_normalised_progress.png)
-
-*Each function is normalised only against its own observed participant-query range. The figure shows timing and convergence, not comparable raw magnitude across functions.*
-
-![Latest round in which each participant-query best was observed](Week_13/week_13_figure_4_latest_best_round.png)
-
-*Later bars indicate that the final winning query was still being found or reconfirmed near the end of the challenge.*
 
 ## What the results taught us
 
