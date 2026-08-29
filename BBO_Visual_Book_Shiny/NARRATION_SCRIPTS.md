@@ -376,3 +376,25 @@ That variation is the central lesson of this page. Progress was not a smooth sha
 
 Use Read by Week to understand the campaign at a particular decision point. Open graph provides a centred full-screen view, and Explain graph gives concise guidance for the selected visual. When one function draws attention, move to Read by Function for its complete trajectory. Use Evidence when the exact submitted coordinates and returned output are required.
 
+## 25. README page
+
+This page is the short reading guide for the Imperial Black Box Optimisation Capstone. It introduces the assessed challenge, identifies the evidence preserved in the repository and directs each reader towards the level of detail they need.
+
+The task involved eight hidden mathematical functions, ranging from two to eight input dimensions. Their equations, gradients and global optima were not disclosed. The course supplied one hundred and seventy five starter observations. Across thirteen weekly rounds, one new coordinate was selected for each function and submitted through the Imperial portal. The corresponding black box output then became evidence for the following decision.
+
+The completed record contains two hundred and seventy nine observations. Of these, one hundred and four are participant-selected weekly queries, consisting of eight functions multiplied by thirteen rounds. Preserving starter evidence and prospective queries together makes it possible to understand both the initial information available and the decisions made as the challenge developed.
+
+The project did not apply one fixed search rule to all functions. Early rounds used broader exploration and directional testing. Later decisions became function-specific, combining refinement, recovery, repeated-coordinate validation and stopping. This matters because the eight functions behaved differently. Function Five rewarded sustained directional refinement. Other functions reached a strong result earlier, fluctuated or benefited from returning to a previously supported coordinate.
+
+The README in the GitHub repository is the formal entry point for assessment. It contains the required non-technical explanation, data summary, model account, hyperparameter optimisation discussion and results section. It also links to the code, datasheet, model card, tables, figures, detailed discussion and Executive Summary without crowding the main page.
+
+This Visual Storyboard offers a complementary reading route. Read by Week presents the thirteen-round campaign chronologically. Read by Function isolates one complete optimisation story. The Scientific Atlas compares the timing of progress across all eight landscapes. Evidence returns to the exact submitted coordinates and portal outputs.
+
+The Resolution and Beyond BBO sections are clearly separated from the assessed Imperial results. Black Box Resolution explores how much mathematical structure can be recovered from the completed evidence. Pisharam Delta Hierarchy and Influence State examines temporal change through recursive Delta orders. These later studies extend the research questions without changing the original thirteen-round record.
+
+The evidence boundary remains important throughout. Reported maxima are the strongest outputs observed from participant-selected queries. They are not claims that the unknown global optimum was recovered. Later surrogate models and Delta studies interpret the completed evidence, but they do not rewrite earlier decisions as if they had been known prospectively.
+
+Readers seeking a concise overview can continue to the Executive Summary. Assessors checking reproducibility should use the Repository and Evidence routes. Readers interested in how the search evolved should choose Read by Week, while those comparing function behaviour should begin with the Scientific Atlas and then open Read by Function.
+
+The aim of this page is orientation. It shows what was attempted, what evidence exists, what the reported results mean and where each supporting document can be found. The GitHub README remains the definitive repository guide, while the Visual Storyboard makes the same project easier to approach through structured, visual and auditory routes.
+
