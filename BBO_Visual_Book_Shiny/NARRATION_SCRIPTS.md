@@ -422,3 +422,25 @@ Readers interested in the extension work can open the mathematical model, repres
 
 This page therefore serves as a bridge rather than a duplicate contents list. Use it whenever a visual claim needs supporting documentation, an equation needs its full specification or a result needs to be traced back to code and data.
 
+## 27. Above and Beyond page
+
+Above and Beyond is the entrance to the post-challenge research library. It begins only after the thirteen-round Imperial Black Box Optimisation record is complete. The original inputs, portal outputs, decisions and assessed results remain unchanged.
+
+The page offers two distinct routes. Above BBO opens Black Box Resolution, abbreviated as B B R. Beyond BBO opens Pisharam Delta Hierarchy and Influence State, abbreviated as P D H I S. They use the completed evidence to ask different questions and should not be treated as additional rounds of the original optimisation.
+
+Black Box Resolution asks how much mathematical structure can be recovered when the original function remains hidden. It compares plausible explanations, tests them chronologically and rejects those that do not survive the recorded evidence. The purpose is not to declare that the unknown equation has been discovered. It is to identify the best-supported local representation and make its limits explicit.
+
+The B B R route includes the method, exploratory and exploitation stages, confirmation logic and representative surrogate equations. Function Five is represented by a Matérn two point five Gaussian process surrogate. Function Seven is represented by a quadratic surrogate. Their coefficients, scaling and validation evidence are preserved in the repository.
+
+P D H I S asks how behavioural change becomes visible through time. Delta One records the change between consecutive outputs. Each higher Delta order measures change in the preceding order. This recursive hierarchy reveals oscillation, persistence, energy and temporal structure that may be hidden in the original output sequence.
+
+Within P D H I S, the Signature of Change means a structured pattern already present in the observed sequence. The later pages examine Delta meanings, the Lotus hierarchy, trajectories, event-locked flicker, matched events, relationships across Functions One to Eight and the statistical evidence boundary.
+
+The distinction between identification and prediction is central. The completed thirteen-week record can reveal a retrospective pattern and support an association. A claim of prediction requires a rule fixed in advance and tested on new unseen data. The P D H I S pages state this boundary while showing how the present findings can guide a prospective study.
+
+These two routes are complementary. B B R studies the spatial relationship between coordinates and outputs. P D H I S studies how observed behaviour changes across time and Delta order. Together they show that a completed black box record can support further mathematical investigation without rewriting the assessed campaign.
+
+Choose Above BBO when the question concerns hidden function structure, surrogate equations or the balance between exploration and exploitation. Choose Beyond BBO when the question concerns temporal dynamics, oscillation, the Signature of Change or future prospective testing.
+
+Both routes link back to formal documents, calculations, tables and figures in GitHub. The Visual Storyboard provides the accessible interpretation, while the repository preserves the full technical evidence and validation boundary.
+
