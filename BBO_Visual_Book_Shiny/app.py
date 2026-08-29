@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 24078)
-Total output lines: 1668
-
 from __future__ import annotations
 
 from pathlib import Path
@@ -852,7 +849,15 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     def _pdhis_next():
         current = input.pdhis_view()
         index = pdhis_pages.index(current)
-        if index == len(pdhis_pages) - 1:…78 tokens truncated…view", selected="evidence")
+        if index == len(pdhis_pages) - 1:
+            ui.update_navs("main_navigation", selected="Evidence")
+        else:
+            ui.update_radio_buttons("pdhis_view", selected=pdhis_pages[index + 1])
+
+    @reactive.effect
+    @reactive.event(input.evidence_previous)
+    def _evidence_previous():
+        ui.update_radio_buttons("pdhis_view", selected="evidence")
         ui.update_navs("main_navigation", selected="Beyond BBO")
 
     @reactive.effect
