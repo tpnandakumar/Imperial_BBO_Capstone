@@ -101,3 +101,11 @@ These findings identify the current boundary of the data and prevent a retrospec
 ## Contribution statement
 
 > PDHIS extracts a structured and reproducible Signature of Change from sparse black-box sequences. It identifies retrospective mathematical behaviour, candidate event-linked characteristics and the point at which available evidence becomes insufficient for prospective inference. This is a positive methodological contribution even though advance prediction remains a later validation objective.
+
+## Positive conclusion and research direction
+
+This work demonstrates that meaningful mathematical behaviour can be identified from sparse black-box observations even when the original governing equations remain unknown. The representative F5 Matérn 2.5 surrogate and F7 quadratic surrogate show that local input-output structure can be modelled and reproduced with strong walk-forward performance. PDHIS complements these equations by examining how behaviour develops through successive Delta orders.
+
+PDHIS converts observed change into a structured mathematical state, separates retrospective identification from prospective prediction and identifies the present boundary of the available evidence. Longer independent sequences, repeated anchor inputs, input-adjusted residual Delta and prospectively defined events now provide a clear programme for determining which characteristics remain stable across time, functions and independent datasets.
+
+PDHIS should therefore be understood as both an identification framework and a developing research model. It already provides a reproducible method for extracting mathematical behaviour from unknown functions. Its next challenge is to establish whether a locked Signature of Change can support validated prospective prediction.
