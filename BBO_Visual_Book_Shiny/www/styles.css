@@ -30,6 +30,9 @@ body {
 .brand-mark { color: #64a99f; margin-right: .55rem; }
 .nav-link { color: #4d6579 !important; border-radius: 999px; padding: .42rem .68rem !important; font-size: .9rem; }
 .nav-link.active { background: linear-gradient(120deg, var(--mint), var(--lavender)); color: var(--ink) !important; }
+.navbar-nav .nav-link[data-value="Executive Summary"] { background: #f2c94c; color: #17324d !important; font-weight: 750; box-shadow: 0 2px 8px rgba(138, 101, 0, .22); }
+.navbar-nav .nav-link[data-value="Executive Summary"]:hover,
+.navbar-nav .nav-link[data-value="Executive Summary"].active { background: #ddb21f; color: #10273b !important; }
 
 .book-page { width: min(1320px, 100%); height: calc(100dvh - 4.1rem); min-height: 0; margin: 0 auto; padding: clamp(.35rem, .8vh, .7rem) clamp(.55rem, 1.4vw, 1rem); overflow: hidden; }
 .book-heading { max-width: 920px; margin: 0 auto clamp(.25rem, .6vh, .48rem); text-align: center; }
@@ -350,3 +353,4 @@ body {
   .reveal { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
