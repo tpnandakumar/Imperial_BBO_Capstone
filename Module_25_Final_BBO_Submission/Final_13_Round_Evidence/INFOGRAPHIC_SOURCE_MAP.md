@@ -8,7 +8,7 @@ Final Module 25 infographics will be created after the 25.1 and 25.2 prompts and
 | --- | --- | --- |
 | How did performance change in the final round? | `Week_13/week_13_analysis_summary.csv` | `Week_13/week_13_figure_data_summary.csv` |
 | Which functions reached a new best in Week 13? | `FINAL_RESULTS_SUMMARY.csv` | `Week_13/README.md` |
-| How did F5 improve across the capstone? | `PFRAMOS/data/recovered_exact_history.csv` plus verified Weeks 12 and 13 results | `Week_13/generate_week_13_figures.py` |
+| How did F5 improve across the capstone? | `BBO_Dashboard/data/complete_internal_evidence.csv` plus verified Weeks 12 and 13 results | `Week_13/generate_week_13_figures.py` |
 | Which strategies succeeded or failed? | `Week_13/FINAL_STRATEGY_OUTCOME.md` | `25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md` |
 | How did clustering affect later decisions? | `Week_10/README.md` | Week 10 clustering documentation |
 | What did PCA add to the strategy? | `Week_11/PCA_STRATEGY_COMPARISON.md` | Week 11 PCA outputs |

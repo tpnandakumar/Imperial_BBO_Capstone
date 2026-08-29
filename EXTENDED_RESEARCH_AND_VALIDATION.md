@@ -10,7 +10,7 @@ The extended work records research and validation that developed from the capsto
 
 ## PGC
 
-PGC developed as a validation and experimental stream concerned with computational behaviour, reproducibility and formal checking. The material currently includes executable experiments, validation protocols, system architecture documentation and monitored formal proof workflows.
+PGC developed as a separate validation and experimental stream concerned with computational behaviour, reproducibility and formal checking. Its work is not required to reproduce or assess the Imperial BBO submission.
 
 One example is the 008CL-B formal proof workflow, which was configured to run through GitHub Actions and to preserve verified result artefacts. This work reflects an attempt to move from informal confidence in computational output towards explicit verification and reproducible evidence.
 
@@ -18,7 +18,7 @@ PGC therefore contributes to the capstone primarily as an example of how questio
 
 ## PFRAMOS
 
-PFRAMOS developed as a broader experimental framework for examining optimisation behaviour and computational strategy. Its current material includes historical data auditing, walk forward analysis, candidate experiments, technical sweeps, training studies and supporting audit components.
+PFRAMOS developed as a separate experimental framework for examining optimisation behaviour and computational strategy. Its work is not required to reproduce or assess the Imperial BBO submission.
 
 Within the context of this capstone, its relevance lies in the attempt to examine optimisation decisions across time rather than judging a query only by its immediate returned value. Historical trajectories, candidate comparison and repeated validation provide a wider perspective on robustness and strategy selection.
 
@@ -54,6 +54,6 @@ Later PGC and PFRAMOS developments are identified separately from the methods re
 
 ## Why the extended work is retained
 
-The additional research is retained to make the development process transparent. The capstone began as a constrained black box optimisation problem, but repeated experimentation raised broader questions about reliability, robustness, validation and strategy selection. PGC and PFRAMOS document how those questions were explored beyond the minimum submission requirements.
+This contextual record is retained to make the development process transparent. The capstone began as a constrained black box optimisation problem, but repeated experimentation raised broader questions about reliability, robustness, validation and strategy selection. PGC and PFRAMOS describe how those questions continued beyond the submission requirements.
 
-For assessment, the weekly BBO folders and capstone experiment records remain the primary evidence. PGC and PFRAMOS provide supplementary evidence of the research and engineering questions that emerged from that work.
+For assessment, the weekly BBO folders and capstone experiment records are the primary evidence. The separate PGC and PFRAMOS workspaces are outside the submitted reproduction route.

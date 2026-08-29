@@ -14,9 +14,9 @@ The canonical complete dataset is:
 
 ## Authoritative evidence used by the final script
 
-The early exact numerical history for Weeks 1 to 11 is stored in:
+The early exact numerical history for Weeks 1 to 11 is read from the canonical complete dataset:
 
-`PFRAMOS/data/recovered_exact_history.csv`
+`BBO_Dashboard/data/complete_internal_evidence.csv`
 
 The final two rounds are read directly from their verified source files:
 

@@ -172,7 +172,7 @@ python Week_13/week_13_analysis.py
 python Week_13/generate_week_13_figures.py
 ```
 
-The analysis uses `PFRAMOS/data/recovered_exact_history.csv` for Weeks 1 to 11 together with the verified Week 12 and Week 13 input and result files. It does not infer missing values. The core Week 13 record remains flat and no separate figures directory is required.
+The analysis uses `BBO_Dashboard/data/complete_internal_evidence.csv` for Weeks 1 to 11 together with the verified Week 12 and Week 13 input and result files. It does not infer missing values. The core Week 13 record remains flat and no separate figures directory is required.
 
 ## 13. Overall Capstone Findings
 
@@ -191,6 +191,6 @@ Further work belongs to evaluation, reflection, visualisation and clearly separa
 1. `Week_13/week_13_inputs.csv`, verified final round inputs.
 2. `Week_13/week_13_results.csv`, verified final round outputs.
 3. `Week_12/week_12_inputs.csv` and `Week_12/week_12_results.csv`, verified preceding round record.
-4. `PFRAMOS/data/recovered_exact_history.csv`, committed exact Weeks 1 to 11 history.
+4. `BBO_Dashboard/data/complete_internal_evidence.csv`, canonical committed evidence containing the exact Weeks 1 to 11 history.
 5. `Week_11/PCA_STRATEGY_COMPARISON.md` and `Week_11/WEEK_12_DECISION_RECORD.md`.
 6. Module 24 course material covering reinforcement learning, multi armed bandits, Markov decision processes and Q learning.

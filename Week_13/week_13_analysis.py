@@ -6,7 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 WEEK = ROOT / "Week_13"
-EARLY_HISTORY = ROOT / "PFRAMOS" / "data" / "recovered_exact_history.csv"
+COMPLETE_EVIDENCE = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 FUNCTIONS = [f"Function {i}" for i in range(1, 9)]
 DIMS = {
     f"Function {i}": dim
@@ -18,7 +18,7 @@ def load_early_history() -> tuple[
     dict[int, dict[str, Decimal]],
     dict[int, dict[str, tuple[Decimal, ...]]],
 ]:
-    """Load the committed exact Weeks 1 to 11 history."""
+    """Load Weeks 1 to 11 from the canonical committed evidence file."""
     history: dict[int, dict[str, Decimal]] = {
         week: {} for week in range(1, 12)
     }
@@ -26,17 +26,25 @@ def load_early_history() -> tuple[
         week: {} for week in range(1, 12)
     }
 
-    with EARLY_HISTORY.open(newline="", encoding="utf-8") as handle:
+    with COMPLETE_EVIDENCE.open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
-            week = int(row["Week"])
+            source = row["source"]
+            if not source.startswith("week_"):
+                continue
+            week = int(source.removeprefix("week_"))
             if week > 11:
                 continue
-            function = f"Function {int(row['Function'])}"
-            dim = int(row["Dimension"])
+            function = f"Function {int(row['function'])}"
+            dim = DIMS[function]
             coords = tuple(
-                Decimal(row[f"Input_{i}"]) for i in range(1, dim + 1)
+                Decimal(row[f"x{i}"]) for i in range(1, dim + 1)
             )
-            history[week][function] = Decimal(row["Output"])
+            if function in history[week] or function in inputs[week]:
+                raise ValueError(
+                    f"Duplicate {function} record for Week {week} in "
+                    f"{COMPLETE_EVIDENCE}"
+                )
+            history[week][function] = Decimal(row["output"])
             inputs[week][function] = coords
 
     return history, inputs

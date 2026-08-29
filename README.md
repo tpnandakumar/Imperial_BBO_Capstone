@@ -270,4 +270,4 @@ No Delta order crosses the adjusted confirmation threshold. The graph identifies
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/README.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 
-The `PGC` and `PFRAMOS` directories contain additional validation and research material. See [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md).
+The origins and assessment boundary of the later PGC and PFRAMOS research streams are recorded in [Extended Research and Validation](EXTENDED_RESEARCH_AND_VALIDATION.md). Their separate research workspaces are not required for reproducing or assessing the Imperial BBO submission.
