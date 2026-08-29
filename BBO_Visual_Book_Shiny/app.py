@@ -20,6 +20,8 @@ PDHIS_ADVANCED_COEFFICIENTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_LOGI
 PDHIS_FLICKER_ASSOCIATIONS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_EVENT_LOCKED_FLICKER_ASSOCIATIONS.csv"
 PDHIS_MATCHED_RESULTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_MATCHED_EVENT_RESULTS.csv"
 PDHIS_FLICKER_LOFO_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FLICKER_LOFO_METRICS.csv"
+EXECUTIVE_SUMMARY_FILE = ROOT / "Module_25_Final_BBO_Submission" / "25_1_Retrospective" / "DETAILED_EXECUTIVE_SUMMARY.md"
+EXECUTIVE_SUMMARY_TEXT = EXECUTIVE_SUMMARY_FILE.read_text(encoding="utf-8")
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -445,12 +447,12 @@ app_ui = ui.page_navbar(
             page_toolbar("repository_home", "repository_up", "repository_previous", "repository_next"),
             book_heading("REPRODUCIBLE RECORD", "Repository and live Visual Book", "The live book explains the results. The repository preserves the evidence, calculations and source code behind them."),
             ui.div(
-                ui.div(
-                    ui.h2("Executive summary"),
-                    ui.p("Begin with the detailed account of the challenge, strategy, final results, BBR and the advanced PDHIS findings. Select HEAR ME above to listen to the complete three-part narration while following the written summary."),
-                    ui.a("Read the Executive Summary", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md", target="_blank", class_="external-button"),
-                    class_="reading-panel",
-                ),
+                ui.h2("Executive Summary: read and listen"),
+                ui.p("Select HEAR ME above to play the complete three-part narration. The written Executive Summary appears below in the same order, so you can read and listen on this page."),
+                ui.markdown(EXECUTIVE_SUMMARY_TEXT),
+                class_="reading-panel executive-summary-reading",
+            ),
+            ui.div(
                 ui.div(
                     ui.h2("GitHub README"),
                     ui.p("Use the README as the contents page for the assessment record, weekly evidence, reproducibility guidance and later research."),
