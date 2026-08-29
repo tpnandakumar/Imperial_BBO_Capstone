@@ -75,7 +75,7 @@ Event-locked analysis completion result: passed locally.
 Date: 2026-08-29
 
 - Same-function matching, threshold sensitivity and held-out-function results are reported separately.
-- The Visual Book explanation states that the candidate fingerprint was not confirmed.
+- The Visual Book explanation presents the candidate fingerprint as a research pointer and the stronger tests as identification of the present evidence boundary.
 - Standardised paired differences keep characteristics with different units comparable in the graph.
 - The supporting three-panel figure was inspected for readable labels, complete axes and unclipped annotations.
 

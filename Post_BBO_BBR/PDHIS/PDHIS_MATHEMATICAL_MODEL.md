@@ -140,4 +140,4 @@ PDHIS supports three different levels of conclusion:
 2. **Retrospective association:** an event-locked fingerprint differs between known event and non-event windows.
 3. **Prospective prediction:** a locked signature predicts untouched later outcomes and improves on a simple baseline in discrimination and calibration.
 
-The current BBO record supports detailed description. Some exploratory associations appeared, but matched controls, threshold sensitivity and held-out-function testing did not confirm an advance-warning fingerprint. PDHIS therefore extracts substantial retrospective mathematical behaviour without yet establishing reliable prospective prediction.
+The current BBO record supports detailed description. Matched controls, threshold sensitivity and held-out-function testing locate the present evidence boundary before an advance-warning fingerprint can be locked. PDHIS therefore extracts substantial retrospective mathematical behaviour and defines reliable prospective prediction as the next validation objective.

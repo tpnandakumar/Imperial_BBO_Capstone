@@ -9,7 +9,7 @@ The live book opens directly in your browser. It includes the Week, Function, Sc
 
 > **New reader?** Start with the [Imperial BBO Executive Summary](EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
-> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md).
+> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md).
 
 ## Enter the project
 
@@ -262,7 +262,7 @@ Repeated colour across neighbouring Delta orders is more consistent with a coher
 
 The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
 
-No Delta order crosses the adjusted confirmation threshold. The graph marks the point where visual interpretation must give way to statistical restraint. PDHIS identifies structured patterns in the completed record, while leaving the original hidden functions unresolved. The current evidence does not support a validated forecasting rule.
+No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/README.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 

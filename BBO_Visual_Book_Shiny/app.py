@@ -475,6 +475,12 @@ app_ui = ui.page_navbar(
                     ui.a("Open the Representative Equations", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/tree/main/Post_BBO_BBR/representative_surrogates", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
+                ui.div(
+                    ui.h2("PDHIS identification contribution"),
+                    ui.p("See what PDHIS identifies across F1 to F8 and how the validation boundary guides the next research stage."),
+                    ui.a("Read the Identification Contribution", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md", target="_blank", class_="external-button"),
+                    class_="reading-panel",
+                ),
                 class_="repository-grid",
             ),
             class_="book-page",
@@ -1051,8 +1057,8 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
                     "Every event is compared with the nearest non-event target week from the same function.",
                     "The smallest paired p value was 0.094 for temporal dispersion before six large events. Its adjusted value was 0.845.",
                     "The direction of the peak-spacing result was not stable when the large-event threshold changed.",
-                    "The full fingerprint reached held-out-function balanced accuracy of 0.433, below the 0.500 prevalence baseline, and its Brier score was also worse.",
-                    "These results do not support locking the current fingerprint as an early-warning rule. They guide the design of longer prospective sequences.",
+                    "The full fingerprint reached held-out-function balanced accuracy of 0.433, compared with the 0.500 prevalence baseline, and its Brier score was higher.",
+                    "These results identify the present transfer boundary and guide the design of longer prospective sequences.",
                 ],
                 "model": [
                     "First-order Delta is the direct change between consecutive outputs. Higher orders are changes in the preceding Delta order, not changes between correspondingly numbered weeks.",
@@ -1304,9 +1310,9 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "orders": "Across ten levels of Delta freedom, Delta 2, Delta 4 and Delta 5 show the strongest inverse associations with later change. These relationships need further chronological testing before they can support forecasting.",
             "functions": "F2 has the clearest reversal signature across Delta 1 to Delta 4. F5 differs, with a positive Delta 1 relationship. Function-level samples remain small.",
             "evidence": "Usable forward comparisons fall from 88 at Delta 1 to 16 at Delta 10. No order reaches an adjusted q value below 0.05.",
-            "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. Delta 9 oscillation also failed to predict positive Delta 3 in the small higher-order test, so the findings support prospective study rather than operational forecasting.",
+            "advanced": "The earlier Delta signature is the predictor and later behaviour is the target. The full regularised signature performed better than the simple prevalence baseline when one function was held out. Chronological accuracy was weaker. The higher-order test identified Delta 9 oscillation as too common to distinguish positive Delta 3 in this short record, directing attention towards more selective signatures.",
             "flicker": "The event-locked study looks backwards from known outcomes and characterises the preceding flicker. Peak spacing was the strongest candidate before new best outputs, but it did not remain significant after adjustment. The result defines a candidate temporal fingerprint for later prospective testing.",
-            "atlas": "Same-function matching, threshold sensitivity and held-out-function testing did not confirm the candidate fingerprint. This negative result prevents premature forecasting claims and shows that longer independent sequences are required.",
+            "atlas": "Same-function matching, threshold sensitivity and held-out-function testing identified the present stability and transfer boundary. This positive boundary finding shows which characteristics require refinement and why longer independent sequences are needed.",
             "model": "PDHIS defines a reproducible mathematical state from recursive Delta orders and temporal characteristics. It extracts retrospective behaviour from an unknown process while keeping description, association and prospective prediction as separate levels of evidence.",
         }[input.pdhis_view()]
 

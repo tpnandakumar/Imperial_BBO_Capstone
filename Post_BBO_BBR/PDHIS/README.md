@@ -2,6 +2,8 @@
 
 The [formal PDHIS mathematical model](PDHIS_MATHEMATICAL_MODEL.md) defines the recursive Delta operator, scale, oscillation, energy, temporal dispersion, persistence, cross-order coherence, Signature of Change, event-locked fingerprint and prospective target.
 
+The [PDHIS identification contribution](PDHIS_IDENTIFICATION_CONTRIBUTION.md) explains the positive methodological development, the mathematical behaviour identified across F1 to F8 and the value of locating the present evidence boundary.
+
 The latest extension adds [regularised logistic classification, chronological validation, leave-one-function-out testing, permutation analysis, coefficient stability and influence-state summaries](PDHIS_ADVANCED_FINDINGS.md). These results are exploratory and do not replace the original Delta evidence or establish a validated forecasting rule.
 
 A further [higher-order pointer analysis](PDHIS_HIGH_ORDER_POINTERS.md) tests whether oscillation in Delta 6 to Delta 10 precedes positive Delta 1, Delta 2 or Delta 3 behaviour one week later. It defines the later low-order Delta as the target and keeps every predictor within the information available at the prediction week.

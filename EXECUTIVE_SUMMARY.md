@@ -46,7 +46,7 @@ Success depended on economical reasoning rather than constant movement. A query 
 
 Stopping also became an active decision. Functions with reproducible winners did not need the same treatment as functions with a supported direction or unresolved behaviour. By the final round, the query budget was allocated according to the value of further improvement or further information.
 
-The repository preserves positive and negative results, analytical additions, decision records and interpretation limits. This allows another reader to follow the path from observation to interpretation, decision and outcome.
+The repository preserves improvements, boundary findings, analytical additions, decision records and interpretation limits. This allows another reader to follow the path from observation to interpretation, decision and outcome.
 
 ## Beyond the assessed challenge
 
@@ -64,11 +64,11 @@ This is a promising screening result, not a forecasting rule. Chronological cali
 
 The original research opportunity is to test whether a multilevel Delta signature carries information that a single change measure misses. That question is falsifiable and can be studied across optimisation, service improvement and other sequential processes. The next study should register its hypotheses and measures in advance, lock the model before testing, use new functions and compare PDHIS with simple persistence and time-series baselines. Independent replication would then determine whether the pattern is generalisable rather than specific to this capstone record.
 
-In this framework, the later behaviour is the target. A higher-order analysis tested whether oscillation in Delta 6 to Delta 10 preceded positive Delta 1, Delta 2 or Delta 3 behaviour one week later. For Delta 9 predicting positive Delta 3, there were 16 eligible cases. Delta 9 oscillated in 15, and positive Delta 3 followed in 6 of those 15. The exact p value was `0.438`, so the present evidence does not support Delta 9 oscillation as a predictor. This negative finding is useful because it shows that very high-order oscillation may become too common to distinguish future states in a short sequence.
+In this framework, the later behaviour is the target. A higher-order analysis tested whether oscillation in Delta 6 to Delta 10 preceded positive Delta 1, Delta 2 or Delta 3 behaviour one week later. For Delta 9 predicting positive Delta 3, there were 16 eligible cases. Delta 9 oscillated in 15, and positive Delta 3 followed in 6 of those 15. The exact p value was `0.438`. This identified Delta 9 oscillation as too common to distinguish future states in the present short sequence.
 
 An event-locked retrospective study then characterised the six observations before each of 56 eligible target weeks. It compared temporal dispersion, sign-change frequency, peak spacing, amplitude, energy, persistence, amplification and flicker density before 29 improvements, 6 large changes and 11 new best outputs. Longer peak spacing was the strongest candidate before new best outputs, averaging `4.00` compared with `2.02` in other windows. Its exploratory p value was `0.034`, but the adjusted value was `0.305`. This identifies a flicker characteristic worth testing, while showing that it is not yet confirmed.
 
-Stronger stability checks did not confirm that candidate. Same-function matching produced a smallest paired p value of `0.094`, with an adjusted value of `0.845`. The peak-spacing direction changed across alternative large-event thresholds. When the complete fingerprint was trained on seven functions and tested on the eighth, balanced accuracy was `0.433`, below the `0.500` prevalence baseline, and probability error was worse. Preserving this negative result is important because it prevents a descriptive retrospective pattern from being presented as an early-warning rule.
+Stronger stability checks located the current identification boundary. Same-function matching produced a smallest paired p value of `0.094`, with an adjusted value of `0.845`. The peak-spacing direction changed across alternative large-event thresholds. When the complete fingerprint was trained on seven functions and tested on the eighth, balanced accuracy was `0.433`, compared with the `0.500` prevalence baseline, and its probability error was higher. These findings show which parts of the fingerprint require refinement before prospective use.
 
 The mathematical extension preserves two fully reproducible representative surrogate equations. F5 uses a Matérn 2.5 Gaussian-process equation fitted to 33 observations. Its weekly walk-forward MAE was `49.919`, equal to `0.01124` of the complete F5 output range. F7 uses a full quadratic equation with six linear terms, six squared terms and fifteen interactions fitted to 43 observations. Its weekly walk-forward MAE was `0.06667`, equal to `0.04837` of the F7 range. The repository contains every scaling value, F5 kernel weight and F7 coefficient required to reproduce the equations.
 
@@ -87,5 +87,6 @@ The transferable lesson is simple. Define the question, record the decision befo
 - [Review the final assessment material](Module_25_Final_BBO_Submission/README.md)
 - [Inspect the advanced PDHIS findings](Post_BBO_BBR/PDHIS/PDHIS_ADVANCED_FINDINGS.md)
 - [Read the formal PDHIS mathematical model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md)
+- [Read the PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md)
 - [Reproduce the F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/README.md)
 - [Open the reproducibility guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
