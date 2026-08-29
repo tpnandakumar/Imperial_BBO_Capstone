@@ -98,6 +98,12 @@ The live book opens directly in your browser. It includes the Week, Function, Sc
 
 > **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
+### ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
+
+PIMF and PMOS produced a valuable learning outcome beyond Black Box Optimisation. Developing them in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. This experience demonstrated that effective analytical work depends not only on the optimisation method, but also on how the surrounding process is organised, monitored and improved.
+
+[Read how this learning developed in the Detailed Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md).
+
 ## Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.
