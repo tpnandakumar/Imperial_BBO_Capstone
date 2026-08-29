@@ -398,3 +398,27 @@ Readers seeking a concise overview can continue to the Executive Summary. Assess
 
 The aim of this page is orientation. It shows what was attempted, what evidence exists, what the reported results mean and where each supporting document can be found. The GitHub README remains the definitive repository guide, while the Visual Storyboard makes the same project easier to approach through structured, visual and auditory routes.
 
+## 26. Repository page
+
+The Repository page connects the visual account to the permanent technical record. The Visual Storyboard explains the project through structured pages, graphs and narration. GitHub preserves the data, calculations, source code and supporting documents needed to check those explanations.
+
+Begin with the GitHub README. It acts as the assessment contents page and follows the required capstone structure. It contains the non-technical project explanation, data summary, model discussion, hyperparameter optimisation account and results overview. Each concise section links to more detailed material so the main README remains readable.
+
+The full repository contains two hundred and seventy nine observations. One hundred and seventy five were supplied as starter evidence, while one hundred and four were generated through the thirteen prospective rounds. The weekly record preserves one submitted coordinate and returned output for each of eight functions in every round.
+
+The repository also contains the code used to prepare, analyse and display that evidence. Reproducibility depends on more than saving a final figure. The input files, processing steps, analytical notebooks, result tables, figures and written interpretation must remain connected. A reader should be able to move from a statement in the discussion to its graph, then to the underlying numerical record.
+
+The assessed Imperial submission is kept distinct from the later research extensions. The thirteen-round results are not altered by Black Box Resolution or Pisharam Delta Hierarchy and Influence State. Those sections examine new questions using the completed evidence after the prospective challenge had ended.
+
+The P D H I S Mathematical Model link opens the formal definitions for recursive Delta orders, oscillation, energy, temporal dispersion, coherence, event locking and prospective targets. This document explains the mathematical language used in the Beyond BBO pages and states the difference between describing an observed Signature of Change and testing future predictive performance.
+
+The representative equations link opens the complete surrogate package for Functions Five and Seven. Function Five is represented by a Matérn two point five Gaussian process surrogate, while Function Seven uses a quadratic surrogate. These equations summarise structure supported by the available input and output evidence. They do not claim to recover the unknown original black box equations.
+
+The P D H I S Identification Contribution explains what the completed Delta analysis identifies across Functions One to Eight. It records the observed temporal structures, the statistical evidence boundary and the design requirements for a later prospective study. This turns exploratory findings into a transparent basis for further research.
+
+Assessors checking the core submission should begin with the README, then follow its links to the datasheet, model card, code, optimisation details and results discussion. The Evidence tab provides a faster check of individual weekly observations. The Executive Summary provides a continuous account of the challenge and its main conclusions.
+
+Readers interested in the extension work can open the mathematical model, representative equations and identification contribution from this page. Keeping these links together makes the relationship clear: the Visual Storyboard provides accessible interpretation, while GitHub remains the authoritative and reproducible source.
+
+This page therefore serves as a bridge rather than a duplicate contents list. Use it whenever a visual claim needs supporting documentation, an equation needs its full specification or a result needs to be traced back to code and data.
+
