@@ -298,3 +298,27 @@ This page also protects the prospective nature of the project. The weekly inputs
 
 Use the Evidence page when checking a graph, table or discussion statement elsewhere in the Visual Storyboard. Select the relevant function and weeks, locate the source rows and compare them with the reported interpretation. This creates a clear route from visual storytelling back to the reproducible numerical record.
 
+## 22. Scientific Atlas page
+
+The Scientific Atlas brings all eight optimisation stories into one comparative view. Its purpose is to show when progress occurred, how the weekly trajectories differed and when each function's strongest participant-selected result was first observed.
+
+The first control chooses the comparison measure. Within-function relative progress is the recommended starting point because the eight output scales are not directly comparable. For each function, its lowest observed weekly output is represented by zero and its highest by one. Values between them show where that week sits within the function's own observed range.
+
+This rescaling preserves timing and direction but removes absolute magnitude. A relative value of one means the best participant-query output observed for that function. It does not mean that two functions with a value of one returned the same numerical result or were equally difficult to optimise.
+
+Original returned output restores the portal values. Use this measure when checking the real numerical trajectory of a particular function. When all eight functions are displayed together, their very different scales can make smaller ranges difficult to see. The hover label therefore retains the original output even when relative progress is selected.
+
+The Weekly trajectories view draws one line for each function across Weeks One to Thirteen. Rising sections show improvement within that function, falling sections show deterioration and repeated peaks can indicate recovery or confirmation. The chart also reveals why one common search rule was unsuitable. Some functions improved gradually, while others peaked early, reversed or benefited from returning to a previously strong region.
+
+The Function by week heat map presents the same evidence as a grid. Read across a row to follow one function through time and down a column to compare the timing of all eight functions in one week. Colour represents the selected measure. With relative progress, the heat map is best used to identify the timing and direction of change, not absolute differences between functions.
+
+The Winning week and result view reduces each function to the week when its highest participant-query output was first recorded. Functions Four and Eight reached their retained maxima in Week One. Function One peaked in Week Three, Function Seven in Week Five and Function Two in Week Twelve. Functions Three, Five and Six achieved their maxima in Week Thirteen.
+
+That spread from Week One to Week Thirteen is important. An early maximum does not necessarily mean the later work lacked value. Later queries tested whether the early result could be improved, repeated or recovered. A late maximum can reflect successful refinement, but it should still be interpreted with the complete trajectory and the finite thirteen-round budget.
+
+The summary cards provide four anchors. The earliest winning week is One. The latest is Thirteen. Three functions peak in the final round. The search spaces range from two to eight dimensions. Greater dimensionality changes the number of coordinates being selected, but it does not by itself determine whether a function will improve early or late.
+
+Open graph places the selected view in a centred full-screen display. Explain graph restates the comparison rules. Begin with relative progress and weekly trajectories, move to the heat map for timing, then use the winning-week view to locate the retained maxima. Return to original output whenever the actual numerical value is needed.
+
+The Atlas is a comparative reading tool rather than a new model. It organises the verified weekly evidence without altering the results. Use it to identify a pattern, then follow that function through Read by Function or confirm the precise coordinates and output in the Evidence tab.
+
