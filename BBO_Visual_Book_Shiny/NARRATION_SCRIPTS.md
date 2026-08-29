@@ -492,3 +492,23 @@ Read these pages as one connected method. Begin with meanings and hierarchy, mov
 
 P D H I S contributes a structured language for analysing temporal change in a short black box sequence. Its positive result is the identification of observable Delta behaviour, candidate orders and a clear prospective research design. Its scientific strength comes from stating exactly what the current evidence supports and what must still be tested.
 
+## 30. Cover page
+
+Welcome to the Imperial Black Box Optimisation Visual Library. This reading experience brings together the official thirteen-week capstone record and the research developed after the challenge.
+
+The first route is Imperial BBO Capstone. This is the assessed project. Eight hidden mathematical functions were explored over thirteen weekly rounds, with one new coordinate submitted for each function in every round. The equations, gradients and global optima were not revealed.
+
+The Imperial route preserves the complete prospective story. Read by Week follows the decisions chronologically. Read by Function isolates each hidden landscape. The Scientific Atlas compares the timing of progress. Evidence provides the exact submitted coordinates and returned portal outputs.
+
+The README and Executive Summary offer two different levels of orientation. The README is the concise assessment guide and links to the mandatory repository material. The Executive Summary provides a longer continuous account of the challenge, technical development, results and main lessons.
+
+The second route is Above and Beyond BBO. This post-challenge library is deliberately separated from the assessed campaign. It uses the completed evidence to ask further mathematical questions without changing the original results.
+
+Above BBO opens Black Box Resolution, or B B R. This route compares possible explanations for hidden function behaviour, tests them against the chronological evidence and rejects those that fail. Its representative surrogates show how much mathematical structure can be supported without claiming recovery of the unknown original equations.
+
+Beyond BBO opens Pisharam Delta Hierarchy and Influence State, or P D H I S. This route studies recursive Delta orders, temporal dynamics, oscillation and the Signature of Change. It identifies patterns already present in the observed sequence and defines how they could be tested prospectively in later unseen data.
+
+The Repository page connects every visual explanation to the permanent GitHub record. Use it to find the code, data, model documentation, equations and detailed discussion. The written repository remains the authoritative source, while this Visual Library makes the same evidence accessible through visual, structured and auditory routes.
+
+Choose Imperial BBO Capstone for the official submission story. Choose Above and Beyond BBO for the later B B R and P D H I S research. At any point, the Home control returns to this cover and the HEAR ME control plays the narration selected for the current page.
+
