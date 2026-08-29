@@ -512,3 +512,31 @@ The Repository page connects every visual explanation to the permanent GitHub re
 
 Choose Imperial BBO Capstone for the official submission story. Choose Above and Beyond BBO for the later B B R and P D H I S research. At any point, the Home control returns to this cover and the HEAR ME control plays the narration selected for the current page.
 
+## 31. Imperial BBO page
+
+This page is the main entrance to the assessed Imperial Black Box Optimisation Capstone. It summarises the challenge, the complete evidence record and the strongest participant-query result retained for each hidden function.
+
+The challenge contained eight functions, ranging from two to eight input dimensions. Each function was maximised independently. The underlying equations, gradients and global optima were not provided, so every decision had to be made from observed coordinates and returned outputs.
+
+Imperial supplied one hundred and seventy five starter observations. Across thirteen rounds, one new coordinate was submitted for every function each week. This produced one hundred and four participant-selected queries and a final audited dataset of two hundred and seventy nine observations.
+
+The four summary figures are therefore connected. Eight functions multiplied by thirteen rounds gives one hundred and four weekly queries. Adding those queries to the one hundred and seventy five starter observations gives the final total of two hundred and seventy nine.
+
+The result cards report the strongest output observed among the thirteen participant-selected queries for each function and the week when that value first appeared. They should be compared within the same function because the numerical scales and dimensions differ.
+
+Function One retained zero point zero two five five five nine from Week Three. Function Two reached zero point seven three three five two five in Week Twelve. Function Three reached minus zero point zero five six eight five one in the final week.
+
+Function Four retained minus four point three five nine eight seven five, first observed in Week One. Function Five produced the clearest sustained improvement and reached four thousand four hundred and forty point nine five seven two one seven in Week Thirteen. Function Six reached minus zero point six zero seven one five six in Week Thirteen.
+
+Function Seven retained one point three eight zero nine three zero from Week Five. Function Eight retained nine point five eight zero two four zero, first observed in Week One. These different winning weeks show why one fixed search rule was unsuitable.
+
+An early retained maximum does not mean the later decisions lacked purpose. Later queries tested whether the result could be improved, confirmed or recovered after movement elsewhere. A final-week maximum can reflect successful refinement, but it must still be interpreted within the finite thirteen-round budget.
+
+The search therefore evolved function by function. Early rounds used broader exploration and directional movement. Later rounds applied selective refinement, recovery, repeated-coordinate testing and stopping. Function Five rewarded sustained directional refinement. Functions Four and Seven demonstrated the importance of recovery. Function Six showed why repeated-coordinate evidence matters when identical inputs may not return identical outputs.
+
+The cards are navigation controls as well as summaries. Selecting a function opens its complete thirteen-week evidence page. Project overview opens the concise README route. Week One to Week Thirteen presents the chronological campaign. Function F One to F Eight compares complete function stories. Scientific Atlas shows the timing of progress across all eight landscapes. Repository connects the visual account to the code, data and formal documentation.
+
+The evidence boundary is essential. These are the strongest observed participant-query outputs, not claims that the hidden global optima were recovered. The value of the project lies in the prospective decisions, the transparent record of what succeeded and failed and the reproducible explanation of how the strategy changed.
+
+Use this page for the numerical overview. Then choose the reading route that matches the question: chronology, function behaviour, comparison, source evidence or full repository detail.
+
