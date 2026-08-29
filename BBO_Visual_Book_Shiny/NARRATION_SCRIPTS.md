@@ -108,3 +108,25 @@ The positive conclusion is that P D H I S has identified a measurable candidate 
 
 Open graph displays the two validation comparisons. Explain graph provides the key numerical interpretation. Together, they show both the predictive potential of the Delta signature and the evidence needed for its next stage of development.
 
+## 13. PDHIS event-locked flicker study page
+
+This page looks backwards from a known event and asks whether the preceding observations contained a recognisable temporal flicker.
+
+Event locked means that each analysis window is anchored to a target week whose outcome is already known. The calculation uses only the six observations before that week. The target itself is not included in the flicker measurement. This prevents the later outcome from leaking into the earlier fingerprint.
+
+The study contains fifty six pre-event windows. Twenty nine are followed by an improvement, six by a large function adjusted change and eleven by a new best output. Each event window is compared with windows in which that target did not occur.
+
+The heatmap organises the results. The three columns represent any improvement, a large change and a new best. The rows describe different characteristics of the earlier sequence. These include peak amplitude, oscillation energy, temporal dispersion, sign change frequency, peak spacing, directional persistence, late amplification, Delta Two energy and flicker density.
+
+Colour shows the standardised difference between event and non-event windows. Blue means the characteristic was stronger before the event. Red means it was weaker. Pale cells indicate little separation. The colours describe the direction and size of the observed contrast. They do not, by themselves, establish statistical significance.
+
+Peak spacing produced the clearest candidate pattern before a new best output. Its mean was four point zero in the event windows, compared with two point zero two in the other windows. This suggests that the strongest reversals were spaced further apart before some new best outcomes. Directional persistence also appeared stronger, while sign change frequency was lower. Taken together, this pattern describes a less frequent but more sustained movement rather than rapid, irregular switching.
+
+The exploratory p value for peak spacing was zero point zero three four. After correction for the multiple characteristics and targets examined, the adjusted value was zero point three zero five. The pattern is therefore a research pointer, not confirmed evidence. None of the displayed cells should be presented as a proven advance predictor from this thirteen week record.
+
+Weekly sampling also limits conventional frequency analysis. There are too few closely spaced observations for a reliable frequency spectrum. P D H I S therefore uses sign change rate and peak spacing as practical descriptions of temporal frequency. Oscillation energy describes strength, temporal dispersion describes how activity is spread through the window and persistence describes whether movement continues in one direction.
+
+The value of this study is that it converts the idea of a flicker into measurable characteristics. It identifies what can be compared, preserves the timing boundary and records which patterns deserve independent testing. A later prospective study can define the fingerprint in advance, calculate it from incoming observations and test whether it distinguishes a genuinely future event.
+
+Open graph displays the complete heatmap. Explain graph provides the principal counts and statistical interpretation. Together, they show how a known event can be traced backwards to characterise the Signature of Change without mistaking retrospective discovery for prediction.
+
