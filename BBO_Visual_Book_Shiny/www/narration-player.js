@@ -89,6 +89,12 @@
         "PDHIS Delta trajectory page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "orders") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/18_pdhis_predictability.m4a?version=1",
+        "PDHIS Predictability page"
+      ];
+    }
     if (section === "Beyond BBO" && selectedValue("pdhis_view") === "advanced") {
       return [
         "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/12_pdhis_advanced_model.m4a?version=1",
