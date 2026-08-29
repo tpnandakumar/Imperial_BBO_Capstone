@@ -2,6 +2,32 @@
 
 This is the single authoritative README for the Imperial BBO Capstone. Supporting folders use clearly named section guides so that readers always return here for the required project overview, results and submission route.
 
+**Author:** Dr Nandakumar Theekkootu Pisharam
+
+**Repository status:** Public
+
+**Default branch:** `main`
+
+## NON-TECHNICAL EXPLANATION OF YOUR PROJECT
+
+This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
+
+## DATA
+
+Imperial College London supplied 175 starter observations covering eight hidden functions with between two and eight input dimensions. The capstone added 104 participant-selected observations, comprising one submitted query per function in each of thirteen rounds. The final audited dataset therefore contains 279 rows. Inputs are bounded coordinate vectors between 0 and 1, and each output is the numerical value returned by the Imperial course portal. The complete source is the [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv). Its provenance, variables, limitations and permitted interpretation are documented in the [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md).
+
+## MODEL
+
+The assessed model is a sequential black box optimisation framework. It treats each function separately because the functions have different dimensions, scales and behaviour. Each weekly decision combines the returned objective values with coordinate movement, local comparison, recovery of strong earlier points, repeat testing and evidence from clustering or principal component analysis where appropriate. This approach was chosen because the true equations, gradients and global optima were hidden. It supports transparent decisions without pretending that one fitted equation explains all eight functions. The assumptions, intended use and limitations are recorded in the [final model card](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md).
+
+## HYPERPARAMETER OPTIMSATION
+
+There was no single predictive model with one fixed hyperparameter search. The practical parameters were the size and direction of coordinate changes, the number of clusters considered, the number of principal components retained and the settings used in exploratory local surrogate models. They were selected chronologically from evidence available before each new submission. Candidate settings were compared with earlier results, stability, distance from strong observations and the remaining query budget. Later outputs were not used to revise earlier decisions. This preserves the prospective nature of the thirteen-round challenge and avoids presenting retrospective tuning as genuine prediction.
+
+## RESULTS
+
+The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Function 2 showed that even a small move near a strong point can reduce performance, while Function 6 demonstrated that repeated coordinates may return different values. The main lesson is that effective black box optimisation requires a balance of exploration, careful local refinement, recovery, replication and stopping. The results are strong observed outcomes, not claims that the unknown global optima were found.
+
 ![Imperial BBO Capstone visual gateway](Docs/github_gateway.svg)
 
 | [**▶ CLICK ME: OPEN THE LIVE IMPERIAL BBO VISUAL BOOK**](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
@@ -46,18 +72,6 @@ python -m shiny run BBO_Visual_Book_Shiny/app.py
 ```
 
 Open the local address printed by Shiny. The cover presents two routes: **Imperial BBO Capstone** and **Above and Beyond BBO**. The second route separates the **Above BBO BBR Book** from the **Beyond BBO PDHIS Book**.
-
----
-
-## Bayesian Black Box Optimisation Portfolio
-
-**Author:** Dr Nandakumar Theekkootu Pisharam  
-**Repository status:** Public  
-**Default branch:** `main`
-
-## What this project was about
-
-This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
 
 ## Final assessment quick start
 

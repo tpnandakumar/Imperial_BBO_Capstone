@@ -139,7 +139,7 @@ def check_nontechnical_summary() -> list[str]:
     """Confirm that the root README contains the requested 100-word summary."""
     text = (ROOT / "README.md").read_text(encoding="utf-8")
     match = re.search(
-        r"## What this project was about\s+(.*?)\s+## Final assessment quick start",
+        r"## NON-TECHNICAL EXPLANATION OF YOUR PROJECT\s+(.*?)\s+## DATA",
         text,
         flags=re.DOTALL,
     )
