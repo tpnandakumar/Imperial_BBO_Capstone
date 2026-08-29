@@ -923,9 +923,11 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.effect
     @reactive.event(input.open_atlas_graph)
     def _open_atlas_graph():
+        view = input.atlas_view()
+        output_id = f"atlas_{view}_plot"
         ui.modal_show(
             ui.modal(
-                ui.div(output_widget("atlas_plot", height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
+                ui.div(output_widget(output_id, height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
                 title="Scientific Atlas",
                 size="xl",
                 easy_close=True,
@@ -1257,15 +1259,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         frame["retained_best"] = frame.output.cummax()
         return render.DataGrid(frame, filters=False, selection_mode="rows", height="42vh")
 
-    @render_widget
-    def atlas_plot():
+    def _build_atlas_plot(view: str):
         frame = EVIDENCE.copy()
         frame["Function"] = frame.function.map(lambda value: f"F{value}")
         frame["Relative progress"] = frame.groupby("function").output.transform(
             lambda values: (values - values.min()) / (values.max() - values.min() if values.max() != values.min() else 1)
         )
         measure = "Relative progress" if input.atlas_measure() == "relative" else "output"
-        view = input.atlas_view()
         if view == "heatmap":
             pivot = frame.pivot(index="Function", columns="week", values=measure).reindex([f"F{i}" for i in DIMENSIONS])
             fig = px.imshow(pivot, aspect="auto", color_continuous_scale=["#f6eef8", "#d9edf2", "#9bcfc5", "#f2b880"],
@@ -1284,6 +1284,18 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         fig.update_traces(hovertemplate="%{fullData.name}<br>Week %{x}<br>Displayed %{y:.5g}<br>Original output %{customdata[0]:.8g}<extra></extra>")
         fig.update_xaxes(dtick=1, title="Week")
         return plot_layout(fig, "Weekly trajectories across all eight functions")
+
+    @render_widget
+    def atlas_trajectories_plot():
+        return _build_atlas_plot("trajectories")
+
+    @render_widget
+    def atlas_heatmap_plot():
+        return _build_atlas_plot("heatmap")
+
+    @render_widget
+    def atlas_winners_plot():
+        return _build_atlas_plot("winners")
 
     @render.text
     def pdhis_chart_title():
@@ -1653,3 +1665,4 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
 
 app = App(app_ui, server, static_assets=APP_DIR / "www")
+
