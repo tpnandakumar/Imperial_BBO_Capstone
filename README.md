@@ -82,7 +82,7 @@ The Visual Storyboard is the public Shiny reading experience for the complete pr
 
 The Visual Storyboard opens directly in your browser. It includes the official Imperial BBO account and the separate Above and Beyond routes for Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS).
 
-#### IMPERIAL BBO
+### IMPERIAL BBO
 
 Imperial BBO presents the official thirteen-round capstone story by week, function and scientific theme. It connects the graphs to the decisions and outcomes, while the Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
 
@@ -90,17 +90,17 @@ Creating the Visual Storyboard provided an additional lesson in data presentatio
 
 The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded British voice narrations. The recordings introduce the project, its journey and results, Delta as the Signature of Change, Black Box Resolution and Pisharam Delta Hierarchy and Influence State. Each section plays a prepared audio file rather than generating speech in the reader's browser. The control pauses, continues and stops playback, while the written evidence remains the complete and authoritative record.
 
-#### ABOVE AND BEYOND
+### ABOVE AND BEYOND
 
 Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
 
-##### ABOVE: BLACK BOX RESOLUTION (BBR)
+#### ABOVE: BLACK BOX RESOLUTION (BBR)
 
 Black Box Resolution (BBR) investigates how much mathematical structure can be recovered from the completed input and output evidence. It includes function-specific analysis and representative surrogate equations while keeping a clear distinction between an evidence-based approximation and the unknown original function.
 
 [Explore Black Box Resolution](Post_BBO_BBR/SECTION_GUIDE.md)
 
-##### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
+#### BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
 
 Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure. It asks how behavioural change becomes visible within an observed sequence and provides a mathematical foundation for further prospective research.
 
