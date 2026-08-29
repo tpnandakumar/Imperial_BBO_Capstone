@@ -83,9 +83,9 @@ The strongest overall lesson is therefore the value of adaptive, function-specif
 
 ## Supporting evidence
 
-- [Organised Results tables and graphs](../Results/SECTION_GUIDE.md)
-- [Verified final result summary](../Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
-- [Executable final capstone notebook](../Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb)
-- [Final strategy outcome](../Week_13/FINAL_STRATEGY_OUTCOME.md)
-- [Successful optimisation strategies evidence](../Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md)
+- [Results summary and three evidence routes](../SECTION_GUIDE.md)
+- [Verified final result summary](../../Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
+- [Executable final capstone notebook](../../Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb)
+- [Final strategy outcome](../../Week_13/FINAL_STRATEGY_OUTCOME.md)
+- [Successful optimisation strategies evidence](../../Module_25_Final_BBO_Submission/25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md)
 

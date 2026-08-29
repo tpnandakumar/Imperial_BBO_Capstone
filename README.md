@@ -45,9 +45,9 @@ These are the strongest outputs observed from participant-selected queries. They
 
 | Results subsection | Detailed material |
 | --- | --- |
-| **A. Tables and Numerical Results** | [Open the verified numerical tables and reproduction links](Results/SECTION_GUIDE.md#a-tables-and-numerical-results) |
-| **B. Graphs and Infographics** | [Open the final graphs, visual explanations and figure-generation route](Results/SECTION_GUIDE.md#b-graphs-and-infographics) |
-| **C. Discussion** | [Read the detailed discussion of all eight functions, limitations and conclusions](Discussion/DETAILED_RESULTS_DISCUSSION.md) |
+| **A. Tables and Numerical Results** | [Open the numerical summary, verified tables and reproduction links](Results/Tables_and_Numerical_Results/TABLES_AND_NUMERICAL_RESULTS.md) |
+| **B. Graphs and Infographics** | [Open the visual summary, final graphs, explanations and figure-generation route](Results/Graphs_and_Infographics/GRAPHS_AND_INFOGRAPHICS.md) |
+| **C. Detailed Discussion** | [Open the interpretation summary and full discussion of all eight functions](Results/Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
 ## SPECIAL SECTION: THE PROJECT BEYOND THE REQUIRED SUBMISSION
 
