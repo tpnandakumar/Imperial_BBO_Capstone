@@ -77,6 +77,12 @@
         "PDHIS Delta meanings page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "hierarchy") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/16_pdhis_lotus_hierarchy.m4a?version=1",
+        "PDHIS Lotus hierarchy page"
+      ];
+    }
     if (section === "Beyond BBO" && selectedValue("pdhis_view") === "advanced") {
       return [
         "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/12_pdhis_advanced_model.m4a?version=1",
