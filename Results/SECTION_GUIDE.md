@@ -8,7 +8,7 @@ The thirteen-round search produced new participant-query best results for Functi
 
 These are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima.
 
-## A. Tables of Numbers
+## A. Tables and Numerical Results
 
 | Results table | What it reports | Reproduction route |
 | --- | --- | --- |

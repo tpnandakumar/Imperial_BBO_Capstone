@@ -43,7 +43,7 @@ These are the strongest outputs observed from participant-selected queries. They
 
 | Results subsection | Detailed material |
 | --- | --- |
-| **A. Tables of Numbers** | [Open the verified numerical tables and reproduction links](Results/SECTION_GUIDE.md#a-tables-of-numbers) |
+| **A. Tables and Numerical Results** | [Open the verified numerical tables and reproduction links](Results/SECTION_GUIDE.md#a-tables-and-numerical-results) |
 | **B. Graphs and Infographics** | [Open the final graphs, visual explanations and figure-generation route](Results/SECTION_GUIDE.md#b-graphs-and-infographics) |
 | **C. Discussion** | [Read the detailed discussion of all eight functions, limitations and conclusions](Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
