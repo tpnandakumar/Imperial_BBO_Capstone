@@ -71,6 +71,12 @@
         "PDHIS mathematical model page"
       ];
     }
+    if (section === "Beyond BBO" && selectedValue("pdhis_view") === "meanings") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/15_pdhis_delta_meanings.m4a?version=1",
+        "PDHIS Delta meanings page"
+      ];
+    }
     if (section === "Beyond BBO" && selectedValue("pdhis_view") === "advanced") {
       return [
         "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/12_pdhis_advanced_model.m4a?version=1",
