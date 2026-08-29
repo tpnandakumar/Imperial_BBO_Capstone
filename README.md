@@ -16,6 +16,8 @@ This project records a thirteen-round search for strong inputs to eight hidden m
 
 [Open the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
+#### HOW TO LISTEN
+
 To listen while reading, keep the written Executive Summary open in one tab and use the clearly labelled recordings below. Start with Part 1, followed by Parts 2 and 3.
 
 | Narration | Listen |
