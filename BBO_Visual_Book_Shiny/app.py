@@ -940,12 +940,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         view = input.pdhis_view()
         if view not in PDHIS_EXPLANATIONS:
             return
+        output_id = f"pdhis_{view}_plot"
         title = PDHIS_EXPLANATIONS[view][0]
         if view == "trajectory":
             title = f"F{int(input.pdhis_function())}, Delta {int(input.pdhis_order())} trajectory"
         ui.modal_show(
             ui.modal(
-                ui.div(output_widget("pdhis_plot", height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
+                ui.div(output_widget(output_id, height="clamp(300px, 56dvh, 600px)"), class_="graph-modal-stage"),
                 title=title,
                 size="xl",
                 easy_close=True,
@@ -1316,9 +1317,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
             "model": "PDHIS defines a reproducible mathematical state from recursive Delta orders and temporal characteristics. It extracts retrospective behaviour from an unknown process while keeping description, association and prospective prediction as separate levels of evidence.",
         }[input.pdhis_view()]
 
-    @render_widget
-    def pdhis_plot():
-        view = input.pdhis_view()
+    def _build_pdhis_plot(view: str):
         metrics = PDHIS_ORDERS.copy()
         if view == "overview":
             return go.Figure()
@@ -1556,6 +1555,42 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
         fig.update_xaxes(dtick=1, title="Delta order")
         fig.update_yaxes(title="Pooled Spearman correlation", range=[-.8, .7])
         return plot_layout(fig, "Chronological relationship by Delta order")
+
+    @render_widget
+    def pdhis_hierarchy_plot():
+        return _build_pdhis_plot("hierarchy")
+
+    @render_widget
+    def pdhis_trajectory_plot():
+        return _build_pdhis_plot("trajectory")
+
+    @render_widget
+    def pdhis_orders_plot():
+        return _build_pdhis_plot("orders")
+
+    @render_widget
+    def pdhis_functions_plot():
+        return _build_pdhis_plot("functions")
+
+    @render_widget
+    def pdhis_evidence_plot():
+        return _build_pdhis_plot("evidence")
+
+    @render_widget
+    def pdhis_advanced_plot():
+        return _build_pdhis_plot("advanced")
+
+    @render_widget
+    def pdhis_flicker_plot():
+        return _build_pdhis_plot("flicker")
+
+    @render_widget
+    def pdhis_atlas_plot():
+        return _build_pdhis_plot("atlas")
+
+    @render_widget
+    def pdhis_model_plot():
+        return _build_pdhis_plot("model")
 
     @reactive.calc
     def filtered_evidence() -> pd.DataFrame:
