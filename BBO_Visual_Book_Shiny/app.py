@@ -1186,6 +1186,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def week_rank_plot():
+        input.open_week_graph()
         week = int(input.week())
         frame = selected_week().copy()
         if input.week_cumulative():
@@ -1203,6 +1204,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def week_movement_plot():
+        input.open_week_graph()
         week = int(input.week())
         if week == 1:
             frame = pd.DataFrame({"Function": [f"F{i}" for i in DIMENSIONS], "Movement": np.zeros(8)})
@@ -1238,6 +1240,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def function_trajectory():
+        input.open_function_graph()
         function = int(input.function())
         frame = function_frame()
         fig = go.Figure()
@@ -1263,6 +1266,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def coordinate_trajectory():
+        input.open_function_graph()
         function = int(input.function())
         columns = [f"x{i}" for i in range(1, DIMENSIONS[function] + 1)]
         if input.show_starter():
@@ -1320,14 +1324,17 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def atlas_weekly_plot():
+        input.open_atlas_graph()
         return _build_atlas_plot("weekly")
 
     @render_widget
     def atlas_heatmap_plot():
+        input.open_atlas_graph()
         return _build_atlas_plot("heatmap")
 
     @render_widget
     def atlas_winners_plot():
+        input.open_atlas_graph()
         return _build_atlas_plot("winners")
 
     @render.text
@@ -1603,38 +1610,47 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @render_widget
     def pdhis_hierarchy_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("hierarchy")
 
     @render_widget
     def pdhis_trajectory_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("trajectory")
 
     @render_widget
     def pdhis_orders_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("orders")
 
     @render_widget
     def pdhis_functions_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("functions")
 
     @render_widget
     def pdhis_evidence_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("evidence")
 
     @render_widget
     def pdhis_advanced_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("advanced")
 
     @render_widget
     def pdhis_flicker_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("flicker")
 
     @render_widget
     def pdhis_atlas_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("atlas")
 
     @render_widget
     def pdhis_model_plot():
+        input.open_pdhis_graph()
         return _build_pdhis_plot("model")
 
     @reactive.calc
