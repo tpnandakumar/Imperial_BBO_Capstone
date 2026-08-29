@@ -9,8 +9,8 @@ This audit maps the public repository directly to the five criteria shown on the
 | Code is clear, commented, easy to run and reproducible | [`FINAL_CAPSTONE_NOTEBOOK.ipynb`](FINAL_CAPSTONE_NOTEBOOK.ipynb), [`FINAL_REPRODUCIBILITY.md`](FINAL_REPRODUCIBILITY.md), `Week_13/week_13_analysis.py`, `Week_13/generate_week_13_figures.py` | Notebook executes from committed evidence; scripts regenerate the final summaries and figures |
 | Dataset is complete and included | [`complete_internal_evidence.csv`](../../BBO_Dashboard/data/complete_internal_evidence.csv) and [`FINAL_CAPSTONE_DATASHEET.md`](FINAL_CAPSTONE_DATASHEET.md) | Automated audit confirms 175 starter rows, 104 weekly-query rows, 279 total rows and Functions 1 to 8 |
 | Model card is complete and included | [`FINAL_CAPSTONE_MODEL_CARD.md`](FINAL_CAPSTONE_MODEL_CARD.md) | Covers input, output, architecture, performance, limitations, trade-offs, intended use and safeguards |
-| README contains an approximately 100-word non-technical explanation | [Root README](../../SECTION_GUIDE.md) | Automated audit confirms exactly 100 words using the repository word-count rule |
-| Repository is organised and contains relevant files | [Root assessment quick start](../../SECTION_GUIDE.md), [Module 25 hub](../SECTION_GUIDE.md), Week 01 to Week 13 folders | Automated audit checks required paths, weekly navigation, internal links and unfinished markers |
+| README contains an approximately 100-word non-technical explanation | [Root README](../../README.md) | Automated audit confirms exactly 100 words using the repository word-count rule |
+| Repository is organised and contains relevant files | [Root assessment quick start](../../README.md), [Module 25 hub](../SECTION_GUIDE.md), Week 01 to Week 13 folders | Automated audit checks required paths, weekly navigation, internal links and unfinished markers |
 
 ## Numerical and provenance checks
 

@@ -88,7 +88,7 @@ Week 11 should preserve the strongest validated evidence while changing directio
 
 This note should be read alongside:
 
-- [README.md](README.md)
+- [Week 10 section guide](SECTION_GUIDE.md)
 - [week_10_inputs.csv](week_10_inputs.csv)
 - [week_10_results.csv](week_10_results.csv)
 - [week_10_analysis_summary.csv](week_10_analysis_summary.csv)
@@ -96,3 +96,4 @@ This note should be read alongside:
 - [generate_week_10_figures.py](generate_week_10_figures.py)
 
 The note records the reasoning behind the round. The CSV files preserve the evidence, while the Python scripts reproduce the comparisons and figures.
+
