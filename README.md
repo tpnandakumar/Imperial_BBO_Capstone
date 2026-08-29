@@ -22,7 +22,7 @@ To listen while reading, keep the written Executive Summary open in one tab and 
 
 | Narration | Listen |
 | --- | --- |
-| Part 1: project design and the thirteen-round development | [Listen to Part 1](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/07_executive_summary_part_1.m4a) |
+| Part 1: project design and the thirteen-round development | [Listen to Part 1](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/07_executive_summary_part_1.m4a?version=2) |
 | Part 2: final results, interpretation, trade-offs and stopping | [Listen to Part 2](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a) |
 | Part 3: retrospective learning, accessibility and clinical application | [Listen to Part 3](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/09_executive_summary_part_3.m4a) |
 
