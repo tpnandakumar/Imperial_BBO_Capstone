@@ -322,3 +322,29 @@ Open graph places the selected view in a centred full-screen display. Explain gr
 
 The Atlas is a comparative reading tool rather than a new model. It organises the verified weekly evidence without altering the results. Use it to identify a pattern, then follow that function through Read by Function or confirm the precise coordinates and output in the Evidence tab.
 
+## 23. Read by Function page
+
+Read by Function separates the challenge into eight complete optimisation stories. Select F One to F Eight using the buttons or the function list. Every summary, graph and table then updates to the chosen hidden landscape.
+
+Begin with the four summary cards. Dimensions gives the number of input coordinates required by that function. Best output reports the strongest participant-query result and the week when it first appeared. Final output reports the actual Week Thirteen return. These values can be the same when the final query equals or repeats the retained maximum, but they answer different questions.
+
+Unique queries counts the distinct coordinate combinations used across thirteen rounds. A value below thirteen means at least one coordinate was repeated. Repetition can test stability, confirm a retained result or recover a point after an unsuccessful move. It should therefore be read as part of the search strategy rather than assumed to be duplication without purpose.
+
+The note below the cards states an important evidence boundary. The canonical record stores submitted coordinates and actual portal outputs. It does not contain a prospective numerical estimate for every weekly query. The page therefore reports what was genuinely observed and does not reconstruct a prediction after seeing the answer.
+
+Output and rate of change is the main trajectory view. The line with markers shows the returned output in each week. The bars show the difference from the preceding week. A positive bar means the output increased and a negative bar means it fell. Large bars show abrupt movement, while small bars indicate limited weekly change.
+
+The Cumulative best switch adds a retained-best line. This line can only rise or remain flat. An upward step marks a new participant-query maximum. A flat section means the later trials did not beat the strongest result already observed. The weekly output may move sharply while the cumulative best remains stable.
+
+Coordinate movement shows one coloured line for each input dimension. Broad changes across several coordinates usually indicate exploration of a different region. Small directed movements suggest exploitation or local refinement. A flat coordinate shows that one dimension was retained while other inputs changed. Movement records the chosen strategy, but improvement must still be confirmed by the returned output.
+
+The Starter points switch changes the coordinate graph from the thirteen weekly submissions to the course-supplied starting distribution. Use it to see where earlier evidence was concentrated and whether the participant queries remained near those regions or extended into less tested areas. Switch it off to return to the chronological campaign.
+
+The Thirteen-week record provides the numerical table for the selected function. Each row contains the week, every submitted coordinate and the returned output. Week change and rate of change show the difference from the preceding result. Retained best records the strongest output available up to that point.
+
+Read the three views together. The output graph establishes whether a move improved the result. The coordinate graph shows how the input changed. The table preserves the exact values. This prevents a visually large coordinate movement from being mistaken for progress when the returned output did not improve.
+
+The eight functions reward different readings. Function Five shows sustained directional refinement. Functions Four and Seven demonstrate recovery of earlier strong regions. Function Six makes repeated-coordinate evidence especially important. Other functions peak early or respond unevenly, reinforcing why the strategy evolved function by function.
+
+Open graph displays the selected visual in a full-screen viewer. Explain graph adapts its short guidance to the output or coordinate view. After identifying an important week, use Read by Week to compare all eight decisions made at that stage, or open Evidence to confirm the exact source row.
+
