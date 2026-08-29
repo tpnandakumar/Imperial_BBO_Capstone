@@ -59,6 +59,12 @@
   }
   function selectedTrack() {
     const section = activeSection();
+    if (section === "Resolution" && selectedValue("resolution_section") === "bbr") {
+      return [
+        "https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/10_bbr_method_page.m4a?version=1",
+        "BBR method page"
+      ];
+    }
     if (section === "Beyond BBO" && pdhisResearchViews.has(selectedValue("pdhis_view"))) {
       return ["06_pdhis_and_conclusion.m4a", "PDHIS and conclusion"];
     }
