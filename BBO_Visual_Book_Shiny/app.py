@@ -442,16 +442,24 @@ app_ui = ui.page_navbar(
         ),
     ),
     ui.nav_panel(
-        "Repository",
+        "Executive Summary",
         ui.div(
-            page_toolbar("repository_home", "repository_up", "repository_previous", "repository_next"),
-            book_heading("REPRODUCIBLE RECORD", "Repository and live Visual Book", "The live book explains the results. The repository preserves the evidence, calculations and source code behind them."),
+            page_toolbar("executive_home", "executive_up", "executive_previous", "executive_next"),
+            book_heading("EXECUTIVE READING", "Executive Summary", "Read the complete project account while listening to the matching three-part narration."),
             ui.div(
                 ui.h2("Executive Summary: read and listen"),
                 ui.p("Select HEAR ME above to play the complete three-part narration. The written Executive Summary appears below in the same order, so you can read and listen on this page."),
                 ui.markdown(EXECUTIVE_SUMMARY_TEXT),
                 class_="reading-panel executive-summary-reading",
             ),
+            class_="book-page",
+        ),
+    ),
+    ui.nav_panel(
+        "Repository",
+        ui.div(
+            page_toolbar("repository_home", "repository_up", "repository_previous", "repository_next"),
+            book_heading("REPRODUCIBLE RECORD", "Repository and live Visual Book", "The live book explains the results. The repository preserves the evidence, calculations and source code behind them."),
             ui.div(
                 ui.div(
                     ui.h2("GitHub README"),
@@ -708,7 +716,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @reactive.effect
     @reactive.event(input.global_home, input.bbo_home, input.above_home, input.week_home, input.function_home,
-                    input.readme_home, input.repository_home, input.atlas_home, input.resolution_home,
+                    input.readme_home, input.executive_home, input.repository_home, input.atlas_home, input.resolution_home,
                     input.pdhis_home, input.evidence_home)
     def _go_home():
         ui.update_navs("main_navigation", selected="Cover")
@@ -773,7 +781,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.event(input.deep_link_page)
     def _open_deep_link():
         if input.deep_link_page() == "executive-summary":
-            ui.update_navs("main_navigation", selected="Repository")
+            ui.update_navs("main_navigation", selected="Executive Summary")
 
     @reactive.effect
     @reactive.event(input.bbo_up, input.bbo_previous, input.above_up, input.above_previous)
@@ -785,7 +793,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @reactive.effect
     @reactive.event(input.readme_up, input.readme_previous, input.week_up, input.function_up,
-                    input.atlas_up, input.evidence_up, input.repository_up, input.repository_next)
+                    input.atlas_up, input.evidence_up, input.executive_up, input.repository_up, input.repository_next)
     def _official_up(): ui.update_navs("main_navigation", selected="Imperial BBO")
 
     @reactive.effect
@@ -879,11 +887,19 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
     @reactive.effect
     @reactive.event(input.evidence_next)
-    def _evidence_next(): ui.update_navs("main_navigation", selected="Repository")
+    def _evidence_next(): ui.update_navs("main_navigation", selected="Executive Summary")
+
+    @reactive.effect
+    @reactive.event(input.executive_previous)
+    def _executive_previous(): ui.update_navs("main_navigation", selected="Evidence")
+
+    @reactive.effect
+    @reactive.event(input.executive_next)
+    def _executive_next(): ui.update_navs("main_navigation", selected="Repository")
 
     @reactive.effect
     @reactive.event(input.repository_previous)
-    def _repository_previous(): ui.update_navs("main_navigation", selected="Evidence")
+    def _repository_previous(): ui.update_navs("main_navigation", selected="Executive Summary")
 
     for value in range(1, 14):
         @reactive.effect
