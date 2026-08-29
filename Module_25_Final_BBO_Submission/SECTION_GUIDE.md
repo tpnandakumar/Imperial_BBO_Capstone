@@ -27,7 +27,7 @@ Key closing evidence:
 
 ## Component 25.1 evidence
 
-The discussion-board response is available in [Component 25.1 Discussion Board Post](25_1_Retrospective/SECTION_25_1_DISCUSSION_BOARD_POST.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
+The completed retrospective has been repurposed as the [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
 
 ## Component 25.2 evidence
 

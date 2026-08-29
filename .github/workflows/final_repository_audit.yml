@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'README.md'
+      - 'Results/**'
       - 'Week_*/**'
       - 'Module_25_Final_BBO_Submission/**'
       - 'BBO_Visual_Book_Shiny/**'
@@ -55,3 +56,4 @@ jobs:
           test -s Week_13/week_13_figure_3_function_5_trajectory.png
           test -s Week_13/week_13_figure_4_latest_best_round.png
           echo 'All four Week 13 analytical figures generated successfully.'
+

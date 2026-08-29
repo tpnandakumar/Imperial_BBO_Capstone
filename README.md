@@ -12,6 +12,10 @@ This is the single authoritative README for the Imperial BBO Capstone. Supportin
 
 This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
 
+### EXECUTIVE SUMMARY
+
+[Read the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
+
 ## DATA
 
 Imperial College London supplied 175 starter observations covering eight hidden functions with between two and eight input dimensions. The capstone added 104 participant-selected observations, comprising one submitted query per function in each of thirteen rounds. The final audited dataset therefore contains 279 rows. Inputs are bounded coordinate vectors between 0 and 1, and each output is the numerical value returned by the Imperial course portal. The complete source is the [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv). Its provenance, variables, limitations and permitted interpretation are documented in the [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md).
@@ -56,7 +60,7 @@ The following additions extend the assessed capstone without changing its thirte
 | Added contribution | What it provides | Open it |
 | --- | --- | --- |
 | Imperial BBO Visual Book | A public Shiny reading experience with the full story organised by week, function and scientific theme | [Open the live Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
-| Executive Summary | A concise account of the challenge, decisions, findings and practical significance for academic assessors and general readers | [Read the Executive Summary](EXECUTIVE_SUMMARY.md) |
+| Executive Summary | The completed Component 25.1 retrospective, repurposed as a detailed account of the challenge, decisions, findings and significance | [Read the Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) |
 | Black Box Resolution (BBR) | Post-capstone investigation of mathematical structure that may be supported by the completed input and output evidence | [Explore BBR](Post_BBO_BBR/SECTION_GUIDE.md) |
 | Pisharam Delta Hierarchy and Influence State (PDHIS) | A mathematical framework for examining the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure | [Explore PDHIS](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md) |
 | Scientific Atlas | Interactive comparison of weekly trajectories, function by week patterns and the timing of retained best results | [Open the Scientific Atlas in the Visual Book](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/) |
@@ -70,7 +74,7 @@ These additions are clearly identified as supporting communication or post-capst
 
 The live book opens directly in your browser. It includes the Week, Function, Scientific Atlas, Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) reading routes.
 
-> **New reader?** Start with the [Imperial BBO Executive Summary](EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
+> **New reader?** Start with the [detailed Imperial BBO Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
 > **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 

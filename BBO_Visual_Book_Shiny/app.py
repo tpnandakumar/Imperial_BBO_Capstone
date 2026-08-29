@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 24078)
+Total output lines: 1668
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -448,7 +451,7 @@ app_ui = ui.page_navbar(
                 ui.div(
                     ui.h2("Executive summary"),
                     ui.p("Begin with the concise account of the challenge, strategy, final results, BBR and the advanced PDHIS findings."),
-                    ui.a("Read the Executive Summary", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/EXECUTIVE_SUMMARY.md", target="_blank", class_="external-button"),
+                    ui.a("Read the Executive Summary", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
                 ui.div(
@@ -849,15 +852,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     def _pdhis_next():
         current = input.pdhis_view()
         index = pdhis_pages.index(current)
-        if index == len(pdhis_pages) - 1:
-            ui.update_navs("main_navigation", selected="Evidence")
-        else:
-            ui.update_radio_buttons("pdhis_view", selected=pdhis_pages[index + 1])
-
-    @reactive.effect
-    @reactive.event(input.evidence_previous)
-    def _evidence_previous():
-        ui.update_radio_buttons("pdhis_view", selected="evidence")
+        if index == len(pdhis_pages) - 1:…78 tokens truncated…view", selected="evidence")
         ui.update_navs("main_navigation", selected="Beyond BBO")
 
     @reactive.effect
