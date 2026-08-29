@@ -16,7 +16,15 @@ This project records a thirteen-round search for strong inputs to eight hidden m
 
 [Open the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
-To listen while reading, keep the written Executive Summary open in one tab and [open the three-part narration in a second tab](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/tag/executive-summary-narration-v1). Select Part 1 first, followed by Parts 2 and 3.
+To listen while reading, keep the written Executive Summary open in one tab and use the clearly labelled recordings below. Start with Part 1, followed by Parts 2 and 3.
+
+| Narration | Listen |
+| --- | --- |
+| Part 1: project design and the thirteen-round development | [Listen to Part 1](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/07_executive_summary_part_1.m4a) |
+| Part 2: final results, interpretation, trade-offs and stopping | [Listen to Part 2](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/08_executive_summary_part_2.m4a) |
+| Part 3: retrospective learning, accessibility and clinical application | [Listen to Part 3](https://github.com/tpnandakumar/Imperial_BBO_Capstone/releases/download/executive-summary-narration-v1/09_executive_summary_part_3.m4a) |
+
+The Visual Storyboard provides the simplest continuous listening route. Open its **Repository** page and select the navy blue **HEAR ME** button to play all three parts in order.
 
 ## DATA
 
