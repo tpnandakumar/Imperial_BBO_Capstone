@@ -172,3 +172,23 @@ The practical reading sequence is to begin at Delta One, establish the observed 
 
 Use the selector to choose any Delta level and open its short explanation. The table provides the complete reference. Together, they show how one observed output sequence becomes a hierarchy of nested change without confusing Delta order, calendar week and future prediction.
 
+## 16. PDHIS Lotus hierarchy page
+
+The Lotus Hierarchy turns the recursive Delta calculation into a visual structure. Read it from the centre outwards, beginning with direct observed change and moving towards increasingly nested change.
+
+Delta One forms the first analytical layer. It records the direction and magnitude of movement between consecutive observations. Delta Two can exist only after Delta One has been calculated because it measures how that first movement changes. Delta Three then measures change in Delta Two. This dependency continues through the hierarchy.
+
+The rings are therefore connected rather than separate signals. An outer ring does not arrive earlier in time than the inner rings that produce it. It becomes calculable only after enough observations and all preceding Delta levels are available. The diagram represents depth of recursion, not a sequence in which Delta Ten somehow appears before Delta One.
+
+The lotus shape also illustrates propagation. A change may begin as a movement in the observed output, alter direction at Delta Two and develop persistence or oscillation through later orders. When neighbouring levels show a consistent direction or repeated structure, the pattern has greater coherence. P D H I S describes that organised cross level behaviour as part of the Signature of Change.
+
+An isolated movement in an outer ring is less persuasive. It may reflect genuine fine structure, but it may also be amplified noise created by repeated differencing. The interpretation becomes stronger when lower levels support it, the movement persists and its timing remains consistent with the proposed event.
+
+Evidence narrows as the hierarchy expands. Every recursive calculation removes one usable position. The thirteen week sequence provides twelve Delta One values but only three Delta Ten values for each function. The outer rings therefore carry a higher evidential burden. A visually strong high order fluctuation should generate a question, not automatically become a forecasting claim.
+
+Delta Ten is the practical cap for this record because the remaining sequence is already very small. The general mathematical idea can extend to Delta n when a longer record provides enough observations and the preceding order continues to change materially.
+
+The centre of the visual represents the complete P D H I S framework. The surrounding rings show how direct change, acceleration, reversal, oscillation, propagation and deeper interaction are derived from one another. The colour changes help separate the levels but do not assign importance or statistical significance.
+
+Open graph displays the full lotus diagram. Explain graph gives the three central reading rules. Begin at Delta One, look for agreement across neighbouring levels and become more cautious as the rings move outwards. This is how the hierarchy separates a coherent Signature of Change from a high order flicker that may be unstable.
+
