@@ -63,9 +63,9 @@
 
   function openRequestedPage() {
     const requestedPage = new URLSearchParams(window.location.search).get("page");
-    if (!deepLinkOpened && requestedPage === "executive-summary" && window.Shiny) {
+    if (!deepLinkOpened && ["executive-summary", "bbr"].includes(requestedPage) && window.Shiny) {
       deepLinkOpened = true;
-      window.Shiny.setInputValue("deep_link_page", "executive-summary", { priority: "event" });
+      window.Shiny.setInputValue("deep_link_page", requestedPage, { priority: "event" });
     }
   }
 
