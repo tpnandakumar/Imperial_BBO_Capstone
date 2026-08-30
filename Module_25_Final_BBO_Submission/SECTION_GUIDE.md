@@ -29,10 +29,6 @@ Key closing evidence:
 
 The [25.1 Retrospective](25_1_Retrospective/SECTION_GUIDE.md) records the reflective assessment evidence and its related infographics. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
 
-## Executive Summary
-
-The [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) provides a separate, continuous account of the complete Imperial BBO project for academic assessors and executive readers.
-
 ## Component 25.2 evidence
 
 The completed response is available in [Component 25.2 Discussion Board Post](25_2_Successful_Optimisation_Strategies/SECTION_25_2_DISCUSSION_BOARD_POST.md), supported by the [25.2 Successful Optimisation Strategies Evidence Map](25_2_Successful_Optimisation_Strategies/EVIDENCE_MAP.md). It separates strategies that worked from those that failed or required modification and records the strongest examples from F1 to F8.
