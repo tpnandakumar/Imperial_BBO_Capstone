@@ -15,6 +15,7 @@ predictive claims against chronology and randomised controls.
 
 - [BBR scientific infographics](infographics/SECTION_GUIDE.md)
 - [BBR mathematical models for F1 to F8](BBR_MATHEMATICAL_MODELS_F1_TO_F8.md)
+- [BBR values and migrated research data](research_data/SECTION_GUIDE.md)
 - [Representative F5 and F7 surrogate equations](representative_surrogates/SECTION_GUIDE.md)
 - [Pisharam Delta Hierarchy and Influence States](PDHIS/SECTION_GUIDE.md)
 - [Formal PDHIS mathematical model](PDHIS/PDHIS_MATHEMATICAL_MODEL.md)
