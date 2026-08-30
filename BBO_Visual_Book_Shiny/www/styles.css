@@ -333,7 +333,15 @@ body {
 .hear-me-button[data-state="continue"] { background: #1f5f99 !important; border-color: #174b79 !important; color: #fff !important; }
 .hear-stop-button { background: #138808 !important; border-color: #0d6f07 !important; color: #fff !important; }
 .hear-me-button:focus-visible, .hear-stop-button:focus-visible { outline: 3px solid rgba(100,182,172,.42); outline-offset: 2px; }
-.top-toolbar { display: flex; justify-content: flex-end; gap: .35rem; height: 2.25rem; margin-bottom: .15rem; }
+.top-toolbar {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: flex-end;
+  gap: .35rem;
+  height: 2.25rem;
+  margin: .45rem .35rem .3rem 0;
+}
 .top-toolbar .btn { padding: .22rem .62rem; min-width: 5.4rem; }
 .numbered-index { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: .25rem; margin: .22rem 0 .3rem; }
 .numbered-index .btn { display: block; width: 100%; min-width: 0; padding: .28rem .08rem; color: var(--ink); background: rgba(255,255,255,.78); border: 1px solid rgba(67,95,116,.22); }
