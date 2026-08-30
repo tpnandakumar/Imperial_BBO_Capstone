@@ -334,13 +334,15 @@ body {
 .hear-stop-button { background: #138808 !important; border-color: #0d6f07 !important; color: #fff !important; }
 .hear-me-button:focus-visible, .hear-stop-button:focus-visible { outline: 3px solid rgba(100,182,172,.42); outline-offset: 2px; }
 .top-toolbar {
-  position: relative;
-  z-index: 4;
+  position: fixed;
+  z-index: 1044;
+  top: 3.85rem;
+  right: .8rem;
   display: flex;
   justify-content: flex-end;
   gap: .35rem;
   height: 2.25rem;
-  margin: 1.35rem .8rem .55rem 0;
+  margin: 0;
 }
 .top-toolbar .btn { padding: .22rem .62rem; min-width: 5.4rem; }
 .numbered-index { display: grid; grid-template-columns: repeat(13, minmax(0, 1fr)); gap: .25rem; margin: .22rem 0 .3rem; }
@@ -439,7 +441,12 @@ body {
   .navbar-brand { font-size: .95rem; }
   .hear-me-controls { width: 9.7rem; }
   .hear-me-button, .hear-stop-button { font-size: .66rem !important; padding-inline: .55rem !important; }
-  .top-toolbar { justify-content: stretch; }
+  .top-toolbar {
+    position: static;
+    justify-content: stretch;
+    height: 2.25rem;
+    margin: .35rem 0;
+  }
   .top-toolbar .btn { flex: 1; min-width: 0; padding-inline: .12rem; }
   .numbered-index { grid-template-columns: repeat(7, minmax(0,1fr)); }
   .home-route-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
