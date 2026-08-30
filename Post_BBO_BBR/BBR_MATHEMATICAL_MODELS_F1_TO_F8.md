@@ -21,14 +21,14 @@ For each hidden function $f$ with observed coordinates $\mathbf{x}_i$ and output
 For $H$ chronological tests, mean absolute error is:
 
 $$
-\operatorname{MAE}_f=\frac{1}{H}\sum_{h=1}^{H}\left|y_{f,h}-\widehat{y}_{f,h}\right|
+\mathrm{MAE}_f=\frac{1}{H}\sum_{h=1}^{H}\left|y_{f,h}-\widehat{y}_{f,h}\right|
 $$
 
 To compare functions with different output scales, BBR uses:
 
 $$
-\operatorname{NMAE}_f=
-\frac{\operatorname{MAE}_f}
+\mathrm{NMAE}_f=
+\frac{\mathrm{MAE}_f}
 {\max_i(y_{f,i})-\min_i(y_{f,i})}
 $$
 
@@ -84,7 +84,7 @@ Polynomial coefficients are estimated through:
 
 $$
 \widehat{\boldsymbol{\theta}}=
-\underset{\boldsymbol{\theta}}{\operatorname{argmin}}
+\underset{\boldsymbol{\theta}}{\mathop{\mathrm{arg\,min}}}
 \left{
 \lVert\mathbf{y}-\Phi\boldsymbol{\theta}\rVert_2^2+
 \lambda\lVert\boldsymbol{\theta}\rVert_2^2
