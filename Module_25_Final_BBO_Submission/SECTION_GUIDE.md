@@ -27,7 +27,7 @@ Key closing evidence:
 
 ## Component 25.1 evidence
 
-The completed retrospective has been repurposed as the [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md). It covers the development from early exploration to function-specific refinement, recovery, clustering, PCA, final exploration versus exploitation reasoning, stopping decisions and limitations.
+The [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md), presents the complete development of the project. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
 
 ## Component 25.2 evidence
 
@@ -58,4 +58,5 @@ The Week 13 analytical figures and RL decision figures are reproducible outputs 
 ## Post-capstone research boundary
 
 The `Advanced_Extension_Series`, including SOC, the Surrogate Optimisation Competition, begins only after the assessed thirteen-round BBO experiment. It is additional research. It was not used to generate the historical Week 01 to Week 13 outputs and it does not retrospectively alter those results.
+
 
