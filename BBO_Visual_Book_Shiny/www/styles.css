@@ -23,6 +23,7 @@ body {
 .navbar {
   background: rgba(255, 253, 248, .88) !important;
   border-bottom: 1px solid rgba(67, 95, 116, .14);
+  padding-bottom: 2.75rem;
   backdrop-filter: blur(16px);
   box-shadow: 0 6px 28px rgba(38, 63, 90, .06);
 }
@@ -34,7 +35,7 @@ body {
 .navbar-nav .nav-link[data-value="Executive Summary"]:hover,
 .navbar-nav .nav-link[data-value="Executive Summary"].active { background: #ddb21f; color: #10273b !important; }
 
-.book-page { width: min(1320px, 100%); height: calc(100dvh - 4.1rem); min-height: 0; margin: 0 auto; padding: clamp(.35rem, .8vh, .7rem) clamp(.55rem, 1.4vw, 1rem); overflow: hidden; }
+.book-page { width: min(1320px, 100%); height: calc(100dvh - 6.85rem); min-height: 0; margin: 0 auto; padding: clamp(.35rem, .8vh, .7rem) clamp(.55rem, 1.4vw, 1rem); overflow: hidden; }
 .book-heading { max-width: 920px; margin: 0 auto clamp(.25rem, .6vh, .48rem); text-align: center; }
 .book-heading h1, .hero h1 { font-family: Georgia, "Times New Roman", serif; color: var(--ink); letter-spacing: -.035em; }
 .book-heading h1 { font-size: clamp(1.3rem, 1.65vw, 1.82rem); line-height: 1; margin: .1rem 0 .18rem; }
@@ -63,8 +64,8 @@ body {
   overflow: hidden;
   border-radius: 0 0 28px 28px;
   background-image:
-    linear-gradient(180deg, rgba(17, 31, 40, .28) 0%, rgba(17, 31, 40, .04) 42%, rgba(17, 31, 40, .46) 100%),
-    url("bbo-cave-rhino-background.jpg");
+    linear-gradient(180deg, rgba(17, 31, 40, .12) 0%, rgba(17, 31, 40, .01) 42%, rgba(17, 31, 40, .22) 100%),
+    url("/bbo-cave-rhino-background.jpg");
   background-position: center 43%;
   background-size: cover;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 18px 55px rgba(17,31,40,.16);
@@ -76,7 +77,7 @@ body {
   text-align: center;
   border: 1px solid rgba(255,255,255,.36);
   border-radius: 20px;
-  background: rgba(245, 249, 247, .72);
+  background: rgba(245, 249, 247, .64);
   box-shadow: 0 12px 34px rgba(12,28,36,.16);
   backdrop-filter: blur(10px);
 }
@@ -106,8 +107,8 @@ body {
 .peak-pdhis { left: 84%; top: -.55rem; }
 .gateway-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.8rem, 2vw, 1.5rem); width: min(980px, 100%); margin: 0 auto; }
 .gateway-book { min-height: clamp(128px, 19vh, 168px); padding: clamp(.85rem, 2vw, 1.45rem); border: 1px solid rgba(255,255,255,.42); border-radius: 22px; color: var(--ink); text-align: left; box-shadow: 0 18px 48px rgba(12,28,36,.2); backdrop-filter: blur(12px); transition: transform .2s ease, box-shadow .2s ease; }
-.gateway-book.mint-route { background: rgba(223,243,237,.84); }
-.gateway-book.lavender-route { background: rgba(238,231,247,.84); }
+.gateway-book.mint-route { background: rgba(223,243,237,.70); }
+.gateway-book.lavender-route { background: rgba(238,231,247,.70); }
 .gateway-book:hover, .gateway-book:focus { transform: translateY(-4px); box-shadow: 0 25px 60px rgba(38,63,90,.14); }
 .gateway-book .route-kicker { display: block; color: #548f87; font-size: .76rem; font-weight: 850; letter-spacing: .16em; }
 .gateway-book strong { display: block; margin: .7rem 0; font-family: Georgia, serif; font-size: clamp(1.35rem, 2.4vw, 2.15rem); }
@@ -361,7 +362,8 @@ body {
 }
 @media (max-width: 720px) {
   html, body { overflow: hidden; }
-  .book-page { height: calc(100dvh - 3.8rem); padding: .45rem .55rem; }
+  .navbar { padding-bottom: 2.55rem; }
+  .book-page { height: calc(100dvh - 6.35rem); padding: .45rem .55rem; }
   .book-heading { margin-bottom: .35rem; }
   .book-heading h1 { font-size: 1.45rem; }
   .chapter-lead { display: none; }
