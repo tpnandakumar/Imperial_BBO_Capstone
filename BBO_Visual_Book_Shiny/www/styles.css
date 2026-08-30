@@ -89,7 +89,7 @@ body {
 .gateway-quote, .gateway-quote * { color: #000 !important; font-weight: 750; text-shadow: 0 0 1px rgba(245, 249, 247, .00005); }
 .gateway-quote .hero-kicker { color: #000; }
 .gateway-quote blockquote { margin: .38rem 0 .2rem; color: #17324d; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3.3vw, 3rem); font-style: italic; line-height: 1.08; }
-.gateway-attribution { margin-bottom: 0; color: #000; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); }
+.gateway-attribution { width: fit-content; margin: .12rem 0 0 1.8rem; color: #000; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); text-align: left; }
 .gateway-maxima { display: none; }
 .peak-label {
   position: absolute;
