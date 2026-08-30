@@ -87,8 +87,9 @@ body {
   backdrop-filter: blur(10px);
 }
 .gateway-quote, .gateway-quote * { font-weight: 750; }
+.gateway-quote .hero-kicker { color: #000; }
 .gateway-quote blockquote { margin: .38rem 0 .2rem; color: #17324d; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3.3vw, 3rem); font-style: italic; line-height: 1.08; }
-.gateway-attribution { margin-bottom: 0; color: #425f70; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); }
+.gateway-attribution { margin-bottom: 0; color: #000; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); }
 .gateway-maxima { display: none; }
 .peak-label {
   position: absolute;
