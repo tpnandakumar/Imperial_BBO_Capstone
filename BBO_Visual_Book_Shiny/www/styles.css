@@ -29,7 +29,8 @@ body {
 }
 .navbar-brand { color: var(--ink) !important; font-family: Georgia, serif; font-size: 1.18rem; font-weight: 650; }
 .brand-mark { color: #64a99f; margin-right: .55rem; }
-.nav-link { color: #4d6579 !important; border-radius: 999px; padding: .42rem .68rem !important; font-size: .9rem; }
+.navbar-nav { gap: .04rem; }
+.nav-link { color: #4d6579 !important; border-radius: 999px; padding: .32rem .48rem !important; font-size: .78rem; line-height: 1.15; white-space: nowrap; }
 .nav-link.active { background: linear-gradient(120deg, var(--mint), var(--lavender)); color: var(--ink) !important; }
 .navbar-nav .nav-link[data-value="Executive Summary"] { background: #f2c94c; color: #17324d !important; font-weight: 750; box-shadow: 0 2px 8px rgba(138, 101, 0, .22); }
 .navbar-nav .nav-link[data-value="Executive Summary"]:hover,
