@@ -102,6 +102,8 @@ Black Box Resolution (BBR) investigates how much mathematical structure can be r
 
 [View BBR values](Post_BBO_BBR/infographics/BBR_EVIDENCE_VALUES.csv) | [Read the equations for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md) | [Open the complete BBR section](Post_BBO_BBR/SECTION_GUIDE.md)
 
+[Open BBR in the Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/?page=bbr)
+
 #### 🟩 BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
 
 Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of Change through recursive Delta levels, oscillation, persistence, energy and temporal structure. It asks how behavioural change becomes visible within an observed sequence and provides a mathematical foundation for further prospective research.
