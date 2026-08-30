@@ -480,9 +480,9 @@ app_ui = ui.page_navbar(
                     class_="reading-panel",
                 ),
                 ui.div(
-                    ui.h2("F5 and F7 equations"),
-                    ui.p("Open the complete Matérn 2.5 and quadratic surrogate package with validation, scaling, kernel weights and all numerical coefficients."),
-                    ui.a("Open the Representative Equations", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/tree/main/Post_BBO_BBR/representative_surrogates", target="_blank", class_="external-button"),
+                    ui.h2("BBR models for F1 to F8"),
+                    ui.p("Read the complete Black Box Resolution method, positive and negative findings, model-family equations and function-by-function interpretation."),
+                    ui.a("Read the BBR Mathematical Models", href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md", target="_blank", class_="external-button"),
                     class_="reading-panel",
                 ),
                 ui.div(
@@ -1714,4 +1714,5 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
 
 
 app = App(app_ui, server, static_assets=APP_DIR / "www")
+
 

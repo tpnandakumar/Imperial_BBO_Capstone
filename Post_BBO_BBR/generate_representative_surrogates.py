@@ -215,7 +215,7 @@ where `z_j = (x_j - mean_j) / scale_j`. The 27 features comprise six linear term
 
 Hyperparameters were selected by predicting each of the thirteen weekly observations from the starter data and earlier weeks only. The final parameters were then refitted to the complete evidence for representative use. This final refit describes the sampled record and is not an independent prospective validation.
 """
-    (OUT / "README.md").write_text(text, encoding="utf-8")
+    (OUT / "SECTION_GUIDE.md").write_text(text, encoding="utf-8")
 
 
 def make_figure(predictions: pd.DataFrame, f7_coefficients: pd.DataFrame) -> None:
@@ -270,3 +270,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

@@ -110,7 +110,7 @@ The Visual Storyboard therefore keeps the assessed Imperial BBO story separate f
 
 > **New reader?** Start with the [detailed Imperial BBO Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
-> **Mathematical extension:** Read the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 surrogate equations](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
+> **Mathematical extension:** Read the [BBR mathematical models for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md), the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 coefficient package](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
 ### 🟨 ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
 
@@ -366,4 +366,5 @@ The bars show the number of forward comparisons remaining at each Delta order. T
 No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 
 Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
+
 
