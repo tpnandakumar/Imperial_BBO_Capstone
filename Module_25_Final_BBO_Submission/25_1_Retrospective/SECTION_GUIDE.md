@@ -1,8 +1,8 @@
 # BBO capstone retrospective and scientific evidence
 
-This directory contains the executive summary and the supporting technical evidence for the complete 13-round black-box optimisation project.
+This directory contains the 25.1 retrospective and its supporting technical evidence for the complete 13-round black-box optimisation project.
 
-## Executive summary
+## 25.1 retrospective
 
 `BBO_25_1_Academic_Retrospective_With_20_Figures.docx` is the concise narrative account of the project. It explains:
 
@@ -15,7 +15,7 @@ This directory contains the executive summary and the supporting technical evide
 - the final verified results, uncertainty and stopping decisions; and
 - the lessons relevant to future optimisation and clinical neurology service development.
 
-The executive summary is deliberately concise. The repository provides the additional technical depth, calculations and reproducibility information.
+The retrospective is deliberately concise. The repository provides the additional technical depth, calculations and reproducibility information.
 
 ## Scientific figure set
 
@@ -64,7 +64,7 @@ python Module_25_Final_BBO_Submission/25_1_Retrospective/generate_academic_infog
 python Module_25_Final_BBO_Submission/25_1_Retrospective/build_discussion_word.py
 ```
 
-The first command rebuilds all 20 figures. The second rebuilds the Word executive summary and places the figures beside the relevant narrative evidence.
+The first command rebuilds all 20 figures. The second rebuilds the Word retrospective and places the figures beside the relevant narrative evidence.
 
 ## Evidence sources
 
