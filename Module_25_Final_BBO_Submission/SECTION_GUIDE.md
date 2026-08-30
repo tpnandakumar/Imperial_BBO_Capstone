@@ -25,9 +25,9 @@ Key closing evidence:
 - [Week 13 RL-informed decision experiment](../Week_13/RL_DECISION_EXPERIMENT/SECTION_GUIDE.md)
 - [Final verified winner summary](Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
-## Component 25.1 evidence
+## 25.1 Retrospective
 
-The [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), supported by the [25.1 Retrospective Evidence Map](25_1_Retrospective/EVIDENCE_MAP.md), presents the complete development of the project. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
+The [25.1 Retrospective](25_1_Retrospective/SECTION_GUIDE.md) presents the complete development of the project, with the [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) providing the main continuous account. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
 
 ## Component 25.2 evidence
 
