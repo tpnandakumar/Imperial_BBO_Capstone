@@ -33,6 +33,28 @@ The 20 numbered JPG figures in `academic_infographics/` are generated from repos
 
 `ACADEMIC_FIGURE_REGISTER.md` records the purpose, source, method and interpretation boundary for every figure.
 
+## Selected retrospective infographics
+
+The following figures give a concise visual route through the 25.1 Retrospective. They move from the experimental design and weekly trajectory to the later multivariate analysis and final numerical audit.
+
+### Experimental design
+
+![Experimental design and evidence structure](academic_infographics/Figure_01_experimental_design.jpg)
+
+### Weekly output trajectories
+
+![Weekly output trajectories across F1 to F8](academic_infographics/Figure_03_weekly_output_trajectories.jpg)
+
+### Principal component analysis
+
+![Principal component explained variance](academic_infographics/Figure_17_pca_explained_variance.jpg)
+
+### Final numerical audit
+
+![Final numerical audit of the thirteen-round evidence](academic_infographics/Figure_20_final_numerical_audit.jpg)
+
+[Open the complete 20-figure register](ACADEMIC_FIGURE_REGISTER.md) for every infographic, its purpose, evidence source and interpretation boundary.
+
 ## Reproducibility
 
 Run the following from the repository root:
@@ -60,4 +82,5 @@ The course portal outputs remain the authoritative observations. Predictions and
 ## Interpretation limits
 
 The reported best values are the strongest verified observations within the available starter data and 13-round query budget. They do not prove that a global optimum was reached. Clustering describes patterns within sparse sequential samples. PCA describes coordinate movement rather than the unknown objective equation. Surrogate validation is chronological but remains limited to the observed search path. F6 repeated-coordinate variability remains unresolved and requires a designed repeatability experiment before further optimisation.
+
 
