@@ -152,7 +152,7 @@ body {
 .bbr-values-link { background: #138808; }
 .bbr-equations-link { background: #1f5f99; }
 .bbr-library-link { background: #c97818; }
-.resolution-index { display: flex; justify-content: center; margin: .1rem 0 .4rem; }
+.resolution-index { display: none; }
 .resolution-index .form-group { margin: 0; }
 .resolution-index .form-check-inline { margin-right: .9rem; }
 .resolution-route-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; max-width: 980px; margin: clamp(1rem, 8vh, 4.8rem) auto 0; }
