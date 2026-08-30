@@ -221,11 +221,30 @@ body {
 .btn-accent, .nav-home-button { background: #557f99 !important; border-color: #557f99 !important; color: white !important; }
 .btn-soft, .btn-home { background: rgba(255,255,255,.8) !important; border-color: rgba(67,95,116,.25) !important; color: var(--ink) !important; }
 .nav-home-button { border-radius: 999px !important; margin-left: .35rem; }
-.hear-me-controls { display: flex; align-items: center; gap: .3rem; margin-left: .35rem; }
+.hear-me-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  position: fixed;
+  z-index: 1045;
+  left: 50%;
+  top: 3.65rem;
+  width: 10.25rem;
+  padding: .22rem .28rem;
+  border: 1px solid rgba(19,136,8,.32);
+  border-radius: 999px;
+  background: rgba(255,253,248,.96);
+  box-shadow: 0 5px 16px rgba(38,63,90,.14);
+  backdrop-filter: blur(12px);
+  transform: translateX(-50%);
+}
 .hear-me-button, .hear-stop-button { border-radius: 999px !important; font-size: .7rem !important; font-weight: 800 !important; letter-spacing: .035em; white-space: nowrap; }
-.hear-me-button { min-width: 5.4rem; background: #123a63 !important; border-color: #0b2947 !important; color: #fff !important; box-shadow: 0 3px 10px rgba(18,58,99,.28); }
-.hear-me-button:hover, .hear-me-button:active { background: #0b2947 !important; border-color: #071d33 !important; color: #fff !important; }
-.hear-stop-button { background: rgba(255,255,255,.82) !important; border-color: rgba(67,95,116,.28) !important; color: var(--ink) !important; }
+.hear-me-button { width: 6rem; min-width: 6rem; background: #ff9933 !important; border-color: #e47e18 !important; color: #17324d !important; box-shadow: 0 3px 10px rgba(190,102,18,.24); }
+.hear-me-button:hover, .hear-me-button:active { background: #ed861f !important; border-color: #ce6d0f !important; color: #10273b !important; }
+.hear-me-button[data-state="pause"] { background: #fff !important; border-color: #c8d0d6 !important; color: #17324d !important; }
+.hear-me-button[data-state="continue"] { background: #1f5f99 !important; border-color: #174b79 !important; color: #fff !important; }
+.hear-stop-button { background: #138808 !important; border-color: #0d6f07 !important; color: #fff !important; }
 .hear-me-button:focus-visible, .hear-stop-button:focus-visible { outline: 3px solid rgba(100,182,172,.42); outline-offset: 2px; }
 .top-toolbar { display: flex; justify-content: flex-end; gap: .35rem; height: 2.25rem; margin-bottom: .15rem; }
 .top-toolbar .btn { padding: .22rem .62rem; min-width: 5.4rem; }
@@ -315,7 +334,7 @@ body {
   .bbr-evidence .three-column { grid-template-columns: repeat(3, 1fr); }
   .bbr-evidence .card-body { display: none; }
   .navbar-brand { font-size: .95rem; }
-  .hear-me-controls { margin-left: 0; }
+  .hear-me-controls { width: 9.7rem; }
   .hear-me-button, .hear-stop-button { font-size: .66rem !important; padding-inline: .55rem !important; }
   .top-toolbar { justify-content: stretch; }
   .top-toolbar .btn { flex: 1; min-width: 0; padding-inline: .12rem; }
@@ -353,4 +372,5 @@ body {
   .reveal { animation: none; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
 
