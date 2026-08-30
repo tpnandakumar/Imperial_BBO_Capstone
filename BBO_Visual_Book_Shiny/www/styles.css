@@ -130,7 +130,18 @@ body {
   filter: brightness(1.08);
   background-image: linear-gradient(180deg, rgba(223,243,237,.06), rgba(12,28,36,.14) 64%, rgba(12,28,36,.68) 100%);
 }
-.gateway-book:active { transform: translateY(-1px); filter: brightness(1.03); }
+.gateway-book:active,
+.gateway-book.active,
+.gateway-book[aria-pressed="true"],
+.gateway-book:disabled,
+.gateway-book.disabled {
+  transform: translateY(-1px);
+  filter: none !important;
+  color: #fff !important;
+  opacity: 1 !important;
+  background-color: rgba(255, 255, 255, .001) !important;
+  background-image: linear-gradient(180deg, rgba(255,255,255,.001) 0%, rgba(12,28,36,.12) 66%, rgba(12,28,36,.62) 100%) !important;
+}
 .gateway-book .route-kicker { display: block; color: #dff3ed; font-size: .76rem; font-weight: 850; letter-spacing: .16em; }
 .gateway-book strong { display: block; margin: .3rem 0; font-family: Georgia, serif; font-size: clamp(1.05rem, 1.65vw, 1.55rem); }
 .gateway-book small { display: block; color: rgba(255,255,255,.92); font-size: clamp(.72rem, 1vw, .9rem); line-height: 1.45; }
