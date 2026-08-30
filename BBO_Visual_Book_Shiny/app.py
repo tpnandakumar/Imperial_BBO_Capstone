@@ -206,7 +206,6 @@ def stat_box(title: str, value: str, note: str, colour: str) -> ui.Tag:
 
 def page_toolbar(home_id: str, up_id: str, previous_id: str, next_id: str) -> ui.Tag:
     return ui.div(
-        ui.input_action_button(home_id, "Home", class_="btn-home"),
         ui.input_action_button(up_id, "Up one level", class_="btn-soft"),
         ui.input_action_button(previous_id, "Previous", class_="btn-soft"),
         ui.input_action_button(next_id, "Next", class_="btn-accent"),
