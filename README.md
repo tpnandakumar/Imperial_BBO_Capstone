@@ -100,7 +100,7 @@ Black Box Resolution (BBR) investigates how much mathematical structure can be r
 
 [Explore Black Box Resolution](Post_BBO_BBR/SECTION_GUIDE.md)
 
-[View BBR values](Post_BBO_BBR/infographics/BBR_EVIDENCE_VALUES.csv) | [Read the equations for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md) | [Open the BBR research data](Post_BBO_BBR/research_data/SECTION_GUIDE.md)
+[View BBR values](Post_BBO_BBR/infographics/BBR_EVIDENCE_VALUES.csv) | [Read the equations for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md) | [Open the complete BBR section](Post_BBO_BBR/SECTION_GUIDE.md)
 
 #### 🟩 BEYOND: PISHARAM DELTA HIERARCHY AND INFLUENCE STATE (PDHIS)
 
@@ -286,7 +286,7 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 
 The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
-The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Its reader-facing values, equations and research tables are consolidated under `Post_BBO_BBR`. These later studies are clearly labelled as post-capstone work.
+The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Black Box Resolution, or BBR, is the final name for the work originally developed under the working name Black Box Decryption, or BBD. The change is in name only. The data, equations, results and method are unchanged. These later studies are clearly labelled as post-capstone work.
 
 ### 🟨 How to read the PDHIS graphs
 
