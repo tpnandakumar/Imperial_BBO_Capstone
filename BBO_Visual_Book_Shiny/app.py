@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import base64
 from pathlib import Path
 
 import numpy as np
@@ -22,6 +23,15 @@ PDHIS_MATCHED_RESULTS_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_MATCHED_EV
 PDHIS_FLICKER_LOFO_FILE = ROOT / "Post_BBO_BBR" / "PDHIS" / "PDHIS_FLICKER_LOFO_METRICS.csv"
 EXECUTIVE_SUMMARY_FILE = ROOT / "Executive_Summary" / "DETAILED_EXECUTIVE_SUMMARY.md"
 EXECUTIVE_SUMMARY_TEXT = EXECUTIVE_SUMMARY_FILE.read_text(encoding="utf-8")
+
+
+def embedded_jpeg(name: str) -> str:
+    payload = base64.b64encode((APP_DIR / "www" / name).read_bytes()).decode("ascii")
+    return f"data:image/jpeg;base64,{payload}"
+
+
+GATEWAY_LANDSCAPE = embedded_jpeg("mountain-landscape-embedded.jpg")
+GATEWAY_RHINOS = embedded_jpeg("mountain-rhinos-embedded.jpg")
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -290,7 +300,6 @@ app_ui = ui.page_navbar(
     ui.nav_panel(
         "Cover",
         ui.div(
-            ui.tags.img(src="mountain-landscape.png", class_="gateway-background", alt=""),
             ui.div(
                 ui.div("THE IMPERIAL BBO VISUAL LIBRARY", class_="hero-kicker"),
                 ui.tags.blockquote("“Life is a stone. Sculpt yourself a masterpiece.”"),
@@ -318,7 +327,6 @@ app_ui = ui.page_navbar(
                 class_="gateway-books",
             ),
             class_="book-page gateway-page",
-            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
@@ -508,7 +516,6 @@ app_ui = ui.page_navbar(
     ui.nav_panel(
         "Above and Beyond",
         ui.div(
-            ui.tags.img(src="mountain-landscape.png", class_="gateway-background", alt=""),
             page_toolbar("above_home", "above_up", "above_previous", "above_next"),
             book_heading("THE POST-CHALLENGE LIBRARY", "Above and Beyond BBO", "Choose Above for Black Box Resolution (BBR), or Beyond for Pisharam Delta Hierarchy and Influence State (PDHIS)."),
             ui.div(
@@ -525,7 +532,6 @@ app_ui = ui.page_navbar(
                 class_="gateway-books post-bbo-gateway",
             ),
             class_="book-page gateway-page",
-            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
@@ -736,6 +742,7 @@ app_ui = ui.page_navbar(
     header=ui.tags.head(
         ui.tags.meta(name="description", content="Interactive visual book and scientific dashboard for the Imperial BBO capstone."),
         ui.include_css(APP_DIR / "www" / "styles.css"),
+        ui.tags.style(f':root {{ --gateway-landscape: url("{GATEWAY_LANDSCAPE}"); --gateway-rhinos: url("{GATEWAY_RHINOS}"); }}'),
         ui.include_js(APP_DIR / "www" / "narration-player.js"),
     ),
     footer=ui.div("Official Week 1 to Week 13 evidence  |  279 observations  |  Reproducible Python application", class_="book-footer"),
