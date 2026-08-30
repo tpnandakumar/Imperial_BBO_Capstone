@@ -69,9 +69,33 @@
     }
   }
 
-  document.addEventListener("shiny:connected", openRequestedPage);
-  window.addEventListener("load", function () { window.setTimeout(openRequestedPage, 500); });
+  function positionNarrationControls() {
+    const controls = document.querySelector(".hear-me-controls");
+    const executiveTab = document.querySelector('.navbar-nav .nav-link[data-value="Executive Summary"]');
+    if (!controls) return;
+
+    if (executiveTab && executiveTab.getClientRects().length) {
+      const tabRect = executiveTab.getBoundingClientRect();
+      controls.style.left = (tabRect.left + tabRect.width / 2) + "px";
+      controls.style.top = (tabRect.bottom + 5) + "px";
+      return;
+    }
+
+    controls.style.left = "50%";
+    controls.style.top = "3.65rem";
+  }
+
+  document.addEventListener("shiny:connected", function () {
+    openRequestedPage();
+    window.setTimeout(positionNarrationControls, 100);
+  });
+  window.addEventListener("load", function () {
+    window.setTimeout(openRequestedPage, 500);
+    window.setTimeout(positionNarrationControls, 100);
+  });
+  window.addEventListener("resize", positionNarrationControls);
   window.setTimeout(openRequestedPage, 1200);
+  window.setTimeout(positionNarrationControls, 1200);
 
   function mainButton() { return document.getElementById("hear_me"); }
   function setStatus(message) {
@@ -80,7 +104,10 @@
   }
   function setMainLabel(label) {
     const button = mainButton();
-    if (button) button.textContent = label;
+    if (button) {
+      button.textContent = label;
+      button.dataset.state = label.toLowerCase().replace(/\s+/g, "-");
+    }
   }
   function activeSection() {
     const active = document.querySelector(".navbar-nav .nav-link.active, .nav-tabs .nav-link.active");
@@ -235,6 +262,7 @@
   });
   document.addEventListener("shown.bs.tab", function () {
     stopNarration("Narration reset for the selected page.");
+    positionNarrationControls();
   });
   audio.addEventListener("ended", function () {
     if (currentPart < currentSources.length - 1) {
@@ -272,4 +300,5 @@
   });
   window.addEventListener("beforeunload", function () { audio.pause(); });
 })();
+
 
