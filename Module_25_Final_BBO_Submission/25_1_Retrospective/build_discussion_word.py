@@ -21,7 +21,7 @@ ASSETS = HERE / "academic_infographics"
 STORY_PAIRS = HERE / "scientific_story_pairs"
 OUT = Path(os.environ.get("BBO_DISCUSSION_OUTPUT", HERE / "BBO_25_1_Academic_Retrospective_With_40_Infographics.docx"))
 INCLUDE_STORIES = os.environ.get("BBO_INCLUDE_STORIES", "1") == "1"
-POST = HERE / "DETAILED_EXECUTIVE_SUMMARY.md"
+POST = HERE.parents[1] / "Executive_Summary" / "DETAILED_EXECUTIVE_SUMMARY.md"
 HISTORY = ROOT / "BBO_Dashboard" / "data" / "complete_internal_evidence.csv"
 
 NAVY = "#14213D"
@@ -315,4 +315,5 @@ if __name__ == "__main__":
     figs=generate()
     output=build_doc(figs)
     print(output)
+
 
