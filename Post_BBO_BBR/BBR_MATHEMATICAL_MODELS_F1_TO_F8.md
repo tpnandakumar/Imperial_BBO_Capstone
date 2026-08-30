@@ -84,11 +84,11 @@ Polynomial coefficients are estimated through:
 
 $$
 \widehat{\boldsymbol{\theta}}=
-\underset{\boldsymbol{\theta}}{\mathop{\mathrm{arg\,min}}}
-\left\{
+\mathop{\mathrm{arg\,min}}_{\boldsymbol{\theta}}
+\Bigl(
 \lVert\mathbf{y}-\Phi\boldsymbol{\theta}\rVert_2^2+
 \lambda\lVert\boldsymbol{\theta}\rVert_2^2
-\right\}
+\Bigr)
 $$
 
 where $\Phi$ is the selected feature matrix and $\lambda$ controls shrinkage. The intercept is not penalised.
