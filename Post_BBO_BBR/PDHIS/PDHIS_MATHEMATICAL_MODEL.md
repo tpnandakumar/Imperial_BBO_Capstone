@@ -92,13 +92,13 @@ $$
 A robust historical scale is:
 
 $$
-s_{k,t}=\max\left\{1.4826\operatorname{MAD}\left(\Delta^ky_{k+1},\ldots,\Delta^ky_t\right),\varepsilon\right\}
+s_{k,t}=\max\left\{1.4826\mathrm{MAD}\left(\Delta^ky_{k+1},\ldots,\Delta^ky_t\right),\varepsilon\right\}
 $$
 
 For historical values $x_1,\ldots,x_n$, the median absolute deviation is:
 
 $$
-\operatorname{MAD}(x)=\operatorname{median}_i\left|x_i-\operatorname{median}_j(x_j)\right|
+\mathrm{MAD}(x)=\mathop{\mathrm{median}}_i\left|x_i-\mathop{\mathrm{median}}_j(x_j)\right|
 $$
 
 The constant 1.4826 makes the measure comparable with the standard deviation under a normal reference distribution. The term $\varepsilon>0$ prevents division by zero. If there are too few values for a reliable scale, the analysis must report the unscaled Delta or use a scale fixed in advance. Prospective calculations may use information available by time $t$, but never later observations.
@@ -118,7 +118,7 @@ The current movement is two historical scale units in magnitude.
 Define the sign function as:
 
 $$
-\operatorname{sgn}(x)=
+\mathrm{sgn}(x)=
 \begin{cases}
 -1, & x<0\\
 0, & x=0\\
@@ -265,9 +265,9 @@ C_t=
 \frac{1}{|V_t|}
 \sum_{k\in V_t}
 \mathbf{1}\left[
-\operatorname{sgn}\left(d_t^k\right)
+\mathrm{sgn}\left(d_t^k\right)
 =
-\operatorname{sgn}\left(d_t^{k+1}\right)
+\mathrm{sgn}\left(d_t^{k+1}\right)
 \right]
 $$
 
@@ -383,7 +383,7 @@ $$
 Its direction is recorded separately:
 
 $$
-Q_{t+h}=\operatorname{sgn}\left(y_{t+h}-y_{t+h-1}\right)
+Q_{t+h}=\mathrm{sgn}\left(y_{t+h}-y_{t+h-1}\right)
 $$
 
 Here, $\tau_t$ is fixed using information available by time $t$. If the question concerns improvement only, the positive target is:
@@ -439,4 +439,5 @@ PDHIS supports three levels of conclusion:
 3. **Prospective prediction:** a rule fixed in advance predicts untouched later outcomes and improves on a simple baseline in both discrimination and calibration.
 
 The present Imperial BBO record supports detailed mathematical description and event-locked retrospective investigation. Matched controls, threshold sensitivity, reference sequences and held-out-function testing define the next evidence boundary. PDHIS therefore extracts substantial retrospective mathematical behaviour while providing a clear and testable route towards prospective prediction.
+
 
