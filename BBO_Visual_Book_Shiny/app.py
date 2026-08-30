@@ -463,7 +463,17 @@ app_ui = ui.page_navbar(
             book_heading("EXECUTIVE READING", "Executive Summary", "Read the complete project account while listening to the matching three-part narration."),
             ui.div(
                 ui.h2("Executive Summary: read and listen"),
-                ui.p("Select HEAR ME above to play the complete three-part narration. The written Executive Summary appears below in the same order, so you can read and listen on this page."),
+                ui.p("Select HEAR ME above to play the complete three-part narration. Use the part buttons and position control to begin where you want or return to a later passage."),
+                ui.div(
+                    ui.tags.span("Start at:", class_="executive-audio-label"),
+                    ui.tags.button("Part 1", type="button", class_="executive-part-button", data_audio_part="0"),
+                    ui.tags.button("Part 2", type="button", class_="executive-part-button", data_audio_part="1"),
+                    ui.tags.button("Part 3", type="button", class_="executive-part-button", data_audio_part="2"),
+                    ui.tags.label("Position", for_="narration_seek", class_="executive-audio-label"),
+                    ui.tags.input(id="narration_seek", type="range", min="0", max="100", value="0", step="0.1"),
+                    ui.tags.span("0:00", id="narration_time", class_="executive-audio-time"),
+                    class_="executive-audio-nav",
+                ),
                 ui.markdown(EXECUTIVE_SUMMARY_TEXT),
                 class_="reading-panel executive-summary-reading",
             ),
