@@ -356,6 +356,33 @@ body {
 .home-route-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .45rem; margin-top: .55rem; }
 .route-button { min-height: 3rem; border-radius: 13px; border: 1px solid rgba(67,95,116,.15); color: var(--ink); font-weight: 760; }
 .mint-route { background: var(--mint); } .blue-route { background: var(--blue); } .lavender-route { background: var(--lavender); } .peach-route { background: var(--peach); } .rose-route { background: var(--rose); }
+.executive-audio-nav {
+  position: sticky;
+  top: -.25rem;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: auto repeat(3, auto) auto minmax(150px, 1fr) auto;
+  gap: .45rem;
+  align-items: center;
+  margin: .7rem 0 1rem;
+  padding: .6rem .75rem;
+  border: 1px solid rgba(67,95,116,.18);
+  border-radius: 14px;
+  background: rgba(255,253,248,.96);
+  box-shadow: 0 6px 18px rgba(38,63,90,.09);
+}
+.executive-audio-label, .executive-audio-time { color: var(--ink); font-size: .74rem; font-weight: 750; }
+.executive-part-button {
+  padding: .38rem .65rem;
+  border: 1px solid #557f99;
+  border-radius: 999px;
+  background: #e3f0f8;
+  color: #17324d;
+  font-size: .74rem;
+  font-weight: 750;
+}
+.executive-part-button:hover, .executive-part-button:focus { background: #557f99; color: #fff; }
+#narration_seek { width: 100%; accent-color: #557f99; cursor: pointer; }
 .executive-summary-reading {
   height: calc(100dvh - 12.2rem);
   min-height: 0;
@@ -473,6 +500,14 @@ body {
   .numbered-index { grid-template-columns: repeat(7, minmax(0,1fr)); }
   .home-route-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .home-best-grid { grid-template-columns: repeat(4, minmax(0,1fr)); }
+  .executive-audio-nav {
+    grid-template-columns: repeat(3, 1fr);
+    gap: .35rem;
+  }
+  .executive-audio-nav .executive-audio-label:first-child { grid-column: 1 / -1; }
+  .executive-audio-nav label { grid-column: 1; }
+  #narration_seek { grid-column: 2; }
+  .executive-audio-time { grid-column: 3; }
   .executive-summary-reading { height: calc(100dvh - 10.5rem); padding: .8rem; }
   .readme-grid, .repository-grid { grid-template-columns: 1fr; }
   .resolution-route-grid { grid-template-columns: 1fr; margin-top: .6rem; }
