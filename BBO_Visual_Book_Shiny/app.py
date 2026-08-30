@@ -297,6 +297,13 @@ app_ui = ui.page_navbar(
                 class_="gateway-quote reveal",
             ),
             ui.div(
+                ui.span(ui.strong("BBO"), ui.tags.small("Maximum"), class_="peak-label peak-bbo"),
+                ui.span(ui.strong("BBR"), ui.tags.small("Maximum"), class_="peak-label peak-bbr"),
+                ui.span(ui.strong("PDHIS"), ui.tags.small("Maximum"), class_="peak-label peak-pdhis"),
+                class_="gateway-maxima",
+                aria_label="Three maxima: BBO, BBR and PDHIS",
+            ),
+            ui.div(
                 ui.input_action_button(
                     "open_bbo_book",
                     ui.TagList(ui.span("BOOK I", class_="route-kicker"), ui.strong("Imperial BBO Capstone"), ui.tags.small("The official thirteen-week optimisation record")),
