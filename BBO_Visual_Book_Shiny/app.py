@@ -558,6 +558,27 @@ app_ui = ui.page_navbar(
                     ui.p("Evaluate → Resolve → Explore ↔ Exploit → Extend → Optimise → Evolve → Experiment → Evaluate, then repeat.", class_="strategy-loop-caption"),
                     ui.input_action_button("explain_bbr", "What does BBR mean?", class_="btn-soft framework-explain-button"),
                     ui.div(
+                        ui.a(
+                            "BBR values and results",
+                            href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Post_BBO_BBR/infographics/BBR_EVIDENCE_VALUES.csv",
+                            target="_blank",
+                            class_="external-button bbr-values-link",
+                        ),
+                        ui.a(
+                            "BBR equations for F1 to F8",
+                            href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/blob/main/Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md",
+                            target="_blank",
+                            class_="external-button bbr-equations-link",
+                        ),
+                        ui.a(
+                            "Complete BBR evidence library",
+                            href="https://github.com/tpnandakumar/Imperial_BBO_Capstone/tree/main/Post_BBO_BBR",
+                            target="_blank",
+                            class_="external-button bbr-library-link",
+                        ),
+                        class_="bbr-resource-links",
+                    ),
+                    ui.div(
                         ui.div(
                             ui.h2("Black Box Resolution"),
                             ui.p("A structured investigation of a hidden function using recorded inputs and outputs. It compares explanations, tests chronological performance and rejects explanations that fail."),
