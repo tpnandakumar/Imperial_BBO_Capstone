@@ -526,7 +526,7 @@ app_ui = ui.page_navbar(
                 ui.input_radio_buttons(
                     "resolution_section", None,
                     {"overview": "Resolution home", "bbr": "BBR method"},
-                    selected="overview", inline=True,
+                    selected="bbr", inline=True,
                 ),
                 class_="resolution-index",
             ),
@@ -781,7 +781,7 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.effect
     @reactive.event(input.open_resolution)
     def _open_resolution():
-        ui.update_radio_buttons("resolution_section", selected="overview")
+        ui.update_radio_buttons("resolution_section", selected="bbr")
         ui.update_navs("main_navigation", selected="Resolution")
 
     @reactive.effect
@@ -823,16 +823,13 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.effect
     @reactive.event(input.above_next)
     def _above_next():
-        ui.update_radio_buttons("resolution_section", selected="overview")
+        ui.update_radio_buttons("resolution_section", selected="bbr")
         ui.update_navs("main_navigation", selected="Resolution")
 
     @reactive.effect
     @reactive.event(input.resolution_up)
     def _resolution_up():
-        if input.resolution_section() == "overview":
-            ui.update_navs("main_navigation", selected="Above and Beyond")
-        else:
-            ui.update_radio_buttons("resolution_section", selected="overview")
+        ui.update_navs("main_navigation", selected="Above and Beyond")
 
     @reactive.effect
     @reactive.event(input.pdhis_up)
@@ -853,27 +850,19 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.effect
     @reactive.event(input.atlas_next)
     def _atlas_next():
-        ui.update_radio_buttons("resolution_section", selected="overview")
+        ui.update_radio_buttons("resolution_section", selected="bbr")
         ui.update_navs("main_navigation", selected="Resolution")
 
     @reactive.effect
     @reactive.event(input.resolution_previous)
     def _resolution_previous():
-        section = input.resolution_section()
-        if section == "bbr":
-            ui.update_radio_buttons("resolution_section", selected="overview")
-        else:
-            ui.update_navs("main_navigation", selected="Above and Beyond")
+        ui.update_navs("main_navigation", selected="Above and Beyond")
 
     @reactive.effect
     @reactive.event(input.resolution_next)
     def _resolution_next():
-        section = input.resolution_section()
-        if section == "overview":
-            ui.update_radio_buttons("resolution_section", selected="bbr")
-        else:
-            ui.update_radio_buttons("pdhis_view", selected="overview")
-            ui.update_navs("main_navigation", selected="Beyond BBO")
+        ui.update_radio_buttons("pdhis_view", selected="overview")
+        ui.update_navs("main_navigation", selected="Beyond BBO")
 
     pdhis_pages = ["overview", "meanings", "hierarchy", "trajectory", "orders", "functions", "evidence", "model", "advanced", "flicker", "atlas"]
 
