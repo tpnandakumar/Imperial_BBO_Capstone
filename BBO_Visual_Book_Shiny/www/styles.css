@@ -65,7 +65,7 @@ body {
   border-radius: 0 0 28px 28px;
   background-image:
     linear-gradient(180deg, rgba(17, 31, 40, .06) 0%, rgba(17, 31, 40, 0) 42%, rgba(17, 31, 40, .12) 100%),
-    var(--gateway-landscape);
+    var(--gateway-art);
   background-position: center 52%;
   background-size: cover;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 18px 55px rgba(17,31,40,.16);
@@ -83,7 +83,7 @@ body {
 }
 .gateway-quote blockquote { margin: .38rem 0 .2rem; color: #17324d; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3.3vw, 3rem); font-style: italic; line-height: 1.08; }
 .gateway-attribution { margin-bottom: 0; color: #425f70; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); }
-.gateway-maxima { position: absolute; z-index: 2; inset: 32% 0 auto; height: 1px; pointer-events: none; }
+.gateway-maxima { display: none; }
 .peak-label {
   position: absolute;
   display: flex;
@@ -105,11 +105,10 @@ body {
 .peak-bbo { left: 18%; }
 .peak-bbr { left: 51%; top: 1.2rem; }
 .peak-pdhis { left: 84%; top: -.55rem; }
-.gateway-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.8rem, 2vw, 1.5rem); width: min(980px, 100%); margin: 0 auto; }
-.gateway-book { min-height: clamp(102px, 14vh, 128px); padding: clamp(.5rem, 1vw, .72rem); border: 1px solid rgba(255,255,255,.65); border-radius: 18px; color: #fff; text-align: left; box-shadow: 0 12px 30px rgba(12,28,36,.18); background-repeat: no-repeat; background-size: 310% auto; text-shadow: 0 1px 4px rgba(8,18,24,.92); transition: transform .2s ease, box-shadow .2s ease; }
-.gateway-book.mint-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), var(--gateway-rhinos); background-position: 51% 42%; background-size: cover; }
-.gateway-book.lavender-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), var(--gateway-rhinos); background-position: 64% 40%; background-size: cover; }
-.gateway-book:hover, .gateway-book:focus { transform: translateY(-4px); box-shadow: 0 25px 60px rgba(38,63,90,.14); }
+.gateway-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 9vw, 8rem); width: min(1180px, 96%); margin: 0 auto; }
+.gateway-book { display: flex; min-height: clamp(180px, 28vh, 250px); flex-direction: column; justify-content: flex-end; padding: clamp(.7rem, 1.3vw, 1rem); border: 2px solid transparent; border-radius: 28px; color: #fff; text-align: left; background: linear-gradient(180deg, rgba(12,28,36,0) 42%, rgba(12,28,36,.18) 66%, rgba(12,28,36,.78) 100%); box-shadow: none; text-shadow: 0 2px 6px rgba(8,18,24,.96); transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease; }
+.gateway-book.mint-route, .gateway-book.lavender-route, .gateway-book.rose-route { background-color: transparent; background-image: linear-gradient(180deg, rgba(12,28,36,0) 42%, rgba(12,28,36,.18) 66%, rgba(12,28,36,.78) 100%); }
+.gateway-book:hover, .gateway-book:focus { transform: translateY(-3px); border-color: rgba(255,255,255,.88); background-image: linear-gradient(180deg, rgba(223,243,237,.10), rgba(12,28,36,.22) 64%, rgba(12,28,36,.84) 100%); box-shadow: 0 18px 42px rgba(12,28,36,.26); outline: none; }
 .gateway-book .route-kicker { display: block; color: #dff3ed; font-size: .76rem; font-weight: 850; letter-spacing: .16em; }
 .gateway-book strong { display: block; margin: .3rem 0; font-family: Georgia, serif; font-size: clamp(1.05rem, 1.65vw, 1.55rem); }
 .gateway-book small { display: block; color: rgba(255,255,255,.92); font-size: clamp(.72rem, 1vw, .9rem); line-height: 1.45; }
@@ -370,14 +369,13 @@ body {
   .hero { border-radius: 20px; padding: 1rem; }
   .hero h1 { font-size: clamp(1.85rem, 10vw, 3rem); }
   .gateway-page { padding: .65rem; border-radius: 0 0 20px 20px; background-position: 51% center; }
-  .gateway-maxima { inset: 34% 0 auto; }
   .peak-label { min-width: 4.1rem; padding: .3rem .42rem; }
   .peak-label small { display: none; }
   .peak-bbo { left: 17%; }
   .peak-bbr { left: 50%; top: .6rem; }
   .peak-pdhis { left: 83%; top: -.25rem; }
   .gateway-books { grid-template-columns: 1fr; gap: .55rem; }
-  .gateway-book { min-height: 88px; padding: .45rem .58rem; background-size: cover; }
+  .gateway-book { min-height: 132px; padding: .55rem .65rem; }
   .gateway-quote { padding: .55rem .7rem; }
   .gateway-quote blockquote { font-size: clamp(1.25rem, 6.5vw, 1.8rem); }
   .route-grid, .three-column, .inline-controls { grid-template-columns: 1fr; }

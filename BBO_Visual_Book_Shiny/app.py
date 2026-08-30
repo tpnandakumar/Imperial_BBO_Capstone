@@ -30,8 +30,7 @@ def embedded_jpeg(name: str) -> str:
     return f"data:image/jpeg;base64,{payload}"
 
 
-GATEWAY_LANDSCAPE = embedded_jpeg("mountain-landscape-embedded.jpg")
-GATEWAY_RHINOS = embedded_jpeg("mountain-rhinos-embedded.jpg")
+GATEWAY_ART = embedded_jpeg("imperial-bbo-rhino-gateway.jpg")
 
 DIMENSIONS = {1: 2, 2: 2, 3: 3, 4: 4, 5: 4, 6: 5, 7: 6, 8: 8}
 PASTELS = ["#64b6ac", "#8da9db", "#b497d6", "#f2b880", "#e58aa5", "#7db6d8", "#8bc49a", "#c69bd2"]
@@ -742,7 +741,7 @@ app_ui = ui.page_navbar(
     header=ui.tags.head(
         ui.tags.meta(name="description", content="Interactive visual book and scientific dashboard for the Imperial BBO capstone."),
         ui.include_css(APP_DIR / "www" / "styles.css"),
-        ui.tags.style(f':root {{ --gateway-landscape: url("{GATEWAY_LANDSCAPE}"); --gateway-rhinos: url("{GATEWAY_RHINOS}"); }}'),
+        ui.tags.style(f':root {{ --gateway-art: url("{GATEWAY_ART}"); }}'),
         ui.include_js(APP_DIR / "www" / "narration-player.js"),
     ),
     footer=ui.div("Official Week 1 to Week 13 evidence  |  279 observations  |  Reproducible Python application", class_="book-footer"),
