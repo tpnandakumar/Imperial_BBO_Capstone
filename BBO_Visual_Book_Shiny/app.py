@@ -803,6 +803,9 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     def _open_deep_link():
         if input.deep_link_page() == "executive-summary":
             ui.update_navs("main_navigation", selected="Executive Summary")
+        elif input.deep_link_page() == "bbr":
+            ui.update_navs("main_navigation", selected="Resolution")
+            ui.update_radio_buttons("resolution_section", selected="bbr")
 
     @reactive.effect
     @reactive.event(input.bbo_up, input.bbo_previous, input.above_up, input.above_previous)
