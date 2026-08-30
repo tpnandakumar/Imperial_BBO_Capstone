@@ -82,11 +82,11 @@ body {
   text-align: center;
   border: 1px solid rgba(255,255,255,.36);
   border-radius: 20px;
-  background: rgba(245, 249, 247, .001);
+  background: rgba(245, 249, 247, .00005);
   box-shadow: 0 12px 34px rgba(12,28,36,.16);
   backdrop-filter: blur(10px);
 }
-.gateway-quote, .gateway-quote * { font-weight: 750; }
+.gateway-quote, .gateway-quote * { color: #000 !important; font-weight: 750; }
 .gateway-quote .hero-kicker { color: #000; }
 .gateway-quote blockquote { margin: .38rem 0 .2rem; color: #17324d; font-family: Georgia, "Times New Roman", serif; font-size: clamp(1.45rem, 3.3vw, 3rem); font-style: italic; line-height: 1.08; }
 .gateway-attribution { margin-bottom: 0; color: #000; font-family: Georgia, serif; font-size: clamp(.72rem, 1vw, .9rem); }
