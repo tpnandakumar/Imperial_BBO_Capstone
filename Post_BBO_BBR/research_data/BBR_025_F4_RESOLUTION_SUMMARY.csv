@@ -1,3 +1,0 @@
-function,n_observations,best_model,best_normalised_walk_forward_mae,nested_rosenbrock_rank,repeat_groups,nonidentical_repeat_groups,mechanism_interpretation,exact_function_recovered,independent_query_required
-4,13,gp_matern_2.5,0.021833656746002697,5,1,0,static_coordinate_surface_with_rosenbrock_lead_under_test,False,True
-
