@@ -14,7 +14,7 @@ This project records a thirteen-round search for strong inputs to eight hidden m
 
 ### EXECUTIVE SUMMARY
 
-[Open the detailed 2,000 to 2,500-word Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
+[Open the detailed 2,000 to 2,500-word Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
 #### HOW TO LISTEN
 
@@ -112,7 +112,7 @@ Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of C
 
 The Visual Storyboard therefore keeps the assessed Imperial BBO story separate from the later BBR and PDHIS research while presenting all three through one coherent reading experience.
 
-> **New reader?** Start with the [detailed Imperial BBO Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
+> **New reader?** Start with the [detailed Imperial BBO Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
 > **Mathematical extension:** Read the [BBR mathematical models for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md), the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 coefficient package](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
@@ -120,7 +120,7 @@ The Visual Storyboard therefore keeps the assessed Imperial BBO story separate f
 
 The project produced two valuable learning outcomes beyond Black Box Optimisation. First, the Visual Storyboard showed how written, visual and auditory storytelling can present the same evidence through complementary routes. Second, developing PIMF and PMOS in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. Together, these experiences demonstrated that effective analytical work depends not only on the optimisation method, but also on how evidence is communicated and how the surrounding process is organised, monitored and improved.
 
-[Read how this learning developed in the Detailed Executive Summary](Module_25_Final_BBO_Submission/25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md).
+[Read how this learning developed in the Detailed Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md).
 
 ## 🟦 Enter the project
 
