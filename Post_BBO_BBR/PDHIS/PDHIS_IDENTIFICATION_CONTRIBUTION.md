@@ -39,9 +39,9 @@ This creates a reproducible mathematical description rather than relying on visu
 | Oscillation energy | \(E^k_t=w^{-1}\sum_r(d^k_r)^2\) | Strength accumulated within a temporal window |
 | Temporal dispersion | \(D^k_t=\sqrt{\sum_r(r-\mu)^2(d^k_r)^2/\sum_r(d^k_r)^2}\) | Whether energy is concentrated or spread through time |
 | Persistence | \(R^k_t=\text{longest same-sign run}/w\) | Continuation of directional behaviour |
-| Cross-order coherence | \(C_t=(K-1)^{-1}\sum_k\mathbf{1}[\operatorname{sign}(d^k_t)=\operatorname{sign}(d^{k+1}_t)]\) | Agreement across neighbouring Delta orders |
+| Cross-order coherence | \(C_t=(K-1)^{-1}\sum_k\mathbf{1}[\mathrm{sign}(d^k_t)=\mathrm{sign}(d^{k+1}_t)]\) | Agreement across neighbouring Delta orders |
 | Signature of Change | \(S_t=[d^1_t,\ldots,d^K_t,\nu_t,E_t,D_t,R_t,C_t]\) | Reproducible mathematical state of observed behaviour |
-| Prospective event | \(P(Y_{t+h}=1\mid S_t)=\operatorname{logistic}(\beta_0+\beta^\top S_t)\) | Candidate probability of a genuinely later target |
+| Prospective event | \(P(Y_{t+h}=1\mid S_t)=\mathrm{logistic}(\beta_0+\beta^\top S_t)\) | Candidate probability of a genuinely later target |
 
 ## Complementary surrogate identification
 
@@ -113,3 +113,4 @@ This work demonstrates that meaningful mathematical behaviour can be identified 
 PDHIS converts observed change into a structured mathematical state, separates retrospective identification from prospective prediction and identifies the present boundary of the available evidence. Longer independent sequences, repeated anchor inputs, input-adjusted residual Delta and prospectively defined events now provide a clear programme for determining which characteristics remain stable across time, functions and independent datasets.
 
 PDHIS is a novel identification framework and a developing research model. It provides a reproducible method for extracting mathematical behaviour from unknown functions. Its next research challenge is to establish whether a locked Signature of Change can support validated prospective prediction.
+
