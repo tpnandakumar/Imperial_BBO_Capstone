@@ -57,6 +57,10 @@ body {
 .gateway-page {
   position: relative;
   isolation: isolate;
+  width: calc(100% + 24px);
+  max-width: none;
+  height: calc(100dvh - 6.85rem + 48px);
+  margin: -48px -12px 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,7 +71,7 @@ body {
     linear-gradient(180deg, rgba(17, 31, 40, .06) 0%, rgba(17, 31, 40, 0) 42%, rgba(17, 31, 40, .12) 100%),
     var(--gateway-art);
   background-position: center 52%;
-  background-size: calc(100% + 24px) calc(100% + 48px);
+  background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 18px 55px rgba(17,31,40,.16);
 }
@@ -384,7 +388,7 @@ body {
   .chapter-lead { display: none; }
   .hero { border-radius: 20px; padding: 1rem; }
   .hero h1 { font-size: clamp(1.85rem, 10vw, 3rem); }
-  .gateway-page { padding: .65rem; border-radius: 0 0 20px 20px; background-position: 51% center; }
+  .gateway-page { width: calc(100% + 24px); height: calc(100dvh - 6.35rem + 48px); margin: -48px -12px 0; padding: .65rem; border-radius: 0 0 20px 20px; background-position: 51% center; }
   .peak-label { min-width: 4.1rem; padding: .3rem .42rem; }
   .peak-label small { display: none; }
   .peak-bbo { left: 17%; }
