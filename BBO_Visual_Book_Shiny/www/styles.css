@@ -76,7 +76,7 @@ body {
   border-radius: 0 0 28px 28px;
   background-image:
     linear-gradient(180deg, rgba(17, 31, 40, .06) 0%, rgba(17, 31, 40, 0) 42%, rgba(17, 31, 40, .12) 100%),
-    url("/mountain-landscape.png");
+    url("mountain-landscape.png");
   background-position: center 52%;
   background-size: cover;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.22), 0 18px 55px rgba(17,31,40,.16);
@@ -118,8 +118,8 @@ body {
 .peak-pdhis { left: 84%; top: -.55rem; }
 .gateway-books { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(.8rem, 2vw, 1.5rem); width: min(980px, 100%); margin: 0 auto; }
 .gateway-book { min-height: clamp(102px, 14vh, 128px); padding: clamp(.5rem, 1vw, .72rem); border: 1px solid rgba(255,255,255,.65); border-radius: 18px; color: #fff; text-align: left; box-shadow: 0 12px 30px rgba(12,28,36,.18); background-repeat: no-repeat; background-size: 310% auto; text-shadow: 0 1px 4px rgba(8,18,24,.92); transition: transform .2s ease, box-shadow .2s ease; }
-.gateway-book.mint-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), url("/mountain-rhinos.png"); background-position: 51% 42%; background-size: cover; }
-.gateway-book.lavender-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), url("/mountain-rhinos.png"); background-position: 64% 40%; background-size: cover; }
+.gateway-book.mint-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), url("mountain-rhinos.png"); background-position: 51% 42%; background-size: cover; }
+.gateway-book.lavender-route { background-image: linear-gradient(90deg, rgba(12,28,36,.62), rgba(12,28,36,.04) 72%), url("mountain-rhinos.png"); background-position: 64% 40%; background-size: cover; }
 .gateway-book:hover, .gateway-book:focus { transform: translateY(-4px); box-shadow: 0 25px 60px rgba(38,63,90,.14); }
 .gateway-book .route-kicker { display: block; color: #dff3ed; font-size: .76rem; font-weight: 850; letter-spacing: .16em; }
 .gateway-book strong { display: block; margin: .3rem 0; font-family: Georgia, serif; font-size: clamp(1.05rem, 1.65vw, 1.55rem); }

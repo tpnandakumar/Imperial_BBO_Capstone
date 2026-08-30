@@ -290,7 +290,7 @@ app_ui = ui.page_navbar(
     ui.nav_panel(
         "Cover",
         ui.div(
-            ui.tags.img(src="/mountain-landscape.png", class_="gateway-background", alt=""),
+            ui.tags.img(src="mountain-landscape.png", class_="gateway-background", alt=""),
             ui.div(
                 ui.div("THE IMPERIAL BBO VISUAL LIBRARY", class_="hero-kicker"),
                 ui.tags.blockquote("“Life is a stone. Sculpt yourself a masterpiece.”"),
@@ -318,7 +318,7 @@ app_ui = ui.page_navbar(
                 class_="gateway-books",
             ),
             class_="book-page gateway-page",
-            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('/mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
+            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
@@ -508,7 +508,7 @@ app_ui = ui.page_navbar(
     ui.nav_panel(
         "Above and Beyond",
         ui.div(
-            ui.tags.img(src="/mountain-landscape.png", class_="gateway-background", alt=""),
+            ui.tags.img(src="mountain-landscape.png", class_="gateway-background", alt=""),
             page_toolbar("above_home", "above_up", "above_previous", "above_next"),
             book_heading("THE POST-CHALLENGE LIBRARY", "Above and Beyond BBO", "Choose Above for Black Box Resolution (BBR), or Beyond for Pisharam Delta Hierarchy and Influence State (PDHIS)."),
             ui.div(
@@ -525,7 +525,7 @@ app_ui = ui.page_navbar(
                 class_="gateway-books post-bbo-gateway",
             ),
             class_="book-page gateway-page",
-            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('/mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
+            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
