@@ -317,6 +317,7 @@ app_ui = ui.page_navbar(
                 class_="gateway-books",
             ),
             class_="book-page gateway-page",
+            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('/mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
@@ -522,6 +523,7 @@ app_ui = ui.page_navbar(
                 class_="gateway-books post-bbo-gateway",
             ),
             class_="book-page gateway-page",
+            style_="background-image: linear-gradient(180deg, rgba(17,31,40,.04), rgba(17,31,40,.10)), url('/mountain-landscape.png') !important; background-size: cover !important; background-position: center 52% !important;",
         ),
     ),
     ui.nav_panel(
