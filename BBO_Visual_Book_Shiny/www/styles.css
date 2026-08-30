@@ -371,6 +371,12 @@ body {
   background: rgba(255,253,248,.96);
   box-shadow: 0 6px 18px rgba(38,63,90,.09);
 }
+.executive-audio-nav-top {
+  position: relative;
+  top: auto;
+  width: min(1280px, calc(100% - 1rem));
+  margin: .15rem auto .45rem;
+}
 .executive-audio-label, .executive-audio-time { color: var(--ink); font-size: .74rem; font-weight: 750; }
 .executive-part-button {
   padding: .38rem .65rem;
@@ -384,7 +390,7 @@ body {
 .executive-part-button:hover, .executive-part-button:focus { background: #557f99; color: #fff; }
 #narration_seek { width: 100%; accent-color: #557f99; cursor: pointer; }
 .executive-summary-reading {
-  height: calc(100dvh - 12.2rem);
+  height: calc(100dvh - 15.8rem);
   min-height: 0;
   margin-top: .35rem;
   padding: 1rem 1.25rem;
@@ -508,7 +514,7 @@ body {
   .executive-audio-nav label { grid-column: 1; }
   #narration_seek { grid-column: 2; }
   .executive-audio-time { grid-column: 3; }
-  .executive-summary-reading { height: calc(100dvh - 10.5rem); padding: .8rem; }
+  .executive-summary-reading { height: calc(100dvh - 14.2rem); padding: .8rem; }
   .readme-grid, .repository-grid { grid-template-columns: 1fr; }
   .resolution-route-grid { grid-template-columns: 1fr; margin-top: .6rem; }
   .pdhis-route-grid { grid-template-columns: repeat(2, minmax(0,1fr)); margin-top: .35rem; }
