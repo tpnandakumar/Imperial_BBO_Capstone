@@ -80,11 +80,11 @@ body {
   margin: 0 auto;
   padding: clamp(.65rem, 1.4vw, 1rem) clamp(.85rem, 2vw, 1.5rem);
   text-align: center;
-  border: 1px solid rgba(255,255,255,.36);
+  border: 1px solid transparent;
   border-radius: 20px;
-  background: rgba(245, 249, 247, .00005);
-  box-shadow: 0 12px 34px rgba(12,28,36,.16);
-  backdrop-filter: blur(10px);
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
 }
 .gateway-quote, .gateway-quote * { color: #000 !important; font-weight: 750; }
 .gateway-quote .hero-kicker { color: #000; }
