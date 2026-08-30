@@ -147,6 +147,11 @@ body {
 .bbr-evidence .three-column { gap: .55rem; margin: 0; }
 .bbr-evidence .card-body { padding: .65rem; font-size: .76rem; line-height: 1.35; }
 .framework-explain-button { align-self: center; margin: -.1rem auto .15rem; }
+.bbr-resource-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .4rem; width: min(860px, 100%); margin: 0 auto .2rem; }
+.bbr-resource-links .external-button { padding: .42rem .55rem; text-align: center; font-size: .72rem; font-weight: 750; }
+.bbr-values-link { background: #138808; }
+.bbr-equations-link { background: #1f5f99; }
+.bbr-library-link { background: #c97818; }
 .resolution-index { display: flex; justify-content: center; margin: .1rem 0 .4rem; }
 .resolution-index .form-group { margin: 0; }
 .resolution-index .form-check-inline { margin-right: .9rem; }
@@ -333,6 +338,7 @@ body {
   .strategy-loop > div strong { font-size: .7rem; overflow-wrap: anywhere; }
   .bbr-evidence .three-column { grid-template-columns: repeat(3, 1fr); }
   .bbr-evidence .card-body { display: none; }
+  .bbr-resource-links { grid-template-columns: 1fr; }
   .navbar-brand { font-size: .95rem; }
   .hear-me-controls { width: 9.7rem; }
   .hear-me-button, .hear-stop-button { font-size: .66rem !important; padding-inline: .55rem !important; }
