@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 REQUIRED_PATHS = [
     ROOT / "README.md",
-    ROOT / "Module_25_Final_BBO_Submission" / "25_1_Retrospective" / "DETAILED_EXECUTIVE_SUMMARY.md",
+    ROOT / "Executive_Summary" / "DETAILED_EXECUTIVE_SUMMARY.md",
     ROOT / "Module_25_Final_BBO_Submission" / "SECTION_GUIDE.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_1_Retrospective" / "EVIDENCE_MAP.md",
     ROOT / "Module_25_Final_BBO_Submission" / "25_2_Successful_Optimisation_Strategies" / "EVIDENCE_MAP.md",
@@ -198,3 +198,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+
