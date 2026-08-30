@@ -27,7 +27,11 @@ Key closing evidence:
 
 ## 25.1 Retrospective
 
-The [25.1 Retrospective](25_1_Retrospective/SECTION_GUIDE.md) presents the complete development of the project, with the [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) providing the main continuous account. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
+The [25.1 Retrospective](25_1_Retrospective/SECTION_GUIDE.md) records the reflective assessment evidence and its related infographics. It follows the work from early exploration through function-specific refinement, recovery, clustering and principal component analysis, then explains the final exploration and exploitation choices, stopping decisions and limitations.
+
+## Executive Summary
+
+The [Detailed Executive Summary](25_1_Retrospective/DETAILED_EXECUTIVE_SUMMARY.md) provides a separate, continuous account of the complete Imperial BBO project for academic assessors and executive readers.
 
 ## Component 25.2 evidence
 
