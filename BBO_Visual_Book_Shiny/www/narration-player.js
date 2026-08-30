@@ -207,17 +207,48 @@
     const part = currentSources.length > 1 ? ", part " + (currentPart + 1) + " of " + currentSources.length : "";
     setStatus(currentTitle + part + " narration " + action + ".");
   }
+  function resumeKey() {
+    return "imperial-bbo-narration:" + activeSection();
+  }
+  function savePosition() {
+    if (!currentSources.length || !Number.isFinite(audio.currentTime)) return;
+    try {
+      localStorage.setItem(resumeKey(), JSON.stringify({ part: currentPart, time: audio.currentTime }));
+    } catch (error) {}
+  }
+  function savedPosition() {
+    try {
+      return JSON.parse(localStorage.getItem(resumeKey()) || "null");
+    } catch (error) {
+      return null;
+    }
+  }
+  function updateSeekControl() {
+    const seek = document.getElementById("narration_seek");
+    const label = document.getElementById("narration_time");
+    if (seek && Number.isFinite(audio.duration) && audio.duration > 0) {
+      seek.value = String((audio.currentTime / audio.duration) * 100);
+    }
+    if (label) {
+      const seconds = Math.max(0, Math.floor(audio.currentTime || 0));
+      label.textContent = Math.floor(seconds / 60) + ":" + String(seconds % 60).padStart(2, "0");
+    }
+  }
   async function startNarration() {
     const track = selectedTrack();
     const sources = Array.isArray(track[0]) ? track[0] : [track[0]];
     const source = sourceUrl(sources[0]);
     if (currentSources.join("|") !== sources.join("|")) {
       currentSources = sources;
-      currentPart = 0;
       currentTitle = track[1];
-      audio.src = source;
-      currentSource = source;
-      audio.currentTime = 0;
+      const saved = savedPosition();
+      currentPart = saved && Number.isInteger(saved.part) && saved.part < sources.length ? saved.part : 0;
+      currentSource = sourceUrl(sources[currentPart]);
+      audio.src = currentSource;
+      audio.addEventListener("loadedmetadata", function restoreSavedPosition() {
+        if (saved && Number.isFinite(saved.time) && saved.time < audio.duration) audio.currentTime = saved.time;
+        updateSeekControl();
+      }, { once: true });
     }
     try {
       await audio.play();
@@ -231,6 +262,28 @@
 
   document.addEventListener("click", function (event) {
     if (!(event.target instanceof Element)) return;
+    const partButton = event.target.closest("[data-audio-part]");
+    if (partButton) {
+      event.preventDefault();
+      const track = selectedTrack();
+      const sources = Array.isArray(track[0]) ? track[0] : [track[0]];
+      const requestedPart = Number(partButton.dataset.audioPart);
+      if (!Number.isInteger(requestedPart) || requestedPart < 0 || requestedPart >= sources.length) return;
+      currentSources = sources;
+      currentPart = requestedPart;
+      currentTitle = track[1];
+      currentSource = sourceUrl(sources[currentPart]);
+      audio.src = currentSource;
+      audio.currentTime = 0;
+      audio.play().then(function () {
+        setMainLabel("PAUSE");
+        partStatus("started");
+      }).catch(function () {
+        setMainLabel("HEAR ME");
+        setStatus("This narration part could not start. Please try again.");
+      });
+      return;
+    }
     const hear = event.target.closest("#hear_me");
     const stop = event.target.closest("#hear_stop");
     if (stop) {
@@ -254,6 +307,14 @@
     }
   });
 
+  document.addEventListener("input", function (event) {
+    if (!(event.target instanceof HTMLInputElement) || event.target.id !== "narration_seek") return;
+    if (Number.isFinite(audio.duration) && audio.duration > 0) {
+      audio.currentTime = (Number(event.target.value) / 100) * audio.duration;
+      savePosition();
+      updateSeekControl();
+    }
+  });
   document.addEventListener("change", function (event) {
     if (!(event.target instanceof HTMLInputElement)) return;
     if (event.target.name === "pdhis_view" || event.target.name === "resolution_section") {
@@ -264,6 +325,11 @@
     stopNarration("Narration reset for the selected page.");
     positionNarrationControls();
   });
+  audio.addEventListener("timeupdate", function () {
+    updateSeekControl();
+    savePosition();
+  });
+  audio.addEventListener("loadedmetadata", updateSeekControl);
   audio.addEventListener("ended", function () {
     if (currentPart < currentSources.length - 1) {
       currentPart += 1;
