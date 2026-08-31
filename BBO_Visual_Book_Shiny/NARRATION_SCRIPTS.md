@@ -4,7 +4,7 @@ These scripts are written for a calm British voice at a measured pace. Each reco
 
 ## Narration standard
 
-The Executive Summary and README are document-led pages, so their narration may follow the written account closely. Other tabs use selective page-specific narration. These recordings should explain the purpose of the whole page, connect its visual elements, identify the main interpretation and state the evidence boundary. They should not simply read every line already visible on screen. A separate recording is added only when the page introduces a distinct analytical task that the existing section narration does not explain adequately.
+The Executive Summary and Read Me are document-led pages, so their narration may follow the written account closely. Other tabs use selective page-specific narration. These recordings should explain the purpose of the whole page, connect its visual elements, identify the main interpretation and state the evidence boundary. They should not simply read every line already visible on screen. A separate recording is added only when the page introduces a distinct analytical task that the existing section narration does not explain adequately.
 
 ## 01. Welcome and project purpose
 
@@ -376,7 +376,7 @@ That variation is the central lesson of this page. Progress was not a smooth sha
 
 Use Read by Week to understand the campaign at a particular decision point. Open graph provides a centred full-screen view, and Explain graph gives concise guidance for the selected visual. When one function draws attention, move to Read by Function for its complete trajectory. Use Evidence when the exact submitted coordinates and returned output are required.
 
-## 25. README page
+## 25. Read Me page
 
 This page is the short reading guide for the Imperial Black Box Optimisation Capstone. It introduces the assessed challenge, identifies the evidence preserved in the repository and directs each reader towards the level of detail they need.
 
@@ -386,7 +386,7 @@ The completed record contains two hundred and seventy nine observations. Of thes
 
 The project did not apply one fixed search rule to all functions. Early rounds used broader exploration and directional testing. Later decisions became function-specific, combining refinement, recovery, repeated-coordinate validation and stopping. This matters because the eight functions behaved differently. Function Five rewarded sustained directional refinement. Other functions reached a strong result earlier, fluctuated or benefited from returning to a previously supported coordinate.
 
-The README in the GitHub repository is the formal entry point for assessment. It contains the required non-technical explanation, data summary, model account, hyperparameter optimisation discussion and results section. It also links to the code, datasheet, model card, tables, figures, detailed discussion and Executive Summary without crowding the main page.
+The Read Me in the GitHub repository is the formal entry point for assessment. It contains the required non-technical explanation, data summary, model account, hyperparameter optimisation discussion and results section. It also links to the code, datasheet, model card, tables, figures, detailed discussion and Executive Summary without crowding the main page.
 
 This Visual Storyboard offers a complementary reading route. Read by Week presents the thirteen-round campaign chronologically. Read by Function isolates one complete optimisation story. The Scientific Atlas compares the timing of progress across all eight landscapes. Evidence returns to the exact submitted coordinates and portal outputs.
 
@@ -396,13 +396,13 @@ The evidence boundary remains important throughout. Reported maxima are the stro
 
 Readers seeking a concise overview can continue to the Executive Summary. Assessors checking reproducibility should use the Repository and Evidence routes. Readers interested in how the search evolved should choose Read by Week, while those comparing function behaviour should begin with the Scientific Atlas and then open Read by Function.
 
-The aim of this page is orientation. It shows what was attempted, what evidence exists, what the reported results mean and where each supporting document can be found. The GitHub README remains the definitive repository guide, while the Visual Storyboard makes the same project easier to approach through structured, visual and auditory routes.
+The aim of this page is orientation. It shows what was attempted, what evidence exists, what the reported results mean and where each supporting document can be found. The GitHub Read Me remains the definitive repository guide, while the Visual Storyboard makes the same project easier to approach through structured, visual and auditory routes.
 
 ## 26. Repository page
 
 The Repository page connects the visual account to the permanent technical record. The Visual Storyboard explains the project through structured pages, graphs and narration. GitHub preserves the data, calculations, source code and supporting documents needed to check those explanations.
 
-Begin with the GitHub README. It acts as the assessment contents page and follows the required capstone structure. It contains the non-technical project explanation, data summary, model discussion, hyperparameter optimisation account and results overview. Each concise section links to more detailed material so the main README remains readable.
+Begin with the GitHub Read Me. It acts as the assessment contents page and follows the required capstone structure. It contains the non-technical project explanation, data summary, model discussion, hyperparameter optimisation account and results overview. Each concise section links to more detailed material so the main Read Me remains readable.
 
 The full repository contains two hundred and seventy nine observations. One hundred and seventy five were supplied as starter evidence, while one hundred and four were generated through the thirteen prospective rounds. The weekly record preserves one submitted coordinate and returned output for each of eight functions in every round.
 
@@ -416,7 +416,7 @@ The representative equations link opens the complete surrogate package for Funct
 
 The P D H I S Identification Contribution explains what the completed Delta analysis identifies across Functions One to Eight. It records the observed temporal structures, the statistical evidence boundary and the design requirements for a later prospective study. This turns exploratory findings into a transparent basis for further research.
 
-Assessors checking the core submission should begin with the README, then follow its links to the datasheet, model card, code, optimisation details and results discussion. The Evidence tab provides a faster check of individual weekly observations. The Executive Summary provides a continuous account of the challenge and its main conclusions.
+Assessors checking the core submission should begin with the Read Me, then follow its links to the datasheet, model card, code, optimisation details and results discussion. The Evidence tab provides a faster check of individual weekly observations. The Executive Summary provides a continuous account of the challenge and its main conclusions.
 
 Readers interested in the extension work can open the mathematical model, representative equations and identification contribution from this page. Keeping these links together makes the relationship clear: the Visual Storyboard provides accessible interpretation, while GitHub remains the authoritative and reproducible source.
 
@@ -500,7 +500,7 @@ The first route is Imperial BBO Capstone. This is the assessed project. Eight hi
 
 The Imperial route preserves the complete prospective story. Read by Week follows the decisions chronologically. Read by Function isolates each hidden landscape. The Scientific Atlas compares the timing of progress. Evidence provides the exact submitted coordinates and returned portal outputs.
 
-The README and Executive Summary offer two different levels of orientation. The README is the concise assessment guide and links to the mandatory repository material. The Executive Summary provides a longer continuous account of the challenge, technical development, results and main lessons.
+The Read Me and Executive Summary offer two different levels of orientation. The Read Me is the concise assessment guide and links to the mandatory repository material. The Executive Summary provides a longer continuous account of the challenge, technical development, results and main lessons.
 
 The second route is Above and Beyond BBO. This post-challenge library is deliberately separated from the assessed campaign. It uses the completed evidence to ask further mathematical questions without changing the original results.
 
@@ -534,7 +534,7 @@ An early retained maximum does not mean the later decisions lacked purpose. Late
 
 The search therefore evolved function by function. Early rounds used broader exploration and directional movement. Later rounds applied selective refinement, recovery, repeated-coordinate testing and stopping. Function Five rewarded sustained directional refinement. Functions Four and Seven demonstrated the importance of recovery. Function Six showed why repeated-coordinate evidence matters when identical inputs may not return identical outputs.
 
-The cards are navigation controls as well as summaries. Selecting a function opens its complete thirteen-week evidence page. Project overview opens the concise README route. Week One to Week Thirteen presents the chronological campaign. Function F One to F Eight compares complete function stories. Scientific Atlas shows the timing of progress across all eight landscapes. Repository connects the visual account to the code, data and formal documentation.
+The cards are navigation controls as well as summaries. Selecting a function opens its complete thirteen-week evidence page. Project overview opens the concise Read Me route. Week One to Week Thirteen presents the chronological campaign. Function F One to F Eight compares complete function stories. Scientific Atlas shows the timing of progress across all eight landscapes. Repository connects the visual account to the code, data and formal documentation.
 
 The evidence boundary is essential. These are the strongest observed participant-query outputs, not claims that the hidden global optima were recovered. The value of the project lies in the prospective decisions, the transparent record of what succeeded and failed and the reproducible explanation of how the strategy changed.
 
