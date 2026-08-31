@@ -364,6 +364,24 @@ app_ui = ui.page_navbar(
             page_toolbar("readme_home", "readme_up", "readme_previous", "readme_next"),
             book_heading("PROJECT OVERVIEW", "Black Box Optimisation Capstone", "A concise guide to the challenge, the evidence and the reproducible analytical record."),
             ui.div(
+                ui.h2("Visual Storyboard Contents"),
+                ui.p("Select a section to move directly to that part of the visual account."),
+                ui.div(
+                    ui.input_action_button("contents_bbo", "1. Imperial BBO", class_="visual-contents-button"),
+                    ui.input_action_button("contents_week", "1.1 Read by Week", class_="visual-contents-button"),
+                    ui.input_action_button("contents_function", "1.2 Read by Function", class_="visual-contents-button"),
+                    ui.input_action_button("contents_atlas", "1.3 Scientific Atlas", class_="visual-contents-button"),
+                    ui.input_action_button("contents_executive", "2. Executive Summary", class_="visual-contents-button"),
+                    ui.input_action_button("contents_repository", "3. Repository", class_="visual-contents-button"),
+                    ui.input_action_button("contents_above", "4. Above and Beyond", class_="visual-contents-button"),
+                    ui.input_action_button("contents_bbr", "4.1 Black Box Resolution", class_="visual-contents-button"),
+                    ui.input_action_button("contents_pdhis", "4.2 PDHIS", class_="visual-contents-button"),
+                    ui.input_action_button("contents_evidence", "5. Evidence", class_="visual-contents-button"),
+                    class_="visual-contents-grid",
+                ),
+                class_="visual-contents-tree",
+            ),
+            ui.div(
                 ui.div(ui.h2("The challenge"), ui.p("Eight hidden functions, ranging from two to eight dimensions, were optimised over thirteen weekly rounds. The course supplied 175 starter observations. We then submitted one new input per function each week and received the corresponding black-box output through the portal."), class_="reading-panel"),
                 ui.div(ui.h2("The record"), ui.p("The repository preserves 279 observations, including 104 weekly participant queries. It documents the movement from broad exploration to function-specific optimisation, validation, repeat testing and final evaluation."), class_="reading-panel"),
                 ui.div(ui.h2("How to read"), ui.p("Use Week by Week for the chronological campaign, Function by Function for all thirteen results from one function, Scientific Atlas for comparison, and Resolution for BBR and the earlier Delta prediction framework."), class_="reading-panel"),
@@ -823,6 +841,34 @@ def server(input: Inputs, output: Outputs, session: Session) -> None:
     @reactive.effect
     @reactive.event(input.open_repository)
     def _open_repository(): ui.update_navs("main_navigation", selected="Repository")
+
+    contents_routes = {
+        "contents_bbo": "Imperial BBO",
+        "contents_week": "Read by Week",
+        "contents_function": "Read by Function",
+        "contents_atlas": "Scientific Atlas",
+        "contents_executive": "Executive Summary",
+        "contents_repository": "Repository",
+        "contents_above": "Above and Beyond",
+        "contents_evidence": "Evidence",
+    }
+    for contents_input, contents_target in contents_routes.items():
+        @reactive.effect
+        @reactive.event(input[contents_input])
+        def _open_contents_page(contents_target=contents_target):
+            ui.update_navs("main_navigation", selected=contents_target)
+
+    @reactive.effect
+    @reactive.event(input.contents_bbr)
+    def _open_contents_bbr():
+        ui.update_navs("main_navigation", selected="Resolution")
+        ui.update_radio_buttons("resolution_section", selected="bbr")
+
+    @reactive.effect
+    @reactive.event(input.contents_pdhis)
+    def _open_contents_pdhis():
+        ui.update_navs("main_navigation", selected="Beyond BBO")
+        ui.update_radio_buttons("pdhis_view", selected="model")
 
     @reactive.effect
     @reactive.event(input.deep_link_page)
