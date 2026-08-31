@@ -48,6 +48,10 @@ Select any numbered heading to move directly to that section. The structure belo
   - [16. What happened after the capstone](#what-happened-after-the-capstone)
     - [16.1 How to read the PDHIS graphs](#how-to-read-the-pdhis-graphs)
 
+### Repository navigation tree
+
+For a folder-by-folder map of the assessed submission, weekly evidence, results, code, Visual Storyboard, Black Box Resolution and Pisharam Delta Hierarchy and Influence State research, open the [clickable Repository Navigation Tree](Navigation/NAVIGATION_TREE.md).
+
 <a id="non-technical-explanation-of-my-project"></a>
 ## 1. NON-TECHNICAL EXPLANATION OF MY PROJECT
 
