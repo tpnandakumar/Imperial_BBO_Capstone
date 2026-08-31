@@ -373,10 +373,10 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 <a id="what-happened-after-the-capstone"></a>
 ## 16. 🟩 What happened after the capstone
 
-<details>
-<summary><strong>Optional research extension. Select to expand</strong></summary>
-
 > [!TIP]
+> <details>
+> <summary><strong>Optional research extension. Select to expand</strong></summary>
+>
 > This optional section records the research developed after the assessed thirteen-round capstone. Its green edge distinguishes the extension from the core submission.
 >
 > The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
@@ -464,5 +464,5 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 > No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
 >
 > Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
-
-</details>
+>
+> </details>
