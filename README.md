@@ -34,11 +34,13 @@ Select any numbered heading to move directly to that section. You can also read 
 15. [Reproducing the final assessment results](#reproducing-the-final-assessment-results)
 16. [What happened after the capstone](#what-happened-after-the-capstone)
 
-## NON-TECHNICAL EXPLANATION OF MY PROJECT
+<a id="non-technical-explanation-of-my-project"></a>
+## 1. NON-TECHNICAL EXPLANATION OF MY PROJECT
 
 This project records a thirteen-round search for strong inputs to eight hidden mathematical functions. Imperial supplied 175 starting observations. Each week, I selected one new input per function, submitted eight queries through the course portal and used the returned outputs to plan the next round. The approach changed as evidence accumulated: broad exploration gave way to local refinement, recovery of earlier strong points, boundary testing, replication and stopping. Across 104 prospective queries, Round 13 produced new best results for Functions 3, 5 and 6. The repository preserves the data, unsuccessful trials, analysis code, figures, decisions, limitations and reproducibility checks.
 
-### EXECUTIVE SUMMARY
+<a id="executive-summary"></a>
+### 1.1 EXECUTIVE SUMMARY
 
 [Open the detailed 2,000 to 2,500-word Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md) for the full project narrative, strategy, principal findings, significance and conclusions.
 
@@ -54,17 +56,20 @@ To listen while reading, keep the written Executive Summary open in one tab and 
 
 The Visual Storyboard provides the simplest continuous listening route. [Open the Executive Summary page in the Visual Storyboard](https://01a04a5b-864f-4cec-e841-84e7f7931b5d.share.connect.posit.cloud/?page=executive-summary), then select the navy blue **HEAR ME** button to play all three parts in order.
 
-## DATA
+<a id="data"></a>
+## 2. DATA
 
 Imperial College London supplied 175 starter observations covering eight hidden functions with between two and eight input dimensions. The capstone added 104 participant-selected observations, comprising one submitted query per function in each of thirteen rounds. The final audited dataset therefore contains 279 rows. Inputs are bounded coordinate vectors between 0 and 1, and each output is the numerical value returned by the Imperial course portal. The complete source is the [279-observation capstone dataset](BBO_Dashboard/data/complete_internal_evidence.csv). Its provenance, variables, limitations and permitted interpretation are documented in the [final datasheet](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_DATASHEET.md).
 
 During the early repository workflow, data handling and uploads were facilitated by the **Pisharam Influence Monitoring Framework (PIMF)** and the **Pisharam Modular Operating System (PMOS)**. They were developed in parallel with the capstone solely to maximise the use of available time and improve energy efficiency. PIMF supported monitoring, while PMOS supported structure, organisation and energy-aware semi-automated uploading. They assisted the development workflow but are not dependencies of the assessed optimisation model or the final reproducible submission.
 
-## MODEL
+<a id="model"></a>
+## 3. MODEL
 
 The assessed model is a sequential black box optimisation framework. It treats each function separately because the functions have different dimensions, scales and behaviour. Each weekly decision combines the returned objective values with coordinate movement, local comparison, recovery of strong earlier points, repeat testing and evidence from clustering or principal component analysis where appropriate. This approach was chosen because the true equations, gradients and global optima were hidden. It supports transparent decisions without pretending that one fitted equation explains all eight functions. The assumptions, intended use and limitations are recorded in the [final model card](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_MODEL_CARD.md).
 
-## HYPERPARAMETER OPTIMSATION
+<a id="hyperparameter-optimsation"></a>
+## 4. HYPERPARAMETER OPTIMSATION
 
 The hyperparameters were the size and direction of coordinate changes, the K-means cluster count and restart count, the number of principal components retained, the polynomial degree and the Ridge regularisation value. There was no single predictive model with one fixed search. Parameters used during the capstone were selected chronologically from evidence available before each submission. Candidate settings were compared using earlier results, silhouette score, inertia, explained variance, coordinate loadings, stability, distance from strong observations and the remaining query budget. The retrospective surrogate comparison used expanding-window normalised root mean squared error. Later outputs were not used to revise earlier decisions, which preserves the prospective nature of the thirteen-round challenge.
 
@@ -79,7 +84,8 @@ The optimisation evidence is available directly below. The clustering comparison
 | Principal component analysis | Number and interpretation of retained components | Explained variance and coordinate loading structure, used as decision support rather than an automatic winner | [PCA strategy comparison](Week_11/PCA_STRATEGY_COMPARISON.md), [PCA evidence](Week_12/PCA_EVIDENCE.md) |
 | Representative post-capstone surrogates | F5 Matérn 2.5 settings and F7 quadratic specification | Chronological validation on the complete recorded evidence | [F5 validation](Post_BBO_BBR/representative_surrogates/F5_HYPERPARAMETER_VALIDATION.csv), [F7 validation](Post_BBO_BBR/representative_surrogates/F7_HYPERPARAMETER_VALIDATION.csv), [surrogate equations and interpretation](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md) |
 
-## RESULTS
+<a id="results"></a>
+## 5. RESULTS
 
 The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Functions 1, 4, 7 and 8 retained strong points found earlier, while Function 2 reached its best result in Week 12 before a further small move reduced performance. Function 6 demonstrated that the same coordinates can return different outputs, making repeat testing important.
 
@@ -93,11 +99,13 @@ These are the strongest outputs observed from participant-selected queries. They
 | **B. Graphs and Infographics** | [Open the visual summary, final graphs, explanations and figure-generation route](Results/Graphs_and_Infographics/GRAPHS_AND_INFOGRAPHICS.md) |
 | **C. Detailed Discussion** | [Open the interpretation summary and full discussion of all eight functions](Results/Discussion/DETAILED_RESULTS_DISCUSSION.md) |
 
-## 🟦 ADDITIONAL PROJECT CONTRIBUTIONS
+<a id="additional-project-contributions"></a>
+## 6. 🟦 ADDITIONAL PROJECT CONTRIBUTIONS
 
 These additions extend the assessed capstone without changing its thirteen-round evidence or results.
 
-### 🟨 VISUAL STORYBOARD
+<a id="visual-storyboard"></a>
+### 6.1 🟨 VISUAL STORYBOARD
 
 The Visual Storyboard is the public Shiny reading experience for the complete project. It has two clearly separated sections: **Imperial BBO** and **Above and Beyond**.
 
@@ -108,7 +116,8 @@ The Visual Storyboard is the public Shiny reading experience for the complete pr
 
 The Visual Storyboard opens directly in your browser. It includes the official Imperial BBO account and the separate Above and Beyond routes for Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS).
 
-### 🟨 IMPERIAL BBO
+<a id="imperial-bbo"></a>
+### 6.2 🟨 IMPERIAL BBO
 
 Imperial BBO presents the official thirteen-round capstone story by week, function and scientific theme. It connects the graphs to the decisions and outcomes, while the Scientific Atlas compares weekly trajectories, function-by-week patterns and the timing of retained best results.
 
@@ -116,7 +125,8 @@ Creating the Visual Storyboard provided an additional lesson in data presentatio
 
 The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded British voice narrations. The recordings introduce the project, its journey and results, Delta as the Signature of Change, Black Box Resolution and Pisharam Delta Hierarchy and Influence State. Each section plays a prepared audio file rather than generating speech in the reader's browser. The control pauses, continues and stops playback, while the written evidence remains the complete and authoritative record.
 
-### 🟨 ABOVE AND BEYOND
+<a id="above-and-beyond"></a>
+### 6.3 🟨 ABOVE AND BEYOND
 
 Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
 
@@ -142,13 +152,15 @@ The Visual Storyboard therefore keeps the assessed Imperial BBO story separate f
 
 > **Mathematical extension:** Read the [BBR mathematical models for F1 to F8](Post_BBO_BBR/BBR_MATHEMATICAL_MODELS_F1_TO_F8.md), the [formal PDHIS model](Post_BBO_BBR/PDHIS/PDHIS_MATHEMATICAL_MODEL.md), the [PDHIS identification contribution](Post_BBO_BBR/PDHIS/PDHIS_IDENTIFICATION_CONTRIBUTION.md) and the [representative F5 and F7 coefficient package](Post_BBO_BBR/representative_surrogates/SECTION_GUIDE.md).
 
-### 🟨 ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
+<a id="additional-learning-time-and-energy-efficiency"></a>
+### 6.4 🟨 ADDITIONAL LEARNING: TIME AND ENERGY EFFICIENCY
 
 The project produced two valuable learning outcomes beyond Black Box Optimisation. First, the Visual Storyboard showed how written, visual and auditory storytelling can present the same evidence through complementary routes. Second, developing PIMF and PMOS in parallel with the capstone showed how a carefully structured workflow can make better use of limited time, reduce avoidable repetition and support more energy-efficient data handling and uploading. Together, these experiences demonstrated that effective analytical work depends not only on the optimisation method, but also on how evidence is communicated and how the surrounding process is organised, monitored and improved.
 
 [Read how this learning developed in the Detailed Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md).
 
-## 🟦 Enter the project
+<a id="enter-the-project"></a>
+## 7. 🟦 Enter the project
 
 This repository tells two connected stories. The first is the official thirteen-round Imperial BBO Capstone. The second begins after the challenge and asks what more can be resolved from the completed evidence. Choose the depth that suits you.
 
@@ -159,13 +171,13 @@ This repository tells two connected stories. The first is the official thirteen-
 
 > **Interactive status:** Shiny is used for the public Imperial BBO Visual Book. The live deployment is available through the CLICK ME link above. GitHub retains the documented evidence, source code and reproducibility record.
 
-### 🟨 The verified record at a glance
+### 7.1 🟨 The verified record at a glance
 
 | 13 rounds | 8 functions | 175 starter observations | 104 prospective queries | 279 observations retained |
 |:---:|:---:|:---:|:---:|:---:|
 | One weekly decision cycle | 2 to 8 dimensions | Supplied starting evidence | One query per function per round | Complete audited evidence |
 
-### 🟨 Final retained participant-query results
+### 7.2 🟨 Final retained participant-query results
 
 | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |
 |---:|---:|---:|---:|---:|---:|---:|---:|
@@ -173,7 +185,7 @@ This repository tells two connected stories. The first is the official thirteen-
 
 These values are the strongest results produced by the participant-selected queries. They do not claim the unknown mathematical global optima.
 
-### 🟨 Run the Visual Book
+### 7.3 🟨 Run the Visual Book
 
 ```bash
 python -m pip install -r BBO_Visual_Book_Shiny/requirements.txt
@@ -182,7 +194,8 @@ python -m shiny run BBO_Visual_Book_Shiny/app.py
 
 Open the local address printed by Shiny. The cover presents two routes: **Imperial BBO Capstone** and **Above and Beyond BBO**. The second route separates the **Above BBO BBR Book** from the **Beyond BBO PDHIS Book**.
 
-## 🟦 Final assessment quick start
+<a id="final-assessment-quick-start"></a>
+## 8. 🟦 Final assessment quick start
 
 The five Component 25.3 requirements are available directly from this page:
 
@@ -192,25 +205,26 @@ The five Component 25.3 requirements are available directly from this page:
 4. **Non-technical explanation:** the 100-word summary above
 5. **Organisation and documentation:** [Module 25 evidence hub](Module_25_Final_BBO_Submission/SECTION_GUIDE.md) and [completed repository audit](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/REPOSITORY_AUDIT.md)
 
-## 🟦 The official assessment record
+<a id="the-official-assessment-record"></a>
+## 9. 🟦 The official assessment record
 
 The assessed experiment is preserved in `Week_01` through `Week_13`. Module 25 contains the final assessment material. It is not an additional optimisation round.
 
 The later Black Box Resolution and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
 
-### 🟨 Project overview
+### 9.1 🟨 Project overview
 
 The challenge was to find strong input coordinates for eight hidden mathematical functions while using a limited weekly query budget. The objective equations, gradients and true optima were not available. Decisions therefore had to be made from the supplied starter observations and the outputs returned after each authorised query. The approach developed from broad exploration into function-specific refinement, recovery, replication and stopping. The final record shows what was attempted, what succeeded, what failed and how each result influenced the next decision.
 
-### 🟨 Inputs and outputs
+### 9.2 🟨 Inputs and outputs
 
 Each input is a coordinate vector bounded between `0` and `1`. The eight functions have between two and eight input dimensions. Imperial supplied 175 starter observations. The capstone added 104 participant-selected queries, comprising one query for each function in each of thirteen rounds. The evaluator returned one numerical objective value for every submitted vector. Higher values were preferred within each function, but values were not compared directly across functions because their scales and behaviour differ.
 
-### 🟨 Objectives and technical approach
+### 9.3 🟨 Objectives and technical approach
 
 The primary objective was to improve the strongest observed output for each function without overstating what sparse evidence could prove. The technical approach combined chronological comparison, local movement, recovery of earlier strong coordinates, repeated-coordinate checks, clustering, principal component analysis and carefully bounded surrogate modelling. Evidence was reviewed separately for each function before the next query was selected. The final notebook reproduces the retained results, compares participant queries with starter observations and reports repeatability concerns and analytical limitations.
 
-### 🟨 Final assessment material
+### 9.4 🟨 Final assessment material
 
 - [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/SECTION_GUIDE.md)
 - [25.1 Retrospective Evidence Map](Module_25_Final_BBO_Submission/25_1_Retrospective/EVIDENCE_MAP.md)
@@ -221,7 +235,8 @@ The primary objective was to improve the strongest observed output for each func
 - [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md)
 - [Final Verified Winner Summary](Module_25_Final_BBO_Submission/Final_13_Round_Evidence/FINAL_RESULTS_SUMMARY.csv)
 
-## 🟦 How the search developed
+<a id="how-the-search-developed"></a>
+## 10. 🟦 How the search developed
 
 The same strategy did not suit every function. Four practical actions became important:
 
@@ -232,7 +247,8 @@ The same strategy did not suit every function. Four practical actions became imp
 
 Clustering helped identify recurring regions in the later rounds. Principal component analysis helped show whether several coordinates were moving together. These methods supported the decisions, but the returned scores remained the main evidence.
 
-## 🟦 Final results after thirteen rounds
+<a id="final-results-after-thirteen-rounds"></a>
+## 11. 🟦 Final results after thirteen rounds
 
 Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 and 8 kept their strongest earlier results. Function 2 performed best in Week 12, then declined after another small change in Week 13.
 
@@ -249,13 +265,15 @@ Round 13 produced new best results for Functions 3, 5 and 6. Functions 1, 4, 7 a
 
 These are the strongest results produced by the participant-selected queries during the thirteen authorised rounds. Starter-data maxima are reported separately in the final notebook. None proves that the mathematical global optimum was found.
 
-## 🟦 What the results taught us
+<a id="what-the-results-taught-us"></a>
+## 12. 🟦 What the results taught us
 
 Function 5 showed the clearest sustained improvement. Its score rose from `1415.8763939603884` in Week 1 to `4440.957216598753` in Week 13. The search improved because it followed a consistent direction while the evidence remained favourable.
 
 Function 2 showed why small changes are not automatically safe. Week 12 found a new best, but the next nearby point performed worse. Function 6 raised a different concern because the same coordinate returned different values on separate occasions. This means repeatability must be checked for each function rather than assumed.
 
-## 🟦 Key weekly analysis
+<a id="key-weekly-analysis"></a>
+## 13. 🟦 Key weekly analysis
 
 - [Week 09: Module 21 analysis](Week_09/SECTION_GUIDE.md)
 - [Week 10: clustering and strategy refinement](Week_10/SECTION_GUIDE.md)
@@ -266,7 +284,8 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 - [Week 13 final capstone synthesis](Week_13/FINAL_CAPSTONE_SYNTHESIS.md)
 - [Week 13 RL-informed decision experiment](Week_13/RL_DECISION_EXPERIMENT/SECTION_GUIDE.md)
 
-## 🟦 Weekly record
+<a id="weekly-record"></a>
+## 14. 🟦 Weekly record
 
 | Round | Documentation |
 | --- | --- |
@@ -284,7 +303,8 @@ Function 2 showed why small changes are not automatically safe. Week 12 found a 
 | Week 12 | [Week guide](Week_12/SECTION_GUIDE.md) |
 | Week 13 | [Week guide](Week_13/SECTION_GUIDE.md) |
 
-## 🟦 Reproducing the final assessment results
+<a id="reproducing-the-final-assessment-results"></a>
+## 15. 🟦 Reproducing the final assessment results
 
 Run the following commands from the repository root:
 
@@ -297,7 +317,7 @@ python Week_13/generate_week_13_figures.py
 
 For a guided route through the data and final calculations, open the [Final Capstone Notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb).
 
-### 🟨 Interactive Visual Book
+### 15.1 🟨 Interactive Visual Book
 
 No installation is required for readers. Open the complete public application directly:
 
@@ -310,13 +330,14 @@ The audit checks the required assessment files, the weekly navigation, the inter
 
 See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_REPRODUCIBILITY.md) for full instructions.
 
-## 🟦 What happened after the capstone
+<a id="what-happened-after-the-capstone"></a>
+## 16. 🟦 What happened after the capstone
 
 The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
 
 The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Black Box Resolution, or BBR, is the final name for the work originally developed under the working name Black Box Decryption, or BBD. The change is in name only. The data, equations, results and method are unchanged. These later studies are clearly labelled as post-capstone work.
 
-### 🟨 How to read the PDHIS graphs
+### 16.1 🟨 How to read the PDHIS graphs
 
 **Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
 
