@@ -373,90 +373,96 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 <a id="what-happened-after-the-capstone"></a>
 ## 16. 🟦 What happened after the capstone
 
-The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
+<details>
+<summary><strong>Optional research extension. Select to expand</strong></summary>
 
-The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Black Box Resolution, or BBR, is the final name for the work originally developed under the working name Black Box Decryption, or BBD. The change is in name only. The data, equations, results and method are unchanged. These later studies are clearly labelled as post-capstone work.
+> [!TIP]
+> This section records the research developed after the assessed thirteen-round capstone. Its green panel distinguishes the extension from the core submission.
+>
+> The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) began after Week 13. It uses the completed record to ask further research questions without changing the assessed evidence.
+>
+> The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Black Box Resolution, or BBR, is the final name for the work originally developed under the working name Black Box Decryption, or BBD. The change is in name only. The data, equations, results and method are unchanged. These later studies are clearly labelled as post-capstone work.
+>
+> <a id="how-to-read-the-pdhis-graphs"></a>
+> ### 16.1 🟨 How to read the PDHIS graphs
+>
+> **Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
+>
+> Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same recursive process. PDHIS brings these levels together with oscillation frequency, energy, temporal dispersion, persistence, cross-order coherence, event-locked analysis and representative surrogate equations. It therefore moves beyond asking whether change occurred and examines the mathematical behaviour through which change takes form.
+>
+> The present study establishes PDHIS as a reproducible identification framework and provides its mathematical foundation. Prospective prediction is the next validation stage. This distinction protects the strength of the contribution: PDHIS is novel, while the timing and reliability of future-event prediction must be established using longer independent sequences.
+>
+> For an output sequence `y(t)`, the hierarchy is calculated as:
+>
+> ```text
+> Δ1(t) = y(t) − y(t−1)
+> Δ2(t) = Δ1(t) − Δ1(t−1)
+> Δn(t) = Δ(n−1)(t) − Δ(n−1)(t−1)
+> ```
+>
+> The interactive trajectories use range-normalised outputs so that the shape of change can be examined without confusing the very different raw scales of F1 to F8. Normalisation does not make the functions equal and does not change their chronological order.
+>
+> | Graph | Question it answers | What to inspect | What it cannot establish alone |
+> | --- | --- | --- | --- |
+> | Lotus hierarchy | How is direct change transformed into nested change? | Agreement, propagation and reversal across adjacent Delta levels | That a visually complex outer level is meaningful |
+> | Delta trajectory | When does a selected order change direction, magnitude or persistence? | Zero crossings, flattening, alternating signs and cross-level coherence | That one peak forecasts the next observation |
+> | Predictability | Does an earlier Delta value relate to a later output or change? | Sign and size of chronological correlation relative to shuffled data | A validated forecasting rule without corrected and prospective evidence |
+> | Function relationship map | Is the relationship shared or function-specific? | Colour direction, neighbouring-order consistency and sample size `n` | Reliable function recovery from a small cell count |
+> | Evidence boundary | How much evidence remains at each recursive order? | Falling comparison counts and adjusted `q` evidence | Confirmation when the threshold is not crossed |
+>
+> #### 🟩 A worked reading example
+>
+> Suppose a function has four illustrative normalised outputs: `0.20, 0.50, 0.70, 0.75`. The Δ1 values are `+0.30, +0.20, +0.05`. The output is improving, although the gain becomes smaller each time. The Δ2 values are `−0.10, −0.15`, which shows that the rate of improvement is falling. When read together, positive Δ1 values moving towards zero and negative Δ2 values suggest that the function may be approaching a plateau. The next observation must still be tested before that interpretation can be used for prediction.
+>
+> The evidence can be understood in three stages:
+>
+> 1. **Observed pattern:** a shape visible in Delta values already calculated from the record.
+> 2. **Developing Signature of Change:** a pattern that persists across related levels and may provide useful information about what follows.
+> 3. **Confirmed predictor:** a pattern defined in advance and supported by chronological testing, shuffled-data comparison, multiple-testing correction and later validation. The present analysis does not reach this stage.
+>
+> ![PDHIS Lotus hierarchy from Delta 1 to Delta 10](Post_BBO_BBR/PDHIS/infographics/PDHIS-01_delta_hierarchy.jpg)
+>
+> *Read from Δ1 towards Δ10. Each level records how the level before it changed. Higher orders can expose repeated reversal, plateau or oscillation, but every recursive step leaves fewer observations. A complex higher-order shape is therefore exploratory unless it remains coherent with lower orders and survives chronological testing.*
+>
+> #### 🟩 1. Lotus hierarchy: where the signature is built
+>
+> The hierarchy graph places direct change at Δ1, followed by increasingly nested change at later levels. It reorganises change that is already present in the observed sequence. A Signature of Change begins to take shape when related levels tell a consistent story. For example, Δ1 may move towards zero while Δ2 shows deceleration. Together, these movements support an interpretation of an approaching plateau. A strong movement at an outer level carries less weight when the lower levels do not support it.
+>
+> #### 🟩 2. Delta trajectory: how the signature moves through time
+>
+> The trajectory graph plots one selected function and Delta order against the week at which that value becomes available.
+>
+> - Values above zero indicate positive recursive change at that level; values below zero indicate negative recursive change.
+> - A crossing of zero marks a reversal at the selected level.
+> - Movement towards zero can indicate flattening or an approaching plateau.
+> - Repeated alternating signs can indicate oscillation.
+> - Magnitude shows the size of recursive change, not its scientific importance.
+>
+> Read the chosen trajectory alongside the lower Delta levels. The Signature of Change comes from the overall shape, its persistence, its reversals and the agreement between levels. The highest point on a single line is much less informative on its own. This graph describes the observed movement. Later observations are needed to test whether that movement has predictive value.
+>
+> #### 🟩 3. Predictability graph: whether the signature carries information forward
+>
+> This graph compares each Delta order with the next output and the next week-to-week change using chronological Spearman correlations. The shaded shuffled range is a reference for relationships that can arise after disrupting temporal order.
+>
+> - A correlation near zero indicates little observed monotonic relationship.
+> - A positive correlation means larger Delta values tend to precede larger later values or changes.
+> - A negative correlation means larger Delta values tend to precede smaller or opposite later values or changes.
+> - A line outside the shuffled range deserves closer attention, although it still needs statistical and prospective testing.
+>
+> In this record, Δ2, Δ4 and Δ5 show the strongest inverse relationships with later change. These levels may contribute to the Signature of Change, but none passes the adjusted false-discovery threshold. Further observations collected after the pattern has been defined are needed before drawing a predictive conclusion.
+>
+> #### 🟩 4. Function relationship map: where the signature differs
+>
+> The heat map separates the pooled result into F1 to F8. Blue cells show negative relationships with the following change, rose cells show positive relationships and pale cells show little observed relationship. Each cell also reports `n`, the number of usable comparisons.
+>
+> Repeated colour across neighbouring Delta orders is more consistent with a coherent function-specific signature than one isolated cell. F2 shows the clearest reversal pattern across Δ1 to Δ4, while F5 differs by showing a positive Δ1 relationship. These interpretations are provisional because the function-level samples are small.
+>
+> #### 🟩 5. Evidence boundary graph: where interpretation must stop
+>
+> The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
+>
+> No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
+>
+> Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 
-<a id="how-to-read-the-pdhis-graphs"></a>
-### 16.1 🟨 How to read the PDHIS graphs
-
-**Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
-
-Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same recursive process. PDHIS brings these levels together with oscillation frequency, energy, temporal dispersion, persistence, cross-order coherence, event-locked analysis and representative surrogate equations. It therefore moves beyond asking whether change occurred and examines the mathematical behaviour through which change takes form.
-
-The present study establishes PDHIS as a reproducible identification framework and provides its mathematical foundation. Prospective prediction is the next validation stage. This distinction protects the strength of the contribution: PDHIS is novel, while the timing and reliability of future-event prediction must be established using longer independent sequences.
-
-For an output sequence `y(t)`, the hierarchy is calculated as:
-
-```text
-Δ1(t) = y(t) − y(t−1)
-Δ2(t) = Δ1(t) − Δ1(t−1)
-Δn(t) = Δ(n−1)(t) − Δ(n−1)(t−1)
-```
-
-The interactive trajectories use range-normalised outputs so that the shape of change can be examined without confusing the very different raw scales of F1 to F8. Normalisation does not make the functions equal and does not change their chronological order.
-
-| Graph | Question it answers | What to inspect | What it cannot establish alone |
-| --- | --- | --- | --- |
-| Lotus hierarchy | How is direct change transformed into nested change? | Agreement, propagation and reversal across adjacent Delta levels | That a visually complex outer level is meaningful |
-| Delta trajectory | When does a selected order change direction, magnitude or persistence? | Zero crossings, flattening, alternating signs and cross-level coherence | That one peak forecasts the next observation |
-| Predictability | Does an earlier Delta value relate to a later output or change? | Sign and size of chronological correlation relative to shuffled data | A validated forecasting rule without corrected and prospective evidence |
-| Function relationship map | Is the relationship shared or function-specific? | Colour direction, neighbouring-order consistency and sample size `n` | Reliable function recovery from a small cell count |
-| Evidence boundary | How much evidence remains at each recursive order? | Falling comparison counts and adjusted `q` evidence | Confirmation when the threshold is not crossed |
-
-#### 🟩 A worked reading example
-
-Suppose a function has four illustrative normalised outputs: `0.20, 0.50, 0.70, 0.75`. The Δ1 values are `+0.30, +0.20, +0.05`. The output is improving, although the gain becomes smaller each time. The Δ2 values are `−0.10, −0.15`, which shows that the rate of improvement is falling. When read together, positive Δ1 values moving towards zero and negative Δ2 values suggest that the function may be approaching a plateau. The next observation must still be tested before that interpretation can be used for prediction.
-
-The evidence can be understood in three stages:
-
-1. **Observed pattern:** a shape visible in Delta values already calculated from the record.
-2. **Developing Signature of Change:** a pattern that persists across related levels and may provide useful information about what follows.
-3. **Confirmed predictor:** a pattern defined in advance and supported by chronological testing, shuffled-data comparison, multiple-testing correction and later validation. The present analysis does not reach this stage.
-
-![PDHIS Lotus hierarchy from Delta 1 to Delta 10](Post_BBO_BBR/PDHIS/infographics/PDHIS-01_delta_hierarchy.jpg)
-
-*Read from Δ1 towards Δ10. Each level records how the level before it changed. Higher orders can expose repeated reversal, plateau or oscillation, but every recursive step leaves fewer observations. A complex higher-order shape is therefore exploratory unless it remains coherent with lower orders and survives chronological testing.*
-
-#### 🟩 1. Lotus hierarchy: where the signature is built
-
-The hierarchy graph places direct change at Δ1, followed by increasingly nested change at later levels. It reorganises change that is already present in the observed sequence. A Signature of Change begins to take shape when related levels tell a consistent story. For example, Δ1 may move towards zero while Δ2 shows deceleration. Together, these movements support an interpretation of an approaching plateau. A strong movement at an outer level carries less weight when the lower levels do not support it.
-
-#### 🟩 2. Delta trajectory: how the signature moves through time
-
-The trajectory graph plots one selected function and Delta order against the week at which that value becomes available.
-
-- Values above zero indicate positive recursive change at that level; values below zero indicate negative recursive change.
-- A crossing of zero marks a reversal at the selected level.
-- Movement towards zero can indicate flattening or an approaching plateau.
-- Repeated alternating signs can indicate oscillation.
-- Magnitude shows the size of recursive change, not its scientific importance.
-
-Read the chosen trajectory alongside the lower Delta levels. The Signature of Change comes from the overall shape, its persistence, its reversals and the agreement between levels. The highest point on a single line is much less informative on its own. This graph describes the observed movement. Later observations are needed to test whether that movement has predictive value.
-
-#### 🟩 3. Predictability graph: whether the signature carries information forward
-
-This graph compares each Delta order with the next output and the next week-to-week change using chronological Spearman correlations. The shaded shuffled range is a reference for relationships that can arise after disrupting temporal order.
-
-- A correlation near zero indicates little observed monotonic relationship.
-- A positive correlation means larger Delta values tend to precede larger later values or changes.
-- A negative correlation means larger Delta values tend to precede smaller or opposite later values or changes.
-- A line outside the shuffled range deserves closer attention, although it still needs statistical and prospective testing.
-
-In this record, Δ2, Δ4 and Δ5 show the strongest inverse relationships with later change. These levels may contribute to the Signature of Change, but none passes the adjusted false-discovery threshold. Further observations collected after the pattern has been defined are needed before drawing a predictive conclusion.
-
-#### 🟩 4. Function relationship map: where the signature differs
-
-The heat map separates the pooled result into F1 to F8. Blue cells show negative relationships with the following change, rose cells show positive relationships and pale cells show little observed relationship. Each cell also reports `n`, the number of usable comparisons.
-
-Repeated colour across neighbouring Delta orders is more consistent with a coherent function-specific signature than one isolated cell. F2 shows the clearest reversal pattern across Δ1 to Δ4, while F5 differs by showing a positive Δ1 relationship. These interpretations are provisional because the function-level samples are small.
-
-#### 🟩 5. Evidence boundary graph: where interpretation must stop
-
-The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
-
-No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
-
-Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
-
-
+</details>
