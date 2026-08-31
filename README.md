@@ -19,6 +19,9 @@ Select any numbered heading to move directly to that section. The structure belo
   - [3. Model](#model)
   - [4. Hyperparameter optimisation](#hyperparameter-optimsation)
   - [5. Results](#results)
+    - [5.1 Results Summary](#results-summary)
+    - [5.2 Discussion and Interpretation](#discussion-and-interpretation)
+    - [5.3 Detailed Results Evidence](#detailed-results-evidence)
 - **Additional project work**
   - [6. Additional project contributions](#additional-project-contributions)
     - [6.1 Visual Storyboard](#visual-storyboard)
@@ -105,11 +108,22 @@ The optimisation evidence is available directly below. The clustering comparison
 <a id="results"></a>
 ## 5. RESULTS
 
+<a id="results-summary"></a>
+### 5.1 RESULTS SUMMARY
+
 The thirteen-round search produced new participant-query best results for Functions 3, 5 and 6 in the final round. Function 5 showed the clearest sustained improvement, rising from `1415.876394` in Week 1 to `4440.957217` in Week 13. Functions 1, 4, 7 and 8 retained strong points found earlier, while Function 2 reached its best result in Week 12 before a further small move reduced performance. Function 6 demonstrated that the same coordinates can return different outputs, making repeat testing important.
 
-The model showed that no single search behaviour suited all eight functions. Broad exploration was useful when the response surface was unclear. Small local movements were effective when improvement remained consistent. Recovery protected earlier gains after an unsuccessful move, and replication helped distinguish stable results from variable outputs. Clustering and principal component analysis supported interpretation, but the returned objective values remained the main decision evidence. The results support a sequential strategy that adapts by function and balances exploration, refinement, recovery, replication and stopping.
+<a id="discussion-and-interpretation"></a>
+### 5.2 DISCUSSION AND INTERPRETATION
 
-These are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima. The supporting material is organised into three linked subsections so that the README remains concise.
+No single search behaviour suited all eight functions. Broad exploration was useful when the response surface was unclear. Small local movements were effective when improvement remained consistent. Recovery protected earlier gains after an unsuccessful move, and replication helped distinguish stable results from variable outputs. Clustering and principal component analysis supported interpretation, but the returned objective values remained the main decision evidence. The findings support a sequential strategy that adapts by function and balances exploration, refinement, recovery, replication and stopping.
+
+These values are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima. This distinction is important because the challenge measured the quality of the observed search outcome rather than proving recovery of each hidden function's true global maximum.
+
+<a id="detailed-results-evidence"></a>
+### 5.3 DETAILED RESULTS EVIDENCE
+
+The supporting material is organised into three linked routes so that the README remains concise while the complete numerical and interpretive record remains easy to inspect.
 
 | Results subsection | Detailed material |
 | --- | --- |
