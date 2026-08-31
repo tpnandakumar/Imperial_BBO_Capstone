@@ -27,8 +27,15 @@ Select any numbered heading to move directly to that section. The structure belo
     - [6.4 Additional learning: time and energy efficiency](#additional-learning-time-and-energy-efficiency)
 - **Project access and assessment record**
   - [7. Enter the project](#enter-the-project)
+    - [7.1 The verified record at a glance](#verified-record-at-a-glance)
+    - [7.2 Final retained participant-query results](#final-retained-participant-query-results)
+    - [7.3 Run the Visual Book](#run-the-visual-book)
   - [8. Final assessment quick start](#final-assessment-quick-start)
   - [9. The official assessment record](#the-official-assessment-record)
+    - [9.1 Project overview](#project-overview)
+    - [9.2 Inputs and outputs](#inputs-and-outputs)
+    - [9.3 Objectives and technical approach](#objectives-and-technical-approach)
+    - [9.4 Final assessment material](#final-assessment-material)
 - **Development, results and weekly evidence**
   - [10. How the search developed](#how-the-search-developed)
   - [11. Final results after thirteen rounds](#final-results-after-thirteen-rounds)
@@ -37,7 +44,9 @@ Select any numbered heading to move directly to that section. The structure belo
   - [14. Weekly record](#weekly-record)
 - **Reproducibility and later research**
   - [15. Reproducing the final assessment results](#reproducing-the-final-assessment-results)
+    - [15.1 Interactive Visual Book](#interactive-visual-book)
   - [16. What happened after the capstone](#what-happened-after-the-capstone)
+    - [16.1 How to read the PDHIS graphs](#how-to-read-the-pdhis-graphs)
 
 <a id="non-technical-explanation-of-my-project"></a>
 ## 1. NON-TECHNICAL EXPLANATION OF MY PROJECT
@@ -176,12 +185,14 @@ This repository tells two connected stories. The first is the official thirteen-
 
 > **Interactive status:** Shiny is used for the public Imperial BBO Visual Book. The live deployment is available through the CLICK ME link above. GitHub retains the documented evidence, source code and reproducibility record.
 
+<a id="verified-record-at-a-glance"></a>
 ### 7.1 🟨 The verified record at a glance
 
 | 13 rounds | 8 functions | 175 starter observations | 104 prospective queries | 279 observations retained |
 |:---:|:---:|:---:|:---:|:---:|
 | One weekly decision cycle | 2 to 8 dimensions | Supplied starting evidence | One query per function per round | Complete audited evidence |
 
+<a id="final-retained-participant-query-results"></a>
 ### 7.2 🟨 Final retained participant-query results
 
 | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |
@@ -190,6 +201,7 @@ This repository tells two connected stories. The first is the official thirteen-
 
 These values are the strongest results produced by the participant-selected queries. They do not claim the unknown mathematical global optima.
 
+<a id="run-the-visual-book"></a>
 ### 7.3 🟨 Run the Visual Book
 
 ```bash
@@ -217,18 +229,22 @@ The assessed experiment is preserved in `Week_01` through `Week_13`. Module 25 c
 
 The later Black Box Resolution and Advanced Extension work is separate research completed after the capstone. It did not produce or alter any of the official thirteen-round results.
 
+<a id="project-overview"></a>
 ### 9.1 🟨 Project overview
 
 The challenge was to find strong input coordinates for eight hidden mathematical functions while using a limited weekly query budget. The objective equations, gradients and true optima were not available. Decisions therefore had to be made from the supplied starter observations and the outputs returned after each authorised query. The approach developed from broad exploration into function-specific refinement, recovery, replication and stopping. The final record shows what was attempted, what succeeded, what failed and how each result influenced the next decision.
 
+<a id="inputs-and-outputs"></a>
 ### 9.2 🟨 Inputs and outputs
 
 Each input is a coordinate vector bounded between `0` and `1`. The eight functions have between two and eight input dimensions. Imperial supplied 175 starter observations. The capstone added 104 participant-selected queries, comprising one query for each function in each of thirteen rounds. The evaluator returned one numerical objective value for every submitted vector. Higher values were preferred within each function, but values were not compared directly across functions because their scales and behaviour differ.
 
+<a id="objectives-and-technical-approach"></a>
 ### 9.3 🟨 Objectives and technical approach
 
 The primary objective was to improve the strongest observed output for each function without overstating what sparse evidence could prove. The technical approach combined chronological comparison, local movement, recovery of earlier strong coordinates, repeated-coordinate checks, clustering, principal component analysis and carefully bounded surrogate modelling. Evidence was reviewed separately for each function before the next query was selected. The final notebook reproduces the retained results, compares participant queries with starter observations and reports repeatability concerns and analytical limitations.
 
+<a id="final-assessment-material"></a>
 ### 9.4 🟨 Final assessment material
 
 - [Module 25: Final BBO Capstone Submission](Module_25_Final_BBO_Submission/SECTION_GUIDE.md)
@@ -322,6 +338,7 @@ python Week_13/generate_week_13_figures.py
 
 For a guided route through the data and final calculations, open the [Final Capstone Notebook](Module_25_Final_BBO_Submission/25_3_GitHub_Final_Submission/FINAL_CAPSTONE_NOTEBOOK.ipynb).
 
+<a id="interactive-visual-book"></a>
 ### 15.1 🟨 Interactive Visual Book
 
 No installation is required for readers. Open the complete public application directly:
@@ -342,6 +359,7 @@ The [Advanced Extension Series](Advanced_Extension_Series/SECTION_GUIDE.md) bega
 
 The [Black Box Resolution research](Post_BBO_BBR/SECTION_GUIDE.md) uses the completed evidence to compare and reject candidate explanations of the hidden functions. Black Box Resolution, or BBR, is the final name for the work originally developed under the working name Black Box Decryption, or BBD. The change is in name only. The data, equations, results and method are unchanged. These later studies are clearly labelled as post-capstone work.
 
+<a id="how-to-read-the-pdhis-graphs"></a>
 ### 16.1 🟨 How to read the PDHIS graphs
 
 **Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
