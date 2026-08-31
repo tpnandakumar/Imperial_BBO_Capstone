@@ -10,29 +10,34 @@ This is the single authoritative README for the Imperial BBO Capstone. Supportin
 
 ## Contents
 
-Select any numbered heading to move directly to that section. You can also read the README in order by scrolling down the page.
+Select any numbered heading to move directly to that section. The structure below shows how the assessment record, additional work and supporting evidence fit together.
 
-1. [Non-technical explanation of my project](#non-technical-explanation-of-my-project)
-   1. [Executive Summary](#executive-summary)
-2. [Data](#data)
-3. [Model](#model)
-4. [Hyperparameter optimisation](#hyperparameter-optimsation)
-5. [Results](#results)
-6. [Additional project contributions](#additional-project-contributions)
-   1. [Visual Storyboard](#visual-storyboard)
-   2. [Imperial BBO](#imperial-bbo)
-   3. [Above and Beyond](#above-and-beyond)
-   4. [Additional learning: time and energy efficiency](#additional-learning-time-and-energy-efficiency)
-7. [Enter the project](#enter-the-project)
-8. [Final assessment quick start](#final-assessment-quick-start)
-9. [The official assessment record](#the-official-assessment-record)
-10. [How the search developed](#how-the-search-developed)
-11. [Final results after thirteen rounds](#final-results-after-thirteen-rounds)
-12. [What the results taught us](#what-the-results-taught-us)
-13. [Key weekly analysis](#key-weekly-analysis)
-14. [Weekly record](#weekly-record)
-15. [Reproducing the final assessment results](#reproducing-the-final-assessment-results)
-16. [What happened after the capstone](#what-happened-after-the-capstone)
+- **Required capstone sections**
+  - [1. Non-technical explanation of my project](#non-technical-explanation-of-my-project)
+    - [1.1 Executive Summary](#executive-summary)
+  - [2. Data](#data)
+  - [3. Model](#model)
+  - [4. Hyperparameter optimisation](#hyperparameter-optimsation)
+  - [5. Results](#results)
+- **Additional project work**
+  - [6. Additional project contributions](#additional-project-contributions)
+    - [6.1 Visual Storyboard](#visual-storyboard)
+    - [6.2 Imperial BBO](#imperial-bbo)
+    - [6.3 Above and Beyond](#above-and-beyond)
+    - [6.4 Additional learning: time and energy efficiency](#additional-learning-time-and-energy-efficiency)
+- **Project access and assessment record**
+  - [7. Enter the project](#enter-the-project)
+  - [8. Final assessment quick start](#final-assessment-quick-start)
+  - [9. The official assessment record](#the-official-assessment-record)
+- **Development, results and weekly evidence**
+  - [10. How the search developed](#how-the-search-developed)
+  - [11. Final results after thirteen rounds](#final-results-after-thirteen-rounds)
+  - [12. What the results taught us](#what-the-results-taught-us)
+  - [13. Key weekly analysis](#key-weekly-analysis)
+  - [14. Weekly record](#weekly-record)
+- **Reproducibility and later research**
+  - [15. Reproducing the final assessment results](#reproducing-the-final-assessment-results)
+  - [16. What happened after the capstone](#what-happened-after-the-capstone)
 
 <a id="non-technical-explanation-of-my-project"></a>
 ## 1. NON-TECHNICAL EXPLANATION OF MY PROJECT
