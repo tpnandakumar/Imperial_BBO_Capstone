@@ -1,6 +1,6 @@
 # Imperial BBO Capstone
 
-This is the single authoritative README for the Imperial BBO Capstone. Supporting folders use clearly named section guides so that readers always return here for the required project overview, results and submission route.
+This README is the authoritative guide to the Imperial BBO Capstone. Supporting folders have clearly named section guides that lead readers back here for the project overview, results and submission route.
 
 **Author:** Dr Nandakumar Theekkootu Pisharam
 
@@ -52,7 +52,7 @@ Select any numbered heading to move directly to that section. The structure belo
     - [16.1 How to read the PDHIS graphs](#how-to-read-the-pdhis-graphs)
 - **Declarations**
   - [17. Disclosure and declarations](#disclosure-and-declarations)
-    - [17.1 Use of AI-assisted tools](#use-of-ai-assisted-tools)
+    - [17.1 Use of supporting tools](#use-of-supporting-tools)
     - [17.2 Conflict of interest](#conflict-of-interest)
 
 ### Repository navigation tree
@@ -122,12 +122,12 @@ The thirteen-round search produced new participant-query best results for Functi
 
 No single search behaviour suited all eight functions. Broad exploration was useful when the response surface was unclear. Small local movements were effective when improvement remained consistent. Recovery protected earlier gains after an unsuccessful move, and replication helped distinguish stable results from variable outputs. Clustering and principal component analysis supported interpretation, but the returned objective values remained the main decision evidence. The findings support a sequential strategy that adapts by function and balances exploration, refinement, recovery, replication and stopping.
 
-These values are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima. This distinction is important because the challenge measured the quality of the observed search outcome rather than proving recovery of each hidden function's true global maximum.
+These values are the strongest outputs observed from participant-selected queries. They do not establish the unknown mathematical global optima. The challenge measured the quality of the observed search outcome. It did not require proof that each hidden function's true global maximum had been recovered.
 
 <a id="detailed-results-evidence"></a>
 ### 5.3 DETAILED RESULTS EVIDENCE
 
-The supporting material is organised into three linked routes so that the README remains concise while the complete numerical and interpretive record remains easy to inspect.
+Three linked routes keep the README concise while making the complete numerical and interpretive record easy to inspect.
 
 | Results subsection | Detailed material |
 | --- | --- |
@@ -164,7 +164,7 @@ The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded
 <a id="above-and-beyond"></a>
 ### 6.3 🟨 ABOVE AND BEYOND
 
-Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. This section contains two distinct research routes.
+Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. Two research routes follow.
 
 #### 🟩 ABOVE: BLACK BOX RESOLUTION (BBR)
 
@@ -182,7 +182,7 @@ Pisharam Delta Hierarchy and Influence State (PDHIS) examines the Signature of C
 
 [Explore Pisharam Delta Hierarchy and Influence State](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md)
 
-The Visual Storyboard therefore keeps the assessed Imperial BBO story separate from the later BBR and PDHIS research while presenting all three through one coherent reading experience.
+The Visual Storyboard keeps the assessed Imperial BBO story separate from the later BBR and PDHIS research while presenting all three through one coherent reading experience.
 
 > **New reader?** Start with the [detailed Imperial BBO Executive Summary](Executive_Summary/DETAILED_EXECUTIVE_SUMMARY.md), then use the Visual Book for the complete interactive story.
 
@@ -392,9 +392,9 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 >
 > **Pisharam Delta Hierarchy and Influence State (PDHIS)** introduces a novel mathematical framework for revealing the Signature of Change within an observed behavioural sequence. It traces how movement, oscillatory energy and temporal structure appear and propagate through successive Delta orders. This allows subtle higher-order flickers to be examined alongside the changes that later become visible in the measured function.
 >
-> Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same recursive process. PDHIS brings these levels together with oscillation frequency, energy, temporal dispersion, persistence, cross-order coherence, event-locked analysis and representative surrogate equations. It therefore moves beyond asking whether change occurred and examines the mathematical behaviour through which change takes form.
+> Delta 1 (Δ1) measures the difference between one weekly output and the previous output. Delta 2 (Δ2) measures how Δ1 changes. Each later level follows the same recursive process. PDHIS brings these levels together with oscillation frequency, energy, temporal dispersion, persistence, cross-order coherence, event-locked analysis and representative surrogate equations. The method moves beyond asking whether change occurred and examines the mathematical behaviour through which change takes form.
 >
-> The present study establishes PDHIS as a reproducible identification framework and provides its mathematical foundation. Prospective prediction is the next validation stage. This distinction protects the strength of the contribution: PDHIS is novel, while the timing and reliability of future-event prediction must be established using longer independent sequences.
+> The present study establishes PDHIS as a reproducible identification framework and provides its mathematical foundation. PDHIS is presented here as a novel method for identifying change already contained in an observed sequence. Testing the timing and reliability of future-event prediction will require longer, independent sequences.
 >
 > For an output sequence `y(t)`, the hierarchy is calculated as:
 >
@@ -465,7 +465,7 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 >
 > The bars show the number of forward comparisons remaining at each Delta order. The adjusted-evidence line shows the result after controlling for multiple testing, with `q = 0.05` as the confirmation boundary. Usable forward comparisons fall from 88 at Δ1 to 16 at Δ10 because every recursive difference removes one observation.
 >
-> No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting is therefore defined as the next validation stage rather than claimed from the present sequence.
+> No Delta order crosses the adjusted confirmation threshold. The graph identifies the point where visual interpretation must give way to statistical restraint. PDHIS extracts structured patterns from the completed record while leaving the original hidden functions unresolved. Prospective forecasting remains the next validation stage and is not claimed from the present sequence.
 >
 > Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 >
@@ -474,12 +474,12 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 <a id="disclosure-and-declarations"></a>
 ## 17. DISCLOSURE AND DECLARATIONS
 
-<a id="use-of-ai-assisted-tools"></a>
-### 17.1 USE OF AI-ASSISTED TOOLS
+<a id="use-of-supporting-tools"></a>
+### 17.1 USE OF SUPPORTING TOOLS
 
-AI-assisted tools were used to support learning and in parts of the content creation process. Their use included explaining unfamiliar concepts, drafting support, formatting, organisation, code assistance and the preparation of selected visual and interactive materials. The project decisions, experimental submissions, interpretation of results, selection of evidence and final review remained the responsibility of the author. Suggestions produced with these tools were checked against the recorded project evidence and were not treated as an independent source of results.
+Artificial intelligence tools supported my learning and parts of the content creation process. They helped with explanations of unfamiliar concepts, drafting, formatting, organisation, coding and selected visual and interactive materials. I remained responsible for the project decisions, experimental submissions, interpretation of results, selection of evidence and final review. Suggestions from these tools were checked against the recorded project evidence and were not treated as an independent source of results.
 
 <a id="conflict-of-interest"></a>
 ### 17.2 CONFLICT OF INTEREST
 
-The author declares no financial, commercial, personal or other conflict of interest relevant to this project.
+I declare no financial, commercial, personal or other conflict of interest relevant to this project.
