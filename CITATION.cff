@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use or refer to the completed Imperial BBO Capstone, please cite it using the metadata below. BBR, PDHIS and the wider Artificial Cognition research programme remain protected work under active development."
+title: "Imperial BBO Capstone"
+type: software
+authors:
+  - family-names: "Pisharam"
+    given-names: "Nandakumar Theekkootu"
+    name-particle: "Dr"
+repository-code: "https://github.com/tpnandakumar/Imperial_BBO_Capstone"
+url: "https://github.com/tpnandakumar/Imperial_BBO_Capstone"
+abstract: "A reproducible thirteen-round black box optimisation capstone covering eight hidden functions, with an audited evidence record, results, documentation and interactive visual presentation."
+keywords:
+  - "black box optimisation"
+  - "sequential optimisation"
+  - "reproducible research"
+  - "Imperial BBO Capstone"
