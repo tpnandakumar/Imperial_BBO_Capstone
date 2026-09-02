@@ -54,6 +54,7 @@ Select any numbered heading to move directly to that section. The structure belo
   - [17. Disclosure and declarations](#disclosure-and-declarations)
     - [17.1 Use of supporting tools](#use-of-supporting-tools)
     - [17.2 Conflict of interest](#conflict-of-interest)
+    - [17.3 Research status and intellectual property](#research-status-and-intellectual-property)
 
 ### Repository navigation tree
 
@@ -164,7 +165,7 @@ The Visual Storyboard also includes **HEAR ME**, an optional set of six recorded
 <a id="above-and-beyond"></a>
 ### 6.3 🟨 ABOVE AND BEYOND
 
-Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. Two research routes follow.
+Above and Beyond begins after the official thirteen-round challenge. It uses the completed evidence to examine what more can be understood without altering the assessed results. Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) form part of the wider Artificial Cognition (AC) research programme. Both remain under active development. Two research routes follow.
 
 #### 🟩 ABOVE: BLACK BOX RESOLUTION (BBR)
 
@@ -483,3 +484,12 @@ Artificial intelligence tools supported my learning and parts of the content cre
 ### 17.2 CONFLICT OF INTEREST
 
 I declare no financial, commercial, personal or other conflict of interest relevant to this project.
+
+<a id="research-status-and-intellectual-property"></a>
+### 17.3 RESEARCH STATUS AND INTELLECTUAL PROPERTY
+
+Black Box Resolution (BBR) and Pisharam Delta Hierarchy and Influence State (PDHIS) form part of the wider Artificial Cognition (AC) research programme developed by Dr Nandakumar Theekkootu Pisharam. These original research concepts are protected intellectual work under active development and continue to be refined and augmented.
+
+The repository makes selected material available for academic assessment, citation and demonstration. Publication here does not grant permission to reproduce, adapt, implement, distribute or use BBR, PDHIS or the wider AC research programme commercially. Written permission from the author is required for any such use. The Git history provides a dated record of the continuing development.
+
+For formal attribution, use the repository's [citation file](CITATION.cff).
