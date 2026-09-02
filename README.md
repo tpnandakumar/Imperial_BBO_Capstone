@@ -477,7 +477,7 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 <a id="use-of-supporting-tools"></a>
 ### 17.1 USE OF SUPPORTING TOOLS
 
-Artificial intelligence tools supported my learning and parts of the content creation process. They helped with explanations of unfamiliar concepts, drafting, formatting, organisation, coding and selected visual and interactive materials. I remained responsible for the project decisions, experimental submissions, interpretation of results, selection of evidence and final review. Suggestions from these tools were checked against the recorded project evidence and were not treated as an independent source of results.
+Machine Learning tools supported my learning and parts of the content creation process. They helped with explanations of unfamiliar concepts, drafting, formatting, organisation, coding and selected visual and interactive materials. I remained responsible for the project decisions, experimental submissions, interpretation of results, selection of evidence and final review. Suggestions from these tools were checked against the recorded project evidence and were not treated as an independent source of results.
 
 <a id="conflict-of-interest"></a>
 ### 17.2 CONFLICT OF INTEREST
