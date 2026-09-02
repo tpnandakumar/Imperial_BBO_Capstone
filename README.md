@@ -50,6 +50,10 @@ Select any numbered heading to move directly to that section. The structure belo
     - [15.1 Interactive Visual Book](#interactive-visual-book)
   - [16. What happened after the capstone](#what-happened-after-the-capstone)
     - [16.1 How to read the PDHIS graphs](#how-to-read-the-pdhis-graphs)
+- **Declarations**
+  - [17. Disclosure and declarations](#disclosure-and-declarations)
+    - [17.1 Use of AI-assisted tools](#use-of-ai-assisted-tools)
+    - [17.2 Conflict of interest](#conflict-of-interest)
 
 ### Repository navigation tree
 
@@ -466,3 +470,16 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 > Open the [complete PDHIS analysis](Post_BBO_BBR/PDHIS/SECTION_GUIDE.md), [findings and evidence limits](Post_BBO_BBR/PDHIS/PDHIS_FINDINGS.md), or the [full infographic collection](Post_BBO_BBR/PDHIS/infographics/) for the supporting calculations and function-level figures.
 >
 > </details>
+
+<a id="disclosure-and-declarations"></a>
+## 17. DISCLOSURE AND DECLARATIONS
+
+<a id="use-of-ai-assisted-tools"></a>
+### 17.1 USE OF AI-ASSISTED TOOLS
+
+AI-assisted tools were used in parts of the content creation process, including drafting support, language refinement, formatting, organisation, code assistance and the preparation of selected visual and interactive materials. The project decisions, experimental submissions, interpretation of results, selection of evidence and final review remained the responsibility of the author. AI-generated suggestions were reviewed against the recorded project evidence and were not treated as an independent source of results.
+
+<a id="conflict-of-interest"></a>
+### 17.2 CONFLICT OF INTEREST
+
+The author declares no financial, commercial, personal or other conflict of interest relevant to this project.
