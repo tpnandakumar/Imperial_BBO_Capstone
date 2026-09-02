@@ -477,7 +477,7 @@ See the [Final Reproducibility Guide](Module_25_Final_BBO_Submission/25_3_GitHub
 <a id="use-of-ai-assisted-tools"></a>
 ### 17.1 USE OF AI-ASSISTED TOOLS
 
-AI-assisted tools were used to support learning and in parts of the content creation process. Their use included explaining unfamiliar concepts, drafting support, language refinement, formatting, organisation, code assistance and the preparation of selected visual and interactive materials. The project decisions, experimental submissions, interpretation of results, selection of evidence and final review remained the responsibility of the author. Suggestions produced with these tools were checked against the recorded project evidence and were not treated as an independent source of results.
+AI-assisted tools were used to support learning and in parts of the content creation process. Their use included explaining unfamiliar concepts, drafting support, formatting, organisation, code assistance and the preparation of selected visual and interactive materials. The project decisions, experimental submissions, interpretation of results, selection of evidence and final review remained the responsibility of the author. Suggestions produced with these tools were checked against the recorded project evidence and were not treated as an independent source of results.
 
 <a id="conflict-of-interest"></a>
 ### 17.2 CONFLICT OF INTEREST
